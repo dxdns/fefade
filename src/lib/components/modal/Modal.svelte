@@ -5,7 +5,7 @@
 	import { fade, scale } from "svelte/transition"
 	import IconButton from "../icon-button/index.js"
 	import Card from "../card/index.js"
-	import type { Snippet, SvelteComponent } from "svelte"
+	import type { Snippet } from "svelte"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: ClassValue
@@ -13,7 +13,7 @@
 		isOpen: boolean
 		handleClose: {
 			handler: () => void
-			icon?: typeof SvelteComponent
+			icon?: Snippet
 		}
 	}
 
@@ -66,7 +66,7 @@
 						{/if}
 						{#if handleClose.icon}
 							<IconButton onclick={handleClose.handler}>
-								{@html handleClose.icon}
+								{@render handleClose.icon?.()}
 							</IconButton>
 						{/if}
 					</div>

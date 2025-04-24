@@ -10,13 +10,13 @@
 		scrollDetectAction
 	} from "../../actions/index.js"
 	import IconButton from "../icon-button/index.js"
-	import type { SvelteComponent } from "svelte"
+	import type { Snippet } from "svelte"
 	interface Props extends HTMLAttributes<HTMLElement> {
 		class?: ClassValue
 		data: SectionType[]
 		icons?: {
-			left?: typeof SvelteComponent
-			right?: typeof SvelteComponent
+			left?: Snippet
+			right?: Snippet
 		}
 	}
 
@@ -32,7 +32,7 @@
 <nav {...rest} class={styles.scrollSection}>
 	{#if !showRightArrow && icons?.left}
 		<IconButton class={styles.arrowIndicator}>
-			{@html icons.left}
+			{@render icons.left?.()}
 		</IconButton>
 	{/if}
 	<div
@@ -71,7 +71,7 @@
 	</div>
 	{#if showRightArrow && icons?.right}
 		<IconButton class={styles.arrowIndicator}>
-			{@html icons.right}
+			{@render icons.right?.()}
 		</IconButton>
 	{/if}
 </nav>

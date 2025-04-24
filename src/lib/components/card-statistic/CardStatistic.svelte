@@ -4,11 +4,11 @@
 	import styles from "./CardStatistic.module.css"
 	import Card from "../card/index.js"
 	import ProgressCircle from "../progress-circle/index.js"
-	import type { SvelteComponent } from "svelte"
+	import type { Snippet } from "svelte"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: ClassValue
-		icon?: typeof SvelteComponent
+		icon?: Snippet
 		title: string
 		percent: number
 		value: number
@@ -31,9 +31,7 @@
 		[styles.cardSatistic]: true
 	})}
 >
-	{#if icon}
-		{@html icon}
-	{/if}
+	{@render icon?.()}
 	<div class={styles.middle}>
 		<div class={styles.left}>
 			<h3>{title}</h3>

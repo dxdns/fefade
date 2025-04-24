@@ -5,12 +5,12 @@
 	import Card from "../card/index.js"
 	import type { OrderStatusType } from "../../types/index.js"
 	import Button from "../button/index.js"
-	import type { SvelteComponent } from "svelte"
+	import type { Snippet } from "svelte"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: ClassValue
 		statusColor: OrderStatusType
-		topRight: typeof SvelteComponent
+		topRight: Snippet
 	}
 
 	let {
@@ -44,7 +44,7 @@
 			</p>
 		</div>
 		<div>
-			{@html topRight}
+			{@render topRight?.()}
 		</div>
 	</div>
 	<div class={styles.info}>

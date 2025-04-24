@@ -33,7 +33,7 @@
     height: 1em;
     width: 1em;
     border-radius: 50em;
-    background: url(/times-circle.svg) no-repeat 50% 50%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ccircle cx='256' cy='256' r='248' fill='%23d1d1d1'/%3E%3Cpath fill='%23292929' d='M377.6 321.1c4.7 4.7 4.7 12.3 0 17l-39.6 39.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0l-39.6-39.6c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'/%3E%3C/svg%3E") no-repeat center center;
     background-size: contain;
     opacity: 0;
     pointer-events: none;
@@ -41,6 +41,6 @@
 }
 
 .inputGroup>input:focus::-webkit-search-cancel-button {
-    opacity: 0.3;
+    opacity: .5;
     pointer-events: all;
 }

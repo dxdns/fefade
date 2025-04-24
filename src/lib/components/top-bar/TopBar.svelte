@@ -4,7 +4,7 @@
 	import Avatar from "../avatar/index.js"
 	import styles from "./TopBar.module.css"
 	import IconButton from "../icon-button/index.js"
-	import type { SvelteComponent } from "svelte"
+	import type { Snippet } from "svelte"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: ClassValue
@@ -12,7 +12,7 @@
 		userRole: string
 		imageUrl?: string
 		handleClick: () => void
-		menuIcon: typeof SvelteComponent
+		menuIcon: Snippet
 	}
 
 	let {
@@ -34,7 +34,7 @@
 	{...rest}
 >
 	<IconButton id={styles.menuBtn} onclick={handleClick}>
-		{@html menuIcon}
+		{@render menuIcon?.()}
 	</IconButton>
 	<div class={styles.profile}>
 		<div class={styles.info}>

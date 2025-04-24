@@ -5,7 +5,7 @@
 	import Input from "../input/index.js"
 	import type { ColorType, VariantType } from "../../types/index.js"
 	import IconButton from "../icon-button/index.js"
-	import type { SvelteComponent } from "svelte"
+	import type { Snippet } from "svelte"
 
 	interface Props extends HTMLInputAttributes {
 		class?: ClassValue
@@ -13,8 +13,8 @@
 		variant?: VariantType
 		color?: ColorType
 		icons: {
-			visibility: typeof SvelteComponent
-			visibilityOff: typeof SvelteComponent
+			visibility: Snippet
+			visibilityOff: Snippet
 		}
 	}
 
@@ -47,9 +47,9 @@
 		onclick={togglePasswordVisibility}
 	>
 		{#if passwordVisible}
-			{@html icons.visibilityOff}
+			{@render icons.visibilityOff?.()}
 		{:else}
-			{@html icons.visibility}
+			{@render icons.visibility?.()}
 		{/if}
 	</IconButton>
 	<Input

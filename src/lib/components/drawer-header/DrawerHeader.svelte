@@ -3,13 +3,13 @@
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import styles from "./DrawerHeader.module.css"
 	import IconButton from "../icon-button/index.js"
-	import type { SvelteComponent } from "svelte"
+	import type { Snippet } from "svelte"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: ClassValue
 		handleClick: () => void
-		logo: typeof SvelteComponent
-		closeIcon: typeof SvelteComponent
+		logo: Snippet
+		closeIcon: Snippet
 	}
 
 	let {
@@ -29,9 +29,9 @@
 	{...rest}
 >
 	<a href="/app" title="logo">
-		{@html logo}
+		{@render logo?.()}
 	</a>
 	<IconButton class={styles.buttonClose} onclick={handleClick}>
-		{@html closeIcon}
+		{@render closeIcon?.()}
 	</IconButton>
 </div>

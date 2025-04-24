@@ -7,7 +7,7 @@
 	import { slide } from "svelte/transition"
 	import styles from "./CookieNotice.module.css"
 	import type { ClassValue, HTMLAttributes } from "svelte/elements"
-	import type { CookiePrefsType } from "@/lib/types/cookiePrefs.types.js"
+	import type { CookiePrefsType } from "../../types/index.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: ClassValue

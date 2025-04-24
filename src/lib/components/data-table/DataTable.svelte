@@ -85,7 +85,7 @@
         <tr class={`${styles.colappse} ${isActive(index)}`}>
           <td colspan={colSpan}>
             <div class={styles.content}>
-              {@html renderExpandableRow(row)}
+              {@render renderExpandableRow(row)}
             </div>
           </td>
         </tr>

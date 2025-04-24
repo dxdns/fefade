@@ -4,13 +4,13 @@
 	import styles from "./InputSearch.module.css"
 	import Input from "../input/index.js"
 	import type { ColorType, VariantType } from "../../types/index.js"
-	import type { SvelteComponent } from "svelte"
+	import type { Snippet } from "svelte"
 
 	interface Props extends HTMLInputAttributes {
 		class?: ClassValue
 		variant?: VariantType
 		color?: ColorType
-		iconSearch: typeof SvelteComponent
+		iconSearch: Snippet
 	}
 
 	let {
@@ -30,7 +30,7 @@
 	})}
 >
 	<span class={styles.searchIcon}>
-		{@html iconSearch}
+		{@render iconSearch?.()}
 	</span>
 	<Input class={styles.inputGroup} {...rest} {variant} {color} type="search" />
 </div>

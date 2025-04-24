@@ -3,11 +3,11 @@
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import styles from "./CardAnalytic.module.css"
 	import Card from "../card/index.js"
-	import type { SvelteComponent } from "svelte"
+	import type { Snippet } from "svelte"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: ClassValue
-		icon?: typeof SvelteComponent
+		icon?: Snippet
 		title: string
 		percent: number
 		value: number
@@ -34,7 +34,7 @@
 	})}
 >
 	{#if icon}
-		{@html icon}
+		{@render icon?.()}
 	{/if}
 	<div class={styles.right}>
 		<div class="inherit">

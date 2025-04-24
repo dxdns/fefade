@@ -1,4 +1,3 @@
-import { browser } from "$app/environment"
 import type { SizeType } from "../types/index.js"
 
 export interface DeviceState {
@@ -19,7 +18,9 @@ export default function deviceDetectorAction(
 	_node: HTMLElement,
 	options?: DeviceDetectorOptions
 ) {
-	if (!browser) return { destroy: () => {} }
+	if (typeof window === "undefined") {
+		return { destroy: () => {} }
+	}
 
 	const config = {
 		breakpoints: { xs: 480, sm: 640, md: 768, lg: 1024, xl: 1280 },

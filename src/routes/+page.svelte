@@ -1,5 +1,5 @@
-<script>
-	import { Button } from "@/lib/index.js"
+<script lang="ts">
+	import { Button, InputSearch } from "../lib/index.js"
 </script>
 
 <h1>Welcome to your library project</h1>
@@ -11,4 +11,8 @@
 	Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
 	documentation
 </p>
+{#snippet iconSnippet()}
+	<span>icon</span>
+{/snippet}
+<InputSearch variant={"contained"} iconSearch={iconSnippet} />
 <Button variant="contained">hello</Button>
