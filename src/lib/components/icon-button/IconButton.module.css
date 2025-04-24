@@ -1,0 +1,13 @@
+.iconButton {
+  display: flex;
+  flex-direction: column;
+}
+
+.iconButton>* {
+  color: currentColor;
+  transition: color 0.3s;
+}
+
+.iconButton>*:hover {
+  color: var(--color-info-dark);
+}

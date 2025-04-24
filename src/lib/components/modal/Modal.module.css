@@ -1,0 +1,46 @@
+.modal {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.bg {
+    display: table-cell;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    border-radius: 6px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.header {
+    padding: 2px 5px 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.header>:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
+
+.content {
+    padding: 1rem;
+}

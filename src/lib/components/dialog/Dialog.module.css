@@ -1,0 +1,13 @@
+.actions {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+@media screen and (max-width: 425px) {
+    .actions {
+        flex-direction: column;
+        gap: .5rem;
+    }
+}

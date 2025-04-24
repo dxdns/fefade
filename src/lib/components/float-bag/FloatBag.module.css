@@ -1,0 +1,22 @@
+.floatBag {
+  bottom: -100px;
+  transition: bottom 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .floatBag {
+    position: fixed;
+    bottom: 50px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    background: var(--color-info-light);
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);
+    z-index: 10000;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+}

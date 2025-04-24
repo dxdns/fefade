@@ -1,0 +1,43 @@
+.badge {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.3em 0.5em 0.3em;
+  border-radius: 2px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.badge.text {
+  background: none;
+  color: var(--color-primary);
+}
+
+.badge.contained {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.badge.outlined {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.badge.sm {
+  font-size: 0.7em;
+  display: inline-block;
+  letter-spacing: 0.15ch;
+  font-weight: 400;
+}
+
+.badge.md {
+  font-size: 13px;
+}
+
+.badge.lg {
+  font-size: 1.2em;
+  border-radius: 4px;
+}
+
+.badge.contained:hover {
+  color: var(--color-white) !important;
+}

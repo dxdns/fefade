@@ -1,0 +1,16 @@
+.iconBadge {
+  position: relative;
+  background: var(--color-light) !important;
+  border-radius: 50%;
+  height: 48px;
+  width: 50px;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  right: -3px;
+  border-radius: 50% !important;
+  font-size: 11px !important;
+  border: 1px solid currentColor;
+}

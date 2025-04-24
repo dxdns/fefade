@@ -1,0 +1,46 @@
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.content {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    /* top: calc(100% + .25rem);
+      */
+    z-index: 2;
+    padding: 0.75rem 0;
+    border-radius: 0.25rem;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    transition:
+        opacity 150ms ease-in-out,
+        transform 150ms ease-in-out;
+}
+
+.content.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.content.hide {
+    opacity: 0;
+}
+
+.content.card {
+    border-radius: 5px;
+}
+
+.content * {
+    color: var(--color-dark);
+    padding: 0.5rem 0;
+    margin-right: 1rem;
+}
+
+.content:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}

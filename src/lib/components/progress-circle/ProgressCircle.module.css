@@ -1,0 +1,39 @@
+.progressCircle {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+.progressCircle>svg {
+    width: 7rem;
+    height: 7rem;
+    stroke-width: 10;
+}
+
+.progressCircle>svg>text {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.progressCircle>svg>circle {
+    fill: none;
+    stroke-linecap: round;
+    stroke-dashoffset: 100;
+}
+
+.progressCircle>svg>circle {
+    animation: draw 1s linear forwards;
+}
+
+@media screen and (max-width: 1440px) {
+    .progressCircle>svg>text {
+        font-size: 18px;
+    }
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

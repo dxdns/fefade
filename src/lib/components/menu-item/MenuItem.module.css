@@ -1,0 +1,12 @@
+.menuItem {
+    width: 100%;
+    color: var(--color-dark);
+    cursor: pointer;
+    padding: 0.25rem 1rem;
+    display: list-item;
+    text-align: left;
+}
+
+.menuItem:hover {
+    background: var(--color-light);
+}

@@ -1,0 +1,37 @@
+.bottomBar {
+  display: none;
+}
+
+.bottomBar > * {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: 300 !important;
+}
+
+/* .bottomBar>* {
+    background: var(--color-info-light) !important;
+    padding: 3px 0 !important;
+}
+
+.bottomBar>*>* {
+    color: var(--color-dark) !important;
+} */
+
+@media screen and (max-width: 768px) {
+  .bottomBar {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    background: var(--color-primary);
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);
+    z-index: 10000;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1rem;
+    overflow: hidden;
+  }
+}

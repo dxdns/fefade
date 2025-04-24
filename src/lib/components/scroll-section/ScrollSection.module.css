@@ -1,0 +1,103 @@
+.scrollSection {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-grow: 1;
+    padding: 0 1rem;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    height: 100%;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+}
+
+.content:active {
+    cursor: grabbing;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.button {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-dark);
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    transition: color 0.3s;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    border-radius: 0;
+    min-width: max-content;
+}
+
+.button.active {
+    color: var(--color-primary);
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.arrowIndicator {
+    padding-left: .5rem;
+    padding-right: .5rem;
+    font-size: 1.25rem;
+    color: var(--color-dark);
+    animation: blink 1.5s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 768px) {
+    .scrollSection {
+        padding: 0.5rem;
+    }
+
+    .content {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .button {
+        font-size: 0.875rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .arrowIndicator {
+        font-size: 1rem;
+    }
+}

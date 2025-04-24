@@ -1,0 +1,22 @@
+.avatar {
+  width: 5vw;
+  height: 5vw;
+  max-width: 5rem;
+  max-height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--color-light);
+  position: relative;
+}
+
+.textFallback {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-dark);
+  font-size: 1.2rem;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+}

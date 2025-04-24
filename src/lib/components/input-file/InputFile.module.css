@@ -1,0 +1,21 @@
+.dropzone {
+    border: 2px dashed var(--color-info-light);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropzone.dragging {
+    border-color: var(--color-border-hover);
+    background-color: var(--color-light);
+}
+
+.dropzone input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}

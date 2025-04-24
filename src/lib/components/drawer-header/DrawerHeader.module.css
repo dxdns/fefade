@@ -1,0 +1,16 @@
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0 0 2rem;
+}
+
+.buttonClose {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .buttonClose {
+    display: inline-block !important;
+  }
+}

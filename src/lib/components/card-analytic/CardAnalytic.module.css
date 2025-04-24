@@ -1,0 +1,14 @@
+.cardAnalytic {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.right {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0;
+    width: 100%;
+    gap: 5px;
+}

@@ -1,0 +1,46 @@
+.inputSearch {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.searchIcon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    translate: 0 -50%;
+    color: var(--color-info-dark) !important;
+}
+
+.inputSearch.text .inputGroup>input[type="search"] {
+    background: transparent !important;
+}
+
+.inputGroup>input {
+    padding-inline-start: 3rem;
+}
+
+.inputGroup>input::-webkit-input-placeholder {
+    color: var(--color-info-dark) !important;
+}
+
+.inputGroup>input::-webkit-input-placeholder {
+    color: var(--color-info-dark) !important;
+}
+
+.inputGroup>input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    border-radius: 50em;
+    background: url(/times-circle.svg) no-repeat 50% 50%;
+    background-size: contain;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+}
+
+.inputGroup>input:focus::-webkit-search-cancel-button {
+    opacity: 0.3;
+    pointer-events: all;
+}

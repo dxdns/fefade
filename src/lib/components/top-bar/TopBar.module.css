@@ -1,0 +1,41 @@
+#menuBtn {
+  display: none;
+  cursor: pointer;
+  background: none;
+  color: var(--color-dark);
+  border: none;
+}
+
+.topBar .profile {
+  display: flex;
+  gap: 2rem;
+  text-align: right;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+  .topBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 0.8rem;
+    height: 4.6rem;
+    background: var(--color-white);
+    margin: 0;
+    z-index: 2;
+    box-shadow: 0 1rem 1rem var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #menuBtn {
+    display: block;
+  }
+
+  .topBar .profile .info {
+    display: none;
+  }
+}

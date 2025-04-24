@@ -1,0 +1,133 @@
+.table {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  padding: 0.625em;
+  text-align: -webkit-center;
+  height: 2.8rem;
+  color: var(--color-dark);
+}
+
+.table > thead {
+  height: 50px;
+}
+
+.table > thead tr th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.table > caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+.table > tbody > tr {
+  padding: 0.35em;
+}
+
+.table > tbody > tr:not(.colappse) {
+  border-bottom: 1px solid var(--color-light);
+}
+
+.table > tbody > tr:not(.colappse):hover {
+  background-color: var(--color-light);
+}
+
+.table > tbody > tr:last-child {
+  border: none;
+}
+
+.table > tbody .colappse > td {
+  height: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}
+
+.table > tbody .colappse,
+.table > tbody .colappse .content {
+  max-height: 0px;
+  overflow: hidden;
+  transition:
+    max-height,
+    padding 0.2s ease-out;
+}
+
+.table > tbody .colappse.active > td {
+  height: 100%;
+  border-bottom: 1px solid var(--color-light);
+}
+
+.table > tbody .colappse.active,
+.table > tbody .colappse.active .content {
+  max-height: 400px;
+  padding: 16px;
+}
+
+.table .expand-btn {
+  color: var(--color-dark);
+  cursor: pointer;
+  padding: 10px;
+  background: none;
+  display: table;
+}
+
+.table .expand-btn:after {
+  content: "\25BC";
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.table .expand-btn.active:after {
+  transform: rotate(-180deg);
+  transition: transform 0.6s;
+}
+
+@media screen and (max-width: 600px) {
+  .table {
+    border: 0;
+  }
+
+  .table > thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .table tr {
+    border-bottom: 3px solid var(--color-light);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .table td {
+    border-bottom: 1px solid var(--color-light);
+    display: block;
+    font-size: 12px;
+    text-align: -webkit-right;
+  }
+
+  .table td:last-child {
+    border-bottom: 0;
+  }
+
+  .table > caption {
+    font-size: 1.3em;
+  }
+}

@@ -1,0 +1,26 @@
+.drawer.opened {
+  left: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 86vh;
+  position: relative;
+  top: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .drawer {
+    position: fixed;
+    left: -100%;
+    background: var(--color-white);
+    width: 18rem;
+    z-index: 3;
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    padding-right: var(--card-padding);
+    transition: left 0.3s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+    top: 0;
+    bottom: 0;
+  }
+}

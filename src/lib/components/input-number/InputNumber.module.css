@@ -1,0 +1,59 @@
+.inputNumber {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.inputNumber>input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    border-color: var(--color-primary) !important;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    color: var(--color-dark);
+    padding: 0 10px;
+    border-radius: 5px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    background: var(--color-white);
+    text-align: center;
+    min-width: 150px;
+}
+
+.inputNumber>input[type=number]::-webkit-inner-spin-button,
+.inputNumber>input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.numberControl {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.numberControl>* {
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.numberControl>*:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.numberControl>*:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
