@@ -1,25 +1,56 @@
 <script lang="ts">
 	import { onMount } from "svelte"
 	import Button from "../button/index.js"
-	import classMapUtil from "../../utils/classMapUtil.js"
-	import type { ClassValue, HTMLAttributes } from "svelte/elements"
-	import styles from "./CookieNotice.module.css"
 	import Switch from "../switch/index.js"
+	import classMapUtil from "../../utils/classMapUtil.js"
 	import { clickOutsideAction } from "../../actions/index.js"
 	import { slide } from "svelte/transition"
-	import cookiePreferenceUtil from "../../utils/cookiePreferenceUtil.js"
+	import styles from "./CookieNotice.module.css"
+	import type { ClassValue, HTMLAttributes } from "svelte/elements"
+	import type { CookiePrefsType } from "@/lib/types/cookiePrefs.types.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: ClassValue
+		cookiePrefs: CookiePrefsType
+		options?: {
+			title?: string
+			description?: string
+			manageTitle?: string
+			manageDescription?: string
+			manageLinkHref?: string
+			manageLinkLabel?: string
+			acceptLabel?: string
+			rejectLabel?: string
+			saveLabel?: string
+			backLabel?: string
+			preferencesLabel?: string
+		}
 	}
 
-	let { class: className = "", ...rest }: Props = $props()
-
-	const cookiePrefs = cookiePreferenceUtil()
+	let {
+		class: className = "",
+		cookiePrefs,
+		options = {},
+		...rest
+	}: Props = $props()
 
 	let isVisible = $state(false)
 	let showPreferences = $state(false)
 	let preferences = $state(cookiePrefs.default)
+
+	const {
+		title = "🍪 Cookie notice",
+		description = `This website uses cookies to enhance your experience. By continuing to browse, you agree to our use of cookies.`,
+		manageTitle = "Manage cookie preferences",
+		manageDescription = "Choose which types of cookies you accept. You can change this anytime.",
+		manageLinkHref = "/cookie-policy",
+		manageLinkLabel = "Read our cookie policy",
+		acceptLabel = "Accept",
+		rejectLabel = "Reject",
+		saveLabel = "Save",
+		backLabel = "Back",
+		preferencesLabel = "Manage preferences"
+	} = options
 
 	onMount(() => {
 		const prefs = cookiePrefs.get()
@@ -49,7 +80,6 @@
 		}
 
 		preferences = preferencesData
-
 		cookiePrefs.set(preferencesData)
 		isVisible = false
 		showPreferences = false
@@ -72,27 +102,20 @@
 		})}
 	>
 		{#if showPreferences}
-			<h3>Gerenciar preferências de cookies</h3>
+			<h3>{manageTitle}</h3>
 			<br />
-			<p>
-				Selecione os tipos de cookies que você aceita. Você pode mudar isso a
-				qualquer momento.
-			</p>
+			<p>{manageDescription}</p>
 			<br />
 
 			<form onsubmit={handleSubmit}>
-				<Switch
-					aria-label="Cookies essenciais (sempre ativos)"
-					checked
-					disabled
-				/>
+				<Switch aria-label="Essential cookies (always on)" checked disabled />
 				<Switch
 					name="analytics"
-					aria-label="Cookies de estatísticas (ex: Google Analytics)"
+					aria-label="Analytics cookies (e.g. Google Analytics)"
 				/>
 				<Switch
 					name="marketing"
-					aria-label="Cookies de marketing (ex: Facebook Pixel)"
+					aria-label="Marketing cookies (e.g. Facebook Pixel)"
 				/>
 
 				<div class={styles.actions}>
@@ -101,18 +124,17 @@
 						variant="outlined"
 						onclick={() => (showPreferences = false)}
 					>
-						Voltar
+						{backLabel}
 					</Button>
-					<Button type="submit">Salvar</Button>
+					<Button type="submit">{saveLabel}</Button>
 				</div>
 			</form>
 		{:else}
-			<h3>🍪 Aviso de cookies</h3>
+			<h3>{title}</h3>
 			<br />
 			<p>
-				Este site usa cookies para melhorar sua experiência. Ao continuar
-				navegando, você concorda com o uso de cookies.
-				<a href="/cookie-policy" target="_blank">Leia a política de cookies</a>.
+				{description}
+				<a href={manageLinkHref} target="_blank">{manageLinkLabel}</a>.
 			</p>
 			<div class={styles.actions}>
 				<Button
@@ -120,11 +142,13 @@
 					variant="text"
 					onclick={() => (showPreferences = true)}
 				>
-					Gerenciar preferências
+					{preferencesLabel}
 				</Button>
 				<div>
-					<Button onclick={rejectCookies} variant="outlined">Recusar</Button>
-					<Button onclick={acceptCookies}>Aceitar</Button>
+					<Button onclick={rejectCookies} variant="outlined"
+						>{rejectLabel}</Button
+					>
+					<Button onclick={acceptCookies}>{acceptLabel}</Button>
 				</div>
 			</div>
 		{/if}
