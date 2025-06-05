@@ -13,12 +13,12 @@
 	background: rgba(0, 0, 0, 0.8);
 	text-align: center;
 	vertical-align: middle;
+	backdrop-filter: blur(5px);
 }
 
 .wrapper {
 	position: relative;
 	display: inline-block;
-	width: 50%;
 	overflow: hidden;
 }
 

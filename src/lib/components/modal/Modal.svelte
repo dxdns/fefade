@@ -30,10 +30,7 @@
 </script>
 
 {#if isOpen}
-	<div
-		{...rest}
-		class={classMapUtil(className, [className, styles], styles.modal)}
-	>
+	<div class={classMapUtil(className, [className, styles], styles.modal)}>
 		<div
 			bind:this={el}
 			class={styles.overlay}
@@ -55,7 +52,7 @@
 				in:scale={{ duration: 300 }}
 				out:scale={{ duration: 300 }}
 			>
-				<Card class={styles.content}>
+				<Card {...rest} class={styles.content}>
 					{@render children?.()}
 				</Card>
 			</div>

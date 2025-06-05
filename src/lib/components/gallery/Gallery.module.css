@@ -6,10 +6,6 @@
     gap: 0.75rem;
 }
 
-.gallery>*>* {
-    block-size: 100%;
-}
-
 @media (width > 768px) {
     .gallery>*:nth-child(1) {
         grid-area: span 2 / span 2;

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Gallery, Modal } from "@/lib/index.js"
-	import { tick } from "svelte"
+	import { onDestroy, tick } from "svelte"
 
 	let isOpen = $state(false)
 	let elImg: HTMLImageElement | undefined
@@ -16,16 +16,27 @@
 			elImg.height = size
 		}
 	}
+
+	onDestroy(() => {
+		elImg = undefined
+	})
 </script>
 
 <Modal
 	{isOpen}
+	style="border: none;"
 	handleClose={() => {
 		isOpen = false
 		elImg = undefined
 	}}
 >
-	<Modal.Content style="text-align: center;">
+	<Modal.Content
+		style="
+		text-align: center; 
+		overflow: hidden; 
+		padding: 0;
+		"
+	>
 		<img alt="" bind:this={elImg} />
 	</Modal.Content>
 </Modal>
@@ -33,8 +44,8 @@
 <Gallery>
 	{#each [200, 250, 300, 350, 450, 550, 650] as size}
 		{@const src = `https://dummyjson.com/image/${size}`}
-		<a
-			href="#{size}"
+		<button
+			style="cursor: pointer;"
 			onclick={() => {
 				handleClick(src, size)
 			}}
@@ -47,6 +58,6 @@
 				width={size}
 				height={size}
 			/>
-		</a>
+		</button>
 	{/each}
 </Gallery>
