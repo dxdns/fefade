@@ -1,16 +1,18 @@
 type Props = {
-	onScroll: (isVisible: boolean) => void
+	callback: () => void
 	threshold?: number
 }
 
-export default function stickyOnScrollAction(
+export default function checkVisibilityAction(
 	node: HTMLElement,
-	{ onScroll, threshold = 0 }: Props
+	{ callback, threshold = 0 }: Props
 ) {
 	let observer: IntersectionObserver
 
 	const handleIntersect: IntersectionObserverCallback = ([entry]) => {
-		onScroll(entry.isIntersecting)
+		if (entry.isIntersecting) {
+			callback()
+		}
 	}
 
 	observer = new IntersectionObserver(handleIntersect, {

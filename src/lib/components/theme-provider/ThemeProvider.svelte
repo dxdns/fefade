@@ -85,69 +85,69 @@
 		/** text **/
 
 		.text-primary {
-			color: var(--ff-color-primary);
+			color: var(--ff-color-primary) !important;
 		}
 
 		.text-on-primary {
-			color: var(--ff-color-on-primary);
+			color: var(--ff-color-on-primary) !important;
 		}
 
 		.text-secondary {
-			color: var(--ff-color-secondary);
+			color: var(--ff-color-secondary) !important;
 		}
 
 		.text-on-secondary {
-			color: var(--ff-color-on-secondary);
+			color: var(--ff-color-on-secondary) !important;
 		}
 
 		.text {
-			color: var(--ff-color-text);
+			color: var(--ff-color-text) !important;
 		}
 
 		.text-muted {
-			color: var(--ff-color-text-muted);
+			color: var(--ff-color-text-muted) !important;
 		}
 
 		.text-on-bg {
-			color: var(--ff-color-on-bg);
+			color: var(--ff-color-on-bg) !important;
 		}
 
 		.text-on-surface {
-			color: var(--ff-color-on-surface);
+			color: var(--ff-color-on-surface) !important;
 		}
 
 		.text-on-disabled {
-			color: var(--ff-color-on-disabled);
+			color: var(--ff-color-on-disabled) !important;
 		}
 
 		.text-on-focus {
-			color: var(--ff-color-on-focus);
+			color: var(--ff-color-on-focus) !important;
 		}
 
 		/** bg **/
 
 		.bg-primary {
-			background: var(--ff-color-primary);
+			background: var(--ff-color-primary) !important;
 		}
 
 		.bg-secondary {
-			background: var(--ff-color-secondary);
+			background: var(--ff-color-secondary) !important;
 		}
 
 		.bg-page {
-			background: var(--ff-color-bg);
+			background: var(--ff-color-bg) !important;
 		}
 
 		.bg-surface {
-			background: var(--ff-color-surface);
+			background: var(--ff-color-surface) !important;
 		}
 
 		.bg-disabled {
-			background: var(--ff-color-disabled);
+			background: var(--ff-color-disabled) !important;
 		}
 
 		.bg-focus {
-			background: var(--ff-color-focus);
+			background: var(--ff-color-focus) !important;
 		}
 
 		.bg-0 {
@@ -157,7 +157,7 @@
 		/** border **/
 
 		.border {
-			border-color: var(--ff-color-border);
+			border-color: var(--ff-color-border) !important;
 		}
 
 		.border-0 {
@@ -190,114 +190,114 @@
 		/** bg **/
 
 		.bg-success {
-			background: var(--ff-color-success);
+			background: var(--ff-color-success) !important;
 		}
 
 		.bg-error,
 		.bg-danger {
-			background: var(--ff-color-error);
+			background: var(--ff-color-error) !important;
 		}
 
 		.bg-warning {
-			background: var(--ff-color-warning);
+			background: var(--ff-color-warning) !important;
 		}
 
 		.bg-info {
-			background: var(--ff-color-info);
+			background: var(--ff-color-info) !important;
 		}
 
 		/** hover bg **/
 		.hover-bg-success:hover {
-			background: var(--ff-color-success);
+			background: var(--ff-color-success) !important;
 		}
 
 		.hover-bg-error:hover,
 		.hover-bg-danger:hover {
-			background: var(--ff-color-error);
+			background: var(--ff-color-error) !important;
 		}
 
 		.hover-bg-warning:hover {
-			background: var(--ff-color-warning);
+			background: var(--ff-color-warning) !important;
 		}
 
 		.hover-bg-info:hover {
-			background: var(--ff-color-info);
+			background: var(--ff-color-info) !important;
 		}
 
 		/** text **/
 
 		.text-on-success {
-			color: var(--ff-color-on-success);
+			color: var(--ff-color-on-success) !important;
 		}
 
 		.text-on-error,
 		.text-on-danger {
-			color: var(--ff-color-on-error);
+			color: var(--ff-color-on-error) !important;
 		}
 
 		.text-on-warning {
-			color: var(--ff-color-on-warning);
+			color: var(--ff-color-on-warning) !important;
 		}
 
 		.text-on-info {
-			color: var(--ff-color-on-info);
+			color: var(--ff-color-on-info) !important;
 		}
 
 		/** hover text **/
 
 		.hover-text-on-success:hover {
-			color: var(--ff-color-on-success);
+			color: var(--ff-color-on-success) !important;
 		}
 
 		.hover-text-on-error:hover,
 		.hover-text-on-danger:hover {
-			color: var(--ff-color-on-error);
+			color: var(--ff-color-on-error) !important;
 		}
 
 		.hover-text-on-warning:hover {
-			color: var(--ff-color-on-warning);
+			color: var(--ff-color-on-warning) !important;
 		}
 
 		.hover-text-on-info:hover {
-			color: var(--ff-color-on-info);
+			color: var(--ff-color-on-info) !important;
 		}
 
 		/** border **/
 
 		.border-on-success {
-			border-color: var(--ff-color-on-success);
+			border-color: var(--ff-color-on-success) !important;
 		}
 
 		.border-on-error,
 		.border-on-danger {
-			border-color: var(--ff-color-on-error);
+			border-color: var(--ff-color-on-error) !important;
 		}
 
 		.border-on-warning {
-			border-color: var(--ff-color-on-warning);
+			border-color: var(--ff-color-on-warning) !important;
 		}
 
 		.border-on-info {
-			border-color: var(--ff-color-on-info);
+			border-color: var(--ff-color-on-info) !important;
 		}
 
 		/** hover border **/
 
 		.hover-border-on-success:hover {
-			border-color: var(--ff-color-on-success);
+			border-color: var(--ff-color-on-success) !important;
 		}
 
 		.hover-border-on-error:hover,
 		.hover-border-on-danger:hover {
-			border-color: var(--ff-color-on-error);
+			border-color: var(--ff-color-on-error) !important;
 		}
 
 		.hover-border-on-warning:hover {
-			border-color: var(--ff-color-on-warning);
+			border-color: var(--ff-color-on-warning) !important;
 		}
 
 		.hover-border-on-info:hover {
-			border-color: var(--ff-color-on-info);
+			border-color: var(--ff-color-on-info) !important;
 		}
 	</style>
 </svelte:head>
