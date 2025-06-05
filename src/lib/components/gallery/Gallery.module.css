@@ -1,0 +1,25 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    grid-auto-rows: 12.5rem;
+    grid-auto-flow: dense;
+    gap: 0.75rem;
+}
+
+.gallery>*>* {
+    block-size: 100%;
+}
+
+@media (width > 768px) {
+    .gallery>*:nth-child(1) {
+        grid-area: span 2 / span 2;
+    }
+
+    .gallery>*:nth-child(4n + 1) {
+        grid-row: span 2;
+    }
+
+    .gallery>*:nth-child(4n + 2) {
+        grid-column: span 2;
+    }
+}

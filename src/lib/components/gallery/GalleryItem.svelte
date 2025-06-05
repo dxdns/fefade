@@ -64,18 +64,4 @@
 		white-space: nowrap;
 		text-overflow: ellipsis;
 	}
-
-	@media (width > 768px) {
-		figure:nth-child(1) {
-			grid-area: span 2 / span 2;
-		}
-
-		figure:nth-child(4n + 1) {
-			grid-row: span 2;
-		}
-
-		figure:nth-child(4n + 2) {
-			grid-column: span 2;
-		}
-	}
 </style>
