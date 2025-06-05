@@ -23,7 +23,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
-		"release": "npm version patch && git push && git push --tags"
+		"release": "npm run build && npm version minor && git push && git push --tags"
 	},
 	"files": [
 		"dist",

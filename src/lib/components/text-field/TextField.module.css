@@ -122,6 +122,17 @@
     height: 15px;
 }
 
+.textField>input:-webkit-autofill,
+.textField>input:-webkit-autofill:focus {
+    transition:
+        background-color 600000s 0s,
+        color 600000s 0s;
+}
+
+.textField>input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
 /* outlined */
 
 .textField.outlined>input {
