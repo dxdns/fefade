@@ -10,7 +10,7 @@
 
 <Modal isOpen={openModal} {handleClose}>
 	<Modal.Header {handleClose} align="center">
-		<h1>test header</h1>
+		<h2>test header</h2>
 	</Modal.Header>
 	<Modal.Content>
 		<p>test content</p>

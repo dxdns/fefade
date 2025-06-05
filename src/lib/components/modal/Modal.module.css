@@ -24,10 +24,5 @@
 
 .content {
 	padding: 0 1rem !important;
-}
-
-@media screen and (max-width: 768px) {
-	.wrapper {
-		width: 80%;
-	}
+	min-width: 250px;
 }

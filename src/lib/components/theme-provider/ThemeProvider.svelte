@@ -85,85 +85,87 @@
 		/** text **/
 
 		.text-primary {
-			color: var(--ff-color-primary) !important;
+			color: var(--ff-color-primary);
 		}
 
 		.text-on-primary {
-			color: var(--ff-color-on-primary) !important;
+			color: var(--ff-color-on-primary);
 		}
 
 		.text-secondary {
-			color: var(--ff-color-secondary) !important;
+			color: var(--ff-color-secondary);
 		}
 
 		.text-on-secondary {
-			color: var(--ff-color-on-secondary) !important;
+			color: var(--ff-color-on-secondary);
 		}
 
 		.text {
-			color: var(--ff-color-text) !important;
+			color: var(--ff-color-text);
 		}
 
 		.text-muted {
-			color: var(--ff-color-text-muted) !important;
+			color: var(--ff-color-text-muted);
 		}
 
 		.text-on-bg {
-			color: var(--ff-color-on-bg) !important;
+			color: var(--ff-color-on-bg);
 		}
 
 		.text-on-surface {
-			color: var(--ff-color-on-surface) !important;
+			color: var(--ff-color-on-surface);
 		}
 
 		.text-on-disabled {
-			color: var(--ff-color-on-disabled) !important;
+			color: var(--ff-color-on-disabled);
 		}
 
 		.text-on-focus {
-			color: var(--ff-color-on-focus) !important;
+			color: var(--ff-color-on-focus);
 		}
 
 		/** bg **/
 
 		.bg-primary {
-			background: var(--ff-color-primary) !important;
+			background: var(--ff-color-primary);
 		}
 
 		.bg-secondary {
-			background: var(--ff-color-secondary) !important;
+			background: var(--ff-color-secondary);
 		}
 
 		.bg-page {
-			background: var(--ff-color-bg) !important;
+			background: var(--ff-color-bg);
 		}
 
 		.bg-surface {
-			background: var(--ff-color-surface) !important;
+			background: var(--ff-color-surface);
 		}
 
 		.bg-disabled {
-			background: var(--ff-color-disabled) !important;
+			background: var(--ff-color-disabled);
 		}
 
 		.bg-focus {
-			background: var(--ff-color-focus) !important;
+			background: var(--ff-color-focus);
 		}
 
 		.bg-0 {
-			background: none !important;
+			background: none;
 		}
 
 		/** border **/
 
 		.border {
-			border-color: var(--ff-color-border) !important;
+			border-color: var(--ff-color-border);
 		}
 
 		.border-0 {
 			border: none !important;
 			border-radius: 0 !important;
 		}
+
+		/* status colors */
 
 		[data-theme="light"] {
 			--ff-color-success: #a7eac1;
