@@ -2,19 +2,36 @@ export default function onScrollEndAction(
 	node: HTMLElement,
 	callback: () => void
 ) {
-	function handleScroll() {
-		const isAtBottom = node.scrollTop + node.clientHeight >= node.scrollHeight
+	const firstChild = node.firstElementChild as HTMLElement | null
+	if (!firstChild) return
 
-		if (isAtBottom) {
-			callback()
+	const sentinel = document.createElement("div")
+	sentinel.style.height = "1px"
+	sentinel.style.width = "100%"
+	sentinel.style.visibility = "hidden"
+
+	firstChild.appendChild(sentinel)
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			for (const entry of entries) {
+				if (entry.isIntersecting) {
+					callback()
+				}
+			}
+		},
+		{
+			root: node,
+			threshold: 1.0
 		}
-	}
+	)
 
-	node.addEventListener("scroll", handleScroll)
+	observer.observe(sentinel)
 
 	return {
 		destroy() {
-			node.removeEventListener("scroll", handleScroll)
+			observer.disconnect()
+			sentinel.remove()
 		}
 	}
 }

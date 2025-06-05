@@ -1,4 +1,3 @@
-export * as Actions from "./actions/index.js"
 export {
 	classMapUtil as classMap,
 	mergeObjectUtil as mergeObject,
@@ -54,3 +53,4 @@ export * from "./components/number-input/index.js"
 export * from "./components/range-input/index.js"
 export { default as Gallery } from "./components/gallery/index.js"
 export * from "./components/shortcut-listener/index.js"
+export * from "./components/scroll-end-listener/index.js"
