@@ -22,12 +22,14 @@
 
 <a
 	{...rest}
-	class={classMapUtil(styles.customLink, {
-		[typeof className === "function" ? className({ isActive }) : className]:
-			true,
-		[styles.customLinkUnderline]: Boolean(hoverUnderline),
-		[styles[hoverUnderline!]]: Boolean(hoverUnderline)
-	})}
+	class={classMapUtil(
+		typeof className === "function" ? className({ isActive }) : className,
+		styles.customLink,
+		{
+			[styles.customLinkUnderline]: Boolean(hoverUnderline),
+			[styles[hoverUnderline!]]: Boolean(hoverUnderline)
+		}
+	)}
 	aria-current={isActive ? "page" : undefined}
 >
 	{@render children?.()}

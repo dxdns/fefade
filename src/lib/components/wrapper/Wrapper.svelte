@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import styles from "./Wrapper.module.css"
+	import { classMapUtil } from "../../utils/index.js"
 
 	interface Props extends HTMLInputAttributes {
 		ref?: HTMLInputElement
@@ -11,7 +12,7 @@
 
 <input
 	{...rest}
-	class={styles.controller}
+	class={classMapUtil(className, styles.controller)}
 	type="checkbox"
 	id={rest.id ?? "checkbox"}
 	bind:this={ref}

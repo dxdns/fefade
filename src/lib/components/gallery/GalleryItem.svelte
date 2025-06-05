@@ -11,7 +11,7 @@
 	let { class: className = "", caption, children, ...rest }: Props = $props()
 </script>
 
-<figure>
+<figure class={className}>
 	<img {...rest} />
 	{#if caption}
 		<figcaption>

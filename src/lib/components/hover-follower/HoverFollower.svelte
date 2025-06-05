@@ -33,7 +33,7 @@
 	use:actionUtil={actions}
 	{style}
 >
-	<div class={classMapUtil("overlay", className)}></div>
+	<div class={classMapUtil(className, "overlay")}></div>
 	{@render children?.()}
 </div>
 

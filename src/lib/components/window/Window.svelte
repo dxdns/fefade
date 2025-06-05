@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import classMapUtil from "../../utils/classMapUtil.js"
 	import Card from "../card/index.js"
 	import Badge from "../badge/index.js"
 	import type { Snippet } from "svelte"
@@ -12,7 +11,7 @@
 	let { class: className = "", label, children, ...rest }: Props = $props()
 </script>
 
-<Card {...rest} class={classMapUtil(className)}>
+<Card {...rest} class={className}>
 	<div class="header">
 		<div class="actions">
 			<Badge class="bg-error" roundedFull size="xs"></Badge>

@@ -20,6 +20,7 @@
 
 <div
 	{...rest}
+	class={className}
 	use:onShortcutAction={{
 		keys,
 		callback,

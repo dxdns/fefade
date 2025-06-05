@@ -18,7 +18,7 @@
 	}: Props = $props()
 </script>
 
-<div class={classMapUtil("accordion", className, variant)}>
+<div class={classMapUtil(className, "accordion", variant)}>
 	<input type="radio" id={rest.id} name="accordion" {...rest} />
 	<label for={rest.id} class="header">
 		<label for={rest.id}>{label}</label>

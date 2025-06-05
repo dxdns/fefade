@@ -37,7 +37,7 @@
 
 <div
 	role="region"
-	class={classMapUtil("menu", className, { ["openOnHover"]: openOnHover })}
+	class={classMapUtil(className, "menu", { ["openOnHover"]: openOnHover })}
 	use:clickOutsideAction={{ handler: handleClose }}
 	bind:this={elMenu}
 	onmouseenter={() => {

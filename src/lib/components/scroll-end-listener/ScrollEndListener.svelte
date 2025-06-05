@@ -9,6 +9,6 @@
 	let { class: className = "", callback, children, ...rest }: Props = $props()
 </script>
 
-<div {...rest} use:onScrollEndAction={callback}>
+<div {...rest} class={className} use:onScrollEndAction={callback}>
 	{@render children?.()}
 </div>

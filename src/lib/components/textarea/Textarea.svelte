@@ -1,13 +1,12 @@
 <script lang="ts">
 	import type { HTMLTextareaAttributes } from "svelte/elements"
-	import classMapUtil from "../../utils/classMapUtil.js"
 
 	interface Props extends HTMLTextareaAttributes {}
 
 	let { class: className = "", ...rest }: Props = $props()
 </script>
 
-<textarea {...rest} class={classMapUtil(className)}></textarea>
+<textarea {...rest} class={className}></textarea>
 
 <style>
 	textarea {

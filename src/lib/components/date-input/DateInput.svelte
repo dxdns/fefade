@@ -27,7 +27,7 @@
 <input
 	{...rest}
 	bind:this={el}
-	class={classMapUtil("dateInput", className)}
+	class={classMapUtil(className, "dateInput")}
 	style={mergeStyleUtil(`color-scheme: ${theme.mode};`, rest.style)}
 	{type}
 	onclick={handleClick}

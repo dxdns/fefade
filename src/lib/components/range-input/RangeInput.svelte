@@ -6,7 +6,7 @@
 	let { class: className = "", children, ...rest }: Props = $props()
 </script>
 
-<input {...rest} type="range" />
+<input {...rest} class={className} type="range" />
 
 <style>
 	input {

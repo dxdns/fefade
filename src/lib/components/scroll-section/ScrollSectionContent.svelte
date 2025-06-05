@@ -7,6 +7,6 @@
 	let { class: className, children, ...rest }: Props = $props()
 </script>
 
-<section {...rest} use:scrollSectionAction>
+<section {...rest} class={className} use:scrollSectionAction>
 	{@render children?.()}
 </section>

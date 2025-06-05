@@ -97,7 +97,7 @@
 <div
 	{...rest}
 	bind:this={bottomSheet}
-	class={classMapUtil("bottomSheet", {
+	class={classMapUtil(className, "bottomSheet", {
 		show: isOpen
 	})}
 >
