@@ -29,6 +29,7 @@
 		grid-template-columns: minmax(0, 1fr);
 		grid-template-rows: minmax(0, 1fr);
 		block-size: 100%;
+		border-radius: 0.5rem;
 	}
 
 	img {

@@ -41,23 +41,77 @@
 	</Modal.Content>
 </Modal>
 
-<Gallery>
-	{#each [200, 250, 300, 350, 450, 550, 650] as size}
-		{@const src = `https://dummyjson.com/image/${size}`}
-		<button
-			style="cursor: pointer;"
-			onclick={() => {
-				handleClick(src, size)
-			}}
-		>
-			<Gallery.Item
-				style="cursor: pointer;"
-				caption={{ title: `title ${size}`, description: `description ${size}` }}
-				{src}
-				alt={`Image ${size}px`}
-				width={size}
-				height={size}
-			/>
-		</button>
-	{/each}
-</Gallery>
+<div style="width: 800px; margin: 3rem auto; line-height: 2;">
+	<h1>default</h1>
+	<Gallery>
+		{#each [200, 250, 300, 350] as size}
+			{@const src = `https://dummyjson.com/image/${size}`}
+			<button
+				style="cursor: pointer; background: none;"
+				onclick={() => {
+					handleClick(src, size)
+				}}
+			>
+				<Gallery.Item
+					style="cursor: pointer;"
+					{src}
+					alt={`Image ${size}px`}
+					width={size}
+					height={size}
+				/>
+			</button>
+		{/each}
+	</Gallery>
+
+	<br />
+	<h1>columns</h1>
+	<Gallery columns={2}>
+		{#each [200, 250, 300, 350, 450, 550] as size}
+			{@const src = `https://dummyjson.com/image/${size}`}
+			<button
+				style="cursor: pointer; background: none;"
+				onclick={() => {
+					handleClick(src, size)
+				}}
+			>
+				<Gallery.Item
+					style="cursor: pointer;"
+					caption={{
+						title: `title ${size}`,
+						description: `description ${size}`
+					}}
+					{src}
+					alt={`Image ${size}px`}
+					width={size}
+					height={size}
+				/>
+			</button>
+		{/each}
+	</Gallery>
+
+	<br />
+	<h1>masonry</h1>
+	<Gallery variant="masonry" gap={"1rem"}>
+		{#each [200, 250, 300, 350, 450, 550, 650, 750, 850, 950] as size}
+			{@const src = `https://dummyjson.com/image/${size}`}
+			<button
+				style="cursor: pointer; background: none;"
+				onclick={() => {
+					handleClick(src, size)
+				}}
+			>
+				<Gallery.Item
+					style="cursor: pointer;"
+					caption={{
+						title: `title ${size}`,
+						description: `description ${size}`
+					}}
+					{src}
+					alt={`Image ${size}px`}
+					width={size}
+					height={size}
+				/>
+			</button>
+		{/each}
+	</Gallery>
+</div>
