@@ -13,10 +13,15 @@
 		tab5: "1"
 	})
 
-	const tabs = [
-		{ id: "1", label: "label1", content: "test1", icon: "&#9734;" },
-		{ id: "2", label: "label2", content: "test2" }
-	]
+	const tabs = Array.from({ length: 20 }, (_, i) => {
+		const id = (i + 1).toString()
+		return {
+			id,
+			label: `label${id}`,
+			content: `test${id}`,
+			...(i === 0 && { icon: "&#9734;" })
+		}
+	})
 
 	function handle(tab: keyof typeof activeTab, id: string) {
 		activeTab[tab] = id

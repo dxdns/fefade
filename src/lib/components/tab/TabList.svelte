@@ -20,25 +20,37 @@
 		...rest
 	}: Props = $props()
 
-	const lineColor =
-		lineStyle && typeof lineStyle === "object"
-			? (lineStyle.color ?? "var(--ff-color-on-surface)")
-			: "var(--ff-color-on-surface)"
+	function getValue<T extends object, K extends keyof T>(
+		obj: unknown,
+		key: K,
+		fallback: T[K]
+	): T[K] {
+		if (obj && typeof obj === "object" && key in obj) {
+			return (obj as T)[key] ?? fallback
+		}
+		return fallback
+	}
 
-	const lineHeight =
-		lineStyle && typeof lineStyle === "object"
-			? (lineStyle.height ?? "2px")
-			: "2px"
+	const lineColor = getValue<{ color?: string }, "color">(
+		lineStyle,
+		"color",
+		"var(--ff-color-on-surface)"
+	)
+	const lineHeight = getValue<{ height?: string }, "height">(
+		lineStyle,
+		"height",
+		"2px"
+	)
+	const bgColor = getValue<{ bgColor?: string }, "bgColor">(
+		hoverFollower,
+		"bgColor",
+		undefined
+	)
 
 	const dataSet = {
 		"data-line-color": lineColor,
 		"data-line-height": lineHeight
 	}
-
-	const bgColor =
-		hoverFollower && typeof hoverFollower === "object"
-			? (hoverFollower.bgColor ?? undefined)
-			: undefined
 
 	const style = mergeStyleUtil(
 		"display: flex;",
@@ -50,7 +62,7 @@
 	)
 </script>
 
-<div {...rest}>
+<div {...rest} class="tabList">
 	{#if hoverFollower}
 		<HoverFollower
 			{...dataSet}
@@ -76,3 +88,18 @@
 		</div>
 	{/if}
 </div>
+
+<style>
+	.tabList {
+		max-width: 100%;
+		max-height: 100%;
+		overflow: auto;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		display: flex;
+	}
+
+	.tabList::-webkit-scrollbar {
+		display: none;
+	}
+</style>
