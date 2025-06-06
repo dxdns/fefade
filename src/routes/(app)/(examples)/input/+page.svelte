@@ -32,7 +32,7 @@
 	<PasswordInput variant="text" label="text" />
 	<br />
 	<br />
-	<TextField label="test" />
+	<TextField />
 	<br />
 	<br />
 	<SearchInput variant="contained" placeholder="test" />
