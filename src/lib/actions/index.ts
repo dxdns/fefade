@@ -16,6 +16,7 @@ import fadeOnScrollAction from "./fadeOnScrollAction.js"
 import onShortcutAction from "./onShortcutAction.js"
 import onScrollEndAction from "./onScrollEndAction.js"
 import autoAlignAction from "./autoAlignAction.js"
+import lazyLoadAction from "./lazyLoadAction.js"
 
 export {
 	inputDropAction,
@@ -35,5 +36,6 @@ export {
 	fadeOnScrollAction,
 	onShortcutAction,
 	onScrollEndAction,
-	autoAlignAction
+	autoAlignAction,
+	lazyLoadAction
 }

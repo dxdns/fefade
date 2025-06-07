@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { lazyLoadAction } from "../../actions/index.js"
 	import type { HTMLImgAttributes } from "svelte/elements"
 
 	interface Props extends HTMLImgAttributes {
@@ -12,7 +13,7 @@
 </script>
 
 <figure class={className}>
-	<img {...rest} />
+	<img {...rest} use:lazyLoadAction loading="lazy" decoding="async" />
 	{#if caption}
 		<figcaption>
 			<h3>{caption.title}</h3>
