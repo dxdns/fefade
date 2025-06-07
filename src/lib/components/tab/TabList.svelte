@@ -3,12 +3,13 @@
 	import { activeLineAction } from "../../actions/index.js"
 	import HoverFollower from "../hover-follower/index.js"
 	import type { ActionType, OrientationType } from "../../types/index.js"
-	import { mergeStyleUtil } from "../../utils/index.js"
+	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		lineStyle?: boolean | { color?: string; height?: string }
 		hoverFollower?: boolean | { bgColor?: string }
 		orientation?: OrientationType
+		scrollable?: boolean
 	}
 
 	let {
@@ -16,6 +17,7 @@
 		lineStyle,
 		hoverFollower,
 		orientation = "horizontal",
+		scrollable = true,
 		children,
 		...rest
 	}: Props = $props()
@@ -62,7 +64,7 @@
 	)
 </script>
 
-<div {...rest} class="tabList">
+<div {...rest} class={classMapUtil("tabList", { ["scrollable"]: scrollable })}>
 	{#if hoverFollower}
 		<HoverFollower
 			{...dataSet}
@@ -96,6 +98,9 @@
 		overflow: auto;
 		scrollbar-width: none;
 		-ms-overflow-style: none;
+	}
+
+	.tabList.scrollable {
 		display: flex;
 	}
 

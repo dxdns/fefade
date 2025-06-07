@@ -13,7 +13,7 @@
 		tab5: "1"
 	})
 
-	const tabs = Array.from({ length: 20 }, (_, i) => {
+	const tabs = Array.from({ length: 15 }, (_, i) => {
 		const id = (i + 1).toString()
 		return {
 			id,
@@ -51,8 +51,8 @@
 
 	<Card>
 		<Tab id="tab1">
-			<Tab.List lineStyle={{ color: "red" }}>
-				{#each tabs as tab}
+			<Tab.List scrollable={false} lineStyle={{ color: "red" }}>
+				{#each tabs.slice(0, 2) as tab}
 					<Button
 						id={tab.id}
 						title={tab.label}
