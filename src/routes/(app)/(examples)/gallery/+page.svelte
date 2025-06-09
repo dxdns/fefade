@@ -53,8 +53,9 @@
 				}}
 			>
 				<Gallery.Item
+					lazy
 					style="cursor: pointer;"
-					{src}
+					dataSrc={src}
 					alt={`Image ${size}px`}
 					width={size}
 					height={size}
@@ -75,12 +76,13 @@
 				}}
 			>
 				<Gallery.Item
+					lazy
 					style="cursor: pointer;"
 					caption={{
 						title: `title ${size}`,
 						description: `description ${size}`
 					}}
-					{src}
+					dataSrc={src}
 					alt={`Image ${size}px`}
 					width={size}
 					height={size}
@@ -101,12 +103,13 @@
 				}}
 			>
 				<Gallery.Item
+					lazy
 					style="cursor: pointer;"
 					caption={{
 						title: `title ${size}`,
 						description: `description ${size}`
 					}}
-					{src}
+					dataSrc={src}
 					alt={`Image ${size}px`}
 					width={size}
 					height={size}
