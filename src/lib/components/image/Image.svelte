@@ -7,6 +7,7 @@
 		lazy?: boolean
 		dataSrc: string
 		hover?: { transition?: "none" | "scale" }
+		fallback?: string
 	}
 
 	let {
@@ -14,9 +15,16 @@
 		lazy = false,
 		dataSrc,
 		hover = { transition: "none" },
+		fallback,
 		children,
 		...rest
 	}: Props = $props()
+
+	let hasError = $state(false)
+
+	function handleError() {
+		hasError = true
+	}
 
 	const hasTransition = hover && hover.transition !== "none"
 	const transitionDefault = "opacity 1s ease-in-out"
@@ -39,12 +47,19 @@
 		})}
 		{style}
 		data-src={dataSrc}
+		data-fallback={fallback}
 		use:lazyLoadAction
 		loading="lazy"
 		decoding="async"
+		onerror={handleError}
 	/>
 {:else}
-	<img {...rest} class={className} src={dataSrc} />
+	<img
+		{...rest}
+		class={className}
+		src={hasError ? (fallback ?? dataSrc) : dataSrc}
+		onerror={handleError}
+	/>
 {/if}
 
 <style>

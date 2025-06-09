@@ -11,6 +11,7 @@
 			title: string
 			description: string
 		}
+		fallback?: string
 	}
 
 	let {
@@ -18,6 +19,7 @@
 		lazy = false,
 		dataSrc,
 		caption,
+		fallback,
 		children,
 		...rest
 	}: Props = $props()
@@ -32,6 +34,7 @@
 		{lazy}
 		{dataSrc}
 		hover={{ transition: "scale" }}
+		{fallback}
 	/>
 	{#if caption}
 		<figcaption class={styles.caption}>

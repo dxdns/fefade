@@ -1,27 +1,50 @@
 export default function lazyLoadAction(node: HTMLImageElement) {
 	node.style.opacity = "0"
 
-	const loaded = () => {
+	function finalize(shouldClearDataset = true) {
 		node.style.opacity = "1"
-		delete node.dataset.src
-		node.removeEventListener("load", loaded)
+		removeListeners()
+		if (shouldClearDataset) {
+			delete node.dataset.src
+			delete node.dataset.fallback
+		}
+	}
+
+	function onLoad() {
+		finalize()
+	}
+
+	function onError() {
+		const fallback = node.dataset.fallback
+		if (fallback) {
+			removeListeners()
+			node.addEventListener("load", onLoad)
+			node.src = fallback
+		} else {
+			finalize()
+		}
+	}
+
+	function removeListeners() {
+		node.removeEventListener("load", onLoad)
+		node.removeEventListener("error", onError)
 	}
 
 	const observer = new IntersectionObserver(
 		([entry]) => {
-			if (entry.isIntersecting) {
-				const src = node.dataset.src
+			if (!entry.isIntersecting) return
 
-				if (src) node.src = src
+			const src = node.dataset.src
+			if (src) node.src = src
 
-				if (node.complete) {
-					loaded()
-				} else {
-					node.addEventListener("load", loaded)
-				}
-
-				observer.unobserve(node)
+			if (node.complete && node.naturalWidth !== 0) {
+				finalize()
+			} else {
+				node.addEventListener("load", onLoad)
+				node.addEventListener("error", onError)
 			}
+
+			observer.unobserve(node)
 		},
 		{
 			root: null,
@@ -34,7 +57,7 @@ export default function lazyLoadAction(node: HTMLImageElement) {
 
 	return {
 		destroy() {
-			node.removeEventListener("load", loaded)
+			removeListeners()
 		}
 	}
 }
