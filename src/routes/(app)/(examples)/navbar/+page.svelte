@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classMap, Menu, Navbar, Separator, Window } from "@/lib/index.js"
+	import { Menu, Navbar, Separator, Window } from "@/lib/index.js"
 
 	let isOpen = $state(false)
 </script>
@@ -22,7 +22,7 @@
 
 		<div style="flex:1;"></div>
 
-		<div class={classMap("menu", { ["show"]: isOpen })}>
+		<div class={`menu ${isOpen ? "show" : ""}`}>
 			<Navbar.Item
 				aria-current="page"
 				style={isOpen ? "width: 100%; border-radius: 0;" : ""}
