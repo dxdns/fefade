@@ -1,39 +1,39 @@
 .galleryItem {
-    container: figure / inline-size;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr);
-    block-size: 100%;
-    border-radius: 0.5rem;
+	container: figure / inline-size;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-rows: minmax(0, 1fr);
+	block-size: 100%;
+	border-radius: 0.5rem;
 }
 
 .image {
-    inline-size: 100%;
-    block-size: 100%;
-    max-inline-size: 100%;
-    object-fit: cover;
-    grid-area: 1 / 1 / -1 / -1;
+	inline-size: 100%;
+	block-size: 100%;
+	max-inline-size: 100%;
+	object-fit: cover;
+	grid-area: 1 / 1 / -1 / -1;
 }
 
 .caption {
-    grid-area: 1 / 1 / -1 / -1;
-    align-self: end;
-    z-index: 1;
-    padding: 3em 15% 1em 1em;
-    color: var(--ff-color-text);
-    font-size: 0.875rem;
-    line-height: 1.3;
-    background: linear-gradient(transparent 25%, rgb(0 0 0 / 0.75));
-    display: block;
+	grid-area: 1 / 1 / -1 / -1;
+	align-self: end;
+	z-index: 1;
+	padding: 3em 15% 1em 1em;
+	color: var(--ff-color-text);
+	font-size: 0.875rem;
+	line-height: 1.3;
+	background: linear-gradient(transparent 25%, rgb(0 0 0 / 0.75));
+	display: block;
 }
 
 .caption h3 {
-    font-size: 1.0625rem;
+	font-size: 1.0625rem;
 }
 
 .caption p {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }

@@ -6,21 +6,23 @@
 	background: color-mix(in srgb, var(--ff-color-surface) 85%, gray 15%);
 }
 
-.navbarItem.contained:hover {
-	color: var(--ff-color-on-primary) !important;
-}
-
-.navbarItem:hover {
-	background: color-mix(in srgb, var(--ff-color-surface) 90%, gray 10%);
-	color: var(--ff-color-on-surface) !important;
-	opacity: 1 !important;
-}
-
 .navbarItem > * {
 	background: none !important;
 	color: none !important;
 }
 
-.navbarItem > *:hover {
-	background: none !important;
+@media (hover: hover) and (pointer: fine) {
+	.navbarItem:hover {
+		background: color-mix(in srgb, var(--ff-color-surface) 90%, gray 10%);
+		color: var(--ff-color-on-surface) !important;
+		opacity: 1 !important;
+	}
+
+	.navbarItem > *:hover {
+		background: none !important;
+	}
+
+	.navbarItem.contained:hover {
+		color: var(--ff-color-on-primary) !important;
+	}
 }

@@ -1,220 +1,229 @@
 .textField {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    line-height: 0;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	line-height: 0;
 }
 
-.textField.required>label::after {
-    content: " *";
-    color: var(--ff-color-danger);
+.textField.required > label::after {
+	content: " *";
+	color: var(--ff-color-danger);
 }
 
-.textField>label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: var(--ff-color-text-muted);
-    padding: 0 5px;
-    pointer-events: none;
-    transition: 0.2s;
-    line-height: 1.5;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    letter-spacing: 0.00938em;
+.textField > label {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translateY(-50%);
+	font-size: 16px;
+	color: var(--ff-color-text-muted);
+	padding: 0 5px;
+	pointer-events: none;
+	transition: 0.2s;
+	line-height: 1.5;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	letter-spacing: 0.00938em;
 }
 
-.textField>input {
-    box-sizing: border-box;
-    width: 100%;
-    height: 50px;
-    font-size: 16px;
-    color: var(--ff-color-text);
-    padding: 0 0.5rem 0 0.6rem;
-    border-radius: 0.25rem;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
+.textField > input {
+	box-sizing: border-box;
+	width: 100%;
+	height: 50px;
+	font-size: 16px;
+	color: var(--ff-color-text);
+	padding: 0 0.5rem 0 0.6rem;
+	border-radius: 0.25rem;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
 }
 
-.textField>input:hover {
-    border-color: var(--ff-color-primary);
+.textField > input:hover {
+	border-color: var(--ff-color-primary);
 }
 
-.textField>input:focus {
-    border-color: var(--ff-color-primary);
+.textField > input:focus {
+	border-color: var(--ff-color-primary);
 }
 
-.textField>input::-webkit-input-placeholder {
-    color: transparent;
+.textField > input::-webkit-input-placeholder {
+	color: transparent;
 }
 
-.textField>input:not(:placeholder-shown):not(:focus):invalid {
-    border-color: var(--ff-color-danger);
+.textField > input:not(:placeholder-shown):not(:focus):invalid {
+	border-color: var(--ff-color-danger);
 }
 
-.textField>input:disabled,
-.textField>input:disabled~label {
-    color: var(--ff-color-on-disabled);
-    cursor: not-allowed;
-    border-color: var(--ff-color-border);
+.textField > input:disabled,
+.textField > input:disabled ~ label {
+	color: var(--ff-color-on-disabled);
+	cursor: not-allowed;
+	border-color: var(--ff-color-border);
 }
 
 .textField fieldset {
-    text-align: left;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    top: -5px;
-    left: 0;
-    margin: 0;
-    padding: 0 8px;
-    pointer-events: none;
-    overflow: hidden;
-    min-width: 0%;
+	text-align: left;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	top: -5px;
+	left: 0;
+	margin: 0;
+	padding: 0 8px;
+	pointer-events: none;
+	overflow: hidden;
+	min-width: 0%;
 }
 
 .textField fieldset legend {
-    float: unset;
-    width: auto;
-    overflow: hidden;
-    display: block;
-    padding: 0;
-    height: 13px;
-    font-size: 0.75em;
-    visibility: hidden;
-    max-width: 0.01px;
-    -webkit-transition: max-width 50ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-    transition: max-width 50ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-    white-space: nowrap;
-    color: var(--ff-color-primary);
+	float: unset;
+	width: auto;
+	overflow: hidden;
+	display: block;
+	padding: 0;
+	height: 13px;
+	font-size: 0.75em;
+	visibility: hidden;
+	max-width: 0.01px;
+	-webkit-transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+	transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+	white-space: nowrap;
+	color: var(--ff-color-primary);
 }
 
 .textField fieldset legend span {
-    padding-left: 5px;
-    padding-right: 5px;
-    display: inline-block;
-    opacity: 0;
-    visibility: visible;
-    transition: opacity 0.3s ease-in-out;
+	padding-left: 5px;
+	padding-right: 5px;
+	display: inline-block;
+	opacity: 0;
+	visibility: visible;
+	transition: opacity 0.3s ease-in-out;
 }
 
-.textField>input:focus~label,
-.textField>input:not(:placeholder-shown):not(:focus)~label {
-    top: -5px;
-    opacity: 0;
+.textField > input:focus ~ label,
+.textField > input:not(:placeholder-shown):not(:focus) ~ label {
+	top: -5px;
+	opacity: 0;
 }
 
-.textField>input:focus~fieldset legend span,
-.textField>input:not(:placeholder-shown)~fieldset legend span {
-    opacity: 1;
+.textField > input:focus ~ fieldset legend span,
+.textField > input:not(:placeholder-shown) ~ fieldset legend span {
+	opacity: 1;
 }
 
-.textField:not(.labelEmpty)>input:focus~fieldset legend,
-.textField:not(.labelEmpty)>input:not(:placeholder-shown)~fieldset legend {
-    max-width: 100%;
-    visibility: visible;
+.textField:not(.labelEmpty) > input:focus ~ fieldset legend,
+.textField:not(.labelEmpty) > input:not(:placeholder-shown) ~ fieldset legend {
+	max-width: 100%;
+	visibility: visible;
 }
 
-.textField>input:-webkit-autofill,
-.textField>input:-webkit-autofill:focus {
-    transition:
-        background-color 600000s 0s,
-        color 600000s 0s;
+.textField > input:-webkit-autofill,
+.textField > input:-webkit-autofill:focus {
+	transition:
+		background-color 600000s 0s,
+		color 600000s 0s;
 }
 
-.textField>input[data-autocompleted] {
-    background-color: transparent !important;
+.textField > input[data-autocompleted] {
+	background-color: transparent !important;
 }
 
 /* outlined */
 
-.textField.outlined>input {
-    background: transparent;
+.textField.outlined > input {
+	background: transparent;
 }
 
-.textField.outlined>input:focus {
-    border-color: var(--ff-color-primary);
+.textField.outlined > input:focus {
+	border-color: var(--ff-color-primary);
 }
 
 .textField.outlined fieldset {
-    border-radius: inherit;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--ff-color-border);
-    border-radius: 5px;
+	border-radius: inherit;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--ff-color-border);
+	border-radius: 5px;
 }
 
-.textField.outlined>input:focus~fieldset,
-.textField.outlined>input:not(:placeholder-shown)~fieldset {
-    border-color: var(--ff-color-primary);
-    border-width: 2px;
+.textField.outlined > input:focus ~ fieldset,
+.textField.outlined > input:not(:placeholder-shown) ~ fieldset {
+	border-color: var(--ff-color-primary);
+	border-width: 2px;
 }
 
-.textField.outlined:not(.labelEmpty)>input:focus~fieldset legend,
-.textField.outlined:not(.labelEmpty)>input:not(:placeholder-shown)~fieldset legend {
-    padding: 5px 0;
+.textField.outlined:not(.labelEmpty) > input:focus ~ fieldset legend,
+.textField.outlined:not(.labelEmpty)
+	> input:not(:placeholder-shown)
+	~ fieldset
+	legend {
+	padding: 5px 0;
 }
 
 /* contained */
 
-.textField.contained>input {
-    background: color-mix(in srgb, var(--ff-color-surface) 90%, gray 5%);
-    border: none;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+.textField.contained > input {
+	background: color-mix(in srgb, var(--ff-color-surface) 90%, gray 5%);
+	border: none;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 /* text */
 
-.textField.text>input {
-    border: none;
-    background: none;
+.textField.text > input {
+	border: none;
+	background: none;
 }
 
 /* contained & text */
 
-.textField.text>input,
-.textField.contained>input {
-    padding: 1.1rem 0.5rem 0 0.6rem;
+.textField.text > input,
+.textField.contained > input {
+	padding: 1.1rem 0.5rem 0 0.6rem;
 }
 
 .textField.contained::before,
 .textField.text::before {
-    border-bottom: 1px solid var(--ff-color-border);
-    left: 0px;
-    bottom: 0px;
-    content: " ";
-    position: absolute;
-    right: 0px;
-    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    pointer-events: none;
+	border-bottom: 1px solid var(--ff-color-border);
+	left: 0px;
+	bottom: 0px;
+	content: " ";
+	position: absolute;
+	right: 0px;
+	transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	pointer-events: none;
 }
 
 .textField.contained::after,
 .textField.text::after {
-    border-bottom: 2px solid var(--ff-color-primary);
-    left: 0px;
-    bottom: 0px;
-    content: "";
-    position: absolute;
-    right: 0px;
-    transform: scaleX(0);
-    transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-    pointer-events: none;
+	border-bottom: 2px solid var(--ff-color-primary);
+	left: 0px;
+	bottom: 0px;
+	content: "";
+	position: absolute;
+	right: 0px;
+	transform: scaleX(0);
+	transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+	pointer-events: none;
 }
 
 .textField.contained:focus-within::after,
 .textField.text:focus-within::after {
-    transform: scaleX(1);
+	transform: scaleX(1);
 }
 
-.textField.contained:not(.labelEmpty)>input:focus~fieldset legend,
-.textField.contained:not(.labelEmpty)>input:not(:placeholder-shown)~fieldset legend,
-.textField.text:not(.labelEmpty)>input:focus~fieldset legend,
-.textField.text:not(.labelEmpty)>input:not(:placeholder-shown)~fieldset legend {
-    padding: 1rem 0;
+.textField.contained:not(.labelEmpty) > input:focus ~ fieldset legend,
+.textField.contained:not(.labelEmpty)
+	> input:not(:placeholder-shown)
+	~ fieldset
+	legend,
+.textField.text:not(.labelEmpty) > input:focus ~ fieldset legend,
+.textField.text:not(.labelEmpty)
+	> input:not(:placeholder-shown)
+	~ fieldset
+	legend {
+	padding: 1rem 0;
 }

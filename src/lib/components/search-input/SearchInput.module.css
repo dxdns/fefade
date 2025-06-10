@@ -1,41 +1,42 @@
 .searchInput {
-    position: relative;
-    display: inline-block;
-    width: 100%;
+	position: relative;
+	display: inline-block;
+	width: 100%;
 }
 
 .icon {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    translate: 0 -50%;
-    z-index: 1;
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	translate: 0 -50%;
+	z-index: 1;
 }
 
-.inputGroup>input {
-    padding: 0 !important;
-    padding-inline-start: 3rem !important;
+.inputGroup > input {
+	padding: 0 !important;
+	padding-inline-start: 3rem !important;
 }
 
-.searchInput.contained .inputGroup>input::-webkit-input-placeholder {
-    color: color-mix(in srgb, var(--ff-color-on-surface) 30%, gray 70%);
+.searchInput.contained .inputGroup > input::-webkit-input-placeholder {
+	color: color-mix(in srgb, var(--ff-color-on-surface) 30%, gray 70%);
 }
 
-.inputGroup>input::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    height: 1em;
-    width: 1em;
-    border-radius: 50em;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ccircle cx='256' cy='256' r='248' fill='%23d1d1d1'/%3E%3Cpath fill='%23292929' d='M377.6 321.1c4.7 4.7 4.7 12.3 0 17l-39.6 39.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0l-39.6-39.6c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'/%3E%3C/svg%3E") no-repeat center center;
-    background-size: contain;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s;
-    cursor: pointer;
-    padding-left: 1rem;
+.inputGroup > input::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	height: 1em;
+	width: 1em;
+	border-radius: 50em;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ccircle cx='256' cy='256' r='248' fill='%23d1d1d1'/%3E%3Cpath fill='%23292929' d='M377.6 321.1c4.7 4.7 4.7 12.3 0 17l-39.6 39.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0l-39.6-39.6c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'/%3E%3C/svg%3E")
+		no-repeat center center;
+	background-size: contain;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.5s;
+	cursor: pointer;
+	padding-left: 1rem;
 }
 
-.inputGroup>input:focus::-webkit-search-cancel-button {
-    opacity: 0.5;
-    pointer-events: all;
+.inputGroup > input:focus::-webkit-search-cancel-button {
+	opacity: 0.5;
+	pointer-events: all;
 }

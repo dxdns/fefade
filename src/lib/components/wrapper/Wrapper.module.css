@@ -1,16 +1,16 @@
 .controller {
-    display: none;
+	display: none;
 }
 
 .container {
-    display: inline-block;
-    cursor: pointer;
+	display: inline-block;
+	cursor: pointer;
 }
 
-.container>* {
-    display: inline-block;
+.container > * {
+	display: inline-block;
 }
 
-.container>*:active {
-    pointer-events: none;
+.container > *:active {
+	pointer-events: none;
 }
