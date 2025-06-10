@@ -7,7 +7,7 @@
 	const theme = $derived(getThemeConfig())
 </script>
 
-<Toaster fullWidth />
+<Toaster />
 
 <Navbar
 	style="display: flex; align-items: center; justify-content: space-between;"

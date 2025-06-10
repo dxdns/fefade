@@ -1,5 +1,7 @@
 <div class="circle">
-	<img src="/favicon.png" alt="feflow" />
+	<a href="https://feflow.dxdns.dev" target="_blank">
+		<img src="/favicon.png" alt="feflow" />
+	</a>
 </div>
 
 <style>

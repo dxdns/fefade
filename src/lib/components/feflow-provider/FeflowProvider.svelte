@@ -42,6 +42,8 @@
 </script>
 
 <svelte:head>
+	<meta name="x-library-name" content="feflow" />
+
 	{@html `
 	<script>
 		(function () {

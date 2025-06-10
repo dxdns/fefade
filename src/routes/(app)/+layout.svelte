@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { customThemeConfig, ThemeProvider } from "@/lib/index.js"
+	import { customThemeConfig, FeflowProvider } from "@/lib/index.js"
 
 	let { children } = $props()
 
@@ -8,6 +8,6 @@
 	})
 </script>
 
-<ThemeProvider {customTheme} defaultMode="dark">
+<FeflowProvider {customTheme} defaultMode="dark">
 	{@render children()}
-</ThemeProvider>
+</FeflowProvider>

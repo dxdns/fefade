@@ -6,6 +6,7 @@
 	import { fade, fly } from "svelte/transition"
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
+	import styles from "./Toaster.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		fullWidth?: boolean
@@ -37,14 +38,17 @@
 {#each Object.entries(positionStyles) as [position, style] (position)}
 	<div
 		{...rest}
-		class={classMapUtil(className, "toaster", {
-			fullWidth,
-			top: position.includes("top"),
-			bottom: position.includes("bottom")
+		class={classMapUtil(className, [styles, className], styles.toaster, {
+			[styles.fullWidth]: fullWidth,
+			[styles.top]: position.includes("top"),
+			[styles.bottom]: position.includes("bottom")
 		})}
-		style={mergeStyleUtil(style, rest.style)}
+		{style}
 	>
-		{#each data.toasts.filter((t) => t.position === position) as toast (toast.id)}
+		{#each data.toasts
+			.filter((t) => t.position === position)
+			.slice(-3)
+			.reverse() as toast, i (toast.id)}
 			<span
 				animate:flip={{ duration: 200 }}
 				in:fly={flyConfigs[position as PositionType] ?? { x: 0, y: 0 }}
@@ -52,37 +56,19 @@
 			>
 				<Toast
 					{...toast}
-					style={fullWidth
-						? "border: none; border-radius: 0; transform: none;"
-						: ""}
+					class={styles.toast}
+					style={mergeStyleUtil(
+						fullWidth
+							? ""
+							: `
+								transform: translateY(${i * -30}px) scale(${1 - i * 0.03});
+								z-index: ${999 - i};
+								opacity: ${1 - i * 0.1};
+							`,
+						rest.style
+					)}
 				/>
 			</span>
 		{/each}
 	</div>
 {/each}
-
-<style>
-	.toaster {
-		position: fixed;
-		z-index: 1000;
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		pointer-events: none;
-	}
-
-	.toaster.fullWidth {
-		left: 0 !important;
-		right: 0 !important;
-		width: 100% !important;
-		transform: none !important;
-	}
-
-	.toaster.fullWidth.top {
-		top: 0 !important;
-	}
-
-	.toaster.fullWidth.bottom {
-		bottom: 0 !important;
-	}
-</style>

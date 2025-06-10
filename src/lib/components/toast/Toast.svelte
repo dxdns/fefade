@@ -29,7 +29,9 @@
 
 <div
 	{...rest}
-	class={classMapUtil(className, "toast", `bg-${color}`, `text-on-${color}`)}
+	class={classMapUtil(className, "toast", `bg-${color}`, `text-on-${color}`, {
+		["noBorder"]: color === "primary"
+	})}
 >
 	{#if Icon}
 		<Icon fill="var(--ff-color-on-{color})" height="20px" width="20px" />
@@ -39,6 +41,7 @@
 
 <style>
 	.toast {
+		user-select: none;
 		position: relative;
 		padding: 0.5rem 1.25rem;
 		border-radius: 0.5rem;
@@ -53,12 +56,11 @@
 		gap: 0.5rem;
 		border-left: 4px solid currentColor;
 		animation: fadeInUp 0.5s ease-out;
-		transition: transform 0.3s ease-out;
 		pointer-events: all;
 	}
 
-	.toast:hover {
-		transform: scale(1.01);
+	.noBorder {
+		border-left: 0;
 	}
 
 	@keyframes fadeInUp {
