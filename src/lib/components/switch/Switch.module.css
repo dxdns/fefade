@@ -3,6 +3,7 @@
 	align-items: center;
 	gap: 0.5rem;
 	flex-shrink: 0;
+	user-select: none;
 }
 
 .content {
@@ -54,13 +55,28 @@
 	background: color-mix(in srgb, var(--ff-color-surface) 90%, gray 10%);
 	transition: 0.1s;
 	border-radius: 30px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	overflow: hidden;
+}
+
+.slider>*:first-child {
+	visibility: hidden;
+}
+
+.slider svg path,
+.slider svg circle {
+	fill: var(--ff-color-on-surface);
+	color: var(--ff-color-on-surface);
 }
 
 .slider::before {
 	position: absolute;
 	content: "";
 	border-radius: 20px;
-	background: var(--ff-color-on-surface);
+	background: var(--indicator-color-unchecked);
 	transition: 0.1s;
 }
 
@@ -129,9 +145,22 @@ input:disabled+.slider {
 }
 
 input:checked+.slider::before {
-	background: var(--ff-color-on-primary);
+	background: var(--indicator-color-checked);
 }
 
 input:checked+.slider {
 	background: var(--ff-color-on-surface);
+	color: var(--ff-color-on-primary);
+}
+
+input:checked+.slider svg path {
+	fill: var(--ff-color-on-primary);
+}
+
+input:checked+.slider>*:first-child {
+	visibility: visible;
+}
+
+input:checked+.slider>*:last-child {
+	visibility: hidden;
 }

@@ -3,7 +3,11 @@
 	import { activeLineAction } from "../../actions/index.js"
 	import HoverFollower from "../hover-follower/index.js"
 	import type { ActionType, OrientationType } from "../../types/index.js"
-	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
+	import {
+		classMapUtil,
+		getPropValueUtil,
+		mergeStyleUtil
+	} from "../../utils/index.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		lineStyle?: boolean | { color?: string; height?: string }
@@ -22,28 +26,17 @@
 		...rest
 	}: Props = $props()
 
-	function getValue<T extends object, K extends keyof T>(
-		obj: unknown,
-		key: K,
-		fallback: T[K]
-	): T[K] {
-		if (obj && typeof obj === "object" && key in obj) {
-			return (obj as T)[key] ?? fallback
-		}
-		return fallback
-	}
-
-	const lineColor = getValue<{ color?: string }, "color">(
+	const lineColor = getPropValueUtil<{ color?: string }, "color">(
 		lineStyle,
 		"color",
 		"var(--ff-color-on-surface)"
 	)
-	const lineHeight = getValue<{ height?: string }, "height">(
+	const lineHeight = getPropValueUtil<{ height?: string }, "height">(
 		lineStyle,
 		"height",
 		"2px"
 	)
-	const bgColor = getValue<{ bgColor?: string }, "bgColor">(
+	const bgColor = getPropValueUtil<{ bgColor?: string }, "bgColor">(
 		hoverFollower,
 		"bgColor",
 		undefined

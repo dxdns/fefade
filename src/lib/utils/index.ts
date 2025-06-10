@@ -5,6 +5,7 @@ import themeModeUtil from "./themeModeUtil.js"
 import themeConfigUtil from "./themeConfigUtil.js"
 import mergeObjectUtil from "./mergeObjectUtil.js"
 import mergeStyleUtil from "./mergeStyleUtil.js"
+import getPropValueUtil from "./getPropValueUtil.js"
 
 export {
 	classMapUtil,
@@ -13,5 +14,6 @@ export {
 	transitionUtil,
 	themeConfigUtil,
 	mergeObjectUtil,
-	mergeStyleUtil
+	mergeStyleUtil,
+	getPropValueUtil
 }

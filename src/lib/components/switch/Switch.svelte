@@ -4,13 +4,42 @@
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import type { Snippet } from "svelte"
+	import { mergeStyleUtil, getPropValueUtil } from "../../utils/index.js"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "size">, "type"> {
 		size?: SizeType
 		label?: string | Snippet<[]>
+		indicatorColor?:
+			| boolean
+			| {
+					unchecked?: string
+					checked?: string
+			  }
 	}
 
-	let { class: className = "", size = "sm", label, ...rest }: Props = $props()
+	let {
+		class: className = "",
+		size = "sm",
+		label,
+		indicatorColor = {
+			unchecked: "var(--ff-color-on-surface)",
+			checked: "var(--ff-color-on-primary)"
+		},
+		children,
+		...rest
+	}: Props = $props()
+
+	const uncheckedColor = getPropValueUtil<{ unchecked?: string }, "unchecked">(
+		indicatorColor,
+		"unchecked",
+		"var(--ff-color-on-surface)"
+	)
+
+	const checkedColor = getPropValueUtil<{ checked?: string }, "checked">(
+		indicatorColor,
+		"checked",
+		"var(--ff-color-on-primary)"
+	)
 </script>
 
 <div class={styles.switch}>
@@ -22,8 +51,17 @@
 			styles.content
 		)}
 	>
-		<input {...rest} type="checkbox" hidden />
-		<span class={styles.slider}></span>
+		<input {...rest} style={undefined} type="checkbox" hidden />
+		<span
+			class={styles.slider}
+			style={mergeStyleUtil(
+				`--indicator-color-unchecked: ${uncheckedColor};`,
+				`--indicator-color-checked: ${checkedColor};`,
+				rest.style
+			)}
+		>
+			{@render children?.()}
+		</span>
 	</label>
 	{#if typeof label === "string"}
 		{label}
