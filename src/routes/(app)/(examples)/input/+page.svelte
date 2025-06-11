@@ -69,4 +69,16 @@
 	{#each filesData as file}
 		<p>{file.name}</p>
 	{/each}
+
+	<h1>sizes</h1>
+	<br />
+	{#each ["xs", "sm", "md", "lg", "xl"] as size, i}
+		<TextField
+			label={size}
+			variant={i % 2 ? "contained" : "outlined"}
+			size={size as any}
+		/>
+		<br />
+		<br />
+	{/each}
 </div>
