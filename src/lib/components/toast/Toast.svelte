@@ -55,22 +55,10 @@
 		align-items: center;
 		gap: 0.5rem;
 		border-left: 4px solid currentColor;
-		animation: fadeInUp 0.5s ease-out;
 		pointer-events: all;
 	}
 
 	.noBorder {
 		border-left: 0;
-	}
-
-	@keyframes fadeInUp {
-		0% {
-			opacity: 0;
-			transform: translateY(20px);
-		}
-		100% {
-			opacity: 1;
-			transform: translateY(0);
-		}
 	}
 </style>

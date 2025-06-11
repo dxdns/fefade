@@ -9,8 +9,11 @@
 	let { class: className = "", children, ...rest }: Props = $props()
 </script>
 
-<div class={classMapUtil(className, [className, styles], styles.select)}>
-	<select {...rest}>
+<div
+	class={classMapUtil(className, [className, styles], styles.select)}
+	style={rest.style}
+>
+	<select {...rest} style={undefined}>
 		{@render children?.()}
 	</select>
 	<KeyboardArrowDownIcon class={styles.icon} height="24px" width="24px" />

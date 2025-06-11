@@ -7,11 +7,6 @@
 	pointer-events: none;
 }
 
-.toast {
-	transition: transform 1s ease-out;
-	will-change: transform, opacity;
-}
-
 .toaster:hover .toast {
 	transform: translateY(0) scale(1) !important;
 	opacity: 1 !important;
