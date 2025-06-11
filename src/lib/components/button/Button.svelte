@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from "svelte/elements"
 	import classMapUtil from "../../utils/classMapUtil.js"
-	import type { ColorType, VariantType } from "../../types/index.js"
+	import type { ColorType, SizeType, VariantType } from "../../types/index.js"
 	import Spinner from "../spinner/index.js"
 	import styles from "./Button.module.css"
 
@@ -11,6 +11,7 @@
 		bgColor?: ColorType
 		isLoading?: boolean
 		roundedFull?: boolean
+		size?: SizeType
 	}
 
 	let {
@@ -20,6 +21,7 @@
 		bgColor = "primary",
 		isLoading,
 		roundedFull,
+		size = "sm",
 		children,
 		...rest
 	}: Props = $props()
@@ -31,6 +33,7 @@
 		className,
 		[className, styles],
 		[variant, styles],
+		[size, styles],
 		styles.button,
 		[`bg-${bgColor}`],
 		{ [styles.roundedFull]: roundedFull, [styles.pressedEffect]: pressedEffect }
