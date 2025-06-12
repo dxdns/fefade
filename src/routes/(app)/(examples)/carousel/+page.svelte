@@ -27,7 +27,7 @@
 		/>
 	</Carousel.Item>
 
-	{#snippet actionRender({ prev, next, isFirst, isLast })}
+	{#snippet actions({ prev, next, isFirst, isLast })}
 		<div
 			style="
 			display: flex;
@@ -69,7 +69,7 @@
 		</Carousel.Item>
 	{/each}
 
-	{#snippet actionRender({ prev, next })}
+	{#snippet actions({ prev, next })}
 		<div
 			style="
 				display: flex;
@@ -108,7 +108,7 @@
 		</Carousel.Item>
 	{/each}
 
-	{#snippet actionRender({ prev, next })}
+	{#snippet actions({ prev, next })}
 		<div
 			style="
 				display: flex;

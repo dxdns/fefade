@@ -8,7 +8,7 @@
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		auto?: boolean
 		delay?: number
-		actionRender?: Snippet<
+		actions?: Snippet<
 			[
 				{
 					prev: () => void
@@ -25,7 +25,7 @@
 		class: className = "",
 		auto,
 		delay = 3000,
-		actionRender,
+		actions,
 		children,
 		...rest
 	}: Props = $props()
@@ -96,5 +96,5 @@
 	>
 		{@render children?.()}
 	</div>
-	{@render actionRender?.({ prev, next, isFirst, isLast, goTo })}
+	{@render actions?.({ prev, next, isFirst, isLast, goTo })}
 </div>
