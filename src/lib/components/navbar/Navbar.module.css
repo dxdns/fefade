@@ -3,11 +3,25 @@
 	width: 100%;
 	box-sizing: border-box;
 	padding: 0 clamp(0.5rem, 2vw, 1rem);
-	background: var(--ff-color-surface);
 	color: var(--ff-color-on-surface);
 	height: 80px;
 	line-height: 80px;
 	user-select: none;
+}
+
+.navbar.contained {
+	background: var(--ff-color-surface);
+}
+
+.navbar.outlined {
+	background: none;
+	border: 1px solid var(--ff-color-border);
+	border-radius: 15px;
+}
+
+.navbar.text {
+	border: none;
+	background: none;
 }
 
 .navbar.isTranslucent {

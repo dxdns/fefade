@@ -3,18 +3,19 @@
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import styles from "./Navbar.module.css"
 	import { fadeOnScrollAction } from "../../actions/index.js"
+	import type { VariantType } from "../../types/index.js"
 
-	type PositionedChilds = Partial<{
+	interface Props extends HTMLAttributes<HTMLDivElement> {
 		isTranslucent?: boolean
-		fadeOnScroll: boolean
-	}>
-
-	interface Props extends HTMLAttributes<HTMLDivElement>, PositionedChilds {}
+		fadeOnScroll?: boolean
+		variant?: VariantType
+	}
 
 	let {
 		class: className = "",
 		isTranslucent = false,
 		fadeOnScroll = false,
+		variant = "contained",
 		children,
 		...rest
 	}: Props = $props()
@@ -24,12 +25,17 @@
 
 <div
 	{...rest}
-	id="navbar"
 	data-fade-on-scroll={fadeOnScroll}
-	class={classMapUtil(className, [className, styles], styles.navbar, {
-		[styles.isTranslucent]: isTranslucent,
-		[styles.show]: isOpen
-	})}
+	class={classMapUtil(
+		className,
+		[className, styles],
+		[variant, styles],
+		styles.navbar,
+		{
+			[styles.isTranslucent]: isTranslucent,
+			[styles.show]: isOpen
+		}
+	)}
 	use:fadeOnScrollAction
 >
 	{@render children?.()}
