@@ -17,6 +17,8 @@ type ThemeColorsType = {
 	colorOnDisabled: string
 	colorFocus: string
 	colorOnFocus: string
+	colorSkeleton: string
+	colorOnSkeleton: string
 }
 
 export type ThemeConfigType = {

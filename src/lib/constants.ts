@@ -32,7 +32,9 @@ export const themeConfigDefault: ThemeConfigType = {
 			colorDisabled: "#d1d5db",
 			colorOnDisabled: "#6b7280",
 			colorFocus: "#a7dffc80",
-			colorOnFocus: "#003344"
+			colorOnFocus: "#003344",
+			colorSkeleton: "lightgray",
+			colorOnSkeleton: "#eee"
 		},
 		dark: {
 			colorPrimary: "#fafafa",
@@ -50,7 +52,9 @@ export const themeConfigDefault: ThemeConfigType = {
 			colorDisabled: "#ffffff1f",
 			colorOnDisabled: "#ffffff4d",
 			colorFocus: "#a7dffcb3",
-			colorOnFocus: "#a7dffc"
+			colorOnFocus: "#a7dffc",
+			colorSkeleton: "#40404080",
+			colorOnSkeleton: "#404040"
 		}
 	}
 }
