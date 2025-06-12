@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { HTMLAttributes } from "svelte/elements"
+	import type { HTMLButtonAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
 	import { StarIcon } from "../../icons/index.js"
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
+	interface Props extends HTMLButtonAttributes {
 		startIn?: number
 		length?: number
 		color?: string
@@ -12,6 +12,7 @@
 	}
 
 	let {
+		class: className,
 		startIn = 0,
 		length = 5,
 		color = "yellow",
@@ -40,6 +41,7 @@
 	{#each Array.from(Array(length)) as _, i}
 		{@const idx = i + 1}
 		<button
+			{...rest}
 			style="all: unset; cursor: pointer;"
 			onmouseenter={() => (hoverIndex = idx)}
 			onmouseleave={() => (hoverIndex = 0)}
@@ -49,7 +51,6 @@
 		>
 			<div
 				class={classMapUtil("icon", { active: idx <= (hoverIndex || index) })}
-				style="--color: {color};"
 			>
 				{#if children}
 					{@render children?.()}
