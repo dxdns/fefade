@@ -15,6 +15,7 @@
 					next: () => void
 					isFirst: boolean
 					isLast: boolean
+					goTo: (n: number) => void
 				}
 			]
 		>
@@ -64,6 +65,11 @@
 		}
 	}
 
+	function goTo(n: number) {
+		if (!_scrollNavigatorAction?.controls) return
+		_scrollNavigatorAction.controls.goTo(n)
+	}
+
 	onMount(() => {
 		if (auto) {
 			interval = setInterval(() => {
@@ -90,5 +96,5 @@
 	>
 		{@render children?.()}
 	</div>
-	{@render actionRender?.({ prev, next, isFirst, isLast })}
+	{@render actionRender?.({ prev, next, isFirst, isLast, goTo })}
 </div>
