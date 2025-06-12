@@ -48,5 +48,6 @@
 			files = []
 			input.value = ""
 		}}
+		style={undefined}
 	/>
 </div>

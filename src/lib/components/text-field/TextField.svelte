@@ -52,6 +52,7 @@
 		bind:this={el}
 		placeholder={rest.placeholder ?? " "}
 		use:actionUtil={actions}
+		style={undefined}
 	/>
 
 	{#if label}

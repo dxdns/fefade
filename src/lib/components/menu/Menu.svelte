@@ -51,6 +51,7 @@
 		type="checkbox"
 		id={rest.id ?? "checkbox"}
 		hidden
+		style={undefined}
 	/>
 	<label class="container" for={rest.id ?? "checkbox"}>
 		<span class="anchor">

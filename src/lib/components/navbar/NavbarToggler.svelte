@@ -31,6 +31,7 @@
 		type="checkbox"
 		name={rest.id ?? "toggler"}
 		id={rest.id ?? "toggler"}
+		style={undefined}
 	/>
 	<label class={styles.container} for={rest.id ?? "toggler"}>
 		<MenuIcon class={styles.menuIcon} />
