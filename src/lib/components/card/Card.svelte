@@ -3,14 +3,17 @@
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import styles from "./Card.module.css"
 	import { glowOnHoverAction } from "../../actions/index.js"
+	import type { VariantType } from "@/lib/types/variant.types.js"
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
+	interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
 		glowOnHover?: boolean
+		variant?: Exclude<VariantType, "text">
 	}
 
 	let {
 		class: className = "",
 		glowOnHover = false,
+		variant = "outlined",
 		children,
 		...rest
 	}: Props = $props()
@@ -19,7 +22,12 @@
 {#snippet content()}
 	<div
 		{...rest}
-		class={classMapUtil(className, [className, styles], styles.card)}
+		class={classMapUtil(
+			className,
+			[className, styles],
+			[variant, styles],
+			styles.card
+		)}
 	>
 		{@render children?.()}
 	</div>

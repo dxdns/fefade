@@ -8,5 +8,14 @@
 	transition: all 300ms ease;
 	margin-bottom: 1rem;
 	text-align: left;
+}
+
+.card.contained {
+	color: var(--ff-color-on-surface);
+	background: var(--ff-color-surface);
+}
+
+.card.outlined {
+	background: none;
 	border: 1px solid var(--ff-color-border);
 }

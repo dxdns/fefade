@@ -1,5 +1,11 @@
 <script lang="ts">
-	import { Menu, Navbar, Separator, Window } from "@/lib/index.js"
+	import {
+		HoverFollower,
+		Menu,
+		Navbar,
+		Separator,
+		Window
+	} from "@/lib/index.js"
 
 	let isOpen = $state(false)
 </script>
@@ -22,17 +28,23 @@
 
 		<div style="flex:1;"></div>
 
-		<div class={`menu ${isOpen ? "show" : ""}`}>
+		<HoverFollower
+			orientation="horizontal"
+			bgColor="red"
+			class={`menu ${isOpen ? "show" : ""}`}
+		>
 			<Navbar.Item
 				aria-current="page"
-				style={isOpen ? "width: 100%; border-radius: 0;" : ""}
 			>
 				active
 			</Navbar.Item>
-			<Navbar.Item style={isOpen ? "width: 100%; border-radius: 0;" : ""}>
-				test
+			<Navbar.Item>
+				test1
 			</Navbar.Item>
-		</div>
+			<Navbar.Item>
+				test2
+			</Navbar.Item>
+		</HoverFollower>
 
 		<Menu id="menu-navFree">
 			{#snippet anchor()}
@@ -82,37 +94,3 @@
 	</Navbar>
 	{@render contentMain?.("navSticky")}
 </Window>
-
-<style>
-	.menu {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-	}
-
-	@media screen and (max-width: 768px) {
-		.menu {
-			opacity: 0;
-			max-height: 0px;
-			overflow: hidden;
-			flex-direction: column;
-			position: absolute;
-			right: 0;
-			background: rgba(0, 0, 0, 0.712);
-			backdrop-filter: blur(15px);
-			top: 35%;
-			transform: translate(0, 35%);
-			transition:
-				max-height 0.3s ease,
-				opacity 0.3s ease;
-			gap: 0;
-			border-radius: 15px;
-		}
-
-		.menu.show {
-			max-height: 300px;
-			opacity: 1;
-			overflow: auto;
-		}
-	}
-</style>

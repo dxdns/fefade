@@ -25,9 +25,9 @@
 	</Card>
 </HoverFollower>
 
-<HoverFollower style="display: flex; gap: 3rem;" orientation="horizontal">
+<HoverFollower style="gap: 3rem;" orientation="horizontal" bgColor="green">
 	{#each Array.from(Array(5)) as _, i}
-		<Card>
+		<Card variant={i % 2 ? "contained" : "outlined"}>
 			<div>
 				<h4>test {i}</h4>
 				<p>test {i}</p>

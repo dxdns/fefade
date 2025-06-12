@@ -1,11 +1,23 @@
 import type { OrientationType } from "../types/index.js"
 
-export default function hoverFollowerAction(
-	node: HTMLElement,
+type Props = {
 	orientation?: OrientationType
-) {
+}
+
+export default function hoverFollowerAction(node: HTMLElement, props?: Props) {
+	const { orientation } = props ?? {}
+
 	const childs = Array.from(node.children)
 	let overlay = childs[0] as HTMLDivElement
+
+	overlay.style.position = "absolute"
+	overlay.style.top = "0"
+	overlay.style.left = "0"
+	overlay.style.width = "100%"
+	overlay.style.borderRadius = "8px"
+	overlay.style.opacity = "0"
+	overlay.style.zIndex = "1"
+	overlay.style.pointerEvents = "none"
 
 	if (orientation === "vertical") {
 		overlay.style.transition =
@@ -13,6 +25,15 @@ export default function hoverFollowerAction(
 	} else {
 		overlay.style.transition =
 			"transform 0.3s ease, width 0.3s ease, height 0.3s ease, opacity 0.2s ease"
+	}
+
+	function getTransparentColor(s: string, alpha = 0.2) {
+		const parts = s.match(/\d+/g)
+		if (parts && parts.length >= 3) {
+			const [r, g, b] = parts.map(Number)
+			return `rgba(${r}, ${g}, ${b}, ${alpha})`
+		}
+		return `rgba(0, 0, 0, ${alpha})`
 	}
 
 	function handleEnter(el: HTMLElement) {
@@ -43,44 +64,50 @@ export default function hoverFollowerAction(
 	const enterListeners = new Map<HTMLElement, (event: MouseEvent) => void>()
 	const leaveListeners = new Map<HTMLElement, (event: MouseEvent) => void>()
 
-	function handleAdd(element: HTMLElement) {
-		element.style.position = "relative"
-		element.style.background = "transparent"
+	function handleAdd(el: HTMLElement) {
+		el.style.position = "relative"
+
+		const hasBgOverlay = overlay.style.background !== ""
+		const bgColor = hasBgOverlay
+			? getComputedStyle(overlay).background
+			: getComputedStyle(el).background
+
+		overlay.style.backgroundColor = getTransparentColor(bgColor, 0.2)
 
 		const enterListener = (event: MouseEvent) => {
-			if (event.target === element) {
-				handleEnter(element)
+			if (event.target === el) {
+				handleEnter(el)
 			}
 		}
 
 		const leaveListener = (event: MouseEvent) => {
-			if (event.target === element) {
+			if (event.target === el) {
 				handleLeave()
 			}
 		}
 
-		enterListeners.set(element, enterListener)
-		leaveListeners.set(element, leaveListener)
+		enterListeners.set(el, enterListener)
+		leaveListeners.set(el, leaveListener)
 
-		element.addEventListener("mouseenter", enterListener)
-		element.addEventListener("mouseleave", leaveListener)
+		el.addEventListener("mouseenter", enterListener)
+		el.addEventListener("mouseleave", leaveListener)
 	}
 
-	function handleRemove(element: HTMLElement) {
-		element.style.position = ""
-		element.style.background = ""
+	function handleRemove(el: HTMLElement) {
+		el.style.position = ""
+		el.style.background = ""
 
-		const enterListener = enterListeners.get(element)
-		const leaveListener = leaveListeners.get(element)
+		const enterListener = enterListeners.get(el)
+		const leaveListener = leaveListeners.get(el)
 
 		if (enterListener) {
-			element.removeEventListener("mouseenter", enterListener)
-			enterListeners.delete(element)
+			el.removeEventListener("mouseenter", enterListener)
+			enterListeners.delete(el)
 		}
 
 		if (leaveListener) {
-			element.removeEventListener("mouseleave", leaveListener)
-			leaveListeners.delete(element)
+			el.removeEventListener("mouseleave", leaveListener)
+			leaveListeners.delete(el)
 		}
 	}
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import classMapUtil from "@/lib/utils/classMapUtil.js"
+	import { classMapUtil } from "../../utils/index.js"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
