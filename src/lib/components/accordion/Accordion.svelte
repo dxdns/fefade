@@ -19,7 +19,15 @@
 </script>
 
 <div class={classMapUtil(className, "accordion", variant)}>
-	<input type="radio" id={rest.id} name="accordion" {...rest} />
+	<input
+		{...rest}
+		class="controller"
+		type="radio"
+		id={rest.id}
+		name="accordion"
+		hidden
+		style={undefined}
+	/>
 	<label for={rest.id} class="header">
 		<label for={rest.id}>{label}</label>
 		<div class="icon">
@@ -56,7 +64,7 @@
 		border-radius: 5px;
 	}
 
-	.accordion input[type="radio"] {
+	.controller {
 		display: none;
 	}
 
@@ -85,7 +93,7 @@
 		border-top: 1px solid var(--ff-color-border);
 	}
 
-	.accordion input[type="radio"]:checked + .header + .content {
+	.controller:checked + .header + .content {
 		height: auto;
 		padding: 15px;
 		opacity: 1;
@@ -98,7 +106,7 @@
 		transform: rotate(-90deg);
 	}
 
-	.accordion input[type="radio"]:checked + .header .icon {
+	.controller:checked + .header .icon {
 		transform: rotate(90deg);
 	}
 </style>
