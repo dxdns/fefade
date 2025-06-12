@@ -4,7 +4,11 @@
 
 <div style="width: 500px; margin: 3rem auto;">
 	{#each Array.from(Array(10)) as _, i}
-		<Accordion id="sec{i}" variant="contained" label="test {i}">
+		<Accordion
+			id="sec{i}"
+			variant={i % 2 ? "contained" : "outlined"}
+			label="test {i}"
+		>
 			<div style="line-height: 1.5;">
 				<h1>test {i}</h1>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste recusandae

@@ -60,15 +60,25 @@
 		display: none;
 	}
 
-	.accordion .content {
+	.content {
 		height: 0px;
 		padding: 0px;
 		overflow: hidden;
 		transition: all 0.3s ease;
 		opacity: 0;
-		background: var(--ff-color-surface);
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
+	}
+
+	.accordion.contained .content {
+		background: var(--ff-color-surface);
+	}
+
+	.accordion.outlined .content {
+		background: none;
+		border-style: solid;
+		border: 1px solid var(--ff-color-border);
+		border-top: none;
 	}
 
 	.accordion:not(.outlined) .content {
