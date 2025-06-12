@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import styles from "./Gallery.module.css"
-	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
+	import {
+		classMapUtil,
+		mergeStyleUtil,
+		normalizeSizeUtil
+	} from "../../utils/index.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		variant?: "default" | "masonry"
@@ -21,10 +25,6 @@
 		children,
 		...rest
 	}: Props = $props()
-
-	function convertSize(s: number | string) {
-		return typeof s === "number" ? `${s}px` : s
-	}
 </script>
 
 <div
@@ -32,9 +32,9 @@
 	class={classMapUtil(className, styles.gallery, [variant, styles])}
 	style={mergeStyleUtil(
 		`--columns: ${columns}; 
-		--gap: ${convertSize(gap)};
-		--min-width: ${convertSize(minWidth)};
-		--max-width: ${convertSize(maxWidth)};`,
+		--gap: ${normalizeSizeUtil(gap)};
+		--min-width: ${normalizeSizeUtil(minWidth)};
+		--max-width: ${normalizeSizeUtil(maxWidth)};`,
 		rest.style
 	)}
 >

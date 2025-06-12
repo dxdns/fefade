@@ -6,6 +6,7 @@ import themeConfigUtil from "./themeConfigUtil.js"
 import mergeObjectUtil from "./mergeObjectUtil.js"
 import mergeStyleUtil from "./mergeStyleUtil.js"
 import getPropValueUtil from "./getPropValueUtil.js"
+import normalizeSizeUtil from "./normalizeSizeUtil.js"
 
 export {
 	classMapUtil,
@@ -15,5 +16,6 @@ export {
 	themeConfigUtil,
 	mergeObjectUtil,
 	mergeStyleUtil,
-	getPropValueUtil
+	getPropValueUtil,
+	normalizeSizeUtil
 }

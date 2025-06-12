@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classMapUtil } from "../../utils/index.js"
+	import { classMapUtil, normalizeSizeUtil } from "../../utils/index.js"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -14,10 +14,6 @@
 		color = "var(--ff-color-bg)",
 		size = 30
 	}: Props = $props()
-
-	function convertSize(s: number | string) {
-		return typeof s === "number" ? `${s}px` : s
-	}
 </script>
 
 <div class="container">
@@ -26,7 +22,7 @@
 		style="
         --color: {color};
         --bg: whitesmoke;
-        --size: {convertSize(size)};
+        --size: {normalizeSizeUtil(size)};
         "
 	></div>
 </div>
