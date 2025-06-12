@@ -3,6 +3,11 @@
 </script>
 
 <div style="width: 500px; margin: 3rem auto;">
+	<h1>pulse</h1>
+	<br />
+	<Status variant="pulse" color="blue" />
+	<br />
+	<br />
 	<h1>ping</h1>
 	<br />
 	<Status variant="ping" color="red" />

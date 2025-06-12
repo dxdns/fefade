@@ -3,7 +3,7 @@
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		variant?: "none" | "ping" | "bounce"
+		variant?: "none" | "ping" | "bounce" | "pulse"
 		color?: string
 		size?: number | string
 	}
@@ -34,7 +34,6 @@
 <style>
 	:root {
 		--bounce-distance: 15%;
-		--animation-duration: 1.5s;
 	}
 
 	.container {
@@ -73,11 +72,15 @@
 		border-radius: 50%;
 		transform: translate(-50%, -50%) scale(1);
 		z-index: 0;
-		animation: pingEffect var(--animation-duration) ease-out infinite;
+		animation: pingEffect 1.5s ease-out infinite;
 	}
 
 	.bounce {
 		animation: bounceEffect 2s ease-in-out infinite;
+	}
+
+	.pulse {
+		animation: pulseEffect 2s infinite;
 	}
 
 	@keyframes bounceEffect {
@@ -111,6 +114,18 @@
 		100% {
 			transform: translate(-50%, -50%) scale(2.5);
 			opacity: 0;
+		}
+	}
+
+	@keyframes pulseEffect {
+		0% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.1);
+		}
+		100% {
+			transform: scale(1);
 		}
 	}
 </style>
