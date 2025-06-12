@@ -75,7 +75,7 @@
 	{#each ["xs", "sm", "md", "lg", "xl"] as size, i}
 		<TextField
 			label={size}
-			variant={i % 2 ? "contained" : "outlined"}
+			variant={i % 2 ? "contained" : "text"}
 			size={size as any}
 		/>
 		<br />

@@ -161,16 +161,6 @@
 
 /* contained */
 
-.textField.contained.sm>input {
-	padding: 9px 0.5rem 0px 0.6rem;
-	font-size: small;
-}
-
-.textField.contained.sm fieldset {
-	top: -10px;
-	font-size: small;
-}
-
 .textField.contained>input {
 	background: color-mix(in srgb, var(--ff-color-surface) 90%, gray 5%);
 	border: none;
@@ -186,6 +176,34 @@
 }
 
 /* contained & text */
+
+.textField.contained.xs fieldset,
+.textField.contained.sm fieldset,
+.textField.text.xs fieldset,
+.textField.text.sm fieldset {
+	top: -10px;
+}
+
+.textField.contained.xs>input,
+.textField.contained.sm>input,
+.textField.text.xs>input,
+.textField.text.sm>input {
+	padding: 9px 0.5rem 0px 0.6rem;
+}
+
+.textField.contained.xs fieldset,
+.textField.contained.xs>input,
+.textField.text.xs fieldset,
+.textField.text.xs>input {
+	font-size: x-small;
+}
+
+.textField.contained.sm fieldset,
+.textField.contained.sm>input,
+.textField.text.sm fieldset,
+.textField.text.sm>input {
+	font-size: small;
+}
 
 .textField.text>input,
 .textField.contained>input {
