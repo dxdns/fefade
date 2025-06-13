@@ -5,7 +5,7 @@
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com"
+		"access": "public"
 	},
 	"license": "MIT",
 	"homepage": "https://feflow.dxdns.dev",
