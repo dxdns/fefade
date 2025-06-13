@@ -79,13 +79,14 @@ Please see the [Contributing Guide](CONTRIBUTING.md) for information on contribu
 
 MIT — free for personal and commercial use.
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdxdns%2Ffeflow.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdxdns%2Ffeflow?ref=badge_large)
+<!-- [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdxdns%2Ffeflow.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdxdns%2Ffeflow?ref=badge_large) -->
 
 ## Documentation
 
 Coming soon in the [https://feflow.dxdns.dev/docs](https://feflow.dxdns.dev/docs).
 
-## Author
+## Credits
 
-Made with ♥ by @dxdns
-[Github](https://github.com/dxdns) • [LinkedIn](https://linkedin.com/in/dxdns)
+Made with ❤️ by [@dxdns](https://linkedin.com/in/dxdns)
+
+Inspired by the work of [MUI](https://mui.com) and [shadcn/ui](https://ui.shadcn.com)
