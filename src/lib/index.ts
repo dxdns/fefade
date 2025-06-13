@@ -1,3 +1,9 @@
+/**
+ *  @license MIT
+ *  feflow
+ *  https://feflow.dxdns.dev
+ */
+
 export { customThemeConfig, getThemeConfig } from "./utils/themeConfigUtil.js"
 export { toast } from "./states/toastState.svelte.js"
 export { getSections } from "./states/scrollSectionState.svelte.js"
