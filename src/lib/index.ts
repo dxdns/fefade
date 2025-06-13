@@ -44,6 +44,7 @@ export { default as Carousel } from "./components/carousel/index.js"
 export { default as Tab } from "./components/tab/index.js"
 export { default as Navbar } from "./components/navbar/index.js"
 export { default as Gallery } from "./components/gallery/index.js"
+export { default as Timeline } from "./components/timeline/index.js"
 
 export * from "./components/password-input/index.js"
 export * from "./components/search-input/index.js"
