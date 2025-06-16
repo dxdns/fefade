@@ -57,18 +57,6 @@
 	{@html style}
 
 	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			outline: 0;
-			appearance: none;
-			border: none;
-			text-decoration: none;
-			list-style: none;
-			box-sizing: border-box;
-			scroll-behavior: smooth;
-		}
-
 		body {
 			background: var(--ff-color-bg);
 			color: var(--ff-color-text);

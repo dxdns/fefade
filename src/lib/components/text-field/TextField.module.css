@@ -38,6 +38,7 @@
 	-webkit-transition: 0.5s;
 	transition: 0.5s;
 	outline: none;
+	border: none;
 }
 
 .textField>input:hover {
@@ -75,6 +76,7 @@
 	pointer-events: none;
 	overflow: hidden;
 	min-width: 0%;
+	border: none;
 }
 
 .textField fieldset legend {
