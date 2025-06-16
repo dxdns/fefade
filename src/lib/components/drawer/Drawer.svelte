@@ -4,11 +4,12 @@
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import styles from "./Drawer.module.css"
 	import type { PositionTypeNoCenter } from "../../types/index.js"
-	import { mergeStyleUtil } from "../../utils/index.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		isOpen: boolean
+		/** @deprecated Use 'variant' instead. */
 		positionStyle?: "relative" | "absolute" | "fixed"
+		variant?: "permanent" | "temporary"
 		position?: PositionTypeNoCenter
 		handleClose?: () => void
 		header?: Snippet<[]>
@@ -19,6 +20,7 @@
 		class: className = "",
 		isOpen = false,
 		positionStyle = "fixed",
+		variant = "temporary",
 		position = "left",
 		handleClose,
 		header,
@@ -27,15 +29,13 @@
 	}: Props = $props()
 </script>
 
-{#if isOpen}
+{#if isOpen && variant === "temporary"}
 	<button
 		aria-labelledby="overlay"
 		aria-label="Close overlay"
 		class={styles.overlay}
 		onclick={handleClose}
-		style="
-		--position-style: {positionStyle === 'relative' ? 'absolute' : positionStyle};
-			"
+		style={rest.style}
 	>
 	</button>
 {/if}
@@ -47,12 +47,12 @@
 		[className, styles],
 		styles.drawer,
 		[position, styles],
+		[variant, styles],
 		[positionStyle, styles],
 		{
 			[styles.show]: isOpen
 		}
 	)}
-	style={mergeStyleUtil(`--position-style: ${positionStyle};`, rest.style)}
 >
 	{@render header?.()}
 	<div class={styles.content}>

@@ -37,7 +37,6 @@
 
 <Drawer
 	isOpen={isOpenFixed}
-	positionStyle="fixed"
 	position="right"
 	handleClose={() => {
 		isOpenFixed = false
@@ -53,11 +52,11 @@
 	Right Fixed
 </Button>
 
-<Window style="height: 500px; width: 500px;">
+<Window style="height: 500px; width: 500px; position: relative;">
 	<Drawer
 		isOpen={drawerStates.top}
-		positionStyle="absolute"
 		position="top"
+		style="position: absolute;"
 		handleClose={() => handleClose("top")}
 		{header}
 		{content}
@@ -65,7 +64,6 @@
 
 	<Drawer
 		isOpen={drawerStates.left}
-		positionStyle="absolute"
 		position="left"
 		handleClose={() => handleClose("left")}
 		{header}
@@ -74,7 +72,6 @@
 
 	<Drawer
 		isOpen={drawerStates.right}
-		positionStyle="absolute"
 		position="right"
 		handleClose={() => handleClose("right")}
 		{header}
@@ -83,7 +80,6 @@
 
 	<Drawer
 		isOpen={drawerStates.bottom}
-		positionStyle="absolute"
 		position="bottom"
 		handleClose={() => handleClose("bottom")}
 		{header}
@@ -102,7 +98,7 @@
 	>
 		<Drawer
 			{isOpen}
-			positionStyle="relative"
+			variant="permanent"
 			handleClose={() => {
 				isOpen = false
 			}}
