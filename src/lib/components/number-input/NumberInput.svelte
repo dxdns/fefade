@@ -26,8 +26,22 @@
 
 <div class={classMapUtil(className, [className, styles], styles.inputNumber)}>
 	<div class={styles.numberControl}>
-		<Button {variant} disabled={disableDecrement} onclick={decrement}>-</Button>
-		<Button {variant} disabled={disableIncrement} onclick={increment}>+</Button>
+		<Button
+			{variant}
+			disabled={disableDecrement}
+			onclick={decrement}
+			style="height: 100%;"
+		>
+			-
+		</Button>
+		<Button
+			{variant}
+			disabled={disableIncrement}
+			onclick={increment}
+			style="height: 100%;"
+		>
+			+
+		</Button>
 	</div>
 	<input type="number" {...rest} />
 </div>

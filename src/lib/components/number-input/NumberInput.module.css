@@ -4,7 +4,7 @@
 	width: 100%;
 }
 
-.inputNumber > input[type="number"] {
+.inputNumber>input[type="number"] {
 	-webkit-appearance: textfield;
 	-moz-appearance: textfield;
 	appearance: textfield;
@@ -25,13 +25,13 @@
 	outline: none;
 }
 
-.inputNumber > input[type="number"]:focus {
+.inputNumber>input[type="number"]:focus {
 	border-color: var(--ff-color-primary);
 	background: var(--ff-color-bg);
 }
 
-.inputNumber > input[type="number"]::-webkit-inner-spin-button,
-.inputNumber > input[type="number"]::-webkit-outer-spin-button {
+.inputNumber>input[type="number"]::-webkit-inner-spin-button,
+.inputNumber>input[type="number"]::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
@@ -41,12 +41,13 @@
 	top: 0;
 	right: 0;
 	left: 0;
+	bottom: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.numberControl > * {
+.numberControl>* {
 	width: 2.5rem;
 	height: 2.5rem;
 	display: flex;
@@ -60,12 +61,12 @@
 	user-select: none;
 }
 
-.numberControl > *:first-child {
+.numberControl>*:first-child {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-.numberControl > *:last-child {
+.numberControl>*:last-child {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
