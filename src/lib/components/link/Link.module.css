@@ -1,0 +1,55 @@
+.link {
+	color: var(--ff-color-text);
+	transition: color 0.3s ease-in-out;
+}
+
+.link:hover {
+	color: color-mix(in srgb, var(--ff-color-text) 75%, gray 15%);
+}
+
+.linkUnderline {
+	display: inline-block;
+	position: relative;
+	text-decoration: none !important;
+	cursor: pointer;
+}
+
+.linkUnderline::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background: var(--ff-color-primary);
+	transition: transform 0.25s ease-out;
+}
+
+.linkUnderline:hover::after {
+	transform: scaleX(1);
+}
+
+.linkUnderline.left::after {
+	transform-origin: bottom right;
+}
+
+.linkUnderline.left:hover::after {
+	transform-origin: bottom left;
+}
+
+.linkUnderline.center::after {
+	transform-origin: bottom center;
+}
+
+.linkUnderline.center:hover::after {
+	transform-origin: bottom center;
+}
+
+.linkUnderline.right::after {
+	transform-origin: bottom left;
+}
+
+.linkUnderline.right:hover::after {
+	transform-origin: bottom right;
+}

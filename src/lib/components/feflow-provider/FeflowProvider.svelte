@@ -62,16 +62,6 @@
 			color: var(--ff-color-text);
 		}
 
-		svg {
-			display: inline-block;
-			vertical-align: middle;
-			fill: currentColor;
-		}
-
-		a {
-			color: var(--ff-color-text);
-		}
-
 		/** text **/
 
 		.text-primary {

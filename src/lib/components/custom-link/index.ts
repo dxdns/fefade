@@ -1,3 +1,6 @@
 import CustomLink from "./CustomLink.svelte"
 
-export default CustomLink
+/** @deprecated Use Link instead. */
+const CustomLinkDeprecated = CustomLink
+
+export default CustomLinkDeprecated
