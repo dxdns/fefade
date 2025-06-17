@@ -41,7 +41,7 @@ export const themeConfigDefault: ThemeConfigType = {
 			colorOnError: "#661111",
 			colorWarning: "#fde6b0",
 			colorOnWarning: "#5a3d00",
-			colorInfo: "#a7dffc",
+			colorInfo: "#a7e0fc91",
 			colorOnInfo: "#003344"
 		},
 		dark: {
@@ -69,7 +69,7 @@ export const themeConfigDefault: ThemeConfigType = {
 			colorOnError: "#f9b1b1",
 			colorWarning: "#5a3d00",
 			colorOnWarning: "#fde6b0",
-			colorInfo: "#003344",
+			colorInfo: "#0033449f",
 			colorOnInfo: "#a7dffc"
 		}
 	}
