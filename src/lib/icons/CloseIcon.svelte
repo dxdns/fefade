@@ -10,9 +10,9 @@
 		`
 		display: inline-block; 
 		vertical-align: middle; 
-		fill: currentColor;
-		width: 24px;
-		height: 24px;
+		fill: ${rest.fill ?? "currentColor"};
+		width: ${rest.width ?? "24px"};
+		height: ${rest.height ?? "24px"};
 		`,
 		rest.style
 	)

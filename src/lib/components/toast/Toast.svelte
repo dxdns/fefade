@@ -1,13 +1,20 @@
 <script lang="ts">
-	import { ErrorIcon, InfoIcon, WarningIcon } from "../../icons/index.js"
+	import {
+		CloseIcon,
+		ErrorIcon,
+		InfoIcon,
+		WarningIcon
+	} from "../../icons/index.js"
 	import type { StatusColorType, ToastType } from "../../types/index.js"
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import type { HTMLAttributes } from "svelte/elements"
+	import Button from "../button/index.js"
 
 	interface Props
 		extends HTMLAttributes<HTMLDivElement>,
 			Omit<ToastType, "id" | "color"> {
 		color?: StatusColorType | "primary"
+		handleClose?: () => void
 	}
 
 	let {
@@ -15,6 +22,8 @@
 		message,
 		color = "primary",
 		duration = 3000,
+		isClosable = false,
+		handleClose,
 		...rest
 	}: Props = $props()
 
@@ -36,7 +45,23 @@
 	{#if Icon}
 		<Icon fill="var(--ff-color-on-{color})" height="20px" width="20px" />
 	{/if}
-	{message}
+	<div style="flex:1; padding-inline-end: {isClosable ? '1rem' : 0};">
+		{message}
+	</div>
+	{#if isClosable}
+		<Button
+			roundedFull
+			size="xs"
+			style="
+			padding: 0; 
+			height: 20px;
+			min-width: 20px;
+			"
+			onclick={handleClose}
+		>
+			<CloseIcon height="16px" width="16px" />
+		</Button>
+	{/if}
 </div>
 
 <style>
@@ -54,6 +79,7 @@
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
+		justify-content: space-between;
 		border-left: 4px solid currentColor;
 		pointer-events: all;
 	}

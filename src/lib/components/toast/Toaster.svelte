@@ -74,7 +74,13 @@
 					rest.style
 				)}
 			>
-				<Toast {...toast} class={styles.toast} />
+				<Toast
+					{...toast}
+					class={styles.toast}
+					handleClose={() => {
+						_toastState.remove(toast.id)
+					}}
+				/>
 			</div>
 		{/each}
 	</div>

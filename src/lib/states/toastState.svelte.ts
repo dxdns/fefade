@@ -47,7 +47,7 @@ export default function toastState() {
 		_getById(id: string) {
 			return this.data.toasts.find((t) => t.id === id)
 		},
-		_remove(id: string) {
+		remove(id: string) {
 			const toast = this._getById(id)
 			if (toast) {
 				clearTimeout(toast.timer)
@@ -57,7 +57,7 @@ export default function toastState() {
 		_startTimer(toast: ToastInternalType) {
 			toast.start = Date.now()
 			toast.timer = setTimeout(() => {
-				this._remove(toast.id)
+				this.remove(toast.id)
 			}, toast.remaining) as unknown as number
 		},
 		pause(id: string) {

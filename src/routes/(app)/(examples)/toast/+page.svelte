@@ -87,3 +87,11 @@
 >
 	Duration: 15000
 </Button>
+
+<Button
+	onclick={() => {
+		toast({ message: "test", isClosable: true })
+	}}
+>
+	Closable
+</Button>

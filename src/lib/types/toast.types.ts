@@ -6,4 +6,5 @@ export interface ToastType {
 	color?: StatusColorType
 	duration?: number
 	position?: PositionType
+	isClosable?: boolean
 }
