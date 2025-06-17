@@ -2,10 +2,11 @@
 	import type { PositionType } from "../../types/index.js"
 	import { toastState } from "../../states/index.js"
 	import Toast from "./Toast.svelte"
-	import { fade, fly } from "svelte/transition"
+	import { fade } from "svelte/transition"
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
 	import styles from "./Toaster.module.css"
+	import { flip } from "svelte/animate"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		fullWidth?: boolean
@@ -13,60 +14,68 @@
 
 	let { class: className, fullWidth, ...rest }: Props = $props()
 
-	const { data } = toastState()
+	let isHovered = $state(false)
 
-	const positionStyles: Record<PositionType, string> = {
-		"top-left": "top: 20px; left: 20px;",
-		"top-right": "top: 20px; right: 20px;",
-		"bottom-left": "bottom: 20px; left: 20px;",
-		"bottom-right": "bottom: 20px; right: 20px;",
-		"top-center": "top: 20px; left: 50%; transform: translateX(-50%);",
-		"bottom-center": "bottom: 20px; left: 50%; transform: translateX(-50%);"
-	}
-
-	const flyConfigs: Record<PositionType, { x: number; y: number }> = {
-		"top-left": { x: -64, y: 0 },
-		"top-right": { x: 64, y: 0 },
-		"bottom-left": { x: -64, y: 0 },
-		"bottom-right": { x: 64, y: 0 },
-		"top-center": { x: 0, y: -64 },
-		"bottom-center": { x: 0, y: 64 }
-	}
+	const _toastState = toastState()
+	const maxToasts = fullWidth ? 1 : 3
+	const positions = [
+		"top-left",
+		"top-right",
+		"bottom-left",
+		"bottom-right",
+		"top-center",
+		"bottom-center"
+	] as const satisfies PositionType[]
 </script>
 
-{#each Object.entries(positionStyles) as [position, style] (position)}
-	{@const grouped = data.toasts
+{#each positions as position}
+	{@const pos = position.split("-")[0]}
+	{@const isPositionTop = pos === "top"}
+	{@const grouped = _toastState.data.toasts
 		.filter((t) => t.position === position)
-		.slice(-3)
+		.slice(-maxToasts)
 		.reverse()}
 	<div
 		{...rest}
-		class={classMapUtil(className, [styles, className], styles.toaster, {
-			[styles.fullWidth]: fullWidth,
-			[styles.top]: position.includes("top"),
-			[styles.bottom]: position.includes("bottom")
-		})}
-		{style}
+		class={classMapUtil(
+			className,
+			[styles, className],
+			styles.toaster,
+			[position, styles],
+			[pos, styles],
+			{
+				[styles.fullWidth]: fullWidth
+			}
+		)}
 	>
 		{#each grouped as toast, i (toast.id)}
-			<span in:fly={flyConfigs[position as PositionType]} out:fade>
-				<Toast
-					{...toast}
-					class={styles.toast}
-					style={mergeStyleUtil(
-						fullWidth
-							? ""
-							: `
-								transition: transform 0.3s ease, opacity 0.3s ease;
-								will-change: transform, opacity;
-								transform: translateY(${i * -30}px);
-								z-index: ${999 - i};
-								opacity: ${1 - i * 0.08};
-							`,
-						rest.style
-					)}
-				/>
-			</span>
+			<div
+				role="region"
+				class={styles.wrapper}
+				animate:flip
+				transition:fade={{ duration: 150 }}
+				onmouseenter={() => {
+					isHovered = true
+					_toastState.pauseAll()
+				}}
+				onmouseleave={() => {
+					isHovered = false
+					_toastState.resumeAll()
+				}}
+				style={mergeStyleUtil(
+					`
+						--toast-padding: 0.75rem 0;
+						--toast-side-offset: 0.5rem;
+						--toast-opacity: ${isHovered ? 1 : 1 - i * 0.08};
+						--toast-z-index: ${isHovered ? 1000 : 1000 - i};
+						--toast-translate: ${isPositionTop ? i * (isHovered ? 48 : 8) : -i * (isHovered ? 48 : 8)}px;
+						--toast-scale: ${isHovered ? 1 : 1 - i * 0.05};
+					`,
+					rest.style
+				)}
+			>
+				<Toast {...toast} class={styles.toast} />
+			</div>
 		{/each}
 	</div>
 {/each}

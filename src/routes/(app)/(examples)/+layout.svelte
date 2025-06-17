@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { InfoIcon } from "@/lib/icons/index.js"
-	import { getThemeConfig, Navbar, Toaster } from "@/lib/index.js"
+	import { themeConfig, Navbar, Toaster } from "@/lib/index.js"
 
 	let { children } = $props()
 
-	const theme = $derived(getThemeConfig())
+	const theme = $derived(themeConfig())
 </script>
 
 <Toaster />
