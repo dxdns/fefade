@@ -3,13 +3,16 @@
 	import styles from "./PinInput.module.css"
 	import classMapUtil from "../../utils/classMapUtil.js"
 
-	interface Props extends HTMLInputAttributes {}
+	interface Props extends HTMLInputAttributes {
+		isLoading?: boolean
+	}
 
 	let {
 		class: className = "",
 		children,
 		type,
 		value,
+		isLoading = false,
 		...rest
 	}: Props = $props()
 
@@ -75,6 +78,7 @@
 </script>
 
 <input
+	{...rest}
 	class={classMapUtil(className, [className, styles], styles.pinInput)}
 	bind:this={el}
 	type={type === "numeric" ? "number" : "text"}
@@ -84,5 +88,4 @@
 	onkeydown={handleKeyDown}
 	oninput={handleInput}
 	placeholder="○"
-	{...rest}
 />

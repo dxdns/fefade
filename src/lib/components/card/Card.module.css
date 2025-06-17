@@ -1,5 +1,4 @@
 .card {
-	color: var(--ff-color-on-bg);
 	padding: 1rem;
 	overflow: hidden;
 	position: relative;
@@ -16,6 +15,7 @@
 }
 
 .card.outlined {
+	color: inherit;
 	background: none;
 	border: 1px solid var(--ff-color-border);
 }

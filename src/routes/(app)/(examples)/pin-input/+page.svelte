@@ -12,7 +12,7 @@
 		</p>
 		<br />
 		<div style="display: flex; align-items: center; justify-content: center;">
-			<PinInput />
+			<PinInput isLoading />
 			<PinInput />
 			<PinInput />
 			<PinInput />

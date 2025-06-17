@@ -4,10 +4,12 @@
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import { fade, scale } from "svelte/transition"
 	import Card from "../card/index.js"
+	import type { VariantType } from "@/lib/types/variant.types.js"
 
 	export interface ModalProps {
 		isOpen: boolean
 		handleClose: () => void
+		variant?: Exclude<VariantType, "text">
 	}
 
 	interface Props extends ModalProps, HTMLAttributes<HTMLDivElement> {}
@@ -16,6 +18,7 @@
 		class: className = "",
 		isOpen,
 		handleClose,
+		variant = "contained",
 		children,
 		...rest
 	}: Props = $props()
@@ -52,7 +55,7 @@
 				in:scale={{ duration: 300 }}
 				out:scale={{ duration: 300 }}
 			>
-				<Card {...rest} class={styles.content}>
+				<Card {...rest} class={styles.content} {variant}>
 					{@render children?.()}
 				</Card>
 			</div>

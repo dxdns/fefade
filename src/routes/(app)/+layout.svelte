@@ -21,7 +21,6 @@
 		border: none;
 		text-decoration: none;
 		list-style: none;
-
 		box-sizing: border-box;
 		scroll-behavior: smooth;
 	}
