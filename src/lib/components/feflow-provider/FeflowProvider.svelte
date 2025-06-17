@@ -145,30 +145,6 @@
 			border-radius: 0 !important;
 		}
 
-		/* status colors */
-
-		[data-theme="light"] {
-			--ff-color-success: #a7eac1;
-			--ff-color-on-success: #004422;
-			--ff-color-error: #f9b1b1;
-			--ff-color-on-error: #661111;
-			--ff-color-warning: #fde6b0;
-			--ff-color-on-warning: #5a3d00;
-			--ff-color-info: #a7dffc;
-			--ff-color-on-info: #003344;
-		}
-
-		[data-theme="dark"] {
-			--ff-color-success: #004422;
-			--ff-color-on-success: #a7eac1;
-			--ff-color-error: #661111;
-			--ff-color-on-error: #f9b1b1;
-			--ff-color-warning: #5a3d00;
-			--ff-color-on-warning: #fde6b0;
-			--ff-color-info: #003344;
-			--ff-color-on-info: #a7dffc;
-		}
-
 		/** bg **/
 
 		.bg-success {

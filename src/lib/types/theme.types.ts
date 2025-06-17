@@ -19,6 +19,14 @@ type ThemeColorsType = {
 	colorOnFocus: string
 	colorSkeleton: string
 	colorOnSkeleton: string
+	colorSuccess: string
+	colorOnSuccess: string
+	colorError: string
+	colorOnError: string
+	colorWarning: string
+	colorOnWarning: string
+	colorInfo: string
+	colorOnInfo: string
 }
 
 export type ThemeConfigType = {

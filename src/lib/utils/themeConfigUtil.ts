@@ -10,7 +10,7 @@ export default function themeConfigUtil() {
 	}
 
 	function _generateCssVariables(key: string, value: string) {
-		return `${_toCssVar(key)}: ${value} !important;`
+		return `${_toCssVar(key)}: ${value};`
 	}
 
 	function _processThemeSection(vars: Record<string, any>, selectors: string) {
@@ -24,20 +24,20 @@ export default function themeConfigUtil() {
 	}
 
 	function themeConfigToCssString(theme?: ThemeConfigType) {
-		if (!theme) return ""
+		if (!theme?.colors) return ""
 
-		let result = ""
+		const sections: string[] = []
 
-		if (theme.colors) {
-			for (const [themeKey, vars] of Object.entries(theme.colors)) {
-				result += _processThemeSection(
-					vars,
-					themeModeSelectors[themeKey as ThemeModeType]
-				)
+		const keys = Object.keys(theme.colors) as (keyof typeof theme.colors)[]
+		for (const themeKey of keys) {
+			const vars = theme.colors[themeKey]
+			const selector = themeModeSelectors[themeKey as ThemeModeType]
+			if (selector && vars) {
+				sections.push(_processThemeSection(vars, selector))
 			}
 		}
 
-		return result
+		return sections.join("")
 	}
 
 	return { themeConfigToCssString }
@@ -47,6 +47,7 @@ export function customThemeConfig(t: ThemeConfigType) {
 	return t
 }
 
+/** @deprecated Use themeConfig instead. */
 export function getThemeConfig() {
 	const _themeState = themeModeState()
 	const { colors } = getThemeConfigContext()
@@ -54,4 +55,8 @@ export function getThemeConfig() {
 
 	const mode = _themeState.data.mode
 	return { colors: colors[mode], mode, toggle: toggleThemeMode }
+}
+
+export function themeConfig() {
+	return getThemeConfig()
 }
