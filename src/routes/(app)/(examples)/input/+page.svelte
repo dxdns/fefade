@@ -10,6 +10,7 @@
 	} from "@/lib/index.js"
 
 	let filesData: File[] = $state([])
+	let quantity = $state(0)
 
 	async function handleChange(files: File[]) {
 		filesData = files
@@ -46,9 +47,9 @@
 	<br />
 	<NumberInput
 		variant="outlined"
-		increment={() => {}}
-		decrement={() => {}}
-		value={0}
+		bind:value={quantity}
+		min={0}
+		max={10}
 	/>
 	<br />
 	<br />

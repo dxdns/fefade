@@ -1,10 +1,19 @@
-.inputNumber {
+:root {
+	--border-radius: 0.5rem;
+	--border-color-on-focus: var(--ff-color-primary);
+}
+
+.numberInput {
 	position: relative;
 	display: inline-block;
 	width: 100%;
+	overflow: hidden;
+	border-radius: var(--border-radius);
+	line-height: 0;
+	user-select: none;
 }
 
-.inputNumber>input[type="number"] {
+.numberInput>input {
 	-webkit-appearance: textfield;
 	-moz-appearance: textfield;
 	appearance: textfield;
@@ -14,8 +23,7 @@
 	font-size: 1rem;
 	color: var(--ff-color-text);
 	padding: 0 0.75rem;
-	border-radius: 0.5rem;
-	border: 1px solid var(--ff-color-border);
+	border-radius: var(--border-radius);
 	background: var(--ff-color-bg);
 	text-align: center;
 	min-width: 150px;
@@ -25,13 +33,26 @@
 	outline: none;
 }
 
-.inputNumber>input[type="number"]:focus {
-	border-color: var(--ff-color-primary);
-	background: var(--ff-color-bg);
+.numberInput.outlined>input {
+	border: 1px solid var(--ff-color-border);
 }
 
-.inputNumber>input[type="number"]::-webkit-inner-spin-button,
-.inputNumber>input[type="number"]::-webkit-outer-spin-button {
+.numberInput.outlined>input:focus {
+	border-color: var(--border-color-on-focus);
+}
+
+.numberInput.contained>input {
+	background: var(--ff-color-surface);
+	border: none;
+}
+
+.numberInput.text>input {
+	border: none;
+	background: none;
+}
+
+.numberInput>input::-webkit-inner-spin-button,
+.numberInput>input::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
@@ -58,7 +79,6 @@
 	transition:
 		background-color 0.2s,
 		color 0.2s;
-	user-select: none;
 }
 
 .numberControl>*:first-child {
@@ -69,4 +89,28 @@
 .numberControl>*:last-child {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
+}
+
+.numberInput.outlined .numberControl>*:first-child,
+.numberInput.outlined .numberControl>*:last-child {
+	border-top: 0;
+	border-bottom: 0;
+}
+
+.numberInput.outlined .numberControl>*:first-child:hover,
+.numberInput.outlined .numberControl>*:last-child:hover {
+	box-shadow: none;
+}
+
+.numberInput.outlined .numberControl>*:first-child {
+	border-left: 0;
+}
+
+.numberInput.outlined .numberControl>*:last-child {
+	border-right: 0;
+}
+
+.numberInput.outlined:has(> input:focus) .numberControl>*:first-child,
+.numberInput.outlined:has(> input:focus) .numberControl>*:last-child {
+	border-color: var(--border-color-on-focus);
 }

@@ -25,9 +25,14 @@
 	padding: 0.5rem 1rem;
 }
 
-.button.pressedEffect:not(:disabled):active {
-	top: 1px;
+.button.pressedEffect:not(:disabled) .content {
+	transition: transform 0.1s, color 0.1s;
 }
+
+.button.pressedEffect:not(:disabled):active .content {
+	transform: translateY(1px);
+}
+
 
 .button.outlined {
 	background: transparent;
