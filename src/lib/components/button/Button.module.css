@@ -5,10 +5,6 @@
 	border-radius: 0.375rem;
 	color: var(--ff-color-on-primary);
 	transition: all 200ms ease-in-out;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.25rem;
 	height: 2.5rem;
 	width: auto;
 	min-width: 2.5rem;
@@ -23,6 +19,13 @@
 	padding-inline-end: 1rem;
 	border: none;
 	padding: 0.5rem 1rem;
+}
+
+.content {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.25rem;
 }
 
 .button.pressedEffect:not(:disabled) .content {
