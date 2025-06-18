@@ -6,6 +6,8 @@
 	grid-template-rows: minmax(0, 1fr);
 	block-size: 100%;
 	border-radius: 0.5rem;
+	margin: 0;
+	padding: 0;
 }
 
 .image {
@@ -26,6 +28,7 @@
 	line-height: 1.3;
 	background: linear-gradient(transparent 25%, rgb(0 0 0 / 0.75));
 	display: block;
+	pointer-events: none;
 }
 
 .caption h3 {

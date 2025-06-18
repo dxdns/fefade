@@ -31,9 +31,9 @@
 	<Image
 		{...rest}
 		class={styles.image}
+		hover={{ transition: "scale" }}
 		{lazy}
 		{dataSrc}
-		hover={{ transition: "scale" }}
 		{fallback}
 	/>
 	{#if caption}

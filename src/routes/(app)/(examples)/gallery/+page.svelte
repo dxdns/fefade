@@ -47,14 +47,13 @@
 		{#each [200, 250, 300, 350] as size}
 			{@const src = `https://dummyjson.com/image/${size}`}
 			<button
-				style="cursor: pointer; background: none;"
+				style="all: unset; cursor: pointer;"
 				onclick={() => {
 					handleClick(src, size)
 				}}
 			>
 				<Gallery.Item
 					lazy
-					style="cursor: pointer;"
 					dataSrc={src}
 					alt={`Image ${size}px`}
 					width={size}
@@ -70,14 +69,13 @@
 		{#each [200, 250, 300, 350, 450, 550] as size}
 			{@const src = `https://dummyjson.com/image/${size}`}
 			<button
-				style="cursor: pointer; background: none;"
+				style="all: unset; cursor: pointer;"
 				onclick={() => {
 					handleClick(src, size)
 				}}
 			>
 				<Gallery.Item
 					lazy
-					style="cursor: pointer;"
 					caption={{
 						title: `title ${size}`,
 						description: `description ${size}`
@@ -97,14 +95,13 @@
 		{#each [200, 250, 300, 350, 450, 550, 650, 750, 850, 950] as size}
 			{@const src = `https://dummyjson.com/image/${size}`}
 			<button
-				style="cursor: pointer; background: none;"
+				style="all: unset; cursor: pointer;"
 				onclick={() => {
 					handleClick(src, size)
 				}}
 			>
 				<Gallery.Item
 					lazy
-					style="cursor: pointer;"
 					caption={{
 						title: `title ${size}`,
 						description: `description ${size}`
