@@ -15,6 +15,7 @@
 .badge.contained {
 	background: var(--ff-color-surface);
 	color: var(--ff-color-on-surface);
+	transition: opacity 0.3s ease;
 }
 
 .badge.xs {
@@ -52,12 +53,6 @@
 	padding-inline: 0.45rem;
 }
 
-.badge.roundedFull {
-	border-radius: 9999px;
-	padding: 0 0.5em;
-	overflow: hidden;
-}
-
 .badge.outlined {
 	background: none;
 	border: 1px solid var(--ff-color-border);
@@ -87,4 +82,16 @@
 .badge.xl:empty {
 	min-width: 1.8rem;
 	min-height: 1.8rem;
+}
+
+.badge.roundedFull {
+	border-radius: 9999px;
+	padding: 0 0.5em;
+	overflow: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.badge.contained:hover {
+		opacity: 0.7;
+	}
 }
