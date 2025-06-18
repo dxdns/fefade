@@ -24,6 +24,9 @@
 <Button variant="contained">Contained</Button>
 <br />
 <br />
+<Button href="https://dxdns.dev" target="_blank">link</Button>
+<br />
+<br />
 <h1>disabled</h1>
 <br />
 <Button disabled>Contained Disabled</Button>

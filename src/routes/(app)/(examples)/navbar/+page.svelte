@@ -33,17 +33,9 @@
 			bgColor="red"
 			class={`menu ${isOpen ? "show" : ""}`}
 		>
-			<Navbar.Item
-				aria-current="page"
-			>
-				active
-			</Navbar.Item>
-			<Navbar.Item>
-				test1
-			</Navbar.Item>
-			<Navbar.Item>
-				test2
-			</Navbar.Item>
+			<Navbar.Item aria-current="page">active</Navbar.Item>
+			<Navbar.Item>test1</Navbar.Item>
+			<Navbar.Item>test2</Navbar.Item>
 		</HoverFollower>
 
 		<Menu id="menu-navFree">
@@ -52,24 +44,20 @@
 			{/snippet}
 
 			{#snippet items()}
-				<Menu.Item>test1</Menu.Item>
+				<Menu.Item href="https://dxdns.dev" target="_blank">test1</Menu.Item>
 				<Separator />
-				<a href="/">
-					<Menu.Item>test2</Menu.Item>
-				</a>
+				<Menu.Item>test2</Menu.Item>
 				<Separator />
-				<a href="/">
-					<Menu.Item>test3</Menu.Item>
-				</a>
+				<Menu.Item>test3</Menu.Item>
 			{/snippet}
 		</Menu>
 
 		<Navbar.Toggler
+			id="toggler-1"
 			checked={isOpen}
 			onclick={() => {
 				isOpen = !isOpen
 			}}
-			id="toggler-1"
 		/>
 	</Navbar>
 	{@render contentMain?.("navFree")}

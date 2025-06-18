@@ -2,7 +2,7 @@
 	import { Link } from "@/lib/index.js"
 </script>
 
-<div style="width: 500px; margin: 3rem auto;">
+<div style="width: 500px; margin: 3rem auto; line-height: 3;">
 	<Link href="https://dxdns.dev" target="_blank">
 		<h1>normal</h1>
 	</Link>

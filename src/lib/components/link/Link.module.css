@@ -1,50 +1,49 @@
 .link {
-	color: var(--ff-color-text);
-	line-height: 0;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	transition: color 0.3s ease;
+	color: var(--color-text, currentColor);
+	line-height: 1;
 	text-decoration: none;
 }
 
-.link {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	transition: color 0.3s ease;
-}
-
 .linkUnderline {
+	--origin: bottom left;
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
-	margin-bottom: 10px;
+	margin-bottom: 0.3em;
+}
+
+.linkUnderline.left {
+	--origin: bottom left;
+}
+
+.linkUnderline.center {
+	--origin: bottom center;
+}
+
+.linkUnderline.right {
+	--origin: bottom right;
 }
 
 .linkUnderline::after {
 	content: "";
 	position: absolute;
+	inset-inline-start: 0;
+	inset-block-end: -0.3em;
 	width: 100%;
 	transform: scaleX(0);
-	height: 2px;
-	bottom: -10px;
-	left: 0;
-	background: var(--ff-color-primary);
+	transform-origin: var(--origin);
+	height: 0.125em;
+	background: var(--color-primary, currentColor);
 	transition: transform 0.25s ease-out;
-}
-
-.linkUnderline.left::after {
-	transform-origin: bottom right;
-}
-
-.linkUnderline.center::after {
-	transform-origin: bottom center;
-}
-
-.linkUnderline.right::after {
-	transform-origin: bottom left;
 }
 
 @media (hover: hover) and (pointer: fine) {
 	.link:hover {
-		color: color-mix(in srgb, var(--ff-color-text) 75%, gray 15%);
+		color: color-mix(in srgb, var(--color-text, currentColor) 75%, gray 15%);
 	}
 
 	.link svg {
@@ -57,17 +56,5 @@
 
 	.linkUnderline:hover::after {
 		transform: scaleX(1);
-	}
-
-	.linkUnderline.left:hover::after {
-		transform-origin: bottom left;
-	}
-
-	.linkUnderline.center:hover::after {
-		transform-origin: bottom center;
-	}
-
-	.linkUnderline.right:hover::after {
-		transform-origin: bottom right;
 	}
 }

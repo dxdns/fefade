@@ -4,8 +4,9 @@
 	box-sizing: border-box;
 	padding: 0 clamp(0.5rem, 2vw, 1rem);
 	color: var(--ff-color-on-surface);
+	display: flex;
+	align-items: center;
 	height: 80px;
-	line-height: 80px;
 	user-select: none;
 }
 

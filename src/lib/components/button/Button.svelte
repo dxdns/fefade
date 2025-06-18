@@ -1,5 +1,8 @@
 <script lang="ts">
-	import type { HTMLButtonAttributes } from "svelte/elements"
+	import type {
+		HTMLAttributeAnchorTarget,
+		HTMLButtonAttributes
+	} from "svelte/elements"
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import type { SizeType, VariantType } from "../../types/index.js"
 	import Spinner from "../spinner/index.js"
@@ -11,6 +14,8 @@
 		isLoading?: boolean
 		roundedFull?: boolean
 		size?: SizeType
+		href?: string
+		target?: HTMLAttributeAnchorTarget
 	}
 
 	let {
@@ -20,6 +25,8 @@
 		isLoading = false,
 		roundedFull = false,
 		size = "sm",
+		href,
+		target = "_self",
 		children,
 		...rest
 	}: Props = $props()
@@ -36,6 +43,7 @@
 		{ [styles.roundedFull]: roundedFull, [styles.pressedEffect]: pressedEffect }
 	)}
 	type={rest.type ?? "button"}
+	onclick={href ? () => window.open(href, target) : rest.onclick}
 >
 	{#if isLoading}
 		<Spinner />

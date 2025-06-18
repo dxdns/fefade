@@ -42,7 +42,7 @@
 <style>
 	.accordion {
 		margin-bottom: 5px;
-		line-height: 0;
+		line-height: 1;
 	}
 
 	.header {
