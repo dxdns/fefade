@@ -41,6 +41,7 @@
 
 <style>
 	.accordion {
+		margin-top: 0;
 		margin-bottom: 5px;
 		line-height: 1;
 	}
@@ -70,6 +71,7 @@
 	}
 
 	.content {
+		margin-top: 0;
 		height: 0px;
 		padding: 0px;
 		overflow: hidden;
