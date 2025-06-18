@@ -6,6 +6,7 @@
 	transition: border-color 0.3s;
 	cursor: pointer;
 	position: relative;
+	line-height: 0;
 }
 
 .dropzone.dragging {
