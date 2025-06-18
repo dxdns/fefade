@@ -46,6 +46,7 @@
 	<br />
 	<br />
 	<NumberInput
+		readonly
 		variant="outlined"
 		bind:value={quantity}
 		min={0}

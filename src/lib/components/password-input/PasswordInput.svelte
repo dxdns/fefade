@@ -2,15 +2,16 @@
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import styles from "./PasswordInput.module.css"
-	import type { ColorType, VariantType } from "../../types/index.js"
+	import type { ColorType, SizeType, VariantType } from "../../types/index.js"
 	import { VisibilityIcon, VisibilityOffIcon } from "../../icons/index.js"
 	import Button from "../button/index.js"
 	import TextField from "../text-field/index.js"
 
-	interface Props extends Omit<HTMLInputAttributes, "type"> {
+	interface Props extends Omit<Omit<HTMLInputAttributes, "size">, "type"> {
 		label?: string
 		variant?: VariantType
 		color?: ColorType
+		size?: SizeType
 	}
 
 	let {
@@ -18,6 +19,7 @@
 		label,
 		variant = "outlined",
 		color,
+		size = "md",
 		...rest
 	}: Props = $props()
 
@@ -26,6 +28,29 @@
 	function togglePasswordVisibility() {
 		passwordVisible = !passwordVisible
 	}
+
+	const iconSize = {
+		xs: {
+			height: "12px",
+			width: "12px"
+		},
+		sm: {
+			height: "16px",
+			width: "16px"
+		},
+		md: {
+			height: "20px",
+			width: "20px"
+		},
+		lg: {
+			height: "24px",
+			width: "24px"
+		},
+		xl: {
+			height: "32px",
+			width: "32px"
+		}
+	}[size]
 </script>
 
 <div
@@ -44,18 +69,19 @@
 		onclick={togglePasswordVisibility}
 	>
 		{#if passwordVisible}
-			<VisibilityIcon height="20px" width="20px" />
+			<VisibilityIcon {...iconSize} />
 		{:else}
-			<VisibilityOffIcon height="20px" width="20px" />
+			<VisibilityOffIcon {...iconSize} />
 		{/if}
 	</Button>
 	<TextField
+		{...rest}
 		class={styles.inputGroup}
+		type={passwordVisible ? "text" : "password"}
+		focused={passwordVisible}
 		{label}
 		{variant}
 		{color}
-		type={passwordVisible ? "text" : "password"}
-		focused={passwordVisible}
-		{...rest}
+		{size}
 	/>
 </div>

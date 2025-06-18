@@ -133,6 +133,17 @@
 }
 
 /* outlined */
+.textField.outlined fieldset {
+	top: -4px;
+}
+
+.textField.outlined fieldset legend {
+	height: 4px;
+}
+
+.textField.outlined:not(.labelEmpty)>input {
+	padding: 7px 0px 0px 0.6rem;
+}
 
 .textField.outlined>input {
 	background: transparent;
@@ -186,10 +197,10 @@
 	top: -10px;
 }
 
-.textField.contained.xs>input,
-.textField.contained.sm>input,
-.textField.text.xs>input,
-.textField.text.sm>input {
+.textField.contained.xs:not(.labelEmpty)>input,
+.textField.contained:not(.labelEmpty).sm>input,
+.textField.text.xs:not(.labelEmpty)>input,
+.textField.text.sm:not(.labelEmpty)>input {
 	padding: 9px 0.5rem 0px 0.6rem;
 }
 
@@ -207,8 +218,8 @@
 	font-size: small;
 }
 
-.textField.text>input,
-.textField.contained>input {
+.textField.text:not(.labelEmpty)>input,
+.textField.contained:not(.labelEmpty)>input {
 	padding: 1.1rem 0.5rem 0 0.6rem;
 }
 
