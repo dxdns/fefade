@@ -1,15 +1,12 @@
 .link:-webkit-any-link,
 .linkUnderline {
 	color: var(--ff-color-text);
+	line-height: 0;
 }
 
 .link {
 	transition: color 0.3s ease-in-out;
 	text-decoration: none;
-}
-
-.link:hover {
-	color: color-mix(in srgb, var(--ff-color-text) 75%, gray 15%);
 }
 
 .linkUnderline {
@@ -30,23 +27,11 @@
 	transition: transform 0.25s ease-out;
 }
 
-.linkUnderline:hover::after {
-	transform: scaleX(1);
-}
-
 .linkUnderline.left::after {
 	transform-origin: bottom right;
 }
 
-.linkUnderline.left:hover::after {
-	transform-origin: bottom left;
-}
-
 .linkUnderline.center::after {
-	transform-origin: bottom center;
-}
-
-.linkUnderline.center:hover::after {
 	transform-origin: bottom center;
 }
 
@@ -54,6 +39,24 @@
 	transform-origin: bottom left;
 }
 
-.linkUnderline.right:hover::after {
-	transform-origin: bottom right;
+@media (hover: hover) and (pointer: fine) {
+	.link:hover {
+		color: color-mix(in srgb, var(--ff-color-text) 75%, gray 15%);
+	}
+
+	.linkUnderline:hover::after {
+		transform: scaleX(1);
+	}
+
+	.linkUnderline.left:hover::after {
+		transform-origin: bottom left;
+	}
+
+	.linkUnderline.center:hover::after {
+		transform-origin: bottom center;
+	}
+
+	.linkUnderline.right:hover::after {
+		transform-origin: bottom right;
+	}
 }
