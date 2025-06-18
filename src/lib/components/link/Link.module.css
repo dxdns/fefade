@@ -13,6 +13,7 @@
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
+	margin-bottom: 10px;
 }
 
 .linkUnderline::after {
@@ -21,7 +22,7 @@
 	width: 100%;
 	transform: scaleX(0);
 	height: 2px;
-	bottom: 0;
+	bottom: -10px;
 	left: 0;
 	background: var(--ff-color-primary);
 	transition: transform 0.25s ease-out;
