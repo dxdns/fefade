@@ -42,8 +42,9 @@
 		isOpenFixed = false
 	}}
 	{header}
-	{content}
-/>
+>
+	{@render content()}
+</Drawer>
 <Button
 	onclick={() => {
 		isOpenFixed = !isOpenFixed
@@ -59,32 +60,36 @@
 		style="position: absolute;"
 		handleClose={() => handleClose("top")}
 		{header}
-		{content}
-	/>
+	>
+		{@render content()}
+	</Drawer>
 
 	<Drawer
 		isOpen={drawerStates.left}
 		position="left"
 		handleClose={() => handleClose("left")}
 		{header}
-		{content}
-	/>
+	>
+		{@render content()}
+	</Drawer>
 
 	<Drawer
 		isOpen={drawerStates.right}
 		position="right"
 		handleClose={() => handleClose("right")}
 		{header}
-		{content}
-	/>
+	>
+		{@render content()}
+	</Drawer>
 
 	<Drawer
 		isOpen={drawerStates.bottom}
 		position="bottom"
 		handleClose={() => handleClose("bottom")}
 		{header}
-		{content}
-	/>
+	>
+		{@render content()}
+	</Drawer>
 	<Button onclick={() => handleToggle("top")}>Top</Button>
 	<Button onclick={() => handleToggle("left")}>Left</Button>
 	<Button onclick={() => handleToggle("right")}>Right</Button>
@@ -114,9 +119,7 @@
 					{/snippet}
 				</Drawer.Header>
 			{/snippet}
-			{#snippet content()}
-				<span>test</span>
-			{/snippet}
+			<span>test</span>
 		</Drawer>
 
 		<Navbar>
