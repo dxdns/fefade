@@ -3,7 +3,7 @@
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import styles from "./Card.module.css"
 	import { glowOnHoverAction } from "../../actions/index.js"
-	import type { VariantType } from "@/lib/types/variant.types.js"
+	import type { VariantType } from "../../types/index.js"
 
 	interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
 		glowOnHover?: boolean

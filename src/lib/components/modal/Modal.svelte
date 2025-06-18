@@ -4,7 +4,7 @@
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import { fade, scale } from "svelte/transition"
 	import Card from "../card/index.js"
-	import type { VariantType } from "@/lib/types/variant.types.js"
+	import type { VariantType } from "../../types/index.js"
 
 	export interface ModalProps {
 		isOpen: boolean
