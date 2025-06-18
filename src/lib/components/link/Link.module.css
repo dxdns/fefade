@@ -2,11 +2,14 @@
 .linkUnderline {
 	color: var(--ff-color-text);
 	line-height: 0;
+	text-decoration: none;
 }
 
 .link {
-	transition: color 0.3s ease-in-out;
-	text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	transition: color 0.3s ease;
 }
 
 .linkUnderline {
@@ -43,6 +46,14 @@
 @media (hover: hover) and (pointer: fine) {
 	.link:hover {
 		color: color-mix(in srgb, var(--ff-color-text) 75%, gray 15%);
+	}
+
+	.link svg {
+		transition: opacity 0.3s ease;
+	}
+
+	.link:hover svg {
+		opacity: 0.7;
 	}
 
 	.linkUnderline:hover::after {
