@@ -63,12 +63,6 @@
 	background: var(--ff-color-disabled);
 }
 
-.button.roundedFull {
-	border-radius: 9999px;
-	padding: 0 0.5em;
-	overflow: hidden;
-}
-
 /* sizes */
 
 .button.xs {
@@ -99,6 +93,13 @@
 	font-size: 1.25rem;
 	padding: 0.75rem 1.5rem;
 	height: 3.5rem;
+}
+
+.button.roundedFull {
+	border-radius: 9999px;
+	padding: 1.2rem 0;
+	overflow: hidden;
+	height: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
