@@ -2,18 +2,20 @@
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import styles from "./PinInput.module.css"
 	import classMapUtil from "../../utils/classMapUtil.js"
+	import { onMount } from "svelte"
 
-	interface Props extends Omit<HTMLInputAttributes, "type"> {
+	interface Props
+		extends Omit<Omit<Omit<HTMLInputAttributes, "max">, "min">, "type"> {
+		autoFocus?: boolean
 		isLoading?: boolean
-		type: "number" | "text"
 	}
 
 	let {
 		class: className = "",
-		children,
-		type = "number",
-		value,
+		autoFocus = false,
 		isLoading = false,
+		value = $bindable(0),
+		children,
 		...rest
 	}: Props = $props()
 
@@ -27,12 +29,14 @@
 		RIGHT: "ArrowRight"
 	}
 
-	let el: HTMLInputElement
+	let el: HTMLInputElement | undefined
 
-	function handleKeyDown(event: KeyboardEvent) {
-		const isMeta = event.ctrlKey || event.metaKey
+	function handleKeyDown(e: KeyboardEvent) {
+		if (!el) return
 
-		switch (event.key) {
+		const isMeta = e.ctrlKey || e.metaKey
+
+		switch (e.key) {
 			case KEYBOARD.BACKSPACE:
 				if (
 					!el.value &&
@@ -43,14 +47,14 @@
 				break
 
 			case KEYBOARD.LEFT:
-				event.preventDefault()
+				e.preventDefault()
 				if (el.previousElementSibling instanceof HTMLInputElement) {
 					el.previousElementSibling.focus()
 				}
 				break
 
 			case KEYBOARD.RIGHT:
-				event.preventDefault()
+				e.preventDefault()
 				if (el.nextElementSibling instanceof HTMLInputElement) {
 					el.nextElementSibling.focus()
 				}
@@ -63,19 +67,28 @@
 				break
 
 			default:
-				if (event.key.length > 1 || !el.validity.valid) {
-					event.preventDefault()
+				if (e.key.length > 1 || !el.validity.valid) {
+					e.preventDefault()
 				}
 				break
 		}
 	}
 
-	function handleInput(event: Event) {
-		const input = event.target as HTMLInputElement
+	function handleInput(e: Event) {
+		const input = e.target as HTMLInputElement
+
+		if (!/^[0-9]$/.test(input.value)) {
+			input.value = ""
+		}
+
 		if (input.value && input.nextElementSibling instanceof HTMLInputElement) {
 			input.nextElementSibling.focus()
 		}
 	}
+
+	onMount(() => {
+		if (el && autoFocus) el.focus()
+	})
 </script>
 
 <input
@@ -85,13 +98,16 @@
 		["pulse"]: isLoading
 	})}
 	bind:this={el}
-	type={type === "number" ? "number" : "text"}
-	inputmode={type === "number" ? "numeric" : "text"}
-	pattern={type === "number" ? "[0-9]{1}" : "^[a-zA-Z0-9]$"}
+	type="number"
+	inputmode="numeric"
+	pattern="[0-9]{1}"
 	maxlength="1"
+	min="0"
+	max="9"
+	placeholder="○"
 	onkeydown={handleKeyDown}
 	oninput={handleInput}
-	placeholder="○"
+	{value}
 />
 
 <style>
