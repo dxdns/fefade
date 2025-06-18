@@ -21,6 +21,7 @@
 	padding: 0.5rem 1rem;
 }
 
+.button,
 .content {
 	display: inline-flex;
 	align-items: center;
