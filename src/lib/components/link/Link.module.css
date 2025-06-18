@@ -1,6 +1,11 @@
-.link {
+.link:-webkit-any-link,
+.linkUnderline {
 	color: var(--ff-color-text);
+}
+
+.link {
 	transition: color 0.3s ease-in-out;
+	text-decoration: none;
 }
 
 .link:hover {
@@ -10,7 +15,6 @@
 .linkUnderline {
 	display: inline-block;
 	position: relative;
-	text-decoration: none !important;
 	cursor: pointer;
 }
 
