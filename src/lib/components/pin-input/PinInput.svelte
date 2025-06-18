@@ -3,14 +3,15 @@
 	import styles from "./PinInput.module.css"
 	import classMapUtil from "../../utils/classMapUtil.js"
 
-	interface Props extends HTMLInputAttributes {
+	interface Props extends Omit<HTMLInputAttributes, "type"> {
 		isLoading?: boolean
+		type: "number" | "text"
 	}
 
 	let {
 		class: className = "",
 		children,
-		type,
+		type = "number",
 		value,
 		isLoading = false,
 		...rest
@@ -79,13 +80,34 @@
 
 <input
 	{...rest}
-	class={classMapUtil(className, [className, styles], styles.pinInput)}
+	disabled={isLoading}
+	class={classMapUtil(className, [className, styles], styles.pinInput, {
+		["pulse"]: isLoading
+	})}
 	bind:this={el}
-	type={type === "numeric" ? "number" : "text"}
-	inputmode={type === "numeric" ? "numeric" : "text"}
-	pattern={type === "numeric" ? "[0-9]{1}" : "^[a-zA-Z0-9]$"}
+	type={type === "number" ? "number" : "text"}
+	inputmode={type === "number" ? "numeric" : "text"}
+	pattern={type === "number" ? "[0-9]{1}" : "^[a-zA-Z0-9]$"}
 	maxlength="1"
 	onkeydown={handleKeyDown}
 	oninput={handleInput}
 	placeholder="○"
 />
+
+<style>
+	.pulse {
+		animation: pulse 2s infinite;
+	}
+
+	@keyframes pulse {
+		0% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0.3;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+</style>
