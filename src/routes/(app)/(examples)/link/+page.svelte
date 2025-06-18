@@ -2,7 +2,7 @@
 	import { Link } from "@/lib/index.js"
 </script>
 
-<div style="width: 500px; margin: 3rem auto; line-height: 3;">
+<div style="width: 500px; margin: 3rem auto;">
 	<Link href="https://dxdns.dev" target="_blank">
 		<h1>normal</h1>
 	</Link>
@@ -10,6 +10,7 @@
 	<Link href="https://dxdns.dev" style="text-decoration: underline;">
 		underline
 	</Link>
+	<br />
 	<br />
 	<Link href="https://dxdns.dev">
 		<svg
@@ -45,6 +46,8 @@
 		>
 			obcaecati
 		</Link>, eum quod porro harum magni quisquam sunt nihil, eos modi officia
-		molestiae. Illum minima ad ducimus.
+		molestiae. Illum <Link href="https://dxdns.dev" style="text-decoration: underline;">
+			minima
+		</Link> ad ducimus.
 	</p>
 </div>

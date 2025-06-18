@@ -1,12 +1,16 @@
-.link:-webkit-any-link,
-.linkUnderline {
+.link {
 	color: var(--ff-color-text);
 	line-height: 0;
 	text-decoration: none;
 }
 
+.link>* {
+	line-height: 0;
+	padding: 0;
+}
+
 .link {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
 	transition: color 0.3s ease;
