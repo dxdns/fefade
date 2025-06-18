@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, HoverFollower } from "@/lib/index.js"
+	import { Card, HoverFollower, Link } from "@/lib/index.js"
 </script>
 
 <h1>vertical</h1>
@@ -13,19 +13,23 @@
 
 <br />
 <h1>with multiple childs</h1>
-<HoverFollower>
-	<Card>
-		<div>
-			<h4>test</h4>
-			<p>test</p>
-		</div>
-	</Card>
-	<Card>
-		<div>
-			<h4>test</h4>
-			<p>test</p>
-		</div>
-	</Card>
+<HoverFollower style="display: block;">
+	<Link href="https://dxdns.dev" target="_blank" style="display: block;">
+		<Card>
+			<div>
+				<h4>test</h4>
+				<p>test</p>
+			</div>
+		</Card>
+	</Link>
+	<Link href="https://dxdns.dev" target="_blank" style="display: block;">
+		<Card>
+			<div>
+				<h4>test</h4>
+				<p>test</p>
+			</div>
+		</Card>
+	</Link>
 </HoverFollower>
 
 <br />
