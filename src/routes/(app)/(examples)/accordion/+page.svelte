@@ -2,7 +2,7 @@
 	import { Accordion } from "@/lib/index.js"
 </script>
 
-<div style="width: 500px; margin: 3rem auto;">
+<div style="width: 500px; margin: 3rem auto; line-height: 5;">
 	{#each Array.from(Array(10)) as _, i}
 		<Accordion
 			id="sec{i}"

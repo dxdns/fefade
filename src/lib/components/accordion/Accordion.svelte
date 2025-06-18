@@ -42,6 +42,7 @@
 <style>
 	.accordion {
 		margin-bottom: 5px;
+		line-height: 0;
 	}
 
 	.header {
@@ -53,6 +54,7 @@
 		font-weight: bold;
 		text-align: left;
 		color: var(--ff-color-on-surface);
+		border-radius: 5px;
 	}
 
 	.accordion.contained .header {
@@ -61,7 +63,6 @@
 
 	.accordion.outlined .header {
 		border: 1px solid var(--ff-color-border);
-		border-radius: 5px;
 	}
 
 	.controller {
