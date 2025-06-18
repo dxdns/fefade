@@ -9,6 +9,7 @@
 	white-space: nowrap;
 	user-select: none;
 	line-height: 1.25rem;
+	box-sizing: border-box;
 }
 
 .badge.contained {
