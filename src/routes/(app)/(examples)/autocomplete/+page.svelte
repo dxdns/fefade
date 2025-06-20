@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Autocomplete } from "@/lib/index.js"
+	import { Autocomplete, Link } from "@/lib/index.js"
 
 	const data = Array.from(Array(30)).map((_, i) => ({
 		id: i,
@@ -9,8 +9,8 @@
 
 <Autocomplete variant="search" {data} filter={(item) => `${item.label}`}>
 	{#snippet renderInput({ id, label })}
-		<a href="/{id}">
+		<Link href="/{id}">
 			{label}
-		</a>
+		</Link>
 	{/snippet}
 </Autocomplete>
