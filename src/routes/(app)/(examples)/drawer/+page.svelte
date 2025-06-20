@@ -67,6 +67,7 @@
 		onclick={() => {
 			handleClose("left")
 		}}
+		style="position: absolute;"
 	/>
 	<Drawer isOpen={drawerStates.left} position="left" style="position: absolute;">
 		{@render header(() => {

@@ -101,13 +101,6 @@
 		show: isOpen
 	})}
 >
-	<button
-		class="sheetOverlay"
-		type="button"
-		aria-label="Fechar bottom sheet"
-		onclick={hideBottomSheet}
-	></button>
-
 	<div bind:this={sheetContent} class="content">
 		<div class="header">
 			<div
@@ -138,10 +131,8 @@
 <style>
 	.bottomSheet {
 		position: fixed;
-		top: 0;
-		left: 0;
+		bottom: 0;
 		width: 100%;
-		height: 100%;
 		display: flex;
 		opacity: 0;
 		pointer-events: none;
@@ -155,17 +146,6 @@
 	.bottomSheet.show {
 		opacity: 1;
 		pointer-events: auto;
-	}
-
-	.bottomSheet .sheetOverlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		width: 100%;
-		height: 100%;
-		background: #0000009a;
-		backdrop-filter: blur(1px);
 	}
 
 	.bottomSheet .content {
@@ -191,6 +171,10 @@
 
 	.bottomSheet.dragging .content {
 		transition: none;
+	}
+
+	.bottomSheet.fullscreen {
+		top: 0;
 	}
 
 	.bottomSheet.fullscreen .content {

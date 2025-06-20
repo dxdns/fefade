@@ -1,7 +1,7 @@
 import DrawerComponent from "./Drawer.svelte"
 import DrawerHeaderComponent from "./DrawerHeader.svelte"
 import DrawerContentComponent from "./DrawerContent.svelte"
-import DrawerOverlayComponent from "./DrawerOverlay.svelte"
+import DrawerOverlayComponent from "../overlay/Overlay.svelte"
 
 type DrawerComponentType = typeof DrawerComponent & {
 	Header: typeof DrawerHeaderComponent

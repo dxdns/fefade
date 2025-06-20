@@ -1,18 +1,24 @@
 <script lang="ts">
-	import { classMapUtil } from "../../utils/index.js"
 	import type { HTMLButtonAttributes } from "svelte/elements"
+	import { classMapUtil } from "../../utils/index.js"
 
 	interface Props extends HTMLButtonAttributes {
-		isOpen?: boolean
+		isOpen: boolean
 	}
 
-	let { class: className = "", isOpen, children, ...rest }: Props = $props()
+	let {
+		class: className = "",
+		isOpen = false,
+		children,
+		...rest
+	}: Props = $props()
 </script>
 
 {#if isOpen}
 	<button
 		{...rest}
-		class={classMapUtil(className, "drawerOverlay")}
+		class={classMapUtil(className, "overlay")}
+		type="button"
 		aria-labelledby="overlay"
 		aria-label="Close overlay"
 	>
@@ -20,7 +26,7 @@
 {/if}
 
 <style>
-	.drawerOverlay {
+	.overlay {
 		all: unset;
 		position: fixed;
 		left: 0;
@@ -31,5 +37,7 @@
 		background: rgba(0, 0, 0, 0.5);
 		width: 100%;
 		height: 100%;
+        backdrop-filter: blur(1px);
+        pointer-events: all;
 	}
 </style>
