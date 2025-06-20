@@ -33,6 +33,7 @@
 		padding: 0.75rem 1rem;
 		border-top: 1px solid var(--ff-color-border);
 		flex-wrap: wrap;
+		margin-top: 0;
 	}
 
 	.actions.border-0 {
