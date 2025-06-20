@@ -49,6 +49,7 @@
 
 	function handleFocusChange(index: number) {
 		currentIndex = index
+		elItems[index].scrollIntoView({ behavior: "smooth", block: "nearest" })
 	}
 
 	function handleOnInput(
