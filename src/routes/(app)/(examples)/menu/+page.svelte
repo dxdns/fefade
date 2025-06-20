@@ -72,7 +72,6 @@
 		{#snippet items()}
 			<Menu.Item>Lorem ipsum dolor sit</Menu.Item>
 			<Menu.Item>amet consectetur adipisicing elit</Menu.Item>
-			<Menu.Item>Calculadora icms</Menu.Item>
 		{/snippet}
 	</Menu>
 </div>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import classMapUtil from "../../utils/classMapUtil.js"
+	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
 	import type { AlignType } from "../../types/index.js"
 
 	export interface ModalActionsProps {
@@ -20,7 +20,7 @@
 <div
 	{...rest}
 	class={classMapUtil(className, "actions")}
-	style="justify-content: {align};"
+	style={mergeStyleUtil(`--align: ${align};`, rest.style)}
 >
 	{@render children?.()}
 </div>
@@ -28,7 +28,7 @@
 <style>
 	.actions {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: var(--align, flex-end);
 		gap: 0.5rem;
 		padding: 0.75rem 1rem;
 		border-top: 1px solid var(--ff-color-border);
