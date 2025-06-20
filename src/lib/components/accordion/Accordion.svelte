@@ -41,8 +41,7 @@
 
 <style>
 	.accordion {
-		margin-top: 0;
-		margin-bottom: 5px;
+		margin: 0;
 		line-height: 1;
 	}
 
