@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Badge, Button, Card, getThemeConfig } from "@/lib/index.js"
+	import { Badge, Button, Card, themeConfig } from "@/lib/index.js"
 
-	const theme = $derived(getThemeConfig())
+	const theme = $derived(themeConfig())
 </script>
 
 <div style="width: 500px; margin: 3rem auto;">

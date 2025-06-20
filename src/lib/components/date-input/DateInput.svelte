@@ -1,20 +1,20 @@
 <script lang="ts">
-	import { getThemeConfig } from "../../utils/themeConfigUtil.js"
+	import { themeConfig } from "../../utils/themeConfigUtil.js"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
 
 	interface Props extends Omit<HTMLInputAttributes, "type"> {
 		type?: "date" | "month"
+		theme?: ReturnType<typeof themeConfig>
 	}
 
 	let {
 		class: className = "",
 		type = "date",
+		theme,
 		children,
 		...rest
 	}: Props = $props()
-
-	const theme = $derived(getThemeConfig())
 
 	let el: HTMLInputElement
 
@@ -28,7 +28,10 @@
 	{...rest}
 	bind:this={el}
 	class={classMapUtil(className, "dateInput")}
-	style={mergeStyleUtil(`color-scheme: ${theme.mode};`, rest.style)}
+	style={mergeStyleUtil(
+		`color-scheme: ${theme ? theme.mode : "light"};`,
+		rest.style
+	)}
 	{type}
 	onclick={handleClick}
 />

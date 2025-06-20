@@ -6,7 +6,6 @@
 
 export {
 	customThemeConfig,
-	getThemeConfig,
 	themeConfig
 } from "./utils/themeConfigUtil.js"
 export { toast } from "./states/toastState.svelte.js"

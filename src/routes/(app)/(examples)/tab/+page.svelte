@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Card from "@/lib/components/card/Card.svelte"
-	import { Button, getThemeConfig, Separator, Tab } from "@/lib/index.js"
+	import { Button, themeConfig, Separator, Tab } from "@/lib/index.js"
 	import { fade, fly } from "svelte/transition"
 
-	const theme = $derived(getThemeConfig())
+	const theme = $derived(themeConfig())
 
 	let activeTab = $state({
 		tab1: "1",

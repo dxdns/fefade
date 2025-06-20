@@ -47,16 +47,11 @@ export function customThemeConfig(t: ThemeConfigType) {
 	return t
 }
 
-/** @deprecated Use themeConfig instead. */
-export function getThemeConfig() {
+export function themeConfig() {
 	const _themeState = themeModeState()
 	const { colors } = getThemeConfigContext()
 	const { toggleThemeMode } = themeModeUtil()
 
 	const mode = _themeState.data.mode
 	return { colors: colors[mode], mode, toggle: toggleThemeMode }
-}
-
-export function themeConfig() {
-	return getThemeConfig()
 }

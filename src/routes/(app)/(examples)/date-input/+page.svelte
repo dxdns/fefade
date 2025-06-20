@@ -1,10 +1,12 @@
 <script lang="ts">
-	import { DateInput } from "@/lib/index.js"
+	import { DateInput, themeConfig } from "@/lib/index.js"
+
+	const theme = $derived(themeConfig())
 </script>
 
 <br />
-<DateInput />
+<DateInput {theme} />
 
 <br />
 <br />
-<DateInput type="month" />
+<DateInput {theme} type="month" />
