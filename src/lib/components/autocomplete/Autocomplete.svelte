@@ -108,7 +108,6 @@
 				class={classMapUtil(styles.item, {
 					[styles.focused]: currentIndex === index
 				})}
-				style="margin-top: 0;"
 				onkeyup={() => {}}
 				onclick={reset}
 				bind:this={elItems[index]}
