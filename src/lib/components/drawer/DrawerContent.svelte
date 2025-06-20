@@ -12,6 +12,7 @@
 
 <style>
 	.drawerContent {
+		margin: 0;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -20,6 +21,6 @@
 		position: relative;
 		padding: clamp(1rem, 2vh, 2rem);
 		box-sizing: border-box;
-		min-height: 0;
+		min-height: fit-content;
 	}
 </style>

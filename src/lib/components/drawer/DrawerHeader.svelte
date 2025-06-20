@@ -37,7 +37,7 @@
 		justify-content: center;
 		gap: 0.5rem;
 		padding: 1rem clamp(1rem, 2vw, 2rem);
-		min-height: 3.5rem;
+		min-height: fit-content;
 	}
 
 	.drawerHeader.isClosable {
