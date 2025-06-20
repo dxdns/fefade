@@ -1,12 +1,15 @@
-import { CSS_VAR_PREFIX, themeModeSelectors } from "../constants.js"
-import { getThemeConfigContext } from "../contexts/index.js"
-import { themeModeState } from "../states/index.js"
-import type { ThemeModeType, ThemeConfigType } from "../types/index.js"
+import * as Constants from "../constants.js"
+import { themeConfigState } from "../states/index.js"
+import type {
+	ThemeModeType,
+	ThemeConfigType,
+	CustomThemeConfigType
+} from "../types/index.js"
 import themeModeUtil from "./themeModeUtil.js"
 
 export default function themeConfigUtil() {
 	function _toCssVar(key: string) {
-		return `${CSS_VAR_PREFIX}-${key.replace(/([A-Z])/g, "-$1").toLowerCase()}`
+		return `${Constants.CSS_VAR_PREFIX}-${key.replace(/([A-Z])/g, "-$1").toLowerCase()}`
 	}
 
 	function _generateCssVariables(key: string, value: string) {
@@ -31,7 +34,7 @@ export default function themeConfigUtil() {
 		const keys = Object.keys(theme.colors) as (keyof typeof theme.colors)[]
 		for (const themeKey of keys) {
 			const vars = theme.colors[themeKey]
-			const selector = themeModeSelectors[themeKey as ThemeModeType]
+			const selector = Constants.themeModeSelectors[themeKey as ThemeModeType]
 			if (selector && vars) {
 				sections.push(_processThemeSection(vars, selector))
 			}
@@ -43,15 +46,21 @@ export default function themeConfigUtil() {
 	return { themeConfigToCssString }
 }
 
-export function customThemeConfig(t: ThemeConfigType) {
+export function customThemeConfig(t: CustomThemeConfigType) {
 	return t
 }
 
 export function themeConfig() {
-	const _themeState = themeModeState()
-	const { colors } = getThemeConfigContext()
+	const _themeConfigState = themeConfigState()
+	const { colors, mode } = _themeConfigState.data
 	const { toggleThemeMode } = themeModeUtil()
-
-	const mode = _themeState.data.mode
-	return { colors: colors[mode], mode, toggle: toggleThemeMode }
+	return {
+		colors,
+		mode,
+		toggle: () => {
+			toggleThemeMode((t) => {
+				_themeConfigState.setThemeMode(t)
+			})
+		}
+	}
 }

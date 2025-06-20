@@ -1,43 +1,35 @@
 <script lang="ts">
 	import { onMount, type Snippet } from "svelte"
-	import {
-		themeConfigDefault,
-		THEME_STORAGE,
-		THEME_ATTR
-	} from "../../constants.js"
-	import { setThemeConfigContext } from "../../contexts/index.js"
-	import type { ThemeConfigType, ThemeModeType } from "../../types/index.js"
+	import * as Constants from "../../constants.js"
+	import type { CustomThemeConfigType, ThemeConfigType, ThemeModeType } from "../../types/index.js"
 	import {
 		mergeObjectUtil,
 		themeConfigUtil,
 		themeModeUtil
 	} from "../../utils/index.js"
-	import { themeModeState } from "../../states/index.js"
+	import { themeConfigState } from "../../states/index.js"
 
 	interface Props {
-		customTheme?: ThemeConfigType
+		customTheme?: CustomThemeConfigType
 		defaultMode?: ThemeModeType
 		children: Snippet<[]>
 	}
 
 	let { customTheme, defaultMode = "light", children }: Props = $props()
 
-	const theme = mergeObjectUtil(
-		themeConfigDefault,
+	const newTheme = mergeObjectUtil(
+		Constants.themeConfigDefault,
 		customTheme || {}
 	) as ThemeConfigType
 
-	setThemeConfigContext(theme)
-
 	const { themeConfigToCssString } = themeConfigUtil()
-	const style = themeConfigToCssString(theme)
-
+	const style = themeConfigToCssString(newTheme)
 	const { getThemeModeFromAttr } = themeModeUtil()
-	const _themeModeState = themeModeState()
+	const _themeConfigState = themeConfigState()
 
 	onMount(() => {
 		const themeModeFromAttr = getThemeModeFromAttr()
-		_themeModeState.setThemeMode(themeModeFromAttr)
+		_themeConfigState.setThemeMode(themeModeFromAttr)
 	})
 </script>
 
@@ -47,8 +39,8 @@
 	{@html `
 	<script>
 		(function () {
-			const theme = localStorage.getItem("${THEME_STORAGE}") || "${defaultMode}";
-			document.documentElement.setAttribute("${THEME_ATTR}", theme);
+			const theme = localStorage.getItem("${Constants.THEME_STORAGE}") || "${defaultMode}";
+			document.documentElement.setAttribute("${Constants.THEME_ATTR}", theme);
 			document.documentElement.style.colorScheme = theme;
 		})()
 	</script>
