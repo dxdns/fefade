@@ -3,6 +3,7 @@
 	display: inline-block;
 	width: 100%;
 	line-height: 0;
+	margin: 0;
 }
 
 .textField.required>label::after {
@@ -133,16 +134,9 @@
 }
 
 /* outlined */
-.textField.outlined fieldset {
-	top: -4px;
-}
-
-.textField.outlined fieldset legend {
-	height: 4px;
-}
 
 .textField.outlined:not(.labelEmpty)>input {
-	padding: 7px 0px 0px 0.6rem;
+	padding: 5px 0px 0px 0.6rem;
 }
 
 .textField.outlined>input {
@@ -167,9 +161,9 @@
 	border-width: 2px;
 }
 
-.textField.outlined:not(.labelEmpty)>input:focus~fieldset legend,
-.textField.outlined:not(.labelEmpty)>input:not(:placeholder-shown)~fieldset legend {
-	padding: 5px 0;
+.textField.outlined:not(.labelEmpty)>input:focus~fieldset legend span,
+.textField.outlined:not(.labelEmpty)>input:not(:placeholder-shown)~fieldset legend span {
+	padding-top: 5px;
 }
 
 /* contained */
@@ -220,7 +214,7 @@
 
 .textField.text:not(.labelEmpty)>input,
 .textField.contained:not(.labelEmpty)>input {
-	padding: 1.1rem 0.5rem 0 0.6rem;
+	padding: 0.9rem 0.5rem 0 0.6rem;
 }
 
 .textField.contained::before,
