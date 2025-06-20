@@ -70,7 +70,7 @@
 	}
 
 	.content {
-		margin-top: 0;
+		margin: 0;
 		height: 0px;
 		padding: 0px;
 		overflow: hidden;
@@ -102,6 +102,7 @@
 	}
 
 	.icon {
+		margin: 0;
 		display: flex;
 		align-items: center;
 		transition: all 0.5s ease;
