@@ -1,29 +1,54 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import classMapUtil from "../../utils/classMapUtil.js"
-	import styles from "./DrawerHeader.module.css"
-	import type { Snippet } from "svelte"
+	import { classMapUtil } from "../../utils/index.js"
 	import { CloseIcon } from "../../icons/index.js"
 	import Button from "../button/index.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		content: Snippet<[]>
 		handleClose?: () => void
 	}
 
-	let { class: className = "", content, handleClose, ...rest }: Props = $props()
+	let {
+		class: className = "",
+		handleClose,
+		children,
+		...rest
+	}: Props = $props()
 </script>
 
 <div
 	{...rest}
-	class={classMapUtil(className, [className, styles], styles.drawerHeader, {
-		[styles.withHandleClose]: Boolean(handleClose)
+	class={classMapUtil(className, "drawerHeader", {
+		["isClosable"]: Boolean(handleClose)
 	})}
 >
-	{@render content?.()}
+	{@render children?.()}
 	{#if handleClose}
-		<Button variant="text" class={styles.buttonClose} onclick={handleClose}>
+		<Button variant="text" class="buttonClose" onclick={handleClose}>
 			<CloseIcon />
 		</Button>
 	{/if}
 </div>
+
+<style>
+	.drawerHeader {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 1rem clamp(1rem, 2vw, 2rem);
+		min-height: 3.5rem;
+	}
+
+	.drawerHeader.isClosable {
+		justify-content: space-between;
+	}
+
+	.drawerHeader.borded {
+		border-bottom: 1px solid var(--ff-color-border);
+	}
+
+	.buttonClose {
+		display: inline-block;
+	}
+</style>
