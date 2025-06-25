@@ -11,6 +11,10 @@
 </div>
 
 <style>
+	:global(*, *::after) {
+		box-sizing: border-box;
+	}
+
 	.timeline {
 		position: relative;
 		display: flex;
@@ -30,7 +34,7 @@
 
 	@media screen and (max-width: 425px) {
 		.timeline::after {
-			left: 31px;
+			left: 24px;
 		}
 	}
 </style>
