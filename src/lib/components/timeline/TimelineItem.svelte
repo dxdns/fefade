@@ -1,15 +1,16 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import type { HorizontalPositionType } from "../../types/index.js"
+	import { classMapUtil } from "../../utils/index.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		position: Exclude<HorizontalPositionType, "center">
 	}
 
-	let { position, children }: Props = $props()
+	let { class: className, position, children, ...rest }: Props = $props()
 </script>
 
-<div class="timelineItem {position}">
+<div {...rest} class={classMapUtil(className, "timelineItem", position)}>
 	{@render children?.()}
 </div>
 
@@ -19,6 +20,7 @@
 		position: relative;
 		background: inherit;
 		width: 50%;
+		box-sizing: border-box;
 	}
 
 	.timelineItem::after {
@@ -31,6 +33,7 @@
 		top: 15px;
 		border-radius: 50%;
 		z-index: 1;
+		box-sizing: border-box;
 	}
 
 	.timelineItem.right {
