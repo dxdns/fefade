@@ -9,7 +9,6 @@
 	import classMapUtil from "../../utils/classMapUtil.js"
 	import type { HTMLAttributes } from "svelte/elements"
 	import Button from "../button/index.js"
-	import { mergeStyleUtil } from "../../utils/index.js"
 
 	interface Props
 		extends HTMLAttributes<HTMLDivElement>,
@@ -42,7 +41,6 @@
 	class={classMapUtil(className, "toast", `bg-${color}`, `text-on-${color}`, {
 		["noBorder"]: color === "primary"
 	})}
-	style={mergeStyleUtil("max-width: fit-content;", rest.style)}
 >
 	{#if Icon}
 		<Icon fill="var(--ff-color-on-{color})" height="20px" width="20px" />
@@ -52,6 +50,7 @@
 		flex:1; 
 		padding-inline-end: {isClosable ? '1rem' : 0};
 		margin: 0;
+		max-width: fit-content;
 		"
 	>
 		{message}
