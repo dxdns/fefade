@@ -26,7 +26,6 @@
 		position: absolute;
 		width: 16px;
 		height: 16px;
-		right: -12px;
 		background: var(--ff-color-surface);
 		border: 4px solid var(--ff-color-border);
 		top: 15px;
@@ -34,16 +33,22 @@
 		z-index: 1;
 	}
 
-	.timelineItem.left {
-		align-self: flex-start;
-	}
-
 	.timelineItem.right {
 		align-self: flex-end;
 	}
 
 	.timelineItem.right::after {
-		left: -12px;
+		left: 0;
+		transform: translate(-50%, 0);
+	}
+
+	.timelineItem.left::after {
+		right: 0;
+		transform: translate(50%, 0);
+	}
+
+	.timelineItem.left {
+		align-self: flex-start;
 	}
 
 	@media screen and (max-width: 425px) {
@@ -53,9 +58,10 @@
 			padding-right: 25px;
 		}
 
-		.timelineItem.left::after,
-		.timelineItem.right::after {
-			left: 19px;
+		.timelineItem.right::after,
+		.timelineItem.left::after {
+			left: 0;
+			transform: translate(100%, 0);
 		}
 	}
 </style>
