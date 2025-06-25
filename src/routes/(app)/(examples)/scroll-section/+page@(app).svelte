@@ -10,7 +10,7 @@
 	{#each sectionsData as { reference }}
 		<ScrollSection.Content
 			id={reference}
-			style="height: 100vh; border: 1px solid red"
+			style="height: 100vh; border: 1px solid red;"
 		>
 			<h2>{reference}</h2>
 		</ScrollSection.Content>
