@@ -1,6 +1,5 @@
 <script lang="ts">
-	import Card from "@/lib/components/card/Card.svelte"
-	import { Button, themeConfig, Separator, Tab } from "@/lib/index.js"
+	import { Button, themeConfig, Separator, Tab, Card } from "@/lib/index.js"
 	import { fade, fly } from "svelte/transition"
 
 	const theme = $derived(themeConfig())
