@@ -55,6 +55,9 @@
 		flex:1; 
 		padding-inline-end: {isClosable ? '1rem' : 0};
 		margin: 0;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		"
 	>
 		{message}
@@ -93,6 +96,7 @@
 		justify-content: space-between;
 		border-left: 4px solid currentColor;
 		pointer-events: all;
+		min-width: 100px;
 	}
 
 	.noBorder {
