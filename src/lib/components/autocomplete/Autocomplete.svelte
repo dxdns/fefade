@@ -1,15 +1,15 @@
 <script lang="ts" generics="T">
-	import type { ActionType } from "../../types/index.js"
+	import type { ActionType, VariantType } from "../../types/index.js"
 	import { keyboardNavigationAction } from "../../actions/index.js"
 	import styles from "./Autocomplete.module.css"
 	import { classMapUtil } from "../../utils/index.js"
-	import type { HTMLAttributes } from "svelte/elements"
+	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { Snippet } from "svelte"
 	import { SearchInput } from "../search-input/index.js"
-	import TextField from "../text-field/index.js"
 
-	interface Props<T> extends HTMLAttributes<HTMLDivElement> {
-		variant?: "text" | "search"
+	interface Props<T>
+		extends Omit<Omit<Omit<HTMLInputAttributes, "color">, "type">, "size"> {
+		variant?: VariantType
 		data: T[]
 		filter: (item: T) => string
 		onSelect?: (value: T) => void
@@ -49,6 +49,10 @@
 
 	function handleFocusChange(index: number) {
 		currentIndex = index
+		if (currentIndex === -1) {
+			reset()
+			return
+		}
 		elItems[index].scrollIntoView({ behavior: "smooth", block: "nearest" })
 	}
 
@@ -68,38 +72,23 @@
 	}
 </script>
 
-<div {...rest} class={styles.autocomplete}>
-	{#if variant === "search"}
-		<SearchInput
-			actions={[
-				[
-					keyboardNavigationAction as ActionType<HTMLElement>,
-					{
-						data: $state.snapshot(filtered),
-						onSelect: handleSelect,
-						onFocusChange: handleFocusChange
-					}
-				]
-			]}
-			oninput={handleOnInput}
-			value={inputValue}
-		/>
-	{:else}
-		<TextField
-			actions={[
-				[
-					keyboardNavigationAction as ActionType<HTMLElement>,
-					{
-						data: $state.snapshot(filtered),
-						onSelect: handleSelect,
-						onFocusChange: handleFocusChange
-					}
-				]
-			]}
-			oninput={handleOnInput}
-			value={inputValue}
-		/>
-	{/if}
+<div class={styles.autocomplete}>
+	<SearchInput
+		{...rest}
+		{variant}
+		actions={[
+			[
+				keyboardNavigationAction as ActionType<HTMLElement>,
+				{
+					data: $state.snapshot(filtered),
+					onSelect: handleSelect,
+					onFocusChange: handleFocusChange
+				}
+			]
+		]}
+		oninput={handleOnInput}
+		value={inputValue}
+	/>
 
 	<div class={styles.content}>
 		{#each filtered as item, index}

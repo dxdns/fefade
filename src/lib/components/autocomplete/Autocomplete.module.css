@@ -48,7 +48,7 @@
 .item>* {
 	width: 100%;
 	padding: 0.7rem 1rem;
-	display: list-item;
+	/* display: list-item; */
 	text-align: left;
 	cursor: pointer;
 	line-height: 1.3;
