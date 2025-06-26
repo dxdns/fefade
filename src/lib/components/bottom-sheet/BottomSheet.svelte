@@ -141,6 +141,10 @@
 		justify-content: flex-end;
 		transition: 0.1s linear;
 		z-index: 999;
+		left: 0;
+		margin: 0;
+		right: 0;
+		box-sizing: initial;
 	}
 
 	.bottomSheet.show {
