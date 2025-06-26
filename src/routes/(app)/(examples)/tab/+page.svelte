@@ -43,7 +43,7 @@
 	<span style="font-size: 20px;">{@html s}</span>
 {/snippet}
 
-<div style="width:800px; margin: 3rem auto;">
+<div style="max-width:800px; margin: 3rem auto;">
 	<br />
 	<h1>horizontal</h1>
 	<br />
