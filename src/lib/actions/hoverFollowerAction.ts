@@ -2,14 +2,17 @@ import type { OrientationType } from "../types/index.js"
 
 type Props = {
 	orientation?: OrientationType
+	bgColor?: string
 }
 
 export default function hoverFollowerAction(node: HTMLElement, props?: Props) {
-	const { orientation } = props ?? {}
+	const { orientation, bgColor } = props ?? {}
+	const startIn = 0
 
 	const childs = Array.from(node.children)
-	let overlay = childs[0] as HTMLDivElement
+	const overlay = document.createElement("div")
 
+	overlay.style.background = bgColor !== undefined ? bgColor : ""
 	overlay.style.position = "absolute"
 	overlay.style.top = "0"
 	overlay.style.left = "0"
@@ -26,6 +29,8 @@ export default function hoverFollowerAction(node: HTMLElement, props?: Props) {
 		overlay.style.transition =
 			"transform 0.3s ease, width 0.3s ease, height 0.3s ease, opacity 0.2s ease"
 	}
+
+	node.appendChild(overlay)
 
 	function getTransparentColor(s: string, alpha = 0.2) {
 		const parts = s.match(/\d+/g)
@@ -66,6 +71,12 @@ export default function hoverFollowerAction(node: HTMLElement, props?: Props) {
 
 	function handleAdd(el: HTMLElement) {
 		el.style.position = "relative"
+		const child = el.firstElementChild as HTMLElement | null
+
+		if (child) {
+			child.style.flex = "1"
+			child.style.margin = "0"
+		}
 
 		const hasBgOverlay = overlay.style.background !== ""
 		const bgColor = hasBgOverlay
@@ -111,15 +122,16 @@ export default function hoverFollowerAction(node: HTMLElement, props?: Props) {
 		}
 	}
 
-	childs.slice(1).forEach((childNode) => {
+	childs.slice(startIn).forEach((childNode) => {
 		handleAdd(childNode as HTMLElement)
 	})
 
 	return {
 		destroy() {
-			childs.slice(1).forEach((childNode) => {
+			childs.slice(startIn).forEach((childNode) => {
 				handleRemove(childNode as HTMLElement)
 			})
+			overlay.remove()
 		}
 	}
 }

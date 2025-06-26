@@ -3,7 +3,7 @@
 </script>
 
 <h1>vertical</h1>
-<HoverFollower>
+<HoverFollower bgColor="green">
 	{#each ["item1", "item2", "item3"] as item, i}
 		<div role="list" class="card">
 			{item}
@@ -13,8 +13,8 @@
 
 <br />
 <h1>with multiple childs</h1>
-<HoverFollower style="display: block;">
-	<Link href="https://dxdns.dev" target="_blank" style="display: block;">
+<HoverFollower bgColor="red">
+	<Link href="https://dxdns.dev" target="_blank">
 		<Card>
 			<div>
 				<h4>test</h4>
@@ -22,7 +22,7 @@
 			</div>
 		</Card>
 	</Link>
-	<Link href="https://dxdns.dev" target="_blank" style="display: block;">
+	<Link href="https://dxdns.dev" target="_blank">
 		<Card>
 			<div>
 				<h4>test</h4>
