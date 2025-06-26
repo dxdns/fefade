@@ -10,7 +10,7 @@
 	import { SearchIcon } from "../../icons/index.js"
 	import TextField from "../text-field/index.js"
 
-	interface Props extends Omit<HTMLInputAttributes, "type"> {
+	interface Props extends Omit<Omit<HTMLInputAttributes, "type">, "size"> {
 		variant?: VariantType
 		color?: ColorType
 		actions?: ActionEntryType<HTMLElement>[]
