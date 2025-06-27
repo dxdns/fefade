@@ -1,6 +1,5 @@
 <script lang="ts">
-	import Card from "@/lib/components/card/Card.svelte"
-	import { Button, themeConfig, Separator, Tab } from "@/lib/index.js"
+	import { Button, themeConfig, Separator, Tab, Card } from "@/lib/index.js"
 	import { fade, fly } from "svelte/transition"
 
 	const theme = $derived(themeConfig())
@@ -44,7 +43,7 @@
 	<span style="font-size: 20px;">{@html s}</span>
 {/snippet}
 
-<div style="width:800px; margin: 3rem auto;">
+<div style="max-width:800px; margin: 3rem auto;">
 	<br />
 	<h1>horizontal</h1>
 	<br />

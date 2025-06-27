@@ -17,7 +17,7 @@
 	padding-inline-start: 3rem !important;
 }
 
-.searchInput.contained .inputGroup > input::-webkit-input-placeholder {
+.searchInput .inputGroup > input::-webkit-input-placeholder {
 	color: color-mix(in srgb, var(--ff-color-on-surface) 30%, gray 70%);
 }
 
