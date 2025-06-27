@@ -43,9 +43,23 @@
 	})}
 >
 	{#if Icon}
-		<Icon fill="var(--ff-color-on-{color})" height="20px" width="20px" />
+		<Icon
+			fill="var(--ff-color-on-{color})"
+			height="20px"
+			width="20px"
+			style="max-width: max-content;"
+		/>
 	{/if}
-	<div style="flex:1; padding-inline-end: {isClosable ? '1rem' : 0};">
+	<div
+		style="
+		flex:1; 
+		padding-inline-end: {isClosable ? '1rem' : 0};
+		margin: 0;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		"
+	>
 		{message}
 	</div>
 	{#if isClosable}
@@ -82,6 +96,7 @@
 		justify-content: space-between;
 		border-left: 4px solid currentColor;
 		pointer-events: all;
+		min-width: 100px;
 	}
 
 	.noBorder {

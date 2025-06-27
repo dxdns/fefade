@@ -2,6 +2,7 @@
 	import type { HTMLButtonAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
 	import { StarIcon } from "../../icons/index.js"
+	import styles from "./Rating.module.css"
 
 	interface Props extends HTMLButtonAttributes {
 		startIn?: number
@@ -50,7 +51,9 @@
 			}}
 		>
 			<div
-				class={classMapUtil("icon", { active: idx <= (hoverIndex || index) })}
+				class={classMapUtil(styles.icon, {
+					[styles.active]: idx <= (hoverIndex || index)
+				})}
 			>
 				{#if children}
 					{@render children?.()}
@@ -61,19 +64,3 @@
 		</button>
 	{/each}
 </div>
-
-<style>
-	.icon {
-		transition: color 0.3s ease;
-	}
-
-	.icon.active {
-		color: var(--color);
-	}
-
-	@media (hover: hover) and (pointer: fine) {
-		.icon:hover {
-			color: var(--color);
-		}
-	}
-</style>

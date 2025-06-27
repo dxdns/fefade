@@ -1,15 +1,16 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import type { HorizontalPositionType } from "../../types/index.js"
+	import { classMapUtil } from "../../utils/index.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		position: Exclude<HorizontalPositionType, "center">
 	}
 
-	let { position, children }: Props = $props()
+	let { class: className, position, children, ...rest }: Props = $props()
 </script>
 
-<div class="timelineItem {position}">
+<div {...rest} class={classMapUtil(className, "timelineItem", position)}>
 	{@render children?.()}
 </div>
 
@@ -19,6 +20,7 @@
 		position: relative;
 		background: inherit;
 		width: 50%;
+		box-sizing: border-box;
 	}
 
 	.timelineItem::after {
@@ -26,16 +28,12 @@
 		position: absolute;
 		width: 16px;
 		height: 16px;
-		right: -12px;
 		background: var(--ff-color-surface);
 		border: 4px solid var(--ff-color-border);
 		top: 15px;
 		border-radius: 50%;
 		z-index: 1;
-	}
-
-	.timelineItem.left {
-		align-self: flex-start;
+		box-sizing: border-box;
 	}
 
 	.timelineItem.right {
@@ -43,7 +41,17 @@
 	}
 
 	.timelineItem.right::after {
-		left: -12px;
+		left: 0;
+		transform: translate(-50%, 0);
+	}
+
+	.timelineItem.left::after {
+		right: 0;
+		transform: translate(50%, 0);
+	}
+
+	.timelineItem.left {
+		align-self: flex-start;
 	}
 
 	@media screen and (max-width: 425px) {
@@ -53,9 +61,10 @@
 			padding-right: 25px;
 		}
 
-		.timelineItem.left::after,
-		.timelineItem.right::after {
-			left: 19px;
+		.timelineItem.right::after,
+		.timelineItem.left::after {
+			left: 0;
+			transform: translate(100%, 0);
 		}
 	}
 </style>

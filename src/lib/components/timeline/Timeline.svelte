@@ -1,12 +1,13 @@
 <script lang="ts">
+	import { classMapUtil } from "../../utils/index.js"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
 
-	let { children }: Props = $props()
+	let { class: className, children, ...rest }: Props = $props()
 </script>
 
-<div class="timeline">
+<div {...rest} class={classMapUtil(className, "timeline")}>
 	{@render children?.()}
 </div>
 
@@ -15,6 +16,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		margin: 0;
 	}
 
 	.timeline::after {
@@ -30,7 +32,7 @@
 
 	@media screen and (max-width: 425px) {
 		.timeline::after {
-			left: 31px;
+			left: 24px;
 		}
 	}
 </style>

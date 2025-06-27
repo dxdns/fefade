@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { actionUtil, mergeStyleUtil } from "../../utils/index.js"
+	import {
+		actionUtil,
+		classMapUtil,
+		mergeStyleUtil
+	} from "../../utils/index.js"
 	import { hoverFollowerAction } from "../../actions/index.js"
 	import type { ActionEntryType, OrientationType } from "../../types/index.js"
 	import type { HTMLAttributes } from "svelte/elements"
@@ -11,6 +15,7 @@
 	}
 
 	let {
+		class: className,
 		bgColor,
 		orientation = "vertical",
 		actions,
@@ -18,20 +23,26 @@
 		...rest
 	}: Props = $props()
 
-	const style = mergeStyleUtil(
-		"position: relative;",
-		"display:flex; gap: 0.5rem;",
-		`flex-direction: ${orientation === "horizontal" ? "row" : "column"};`,
-		rest.style
-	)
+	const direction = orientation === "horizontal" ? "row" : "column"
+
+	const style = mergeStyleUtil(`--direction: ${direction}`, rest.style)
 </script>
 
 <div
 	{...rest}
-	use:hoverFollowerAction={{ orientation }}
+	class={classMapUtil(className, "hoverFollower")}
+	use:hoverFollowerAction={{ orientation, bgColor }}
 	use:actionUtil={actions}
 	{style}
 >
-	<div style={bgColor !== undefined ? `background: ${bgColor};` : ""}></div>
 	{@render children?.()}
 </div>
+
+<style>
+	.hoverFollower {
+		position: relative;
+		display: flex;
+		gap: 0.5rem;
+		flex-direction: var(--direction, "column");
+	}
+</style>

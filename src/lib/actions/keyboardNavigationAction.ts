@@ -27,7 +27,11 @@ export default function keyboardNavigationAction<T>(
 
 		if (e.key === "Escape") {
 			e.preventDefault()
-			index = -1
+			if (index > 0) {
+				index = 0
+			} else {
+				index = -1
+			}
 			onFocusChange?.(index)
 		}
 
