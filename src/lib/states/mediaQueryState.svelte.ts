@@ -1,8 +1,25 @@
 import { browser } from "$app/environment"
+import type { SizeType } from "../types/index.js"
 
-let data = $state(false)
+type BreakpointType = Exclude<SizeType, "xs"> | "2xl"
+type OperatorType = "min-width" | "max-width"
 
-export default function mediaQueryState(q: string) {
+const breakpoints: Record<BreakpointType | string, string> = {
+	sm: "425px",
+	md: "768px",
+	lg: "1024px",
+	xl: "1440px",
+	"2xl": "2560px"
+}
+
+export default function mediaQueryState(
+	operator: OperatorType,
+	size: BreakpointType | string
+) {
+	let data = $state(false)
+
+	const query = `(${operator}: ${breakpoints[size as BreakpointType] ?? size})`
+
 	if (!browser) {
 		return {
 			get value() {
@@ -12,30 +29,22 @@ export default function mediaQueryState(q: string) {
 		}
 	}
 
-	const mediaQuery = window.matchMedia(q)
+	const mediaQuery = window.matchMedia(query)
 
 	function update() {
 		data = mediaQuery.matches
 	}
 
-	function mediaHandler(event: MediaQueryListEvent) {
-		data = event.matches
-	}
-
 	update()
 
-	mediaQuery.addEventListener("change", mediaHandler)
-	window.addEventListener("resize", update)
+	mediaQuery.addEventListener("change", update)
 
 	return {
 		get value() {
 			return data
 		},
 		destroy() {
-			if (mediaQuery) {
-				mediaQuery.removeEventListener("change", mediaHandler)
-				window.removeEventListener("resize", update)
-			}
+			mediaQuery.removeEventListener("change", update)
 		}
 	}
 }
