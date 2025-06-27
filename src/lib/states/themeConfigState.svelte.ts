@@ -1,10 +1,7 @@
-import type {
-	ThemeColorsType,
-	ThemeModeType
-} from "../types/index.js"
+import type { ThemeColorsType, ThemeModeType } from "../types/index.js"
 import * as Constants from "../constants.js"
 
-const data = $state<{
+let data = $state<{
 	mode: ThemeModeType
 	colors: ThemeColorsType
 }>({
@@ -14,10 +11,21 @@ const data = $state<{
 
 export default function themeConfigState() {
 	return {
-		data,
+		_setMode(t: ThemeModeType) {
+			data.mode = t
+		},
+		_setColors(t: ThemeModeType) {
+			data.colors = Constants.themeConfigDefault.colors[t]
+		},
+		getMode() {
+			return data.mode
+		},
+		getColors() {
+			return Constants.themeConfigDefault.colors[this.getMode()]
+		},
 		setThemeMode(t: ThemeModeType) {
-			this.data.mode = t
-			this.data.colors = Constants.themeConfigDefault.colors[t]
+			this._setMode(t)
+			this._setColors(t)
 		}
 	}
 }

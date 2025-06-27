@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { onMount, type Snippet } from "svelte"
 	import * as Constants from "../../constants.js"
-	import type { CustomThemeConfigType, ThemeConfigType, ThemeModeType } from "../../types/index.js"
+	import type {
+		CustomThemeConfigType,
+		ThemeConfigType,
+		ThemeModeType
+	} from "../../types/index.js"
 	import {
 		mergeObjectUtil,
 		themeConfigUtil,
@@ -24,12 +28,13 @@
 
 	const { themeConfigToCssString } = themeConfigUtil()
 	const style = themeConfigToCssString(newTheme)
+
 	const { getThemeModeFromAttr } = themeModeUtil()
-	const _themeConfigState = themeConfigState()
+	const themeConfig = themeConfigState()
 
 	onMount(() => {
-		const themeModeFromAttr = getThemeModeFromAttr()
-		_themeConfigState.setThemeMode(themeModeFromAttr)
+		const themeMode = getThemeModeFromAttr()
+		themeConfig.setThemeMode(themeMode)
 	})
 </script>
 
