@@ -4,10 +4,7 @@
  *  https://feflow.dxdns.dev
  */
 
-export {
-	customThemeConfig,
-	themeConfig
-} from "./utils/themeConfigUtil.js"
+export { customThemeConfig, themeConfig } from "./utils/themeConfigUtil.js"
 export { toast } from "./states/toastState.svelte.js"
 export { getSections } from "./states/scrollSectionState.svelte.js"
 
@@ -63,3 +60,4 @@ export * from "./components/status/index.js"
 export * from "./components/skeleton/index.js"
 export * from "./components/rating/index.js"
 export * from "./components/kbd/index.js"
+export * from "./components/hover-reveal/index.js"
