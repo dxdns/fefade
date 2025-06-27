@@ -1,4 +1,3 @@
-import { browser } from "$app/environment"
 import type { SizeType } from "../types/index.js"
 
 type BreakpointType = Exclude<SizeType, "xs"> | "2xl"
@@ -16,11 +15,7 @@ export default function mediaQueryState(
 	operator: OperatorType,
 	size: BreakpointType | string
 ) {
-	let data = $state(false)
-
-	const query = `(${operator}: ${breakpoints[size as BreakpointType] ?? size})`
-
-	if (!browser) {
+	if (typeof window === "undefined") {
 		return {
 			get value() {
 				return false
@@ -29,6 +24,8 @@ export default function mediaQueryState(
 		}
 	}
 
+	let data = $state(false)
+	const query = `(${operator}: ${breakpoints[size as BreakpointType] ?? size})`
 	const mediaQuery = window.matchMedia(query)
 
 	function update() {
