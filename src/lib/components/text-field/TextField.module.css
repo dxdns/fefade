@@ -20,7 +20,6 @@
 	color: var(--ff-color-text-muted);
 	padding: 0 5px;
 	pointer-events: none;
-	transition: 0.2s;
 	line-height: 1.5;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -36,8 +35,6 @@
 	color: var(--ff-color-text);
 	padding: 0 0.5rem 0 0.6rem;
 	border-radius: 0.25rem;
-	-webkit-transition: 0.5s;
-	transition: 0.5s;
 	outline: none;
 	border: none;
 }
@@ -86,7 +83,7 @@
 	overflow: hidden;
 	display: block;
 	padding: 0;
-	height: 13px;
+	height: 1em;
 	font-size: 0.75em;
 	visibility: hidden;
 	max-width: 0.01px;
@@ -107,8 +104,9 @@
 
 .textField>input:focus~label,
 .textField>input:not(:placeholder-shown):not(:focus)~label {
-	top: -5px;
-	opacity: 0;
+	font-size: 0.75em;
+	top: 0;
+	visibility: hidden;
 }
 
 .textField>input:focus~fieldset legend span,
@@ -135,6 +133,10 @@
 
 /* outlined */
 
+.textField.outlined:not(.labelEmpty) fieldset legend span {
+	padding-top: 5px;
+}
+
 .textField.outlined:not(.labelEmpty)>input {
 	padding: 5px 0px 0px 0.6rem;
 }
@@ -159,11 +161,6 @@
 .textField.outlined>input:not(:placeholder-shown)~fieldset {
 	border-color: var(--ff-color-primary);
 	border-width: 2px;
-}
-
-.textField.outlined:not(.labelEmpty)>input:focus~fieldset legend span,
-.textField.outlined:not(.labelEmpty)>input:not(:placeholder-shown)~fieldset legend span {
-	padding-top: 5px;
 }
 
 /* contained */

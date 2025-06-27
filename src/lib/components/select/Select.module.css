@@ -34,6 +34,7 @@
 	pointer-events: none;
 	color: var(--ff-color-on-surface);
 	transition: color 0.3s ease;
+	margin: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {

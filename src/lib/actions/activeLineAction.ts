@@ -11,6 +11,7 @@ export default function activeLineAction(node: HTMLElement, props?: Props) {
 	const line = document.createElement("div")
 
 	Object.assign(line.style, {
+		all: "initial",
 		position: "absolute",
 		backgroundColor: node.dataset.lineColor || "#1e88e5",
 		transition:
@@ -18,7 +19,8 @@ export default function activeLineAction(node: HTMLElement, props?: Props) {
 				? "left 0.25s ease, width 0.25s ease"
 				: "top 0.25s ease, height 0.25s ease",
 		zIndex: "0",
-		pointerEvents: "none"
+		pointerEvents: "none",
+		boxSizing: "border-box"
 	})
 
 	if (orientation === "horizontal") {

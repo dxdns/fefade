@@ -6,6 +6,10 @@
 	<h2>test1</h2>
 </Card>
 
+<Card href="https://dxdns.dev" target="_blank">
+	<h2>link</h2>
+</Card>
+
 <Card glowOnHover>
 	<h2>glow on hover</h2>
 </Card>

@@ -21,7 +21,7 @@
 			background: {i % 2 ? 'green' : 'orange'};
 			opacity: 0.7;
 			"
-		>
+     >
 			<h2>{reference}</h2>
 		</ScrollSection.Content>
 	{/each}
