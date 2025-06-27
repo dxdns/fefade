@@ -1,6 +1,6 @@
 import type { ElementReferenceType } from "../types/index.js"
 
-const data = $state<{
+let data = $state<{
 	sections: ElementReferenceType[]
 	currentReference: string
 }>({
@@ -10,42 +10,51 @@ const data = $state<{
 
 export default function scrollSectionState() {
 	return {
-		data,
-		register(node: HTMLElement, reference: string) {
-			if (this.getSection(reference)) return
-			this.data.sections = [...this.data.sections, { node, reference }]
+		set(sections: ElementReferenceType[]) {
+			data.sections = sections
 		},
-		getSection(reference: string) {
-			return this.data.sections.find((s) => s.reference === reference)
+		setCurrentReference(reference: string) {
+			data.currentReference = reference
+		},
+		register(node: HTMLElement, reference: string) {
+			if (this.getByReference(reference)) return
+			this.set([...data.sections, { node, reference }])
+		},
+		getAll() {
+			return data.sections
+		},
+		getCurrentReference() {
+			return data.currentReference
+		},
+		getByReference(reference: string) {
+			return data.sections.find((s) => s.reference === reference)
 		},
 		scrollTo(reference: string) {
-			const section = this.getSection(reference)
+			const section = this.getByReference(reference)
 			if (section?.node) {
 				section.node.scrollIntoView({ behavior: "smooth" })
-				this.data.currentReference = reference
+				this.setCurrentReference(reference)
 			}
 		},
 		getSections() {
-			return this.data.sections.map(({ node, reference }) => ({
+			return data.sections.map(({ node, reference }) => ({
 				node,
 				reference,
 				onClick: () => this.scrollTo(reference),
-				isActive: this.data.currentReference === reference
+				isActive: data.currentReference === reference
 			}))
 		},
 		clear() {
-			this.data.sections = []
-			this.data.currentReference = ""
+			this.set([])
+			this.setCurrentReference("")
 		},
 		unregister(reference: string) {
-			this.data.sections = this.data.sections.filter(
-				(s) => s.reference !== reference
-			)
+			this.set(data.sections.filter((s) => s.reference !== reference))
 		}
 	}
 }
 
 export function getSections() {
-	const _scrollSectionState = scrollSectionState()
-	return _scrollSectionState.getSections()
+	const scrollSection = scrollSectionState()
+	return scrollSection.getSections()
 }

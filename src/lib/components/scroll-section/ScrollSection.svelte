@@ -71,6 +71,7 @@
 				class={classMapUtil(styles.button, {
 					[styles.active]: isActive
 				})}
+				style="border-radius: 0;"
 			>
 				{reference}
 			</Button>
