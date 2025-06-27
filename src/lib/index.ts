@@ -7,6 +7,7 @@
 export { customThemeConfig, themeConfig } from "./utils/themeConfigUtil.js"
 export { toast } from "./states/toastState.svelte.js"
 export { getSections } from "./states/scrollSectionState.svelte.js"
+export { mediaQueryState as useMediaQuery } from "./states/index.js"
 
 export { Toast, Toaster } from "./components/toast/index.js"
 
