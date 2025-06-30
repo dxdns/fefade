@@ -10,13 +10,16 @@ type ToastInternalType = ToastType & {
 	paused: boolean
 }
 
-export const data = $state<{ toasts: ToastInternalType[] }>({
-	toasts: []
-})
+let data = $state<ToastInternalType[]>([])
 
 export default function toastState() {
 	return {
-		data,
+		getAll() {
+			return data
+		},
+		set(newData: ToastInternalType[]) {
+			data = newData
+		},
 		add(toast: ToastInputType) {
 			const id = crypto.randomUUID()
 			const duration = toast.duration ?? TOAST_DEFAULT_DURATION
@@ -38,20 +41,20 @@ export default function toastState() {
 				...toast
 			}
 
-			data.toasts = [...data.toasts, newToast]
+			this.set([...data, newToast])
 
 			this._startTimer(newToast)
 
 			return id
 		},
 		_getById(id: string) {
-			return this.data.toasts.find((t) => t.id === id)
+			return data.find((t) => t.id === id)
 		},
 		remove(id: string) {
 			const toast = this._getById(id)
 			if (toast) {
 				clearTimeout(toast.timer)
-				this.data.toasts = this.data.toasts.filter((t) => t.id !== id)
+				this.set(data.filter((t) => t.id !== id))
 			}
 		},
 		_startTimer(toast: ToastInternalType) {
@@ -76,14 +79,14 @@ export default function toastState() {
 			}
 		},
 		pauseAll() {
-			data.toasts.forEach((t) => {
+			data.forEach((t) => {
 				if (!t.paused) {
 					this.pause(t.id)
 				}
 			})
 		},
 		resumeAll() {
-			data.toasts.forEach((t) => {
+			data.forEach((t) => {
 				if (t.paused) {
 					this.resume(t.id)
 				}

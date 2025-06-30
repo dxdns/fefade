@@ -24,12 +24,12 @@
 
 <style>
 	.skeleton {
-		background: var(--ff-color-skeleton);
+		background: var(--ff-skeleton);
 		background-image: linear-gradient(
 			90deg,
-			var(--ff-color-skeleton),
-			var(--ff-color-on-skeleton),
-			var(--ff-color-skeleton)
+			var(--ff-skeleton),
+			var(--ff-on-skeleton),
+			var(--ff-skeleton)
 		);
 		border-radius: 5px;
 		display: inline-block;

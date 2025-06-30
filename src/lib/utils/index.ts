@@ -7,6 +7,7 @@ import mergeObjectUtil from "./mergeObjectUtil.js"
 import mergeStyleUtil from "./mergeStyleUtil.js"
 import getPropValueUtil from "./getPropValueUtil.js"
 import normalizeSizeUtil from "./normalizeSizeUtil.js"
+import debounceUtil from "./debounceUtil.js"
 
 export {
 	classMapUtil,
@@ -17,5 +18,6 @@ export {
 	mergeObjectUtil,
 	mergeStyleUtil,
 	getPropValueUtil,
-	normalizeSizeUtil
+	normalizeSizeUtil,
+	debounceUtil
 }

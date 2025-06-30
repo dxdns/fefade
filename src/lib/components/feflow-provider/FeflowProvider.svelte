@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { onMount, type Snippet } from "svelte"
 	import * as Constants from "../../constants.js"
-	import type { CustomThemeConfigType, ThemeConfigType, ThemeModeType } from "../../types/index.js"
+	import type {
+		CustomThemeConfigType,
+		ThemeConfigType,
+		ThemeModeType
+	} from "../../types/index.js"
 	import {
 		mergeObjectUtil,
 		themeConfigUtil,
@@ -24,12 +28,13 @@
 
 	const { themeConfigToCssString } = themeConfigUtil()
 	const style = themeConfigToCssString(newTheme)
+
 	const { getThemeModeFromAttr } = themeModeUtil()
-	const _themeConfigState = themeConfigState()
+	const themeConfig = themeConfigState()
 
 	onMount(() => {
-		const themeModeFromAttr = getThemeModeFromAttr()
-		_themeConfigState.setThemeMode(themeModeFromAttr)
+		const themeMode = getThemeModeFromAttr()
+		themeConfig.setThemeMode(themeMode)
 	})
 </script>
 
@@ -50,76 +55,68 @@
 
 	<style>
 		body {
-			background: var(--ff-color-bg);
-			color: var(--ff-color-text);
+			background: var(--ff-bg);
+			color: var(--ff-text);
 		}
 
 		/** text **/
 
 		.text-primary {
-			color: var(--ff-color-primary);
+			color: var(--ff-primary);
 		}
 
 		.text-on-primary {
-			color: var(--ff-color-on-primary);
+			color: var(--ff-on-primary);
 		}
 
 		.text-secondary {
-			color: var(--ff-color-secondary);
+			color: var(--ff-secondary);
 		}
 
 		.text-on-secondary {
-			color: var(--ff-color-on-secondary);
+			color: var(--ff-on-secondary);
 		}
 
 		.text {
-			color: var(--ff-color-text);
+			color: var(--ff-text);
 		}
 
 		.text-muted {
-			color: var(--ff-color-text-muted);
+			color: var(--ff-text-muted);
 		}
 
 		.text-on-bg {
-			color: var(--ff-color-on-bg);
+			color: var(--ff-on-bg);
 		}
 
 		.text-on-surface {
-			color: var(--ff-color-on-surface);
+			color: var(--ff-on-surface);
 		}
 
 		.text-on-disabled {
-			color: var(--ff-color-on-disabled);
-		}
-
-		.text-on-focus {
-			color: var(--ff-color-on-focus);
+			color: var(--ff-on-disabled);
 		}
 
 		/** bg **/
 
 		.bg-primary {
-			background: var(--ff-color-primary);
+			background: var(--ff-primary);
 		}
 
 		.bg-secondary {
-			background: var(--ff-color-secondary);
+			background: var(--ff-secondary);
 		}
 
 		.bg-page {
-			background: var(--ff-color-bg);
+			background: var(--ff-bg);
 		}
 
 		.bg-surface {
-			background: var(--ff-color-surface);
+			background: var(--ff-surface);
 		}
 
 		.bg-disabled {
-			background: var(--ff-color-disabled);
-		}
-
-		.bg-focus {
-			background: var(--ff-color-focus);
+			background: var(--ff-disabled);
 		}
 
 		.bg-0 {
@@ -129,7 +126,7 @@
 		/** border **/
 
 		.border {
-			border-color: var(--ff-color-border);
+			border-color: var(--ff-border);
 		}
 
 		.border-0 {
@@ -140,114 +137,114 @@
 		/** bg **/
 
 		.bg-success {
-			background: var(--ff-color-success) !important;
+			background: var(--ff-success) !important;
 		}
 
 		.bg-error,
 		.bg-danger {
-			background: var(--ff-color-error) !important;
+			background: var(--ff-error) !important;
 		}
 
 		.bg-warning {
-			background: var(--ff-color-warning) !important;
+			background: var(--ff-warning) !important;
 		}
 
 		.bg-info {
-			background: var(--ff-color-info) !important;
+			background: var(--ff-info) !important;
 		}
 
 		/** hover bg **/
 		.hover-bg-success:hover {
-			background: var(--ff-color-success) !important;
+			background: var(--ff-success) !important;
 		}
 
 		.hover-bg-error:hover,
 		.hover-bg-danger:hover {
-			background: var(--ff-color-error) !important;
+			background: var(--ff-error) !important;
 		}
 
 		.hover-bg-warning:hover {
-			background: var(--ff-color-warning) !important;
+			background: var(--ff-warning) !important;
 		}
 
 		.hover-bg-info:hover {
-			background: var(--ff-color-info) !important;
+			background: var(--ff-info) !important;
 		}
 
 		/** text **/
 
 		.text-on-success {
-			color: var(--ff-color-on-success) !important;
+			color: var(--ff-on-success) !important;
 		}
 
 		.text-on-error,
 		.text-on-danger {
-			color: var(--ff-color-on-error) !important;
+			color: var(--ff-on-error) !important;
 		}
 
 		.text-on-warning {
-			color: var(--ff-color-on-warning) !important;
+			color: var(--ff-on-warning) !important;
 		}
 
 		.text-on-info {
-			color: var(--ff-color-on-info) !important;
+			color: var(--ff-on-info) !important;
 		}
 
 		/** hover text **/
 
 		.hover-text-on-success:hover {
-			color: var(--ff-color-on-success) !important;
+			color: var(--ff-on-success) !important;
 		}
 
 		.hover-text-on-error:hover,
 		.hover-text-on-danger:hover {
-			color: var(--ff-color-on-error) !important;
+			color: var(--ff-on-error) !important;
 		}
 
 		.hover-text-on-warning:hover {
-			color: var(--ff-color-on-warning) !important;
+			color: var(--ff-on-warning) !important;
 		}
 
 		.hover-text-on-info:hover {
-			color: var(--ff-color-on-info) !important;
+			color: var(--ff-on-info) !important;
 		}
 
 		/** border **/
 
 		.border-on-success {
-			border-color: var(--ff-color-on-success) !important;
+			border-color: var(--ff-on-success) !important;
 		}
 
 		.border-on-error,
 		.border-on-danger {
-			border-color: var(--ff-color-on-error) !important;
+			border-color: var(--ff-on-error) !important;
 		}
 
 		.border-on-warning {
-			border-color: var(--ff-color-on-warning) !important;
+			border-color: var(--ff-on-warning) !important;
 		}
 
 		.border-on-info {
-			border-color: var(--ff-color-on-info) !important;
+			border-color: var(--ff-on-info) !important;
 		}
 
 		/** hover border **/
 
 		.hover-border-on-success:hover {
-			border-color: var(--ff-color-on-success) !important;
+			border-color: var(--ff-on-success) !important;
 		}
 
 		.hover-border-on-error:hover,
 		.hover-border-on-danger:hover {
-			border-color: var(--ff-color-on-error) !important;
+			border-color: var(--ff-on-error) !important;
 		}
 
 		.hover-border-on-warning:hover {
-			border-color: var(--ff-color-on-warning) !important;
+			border-color: var(--ff-on-warning) !important;
 		}
 
 		.hover-border-on-info:hover {
-			border-color: var(--ff-color-on-info) !important;
+			border-color: var(--ff-on-info) !important;
 		}
 	</style>
 </svelte:head>

@@ -24,6 +24,6 @@
 
 	textarea:focus {
 		outline: none;
-		border-color: color-mix(in srgb, var(--ff-color-border) 70%, gray);
+		border-color: color-mix(in srgb, var(--ff-border) 70%, gray);
 	}
 </style>

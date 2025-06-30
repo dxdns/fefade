@@ -16,7 +16,7 @@
 
 	let isHovered = $state(false)
 
-	const _toastState = toastState()
+	const toast = toastState()
 	const maxToasts = fullWidth ? 1 : 3
 	const positions = [
 		"top-left",
@@ -31,7 +31,8 @@
 {#each positions as position}
 	{@const pos = position.split("-")[0]}
 	{@const isPositionTop = pos === "top"}
-	{@const grouped = _toastState.data.toasts
+	{@const grouped = toast
+		.getAll()
 		.filter((t) => t.position === position)
 		.slice(-maxToasts)
 		.reverse()}
@@ -48,7 +49,7 @@
 			}
 		)}
 	>
-		{#each grouped as toast, i (toast.id)}
+		{#each grouped as item, i (item.id)}
 			<div
 				role="region"
 				class={styles.wrapper}
@@ -56,11 +57,11 @@
 				transition:fade={{ duration: 150 }}
 				onmouseenter={() => {
 					isHovered = true
-					_toastState.pauseAll()
+					toast.pauseAll()
 				}}
 				onmouseleave={() => {
 					isHovered = false
-					_toastState.resumeAll()
+					toast.resumeAll()
 				}}
 				style={mergeStyleUtil(
 					`
@@ -75,10 +76,10 @@
 				)}
 			>
 				<Toast
-					{...toast}
+					{...item}
 					class={styles.toast}
 					handleClose={() => {
-						_toastState.remove(toast.id)
+						toast.remove(item.id)
 					}}
 				/>
 			</div>

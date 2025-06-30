@@ -1,20 +1,17 @@
 <script lang="ts">
+	import { classMapUtil } from "../../utils/index.js"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
 
-	let { children }: Props = $props()
+	let { class: className, children, ...rest }: Props = $props()
 </script>
 
-<div class="timeline">
+<div {...rest} class={classMapUtil(className, "timeline")}>
 	{@render children?.()}
 </div>
 
 <style>
-	:global(*, *::after) {
-		box-sizing: border-box;
-	}
-
 	.timeline {
 		position: relative;
 		display: flex;
@@ -26,7 +23,7 @@
 		content: "";
 		position: absolute;
 		width: 6px;
-		background: var(--ff-color-surface);
+		background: var(--ff-surface);
 		top: 0;
 		bottom: 0;
 		left: 50%;

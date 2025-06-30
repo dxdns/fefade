@@ -10,12 +10,12 @@
 }
 
 .card.contained {
-	color: var(--ff-color-on-surface);
-	background: var(--ff-color-surface);
+	color: var(--ff-on-surface);
+	background: var(--ff-surface);
 }
 
 .card.outlined {
 	color: inherit;
 	background: none;
-	border: 1px solid var(--ff-color-border);
+	border: 1px solid var(--ff-border);
 }

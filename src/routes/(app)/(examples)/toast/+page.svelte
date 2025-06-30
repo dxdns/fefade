@@ -1,97 +1,51 @@
 <script lang="ts">
 	import { Button, toast } from "@/lib/index.js"
+
+	const colors = ["error", "success", "warning"]
+	const positions = [
+		"top-left",
+		"bottom-left",
+		"top-right",
+		"bottom-right",
+		"bottom-center",
+		"top-center"
+	]
 </script>
 
-<Button
-	onclick={() => {
-		toast({ message: "test", color: "error" })
-	}}
->
-	Error
-</Button>
+<div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+	{#each colors as color}
+		<Button
+			onclick={() => {
+				toast({ message: color, color: color as any })
+			}}
+		>
+			{color}
+		</Button>
+	{/each}
 
-<Button
-	onclick={() => {
-		toast({ message: "test", color: "success" })
-	}}
->
-	Success
-</Button>
+	{#each positions as position}
+		<Button
+			onclick={() => {
+				toast({ message: position, position: position as any })
+			}}
+		>
+			{position}
+		</Button>
+	{/each}
 
-<Button
-	onclick={() => {
-		toast({ message: "test", color: "warning" })
-	}}
->
-	Warning
-</Button>
+	<Button
+		onclick={() => {
+			toast({ message: "Duration: 15000", duration: 15000 })
+		}}
+	>
+		Duration: 15000
+	</Button>
 
-<br />
-<br />
-
-<Button
-	onclick={() => {
-		toast({ message: "test", position: "top-left" })
-	}}
->
-	Top-Left
-</Button>
-
-<Button
-	onclick={() => {
-		toast({ message: "test", position: "bottom-left" })
-	}}
->
-	Bottom-Left
-</Button>
-
-<Button
-	onclick={() => {
-		toast({ message: "test", position: "top-right" })
-	}}
->
-	Top-Right
-</Button>
-
-<Button
-	onclick={() => {
-		toast({ message: "test", position: "bottom-right" })
-	}}
->
-	Bottom-Right
-</Button>
-
-<Button
-	onclick={() => {
-		toast({ message: "test", position: "bottom-center" })
-	}}
->
-	Bottom-Center
-</Button>
-
-<Button
-	onclick={() => {
-		toast({ message: "test", position: "top-center" })
-	}}
->
-	Top-Center
-</Button>
-
-<br />
-<br />
-
-<Button
-	onclick={() => {
-		toast({ message: "test", duration: 15000 })
-	}}
->
-	Duration: 15000
-</Button>
-
-<Button
-	onclick={() => {
-		toast({ message: "test", isClosable: true })
-	}}
->
-	Closable
-</Button>
+	<Button
+		onclick={() => {
+			toast({ message: "closable", isClosable: true })
+		}}
+	>
+		Closable
+	</Button>
+</div>

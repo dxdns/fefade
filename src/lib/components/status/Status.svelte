@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { classMapUtil, normalizeSizeUtil } from "../../utils/index.js"
+	import {
+		classMapUtil,
+		mergeStyleUtil,
+		normalizeSizeUtil
+	} from "../../utils/index.js"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -11,32 +15,30 @@
 	let {
 		class: className = "",
 		variant = "none",
-		color = "var(--ff-color-bg)",
-		size = 30
+		color = "var(--ff-bg)",
+		size = 30,
+		...rest
 	}: Props = $props()
 </script>
 
-<div class="container">
-	<div
-		class={classMapUtil(className, variant, "status")}
-		style="
-        --color: {color};
+<div
+	{...rest}
+	class={classMapUtil(className, variant, "status")}
+	style={mergeStyleUtil(
+		`--color: ${color};
         --bg: whitesmoke;
-        --size: {normalizeSizeUtil(size)};
-        "
-	></div>
-</div>
+        --size: ${normalizeSizeUtil(size)};`,
+		rest.style
+	)}
+></div>
 
 <style>
 	:root {
 		--bounce-distance: 15%;
 	}
 
-	.container {
-		position: relative;
-	}
-
 	.status {
+		position: relative;
 		display: inline-block;
 		width: var(--size);
 		height: var(--size);

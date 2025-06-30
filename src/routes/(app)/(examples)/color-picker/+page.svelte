@@ -20,7 +20,7 @@
 	.colorPreview {
 		width: 38px;
 		height: 38px;
-		border: 1px solid var(--ff-color-border);
+		border: 1px solid var(--ff-border);
 		border-radius: 0.25rem;
 		background: var(--color);
 	}

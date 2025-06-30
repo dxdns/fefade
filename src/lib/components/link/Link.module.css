@@ -4,7 +4,7 @@
 	align-items: center;
 	gap: 0.5em;
 	transition: color 0.3s ease;
-	color: var(--ff-color-text, currentColor);
+	color: var(--ff-text, currentColor);
 	line-height: 1;
 	text-decoration: none;
 }
@@ -38,13 +38,13 @@
 	transform: scaleX(0);
 	transform-origin: var(--origin);
 	height: 0.125em;
-	background: var(--ff-color-primary, currentColor);
+	background: var(--ff-primary, currentColor);
 	transition: transform 0.25s ease-out;
 }
 
 @media (hover: hover) and (pointer: fine) {
 	.link:hover {
-		color: color-mix(in srgb, var(--ff-color-text, currentColor) 75%, gray 15%);
+		color: color-mix(in srgb, var(--ff-text, currentColor) 75%, gray 15%);
 	}
 
 	.link svg {
