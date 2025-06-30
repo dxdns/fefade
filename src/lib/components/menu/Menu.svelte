@@ -99,7 +99,7 @@
 		overflow: hidden;
 		width: max-content;
 		max-width: 100vw;
-		background: var(--ff-color-surface);
+		background: var(--ff-surface);
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		border-radius: 0.25rem;
 		padding: 0;
@@ -114,7 +114,7 @@
 	}
 
 	.content.isTranslucent {
-		background: var(--ff-color-surface-variant);
+		background: var(--ff-surface-variant);
 		backdrop-filter: blur(15px);
 	}
 

@@ -38,7 +38,7 @@
 
 <style>
 	.separator {
-		border-color: var(--ff-color-border);
+		border-color: var(--ff-border);
 		border-right-width: 0;
 		border-bottom-width: 0;
 		border-left-width: 0;

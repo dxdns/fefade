@@ -21,7 +21,7 @@
 
 .content>*::after,
 .content>*::before {
-	background: linear-gradient(to right, var(--ff-color-surface-variant) 0%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(to right, var(--ff-surface-variant) 0%, rgba(255, 255, 255, 0) 100%);
 	content: "";
 	position: absolute;
 	width: 200px;

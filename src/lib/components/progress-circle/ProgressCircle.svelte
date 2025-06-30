@@ -12,7 +12,7 @@
 	let {
 		class: className = "",
 		value,
-		color = "var(--ff-color-primary)",
+		color = "var(--ff-primary)",
 		size = "sm",
 		children,
 		...rest
@@ -45,7 +45,7 @@
 			cx="46"
 			cy="46"
 			fill="transparent"
-			stroke="var(--ff-color-border)"
+			stroke="var(--ff-border)"
 			stroke-dasharray="0"
 		>
 		</circle>

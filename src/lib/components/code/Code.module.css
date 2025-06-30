@@ -1,5 +1,5 @@
 .code {
-	background: var(--ff-color-surface);
+	background: var(--ff-surface);
 	line-height: 1.5;
 	overflow: auto;
 	height: auto;
@@ -12,7 +12,7 @@
 }
 
 .code::-webkit-scrollbar-thumb {
-	background: var(--ff-color-border);
+	background: var(--ff-border);
 	border-radius: 4px;
 }
 
@@ -31,8 +31,8 @@
 	text-align: left;
 	margin-right: 1em;
 	padding: 0 0.5em;
-	color: var(--ff-color-text-muted);
-	border-right: 2px solid var(--ff-color-border);
+	color: var(--ff-text-muted);
+	border-right: 2px solid var(--ff-border);
 	user-select: none;
 	flex-shrink: 0;
 }

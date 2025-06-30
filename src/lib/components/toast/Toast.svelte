@@ -44,7 +44,7 @@
 >
 	{#if Icon}
 		<Icon
-			fill="var(--ff-color-on-{color})"
+			fill="var(--ff-on-{color})"
 			height="20px"
 			width="20px"
 			style="max-width: max-content;"

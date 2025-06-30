@@ -3,7 +3,7 @@
 	width: 100%;
 	box-sizing: border-box;
 	padding: 0 clamp(0.5rem, 2vw, 1rem);
-	color: var(--ff-color-on-surface);
+	color: var(--ff-on-surface);
 	display: flex;
 	align-items: center;
 	height: 80px;
@@ -11,12 +11,12 @@
 }
 
 .navbar.contained {
-	background: var(--ff-color-surface);
+	background: var(--ff-surface);
 }
 
 .navbar.outlined {
 	background: none;
-	border: 1px solid var(--ff-color-border);
+	border: 1px solid var(--ff-border);
 	border-radius: 15px;
 }
 
@@ -26,6 +26,6 @@
 }
 
 .navbar.isTranslucent {
-	background: var(--ff-color-surface-variant);
+	background: var(--ff-surface-variant);
 	backdrop-filter: blur(15px);
 }

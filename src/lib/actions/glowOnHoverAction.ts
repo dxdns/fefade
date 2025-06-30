@@ -14,7 +14,7 @@ export default function glowOnHoverAction(node: HTMLElement) {
 			computedBg === "none"
 
 		if (hasTransparentBg) {
-			target.style.backgroundColor = "var(--ff-color-bg)"
+			target.style.backgroundColor = "var(--ff-bg)"
 		}
 
 		glow = document.createElement("div")
@@ -54,7 +54,7 @@ export default function glowOnHoverAction(node: HTMLElement) {
 		const x = ((event.clientX - rect.left) / rect.width) * 100
 		const y = ((event.clientY - rect.top) / rect.height) * 100
 
-		glow.style.background = `radial-gradient(circle at ${x}% ${y}%, var(--ff-color-border) 0%, transparent 30%)`
+		glow.style.background = `radial-gradient(circle at ${x}% ${y}%, var(--ff-border) 0%, transparent 30%)`
 		glow.style.opacity = "1"
 	}
 

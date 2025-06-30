@@ -31,7 +31,7 @@
 		justify-content: var(--align, flex-end);
 		gap: 0.5rem;
 		padding: 0.75rem 1rem;
-		border-top: 1px solid var(--ff-color-border);
+		border-top: 1px solid var(--ff-border);
 		flex-wrap: wrap;
 		margin-top: 0;
 	}

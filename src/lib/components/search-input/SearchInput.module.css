@@ -18,7 +18,7 @@
 }
 
 .searchInput .inputGroup > input::-webkit-input-placeholder {
-	color: color-mix(in srgb, var(--ff-color-on-surface) 30%, gray 70%);
+	color: color-mix(in srgb, var(--ff-on-surface) 30%, gray 70%);
 }
 
 .inputGroup > input::-webkit-search-cancel-button {

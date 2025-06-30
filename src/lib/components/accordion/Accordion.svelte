@@ -53,16 +53,16 @@
 		cursor: pointer;
 		font-weight: bold;
 		text-align: left;
-		color: var(--ff-color-on-surface);
+		color: var(--ff-on-surface);
 		border-radius: 5px;
 	}
 
 	.accordion.contained .header {
-		background: var(--ff-color-surface);
+		background: var(--ff-surface);
 	}
 
 	.accordion.outlined .header {
-		border: 1px solid var(--ff-color-border);
+		border: 1px solid var(--ff-border);
 	}
 
 	.controller {
@@ -81,18 +81,18 @@
 	}
 
 	.accordion.contained .content {
-		background: var(--ff-color-surface);
+		background: var(--ff-surface);
 	}
 
 	.accordion.outlined .content {
 		background: none;
 		border-style: solid;
-		border: 1px solid var(--ff-color-border);
+		border: 1px solid var(--ff-border);
 		border-top: none;
 	}
 
 	.accordion:not(.outlined) .content {
-		border-top: 1px solid var(--ff-color-border);
+		border-top: 1px solid var(--ff-border);
 	}
 
 	.controller:checked + .header + .content {

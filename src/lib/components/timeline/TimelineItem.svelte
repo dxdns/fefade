@@ -28,8 +28,8 @@
 		position: absolute;
 		width: 16px;
 		height: 16px;
-		background: var(--ff-color-surface);
-		border: 4px solid var(--ff-color-border);
+		background: var(--ff-surface);
+		border: 4px solid var(--ff-border);
 		top: 15px;
 		border-radius: 50%;
 		z-index: 1;

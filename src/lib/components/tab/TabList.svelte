@@ -29,7 +29,7 @@
 	const lineColor = getPropValueUtil<{ color?: string }, "color">(
 		lineStyle,
 		"color",
-		"var(--ff-color-on-surface)"
+		"var(--ff-on-surface)"
 	)
 	const lineHeight = getPropValueUtil<{ height?: string }, "height">(
 		lineStyle,

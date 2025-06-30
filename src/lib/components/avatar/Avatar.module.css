@@ -3,7 +3,7 @@
 	height: clamp(3rem, 4vw, 4rem);
 	border-radius: 50%;
 	overflow: hidden;
-	background: var(--ff-color-primary);
+	background: var(--ff-primary);
 	position: relative;
 }
 
@@ -18,7 +18,7 @@
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	color: var(--ff-color-on-primary);
+	color: var(--ff-on-primary);
 	font-size: 1.125rem;
 	line-height: 1;
 	white-space: nowrap;
