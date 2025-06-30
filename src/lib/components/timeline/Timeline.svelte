@@ -23,7 +23,7 @@
 		content: "";
 		position: absolute;
 		width: 6px;
-		background: var(--ff-color-surface);
+		background: var(--ff-surface);
 		top: 0;
 		bottom: 0;
 		left: 50%;

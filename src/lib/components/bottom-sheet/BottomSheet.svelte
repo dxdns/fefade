@@ -155,8 +155,8 @@
 	.bottomSheet .content {
 		width: 100%;
 		position: relative;
-		background: var(--ff-color-surface);
-		color: var(--ff-color-on-surface);
+		background: var(--ff-surface);
+		color: var(--ff-on-surface);
 		max-height: 100vh;
 		height: 50vh;
 		max-width: 1150px;
@@ -202,7 +202,7 @@
 		height: 4px;
 		width: 40px;
 		display: block;
-		background: var(--ff-color-primary);
+		background: var(--ff-primary);
 		border-radius: var(--radius-pill);
 	}
 

@@ -20,9 +20,9 @@
 
 <style>
 	kbd {
-		background: var(--ff-color-surface, #f9f9f9);
-		color: var(--ff-color-text, #333);
-		border: 1px solid var(--ff-color-border, #b4b4b4);
+		background: var(--ff-surface, #f9f9f9);
+		color: var(--ff-text, #333);
+		border: 1px solid var(--ff-border, #b4b4b4);
 		border-radius: 6px;
 		padding: 0.2em 0.5em;
 		font-family: inherit;
@@ -34,7 +34,7 @@
 			0 1px 1px rgba(0, 0, 0, 0.2),
 			inset 0 2px 0 rgba(255, 255, 255, 0.7);
 		border-bottom: 4px solid
-			color-mix(in srgb, var(--ff-color-border, #b4b4b4) 90%, gray);
+			color-mix(in srgb, var(--ff-border, #b4b4b4) 90%, gray);
 	}
 
 	kbd.xs,

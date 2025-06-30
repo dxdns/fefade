@@ -1,6 +1,6 @@
 :root {
 	--border-radius: 0.5rem;
-	--border-color-on-focus: var(--ff-color-primary);
+	--border-color-on-focus: var(--ff-primary);
 }
 
 .numberInput {
@@ -21,10 +21,10 @@
 	width: 100%;
 	height: 2.5rem;
 	font-size: 1rem;
-	color: var(--ff-color-text);
+	color: var(--ff-text);
 	padding: 0 0.75rem;
 	border-radius: var(--border-radius);
-	background: var(--ff-color-bg);
+	background: var(--ff-bg);
 	text-align: center;
 	min-width: 150px;
 	transition:
@@ -34,7 +34,7 @@
 }
 
 .numberInput.outlined>input {
-	border: 1px solid var(--ff-color-border);
+	border: 1px solid var(--ff-border);
 }
 
 .numberInput.outlined>input:focus {
@@ -42,7 +42,7 @@
 }
 
 .numberInput.contained>input {
-	background: var(--ff-color-surface);
+	background: var(--ff-surface);
 	border: none;
 }
 

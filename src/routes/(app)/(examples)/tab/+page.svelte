@@ -167,7 +167,7 @@
 		<Tab.List
 			class="border-0"
 			orientation="vertical"
-			hoverFollower={{ bgColor: theme.colors.colorTextMuted }}
+			hoverFollower={{ bgColor: theme.colors.textMuted }}
 		>
 			{#each tabs as tab}
 				<Button

@@ -14,63 +14,85 @@ export const themeModeSelectors = {
 	dark: `[${THEME_ATTR}='dark']`
 }
 
+const gray = {
+	50: "#fcfcfc",
+	100: "#f9f9f9",
+	200: "#f0f0f0",
+	300: "#e5e5e5",
+	400: "#d4d4d4",
+	500: "#a3a3a3",
+	600: "#737373",
+	700: "#525252",
+	800: "#404040",
+	900: "#262626",
+	950: "#171717",
+	1000: "#0a0a0a"
+}
+
+const statusColors = {
+	light: {
+		success: "#22c55e",
+		onSuccess: "#124a28",
+		error: "#ef4444",
+		onError: "#511111",
+		warning: "#f97316",
+		onWarning: "#6c2710",
+		info: "#58c5fc91",
+		onInfo: "#003344"
+	},
+	dark: {
+		success: "#124a28",
+		onSuccess: "#22c55e",
+		error: "#511111",
+		onError: "#ef4444",
+		warning: "#6c2710",
+		onWarning: "#f97316",
+		info: "#0033449f",
+		onInfo: "#a7dffc"
+	}
+}
+
 export const themeConfigDefault: ThemeConfigType = {
-	colors: {
-		light: {
-			colorPrimary: "#18181b",
-			colorOnPrimary: "#ffffff",
-			colorSecondary: "#474747",
-			colorOnSecondary: "#ffffff",
-			colorText: "#272727",
-			colorTextMuted: "#6b7280",
-			colorBg: "#ffffff",
-			colorOnBg: "#272727",
-			colorSurface: "#e4e4e7",
-			colorSurfaceVariant: "#f5f7fa80",
-			colorOnSurface: "#272727",
-			colorBorder: "#e5e7eb",
-			colorDisabled: "#d1d5db",
-			colorOnDisabled: "#6b7280",
-			colorFocus: "#a7dffc80",
-			colorOnFocus: "#003344",
-			colorSkeleton: "lightgray",
-			colorOnSkeleton: "#eee",
-			colorSuccess: "#22c55e",
-			colorOnSuccess: "#124a28",
-			colorError: "#ef4444",
-			colorOnError: "#511111",
-			colorWarning: "#f97316",
-			colorOnWarning: "#6c2710",
-			colorInfo: "#58c5fc91",
-			colorOnInfo: "#003344"
-		},
-		dark: {
-			colorPrimary: "#fafafa",
-			colorOnPrimary: "#18181b",
-			colorSecondary: "#ddd",
-			colorOnSecondary: "#474747",
-			colorText: "#dbdbdb",
-			colorTextMuted: "#78787f",
-			colorBg: "#09090b",
-			colorOnBg: "#f9fafb",
-			colorSurface: "#27272a",
-			colorSurfaceVariant: "#10101380",
-			colorOnSurface: "#f9fafb",
-			colorBorder: "#27272a",
-			colorDisabled: "#ffffff1f",
-			colorOnDisabled: "#ffffff4d",
-			colorFocus: "#a7dffcb3",
-			colorOnFocus: "#a7dffc",
-			colorSkeleton: "#40404080",
-			colorOnSkeleton: "#404040",
-			colorSuccess: "#124a28",
-			colorOnSuccess: "#22c55e",
-			colorError: "#511111",
-			colorOnError: "#ef4444",
-			colorWarning: "#6c2710",
-			colorOnWarning: "#f97316",
-			colorInfo: "#0033449f",
-			colorOnInfo: "#a7dffc"
-		}
+	light: {
+		primary: gray[1000],
+		onPrimary: gray[50],
+		secondary: gray[800],
+		onSecondary: gray[50],
+		text: gray[900],
+		textMuted: gray[500],
+		bg: gray[50],
+		onBg: gray[900],
+		surface: gray[100],
+		surfaceVariant: `${gray[200]}cc`,
+		onSurface: gray[900],
+		border: gray[300],
+		disabled: gray[400],
+		onDisabled: gray[600],
+		skeleton: gray[300],
+		onSkeleton: gray[100],
+		overlay: "#00000066",
+		shadow: "#0000001A",
+		...statusColors.light
+	},
+	dark: {
+		primary: gray[50],
+		onPrimary: gray[1000],
+		secondary: gray[400],
+		onSecondary: gray[800],
+		text: gray[200],
+		textMuted: gray[500],
+		bg: gray[1000],
+		onBg: gray[200],
+		surface: gray[800],
+		surfaceVariant: `${gray[900]}cc`,
+		onSurface: gray[200],
+		border: gray[700],
+		disabled: `${gray[200]}33`,
+		onDisabled: `${gray[300]}66`,
+		skeleton: `${gray[700]}cc`,
+		onSkeleton: gray[600],
+		overlay: "#00000099",
+		shadow: "#00000080",
+		...statusColors.dark
 	}
 }

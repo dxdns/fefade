@@ -13,7 +13,7 @@
 	padding-inline-end: 1rem;
 	text-align: -webkit-center;
 	height: fit-content;
-	color: var(--ff-color-text);
+	color: var(--ff-text);
 }
 
 .table>thead {
@@ -36,11 +36,11 @@
 }
 
 .table>tbody>tr:not(.colappse) {
-	border-bottom: 1px solid var(--ff-color-border);
+	border-bottom: 1px solid var(--ff-border);
 }
 
 .table>tbody>tr:not(.colappse):hover {
-	background-color: var(--ff-color-bg);
+	background-color: var(--ff-bg);
 }
 
 .table>tbody>tr:last-child {
@@ -66,7 +66,7 @@
 
 .table>tbody .colappse.active>td {
 	height: 100%;
-	border-bottom: 1px solid var(--ff-color-border);
+	border-bottom: 1px solid var(--ff-border);
 }
 
 .table>tbody .colappse.active,
@@ -76,7 +76,7 @@
 }
 
 .table .expand-btn {
-	color: var(--ff-color-text);
+	color: var(--ff-text);
 	cursor: pointer;
 	padding: 0.75rem;
 	background: none;
@@ -85,7 +85,7 @@
 
 .table .expand-btn:after {
 	content: "\25BC";
-	color: var(--ff-color-text-muted);
+	color: var(--ff-text-muted);
 	font-weight: bold;
 	float: right;
 	margin-left: 0.5rem;
@@ -113,13 +113,13 @@
 	}
 
 	.table tr {
-		border-bottom: 3px solid var(--ff-color-border);
+		border-bottom: 3px solid var(--ff-border);
 		display: block;
 		margin-bottom: 1rem;
 	}
 
 	.table td {
-		border-bottom: 1px solid var(--ff-color-border);
+		border-bottom: 1px solid var(--ff-border);
 		display: block;
 		font-size: 0.875rem;
 		text-align: -webkit-right;

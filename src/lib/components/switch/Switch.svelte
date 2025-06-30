@@ -22,8 +22,8 @@
 		size = "sm",
 		label,
 		indicatorColor = {
-			unchecked: "var(--ff-color-on-surface)",
-			checked: "var(--ff-color-on-primary)"
+			unchecked: "var(--ff-on-surface)",
+			checked: "var(--ff-on-primary)"
 		},
 		children,
 		...rest
@@ -32,13 +32,13 @@
 	const uncheckedColor = getPropValueUtil<{ unchecked?: string }, "unchecked">(
 		indicatorColor,
 		"unchecked",
-		"var(--ff-color-on-surface)"
+		"var(--ff-on-surface)"
 	)
 
 	const checkedColor = getPropValueUtil<{ checked?: string }, "checked">(
 		indicatorColor,
 		"checked",
-		"var(--ff-color-on-primary)"
+		"var(--ff-on-primary)"
 	)
 </script>
 

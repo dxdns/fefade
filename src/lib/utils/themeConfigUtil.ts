@@ -27,13 +27,13 @@ export default function themeConfigUtil() {
 	}
 
 	function themeConfigToCssString(theme?: ThemeConfigType) {
-		if (!theme?.colors) return ""
+		if (!theme) return ""
 
 		const sections: string[] = []
 
-		const keys = Object.keys(theme.colors) as (keyof typeof theme.colors)[]
+		const keys = Object.keys(theme) as (keyof typeof theme)[]
 		for (const themeKey of keys) {
-			const vars = theme.colors[themeKey]
+			const vars = theme[themeKey]
 			const selector = Constants.themeModeSelectors[themeKey as ThemeModeType]
 			if (selector && vars) {
 				sections.push(_processThemeSection(vars, selector))

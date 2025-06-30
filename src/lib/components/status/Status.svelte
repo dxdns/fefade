@@ -15,7 +15,7 @@
 	let {
 		class: className = "",
 		variant = "none",
-		color = "var(--ff-color-bg)",
+		color = "var(--ff-bg)",
 		size = 30,
 		...rest
 	}: Props = $props()

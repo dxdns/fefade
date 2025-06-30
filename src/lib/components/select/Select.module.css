@@ -15,8 +15,8 @@
 	box-shadow: none;
 	flex: 1;
 	padding: 0.5em 2.5em 0.5em 1em;
-	background: var(--ff-color-surface);
-	color: var(--ff-color-on-surface);
+	background: var(--ff-surface);
+	color: var(--ff-on-surface);
 	background-image: none;
 	cursor: pointer;
 	outline: 0;
@@ -32,13 +32,13 @@
 	top: 50%;
 	transform: translateY(-50%);
 	pointer-events: none;
-	color: var(--ff-color-on-surface);
+	color: var(--ff-on-surface);
 	transition: color 0.3s ease;
 	margin: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
 	.select:hover .icon {
-		color: var(--ff-color-text-muted);
+		color: var(--ff-text-muted);
 	}
 }

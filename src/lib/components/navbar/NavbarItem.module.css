@@ -3,7 +3,7 @@
 }
 
 .navbarItem[aria-current="page"] {
-	background: color-mix(in srgb, var(--ff-color-surface) 85%, gray 15%);
+	background: color-mix(in srgb, var(--ff-surface) 85%, gray 15%);
 }
 
 .navbarItem > * {
@@ -13,8 +13,8 @@
 
 @media (hover: hover) and (pointer: fine) {
 	.navbarItem:hover {
-		background: color-mix(in srgb, var(--ff-color-surface) 90%, gray 10%);
-		color: var(--ff-color-on-surface) !important;
+		background: color-mix(in srgb, var(--ff-surface) 90%, gray 10%);
+		color: var(--ff-on-surface) !important;
 		opacity: 1 !important;
 	}
 
@@ -23,6 +23,6 @@
 	}
 
 	.navbarItem.contained:hover {
-		color: var(--ff-color-on-primary) !important;
+		color: var(--ff-on-primary) !important;
 	}
 }

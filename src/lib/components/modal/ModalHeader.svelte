@@ -40,7 +40,7 @@
 		align-items: center;
 		gap: 1rem;
 		height: 70px;
-		border-bottom: 1px solid var(--ff-color-border);
+		border-bottom: 1px solid var(--ff-border);
 		margin-bottom: 1rem;
 	}
 

@@ -6,12 +6,12 @@
 	text-align: left;
 	transition: background 0.3s;
 	line-height: 1.3;
-	color: var(--ff-color-on-surface);
+	color: var(--ff-on-surface);
 	word-wrap: break-word;
 }
 
 @media (hover: hover) and (pointer: fine) {
 	.menuItem:hover {
-		background: color-mix(in srgb, var(--ff-color-surface) 75%, gray 15%);
+		background: color-mix(in srgb, var(--ff-surface) 75%, gray 15%);
 	}
 }
