@@ -3,18 +3,22 @@
 
 	interface Props extends HTMLTextareaAttributes {}
 
-	let { class: className = "", ...rest }: Props = $props()
+	let {
+		class: className = "",
+		value = $bindable(""),
+		...rest
+	}: Props = $props()
 </script>
 
-<textarea {...rest} class={className}></textarea>
+<textarea {...rest} class={className} {value}></textarea>
 
 <style>
 	textarea {
 		padding: 1rem;
 		border-radius: 15px;
-		color: var(--ff-on-surface);
-		background: var(--ff-surface);
-		border-color: var(--ff-border);
+		color: var(--ff-color-on-surface);
+		background: var(--ff-color-surface);
+		border: 1px solid var(--ff-color-border);
 		transition: border-color 0.3s ease;
 	}
 
