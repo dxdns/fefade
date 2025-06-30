@@ -21,9 +21,11 @@
 	class={classMapUtil(
 		className,
 		[className, styles],
+		"navbarToggler",
 		[visibleInSize, styles],
 		styles.toggler
 	)}
+	style={rest.style}
 >
 	<input
 		{...rest}
@@ -38,3 +40,9 @@
 		<CloseIcon class={styles.closeIcon} />
 	</label>
 </div>
+
+<style>
+	.navbarToggler {
+		margin: 0;
+	}
+</style>
