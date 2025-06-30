@@ -14,7 +14,7 @@
 		class: className = "",
 		autoFocus = false,
 		isLoading = false,
-		value = $bindable(0),
+		value = $bindable(""),
 		children,
 		...rest
 	}: Props = $props()
@@ -29,11 +29,9 @@
 		RIGHT: "ArrowRight"
 	}
 
-	let el: HTMLInputElement | undefined
+	let el: HTMLInputElement
 
 	function handleKeyDown(e: KeyboardEvent) {
-		if (!el) return
-
 		const isMeta = e.ctrlKey || e.metaKey
 
 		switch (e.key) {
