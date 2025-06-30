@@ -41,7 +41,7 @@
 		<br />
 		<br />
 
-		<Badge class="bg-info text-on-info" size="lg" variant="contained">
+		<Badge class="bg-primary text-on-primary" size="lg" variant="contained">
 			contained
 		</Badge>
 
