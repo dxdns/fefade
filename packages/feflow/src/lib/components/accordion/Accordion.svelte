@@ -57,6 +57,11 @@
 		border-radius: 5px;
 	}
 
+	.accordion.text .header {
+		border-radius: 0;
+		border-bottom: 1px solid var(--ff-border);
+	}
+
 	.accordion.contained .header {
 		background: var(--ff-surface);
 	}
@@ -89,10 +94,6 @@
 		border-style: solid;
 		border: 1px solid var(--ff-border);
 		border-top: none;
-	}
-
-	.accordion:not(.outlined) .content {
-		border-top: 1px solid var(--ff-border);
 	}
 
 	.controller:checked + .header + .content {

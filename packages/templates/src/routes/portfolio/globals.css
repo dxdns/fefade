@@ -10,12 +10,6 @@
 	color: var(--color-text-muted);
 }
 
-body {
-	font-family: "Inter", sans-serif;
-	line-height: 1.2;
-	overflow-x: hidden;
-}
-
 p {
 	margin-bottom: 1rem;
 	max-width: 70ch;
