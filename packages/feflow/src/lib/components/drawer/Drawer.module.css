@@ -1,0 +1,81 @@
+.drawer {
+	background: var(--ff-surface);
+	color: var(--ff-on-surface);
+	z-index: 999;
+	padding: 1rem;
+	transition:
+		transform 0.3s cubic-bezier(0.82, 0.085, 0.395, 0.895),
+		width 0.3s cubic-bezier(0.82, 0.085, 0.395, 0.895),
+		height 0.3s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+	will-change: transform, width, height;
+	overflow: hidden;
+	height: auto;
+	width: auto;
+	min-width: 18rem;
+	margin: 0;
+}
+
+.drawer.temporary {
+	position: fixed;
+}
+
+.drawer.permanent {
+	position: static;
+	min-height: 100vh;
+}
+
+/* Left */
+
+.drawer.left {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	transform: translateX(-100%);
+	border-right: 1px solid var(--ff-border);
+}
+
+.drawer.left.show {
+	transform: translateX(0);
+}
+
+/* Right */
+
+.drawer.right {
+	top: 0;
+	bottom: 0;
+	right: 0;
+	transform: translateX(100%);
+	border-left: 1px solid var(--ff-border);
+}
+
+.drawer.right.show {
+	transform: translateX(0);
+}
+
+/* Top */
+
+.drawer.top {
+	left: 0;
+	right: 0;
+	top: 0;
+	transform: translateY(-100%);
+	border-bottom: 1px solid var(--ff-border);
+}
+
+.drawer.top.show {
+	transform: translateY(0);
+}
+
+/* Bottom */
+
+.drawer.bottom {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: translateY(100%);
+	border-top: 1px solid var(--ff-border);
+}
+
+.drawer.bottom.show {
+	transform: translateY(0);
+}

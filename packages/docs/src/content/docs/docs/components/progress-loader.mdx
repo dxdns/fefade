@@ -1,0 +1,43 @@
+---
+title: Progress Loader
+description: A visual indicator used to show the progress of a task or loading state.
+---
+
+import ProgressLoaderPreview from "@/components/ProgressLoaderPreview.svelte"
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+<Tabs>
+  <TabItem label="Preview">
+    <ProgressLoaderPreview client:load />
+  </TabItem>
+  <TabItem label="Usage">
+    ```svelte
+    <script lang="ts">
+      import { Button, ProgressLoader } from "@dxdns/feflow"
+
+      let progress = $state(0)
+
+      let interval: ReturnType<typeof setInterval>
+
+      function startProgress() {
+        interval = setInterval(() => {
+          if (progress < 100) {
+            progress += 1
+          } else {
+            clearInterval(interval)
+            progress = 0
+          }
+        }, 100)
+      }
+    </script>
+
+    <div style="line-height: 5; padding: 1rem;">
+      <ProgressLoader {progress} />
+      <Button disabled={progress > 0} onclick={startProgress}>
+        start progress
+      </Button>
+    </div>
+    ```
+
+  </TabItem>
+</Tabs>

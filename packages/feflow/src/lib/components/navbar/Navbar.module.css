@@ -1,0 +1,31 @@
+.navbar {
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 clamp(0.5rem, 2vw, 1rem);
+	color: var(--ff-on-surface);
+	display: flex;
+	align-items: center;
+	height: 80px;
+	user-select: none;
+}
+
+.navbar.contained {
+	background: var(--ff-surface);
+}
+
+.navbar.outlined {
+	background: none;
+	border: 1px solid var(--ff-border);
+	border-radius: 15px;
+}
+
+.navbar.text {
+	border: none;
+	background: none;
+}
+
+.navbar.isTranslucent {
+	background: var(--ff-surface-variant);
+	backdrop-filter: blur(15px);
+}

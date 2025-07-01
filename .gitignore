@@ -12,9 +12,10 @@ pnpm-debug.log*
 .vercel
 .netlify
 .wrangler
-/.svelte-kit
-/build
-/dist
+.svelte-kit
+.astro
+build
+dist
 
 # OS
 .DS_Store

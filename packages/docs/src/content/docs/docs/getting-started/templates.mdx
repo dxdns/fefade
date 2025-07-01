@@ -1,0 +1,43 @@
+---
+title: Templates
+description: templates showcase.
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components"
+import { LinkCard } from "@astrojs/starlight/components"
+
+<CardGrid>
+  <a href="https://github.com/dxdns/feflow-templates/tree/main/landing-page" target="_blank" style="text-decoration: none;">
+    <Card title="Landing Page" description="Ideal landing page template for startups and SaaS.">
+      <img src="https://dummyjson.com/image/450" alt="Landing Page" style={{ width: '100%', borderRadius: '6px', objectFit: 'cover', height: '180px' }} />
+    </Card>
+  </a>
+
+<a
+	href="https://github.com/dxdns/feflow-templates/tree/main/dashboard"
+	target="_blank"
+	style="text-decoration: none;"
+>
+	<Card
+		title="Dashboard"
+		description="Modern dashboard template for data monitoring."
+	>
+		<img
+			src="https://dummyjson.com/image/550"
+			alt="Dashboard"
+			style={{
+				width: "100%",
+				borderRadius: "6px",
+				objectFit: "cover",
+				height: "180px"
+			}}
+		/>
+	</Card>
+</a>
+
+  <a href="https://github.com/dxdns/feflow-templates/tree/main/portfolio" target="_blank" style="text-decoration: none;">
+    <Card title="Portfolio" description="A modern template for personal portfolios.">
+      <img src="https://dummyjson.com/image/650" alt="Creative Portfolio" style={{ width: '100%', borderRadius: '6px', objectFit: 'cover', height: '180px' }} />
+    </Card>
+  </a>
+</CardGrid>

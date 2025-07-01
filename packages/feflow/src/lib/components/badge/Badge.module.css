@@ -1,0 +1,97 @@
+.badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-align: center;
+	white-space: nowrap;
+	user-select: none;
+	line-height: 1.25rem;
+	box-sizing: border-box;
+}
+
+.badge.contained {
+	background: var(--ff-surface);
+	color: var(--ff-on-surface);
+	transition: opacity 0.3s ease;
+}
+
+.badge.xs {
+	font-size: 0.625rem;
+	line-height: 0.75rem;
+	min-height: 1rem;
+	padding-inline: 0.25rem;
+}
+
+.badge.sm {
+	font-size: 0.75rem;
+	line-height: 0.9rem;
+	min-height: 1.2rem;
+	padding-inline: 0.3rem;
+}
+
+.badge.md {
+	font-size: 0.875rem;
+	line-height: 1.05rem;
+	min-height: 1.4rem;
+	padding-inline: 0.35rem;
+}
+
+.badge.lg {
+	font-size: 1rem;
+	line-height: 1.2rem;
+	min-height: 1.6rem;
+	padding-inline: 0.4rem;
+}
+
+.badge.xl {
+	font-size: 1.125rem;
+	line-height: 1.35rem;
+	min-height: 1.8rem;
+	padding-inline: 0.45rem;
+}
+
+.badge.outlined {
+	background: none;
+	border: 1px solid var(--ff-border);
+}
+
+/* empty */
+
+.badge.xs:empty {
+	min-width: 1rem;
+}
+
+.badge.sm:empty {
+	min-width: 1.2rem;
+	min-height: 1.2rem;
+}
+
+.badge.md:empty {
+	min-width: 1.4rem;
+	min-height: 1.4rem;
+}
+
+.badge.lg:empty {
+	min-width: 1.6rem;
+	min-height: 1.6rem;
+}
+
+.badge.xl:empty {
+	min-width: 1.8rem;
+	min-height: 1.8rem;
+}
+
+.badge.roundedFull {
+	border-radius: 9999px;
+	padding: 0 0.5em;
+	overflow: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.badge.contained:hover {
+		opacity: 0.7;
+	}
+}

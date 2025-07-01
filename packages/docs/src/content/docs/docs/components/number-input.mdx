@@ -1,0 +1,36 @@
+---
+title: Number Input
+description: A customizable input component for entering and adjusting numeric values.
+---
+
+import NumberInputPreview from "@/components/NumberInputPreview.svelte"
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+<Tabs>
+  <TabItem label="Preview">
+    <NumberInputPreview client:load />
+  </TabItem>
+  <TabItem label="Usage">
+    ```svelte
+    <script lang="ts">
+        import { NumberInput } from "@dxdns/feflow"
+
+        let quantity = $state(0)
+    </script>
+
+    <div style="max-width: 150px; margin: 0 auto;">
+        {#each ["text", "contained", "outlined"] as variant}
+            <NumberInput
+                autoFocus
+                variant={variant as any}
+                bind:value={quantity}
+                min={0}
+                max={10}
+            />
+        {/each}
+        <NumberInput disabled bind:value={quantity} />
+    </div>
+    ```
+
+  </TabItem>
+</Tabs>

@@ -1,80 +1,31 @@
 {
-	"name": "@dxdns/feflow",
-	"version": "0.5.37",
-	"description": "feflow: svelte components ui",
+	"name": "feflow",
+	"version": "0.0.1",
+	"description": "UI Component Library",
 	"private": false,
-	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
-	"publishConfig": {
-		"access": "public"
+	"workspaces": [
+		"packages/*",
+		"packages/templates/*"
+	],
+	"scripts": {
+		"build:feflow": "npm run build -w @dxdns/feflow",
+		"prepare": "npm run build:feflow",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format": "prettier --write .",
+		"lint": "prettier --check ."
 	},
-	"license": "MIT",
-	"homepage": "https://feflow.dxdns.dev",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/dxdns/feflow.git"
 	},
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build && npm run prepack",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"prepack": "svelte-kit sync && svelte-package && publint",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"format": "prettier --write .",
-		"lint": "prettier --check .",
-		"release": "npm run build && git push && git push --tags",
-		"release:patch": "npm version patch && npm run release",
-		"release:minor": "npm version minor && npm run release",
-		"release:major": "npm version major && npm run release",
-		"postinstall": "node ./postinstall.js"
+	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/dxdns/feflow/issues"
 	},
-	"files": [
-		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*",
-		"postinstall.js"
-	],
-	"sideEffects": [
-		"**/*.css"
-	],
-	"svelte": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"type": "module",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		}
-	},
-	"peerDependencies": {
-		"svelte": "^5.0.0"
-	},
+	"homepage": "https://github.com/dxdns/feflow#readme",
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^3.0.8",
-		"@sveltejs/kit": "^2.16.0",
-		"@sveltejs/package": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^5.0.0",
-		"@types/node": "^22.14.1",
-		"prettier": "^3.4.2",
-		"prettier-plugin-svelte": "^3.3.3",
-		"publint": "^0.3.2",
-		"svelte": "^5.0.0",
-		"svelte-check": "^4.0.0",
-		"typescript": "^5.0.0",
-		"vite": "^6.2.5"
-	},
-	"keywords": [
-		"svelte",
-		"svelte5",
-		"svelte-ui",
-		"ui",
-		"feflow",
-		"components",
-		"ui-components",
-		"svelte-pkg",
-		"svelte-actions",
-		"actions",
-		"dxdns"
-	]
+		"prettier": "^3.6.2",
+		"prettier-plugin-svelte": "^3.4.0"
+	}
 }

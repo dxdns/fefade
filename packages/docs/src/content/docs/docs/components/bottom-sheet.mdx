@@ -1,0 +1,40 @@
+---
+title: Bottom Sheet
+description: A sliding panel that emerges from the bottom of the screen, used to display additional content or actions without navigating away from the current view.
+---
+
+import BottomSheetPreview from "@/components/BottomSheetPreview.svelte"
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+<Tabs>
+  <TabItem label="Preview">
+    <BottomSheetPreview client:load />
+  </TabItem>
+  <TabItem label="Usage">
+    ```svelte
+    <script lang="ts">
+        import { BottomSheet, Button } from "@dxdns/feflow"
+
+        let isOpen = $state(false)
+
+        function handleClose() {
+            isOpen = false
+        }
+    </script>
+
+    <BottomSheet.Overlay {isOpen} onclick={handleClose} style="z-index: 998;" />
+    <BottomSheet {isOpen} {handleClose}>
+        <h1>test</h1>
+    </BottomSheet>
+
+    <Button
+        onclick={() => {
+            isOpen = !isOpen
+        }}
+    >
+        Open
+    </Button>
+    ```
+
+  </TabItem>
+</Tabs>
