@@ -47,6 +47,11 @@ export default defineConfig({
 							label: "CLI",
 							slug: "docs/getting-started/cli",
 							badge: "New"
+						},
+						{
+							label: "Templates",
+							slug: "docs/getting-started/templates",
+							badge: "New"
 						}
 					]
 				},
@@ -65,7 +70,8 @@ export default defineConfig({
 	vite: {
 		resolve: {
 			alias: {
-				"@": path.resolve("./src/lib")
+				"@": path.resolve("./src/lib"),
+				"@assets": path.resolve("./src/assets"),
 			}
 		}
 	}

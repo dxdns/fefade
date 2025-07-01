@@ -12,12 +12,12 @@
 </script>
 
 <label
-	class={classMapUtil(className, [className, styles], styles.checkbox, {
+	class={classMapUtil(className, [className, styles], styles.checkbox, [size, styles], {
 		["text-muted"]: rest.disabled
 	})}
 >
 	<input type="checkbox" {...rest} />
-	<div class={classMapUtil(styles.wrapper, `box-${size}`)}>
+	<div class={styles.wrapper}>
 		<div class={styles.bg}></div>
 		<svg fill="none" viewBox="0 0 24 24" class={styles.icon}>
 			<path

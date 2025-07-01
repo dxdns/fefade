@@ -12,10 +12,10 @@
 </script>
 
 <svelte:head>
-	<title>portfolio | {data.title}</title>
+	<title>Portfolio | {data.title}</title>
 	<meta
 		name="description"
-		content="feflow svelte components ui - portfolio demo example"
+		content="feflow svelte components ui - Portfolio demo example"
 	/>
 </svelte:head>
 
@@ -71,8 +71,8 @@
 
 <section id="blog">
 	<h2>Blog</h2>
-	<HoverFollower style="display: block;">
-		<Link href="/" style="display: block;">
+	<HoverFollower>
+		<Link href="/">
 			<Card>
 				<h4>The Future of Full Stack Development: Trends to Watch</h4>
 				<p class="text-muted">
@@ -81,7 +81,7 @@
 				</p>
 			</Card>
 		</Link>
-		<Link href="/" style="display: block;">
+		<Link href="/">
 			<Card>
 				<h4>My Journey to Becoming a Software Engineer</h4>
 				<p class="text-muted">

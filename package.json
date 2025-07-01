@@ -4,8 +4,7 @@
 	"description": "UI Component Library",
 	"private": false,
 	"workspaces": [
-		"packages/*",
-		"packages/templates/*"
+		"packages/*"
 	],
 	"scripts": {
 		"build:feflow": "npm run build -w @dxdns/feflow",

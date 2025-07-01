@@ -2,49 +2,49 @@
 
 | Component name    | Status |
 | ----------------- | ------ |
-| Accordion         | ✅      |
-| Autocomplete      | ✅      |
-| Avatar            | ✅      |
-| Badge             | ✅      |
+| Accordion         | ✅     |
+| Autocomplete      | ✅     |
+| Avatar            | ✅     |
+| Badge             | ✅     |
 | Bottom Sheet      | 🔨     |
-| Button            | ✅      |
-| Card              | ✅      |
+| Button            | ✅     |
+| Card              | ✅     |
 | Carousel          | 🔨     |
-| Checkbox          | ✅      |
-| Code              | ✅      |
+| Checkbox          | ✅     |
+| Code              | ✅     |
 | Color Picker      | 🔨     |
 | Cookie notice     | ✅     |
 | Data Table        | 🔨     |
-| Date Input        | 🔨      |
+| Date Input        | 🔨     |
 | Drawer            | ✅     |
-| File Input        | ✅      |
+| File Input        | ✅     |
 | Gallery           | 🔨     |
 | Hover Follower    | ✅     |
 | Hover Reveal      | ✅     |
-| Kbd               | ✅      |
-| Link              | ✅      |
-| Menu              | ✅      |
-| Modal             | ✅      |
+| Kbd               | ✅     |
+| Link              | ✅     |
+| Menu              | ✅     |
+| Modal             | ✅     |
 | Navbar            | 🔨     |
-| Number Input      | ✅      |
-| Password Input    | ✅      |
+| Number Input      | ✅     |
+| Password Input    | ✅     |
 | Pin Input         | ✅     |
-| Progress Circle   | ✅      |
-| Progress Loader   | ✅      |
-| Radio Button      | ✅      |
-| Range Input       | ✅      |
+| Progress Circle   | ✅     |
+| Progress Loader   | ✅     |
+| Radio Button      | ✅     |
+| Range Input       | ✅     |
 | Rating            | ✅     |
 | Scroll Section    | ✅     |
-| Search Input      | ✅      |
+| Search Input      | ✅     |
 | Select            | 🔨     |
-| Separator         | ✅      |
+| Separator         | ✅     |
 | Shortcut Listener | ✅     |
-| Skeleton          | ✅      |
+| Skeleton          | ✅     |
 | Status            | ✅     |
-| Switch            | ✅      |
-| Tab               | ✅      |
-| Text Field        | ✅      |
-| Textarea          | ✅      |
+| Switch            | ✅     |
+| Tab               | ✅     |
+| Text Field        | ✅     |
+| Textarea          | ✅     |
 | Timeline          | ✅     |
 | Toast             | ✅     |
 | Window            | ✅     |
