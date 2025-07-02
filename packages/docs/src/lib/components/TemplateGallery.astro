@@ -1,0 +1,41 @@
+---
+import { Card, Link } from "@dxdns/feflow"
+
+import landingPageScreenshot from "@assets/screenshots/landing-page.png"
+import signInScreenshot from "@assets/screenshots/sign-in.png"
+import portfolioScreenshot from "@assets/screenshots/portfolio.png"
+
+const templates = [
+	{
+		title: "Landing Page",
+		href: "https://github.com/dxdns/feflow/tree/main/packages/templates/src/routes/landing-page",
+		screenshot: landingPageScreenshot,
+		alt: "Landing Page Template"
+	},
+	{
+		title: "Sign In",
+		href: "https://github.com/dxdns/feflow/tree/main/packages/templates/src/routes/sign-in",
+		screenshot: signInScreenshot,
+		alt: "Sign In Template"
+	},
+	{
+		title: "Portfolio",
+		href: "https://github.com/dxdns/feflow/tree/main/packages/templates/src/routes/portfolio",
+		screenshot: portfolioScreenshot,
+		alt: "Creative Portfolio Template"
+	}
+]
+---
+
+<div>
+	{
+		templates.map(({ title, href, screenshot, alt }) => (
+			<Link href={href} target="_blank" key={href}>
+				<Card style="max-height: 500px; overflow: auto;">
+					<h4 style="text-align: center;">{title}</h4>
+					<img src={screenshot.src} alt={alt} />
+				</Card>
+			</Link>
+		))
+	}
+</div>
