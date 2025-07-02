@@ -12,9 +12,15 @@
 </script>
 
 <label
-	class={classMapUtil(className, [className, styles], styles.checkbox, [size, styles], {
-		["text-muted"]: rest.disabled
-	})}
+	class={classMapUtil(
+		className,
+		[className, styles],
+		styles.checkbox,
+		[size, styles],
+		{
+			["text-muted"]: rest.disabled
+		}
+	)}
 >
 	<input type="checkbox" {...rest} />
 	<div class={styles.wrapper}>

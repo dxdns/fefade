@@ -8,10 +8,14 @@
 		html {
 			font-size: 18px !important;
 		}
-		
+
 		[data-theme="dark"] {
 			body {
-				background-image: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(36deg 100% 50%), transparent);
+				background-image: radial-gradient(
+					ellipse 80% 50% at 50% -20%,
+					hsl(36deg 100% 50%),
+					transparent
+				);
 			}
 		}
 	</style>

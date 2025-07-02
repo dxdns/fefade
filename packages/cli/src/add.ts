@@ -25,9 +25,7 @@ export default async function add(componentName: string) {
 	const git = simpleGit()
 
 	try {
-		console.log(
-			`📥 Adding "${componentName}" component...`
-		)
+		console.log(`📥 Adding "${componentName}" component...`)
 
 		await git.clone("https://github.com/dxdns/feflow.git", tempDir, [
 			"--depth=1"
