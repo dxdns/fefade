@@ -24,7 +24,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w @dxdns/cli
+      - run: npm run build -w @dxdns/feflow-cli
 
       - uses: softprops/action-gh-release@v2
         with:
@@ -33,6 +33,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: npm publish -w @dxdns/cli
+      - run: npm publish -w @dxdns/feflow-cli
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
