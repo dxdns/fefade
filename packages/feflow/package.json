@@ -21,10 +21,10 @@
 		"prepack": "svelte-kit sync && svelte-package && publint",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"release": "npm run build && git push && git push --tags",
-		"release:patch": "npm version patch && npm run release",
-		"release:minor": "npm version minor && npm run release",
-		"release:major": "npm version major && npm run release",
+		"release": "npm run build",
+		"release:patch": "npm version patch --tag-version-prefix=feflow-v && git push --follow-tags && npm run release",
+		"release:minor": "npm version minor --tag-version-prefix=feflow-v && git push --follow-tags && npm run release",
+		"release:major": "npm version major --tag-version-prefix=feflow-v && git push --follow-tags && npm run release",
 		"postinstall": "node ./postinstall.js"
 	},
 	"files": [
