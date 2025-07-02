@@ -1,0 +1,139 @@
+.table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.table th,
+.table td {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-inline-end: 1rem;
+	text-align: -webkit-center;
+	height: fit-content;
+	color: var(--ff-text);
+}
+
+.table > thead {
+	height: 50px;
+}
+
+.table > thead tr th {
+	font-size: 0.85em;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.table > caption {
+	font-size: 1.5rem;
+	margin: 0.75rem 0 1rem;
+}
+
+.table > tbody > tr {
+	padding: 0.5rem;
+}
+
+.table > tbody > tr:not(.colappse) {
+	border-bottom: 1px solid var(--ff-border);
+}
+
+.table > tbody > tr:not(.colappse):hover {
+	background-color: var(--ff-bg);
+}
+
+.table > tbody > tr:last-child {
+	border: none;
+}
+
+.table > tbody .colappse > td {
+	height: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	line-height: 1.43;
+	letter-spacing: 0.01071em;
+}
+
+.table > tbody .colappse,
+.table > tbody .colappse .content {
+	max-height: 0px;
+	overflow: hidden;
+	transition:
+		max-height,
+		padding 0.2s ease-out;
+}
+
+.table > tbody .colappse.active > td {
+	height: 100%;
+	border-bottom: 1px solid var(--ff-border);
+}
+
+.table > tbody .colappse.active,
+.table > tbody .colappse.active .content {
+	max-height: 400px;
+	padding: 1rem;
+}
+
+.table .expand-btn {
+	color: var(--ff-text);
+	cursor: pointer;
+	padding: 0.75rem;
+	background: none;
+	display: table;
+}
+
+.table .expand-btn:after {
+	content: "\25BC";
+	color: var(--ff-text-muted);
+	font-weight: bold;
+	float: right;
+	margin-left: 0.5rem;
+}
+
+.table .expand-btn.active:after {
+	transform: rotate(-180deg);
+	transition: transform 0.6s;
+}
+
+@media screen and (max-width: 600px) {
+	.table {
+		border: 0;
+	}
+
+	.table > thead {
+		border: none;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+	.table tr {
+		border-bottom: 3px solid var(--ff-border);
+		display: block;
+		margin-bottom: 1rem;
+	}
+
+	.table td {
+		border-bottom: 1px solid var(--ff-border);
+		display: block;
+		font-size: 0.875rem;
+		text-align: -webkit-right;
+	}
+
+	.table > tbody > tr {
+		padding: 0;
+	}
+
+	.table td:last-child {
+		border-bottom: 0;
+	}
+
+	.table > caption {
+		font-size: 1.125rem;
+	}
+}

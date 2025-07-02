@@ -1,0 +1,41 @@
+---
+title: Select
+description: A dropdown menu that lets users pick one option from a list, making it easy to choose without typing.
+---
+
+import SelectPreview from "@/components/SelectPreview.svelte"
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+<Tabs>
+  <TabItem label="Preview">
+    <SelectPreview client:load />
+  </TabItem>
+  <TabItem label="Usage">
+    ```svelte
+    <script lang="ts">
+      import { Badge, Select } from "@dxdns/feflow"
+
+      let currentOption = $state("v2")
+    </script>
+
+    <Badge size="lg">
+      <span>{currentOption}</span>
+    </Badge>
+
+    <br />
+    <br />
+
+    <Select
+      onchange={(e) => {
+        currentOption = e.currentTarget.value
+      }}
+      value={currentOption}
+    >
+      <option value="v1">v1 test</option>
+      <option value="v2">v2 test</option>
+      <option value="v3">v3 test</option>
+    </Select>
+    ```
+
+  </TabItem>
+</Tabs>

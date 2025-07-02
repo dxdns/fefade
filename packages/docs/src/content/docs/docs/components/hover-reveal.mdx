@@ -1,0 +1,39 @@
+---
+title: Hover Reveal
+description: A flexible container component that reveals its content on hover
+---
+
+import HoverReveal from "@/components/HoverReveal.svelte"
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+<Tabs>
+  <TabItem label="Preview">
+    <HoverReveal client:load />
+  </TabItem>
+  <TabItem label="Usage">
+    ```svelte
+    <script lang="ts">
+        import { Button, Card, HoverReveal } from "@dxdns/feflow"
+    </script>
+
+    <div style="max-width: 300px; margin: 0 auto;">
+        <HoverReveal href="https://dxdns.dev" target="_blank">
+            <Card>
+                <h1>test</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ab
+                    est ipsa corporis fuga libero temporibus inventore exercitationem
+                    pariatur. Soluta minima suscipit perferendis enim cumque atque iusto
+                    obcaecati maiores consectetur!
+                </p>
+            </Card>
+
+            {#snippet reveal()}
+                <Button>reveal</Button>
+            {/snippet}
+        </HoverReveal>
+    </div>
+    ```
+
+  </TabItem>
+</Tabs>

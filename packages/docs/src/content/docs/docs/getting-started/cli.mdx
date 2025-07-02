@@ -1,0 +1,52 @@
+---
+title: CLI
+description: Command Line Interface (CLI) tool to create and manage projects with ease.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+The CLI provides simple commands to help you scaffold and extend your project efficiently.
+
+## Setup
+
+Install the CLI as a development dependency in your project:
+
+<Tabs>
+  <TabItem label="npm" icon="npm">
+    ```bash
+    npm install --save-dev @dxdns/feflow-cli
+    ```
+  </TabItem>
+
+  <TabItem label="pnpm" icon="pnpm">
+    ```bash
+    pnpm add -D @dxdns/feflow-cli
+    ```
+  </TabItem>
+</Tabs>
+
+### Initialize a new project
+
+Use the following command to create a new project:
+
+```bash
+npx @dxdns/feflow-cli init
+```
+
+### Add a Provider
+
+Add the feflow-provider to your existing project:
+
+> For installation and setup instructions, see the [Getting Started guide](/docs/getting-started).
+
+```bash
+npx @dxdns/feflow-cli add feflow-provider
+```
+
+### Add a Button Component
+
+Add a prebuilt button component to your project:
+
+```bash
+npx @dxdns/feflow-cli add button
+```

@@ -1,0 +1,24 @@
+---
+title: Checkbox
+description: A form control that allows users to select one or multiple options from a set, typically represented as a small square box.
+---
+
+import CheckboxPreview from "@/components/CheckboxPreview.svelte"
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+<Tabs>
+  <TabItem label="Preview">
+    <CheckboxPreview />
+  </TabItem>
+  <TabItem label="Usage">
+    ```svelte
+    <script lang="ts">
+        import { Checkbox } from "@dxdns/feflow"
+    </script>
+
+    <Checkbox checked />
+    <Checkbox />
+    ```
+
+  </TabItem>
+</Tabs>

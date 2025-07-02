@@ -1,0 +1,27 @@
+---
+title: Window
+description: A component for displaying content in a separate, movable or modal window.
+---
+
+import { Window } from "@dxdns/feflow"
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+<Tabs>
+  <TabItem label="Preview">
+    <Window>
+      content
+    </Window>
+  </TabItem>
+  <TabItem label="Usage">
+    ```svelte
+    <script lang="ts">
+      import { Card } from "@dxdns/feflow"
+    </script>
+
+    <Window>
+      content
+    </Window>
+    ```
+
+  </TabItem>
+</Tabs>

@@ -1,0 +1,38 @@
+---
+title: useMediaQuery
+description: Listens for matches to a CSS media query.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+import UseMediaQueryPreview from "@/components/UseMediaQueryPreview.svelte"
+
+> resize for test
+
+<Tabs>
+    <TabItem label="Preview">
+		<UseMediaQueryPreview client:load />
+	</TabItem>
+	<TabItem label="Usage">
+	```svelte
+	<script lang="ts">
+        import { useMediaQuery } from "@dxdns/feflow"
+        import { onDestroy } from "svelte"
+
+        const isSm = $derived(useMediaQuery("max-width", "sm"))
+        const isMd = $derived(useMediaQuery("max-width", "md"))
+        const isCustom = $derived(useMediaQuery("max-width", "800px"))
+
+        onDestroy(() => {
+            isSm.destroy()
+            isMd.destroy()
+            isCustom.destroy()
+        })
+    </script>
+
+    <h4>isSm: {isSm.value}</h4>
+    <h4>isMd: {isMd.value}</h4>
+    <h4>isCustom: {isCustom.value}</h4>
+    ```
+    </TabItem>
+
+</Tabs>

@@ -1,0 +1,50 @@
+---
+title: Badge
+description: A small indicator used to display status, counts, or labels, often attached to icons or other UI elements.
+---
+
+import BadgePreview from "@/components/BadgePreview.svelte"
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+<Tabs>
+  <TabItem label="Preview">
+    <BadgePreview />
+  </TabItem>
+  <TabItem label="Usage">
+    ```svelte
+    <script lang="ts">
+        import { Badge } from "@dxdns/feflow"
+
+        const variants = ["outlined", "text", "contained"]
+        const colors = ["error", "success", "warning", "info", "primary"]
+        const sizes = ["xs", "sm", "md", "lg", "xl"]
+    </script>
+
+    <div
+        style="
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 1rem;
+        "
+    >
+        {#each colors as color}
+            <Badge class="bg-{color} text-on-{color}" size="md">
+                {color}
+            </Badge>
+        {/each}
+        {#each variants as variant}
+            <Badge variant={variant as any} size="md">
+                {variant}
+            </Badge>
+        {/each}
+        {#each sizes as size}
+            <Badge roundedFull size={size as any}>
+                {size}
+            </Badge>
+        {/each}
+    </div>
+    ```
+
+  </TabItem>
+</Tabs>

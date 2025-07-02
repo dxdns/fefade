@@ -1,0 +1,28 @@
+---
+title: Data Table
+description: A component for displaying structured data in rows and columns.
+---
+
+import DataTablePreview from "@/components/DataTablePreview.svelte"
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+<Tabs>
+  <TabItem label="Preview">
+    <DataTablePreview />
+  </TabItem>
+  <TabItem label="Usage">
+    ```svelte
+    <script lang="ts">
+        import { DataTable } from "@dxdns/feflow"
+
+        const data = Array.from(Array(10)).map((_, index) => ({
+            id: index,
+            label: `test-${index}`
+        }))
+    </script>
+
+    <DataTable {data} />
+    ```
+
+  </TabItem>
+</Tabs>

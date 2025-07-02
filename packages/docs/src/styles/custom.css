@@ -1,0 +1,25 @@
+:root {
+	--sl-color-bg-sidebar: var(--ff-surface);
+	--sl-color-bg-nav: var(--ff-bg);
+	--sl-color-text-accent: var(--ff-primary);
+	--sl-color-bg-sidebar: var(--ff-bg);
+}
+
+.main-pane {
+	isolation: unset;
+}
+
+svg {
+	margin: 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	appearance: text-field;
+	-moz-appearance: textfield;
+}

@@ -1,0 +1,88 @@
+---
+title: Svelte UI Component Library
+description: Get started building your docs site.
+template: splash
+hero:
+  tagline: Minimal, accessible, dependency-free.
+  image:
+    alt: feflow image
+    file: ../../assets/feflow.png
+  actions:
+    - text: Get started
+      link: /docs/getting-started
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/dxdns/feflow
+      icon: external
+      variant: minimal
+      attrs:
+        target: _blank
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components"
+import { Card, Link } from "@dxdns/feflow"
+import TextFieldPreview from "@/components/TextFieldPreview.svelte"
+import CarouselPreview from "@/components/CarouselPreview.svelte"
+import ButtonPreview from "@/components/ButtonPreview.svelte"
+import ProgressCirclePreview from "@/components/ProgressCirclePreview.svelte"
+import About from "@/components/About.astro"
+
+<CardGrid stagger>
+	<Card
+    style="
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    "
+    >
+    <Link href="/docs/components/progress-circle">
+      <h3>Progress Circle</h3>
+    </Link>
+    <ProgressCirclePreview client:load />
+	</Card>
+	<Card
+    style="
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    "
+    >
+      <Link href="/docs/components/button">
+        <h3>Button</h3>
+      </Link>
+      <ButtonPreview client:load />
+	</Card>
+
+<Card
+	style="
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    "
+>
+	<Link href="/docs/components/text-field">
+		<h3>Text Field</h3>
+	</Link>
+	<TextFieldPreview />
+</Card>
+
+  <div>
+    <LinkCard title="All components" href="/docs/components" />
+    <LinkCard title="Explore templates" href="/docs/getting-started/templates"  />
+  </div>
+</CardGrid>
+
+<About>
+  feflow is a lightweight UI component library built for simplicity and speed.
+  Design clean, fast, and accessible interfaces with zero dependencies — powered by Svelte and focused on performance.
+
+[Learn about feflow](/docs)
+
+</About>
