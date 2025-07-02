@@ -26,6 +26,8 @@ jobs:
 
       - run: npm run build -w @dxdns/feflow-cli
 
+      - run: cp README.md packages/cli
+
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}

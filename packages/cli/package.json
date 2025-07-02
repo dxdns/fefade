@@ -15,11 +15,7 @@
 	},
 	"scripts": {
 		"build": "tsc",
-		"start": "npm run build && node ./dist/index.js",
-		"release": "npm run build && git push && git push --tags",
-		"release:patch": "npm version patch --tag-version-prefix=cli-v && npm run release",
-		"release:minor": "npm version minor --tag-version-prefix=cli-v && npm run release",
-		"release:major": "npm version major --tag-version-prefix=cli-v && npm run release"
+		"start": "npm run build && node ./dist/index.js"
 	},
 	"files": [
 		"dist",

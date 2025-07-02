@@ -25,6 +25,8 @@ jobs:
       - run: npm ci
 
       - run: npm run build -w @dxdns/feflow
+      
+      - run: cp README.md packages/feflow
 
       - uses: softprops/action-gh-release@v2
         with:

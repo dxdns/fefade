@@ -8,10 +8,13 @@
 	],
 	"scripts": {
 		"build:feflow": "npm run build -w @dxdns/feflow",
+		"build:cli": "npm run build -w @dxdns/feflow-cli",
 		"prepare": "npm run build:feflow",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier --write .",
-		"lint": "prettier --check ."
+		"lint": "prettier --check .",
+		"release:cli:patch": "npm run build:cli && npm version patch -w @dxdns/feflow-cli --tag-version-prefix=cli-v && git push origin main --follow-tags",
+		"release:feflow:patch": "npm run build:feflow && npm version patch -w @dxdns/feflow --tag-version-prefix=feflow-v && git push origin main --follow-tags"
 	},
 	"repository": {
 		"type": "git",
