@@ -11,7 +11,7 @@
 		"build:cli": "npm run build -w @dxdns/feflow-cli",
 		"release:feflow": "npm run build:feflow && git push && git push --tags",
 		"release:cli": "npm run build:cli && git push && git push --tags",
-		"release:cli:patch": "npm version patch -w @dxdns/feflow-cli --no-git-tag-version && git add packages/feflow-cli/package.json && git commit -m \"chore(release): bump version CLI\" && git tag cli-v$(node -p \"require('./packages/feflow-cli/package.json').version\") && npm run release:cli",
+		"release:cli:patch": "npm version patch -w @dxdns/feflow-cli --no-git-tag-version && git add packages/cli/package.json && git commit -m \"chore(release): bump version CLI\" && git tag cli-v$(node -p \"require('./packages/cli/package.json').version\") && npm run release:cli",
 		"release:feflow:patch": "npm version patch -w @dxdns/feflow --no-git-tag-version && git add packages/feflow/package.json && git commit -m \"chore(release): bump version Feflow\" && git tag feflow-v$(node -p \"require('./packages/feflow/package.json').version\") && npm run release:feflow",
 		"prepare": "npm run build:feflow",
 		"format": "prettier --write .",
