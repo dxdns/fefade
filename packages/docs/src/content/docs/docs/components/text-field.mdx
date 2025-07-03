@@ -4,39 +4,8 @@ description: A versatile and accessible text input component
 ---
 
 import TextFieldPreview from "@/components/TextFieldPreview.svelte"
-import { Tabs, TabItem } from "@astrojs/starlight/components"
+import PreviewTabs from "@/components/PreviewTabs.astro"
 
-<Tabs>
-  <TabItem label="Preview">
-	<TextFieldPreview />
-  </TabItem>
-  <TabItem label="Usage">
-    ```svelte
-	<script lang="ts">
-        import { TextField } from "@dxdns/feflow"
-
-        const sizes = ["xs", "sm", "md", "lg", "xl"]
-        const variants = ["contained", "text", "outlined"]
-    </script>
-
-    <div style="max-width: 300px; margin: 0 auto;">
-        {#each variants as variant}
-            <TextField label={variant} variant={variant as any} />
-            <br />
-            <br />
-        {/each}
-
-        {#each sizes as size, i}
-            <TextField
-                label={size}
-                variant={i % 2 ? "contained" : "text"}
-                size={size as any}
-            />
-            <br />
-            <br />
-        {/each}
-    </div>
-    ```
-
-  </TabItem>
-</Tabs>
+<PreviewTabs component="TextFieldPreview">
+  <TextFieldPreview client:load />
+</PreviewTabs>

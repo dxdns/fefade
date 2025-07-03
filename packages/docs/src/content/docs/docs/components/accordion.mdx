@@ -4,38 +4,8 @@ description: A collapsible accordion component that supports dynamic state and d
 ---
 
 import AccordionPreview from "@/components/AccordionPreview.svelte"
-import { Tabs, TabItem } from "@astrojs/starlight/components"
+import PreviewTabs from "@/components/PreviewTabs.astro"
 
-<Tabs>
-  <TabItem label="Preview">
-  <AccordionPreview />
-</TabItem>
-  <TabItem label="Usage">
-    ```svelte
-    <script lang="ts">
-      import { Accordion } from "@dxdns/feflow"
-    </script>
-
-    <div style="display: flex; flex-direction: column; gap: 1rem;">
-      {#each ["contained", "outlined", "text"] as variant, i}
-        <Accordion id="sec{i}" variant={variant as any} label={variant}>
-          <div style="line-height: 1.5;">
-            <h1>test {i}</h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste recusandae
-            a minus accusantium perspiciatis numquam fugiat officiis esse fugit consectetur
-            vero natus accusamus autem quos, voluptate dignissimos deserunt nemo alias!
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-
-            <p>
-              Id provident praesentium, incidunt, quisquam ullam numquam aliquid
-              dolorem, quae labore dignissimos minima assumenda. Reprehenderit
-              nostrum minima perferendis eos quisquam ipsa quo!
-            </p>
-          </div>
-        </Accordion>
-      {/each}
-    </div>
-      ```
-
-  </TabItem>
-</Tabs>
+<PreviewTabs component="AccordionPreview">
+  <AccordionPreview client:load />
+</PreviewTabs>

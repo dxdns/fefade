@@ -4,29 +4,8 @@ description: A semantic component used to display keyboard inputs or shortcuts, 
 ---
 
 import KbdPreview from "@/components/KbdPreview.svelte"
-import { Tabs, TabItem } from "@astrojs/starlight/components"
+import PreviewTabs from "@/components/PreviewTabs.astro"
 
-<Tabs>
-  <TabItem label="Preview">
-    <KbdPreview />
-  </TabItem>
-  <TabItem label="Usage">
-    ```svelte
-    <script lang="ts">
-        import { Kbd } from "@dxdns/feflow"
-
-        const sizes = ["xs", "sm", "md", "lg", "xl"]
-    </script>
-
-    {#each sizes as size}
-        <div>
-            <Kbd size={size as any}>Ctrl</Kbd>
-            <Kbd size={size as any}>K</Kbd>
-        </div>
-        <br />
-        <br />
-    {/each}
-    ```
-
-  </TabItem>
-</Tabs>
+<PreviewTabs component="KbdPreview">
+  <KbdPreview client:load />
+</PreviewTabs>

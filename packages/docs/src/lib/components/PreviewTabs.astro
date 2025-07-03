@@ -1,0 +1,33 @@
+---
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+import { Code } from "@astrojs/starlight/components"
+import fs from "fs"
+import path from "path"
+
+const { component } = Astro.props
+
+let componentCode = ""
+if (component) {
+	try {
+		const componentPath = path.join(
+			process.cwd(),
+			"src",
+			"lib",
+			"components",
+			`${component}.svelte`
+		)
+		componentCode = fs.readFileSync(componentPath, "utf-8")
+	} catch (error) {
+		componentCode = `error: ${component}`
+	}
+}
+---
+
+<Tabs>
+	<TabItem label="Preview">
+		<slot />
+	</TabItem>
+	<TabItem label="Usage">
+		<Code code={componentCode} lang="svelte" />
+	</TabItem>
+</Tabs>

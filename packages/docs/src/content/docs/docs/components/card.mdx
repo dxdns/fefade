@@ -4,30 +4,8 @@ description: A flexible container component for grouping content
 ---
 
 import CardPreview from "@/components/CardPreview.svelte"
-import { Tabs, TabItem } from "@astrojs/starlight/components"
+import PreviewTabs from "@/components/PreviewTabs.astro"
 
-<Tabs>
-  <TabItem label="Preview">
-    <CardPreview client:load />
-  </TabItem>
-  <TabItem label="Usage">
-    ```svelte
-    <script lang="ts">
-      import { Card } from "@dxdns/feflow"
-
-      const variants = ["contained", "outlined"]
-    </script>
-
-    {#each variants as variant}
-      <Card variant={variant as any}>
-        <h2>{variant}</h2>
-      </Card>
-    {/each}
-
-    <Card glowOnHover>
-      <h2>glow on hover</h2>
-    </Card>
-    ```
-
-  </TabItem>
-</Tabs>
+<PreviewTabs component="CardPreview">
+  <CardPreview client:load />
+</PreviewTabs>
