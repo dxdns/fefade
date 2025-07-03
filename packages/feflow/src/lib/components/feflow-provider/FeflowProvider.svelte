@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, type Snippet } from "svelte"
+	import { onDestroy, onMount, type Snippet } from "svelte"
 	import * as Constants from "../../constants.js"
 	import type {
 		CustomThemeConfigType,
@@ -21,6 +21,8 @@
 
 	let { customTheme, defaultMode = "light", children }: Props = $props()
 
+	let observer: MutationObserver | undefined = $state()
+
 	const newTheme = mergeObjectUtil(
 		Constants.themeConfigDefault,
 		customTheme || {}
@@ -35,6 +37,28 @@
 	onMount(() => {
 		const themeMode = getThemeModeFromAttr()
 		themeConfig.setThemeMode(themeMode)
+
+		observer = new MutationObserver((records) => {
+			for (const mutation of records) {
+				if (
+					mutation.type === "attributes" &&
+					mutation.attributeName === Constants.THEME_ATTR
+				) {
+					const themeMode = getThemeModeFromAttr()
+					themeConfig.setThemeMode(themeMode)
+				}
+			}
+		})
+
+		const rootElement = document.documentElement
+		observer.observe(rootElement, {
+			attributes: true,
+			attributeFilter: [Constants.THEME_ATTR]
+		})
+	})
+
+	onDestroy(() => {
+		observer?.disconnect()
 	})
 </script>
 
