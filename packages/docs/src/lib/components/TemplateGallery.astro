@@ -1,39 +1,41 @@
 ---
 import { Card, Link } from "@dxdns/feflow"
 
-import landingPageScreenshot from "@assets/screenshots/landing-page.png"
-import signInScreenshot from "@assets/screenshots/sign-in.png"
-import portfolioScreenshot from "@assets/screenshots/portfolio.png"
-
 const templates = [
 	{
 		title: "Landing Page",
-		href: "https://github.com/dxdns/feflow/tree/main/packages/templates/src/routes/landing-page",
-		screenshot: landingPageScreenshot,
-		alt: "Landing Page Template"
+		href: "/templates/landing-page"
 	},
 	{
 		title: "Sign In",
-		href: "https://github.com/dxdns/feflow/tree/main/packages/templates/src/routes/sign-in",
-		screenshot: signInScreenshot,
-		alt: "Sign In Template"
+		href: "/templates/sign-in"
 	},
 	{
 		title: "Portfolio",
-		href: "https://github.com/dxdns/feflow/tree/main/packages/templates/src/routes/portfolio",
-		screenshot: portfolioScreenshot,
-		alt: "Creative Portfolio Template"
+		href: "/templates/portfolio"
 	}
 ]
 ---
 
-<div>
+<div style="max-width: 500px; margin: 0 auto;">
 	{
-		templates.map(({ title, href, screenshot, alt }) => (
+		templates.map(({ title, href }) => (
 			<Link href={href} target="_blank" key={href}>
-				<Card style="max-height: 500px; overflow: auto;">
+				<Card style="overflow: hidden;">
 					<h4 style="text-align: center;">{title}</h4>
-					<img src={screenshot.src} alt={alt} />
+					<iframe
+						src={href}
+						style="
+						width: 500px;
+						height: 400px;
+						border: none;
+						border-radius: 8px;
+						pointer-events: none;
+						overflow: hidden;
+						"
+						scrolling="no"
+						loading="lazy"
+					/>
 				</Card>
 			</Link>
 		))

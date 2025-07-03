@@ -231,7 +231,7 @@
 
 	:global(.content-panel) {
 		border-top: 0;
-		padding: 0.5rem 0;
+		padding: 0;
 	}
 
 	.ads-top {
