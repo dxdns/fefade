@@ -16,6 +16,7 @@
 		size?: SizeType
 		href?: string
 		target?: HTMLAttributeAnchorTarget
+		download?: string
 	}
 
 	let {
@@ -27,9 +28,29 @@
 		size = "sm",
 		href,
 		target = "_self",
+		download,
 		children,
 		...rest
 	}: Props = $props()
+
+	function handleClick(
+		event: MouseEvent & {
+			currentTarget: EventTarget & HTMLButtonElement
+		}
+	) {
+		if (download && href) {
+			const a = document.createElement("a")
+			a.href = href
+			a.download = download
+			document.body.appendChild(a)
+			a.click()
+			document.body.removeChild(a)
+		} else if (href) {
+			window.open(href, target)
+		} else if (typeof rest?.onclick === "function") {
+			rest.onclick(event)
+		}
+	}
 </script>
 
 <button
@@ -43,7 +64,7 @@
 		{ [styles.roundedFull]: roundedFull, [styles.pressedEffect]: pressedEffect }
 	)}
 	type={rest.type ?? "button"}
-	onclick={href ? () => window.open(href, target) : rest.onclick}
+	onclick={handleClick}
 >
 	{#if isLoading}
 		<Spinner />
