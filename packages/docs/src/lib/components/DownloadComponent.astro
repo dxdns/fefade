@@ -1,0 +1,23 @@
+---
+import { Button } from "@dxdns/feflow"
+import fs from "fs"
+import path from "path"
+
+const { component } = Astro.props
+
+const componentPath = path.join(
+	process.cwd(),
+	"src",
+	"lib",
+	"components",
+	`${component}.svelte`
+)
+
+const componentCode = fs.readFileSync(componentPath, "utf-8")
+const encoded = Buffer.from(componentCode).toString("base64")
+const dataUrl = `data:text/plain;base64,${encoded}`
+---
+
+<Button class="bg-success text-on-success" client:load href={dataUrl} download={`${component}.svelte`}>
+	<slot />
+</Button>

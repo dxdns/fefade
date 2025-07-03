@@ -4,7 +4,7 @@ description: A UI component that briefly displays non-intrusive messages to info
 ---
 
 import ToastPreview from "@/components/ToastPreview.svelte"
-import { Tabs, TabItem } from "@astrojs/starlight/components"
+import PreviewTabs from "@/components/PreviewTabs.astro"
 
 #### Setup
 
@@ -27,66 +27,6 @@ For installation and setup instructions, see the [Getting Started guide](/docs/g
 
 #### Usage
 
-<Tabs>
-  <TabItem label="Preview">
-    <ToastPreview client:load />
-  </TabItem>
-  <TabItem label="Usage">
-    ```svelte
-    <script lang="ts">
-        import { Button, toast, Toaster } from "@dxdns/feflow"
-
-        const colors = ["error", "success", "warning"]
-        const positions = [
-            "top-left",
-            "bottom-left",
-            "top-right",
-            "bottom-right",
-            "bottom-center",
-            "top-center"
-        ]
-    </script>
-
-    <Toaster />
-
-    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-        {#each colors as color}
-            <Button
-                onclick={() => {
-                    toast({ message: color, color: color as any })
-                }}
-            >
-                {color}
-            </Button>
-        {/each}
-
-        {#each positions as position}
-            <Button
-                onclick={() => {
-                    toast({ message: position, position: position as any })
-                }}
-            >
-                {position}
-            </Button>
-        {/each}
-
-        <Button
-            onclick={() => {
-                toast({ message: "Duration: 15000", duration: 15000 })
-            }}
-        >
-            Duration: 15000
-        </Button>
-
-        <Button
-            onclick={() => {
-                toast({ message: "closable", isClosable: true })
-            }}
-        >
-            Closable
-        </Button>
-    </div>
-    ```
-
-  </TabItem>
-</Tabs>
+<PreviewTabs component="ToastPreview">
+  <ToastPreview client:load />
+</PreviewTabs>

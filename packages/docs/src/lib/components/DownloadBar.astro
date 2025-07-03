@@ -1,0 +1,31 @@
+---
+import DownloadComponent from "./DownloadComponent.astro"
+const { component } = Astro.props
+---
+
+<div class="downloadBar">
+	<DownloadComponent component={component}> Download Free </DownloadComponent>
+</div>
+
+<style>
+	.downloadBar {
+		position: fixed;
+		top: 0;
+		right: 120px;
+		z-index: 999;
+		width: 150px;
+		background: var(--ff-bg);
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding: 1rem;
+		height: 64px;
+	}
+
+	@media (max-width: 799px) {
+		.downloadBar {
+			height: 56px;
+			right: 50px;
+		}
+	}
+</style>

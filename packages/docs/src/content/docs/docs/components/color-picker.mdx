@@ -4,42 +4,8 @@ description: A UI component that allows users to select and input colors using a
 ---
 
 import ColorPickerPreview from "@/components/ColorPickerPreview.svelte"
-import { Tabs, TabItem } from "@astrojs/starlight/components"
+import PreviewTabs from "@/components/PreviewTabs.astro"
 
-<Tabs>
-  <TabItem label="Preview">
-    <ColorPickerPreview client:load />
-  </TabItem>
-  <TabItem label="Usage">
-    ```svelte
-    <script lang="ts">
-        import { ColorPicker } from "@dxdns/feflow"
-
-        let color = $state("#fde6b0")
-    </script>
-
-    <div style="display:flex; align-items:center; gap:1rem;">
-        <ColorPicker
-            value={color}
-            oninput={(e) => {
-                const input = e.currentTarget as HTMLInputElement
-                color = input.value
-            }}
-        />
-        <div class="colorPreview" style="--color: {color}"></div>
-        <span style="color: {color};">{color}</span>
-    </div>
-
-    <style>
-        .colorPreview {
-            width: 38px;
-            height: 38px;
-            border: 1px solid var(--ff-border);
-            border-radius: 0.25rem;
-            background: var(--color);
-        }
-    </style>
-    ```
-
-  </TabItem>
-</Tabs>
+<PreviewTabs component="ColorPickerPreview">
+  <ColorPickerPreview client:load />
+</PreviewTabs>

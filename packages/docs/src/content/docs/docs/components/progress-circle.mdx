@@ -4,51 +4,8 @@ description: A circular progress indicator used to display loading or completion
 ---
 
 import ProgressCirclePreview from "@/components/ProgressCirclePreview.svelte"
-import { Tabs, TabItem } from "@astrojs/starlight/components"
+import PreviewTabs from "@/components/PreviewTabs.astro"
 
-<Tabs>
-  <TabItem label="Preview">
-    <ProgressCirclePreview client:load />
-  </TabItem>
-  <TabItem label="Usage">
-    ```svelte
-    <script lang="ts">
-      import { ProgressCircle, themeConfig } from "@dxdns/feflow"
-
-      const { colors } = $derived(themeConfig())
-
-      function getColor(value: number) {
-        if (value < 30) return colors.error
-        if (value < 70) return colors.warning
-        return colors.success
-      }
-
-      const data = [20, 45, 75, 90].map((v) => ({ value: v, color: getColor(v) }))
-    </script>
-
-    <div
-      style="
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        align-items: baseline;
-        justify-content: center;
-        "
-    >
-      {#each data as { value, color }}
-        <ProgressCircle {value} {color}>
-          <text
-            x={"28px"}
-            y={"52px"}
-            fill={color}
-            style="font-weight: bold; font-size: 18px;"
-          >
-            {value}%
-          </text>
-        </ProgressCircle>
-      {/each}
-    </div>
-    ```
-
-  </TabItem>
-</Tabs>
+<PreviewTabs component="ProgressCirclePreview">
+  <ProgressCirclePreview client:load />
+</PreviewTabs>

@@ -4,23 +4,8 @@ description: A customizable input component for selecting a numeric value within
 ---
 
 import RangeInputPreview from "@/components/RangeInputPreview.svelte"
-import { Tabs, TabItem } from "@astrojs/starlight/components"
+import PreviewTabs from "@/components/PreviewTabs.astro"
 
-<Tabs>
-  <TabItem label="Preview">
-    <RangeInputPreview client:load />
-  </TabItem>
-  <TabItem label="Usage">
-    ```svelte
-    <script lang="ts">
-        import { RangeInput } from "@dxdns/feflow"
-    </script>
-
-    <div style="max-width: 300px; line-height: 3; margin: 0 auto;">
-        <RangeInput step="10" />
-        <RangeInput />
-    </div>
-    ```
-
-  </TabItem>
-</Tabs>
+<PreviewTabs component="RangeInputPreview">
+  <RangeInputPreview client:load />
+</PreviewTabs>
