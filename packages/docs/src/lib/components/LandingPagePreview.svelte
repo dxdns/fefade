@@ -386,6 +386,10 @@
 		padding: 0;
 	}
 
+	:global(footer.sl-flex) {
+		display: none;
+	}
+
 	.features {
 		list-style: none;
 		padding: 0;
