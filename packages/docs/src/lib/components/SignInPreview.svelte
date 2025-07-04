@@ -68,6 +68,10 @@
 		padding: 0;
 	}
 
+	:global(footer.sl-flex) {
+		display: none;
+	}
+
 	.container {
 		display: flex;
 		margin: 0 auto;
