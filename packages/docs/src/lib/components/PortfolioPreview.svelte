@@ -4,6 +4,7 @@
 		Card,
 		HoverFollower,
 		Link,
+		Separator,
 		Switch,
 		themeConfig
 	} from "@dxdns/feflow"
@@ -17,96 +18,150 @@
 	} from "@/icons"
 
 	const theme = $derived(themeConfig())
+
+	const projectsData = [
+		{
+			title: "TaskMaster",
+			description:
+				"A project management tool for teams to collaborate on tasks and track progress with an intuitive interface.",
+			link: "/"
+		},
+		{
+			title: "ChatWave",
+			description:
+				"A real-time chat application with voice and video integration, built with WebSockets and React.",
+			link: "/"
+		}
+	]
+
+	const blogPostsData = [
+		{
+			title: "The Future of Full Stack Development: Trends to Watch",
+			description:
+				"Exploring emerging technologies and practices that will shape the future of full stack development.",
+			link: "/"
+		},
+		{
+			title: "My Journey to Becoming a Software Engineer",
+			description:
+				"From a beginner to a full stack developer, I share my personal journey and the lessons learned along the way.",
+			link: "/"
+		}
+	]
 </script>
 
-<div class="container">
-	<header>
-		<h1>Diógenes Rodrigues</h1>
-		<p class="text-muted">Full Stack Developer at TechSolutions</p>
+<div
+	style="
+		padding: 3rem 1rem;
+		width: clamp(320px, 90vw, 720px);
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	"
+>
+	<header style="text-align: center;">
+		<h1 style="margin: 0;">Diógenes Rodrigues</h1>
+		<p class="text-muted" style="margin-top: 0.5em;">
+			Full Stack Developer at TechSolutions
+		</p>
 	</header>
 
 	<section id="projects">
 		<h2>Projects</h2>
-		<div class="projectsContent">
-			<Link href="/">
-				<Card style="min-height: 250px; max-height: 250px;">
-					<h4>TaskMaster</h4>
-					<p class="text-muted">
-						A project management tool for teams to collaborate on tasks and
-						track progress with an intuitive interface.
-					</p>
-				</Card>
-			</Link>
-			<Link href="/">
-				<Card style="min-height: 250px; max-height: 250px;">
-					<h4>ChatWave</h4>
-					<p class="text-muted">
-						A real-time chat application with voice and video integration, built
-						with WebSockets and React.
-					</p>
-				</Card>
-			</Link>
-		</div>
-		<Button
-			onclick={() => {
-				window.open("https://github.com/dxdns?tab=repositories", "_blank")
-			}}
+		<div
+			style="
+			display: flex; 
+			flex-direction: column; 
+			gap: 1rem; 
+			align-items: center;
+			"
 		>
-			<GithubIcon />
-			See all projects
-		</Button>
+			<div
+				style="
+				display: grid; 
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+				gap: 1rem;
+				"
+			>
+				{#each projectsData as { link, title, description }}
+					<Link href={link}>
+						<Card>
+							<h5>{title}</h5>
+							<p class="text-muted" style="margin-top: 0.5rem;">
+								{description}
+							</p>
+						</Card>
+					</Link>
+				{/each}
+			</div>
+			<Button href="https://github.com/dxdns?tab=repositories" target="_blank">
+				<GithubIcon />
+				See all projects
+			</Button>
+		</div>
 	</section>
 
 	<section id="work-experience">
-		<h2>Work Experience</h2>
-		<Card glowOnHover>
-			<div class="workExperienceContent">
+		<h2 style="margin-bottom: 1rem;">Work Experience</h2>
+		<Card glowOnHover style="padding: 1.5rem;">
+			<div
+				style="
+					display: flex;
+					justify-content: space-between;
+					flex-wrap: wrap;
+					gap: 0.5rem;
+				"
+			>
 				<div>
-					<h4>Lead Developer</h4>
-					<p class="text-muted">TechSolutions Inc.</p>
+					<h5 style="margin: 0;">Lead Developer</h5>
+					<p class="text-muted" style="margin: 0.25rem 0;">
+						TechSolutions Inc.
+					</p>
 				</div>
-				<p class="text-muted">2022 - Present</p>
+				<p class="text-muted" style="margin: 0;">2022 - Present</p>
 			</div>
 		</Card>
 	</section>
 
 	<section id="blog">
 		<h2>Blog</h2>
-		<HoverFollower>
-			<Link href="/">
-				<Card>
-					<h4>The Future of Full Stack Development: Trends to Watch</h4>
-					<p class="text-muted">
-						Exploring emerging technologies and practices that will shape the
-						future of full stack development.
-					</p>
-				</Card>
-			</Link>
-			<Link href="/">
-				<Card>
-					<h4>My Journey to Becoming a Software Engineer</h4>
-					<p class="text-muted">
-						From a beginner to a full stack developer, I share my personal
-						journey and the lessons learned along the way.
-					</p>
-				</Card>
-			</Link>
-		</HoverFollower>
-		<Button>
-			See more posts
-			<OpenInNewIcon height="14px" width="14px" />
-		</Button>
+		<div
+			style="
+			display: flex; 
+			flex-direction: column; 
+			gap: 1rem; 
+			align-items: center;
+			"
+		>
+			<HoverFollower>
+				{#each blogPostsData as { link, title, description }}
+					<Link href={link}>
+						<Card style="padding: 1.5rem;">
+							<h5>{title}</h5>
+							<p class="text-muted" style="margin-top: 0.5rem;">
+								{description}
+							</p>
+						</Card>
+					</Link>
+				{/each}
+			</HoverFollower>
+			<Button style="max-width: fit-content;">
+				See more posts
+				<OpenInNewIcon height="14px" width="14px" />
+			</Button>
+		</div>
 	</section>
 
 	<section id="connect">
-		<h2>Connect</h2>
+		<h2 style="margin-bottom: 0.5rem;">Connect</h2>
 		<p class="text-muted">
 			Feel free to contact me at
-			<Link href="mailto:dxdns@hotmail.com" hoverUnderline="center">
-				dxdns@hotmail.com
+			<Link href="mailto:hi@dxdns.dev" hoverUnderline="center">
+				hi@dxdns.dev
 			</Link>
 		</p>
-		<div class="social">
+		<div style="display: flex; gap: 1rem; margin-top: 1rem;">
 			<Link href="https://linkedin.com/in/dxdns" target="_blank">
 				<LinkedinIcon />
 			</Link>
@@ -119,20 +174,42 @@
 		</div>
 	</section>
 
-	<footer class="footer">
-		<div>
-			<span class="text-muted">
-				{@html "&copy;"}
-				{new Date().getFullYear()}
-			</span>
-			<Link href="https://dxdns.dev" target="_blank" hoverUnderline="right">
-				dxdns
-			</Link>
+	<footer>
+		<Separator />
+		<div
+			style="
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			margin: 0;
+			padding: 1rem 0;
+			"
+		>
+			<div
+				style="
+				display: flex; 
+				gap: 0.5rem; 
+				align-items: center;
+				"
+			>
+				<span class="text-muted">
+					{@html "&copy;"}
+					{new Date().getFullYear()}
+				</span>
+				<Link href="https://dxdns.dev" target="_blank" hoverUnderline="right">
+					dxdns
+				</Link>
+			</div>
+			<Switch
+				onclick={theme.toggle}
+				checked={theme.mode === "dark"}
+			>
+				<DarkModeIcon height="14px" width="14px" />
+				<LightModeIcon height="14px" width="14px" />
+			</Switch>
 		</div>
-		<Switch onclick={theme.toggle} checked={theme.mode === "dark"}>
-			<DarkModeIcon height="14px" width="14px" />
-			<LightModeIcon height="14px" width="14px" />
-		</Switch>
 	</footer>
 </div>
 
@@ -140,86 +217,16 @@
 	:global(.sl-container > h1) {
 		display: none;
 	}
-
 	:global(.content-panel) {
 		border-top: 0;
 		padding: 0;
 	}
 
-	h1 {
-		font-size: 2.5rem;
+	:global(footer.sl-flex) {
+		display: none;
 	}
 
-	h2 {
-		font-size: 2rem;
-	}
-
-	h4 {
-		font-size: 1rem;
-	}
-
-	.container {
-		padding: 3rem 0;
-		width: 600px;
-		margin: 0 auto;
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		gap: 2rem;
-	}
-
-	.footer {
-		margin-top: 1rem;
-		border-top: 1px solid var(--feflow-color-border);
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	section {
-		text-align: center;
-		line-height: 3;
-	}
-
-	p,
-	h2 {
-		text-align: left;
-	}
-
-	.projectsContent {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-		gap: 1rem;
-		padding: 1rem 0;
-	}
-
-	.workExperienceContent {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 1rem;
-	}
-
-	.social {
-		display: flex;
-		gap: 1rem;
-		align-items: center;
-	}
-
-	#connect {
-		line-height: 3;
-	}
-
-	@media (max-width: 425px) {
-		.container {
-			width: 80%;
-		}
-	}
-
-	@media screen and (max-width: 425px) {
-		.projectsContent {
-			gap: 0;
-		}
+	p {
+		line-height: 1.5;
 	}
 </style>
