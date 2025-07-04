@@ -6,18 +6,9 @@
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">
-	{#each variants as variant}
-		<TextField label={variant} variant={variant as any} />
-		<br />
-		<br />
-	{/each}
-
-	{#each sizes as size, i}
-		<TextField
-			label={size}
-			variant={i % 2 ? "contained" : "text"}
-			size={size as any}
-		/>
+	{#each variants as variant, i}
+		{@const size = sizes[i + 1] as any}
+		<TextField label={`${variant} (${size})`} variant={variant as any} {size} />
 		<br />
 		<br />
 	{/each}
