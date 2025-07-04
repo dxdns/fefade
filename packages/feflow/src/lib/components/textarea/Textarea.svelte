@@ -16,9 +16,9 @@
 	textarea {
 		padding: 1rem;
 		border-radius: 15px;
-		color: var(--ff-color-on-surface);
-		background: var(--ff-color-surface);
-		border: 1px solid var(--ff-color-border);
+		color: var(--ff-on-surface);
+		background: var(--ff-surface);
+		border: 1px solid var(--ff-border);
 		transition: border-color 0.3s ease;
 	}
 
