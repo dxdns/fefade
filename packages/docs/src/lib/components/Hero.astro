@@ -1,0 +1,119 @@
+---
+import Default from "@astrojs/starlight/components/Hero.astro"
+---
+
+<div class="gradient-background">
+	<div class="gradient-sphere sphere-one"></div>
+	<div class="gradient-sphere sphere-two"></div>
+	<div class="grid-overlay"></div>
+</div>
+
+<Default {...Astro.props}><slot /></Default>
+
+<style>
+	:global([data-theme="light"]) {
+		--ff-border-translucent: rgba(229, 229, 229, 0.4);
+	}
+
+	:global([data-theme="dark"]) {
+		--ff-border-translucent: rgba(255, 255, 255, 0.03);
+	}
+
+	.gradient-background {
+		position: absolute;
+		inset: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		overflow: hidden;
+		-webkit-mask-image: linear-gradient(
+			to bottom,
+			var(--ff-bg) 80%,
+			transparent 100%
+		);
+		mask-image: linear-gradient(to bottom, var(--ff-bg) 80%, transparent 100%);
+	}
+
+	.gradient-sphere {
+		position: absolute;
+		border-radius: 50%;
+		filter: blur(60px);
+	}
+
+	.sphere-one {
+		width: 40vw;
+		height: 40vw;
+		background: linear-gradient(
+			40deg,
+			rgba(255, 72, 0, 0.8),
+			rgba(255, 102, 0, 0.4)
+		);
+		top: -10%;
+		left: -10%;
+		animation: float-one 15s ease-in-out infinite alternate;
+	}
+
+	.sphere-two {
+		width: 45vw;
+		height: 45vw;
+		background: linear-gradient(
+			240deg,
+			rgba(0, 0, 0, 0.8),
+			rgba(255, 255, 255, 0.4)
+		);
+		-webkit-mask-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.8),
+			rgba(255, 255, 255, 0.4)
+		);
+		mask-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.8),
+			rgba(255, 255, 255, 0.4)
+		);
+		bottom: -20%;
+		right: -10%;
+		animation: float-two 18s ease-in-out infinite alternate;
+	}
+
+	@keyframes float-one {
+		0% {
+			transform: translate(0, 0) scale(1);
+		}
+		100% {
+			transform: translate(10%, 10%) scale(1.1);
+		}
+	}
+
+	@keyframes float-two {
+		0% {
+			transform: translate(0, 0) scale(1);
+		}
+		100% {
+			transform: translate(-10%, -5%) scale(1.15);
+		}
+	}
+
+	.grid-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: 40px 40px;
+		background-image:
+			linear-gradient(
+				to right,
+				var(--ff-border-translucent) 1px,
+				transparent 1px
+			),
+			linear-gradient(
+				to bottom,
+				var(--ff-border-translucent) 1px,
+				transparent 1px
+			);
+		z-index: 2;
+	}
+</style>
