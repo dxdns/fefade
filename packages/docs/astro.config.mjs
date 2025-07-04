@@ -11,12 +11,12 @@ export default defineConfig({
 		starlight({
 			title: "feflow",
 			components: {
-				PageFrame: "./src/lib/layouts/RootLayout.astro"
+				PageFrame: "./src/lib/layouts/RootLayout.astro",
+				Hero: "./src/lib/components/Hero.astro"
 			},
 			customCss: ["./src/styles/custom.css"],
 			favicon: "/favicon.png",
 			logo: {
-				src: "./src/assets/logo_light.png",
 				light: "./src/assets/logo_light.png",
 				dark: "./src/assets/logo_dark.png",
 				replacesTitle: true
