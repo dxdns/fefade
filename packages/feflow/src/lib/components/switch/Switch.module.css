@@ -4,6 +4,7 @@
 	gap: 0.5rem;
 	flex-shrink: 0;
 	user-select: none;
+	margin: 0;
 }
 
 .content {
