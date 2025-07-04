@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FacebookIcon, GoogleIcon } from "@/lib/icons"
+	import { FacebookIcon, GoogleIcon } from "@/icons"
 	import {
 		Button,
 		Card,
@@ -9,18 +9,7 @@
 		Separator,
 		TextField
 	} from "@dxdns/feflow"
-	import type { PageData } from "./$types"
-
-	let { data }: { data: PageData } = $props()
 </script>
-
-<svelte:head>
-	<title>Sign in | {data.title}</title>
-	<meta
-		name="description"
-		content="feflow svelte components ui - Sign in demo example"
-	/>
-</svelte:head>
 
 <div class="container">
 	<Card
@@ -67,6 +56,15 @@
 </div>
 
 <style>
+    :global(.sl-container > h1) {
+		display: none;
+	}
+
+	:global(.content-panel) {
+		border-top: 0;
+		padding: 0;
+	}
+
 	.container {
 		display: flex;
 		margin: 0 auto;

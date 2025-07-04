@@ -6,6 +6,8 @@
 	width: 40px;
 	height: 40px;
 	cursor: pointer;
+	user-select: none;
+	margin: 0;
 }
 
 .xs,

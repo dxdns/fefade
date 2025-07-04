@@ -2,7 +2,7 @@
 	"name": "feflow",
 	"version": "0.0.1",
 	"description": "UI Component Library",
-	"private": false,
+	"private": true,
 	"workspaces": [
 		"packages/*"
 	],
@@ -30,6 +30,8 @@
 	"homepage": "https://github.com/dxdns/feflow#readme",
 	"devDependencies": {
 		"prettier": "^3.6.2",
-		"prettier-plugin-svelte": "^3.4.0"
+		"prettier-plugin-svelte": "^3.4.0",
+		"typescript": "^5.0.0",
+		"@types/node": "^22.14.1"
 	}
 }
