@@ -13,14 +13,17 @@
 
 <div class="container">
 	<Card
+		glowOnHover
 		style="
 		display: flex; 
 		flex-direction: column; 
 		gap: 1rem;
-		width: 100%;
+		width: clamp(300px, 90vw, 480px);
+		padding: 2rem;
 		"
 	>
 		<h1>Sign in</h1>
+		<br />
 		<TextField label="Email" />
 		<PasswordInput label="Password" />
 		<label
@@ -56,13 +59,17 @@
 </div>
 
 <style>
-    :global(.sl-container > h1) {
+	:global(.sl-container > h1) {
 		display: none;
 	}
 
 	:global(.content-panel) {
 		border-top: 0;
 		padding: 0;
+	}
+
+	:global(footer.sl-flex) {
+		display: none;
 	}
 
 	.container {
@@ -73,6 +80,5 @@
 		align-items: center;
 		user-select: none;
 		padding: 16px;
-		max-width: 350px;
 	}
 </style>
