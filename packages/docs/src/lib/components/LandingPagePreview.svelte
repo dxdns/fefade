@@ -225,6 +225,9 @@
 				gap: 1rem; 
 				justify-content: {isMd.value ? 'center' : 'space-between'};
 				position: relative;
+				overflow: hidden;
+				border-radius: 15px;
+				align-items: center;
 				"
 			>
 				<div
@@ -233,10 +236,12 @@
 					flex-direction: column; 
 					gap: 1rem; 
 					max-width: 300px;
-					text-align: center;
+					text-align: {isMd.value ? 'center' : 'left'};
+					align-items: center;
+					padding: 1rem;
 					"
 				>
-					<Badge size="lg">✨ AI-Powered</Badge>
+					<Badge size="lg" style="width: 80%;">✨ AI-Powered</Badge>
 					<h2>Smart Features That Adapt to You</h2>
 					<p>
 						Our advanced AI learns from your progress, preferences, and goals to
@@ -259,9 +264,10 @@
 					object-fit: cover;
 					position: {isMd.value ? 'absolute' : 'static'};
 					z-index: -1;
-					opacity: {isMd.value ? 0.3 : 1};
+					opacity: {isMd.value ? 0.7 : 1};
+					filter: blur({isMd.value ? '5px' : '0px'});
 					width: 100%;
-					height: {isMd.value ? '100%' : 'auto'};
+					height: {isMd.value ? '100%' : '550px'};
 					"
 				/>
 			</div>
