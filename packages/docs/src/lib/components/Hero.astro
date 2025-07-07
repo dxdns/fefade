@@ -19,6 +19,10 @@ import Default from "@astrojs/starlight/components/Hero.astro"
 		--ff-border-translucent: rgba(255, 255, 255, 0.03);
 	}
 
+	:global(.content-panel) {
+		position: relative;
+	}
+
 	.gradient-background {
 		position: absolute;
 		inset: 0;
@@ -73,7 +77,7 @@ import Default from "@astrojs/starlight/components/Hero.astro"
 			rgba(0, 0, 0, 0.8),
 			rgba(255, 255, 255, 0.4)
 		);
-		bottom: -20%;
+		bottom: 40%;
 		right: -10%;
 		animation: float-two 18s ease-in-out infinite alternate;
 	}
@@ -83,7 +87,7 @@ import Default from "@astrojs/starlight/components/Hero.astro"
 			transform: translate(0, 0) scale(1);
 		}
 		100% {
-			transform: translate(10%, 10%) scale(1.1);
+			transform: translate(15%, 15%) scale(1.1);
 		}
 	}
 
@@ -115,5 +119,17 @@ import Default from "@astrojs/starlight/components/Hero.astro"
 				transparent 1px
 			);
 		z-index: 2;
+	}
+
+	@media screen and (max-width: 768px) {
+		.sphere-one {
+			top: 0;
+		}
+
+		.sphere-two {
+			width: 100vw;
+			height: 100vw;
+			right: -10%;
+		}
 	}
 </style>

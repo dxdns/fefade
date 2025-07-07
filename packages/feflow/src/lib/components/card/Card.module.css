@@ -19,3 +19,10 @@
 	background: none;
 	border: 1px solid var(--ff-border);
 }
+
+.card.isTranslucent {
+	background: var(--ff-surface-variant);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+	border: 1px solid var(--ff-border);
+}

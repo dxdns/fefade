@@ -4,9 +4,9 @@
 	const { colors } = $derived(themeConfig())
 
 	function getColor(value: number) {
-		if (value < 30) return colors.error
-		if (value < 70) return colors.warning
-		return colors.success
+		if (value < 30) return colors.onError
+		if (value < 70) return colors.onWarning
+		return colors.onSuccess
 	}
 
 	const data = [20, 45, 75, 90].map((v) => ({ value: v, color: getColor(v) }))

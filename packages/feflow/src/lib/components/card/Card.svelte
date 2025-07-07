@@ -9,6 +9,7 @@
 	import type { VariantType } from "../../types/index.js"
 
 	interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+		isTranslucent?: boolean
 		glowOnHover?: boolean
 		variant?: Exclude<VariantType, "text">
 		href?: string
@@ -17,6 +18,7 @@
 
 	let {
 		class: className = "",
+		isTranslucent = false,
 		glowOnHover = false,
 		variant = "outlined",
 		href,
@@ -34,7 +36,10 @@
 			className,
 			[className, styles],
 			[variant, styles],
-			styles.card
+			styles.card,
+			{
+				[styles.isTranslucent]: isTranslucent
+			}
 		)}
 		style={mergeStyleUtil(href ? "cursor: pointer;" : "", rest.style)}
 		onclick={href ? () => window.open(href, target) : rest.onclick}
