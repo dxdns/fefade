@@ -17,6 +17,7 @@ import onShortcutAction from "./onShortcutAction.js"
 import onScrollEndAction from "./onScrollEndAction.js"
 import autoAlignAction from "./autoAlignAction.js"
 import lazyLoadAction from "./lazyLoadAction.js"
+import { draggableGroupAction } from "./draggableGroupAction.js"
 
 export {
 	inputDropAction,
@@ -37,5 +38,6 @@ export {
 	onShortcutAction,
 	onScrollEndAction,
 	autoAlignAction,
-	lazyLoadAction
+	lazyLoadAction,
+	draggableGroupAction
 }
