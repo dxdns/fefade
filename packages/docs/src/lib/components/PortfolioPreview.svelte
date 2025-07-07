@@ -202,10 +202,7 @@
 					dxdns
 				</Link>
 			</div>
-			<Switch
-				onclick={theme.toggle}
-				checked={theme.mode === "dark"}
-			>
+			<Switch onclick={theme.toggle} checked={theme.mode === "dark"}>
 				<DarkModeIcon height="14px" width="14px" />
 				<LightModeIcon height="14px" width="14px" />
 			</Switch>
