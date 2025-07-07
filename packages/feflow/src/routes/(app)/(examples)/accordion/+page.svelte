@@ -2,11 +2,11 @@
 	import { Accordion } from "@/lib/index.js"
 </script>
 
-<div style="width: 500px; margin: 3rem auto; line-height: 5;">
+<div style="width: 500px; margin: 3rem auto;">
 	{#each Array.from(Array(10)) as _, i}
 		<Accordion
 			id="sec{i}"
-			variant={i % 2 ? "contained" : "outlined"}
+			variant={i % 2 ? "contained" : i % 3 ? undefined : "outlined"}
 			label="test {i}"
 		>
 			<div style="line-height: 1.5;">
@@ -23,5 +23,6 @@
 				</p>
 			</div>
 		</Accordion>
+		<br />
 	{/each}
 </div>
