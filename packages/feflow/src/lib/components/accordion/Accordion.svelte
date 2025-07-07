@@ -58,11 +58,10 @@
 
 	.header label {
 		cursor: pointer;
-		font-weight: bold;
 		color: var(--ff-on-surface);
 	}
 
-	.header:hover {
+	.accordion:not(.text):not(.contained) .header:hover {
 		background: color-mix(in srgb, var(--ff-surface-variant) 95%, gray 5%);
 	}
 
@@ -104,6 +103,15 @@
 		border-style: solid;
 		border: 1px solid var(--ff-border);
 		border-top: none;
+	}
+
+	.controller:checked + .header {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	.controller:checked + .header label {
+		font-weight: bold;
 	}
 
 	.controller:checked + .header + .content {
