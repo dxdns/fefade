@@ -7,9 +7,7 @@
 		<h1>normal</h1>
 	</Link>
 	<br />
-	<Link href="https://dxdns.dev" style="text-decoration: underline;">
-		underline
-	</Link>
+	<Link href="https://dxdns.dev" hover="underlineNone">underline</Link>
 	<br />
 	<br />
 	<Link href="https://dxdns.dev">
@@ -27,28 +25,28 @@
 		heart
 	</Link>
 	<br />
-	<Link href="https://dxdns.dev" hoverUnderline="left" target="_blank">
+	<Link href="https://dxdns.dev" hover="left" target="_blank">
 		<h1>left</h1>
 	</Link>
 	<br />
-	<Link pathname="/" hoverUnderline="center">
+	<Link pathname="/" hover="center">
 		<h1>center</h1>
 	</Link>
 	<br />
-	<Link pathname="/" hoverUnderline="right">
+	<Link pathname="/" hover="right">
 		<h1>right</h1>
 	</Link>
 	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatibus
 		pariatur maiores cumque <Link
 			href="https://dxdns.dev"
-			hoverUnderline="center"
+			hover="center"
 		>
 			obcaecati
 		</Link>, eum quod porro harum magni quisquam sunt nihil, eos modi officia
 		molestiae. Illum <Link
 			href="https://dxdns.dev"
-			style="text-decoration: underline;"
+			hover="underlineNone"
 		>
 			minima
 		</Link> ad ducimus.
