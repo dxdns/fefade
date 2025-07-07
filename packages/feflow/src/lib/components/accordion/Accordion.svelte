@@ -12,7 +12,7 @@
 	let {
 		class: className = "",
 		label,
-		variant = "contained",
+		variant,
 		children,
 		...rest
 	}: Props = $props()
@@ -51,10 +51,19 @@
 		align-items: center;
 		padding: 8px;
 		cursor: pointer;
-		font-weight: bold;
 		text-align: left;
-		color: var(--ff-on-surface);
 		border-radius: 5px;
+		transition: background 0.3s ease;
+	}
+
+	.header label {
+		cursor: pointer;
+		font-weight: bold;
+		color: var(--ff-on-surface);
+	}
+
+	.header:hover {
+		background: color-mix(in srgb, var(--ff-surface-variant) 95%, gray 5%);
 	}
 
 	.accordion.text .header {
@@ -83,6 +92,7 @@
 		opacity: 0;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
+		line-height: 1.5;
 	}
 
 	.accordion.contained .content {
