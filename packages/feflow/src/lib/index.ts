@@ -36,6 +36,7 @@ export { default as Code } from "./components/code/index.js"
 export { default as Separator } from "./components/separator/index.js"
 export { default as ProgressCircle } from "./components/progress-circle/index.js"
 export { default as TextField } from "./components/text-field/index.js"
+export { default as DraggableGroup } from "./components/draggable-group/index.js"
 
 export { default as Drawer } from "./components/drawer/index.js"
 export { default as Menu } from "./components/menu/index.js"
