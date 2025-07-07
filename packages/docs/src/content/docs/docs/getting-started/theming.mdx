@@ -4,7 +4,7 @@ description: How to set theme in your project
 ---
 
 import ThemeColorPreview from "@/components/ThemeColorPreview.svelte"
-import { Tabs, TabItem } from "@astrojs/starlight/components"
+import PreviewTabs from "@/components/PreviewTabs.astro"
 
 ### Theme configuration
 
@@ -19,7 +19,7 @@ Import necessary modules and create a custom theme configuration.
 	let { children } = $props()
 
 	const customTheme = customThemeConfig({
-		colors: { light: { colorBg: "orange" } }
+		colors: { light: { bg: "orange" } }
 	})
 </script>
 
@@ -32,41 +32,6 @@ Import necessary modules and create a custom theme configuration.
 
 You can access and use theme colors throughout your components. For example, you might want to use colors defined in the theme for different parts of your app.
 
-<Tabs>
-	<TabItem label="Usage">
-	```svelte
-	<script lang="ts">
-		import { Badge, Button, Card, themeConfig } from "@dxdns/feflow"
-
-    	const theme = $derived(themeConfig())
-    </script>
-
-    <div
-    	style="
-    	display: flex;
-    	flex-wrap: wrap;
-    	gap: 1rem;
-    	align-items: center;
-    	"
-    >
-    	<h2>{theme.mode}</h2>
-    	<Button variant="outlined" onclick={theme.toggle}>toggle theme</Button>
-    </div>
-    <Card style="background: {theme.mode === 'dark' ? 'green' : 'red'};">
-    	<ul style="line-height: 2;">
-    		{#each Object.keys(theme.colors) as t}
-    			{@const color = theme.colors[t as keyof typeof theme.colors]}
-    			<li>
-    				<span style="color:aqua;">{t}</span>:
-    				<Badge roundedFull style="background: {color};" size="sm"></Badge>
-    			</li>
-    		{/each}
-    	</ul>
-    </Card>
-    ```
-    </TabItem>
-    <TabItem label="Preview">
-    	<ThemeColorPreview client:load />
-    </TabItem>
-
-</Tabs>
+<PreviewTabs component="ThemeColorPreview">
+	<ThemeColorPreview client:load />
+</PreviewTabs>
