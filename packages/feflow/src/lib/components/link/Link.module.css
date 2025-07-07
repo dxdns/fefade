@@ -5,11 +5,11 @@
 	gap: 0.5em;
 	transition: color 0.3s ease;
 	color: var(--ff-text, currentColor);
-	line-height: 1;
+	line-height: 0.7em;
 	text-decoration: none;
 }
 
-.linkUnderline {
+.hasHover {
 	--origin: bottom left;
 	display: inline-block;
 	position: relative;
@@ -17,25 +17,33 @@
 	margin-bottom: 0.3em;
 }
 
-.linkUnderline.left {
+.hasHover.left,
+.hasHover.underlineNone {
 	--origin: bottom left;
 }
 
-.linkUnderline.center {
+.hasHover.center {
 	--origin: bottom center;
 }
 
-.linkUnderline.right {
+.hasHover.right {
 	--origin: bottom right;
 }
 
-.linkUnderline::after {
+.hasHover.underlineNone::after {
+	transform: scaleX(1);
+}
+
+.hasHover:not(.underlineNone)::after {
+	transform: scaleX(0);
+}
+
+.hasHover::after {
 	content: "";
 	position: absolute;
 	inset-inline-start: 0;
 	inset-block-end: -0.3em;
 	width: 100%;
-	transform: scaleX(0);
 	transform-origin: var(--origin);
 	height: 0.125em;
 	background: var(--ff-primary, currentColor);
@@ -55,7 +63,11 @@
 		opacity: 0.7;
 	}
 
-	.linkUnderline:hover::after {
+	.hasHover.underlineNone:hover::after {
+		transform: scaleX(0);
+	}
+
+	.hasHover:not(.underlineNone):hover::after {
 		transform: scaleX(1);
 	}
 }
