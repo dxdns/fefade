@@ -276,65 +276,62 @@
 		<section id="three">
 			<h2>Frequently Asked Questions</h2>
 			<br />
-			<Accordion
-				id="faq1"
-				variant="text"
-				label="How does the AI personal trainer work?"
-			>
-				<p>
-					Our AI analyzes your workout history, preferences, and goals to create
-					personalized training plans. It continuously adapts based on your
-					progress and feedback to ensure optimal results.
-				</p>
-			</Accordion>
+			<Card>
+				<Accordion
+					id="faq1"
+					label="How does the AI personal trainer work?"
+				>
+					<p>
+						Our AI analyzes your workout history, preferences, and goals to
+						create personalized training plans. It continuously adapts based on
+						your progress and feedback to ensure optimal results.
+					</p>
+				</Accordion>
 
-			<Accordion
-				id="faq2"
-				variant="text"
-				label="Can I cancel my subscription anytime?"
-			>
-				<p>
-					Yes! You can cancel your subscription at any time. There are no
-					cancellation fees, and you'll continue to have access to Pro features
-					until your current billing period ends.
-				</p>
-			</Accordion>
+				<Accordion
+					id="faq2"
+					label="Can I cancel my subscription anytime?"
+				>
+					<p>
+						Yes! You can cancel your subscription at any time. There are no
+						cancellation fees, and you'll continue to have access to Pro
+						features until your current billing period ends.
+					</p>
+				</Accordion>
 
-			<Accordion
-				id="faq3"
-				variant="text"
-				label="Do I need equipment to use FitFlow?"
-			>
-				<p>
-					Not at all! FitFlow includes bodyweight workouts that require no
-					equipment. We also have equipment-based workouts if you have access to
-					a gym or home equipment.
-				</p>
-			</Accordion>
+				<Accordion
+					id="faq3"
+					label="Do I need equipment to use FitFlow?"
+				>
+					<p>
+						Not at all! FitFlow includes bodyweight workouts that require no
+						equipment. We also have equipment-based workouts if you have access
+						to a gym or home equipment.
+					</p>
+				</Accordion>
 
-			<Accordion
-				id="faq4"
-				variant="text"
-				label="Is there a nutrition tracking feature?"
-			>
-				<p>
-					Yes! Pro and Elite plans include comprehensive nutrition tracking with
-					macro counting, meal planning, and integration with popular food
-					databases.
-				</p>
-			</Accordion>
+				<Accordion
+					id="faq4"
+					label="Is there a nutrition tracking feature?"
+				>
+					<p>
+						Yes! Pro and Elite plans include comprehensive nutrition tracking
+						with macro counting, meal planning, and integration with popular
+						food databases.
+					</p>
+				</Accordion>
 
-			<Accordion
-				id="faq5"
-				variant="text"
-				label="How accurate is the calorie tracking?"
-			>
-				<p>
-					Our calorie tracking uses advanced algorithms and integrates with
-					fitness trackers for maximum accuracy. We provide estimates based on
-					your personal metrics and activity intensity.
-				</p>
-			</Accordion>
+				<Accordion
+					id="faq5"
+					label="How accurate is the calorie tracking?"
+				>
+					<p>
+						Our calorie tracking uses advanced algorithms and integrates with
+						fitness trackers for maximum accuracy. We provide estimates based on
+						your personal metrics and activity intensity.
+					</p>
+				</Accordion>
+			</Card>
 		</section>
 	</main>
 
