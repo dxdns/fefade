@@ -1,9 +1,9 @@
-import type { ThemeColorsType, ThemeModeType } from "../types/index.js"
+import type { ThemeColorType, ThemeModeType } from "../types/index.js"
 import * as Constants from "../constants.js"
 
 let data = $state<{
 	mode: ThemeModeType
-	colors: ThemeColorsType
+	colors: ThemeColorType
 }>({
 	mode: "light",
 	colors: Constants.themeConfigDefault.light
