@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from "svelte/elements"
-	import { classMapUtil } from "../../utils/index.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 
 	interface Props extends HTMLButtonAttributes {
 		isOpen: boolean

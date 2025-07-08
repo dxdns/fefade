@@ -1,4 +1,4 @@
-import { TOAST_DEFAULT_DURATION } from "../constants.js"
+import { Constants } from "@dxdns/feflow-core"
 import type { ToastType } from "../types/index.js"
 
 type ToastInputType = Omit<Partial<ToastType>, "id">
@@ -22,7 +22,7 @@ export default function toastState() {
 		},
 		add(toast: ToastInputType) {
 			const id = crypto.randomUUID()
-			const duration = toast.duration ?? TOAST_DEFAULT_DURATION
+			const duration = toast.duration ?? Constants.TOAST_DEFAULT_DURATION
 			const position = toast.position ?? "bottom-right"
 			const message = toast.message ?? ""
 			const color = toast.color ?? "info"

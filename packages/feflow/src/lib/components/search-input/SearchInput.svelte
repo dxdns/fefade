@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import classMapUtil from "../../utils/classMapUtil.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./SearchInput.module.css"
 	import type {
 		ActionEntryType,

@@ -2,7 +2,7 @@
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { VariantType } from "../../types/index.js"
 	import { KeyboardArrowLeftIcon } from "../../icons/index.js"
-	import { classMapUtil } from "../../utils/index.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 
 	interface Props extends HTMLInputAttributes {
 		label: string

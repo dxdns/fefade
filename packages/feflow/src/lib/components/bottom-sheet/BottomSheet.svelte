@@ -1,5 +1,5 @@
 <script lang="ts">
-	import classMapUtil from "../../utils/classMapUtil.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import { onMount, tick } from "svelte"
 	import type { HTMLAttributes } from "svelte/elements"
 

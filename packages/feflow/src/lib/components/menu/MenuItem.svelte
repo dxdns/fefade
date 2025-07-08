@@ -4,7 +4,7 @@
 		HTMLAttributes
 	} from "svelte/elements"
 	import styles from "./MenuItem.module.css"
-	import classMapUtil from "../../utils/classMapUtil.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 
 	interface Props extends HTMLAttributes<HTMLSpanElement> {
 		href?: string

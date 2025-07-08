@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { themeConfig } from "../../utils/themeConfigUtil.js"
+	import themeConfig from "../../utils/themeConfigUtil.js"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
+	import { classMapUtil, mergeStyleUtil } from "@dxdns/feflow-core/utils"
 
 	interface Props extends Omit<HTMLInputAttributes, "type"> {
 		type?: "date" | "month"

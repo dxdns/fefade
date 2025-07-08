@@ -4,11 +4,8 @@
  *  https://feflow.dxdns.dev
  */
 
-export {
-	customThemeConfig,
-	createTheme,
-	themeConfig
-} from "./utils/themeConfigUtil.js"
+export { customThemeConfig, createTheme } from "@dxdns/feflow-core/utils"
+export { themeConfig } from "./utils/index.js"
 export { toast } from "./states/toastState.svelte.js"
 export { getSections } from "./states/scrollSectionState.svelte.js"
 export { mediaQueryState as useMediaQuery } from "./states/index.js"

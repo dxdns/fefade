@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import classMapUtil from "../../utils/classMapUtil.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./Navbar.module.css"
 	import { fadeOnScrollAction } from "../../actions/index.js"
 	import type { VariantType } from "../../types/index.js"

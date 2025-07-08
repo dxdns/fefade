@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import classMapUtil from "../../utils/classMapUtil.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./NumberInput.module.css"
 	import Button from "../button/index.js"
 	import type { VariantType } from "../../types/index.js"

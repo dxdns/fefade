@@ -1,5 +1,5 @@
 <script lang="ts">
-	import classMapUtil from "../../utils/classMapUtil.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./FileInput.module.css"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { inputDropAction } from "../../actions/index.js"

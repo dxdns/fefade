@@ -4,7 +4,7 @@
 		HTMLAttributes
 	} from "svelte/elements"
 	import styles from "./CarouselItem.module.css"
-	import classMapUtil from "../../utils/classMapUtil.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		href?: string | undefined | null

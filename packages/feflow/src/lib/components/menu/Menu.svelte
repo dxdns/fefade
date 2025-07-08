@@ -2,7 +2,7 @@
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { Snippet } from "svelte"
 	import { autoAlignAction, clickOutsideAction } from "../../actions/index.js"
-	import { classMapUtil } from "../../utils/index.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 
 	interface Props extends HTMLInputAttributes {
 		isTranslucent?: boolean

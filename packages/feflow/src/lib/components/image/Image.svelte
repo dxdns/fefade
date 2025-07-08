@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { lazyLoadAction } from "../../actions/index.js"
 	import type { HTMLImgAttributes } from "svelte/elements"
-	import { mergeStyleUtil, classMapUtil } from "../../utils/index.js"
+	import { mergeStyleUtil, classMapUtil } from "@dxdns/feflow-core/utils"
 
 	interface Props extends Omit<HTMLImgAttributes, "src"> {
 		lazy?: boolean

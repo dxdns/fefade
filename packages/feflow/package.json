@@ -14,10 +14,11 @@
 		"url": "git+https://github.com/dxdns/feflow.git"
 	},
 	"scripts": {
+		"build:core": "npm run build -w @dxdns/feflow-core",
 		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
+		"prepare": "npm run build:core && svelte-kit sync || echo ''",
 		"prepack": "svelte-kit sync && svelte-package && publint",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -52,7 +53,8 @@
 		"publint": "^0.3.2",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
-		"vite": "^6.2.5"
+		"vite": "^6.2.5",
+		"@dxdns/feflow-core": "*"
 	},
 	"keywords": [
 		"svelte",

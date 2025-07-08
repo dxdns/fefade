@@ -1,0 +1,36 @@
+{
+	"name": "@dxdns/feflow-core",
+	"version": "0.0.1",
+	"description": "",
+	"private": false,
+	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "MIT",
+	"scripts": {
+		"build": "tsc",
+		"start": "npm run build && node ./dist/index.js"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./utils": {
+			"import": "./dist/utils/index.js",
+			"types": "./dist/utils/index.d.ts"
+		},
+		"./types": {
+			"import": "./dist/types/index.js",
+			"types": "./dist/types/index.d.ts"
+		}
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"keywords": [],
+	"type": "module"
+}

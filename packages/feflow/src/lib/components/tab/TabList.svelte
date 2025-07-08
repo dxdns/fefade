@@ -7,7 +7,7 @@
 		classMapUtil,
 		getPropValueUtil,
 		mergeStyleUtil
-	} from "../../utils/index.js"
+	} from "@dxdns/feflow-core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		lineStyle?: boolean | { color?: string; height?: string }

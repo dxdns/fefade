@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onDestroy, onMount, type Snippet } from "svelte"
-	import * as Constants from "../../constants.js"
+	import { Constants } from "@dxdns/feflow-core"
 	import type {
 		BreakpointType,
 		ThemeConfigType,
@@ -10,7 +10,7 @@
 		mergeObjectUtil,
 		themeConfigUtil,
 		themeModeUtil
-	} from "../../utils/index.js"
+	} from "@dxdns/feflow-core/utils"
 	import { themeConfigState } from "../../states/index.js"
 
 	interface Props {

@@ -1,5 +1,5 @@
 import { scrollSectionState } from "../states/index.js"
-import debounceUtil from "../utils/debounceUtil.js"
+import { debounceUtil } from "@dxdns/feflow-core/utils"
 
 type Props = { debounceDelay?: number }
 

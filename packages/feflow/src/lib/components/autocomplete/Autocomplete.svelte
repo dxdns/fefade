@@ -2,7 +2,7 @@
 	import type { ActionType, VariantType } from "../../types/index.js"
 	import { keyboardNavigationAction } from "../../actions/index.js"
 	import styles from "./Autocomplete.module.css"
-	import { classMapUtil } from "../../utils/index.js"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { Snippet } from "svelte"
 	import { SearchInput } from "../search-input/index.js"

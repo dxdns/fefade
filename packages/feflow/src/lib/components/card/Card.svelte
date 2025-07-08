@@ -3,7 +3,7 @@
 		HTMLAttributeAnchorTarget,
 		HTMLAttributes
 	} from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "../../utils/index.js"
+	import { classMapUtil, mergeStyleUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./Card.module.css"
 	import { glowOnHoverAction } from "../../actions/index.js"
 	import type { VariantType } from "../../types/index.js"
