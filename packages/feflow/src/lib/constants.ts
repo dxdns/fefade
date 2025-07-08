@@ -1,4 +1,4 @@
-import type { ThemeConfigType } from "./types/index.js"
+import type { BreakpointType, ThemeConfigType } from "./types/index.js"
 
 export const APP_NAME = "feflow"
 export const APP_NAME_ACRONYM = "ff"
@@ -95,4 +95,12 @@ export const themeConfigDefault: ThemeConfigType = {
 		shadow: "#00000080",
 		...statusColors.dark
 	}
+}
+
+export const breakpoints: Record<BreakpointType | string, string> = {
+	sm: "425px",
+	md: "768px",
+	lg: "1024px",
+	xl: "1440px",
+	"2xl": "2560px"
 }

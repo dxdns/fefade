@@ -1,18 +1,8 @@
-import type { SizeType } from "../types/index.js"
-
-type BreakpointType = Exclude<SizeType, "xs"> | "2xl"
-type OperatorType = "min-width" | "max-width"
-
-const breakpoints: Record<BreakpointType | string, string> = {
-	sm: "425px",
-	md: "768px",
-	lg: "1024px",
-	xl: "1440px",
-	"2xl": "2560px"
-}
+import type { BreakpointType } from "../types/index.js"
+import * as Constants from "../constants.js"
 
 export default function mediaQueryState(
-	operator: OperatorType,
+	operator: "min-width" | "max-width",
 	size: BreakpointType | string
 ) {
 	if (typeof window === "undefined") {
@@ -25,7 +15,7 @@ export default function mediaQueryState(
 	}
 
 	let data = $state(false)
-	const query = `(${operator}: ${breakpoints[size as BreakpointType] ?? size})`
+	const query = `(${operator}: ${Constants.breakpoints[size as BreakpointType] ?? size})`
 	const mediaQuery = window.matchMedia(query)
 
 	function update() {
