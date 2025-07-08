@@ -23,6 +23,12 @@ import Default from "@astrojs/starlight/components/Hero.astro"
 		position: relative;
 	}
 
+	:global([data-page-title]) {
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-image: linear-gradient(90deg, rgba(255, 72, 0, 0.8), var(--ff-on-surface));
+	}
+
 	.gradient-background {
 		position: absolute;
 		inset: 0;
