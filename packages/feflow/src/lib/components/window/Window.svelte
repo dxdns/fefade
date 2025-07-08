@@ -3,9 +3,11 @@
 	import Card from "../card/index.js"
 	import Badge from "../badge/index.js"
 	import type { Snippet } from "svelte"
+	import type { VariantType } from "../../types/variant.types.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		label?: string | Snippet<[]>
+		variant?: Exclude<VariantType, "text">
 	}
 
 	let { class: className = "", label, children, ...rest }: Props = $props()

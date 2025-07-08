@@ -3,25 +3,9 @@ title: Window
 description: A component for displaying content in a separate, movable or modal window.
 ---
 
-import { Window } from "@dxdns/feflow"
-import { Tabs, TabItem } from "@astrojs/starlight/components"
+import WindowPreview from "@/components/WindowPreview.svelte"
+import PreviewTabs from "@/components/PreviewTabs.astro"
 
-<Tabs>
-  <TabItem label="Preview">
-    <Window>
-      content
-    </Window>
-  </TabItem>
-  <TabItem label="Usage">
-    ```svelte
-    <script lang="ts">
-      import { Window } from "@dxdns/feflow"
-    </script>
-
-    <Window>
-      content
-    </Window>
-    ```
-
-  </TabItem>
-</Tabs>
+<PreviewTabs component="WindowPreview">
+	<WindowPreview client:load />
+</PreviewTabs>
