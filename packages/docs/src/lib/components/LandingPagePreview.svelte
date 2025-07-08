@@ -119,7 +119,7 @@
 	"
 >
 	<h6>🔥 New: AI-Powered Workout Plans - 50% OFF This Week!</h6>
-	<Badge size="md">Limited Time</Badge>
+	<Badge size="xs">Limited Time</Badge>
 </div>
 
 <div style="width: 80%; margin: 0 auto;">
@@ -265,7 +265,7 @@
 					position: {isMd.value ? 'absolute' : 'static'};
 					z-index: -1;
 					opacity: {isMd.value ? 0.7 : 1};
-					filter: blur({isMd.value ? '5px' : '0px'});
+					filter: blur({isMd.value ? '3px' : '0px'}) brightness({isMd.value? '0.5' : '1'});
 					width: 100%;
 					height: {isMd.value ? '100%' : '550px'};
 					"
