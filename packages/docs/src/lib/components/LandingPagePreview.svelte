@@ -265,7 +265,9 @@
 					position: {isMd.value ? 'absolute' : 'static'};
 					z-index: -1;
 					opacity: {isMd.value ? 0.7 : 1};
-					filter: blur({isMd.value ? '3px' : '0px'}) brightness({isMd.value? '0.5' : '1'});
+					filter: blur({isMd.value ? '3px' : '0px'}) brightness({isMd.value
+						? '0.5'
+						: '1'});
 					width: 100%;
 					height: {isMd.value ? '100%' : '550px'};
 					"
@@ -277,10 +279,7 @@
 			<h2>Frequently Asked Questions</h2>
 			<br />
 			<Card>
-				<Accordion
-					id="faq1"
-					label="How does the AI personal trainer work?"
-				>
+				<Accordion id="faq1" label="How does the AI personal trainer work?">
 					<p>
 						Our AI analyzes your workout history, preferences, and goals to
 						create personalized training plans. It continuously adapts based on
@@ -288,10 +287,7 @@
 					</p>
 				</Accordion>
 
-				<Accordion
-					id="faq2"
-					label="Can I cancel my subscription anytime?"
-				>
+				<Accordion id="faq2" label="Can I cancel my subscription anytime?">
 					<p>
 						Yes! You can cancel your subscription at any time. There are no
 						cancellation fees, and you'll continue to have access to Pro
@@ -299,10 +295,7 @@
 					</p>
 				</Accordion>
 
-				<Accordion
-					id="faq3"
-					label="Do I need equipment to use FitFlow?"
-				>
+				<Accordion id="faq3" label="Do I need equipment to use FitFlow?">
 					<p>
 						Not at all! FitFlow includes bodyweight workouts that require no
 						equipment. We also have equipment-based workouts if you have access
@@ -310,10 +303,7 @@
 					</p>
 				</Accordion>
 
-				<Accordion
-					id="faq4"
-					label="Is there a nutrition tracking feature?"
-				>
+				<Accordion id="faq4" label="Is there a nutrition tracking feature?">
 					<p>
 						Yes! Pro and Elite plans include comprehensive nutrition tracking
 						with macro counting, meal planning, and integration with popular
@@ -321,10 +311,7 @@
 					</p>
 				</Accordion>
 
-				<Accordion
-					id="faq5"
-					label="How accurate is the calorie tracking?"
-				>
+				<Accordion id="faq5" label="How accurate is the calorie tracking?">
 					<p>
 						Our calorie tracking uses advanced algorithms and integrates with
 						fitness trackers for maximum accuracy. We provide estimates based on

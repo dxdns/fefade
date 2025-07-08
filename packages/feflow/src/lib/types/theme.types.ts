@@ -1,6 +1,8 @@
+import type { BreakpointThemeConfigType } from "./breakpoint.types.js"
+
 export type ThemeModeType = "dark" | "light"
 
-export type ThemeColorsType = {
+export type ThemeColorType = {
 	primary: string
 	onPrimary: string
 	secondary: string
@@ -29,14 +31,15 @@ export type ThemeColorsType = {
 	shadow: string
 }
 
-export type ThemeConfigType = {
-	light: ThemeColorsType
-	dark: ThemeColorsType
+export type ColorThemeConfigType = {
+	light: ThemeColorType
+	dark: ThemeColorType
 }
 
-export type CustomThemeConfigType = {
-	colors: {
-		light?: Partial<ThemeColorsType>
-		dark?: Partial<ThemeColorsType>
+export type ThemeConfigType = {
+	colors?: {
+		light?: Partial<ThemeColorType>
+		dark?: Partial<ThemeColorType>
 	}
+	breakpoints?: Partial<BreakpointThemeConfigType>
 }

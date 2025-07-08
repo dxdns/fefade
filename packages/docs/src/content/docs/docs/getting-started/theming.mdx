@@ -14,16 +14,16 @@ Import necessary modules and create a custom theme configuration.
 
 ```svelte
 <script lang="ts">
-	import { customThemeConfig, FeflowProvider } from "@dxdns/feflow"
+	import { createTheme, FeflowProvider } from "@dxdns/feflow"
 
 	let { children } = $props()
 
-	const customTheme = customThemeConfig({
+	const theme = createTheme({
 		colors: { light: { bg: "orange" } }
 	})
 </script>
 
-<FeflowProvider {customTheme} defaultMode="dark">
+<FeflowProvider {theme} defaultThemeMode="dark">
 	{@render children()}
 </FeflowProvider>
 ```

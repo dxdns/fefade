@@ -1,4 +1,4 @@
-import type { BreakpointType, ThemeConfigType } from "./types/index.js"
+import type { BreakpointType, ColorThemeConfigType } from "./types/index.js"
 
 export const APP_NAME = "feflow"
 export const APP_NAME_ACRONYM = "ff"
@@ -52,7 +52,7 @@ const statusColors = {
 	}
 }
 
-export const themeConfigDefault: ThemeConfigType = {
+export const themeConfigDefault: ColorThemeConfigType = {
 	light: {
 		primary: gray[1000],
 		onPrimary: gray[50],

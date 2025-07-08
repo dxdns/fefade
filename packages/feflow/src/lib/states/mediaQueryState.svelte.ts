@@ -5,7 +5,7 @@ export default function mediaQueryState(
 	operator: "min-width" | "max-width",
 	size: BreakpointType | string
 ) {
-	if (typeof window === "undefined") {
+	if (typeof window === "undefined" || typeof document === "undefined") {
 		return {
 			get value() {
 				return false
@@ -15,8 +15,15 @@ export default function mediaQueryState(
 	}
 
 	let data = $state(false)
-	const query = `(${operator}: ${Constants.breakpoints[size as BreakpointType] ?? size})`
-	const mediaQuery = window.matchMedia(query)
+
+	const root = document.documentElement
+	const sizeValue = getComputedStyle(root)
+		.getPropertyValue(`${Constants.CSS_VAR_PREFIX}-${size}`)
+		.trim()
+	const breakpointValue =
+		sizeValue || Constants.breakpoints[size as BreakpointType] || size
+
+	const mediaQuery = window.matchMedia(`(${operator}: ${breakpointValue})`)
 
 	function update() {
 		data = mediaQuery.matches

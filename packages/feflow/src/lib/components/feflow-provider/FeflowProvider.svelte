@@ -2,7 +2,7 @@
 	import { onDestroy, onMount, type Snippet } from "svelte"
 	import * as Constants from "../../constants.js"
 	import type {
-		CustomThemeConfigType,
+		BreakpointType,
 		ThemeConfigType,
 		ThemeModeType
 	} from "../../types/index.js"
@@ -14,22 +14,44 @@
 	import { themeConfigState } from "../../states/index.js"
 
 	interface Props {
-		customTheme?: CustomThemeConfigType
+		/** @deprecated Use `theme` instead */
+		customTheme?: ThemeConfigType
+
+		theme?: ThemeConfigType
+
+		/** @deprecated Use `defaultThemeMode` instead */
 		defaultMode?: ThemeModeType
+
+		defaultThemeMode?: ThemeModeType
 		children: Snippet<[]>
 	}
 
-	let { customTheme, defaultMode = "light", children }: Props = $props()
+	let {
+		customTheme,
+		theme,
+		defaultMode = "light",
+		defaultThemeMode = "light",
+		children
+	}: Props = $props()
 
 	let observer: MutationObserver | undefined = $state()
 
-	const newTheme = mergeObjectUtil(
-		Constants.themeConfigDefault,
-		customTheme || {}
-	) as ThemeConfigType
+	const { themeConfigToCssString, breakpointConfigToCssString } =
+		themeConfigUtil()
 
-	const { themeConfigToCssString } = themeConfigUtil()
-	const style = themeConfigToCssString(newTheme)
+	const themeStyle = themeConfigToCssString(
+		mergeObjectUtil(
+			Constants.themeConfigDefault,
+			customTheme?.colors || theme?.colors || {}
+		) as ThemeConfigType
+	)
+
+	const breakpointStyle = breakpointConfigToCssString(
+		mergeObjectUtil(
+			Constants.breakpoints,
+			customTheme?.breakpoints || theme?.breakpoints || {}
+		) as Record<BreakpointType, string>
+	)
 
 	const { getThemeModeFromAttr } = themeModeUtil()
 	const themeConfig = themeConfigState()
@@ -68,14 +90,15 @@
 	{@html `
 	<script>
 		(function () {
-			const theme = localStorage.getItem("${Constants.THEME_STORAGE}") || "${defaultMode}";
+			const theme = localStorage.getItem("${Constants.THEME_STORAGE}") || "${defaultMode ?? defaultThemeMode}";
 			document.documentElement.setAttribute("${Constants.THEME_ATTR}", theme);
 			document.documentElement.style.colorScheme = theme;
 		})()
 	</script>
 	`}
 
-	{@html style}
+	{@html themeStyle}
+	{@html breakpointStyle}
 
 	<style>
 		body {

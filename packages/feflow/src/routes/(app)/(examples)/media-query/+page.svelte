@@ -4,7 +4,7 @@
 
 	const isSm = useMediaQuery("max-width", "sm")
 	const isMd = useMediaQuery("max-width", "md")
-	const isCustom = useMediaQuery("max-width", "800px")
+	const isCustom = useMediaQuery("max-width", "850px")
 
 	onDestroy(() => {
 		isSm.destroy()

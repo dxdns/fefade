@@ -1,10 +1,15 @@
 <script lang="ts">
-	import { FeflowProvider } from "@/lib/index.js"
+	import { createTheme, FeflowProvider } from "@/lib/index.js"
 
 	let { children } = $props()
+
+	const theme = createTheme({
+		colors: { light: { bg: "orange" } },
+		breakpoints: { md: "800px" }
+	})
 </script>
 
-<FeflowProvider>
+<FeflowProvider {theme} defaultThemeMode="light">
 	{@render children()}
 </FeflowProvider>
 
