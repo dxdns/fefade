@@ -46,6 +46,7 @@
 		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
+		"@dxdns/feflow-core": "*",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/package": "^2.0.0",
@@ -53,8 +54,7 @@
 		"publint": "^0.3.2",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
-		"vite": "^6.2.5",
-		"@dxdns/feflow-core": "*"
+		"vite": "^6.2.5"
 	},
 	"keywords": [
 		"svelte",

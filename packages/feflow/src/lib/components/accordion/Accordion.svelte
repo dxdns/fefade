@@ -3,7 +3,7 @@
 	import type { VariantType } from "@dxdns/feflow-core/types"
 	import { KeyboardArrowLeftIcon } from "../../icons/index.js"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import styles from "./Accordion.module.css"
+	import { Accordion as styles } from "@dxdns/feflow-core/styles"
 
 	interface Props extends HTMLInputAttributes {
 		label: string

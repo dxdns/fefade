@@ -9,8 +9,8 @@
 	},
 	"license": "MIT",
 	"scripts": {
-		"build": "tsc",
-		"start": "npm run build && node ./dist/index.js"
+		"build": "tsc && npm run copy-css",
+		"copy-css": "cpx \"src/**/*.css\" dist"
 	},
 	"exports": {
 		".": {
@@ -24,6 +24,10 @@
 		"./types": {
 			"import": "./dist/types/index.js",
 			"types": "./dist/types/index.d.ts"
+		},
+		"./styles": {
+			"import": "./dist/styles/index.js",
+			"styles": "./dist/styles/index.d.ts"
 		}
 	},
 	"files": [
@@ -32,5 +36,8 @@
 		"!dist/**/*.spec.*"
 	],
 	"keywords": [],
-	"type": "module"
+	"type": "module",
+	"devDependencies": {
+		"cpx": "^1.5.0"
+	}
 }
