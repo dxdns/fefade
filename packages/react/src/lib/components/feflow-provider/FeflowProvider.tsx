@@ -1,29 +1,341 @@
-import { type ReactNode } from "react"
+import { createContext, useContext, useState, useMemo, useRef, useEffect, type ReactNode } from "react"
+import { Constants } from "core"
+import {
+    mergeObjectUtil,
+    themeConfigUtil,
+    themeModeUtil
+} from "core/utils"
+import type { BreakpointType, ThemeColorType, ThemeConfigType, ThemeModeType } from "core/types"
+
+type ThemeConfigContextType = {
+    mode: ThemeModeType
+    colors: ThemeColorType
+    toggle: () => void
+}
 
 type Props = {
+    /** @deprecated Use `theme` instead */
+    customTheme?: ThemeConfigType
+
+    theme?: ThemeConfigType
+
+    /** @deprecated Use `defaultThemeMode` instead */
+    defaultMode?: ThemeModeType
+
+    defaultThemeMode?: ThemeModeType
     children: ReactNode
 }
 
-export default function ({ children }: Props) {
+const ThemeConfigContext = createContext<ThemeConfigContextType | undefined>(undefined)
+
+export default function ({ children, customTheme, theme, defaultMode = "light", defaultThemeMode = "light" }: Props) {
+    const [mode, setMode] = useState<ThemeModeType>("light")
+    const [colors, setColors] = useState<ThemeColorType>(Constants.themeConfigDefault.light)
+
+    const _setMode = (t: ThemeModeType) => setMode(t)
+    const _setColors = (t: ThemeModeType) => setColors(Constants.themeConfigDefault[t])
+
+    const setThemeMode = (t: ThemeModeType) => {
+        _setMode(t)
+        _setColors(t)
+    }
+
+    const getMode = () => mode
+    const getColors = () => Constants.themeConfigDefault[mode]
+
+    const { getThemeModeFromAttr, toggleThemeMode } = themeModeUtil()
+
+    const value = useMemo(
+        () => ({
+            colors: getColors(),
+            mode: getMode(),
+            toggle: () => {
+                toggleThemeMode((t) => {
+                    setThemeMode(t)
+                })
+            }
+        }),
+        [mode, colors]
+    )
+
+    const observer = useRef<MutationObserver | null>(null)
+
+    const { themeConfigToCssString, breakpointConfigToCssString } =
+        themeConfigUtil()
+
+    const themeStyle = themeConfigToCssString(
+        mergeObjectUtil(
+            Constants.themeConfigDefault,
+            customTheme?.colors || theme?.colors || {}
+        ) as ThemeConfigType
+    )
+
+    const breakpointStyle = breakpointConfigToCssString(
+        mergeObjectUtil(
+            Constants.breakpoints,
+            customTheme?.breakpoints || theme?.breakpoints || {}
+        ) as Record<BreakpointType, string>
+    )
+
+    useEffect(() => {
+        const theme = localStorage.getItem(Constants.THEME_STORAGE) || (defaultMode ?? defaultThemeMode)
+        document.documentElement.setAttribute(Constants.THEME_ATTR, theme)
+        document.documentElement.style.colorScheme = theme
+        setThemeMode(theme as ThemeModeType)
+    }, [])
+
+    useEffect(() => {
+        observer.current = new MutationObserver((records) => {
+            for (const mutation of records) {
+                if (
+                    mutation.type === "attributes" &&
+                    mutation.attributeName === Constants.THEME_ATTR
+                ) {
+                    const themeMode = getThemeModeFromAttr()
+                    setThemeMode(themeMode)
+                }
+            }
+        })
+
+        const rootElement = document.documentElement
+        observer.current.observe(rootElement, {
+            attributes: true,
+            attributeFilter: [Constants.THEME_ATTR]
+        })
+
+        return () => {
+            observer.current?.disconnect()
+        }
+    }, [])
+
     return (
         <>
+            <meta name="x-library-name" content="feflow" />
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: themeStyle
+                }}
+            ></div>
+
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: breakpointStyle
+                }}
+            ></div>
+
             <style
                 dangerouslySetInnerHTML={{
                     __html: `
                     body {
-                        background-color: #121212;
-                        color: #fefefe;
+                        background: var(--ff-bg);
+                        color: var(--ff-text);
                     }
-                
-                    h1 {
-                        font-size: 2rem;
-                        color: #e67e22;
+
+                    /** text **/
+
+                    .text-primary {
+                        color: var(--ff-primary) !important;
+                    }
+
+                    .text-on-primary {
+                        color: var(--ff-on-primary) !important;
+                    }
+
+                    .text-secondary {
+                        color: var(--ff-secondary) !important;
+                    }
+
+                    .text-on-secondary {
+                        color: var(--ff-on-secondary) !important;
+                    }
+
+                    .text {
+                        color: var(--ff-text) !important;
+                    }
+
+                    .text-muted {
+                        color: var(--ff-text-muted) !important;
+                    }
+
+                    .text-on-bg {
+                        color: var(--ff-on-bg) !important;
+                    }
+
+                    .text-on-surface {
+                        color: var(--ff-on-surface) !important;
+                    }
+
+                    .text-on-disabled {
+                        color: var(--ff-on-disabled) !important;
+                    }
+
+                    /** bg **/
+
+                    .bg-primary {
+                        background: var(--ff-primary) !important;
+                    }
+
+                    .bg-secondary {
+                        background: var(--ff-secondary) !important;
+                    }
+
+                    .bg-page {
+                        background: var(--ff-bg) !important;
+                    }
+
+                    .bg-surface {
+                        background: var(--ff-surface) !important;
+                    }
+
+                    .bg-disabled {
+                        background: var(--ff-disabled) !important;
+                    }
+
+                    .bg-0 {
+                        background: none !important;
+                    }
+
+                    /** border **/
+
+                    .border {
+                        border-color: var(--ff-border) !important;
+                    }
+
+                    .border-0 {
+                        border: none !important;
+                        border-radius: 0 !important;
+                    }
+
+                    /** bg **/
+
+                    .bg-success {
+                        background: var(--ff-success) !important;
+                    }
+
+                    .bg-error,
+                    .bg-danger {
+                        background: var(--ff-error) !important;
+                    }
+
+                    .bg-warning {
+                        background: var(--ff-warning) !important;
+                    }
+
+                    .bg-info {
+                        background: var(--ff-info) !important;
+                    }
+
+                    /** hover bg **/
+                    .hover-bg-success:hover {
+                        background: var(--ff-success) !important;
+                    }
+
+                    .hover-bg-error:hover,
+                    .hover-bg-danger:hover {
+                        background: var(--ff-error) !important;
+                    }
+
+                    .hover-bg-warning:hover {
+                        background: var(--ff-warning) !important;
+                    }
+
+                    .hover-bg-info:hover {
+                        background: var(--ff-info) !important;
+                    }
+
+                    /** text **/
+
+                    .text-on-success {
+                        color: var(--ff-on-success) !important;
+                    }
+
+                    .text-on-error,
+                    .text-on-danger {
+                        color: var(--ff-on-error) !important;
+                    }
+
+                    .text-on-warning {
+                        color: var(--ff-on-warning) !important;
+                    }
+
+                    .text-on-info {
+                        color: var(--ff-on-info) !important;
+                    }
+
+                    /** hover text **/
+
+                    .hover-text-on-success:hover {
+                        color: var(--ff-on-success) !important;
+                    }
+
+                    .hover-text-on-error:hover,
+                    .hover-text-on-danger:hover {
+                        color: var(--ff-on-error) !important;
+                    }
+
+                    .hover-text-on-warning:hover {
+                        color: var(--ff-on-warning) !important;
+                    }
+
+                    .hover-text-on-info:hover {
+                        color: var(--ff-on-info) !important;
+                    }
+
+                    /** border **/
+
+                    .border-on-success {
+                        border-color: var(--ff-on-success) !important;
+                    }
+
+                    .border-on-error,
+                    .border-on-danger {
+                        border-color: var(--ff-on-error) !important;
+                    }
+
+                    .border-on-warning {
+                        border-color: var(--ff-on-warning) !important;
+                    }
+
+                    .border-on-info {
+                        border-color: var(--ff-on-info) !important;
+                    }
+
+                    .roundedFull,
+                    .rounded-full {
+                        border-radius: 9999px !important;
+                    }
+
+                    /** hover border **/
+
+                    .hover-border-on-success:hover {
+                        border-color: var(--ff-on-success) !important;
+                    }
+
+                    .hover-border-on-error:hover,
+                    .hover-border-on-danger:hover {
+                        border-color: var(--ff-on-error) !important;
+                    }
+
+                    .hover-border-on-warning:hover {
+                        border-color: var(--ff-on-warning) !important;
+                    }
+
+                    .hover-border-on-info:hover {
+                        border-color: var(--ff-on-info) !important;
                     }
                     `
                 }}
             />
 
-            {children}
+            <ThemeConfigContext.Provider value={value}>{children}</ThemeConfigContext.Provider>
         </>
     )
+}
+
+export function useThemeConfig() {
+    const context = useContext(ThemeConfigContext)
+    if (!context) {
+        throw new Error("useThemeConfig must be used within a FeflowProvider")
+    }
+    return context
 }
