@@ -3,8 +3,8 @@
 	import type { VariantType } from "@dxdns/feflow-core/types"
 	import { KeyboardArrowLeftIcon } from "../../icons/index.js"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import { Accordion as styles } from "@dxdns/feflow-core/styles"
-
+	import styles from "@dxdns/feflow-core/styles/Accordion.module.css"
+	
 	interface Props extends HTMLInputAttributes {
 		label: string
 		variant?: VariantType
