@@ -45,11 +45,6 @@ export default defineConfig({
 							slug: "docs/getting-started/theming"
 						},
 						{
-							label: "CLI",
-							slug: "docs/getting-started/cli",
-							badge: "New"
-						},
-						{
 							label: "Templates",
 							slug: "docs/getting-started/templates",
 							badge: "New"
