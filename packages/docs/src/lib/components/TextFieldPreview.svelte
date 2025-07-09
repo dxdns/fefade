@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TextField } from "@dxdns/feflow"
+	import { TextField } from "feflow-svelte"
 
 	const sizes = ["xs", "sm", "md", "lg", "xl"]
 	const variants = ["contained", "text", "outlined"]

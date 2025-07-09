@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PasswordInput } from "@dxdns/feflow"
+	import { PasswordInput } from "feflow-svelte"
 
 	const variants = ["contained", "text", "outlined"]
 </script>

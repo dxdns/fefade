@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Kbd } from "@dxdns/feflow"
+	import { Kbd } from "feflow-svelte"
 
 	const sizes = ["xs", "sm", "md", "lg", "xl"]
 </script>

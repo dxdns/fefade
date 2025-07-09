@@ -7,14 +7,14 @@
 		"packages/*"
 	],
 	"scripts": {
-		"build:core": "npm run build -w @dxdns/feflow-core",
-		"build:feflow": "npm run build -w @dxdns/feflow",
-		"build:cli": "npm run build -w @dxdns/feflow-cli",
+		"build:core": "npm run build -w core",
+		"build:feflow:svelte": "npm run build -w feflow-svelte",
+		"build:cli": "npm run build -w feflow-cli",
 		"release:feflow": "npm run build:feflow && git push && git push --tags",
 		"release:cli": "npm run build:cli && git push && git push --tags",
-		"release:cli:patch": "npm version patch -w @dxdns/feflow-cli --no-git-tag-version && git add packages/cli/package.json && git commit -m \"chore(release): bump version CLI\" && git tag cli-v$(node -p \"require('./packages/cli/package.json').version\") && npm run release:cli",
-		"release:feflow:patch": "npm version patch -w @dxdns/feflow --no-git-tag-version && git add packages/feflow/package.json && git commit -m \"chore(release): bump version Feflow\" && git tag feflow-v$(node -p \"require('./packages/feflow/package.json').version\") && npm run release:feflow",
-		"prepare": "npm run build:core && npm run build:feflow",
+		"release:cli:patch": "npm version patch -w feflow-cli --no-git-tag-version && git add packages/cli/package.json && git commit -m \"chore(release): bump version CLI\" && git tag cli-v$(node -p \"require('./packages/cli/package.json').version\") && npm run release:cli",
+		"release:feflow:svelte:patch": "npm version patch -w feflow-svelte --no-git-tag-version && git add packages/feflow/package.json && git commit -m \"chore(release): bump version Feflow\" && git tag feflow-v$(node -p \"require('./packages/feflow/package.json').version\") && npm run release:feflow",
+		"prepare": "npm run build:core && npm run build:feflow:svelte",
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"test": "echo \"Error: no test specified\" && exit 1"
@@ -32,7 +32,8 @@
 	"devDependencies": {
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
-		"typescript": "^5.0.0",
+		"typescript": "~5.8.3",
+		"typescript-eslint": "^8.35.1",
 		"@types/node": "^22.14.1"
 	}
 }

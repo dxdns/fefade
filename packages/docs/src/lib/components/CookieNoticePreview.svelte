@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Drawer } from "@dxdns/feflow"
+	import { Button, Drawer } from "feflow-svelte"
 	import { onMount } from "svelte"
 
 	let isOpen = $state(false)

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Switch, themeConfig } from "@dxdns/feflow"
+	import { Switch, themeConfig } from "feflow-svelte"
 
 	const { colors } = $derived(themeConfig())
 	const sizes = ["xs", "sm", "md", "lg", "xl"]

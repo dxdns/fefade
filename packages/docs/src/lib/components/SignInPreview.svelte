@@ -8,7 +8,7 @@
 		PasswordInput,
 		Separator,
 		TextField
-	} from "@dxdns/feflow"
+	} from "feflow-svelte"
 </script>
 
 <div class="container">

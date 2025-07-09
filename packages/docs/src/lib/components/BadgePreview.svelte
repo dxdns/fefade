@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge } from "@dxdns/feflow"
+	import { Badge } from "feflow-svelte"
 
 	const variants = ["outlined", "text", "contained"]
 	const colors = ["error", "success", "warning", "info", "primary"]

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, Timeline } from "@dxdns/feflow"
+	import { Card, Timeline } from "feflow-svelte"
 </script>
 
 {#each Array.from({ length: 6 }) as _, i}

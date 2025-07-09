@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Code } from "@dxdns/feflow"
+	import { Code } from "feflow-svelte"
 
 	const data = `
         .card {

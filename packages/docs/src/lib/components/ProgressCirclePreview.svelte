@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ProgressCircle, themeConfig } from "@dxdns/feflow"
+	import { ProgressCircle, themeConfig } from "feflow-svelte"
 
 	const { colors } = $derived(themeConfig())
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { RadioButton } from "@dxdns/feflow"
+	import { RadioButton } from "feflow-svelte"
 
 	const sizes = ["xs", "sm", "md", "lg", "xl"]
 </script>

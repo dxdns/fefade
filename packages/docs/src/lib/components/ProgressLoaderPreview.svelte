@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, ProgressLoader } from "@dxdns/feflow"
+	import { Button, ProgressLoader } from "feflow-svelte"
 
 	let progress = $state(0)
 

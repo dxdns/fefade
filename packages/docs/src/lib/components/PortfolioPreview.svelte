@@ -7,7 +7,7 @@
 		Separator,
 		Switch,
 		themeConfig
-	} from "@dxdns/feflow"
+	} from "feflow-svelte"
 	import {
 		DarkModeIcon,
 		GithubIcon,

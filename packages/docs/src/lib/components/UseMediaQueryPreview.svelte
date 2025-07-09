@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { useMediaQuery } from "@dxdns/feflow"
+	import { useMediaQuery } from "feflow-svelte"
 	import { onDestroy } from "svelte"
 
 	const isSm = $derived(useMediaQuery("max-width", "sm"))

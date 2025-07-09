@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DataTable } from "@dxdns/feflow"
+	import { DataTable } from "feflow-svelte"
 
 	const data = Array.from(Array(10)).map((_, index) => ({
 		id: index,

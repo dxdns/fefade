@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Accordion } from "@dxdns/feflow"
+	import { Accordion } from "feflow-svelte"
 </script>
 
 <div style="display: flex; flex-direction: column; gap: 1rem;">

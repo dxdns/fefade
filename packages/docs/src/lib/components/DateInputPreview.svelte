@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DateInput, themeConfig } from "@dxdns/feflow"
+	import { DateInput, themeConfig } from "feflow-svelte"
 
 	const theme = $derived(themeConfig())
 </script>

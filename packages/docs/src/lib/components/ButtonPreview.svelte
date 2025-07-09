@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from "@dxdns/feflow"
+	import { Button } from "feflow-svelte"
 
 	const variants = ["outlined", "text", "contained"]
 	const colors = ["error", "success", "warning", "info", "primary"]

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { NumberInput } from "@dxdns/feflow"
+	import { NumberInput } from "feflow-svelte"
 
 	let quantity = $state(0)
 </script>

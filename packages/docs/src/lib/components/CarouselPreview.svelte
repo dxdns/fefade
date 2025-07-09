@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Card, Carousel, RadioButton } from "@dxdns/feflow"
+	import { Button, Card, Carousel, RadioButton } from "feflow-svelte"
 
 	let currentIndex = $state(0)
 </script>

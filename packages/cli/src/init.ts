@@ -33,8 +33,8 @@ export default async function init() {
 			stdio: "inherit"
 		})
 
-		console.log(`📦 Installing @dxdns/feflow in the project...`)
-		execSync(`npm install @dxdns/feflow`, {
+		console.log(`📦 Installing feflow-svelte in the project...`)
+		execSync(`npm install feflow-svelte`, {
 			stdio: "inherit",
 			cwd: projectPath
 		})

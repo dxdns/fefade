@@ -18,7 +18,7 @@
 		themeConfig,
 		useMediaQuery,
 		Drawer
-	} from "@dxdns/feflow"
+	} from "feflow-svelte"
 	import { onDestroy } from "svelte"
 
 	let isOpen = $state(false)
