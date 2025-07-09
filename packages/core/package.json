@@ -29,9 +29,9 @@
 			"import": "./dist/types/index.js",
 			"types": "./dist/types/index.d.ts"
 		},
-		"./styles/*.module.css": {
-			"types": "./dist/styles/*.module.css.d.ts",
-			"default": "./dist/styles/*.module.css"
+		"./styles/*.css": {
+			"types": "./dist/styles/*.css.d.ts",
+			"default": "./dist/styles/*.css"
 		}
 	},
 	"files": [
