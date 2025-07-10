@@ -1,13 +1,13 @@
 import type { SizeType } from "@feflow/core/types"
-import React from "react"
+import { forwardRef, HTMLAttributes } from "react"
 import { classMapUtil } from "@feflow/core/utils"
 import styles from "@feflow/core/styles/Spinner.module.css"
 
-type Props = React.HTMLAttributes<HTMLSpanElement> & {
+type Props = HTMLAttributes<HTMLSpanElement> & {
 	size?: SizeType
 }
 
-export default React.forwardRef<HTMLSpanElement, Props>((props, ref) => {
+export default forwardRef<HTMLSpanElement, Props>((props, ref) => {
 	const { className, size = "sm", ...rest } = props
 
 	return (
