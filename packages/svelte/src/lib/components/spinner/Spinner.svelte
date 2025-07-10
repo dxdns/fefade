@@ -2,7 +2,7 @@
 	import type { SizeType } from "../../types/index.js"
 	import { classMapUtil } from "@feflow/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
-	import styles from "./Spinner.module.css"
+	import styles from "@feflow/core/styles/Spinner.module.css"
 
 	interface Props extends HTMLAttributes<HTMLSpanElement> {
 		size?: SizeType

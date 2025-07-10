@@ -1,12 +1,13 @@
-import styles from "core/styles/Accordion.module.css"
+import styles from "@feflow/core/styles/Accordion.module.css"
 import { useThemeConfig } from "./lib/components/feflow-provider"
+import Button from "./lib/components/button"
 
 function App() {
 	const { toggle } = useThemeConfig()
 
 	return (
 		<>
-			<button onClick={toggle}>toggle</button>
+			<Button onClick={toggle}>toggle</Button>
 			<br />
 			<br />
 			<div className={styles.accordion}>

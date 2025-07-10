@@ -1,12 +1,12 @@
 import { createContext, useContext, useState, useMemo, useRef, useEffect, type ReactNode } from "react"
-import { Constants } from "core"
+import { Constants } from "@feflow/core"
 import {
     mergeObjectUtil,
     themeConfigUtil,
     themeModeUtil
-} from "core/utils"
-import type { BreakpointType, ThemeColorType, ThemeConfigType, ThemeModeType } from "core/types"
-import rawStyle from "core/styles/FeflowProvider.css?raw"
+} from "@feflow/core/utils"
+import type { BreakpointType, ThemeColorType, ThemeConfigType, ThemeModeType } from "@feflow/core/types"
+import rawStyle from "@feflow/core/styles/FeflowProvider.css?raw"
 
 type ThemeConfigContextType = {
     mode: ThemeModeType
