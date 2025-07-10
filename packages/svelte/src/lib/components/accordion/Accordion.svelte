@@ -5,7 +5,8 @@
 	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "@feflow/core/styles/Accordion.module.css"
 
-	interface Props extends HTMLInputAttributes {
+	interface Props extends Omit<HTMLInputAttributes, "id"> {
+		id: string
 		label: string
 		variant?: VariantType
 	}

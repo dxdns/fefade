@@ -21,8 +21,8 @@
 	],
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
-		"build:pkg": "npm run build -- --mode pkg",
+		"build:vite": "tsc && vite build",
+		"build": "npm run build:vite -- --mode pkg",
 		"lint": "eslint .",
 		"preview": "vite preview"
 	},
