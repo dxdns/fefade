@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import styles from "./Carousel.module.css"
-	import { scrollNavigatorAction } from "../../actions/index.js"
+	import { scrollNavigatorAction } from "@feflow/core/actions"
 	import { classMapUtil } from "@feflow/core/utils"
 	import { onDestroy, onMount, type Snippet } from "svelte"
 

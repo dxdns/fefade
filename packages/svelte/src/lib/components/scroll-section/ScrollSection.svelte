@@ -6,7 +6,7 @@
 	import type { HTMLAttributes } from "svelte/elements"
 	import KeyboardArrowLeftIcon from "../../icons/KeyboardArrowLeftIcon.svelte"
 	import KeyboardArrowRightIcon from "../../icons/KeyboardArrowRightIcon.svelte"
-	import { scrollNavigatorAction } from "../../actions/index.js"
+	import { scrollNavigatorAction } from "@feflow/core/actions"
 
 	interface Props extends HTMLAttributes<HTMLElement> {
 		data: SectionType[]

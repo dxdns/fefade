@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { lazyLoadAction } from "../../actions/index.js"
+	import { lazyLoadAction } from "@feflow/core/actions"
 	import type { HTMLImgAttributes } from "svelte/elements"
 	import { mergeStyleUtil, classMapUtil } from "@feflow/core/utils"
 

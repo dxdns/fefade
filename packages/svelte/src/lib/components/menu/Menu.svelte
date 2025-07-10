@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { Snippet } from "svelte"
-	import { autoAlignAction, clickOutsideAction } from "../../actions/index.js"
+	import { autoAlignAction, clickOutsideAction } from "@feflow/core/actions"
 	import { classMapUtil } from "@feflow/core/utils"
 
 	interface Props extends HTMLInputAttributes {

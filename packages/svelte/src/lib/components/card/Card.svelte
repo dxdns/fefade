@@ -4,7 +4,7 @@
 		HTMLAttributes
 	} from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "@feflow/core/utils"
-	import { glowOnHoverAction } from "../../actions/index.js"
+	import { glowOnHoverAction } from "@feflow/core/actions"
 	import type { VariantType } from "../../types/index.js"
 	import styles from "@feflow/core/styles/Card.module.css"
 

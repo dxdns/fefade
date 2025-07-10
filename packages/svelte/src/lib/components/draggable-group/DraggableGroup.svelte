@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "@feflow/core/utils"
-	import { draggableGroupAction } from "../../actions/index.js"
+	import { draggableGroupAction } from "@feflow/core/actions"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		onChange?: (el: HTMLElement, index: number) => void

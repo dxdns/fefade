@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { activeLineAction } from "../../actions/index.js"
+	import { activeLineAction } from "@feflow/core/actions"
 	import HoverFollower from "../hover-follower/index.js"
 	import type { ActionType, OrientationType } from "../../types/index.js"
 	import {

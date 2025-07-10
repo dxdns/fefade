@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { actionUtil, classMapUtil, mergeStyleUtil } from "@feflow/core/utils"
-	import { hoverFollowerAction } from "../../actions/index.js"
+	import { hoverFollowerAction } from "@feflow/core/actions"
 	import type { ActionEntryType, OrientationType } from "../../types/index.js"
 	import type { HTMLAttributes } from "svelte/elements"
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onScrollEndAction } from "../../actions/index.js"
+	import { onScrollEndAction } from "@feflow/core/actions"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

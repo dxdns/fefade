@@ -2,7 +2,7 @@
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "./Navbar.module.css"
-	import { fadeOnScrollAction } from "../../actions/index.js"
+	import { fadeOnScrollAction } from "@feflow/core/actions"
 	import type { VariantType } from "../../types/index.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

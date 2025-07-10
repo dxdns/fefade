@@ -29,6 +29,10 @@
 			"import": "./dist/types/index.js",
 			"types": "./dist/types/index.d.ts"
 		},
+		"./actions": {
+			"import": "./dist/actions/index.js",
+			"types": "./dist/actions/index.d.ts"
+		},
 		"./styles/*.css": {
 			"types": "./dist/styles/*.css.d.ts",
 			"default": "./dist/styles/*.css"
