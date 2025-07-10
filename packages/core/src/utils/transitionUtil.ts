@@ -1,5 +1,17 @@
-import type { TransitionConfig } from "svelte/transition"
-import type { TransitionEntry } from "../types/index.js"
+interface TransitionConfig {
+	delay?: number
+	duration?: number
+	easing?: (t: number) => number
+	css?: (t: number, u: number) => string
+	tick?: (t: number, u: number) => void
+}
+
+type TransitionFn = (node: Element, params?: any) => TransitionConfig
+
+interface TransitionEntry {
+	in?: [TransitionFn, any?]
+	out?: [TransitionFn, any?]
+}
 
 export default function transitionUtil<T extends HTMLElement>(
 	node: T,
