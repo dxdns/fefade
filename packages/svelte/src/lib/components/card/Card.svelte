@@ -5,14 +5,12 @@
 	} from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "@feflow/core/utils"
 	import { glowOnHoverAction } from "@feflow/core/actions"
-	import type { VariantType } from "../../types/index.js"
+	import type { CardType } from "@feflow/core/types"
 	import styles from "@feflow/core/styles/Card.module.css"
 
-	interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
-		isTranslucent?: boolean
-		glowOnHover?: boolean
-		variant?: Exclude<VariantType, "text">
-		href?: string
+	interface Props
+		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,
+			CardType {
 		target?: HTMLAttributeAnchorTarget
 	}
 

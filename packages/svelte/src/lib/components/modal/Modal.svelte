@@ -4,7 +4,7 @@
 	import { classMapUtil } from "@feflow/core/utils"
 	import { fade, scale } from "svelte/transition"
 	import Card from "../card/index.js"
-	import type { VariantType } from "../../types/index.js"
+	import type { VariantType } from "@feflow/core/types"
 
 	export interface ModalProps {
 		isOpen: boolean

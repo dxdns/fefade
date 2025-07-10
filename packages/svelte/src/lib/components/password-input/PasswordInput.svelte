@@ -2,7 +2,7 @@
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "./PasswordInput.module.css"
-	import type { ColorType, SizeType, VariantType } from "../../types/index.js"
+	import type { ColorType, SizeType, VariantType } from "@feflow/core/types"
 	import { VisibilityIcon, VisibilityOffIcon } from "../../icons/index.js"
 	import Button from "../button/index.js"
 	import TextField from "../text-field/index.js"

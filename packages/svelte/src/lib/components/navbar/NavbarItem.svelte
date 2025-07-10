@@ -6,7 +6,7 @@
 	} from "svelte/elements"
 	import Button from "../button/index.js"
 	import styles from "./NavbarItem.module.css"
-	import type { VariantType } from "../../types/index.js"
+	import type { VariantType } from "@feflow/core/types"
 
 	interface Props extends HTMLButtonAttributes {
 		variant?: VariantType

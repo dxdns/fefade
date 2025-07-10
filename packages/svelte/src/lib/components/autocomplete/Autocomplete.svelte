@@ -1,5 +1,5 @@
 <script lang="ts" generics="T">
-	import type { ActionType, VariantType } from "../../types/index.js"
+	import type { ActionType, VariantType } from "@feflow/core/types"
 	import { keyboardNavigationAction } from "@feflow/core/actions"
 	import styles from "./Autocomplete.module.css"
 	import { classMapUtil } from "@feflow/core/utils"

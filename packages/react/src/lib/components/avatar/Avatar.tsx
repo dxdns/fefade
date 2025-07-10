@@ -6,13 +6,12 @@ import {
 } from "react"
 import styles from "@feflow/core/styles/Avatar.module.css"
 import { classMapUtil } from "@feflow/core/utils"
+import type { AvatarType } from "@feflow/core/types"
 
-type Props = Omit<ImgHTMLAttributes<HTMLImageElement>, "width" | "height"> &
-	PropsWithChildren & {
-		textFallback?: string
-		width?: string
-		height?: string
-	}
+interface Props
+	extends Omit<ImgHTMLAttributes<HTMLImageElement>, "width" | "height">,
+		PropsWithChildren,
+		AvatarType {}
 
 export default forwardRef<HTMLDivElement, Props>(
 	({ className, width, height, textFallback, ...rest }, ref) => {

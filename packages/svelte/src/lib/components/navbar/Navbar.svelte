@@ -3,7 +3,7 @@
 	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "./Navbar.module.css"
 	import { fadeOnScrollAction } from "@feflow/core/actions"
-	import type { VariantType } from "../../types/index.js"
+	import type { VariantType } from "@feflow/core/types"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		isTranslucent?: boolean

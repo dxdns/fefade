@@ -5,7 +5,7 @@
 		BreakpointType,
 		ThemeConfigType,
 		ThemeModeType
-	} from "../../types/index.js"
+	} from "@feflow/core/types"
 	import {
 		mergeObjectUtil,
 		themeConfigUtil,

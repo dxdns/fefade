@@ -1,14 +1,12 @@
-import { forwardRef, HTMLAttributes, PropsWithChildren } from "react"
-import { VariantType } from "@feflow/core/types"
+import { forwardRef, HTMLAttributes, type PropsWithChildren } from "react"
+import type { AccordionType } from "@feflow/core/types"
 import { classMapUtil } from "@feflow/core/utils"
 import styles from "@feflow/core/styles/Accordion.module.css"
 
-type Props = Omit<HTMLAttributes<HTMLDivElement>, "id"> &
-	PropsWithChildren & {
-		id: string
-		label: string
-		variant?: VariantType
-	}
+interface Props
+	extends Omit<HTMLAttributes<HTMLDivElement>, "id">,
+		PropsWithChildren,
+		AccordionType {}
 
 export default forwardRef<HTMLDivElement, Props>(
 	({ className, label, variant, children, ...rest }, ref) => {

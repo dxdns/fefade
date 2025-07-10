@@ -2,12 +2,11 @@
 	import type { HTMLImgAttributes } from "svelte/elements"
 	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "@feflow/core/styles/Avatar.module.css"
+	import type { AvatarType } from "@feflow/core/types"
 
-	interface Props extends Omit<HTMLImgAttributes, "width" | "height"> {
-		textFallback?: string
-		width?: string
-		height?: string
-	}
+	interface Props
+		extends Omit<HTMLImgAttributes, "width" | "height">,
+			AvatarType {}
 
 	let {
 		class: className = "",

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade, fly } from "svelte/transition"
-	import type { TransitionEntry } from "../../types/index.js"
+	import type { TransitionEntry } from "@feflow/core/types"
 	import { transitionUtil } from "@feflow/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 	import { mergeStyleUtil } from "@feflow/core/utils"

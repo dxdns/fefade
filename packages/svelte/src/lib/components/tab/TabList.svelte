@@ -2,7 +2,7 @@
 	import type { HTMLAttributes } from "svelte/elements"
 	import { activeLineAction } from "@feflow/core/actions"
 	import HoverFollower from "../hover-follower/index.js"
-	import type { ActionType, OrientationType } from "../../types/index.js"
+	import type { ActionType, OrientationType } from "@feflow/core/types"
 	import {
 		classMapUtil,
 		getPropValueUtil,

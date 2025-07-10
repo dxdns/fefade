@@ -4,19 +4,12 @@
 		HTMLButtonAttributes
 	} from "svelte/elements"
 	import { classMapUtil } from "@feflow/core/utils"
-	import type { SizeType, VariantType } from "../../types/index.js"
+	import type { ButtonType } from "@feflow/core/types"
 	import Spinner from "../spinner/index.js"
 	import styles from "@feflow/core/styles/Button.module.css"
 
-	interface Props extends HTMLButtonAttributes {
-		pressedEffect?: boolean
-		variant?: VariantType
-		isLoading?: boolean
-		roundedFull?: boolean
-		size?: SizeType
-		href?: string
+	interface Props extends HTMLButtonAttributes, ButtonType {
 		target?: HTMLAttributeAnchorTarget
-		download?: string
 	}
 
 	let {

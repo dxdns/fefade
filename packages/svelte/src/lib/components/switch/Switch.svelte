@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { SizeType } from "../../types/index.js"
+	import type { SizeType } from "@feflow/core/types"
 	import styles from "./Switch.module.css"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { classMapUtil } from "@feflow/core/utils"

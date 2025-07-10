@@ -5,7 +5,7 @@
 		ActionEntryType,
 		SizeType,
 		VariantType
-	} from "../../types/index.js"
+	} from "@feflow/core/types"
 	import styles from "./TextField.module.css"
 	import { actionUtil } from "@feflow/core/utils"
 

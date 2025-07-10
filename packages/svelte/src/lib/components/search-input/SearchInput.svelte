@@ -6,7 +6,7 @@
 		ActionEntryType,
 		ColorType,
 		VariantType
-	} from "../../types/index.js"
+	} from "@feflow/core/types"
 	import { SearchIcon } from "../../icons/index.js"
 	import TextField from "../text-field/index.js"
 

@@ -2,7 +2,7 @@
 	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "./Checkbox.module.css"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import type { SizeType } from "../../types/index.js"
+	import type { SizeType } from "@feflow/core/types"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "size">, "type"> {
 		size?: SizeType

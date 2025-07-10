@@ -1,14 +1,10 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { SizeType, VariantType } from "../../types/index.js"
+	import type { BadgeType } from "@feflow/core/types"
 	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "@feflow/core/styles/Badge.module.css"
 
-	interface Props extends HTMLAttributes<HTMLSpanElement> {
-		size?: SizeType
-		variant?: Exclude<VariantType, "text">
-		roundedFull?: boolean
-	}
+	interface Props extends HTMLAttributes<HTMLSpanElement>, BadgeType {}
 
 	let {
 		class: className = "",

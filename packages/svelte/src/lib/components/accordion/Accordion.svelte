@@ -1,15 +1,11 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import type { VariantType } from "@feflow/core/types"
+	import type { AccordionType } from "@feflow/core/types"
 	import { KeyboardArrowLeftIcon } from "../../icons/index.js"
 	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "@feflow/core/styles/Accordion.module.css"
 
-	interface Props extends Omit<HTMLInputAttributes, "id"> {
-		id: string
-		label: string
-		variant?: VariantType
-	}
+	interface Props extends Omit<HTMLInputAttributes, "id">, AccordionType {}
 
 	let {
 		class: className = "",

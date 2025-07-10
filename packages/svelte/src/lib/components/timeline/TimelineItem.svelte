@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { HorizontalPositionType } from "../../types/index.js"
+	import type { HorizontalPositionType } from "@feflow/core/types"
 	import { classMapUtil } from "@feflow/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

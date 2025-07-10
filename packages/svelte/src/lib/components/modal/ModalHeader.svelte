@@ -3,7 +3,7 @@
 	import { classMapUtil } from "@feflow/core/utils"
 	import Button from "../button/index.js"
 	import { CloseIcon } from "../../icons/index.js"
-	import type { AlignType } from "../../types/index.js"
+	import type { AlignType } from "@feflow/core/types"
 
 	export interface ModalHeaderProps {
 		align?: AlignType

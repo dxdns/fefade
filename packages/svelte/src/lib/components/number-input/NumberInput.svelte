@@ -3,7 +3,7 @@
 	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "./NumberInput.module.css"
 	import Button from "../button/index.js"
-	import type { VariantType } from "../../types/index.js"
+	import type { VariantType } from "@feflow/core/types"
 	import { onMount } from "svelte"
 
 	interface Props

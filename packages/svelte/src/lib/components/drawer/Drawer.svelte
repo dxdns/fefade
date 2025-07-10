@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import styles from "./Drawer.module.css"
-	import type { PositionNoCenterType } from "../../types/index.js"
+	import type { PositionNoCenterType } from "@feflow/core/types"
 	import { classMapUtil } from "@feflow/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

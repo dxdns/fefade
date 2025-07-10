@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { SectionType } from "../../types/index.js"
+	import type { SectionType } from "@feflow/core/types"
 	import Button from "../button/index.js"
 	import styles from "./ScrollSection.module.css"
 	import { classMapUtil } from "@feflow/core/utils"

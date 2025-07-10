@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import styles from "./RadioButton.module.css"
-	import type { SizeType } from "../../types/index.js"
+	import type { SizeType } from "@feflow/core/types"
 	import { classMapUtil } from "@feflow/core/utils"
 
 	interface Props extends Omit<HTMLInputAttributes, "size"> {

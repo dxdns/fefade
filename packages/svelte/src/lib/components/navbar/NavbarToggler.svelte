@@ -3,7 +3,7 @@
 	import { classMapUtil } from "@feflow/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import styles from "./NavbarToggler.module.css"
-	import type { SizeType } from "../../types/index.js"
+	import type { SizeType } from "@feflow/core/types"
 
 	interface Props extends HTMLInputAttributes {
 		visibleInSize?: SizeType

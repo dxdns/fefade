@@ -5,7 +5,7 @@ import {
 	useMemo,
 	useRef,
 	useEffect,
-	type ReactNode
+	type PropsWithChildren
 } from "react"
 import { Constants } from "@feflow/core"
 import {
@@ -27,7 +27,7 @@ type ThemeConfigContextType = {
 	toggle: () => void
 }
 
-type Props = {
+type Props = PropsWithChildren & {
 	/** @deprecated Use `theme` instead */
 	customTheme?: ThemeConfigType
 
@@ -37,7 +37,6 @@ type Props = {
 	defaultMode?: ThemeModeType
 
 	defaultThemeMode?: ThemeModeType
-	children: ReactNode
 }
 
 const ThemeConfigContext = createContext<ThemeConfigContextType | undefined>(

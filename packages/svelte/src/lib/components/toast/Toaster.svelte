@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PositionType } from "../../types/index.js"
+	import type { PositionType } from "@feflow/core/types"
 	import { toastState } from "../../states/index.js"
 	import Toast from "./Toast.svelte"
 	import { fade } from "svelte/transition"

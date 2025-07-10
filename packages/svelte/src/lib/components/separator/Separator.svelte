@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { classMapUtil, mergeStyleUtil } from "@feflow/core/utils"
-	import type { OrientationType, SizeType } from "../../types/index.js"
+	import type { OrientationType, SizeType } from "@feflow/core/types"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

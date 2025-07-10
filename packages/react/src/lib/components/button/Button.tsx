@@ -4,22 +4,17 @@ import {
 	type HTMLAttributeAnchorTarget,
 	type PropsWithChildren
 } from "react"
-import type { SizeType, VariantType } from "@feflow/core/types"
+import type { ButtonType } from "@feflow/core/types"
 import styles from "@feflow/core/styles/Button.module.css"
 import { classMapUtil } from "@feflow/core/utils"
 import Spinner from "../spinner"
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> &
-	PropsWithChildren & {
-		pressedEffect?: boolean
-		variant?: VariantType
-		isLoading?: boolean
-		roundedFull?: boolean
-		size?: SizeType
-		href?: string
-		target?: HTMLAttributeAnchorTarget
-		download?: string
-	}
+interface Props
+	extends ButtonHTMLAttributes<HTMLButtonElement>,
+		PropsWithChildren,
+		ButtonType {
+	target?: HTMLAttributeAnchorTarget
+}
 
 export default forwardRef<HTMLButtonElement, Props>((props, ref) => {
 	const {

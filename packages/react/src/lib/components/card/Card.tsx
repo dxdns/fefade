@@ -1,23 +1,21 @@
-import { VariantType } from "@feflow/core/types"
+import type { CardType } from "@feflow/core/types"
 import { classMapUtil } from "@feflow/core/utils"
 import {
 	forwardRef,
 	HTMLAttributeAnchorTarget,
 	HTMLAttributes,
-	PropsWithChildren
+	type PropsWithChildren
 } from "react"
 import { useAction } from "../../utils"
 import { glowOnHoverAction } from "@feflow/core/actions"
 import styles from "@feflow/core/styles/Card.module.css"
 
-type Props = Omit<HTMLAttributes<HTMLDivElement>, "color"> &
-	PropsWithChildren & {
-		isTranslucent?: boolean
-		glowOnHover?: boolean
-		variant?: Exclude<VariantType, "text">
-		href?: string
-		target?: HTMLAttributeAnchorTarget
-	}
+interface Props
+	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,
+		PropsWithChildren,
+		CardType {
+	target?: HTMLAttributeAnchorTarget
+}
 
 export default forwardRef<HTMLDivElement, Props>(
 	(
