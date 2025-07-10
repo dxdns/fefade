@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, HoverFollower, Link } from "@/lib/index.js"
+	import { Card, HoverFollower, Link } from "@lib/index.js"
 </script>
 
 <h1>vertical</h1>

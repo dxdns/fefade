@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ShortcutListener } from "@/lib/index.js"
+	import { ShortcutListener } from "@lib/index.js"
 
 	function handleShortcut(event: KeyboardEvent) {
 		console.log("Shortcut pressed!", event)

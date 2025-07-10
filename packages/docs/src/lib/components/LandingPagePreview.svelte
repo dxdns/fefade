@@ -340,7 +340,7 @@
 			"
 		>
 			<Link
-				href="https://github.com/dxdns/feflow/tree/main/packages/templates/src/routes/landing-page"
+				href="https://github.com/dxdns/feflow"
 				target="_blank"
 			>
 				<GithubIcon />

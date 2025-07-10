@@ -1,4 +1,4 @@
-import { Constants } from "core"
+import { Constants } from "@feflow/core"
 import type { ToastType } from "../types/index.js"
 
 type ToastInputType = Omit<Partial<ToastType>, "id">

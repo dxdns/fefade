@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Select } from "@/lib/index.js"
+	import { Badge, Select } from "@lib/index.js"
 
 	let currentOption = $state("v2")
 </script>

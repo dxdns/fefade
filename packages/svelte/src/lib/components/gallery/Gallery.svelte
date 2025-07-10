@@ -5,7 +5,7 @@
 		classMapUtil,
 		mergeStyleUtil,
 		normalizeSizeUtil
-	} from "core/utils"
+	} from "@feflow/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		variant?: "default" | "masonry"

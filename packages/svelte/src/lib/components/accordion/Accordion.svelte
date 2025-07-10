@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import type { VariantType } from "core/types"
+	import type { VariantType } from "@feflow/core/types"
 	import { KeyboardArrowLeftIcon } from "../../icons/index.js"
-	import { classMapUtil } from "core/utils"
-	import styles from "core/styles/Accordion.module.css"
+	import { classMapUtil } from "@feflow/core/utils"
+	import styles from "@feflow/core/styles/Accordion.module.css"
 
 	interface Props extends HTMLInputAttributes {
 		label: string

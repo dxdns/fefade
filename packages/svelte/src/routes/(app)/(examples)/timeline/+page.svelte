@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, Timeline } from "@/lib/index.js"
+	import { Card, Timeline } from "@lib/index.js"
 </script>
 
 {#each Array.from({ length: 4 }) as _, i}

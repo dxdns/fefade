@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { VisibilityListener } from "@/lib/index.js"
+	import { VisibilityListener } from "@lib/index.js"
 </script>
 
 <div style="height: 200px; overflow-y: auto; border: 1px solid #ccc;">

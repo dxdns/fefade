@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "./PasswordInput.module.css"
 	import type { ColorType, SizeType, VariantType } from "../../types/index.js"
 	import { VisibilityIcon, VisibilityOffIcon } from "../../icons/index.js"

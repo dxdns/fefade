@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import type { SizeType } from "../../types/index.js"
 
 	interface Props extends HTMLAttributes<HTMLElement> {

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import type {
 		ActionEntryType,
 		SizeType,
 		VariantType
 	} from "../../types/index.js"
 	import styles from "./TextField.module.css"
-	import { actionUtil } from "core/utils"
+	import { actionUtil } from "@feflow/core/utils"
 
 	interface Props extends Omit<HTMLInputAttributes, "size"> {
 		label?: string

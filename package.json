@@ -7,7 +7,7 @@
 		"packages/*"
 	],
 	"scripts": {
-		"build:core": "npm run build -w core",
+		"build:core": "npm run build -w @feflow/core",
 		"build:feflow:svelte": "npm run build -w feflow-svelte",
 		"build:cli": "npm run build -w feflow-cli",
 		"release:feflow": "npm run build:feflow && git push && git push --tags",

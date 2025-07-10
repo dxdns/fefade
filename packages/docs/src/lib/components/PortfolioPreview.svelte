@@ -168,7 +168,7 @@
 			<Link href="https://github.com/dxdns" target="_blank">
 				<GithubIcon />
 			</Link>
-			<Link href="https://reddit.com/user/dxdns_dev" target="_blank">
+			<Link href="https://reddit.com/user/feflow-ui" target="_blank">
 				<RedditIcon />
 			</Link>
 		</div>

@@ -2,7 +2,7 @@
 	import type { HTMLAttributes } from "svelte/elements"
 	import styles from "./Drawer.module.css"
 	import type { PositionNoCenterType } from "../../types/index.js"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		isOpen: boolean

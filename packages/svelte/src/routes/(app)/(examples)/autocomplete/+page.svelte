@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Autocomplete, Link } from "@/lib/index.js"
+	import { Autocomplete, Link } from "@lib/index.js"
 
 	const data = Array.from(Array(30)).map((_, i) => ({
 		id: i,

@@ -1,5 +1,5 @@
 {
-	"name": "core",
+	"name": "@feflow/core",
 	"version": "0.0.1",
 	"description": "",
 	"private": false,

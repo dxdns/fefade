@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Status } from "@/lib/index.js"
+	import { Status } from "@lib/index.js"
 </script>
 
 <div style="width: 500px; margin: 3rem auto;">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BottomSheet, Button } from "@/lib/index.js"
+	import { BottomSheet, Button } from "@lib/index.js"
 
 	let isOpen = $state(false)
 

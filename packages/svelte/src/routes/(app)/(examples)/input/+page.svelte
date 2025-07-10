@@ -7,7 +7,7 @@
 		RangeInput,
 		SearchInput,
 		TextField
-	} from "@/lib/index.js"
+	} from "@lib/index.js"
 
 	let filesData: File[] = $state([])
 	let quantity = $state(0)

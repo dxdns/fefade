@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { onDestroy, onMount, type Snippet } from "svelte"
-	import { Constants } from "core"
+	import { Constants } from "@feflow/core"
 	import type {
 		BreakpointType,
 		ThemeConfigType,
 		ThemeModeType
 	} from "../../types/index.js"
-	import { mergeObjectUtil, themeConfigUtil, themeModeUtil } from "core/utils"
+	import { mergeObjectUtil, themeConfigUtil, themeModeUtil } from "@feflow/core/utils"
 	import { themeConfigState } from "../../states/index.js"
-	import rawStyle from "core/styles/FeflowProvider.css?raw"
+	import rawStyle from "@feflow/core/styles/FeflowProvider.css?raw"
 	void rawStyle
 
 	interface Props {

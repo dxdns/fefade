@@ -2,7 +2,7 @@
 	import type { SectionType } from "../../types/index.js"
 	import Button from "../button/index.js"
 	import styles from "./ScrollSection.module.css"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 	import KeyboardArrowLeftIcon from "../../icons/KeyboardArrowLeftIcon.svelte"
 	import KeyboardArrowRightIcon from "../../icons/KeyboardArrowRightIcon.svelte"

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { CloseIcon, MenuIcon } from "../../icons/index.js"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import styles from "./NavbarToggler.module.css"
 	import type { SizeType } from "../../types/index.js"

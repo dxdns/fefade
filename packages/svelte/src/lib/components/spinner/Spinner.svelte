@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { SizeType } from "../../types/index.js"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 	import styles from "./Spinner.module.css"
 

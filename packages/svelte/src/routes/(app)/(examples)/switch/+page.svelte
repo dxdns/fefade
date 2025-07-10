@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Switch } from "@/lib/index.js"
+	import { Switch } from "@lib/index.js"
 </script>
 
 <div style="width: 500px; height: 300px; margin: 5rem auto;">

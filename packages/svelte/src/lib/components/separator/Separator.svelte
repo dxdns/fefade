@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classMapUtil, mergeStyleUtil } from "core/utils"
+	import { classMapUtil, mergeStyleUtil } from "@feflow/core/utils"
 	import type { OrientationType, SizeType } from "../../types/index.js"
 	import type { HTMLAttributes } from "svelte/elements"
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, toast } from "@/lib/index.js"
+	import { Button, toast } from "@lib/index.js"
 
 	const colors = ["error", "success", "warning"]
 	const positions = [

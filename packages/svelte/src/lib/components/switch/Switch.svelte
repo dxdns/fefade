@@ -2,9 +2,9 @@
 	import type { SizeType } from "../../types/index.js"
 	import styles from "./Switch.module.css"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import type { Snippet } from "svelte"
-	import { mergeStyleUtil, getPropValueUtil } from "core/utils"
+	import { mergeStyleUtil, getPropValueUtil } from "@feflow/core/utils"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "size">, "type"> {
 		size?: SizeType

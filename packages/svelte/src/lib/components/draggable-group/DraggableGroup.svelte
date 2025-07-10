@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "core/utils"
+	import { classMapUtil, mergeStyleUtil } from "@feflow/core/utils"
 	import { draggableGroupAction } from "../../actions/index.js"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Gallery, Modal } from "@/lib/index.js"
+	import { Gallery, Modal } from "@lib/index.js"
 	import { onDestroy, tick } from "svelte"
 
 	let isOpen = $state(false)

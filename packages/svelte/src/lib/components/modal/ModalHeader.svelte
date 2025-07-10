@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import Button from "../button/index.js"
 	import { CloseIcon } from "../../icons/index.js"
 	import type { AlignType } from "../../types/index.js"

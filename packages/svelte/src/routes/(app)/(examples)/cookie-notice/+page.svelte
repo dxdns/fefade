@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Drawer } from "@/lib/index.js"
+	import { Button, Drawer } from "@lib/index.js"
 	import { onMount } from "svelte"
 
 	let isOpen = $state(false)

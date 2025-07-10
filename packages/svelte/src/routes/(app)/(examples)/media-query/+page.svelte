@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { useMediaQuery } from "@/lib/index.js"
+	import { useMediaQuery } from "@lib/index.js"
 	import { onDestroy } from "svelte"
 
 	const isSm = useMediaQuery("max-width", "sm")

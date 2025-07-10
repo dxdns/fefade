@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, HoverFollower } from "@/lib/index.js"
+	import { Card, HoverFollower } from "@lib/index.js"
 </script>
 
 <Card>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { NumberInput } from "@/lib/index.js"
+	import { NumberInput } from "@lib/index.js"
 
 	let quantity = $state(0)
 </script>

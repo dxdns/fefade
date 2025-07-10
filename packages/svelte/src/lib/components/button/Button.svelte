@@ -3,7 +3,7 @@
 		HTMLAttributeAnchorTarget,
 		HTMLButtonAttributes
 	} from "svelte/elements"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import type { SizeType, VariantType } from "../../types/index.js"
 	import Spinner from "../spinner/index.js"
 	import styles from "./Button.module.css"

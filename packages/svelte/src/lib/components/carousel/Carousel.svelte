@@ -2,7 +2,7 @@
 	import type { HTMLAttributes } from "svelte/elements"
 	import styles from "./Carousel.module.css"
 	import { scrollNavigatorAction } from "../../actions/index.js"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import { onDestroy, onMount, type Snippet } from "svelte"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

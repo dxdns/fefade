@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import styles from "./Modal.module.css"
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import { fade, scale } from "svelte/transition"
 	import Card from "../card/index.js"
 	import type { VariantType } from "../../types/index.js"

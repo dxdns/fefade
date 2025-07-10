@@ -5,7 +5,7 @@
 		Navbar,
 		Separator,
 		Window
-	} from "@/lib/index.js"
+	} from "@lib/index.js"
 
 	let isOpen = $state(false)
 </script>

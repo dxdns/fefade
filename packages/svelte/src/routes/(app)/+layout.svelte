@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createTheme, FeflowProvider } from "@/lib/index.js"
+	import { createTheme, FeflowProvider } from "@lib/index.js"
 
 	let { children } = $props()
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Skeleton } from "@/lib/index.js"
+	import { Skeleton } from "@lib/index.js"
 </script>
 
 <Skeleton isLoading style="width: 200px; height: 200px;" />

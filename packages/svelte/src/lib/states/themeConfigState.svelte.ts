@@ -1,5 +1,5 @@
 import type { ThemeColorType, ThemeModeType } from "../types/index.js"
-import { Constants } from "core"
+import { Constants } from "@feflow/core"
 
 let data = $state<{
 	mode: ThemeModeType

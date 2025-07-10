@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DataTable } from "@/lib/index.js"
+	import { DataTable } from "@lib/index.js"
 
 	const _data = Array.from(Array(10)).map((_, index) => ({
 		id: index,

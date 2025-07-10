@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { InfoIcon } from "@/lib/icons/index.js"
-	import { themeConfig, Navbar, Toaster } from "@/lib/index.js"
+	import { InfoIcon } from "@lib/icons/index.js"
+	import { themeConfig, Navbar, Toaster } from "@lib/index.js"
 
 	let { children } = $props()
 

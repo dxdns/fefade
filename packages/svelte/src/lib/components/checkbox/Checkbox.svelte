@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classMapUtil } from "core/utils"
+	import { classMapUtil } from "@feflow/core/utils"
 	import styles from "./Checkbox.module.css"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { SizeType } from "../../types/index.js"

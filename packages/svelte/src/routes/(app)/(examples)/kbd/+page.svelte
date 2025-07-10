@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Kbd } from "@/lib/index.js"
+	import { Kbd } from "@lib/index.js"
 </script>
 
 {#each ["xs", "sm", "md", "lg", "xl"] as size}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ProgressCircle } from "@/lib/index.js"
+	import { ProgressCircle } from "@lib/index.js"
 
 	function getColor(value: number) {
 		if (value < 30) return "red"
