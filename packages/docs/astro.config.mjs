@@ -12,7 +12,7 @@ export default defineConfig({
 			title: "feflow",
 			components: {
 				PageFrame: "./src/lib/layouts/RootLayout.astro",
-				Hero: "./src/lib/components/Hero.astro"
+				Hero: "./src/lib/components/astro/Hero.astro"
 			},
 			customCss: ["./src/styles/custom.css"],
 			favicon: "/favicon.png",
