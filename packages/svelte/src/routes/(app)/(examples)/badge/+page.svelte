@@ -45,9 +45,7 @@
 			contained
 		</Badge>
 
-		<Badge class="bg-info text-on-info" size="lg" variant="outlined">
-			outlined
-		</Badge>
+		<Badge size="lg" variant="outlined">outlined</Badge>
 	</div>
 
 	<br />

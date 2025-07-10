@@ -1,11 +1,16 @@
 import { useThemeConfig } from "@lib/components/feflow-provider"
-import { Accordion, Button, Avatar } from "./lib"
+import { Accordion, Button, Avatar, Badge } from "./lib"
 
 function App() {
 	const { toggle } = useThemeConfig()
 
 	return (
 		<>
+			<Badge className="bg-error text-on-error" size="lg">
+				test
+			</Badge>
+			<br />
+			<br />
 			<Avatar textFallback="test" />
 			<br />
 			<Avatar
