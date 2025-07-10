@@ -6,7 +6,11 @@
 		ThemeConfigType,
 		ThemeModeType
 	} from "../../types/index.js"
-	import { mergeObjectUtil, themeConfigUtil, themeModeUtil } from "@feflow/core/utils"
+	import {
+		mergeObjectUtil,
+		themeConfigUtil,
+		themeModeUtil
+	} from "@feflow/core/utils"
 	import { themeConfigState } from "../../states/index.js"
 	import rawStyle from "@feflow/core/styles/FeflowProvider.css?raw"
 	void rawStyle

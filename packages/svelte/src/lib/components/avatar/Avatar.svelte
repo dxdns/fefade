@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLImgAttributes } from "svelte/elements"
 	import { classMapUtil } from "@feflow/core/utils"
-	import styles from "./Avatar.module.css"
+	import styles from "@feflow/core/styles/Avatar.module.css"
 
 	interface Props extends Omit<HTMLImgAttributes, "width" | "height"> {
 		textFallback?: string
