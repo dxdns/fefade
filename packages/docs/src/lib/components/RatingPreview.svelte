@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Rating } from "feflow-svelte"
+	import { Rating } from "@feflow/svelte"
 </script>
 
 <h4>default</h4>

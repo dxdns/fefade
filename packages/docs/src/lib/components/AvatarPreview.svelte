@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, Status, themeConfig } from "feflow-svelte"
+	import { Avatar, Status, themeConfig } from "@feflow/svelte"
 
 	const theme = $derived(themeConfig())
 </script>

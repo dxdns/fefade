@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge } from "feflow-svelte"
+	import { Badge } from "@feflow/svelte"
 
 	const variants = ["outlined", "text", "contained"]
 	const colors = ["error", "success", "warning", "info", "primary"]

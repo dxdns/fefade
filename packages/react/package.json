@@ -1,5 +1,5 @@
 {
-	"name": "feflow-react",
+	"name": "@feflow/react",
 	"version": "0.0.1",
 	"description": "feflow: react components ui",
 	"private": false,

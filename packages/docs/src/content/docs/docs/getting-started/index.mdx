@@ -3,7 +3,7 @@ title: Installation
 description: How to install and set up feflow in your project
 ---
 
-import { Button } from "feflow-svelte"
+import { Button } from "@feflow/svelte"
 import { Tabs, TabItem } from "@astrojs/starlight/components"
 import { Steps } from "@astrojs/starlight/components"
 import { FileTree } from "@astrojs/starlight/components"
@@ -18,10 +18,10 @@ import { FileTree } from "@astrojs/starlight/components"
 <Steps>
     <ol>
         <li>
-            ### Install `feflow-svelte`
+            ### Install `@feflow/svelte`
 
             ```bash
-            npm install feflow-svelte
+            npm install @feflow/svelte
             ```
         </li>
 
@@ -41,7 +41,7 @@ import { FileTree } from "@astrojs/starlight/components"
 
             ```svelte
             <script lang="ts">
-                import { FeflowProvider } from "feflow-svelte"
+                import { FeflowProvider } from "@feflow/svelte"
             </script>
 
             <FeflowProvider>
@@ -56,7 +56,7 @@ import { FileTree } from "@astrojs/starlight/components"
                 <TabItem label="Usage">
                     ```svelte
                     <script lang="ts">
-                        import { Button } from "feflow-svelte"
+                        import { Button } from "@feflow/svelte"
                     </script>
 
                     <Button>

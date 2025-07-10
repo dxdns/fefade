@@ -9,6 +9,10 @@
 	})
 </script>
 
+<svelte:head>
+	<title>feflow + svelte</title>
+</svelte:head>
+
 <FeflowProvider {theme} defaultThemeMode="light">
 	{@render children()}
 </FeflowProvider>

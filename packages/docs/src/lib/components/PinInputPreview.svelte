@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, PinInput } from "feflow-svelte"
+	import { Button, Modal, PinInput } from "@feflow/svelte"
 	import { onMount } from "svelte"
 
 	let isOpen = $state(false)

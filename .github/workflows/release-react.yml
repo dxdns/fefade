@@ -3,7 +3,7 @@ name: Release Feflow React
 on:
   push:
     tags:
-      - "feflow-react-v*.*.*"
+      - "ff-react-v*.*.*"
     paths:
       - "packages/react/**"
 
@@ -24,7 +24,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w feflow-react
+      - run: npm run build -w @feflow/react
 
       - run: cp README.md packages/react
 
@@ -35,6 +35,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: npm publish -w feflow-react
+      - run: npm publish -w @feflow/react
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

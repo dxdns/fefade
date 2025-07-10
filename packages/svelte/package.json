@@ -1,5 +1,5 @@
 {
-	"name": "feflow-svelte",
+	"name": "@feflow/svelte",
 	"version": "0.0.1",
 	"description": "feflow: svelte components ui",
 	"private": false,

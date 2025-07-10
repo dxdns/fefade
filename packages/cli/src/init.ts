@@ -33,8 +33,8 @@ export default async function init() {
 			stdio: "inherit"
 		})
 
-		console.log(`📦 Installing feflow-svelte in the project...`)
-		execSync(`npm install feflow-svelte`, {
+		console.log(`📦 Installing @feflow/svelte in the project...`)
+		execSync(`npm install @feflow/svelte`, {
 			stdio: "inherit",
 			cwd: projectPath
 		})

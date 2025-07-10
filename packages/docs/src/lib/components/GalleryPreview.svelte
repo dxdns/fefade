@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Gallery, Modal, useMediaQuery } from "feflow-svelte"
+	import { Gallery, Modal, useMediaQuery } from "@feflow/svelte"
 	import { onDestroy, tick } from "svelte"
 
 	let isOpen = $state(false)

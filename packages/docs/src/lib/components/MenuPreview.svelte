@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Menu } from "feflow-svelte"
+	import { Button, Menu } from "@feflow/svelte"
 </script>
 
 <div
