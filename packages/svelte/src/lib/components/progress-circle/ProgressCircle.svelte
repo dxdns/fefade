@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements"
 	import styles from "./ProgressCircle.module.css"
-	import { classMapUtil } from "@feflow/core/utils"
-	import type { SizeType } from "@feflow/core/types"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import type { SizeType } from "@dxdns/feflow-core/types"
 
 	interface Props extends SVGAttributes<SVGSVGElement> {
 		value: number

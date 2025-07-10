@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { RangeInput } from "@feflow/svelte"
+	import { RangeInput } from "@dxdns/feflow-svelte"
 </script>
 
 <div style="max-width: 300px; line-height: 3; margin: 0 auto;">

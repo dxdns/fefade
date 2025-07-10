@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@feflow/core/utils"
+	import { classMapUtil, mergeStyleUtil } from "@dxdns/feflow-core/utils"
 
 	interface Props extends HTMLAttributes<Omit<HTMLDivElement, "id">> {
 		id: string

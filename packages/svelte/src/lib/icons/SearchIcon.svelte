@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements"
-	import { mergeStyleUtil } from "@feflow/core/utils"
+	import { mergeStyleUtil } from "@dxdns/feflow-core/utils"
 
 	interface Props extends SVGAttributes<SVGSVGElement> {}
 

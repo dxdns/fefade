@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { checkVisibilityAction } from "@feflow/core/actions"
+	import { checkVisibilityAction } from "@dxdns/feflow-core/actions"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

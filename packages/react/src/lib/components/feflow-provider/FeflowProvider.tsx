@@ -7,19 +7,19 @@ import {
 	useEffect,
 	type PropsWithChildren
 } from "react"
-import { Constants } from "@feflow/core"
+import { Constants } from "@dxdns/feflow-core"
 import {
 	mergeObjectUtil,
 	themeConfigUtil,
 	themeModeUtil
-} from "@feflow/core/utils"
+} from "@dxdns/feflow-core/utils"
 import type {
 	BreakpointType,
 	ThemeColorType,
 	ThemeConfigType,
 	ThemeModeType
-} from "@feflow/core/types"
-import rawStyle from "@feflow/core/styles/FeflowProvider.css?raw"
+} from "@dxdns/feflow-core/types"
+import rawStyle from "@dxdns/feflow-core/styles/FeflowProvider.css?raw"
 
 type ThemeConfigContextType = {
 	mode: ThemeModeType

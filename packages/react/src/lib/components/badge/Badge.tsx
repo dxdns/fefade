@@ -1,7 +1,7 @@
 import { forwardRef, HTMLAttributes, type PropsWithChildren } from "react"
-import { classMapUtil } from "@feflow/core/utils"
-import styles from "@feflow/core/styles/Badge.module.css"
-import type { BadgeType } from "@feflow/core/types"
+import { classMapUtil } from "@dxdns/feflow-core/utils"
+import styles from "@dxdns/feflow-core/styles/Badge.module.css"
+import type { BadgeType } from "@dxdns/feflow-core/types"
 
 interface Props
 	extends HTMLAttributes<HTMLSpanElement>,

@@ -4,9 +4,9 @@ import {
 	type ImgHTMLAttributes,
 	type PropsWithChildren
 } from "react"
-import styles from "@feflow/core/styles/Avatar.module.css"
-import { classMapUtil } from "@feflow/core/utils"
-import type { AvatarType } from "@feflow/core/types"
+import styles from "@dxdns/feflow-core/styles/Avatar.module.css"
+import { classMapUtil } from "@dxdns/feflow-core/utils"
+import type { AvatarType } from "@dxdns/feflow-core/types"
 
 interface Props
 	extends Omit<ImgHTMLAttributes<HTMLImageElement>, "width" | "height">,

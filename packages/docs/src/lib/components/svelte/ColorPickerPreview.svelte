@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ColorPicker } from "@feflow/svelte"
+	import { ColorPicker } from "@dxdns/feflow-svelte"
 
 	let color = $state("#fde6b0")
 </script>

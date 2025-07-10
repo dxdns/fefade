@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAnchorAttributes } from "svelte/elements"
-	import { classMapUtil } from "@feflow/core/utils"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./Link.module.css"
 
 	interface Props extends HTMLAnchorAttributes {

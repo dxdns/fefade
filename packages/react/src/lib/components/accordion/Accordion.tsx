@@ -1,7 +1,7 @@
 import { forwardRef, HTMLAttributes, type PropsWithChildren } from "react"
-import type { AccordionType } from "@feflow/core/types"
-import { classMapUtil } from "@feflow/core/utils"
-import styles from "@feflow/core/styles/Accordion.module.css"
+import type { AccordionType } from "@dxdns/feflow-core/types"
+import { classMapUtil } from "@dxdns/feflow-core/utils"
+import styles from "@dxdns/feflow-core/styles/Accordion.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "id">,

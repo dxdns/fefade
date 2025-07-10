@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLSelectAttributes } from "svelte/elements"
-	import { classMapUtil } from "@feflow/core/utils"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./Select.module.css"
 	import { KeyboardArrowDownIcon } from "../../icons/index.js"
 

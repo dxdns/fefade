@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "@feflow/core/utils"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./Navbar.module.css"
-	import { fadeOnScrollAction } from "@feflow/core/actions"
-	import type { VariantType } from "@feflow/core/types"
+	import { fadeOnScrollAction } from "@dxdns/feflow-core/actions"
+	import type { VariantType } from "@dxdns/feflow-core/types"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		isTranslucent?: boolean

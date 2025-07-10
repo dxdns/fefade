@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@feflow/core/utils"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./SearchInput.module.css"
 	import type {
 		ActionEntryType,
 		ColorType,
 		VariantType
-	} from "@feflow/core/types"
+	} from "@dxdns/feflow-core/types"
 	import { SearchIcon } from "../../icons/index.js"
 	import TextField from "../text-field/index.js"
 

@@ -1,5 +1,5 @@
 {
-	"name": "@feflow/svelte",
+	"name": "@dxdns/feflow-svelte",
 	"version": "0.0.0",
 	"description": "feflow: svelte components ui",
 	"private": false,
@@ -45,7 +45,7 @@
 		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
-		"@feflow/core": "*",
+		"@dxdns/feflow-core": "*",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/package": "^2.0.0",

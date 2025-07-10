@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, toast, Toaster } from "@feflow/svelte"
+	import { Button, toast, Toaster } from "@dxdns/feflow-svelte"
 
 	const colors = ["error", "success", "warning"]
 	const positions = [

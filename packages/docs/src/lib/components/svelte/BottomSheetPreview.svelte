@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BottomSheet, Button } from "@feflow/svelte"
+	import { BottomSheet, Button } from "@dxdns/feflow-svelte"
 
 	let isOpen = $state(false)
 

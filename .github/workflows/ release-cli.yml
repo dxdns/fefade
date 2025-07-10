@@ -24,7 +24,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w feflow-cli
+      - run: npm run build -w @dxdns/feflow-cli
 
       - run: cp README.md packages/cli
 
@@ -35,6 +35,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: npm publish -w feflow-cli
+      - run: npm publish -w @dxdns/feflow-cli
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

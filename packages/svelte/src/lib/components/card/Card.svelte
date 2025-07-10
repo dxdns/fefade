@@ -3,10 +3,10 @@
 		HTMLAttributeAnchorTarget,
 		HTMLAttributes
 	} from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@feflow/core/utils"
-	import { glowOnHoverAction } from "@feflow/core/actions"
-	import type { CardType } from "@feflow/core/types"
-	import styles from "@feflow/core/styles/Card.module.css"
+	import { classMapUtil, mergeStyleUtil } from "@dxdns/feflow-core/utils"
+	import { glowOnHoverAction } from "@dxdns/feflow-core/actions"
+	import type { CardType } from "@dxdns/feflow-core/types"
+	import styles from "@dxdns/feflow-core/styles/Card.module.css"
 
 	interface Props
 		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

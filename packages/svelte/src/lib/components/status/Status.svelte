@@ -3,7 +3,7 @@
 		classMapUtil,
 		mergeStyleUtil,
 		normalizeSizeUtil
-	} from "@feflow/core/utils"
+	} from "@dxdns/feflow-core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLImgAttributes } from "svelte/elements"
 	import { Image } from "../image/index.js"
-	import { classMapUtil } from "@feflow/core/utils"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./GalleryItem.module.css"
 
 	interface Props extends Omit<HTMLImgAttributes, "src"> {

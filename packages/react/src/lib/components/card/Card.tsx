@@ -1,5 +1,5 @@
-import type { CardType } from "@feflow/core/types"
-import { classMapUtil } from "@feflow/core/utils"
+import type { CardType } from "@dxdns/feflow-core/types"
+import { classMapUtil } from "@dxdns/feflow-core/utils"
 import {
 	forwardRef,
 	HTMLAttributeAnchorTarget,
@@ -7,8 +7,8 @@ import {
 	type PropsWithChildren
 } from "react"
 import { useAction } from "../../utils"
-import { glowOnHoverAction } from "@feflow/core/actions"
-import styles from "@feflow/core/styles/Card.module.css"
+import { glowOnHoverAction } from "@dxdns/feflow-core/actions"
+import styles from "@dxdns/feflow-core/styles/Card.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

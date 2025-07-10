@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SearchInput } from "@feflow/svelte"
+	import { SearchInput } from "@dxdns/feflow-svelte"
 
 	const variants = ["contained", "text", "outlined"]
 </script>

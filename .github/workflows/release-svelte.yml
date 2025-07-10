@@ -24,7 +24,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w @feflow/svelte
+      - run: npm run build -w @dxdns/feflow-svelte
 
       - run: cp README.md packages/svelte
 
@@ -35,6 +35,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: npm publish -w @feflow/svelte
+      - run: npm publish -w @dxdns/feflow-svelte
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

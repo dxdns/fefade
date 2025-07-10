@@ -3,10 +3,10 @@
 		HTMLAttributeAnchorTarget,
 		HTMLButtonAttributes
 	} from "svelte/elements"
-	import { classMapUtil } from "@feflow/core/utils"
-	import type { ButtonType } from "@feflow/core/types"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import type { ButtonType } from "@dxdns/feflow-core/types"
 	import Spinner from "../spinner/index.js"
-	import styles from "@feflow/core/styles/Button.module.css"
+	import styles from "@dxdns/feflow-core/styles/Button.module.css"
 
 	interface Props extends HTMLButtonAttributes, ButtonType {
 		target?: HTMLAttributeAnchorTarget

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "@feflow/core/utils"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import Button from "../button/index.js"
 	import { CloseIcon } from "../../icons/index.js"
-	import type { AlignType } from "@feflow/core/types"
+	import type { AlignType } from "@dxdns/feflow-core/types"
 
 	export interface ModalHeaderProps {
 		align?: AlignType

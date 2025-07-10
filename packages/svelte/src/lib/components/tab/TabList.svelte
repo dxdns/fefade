@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { activeLineAction } from "@feflow/core/actions"
+	import { activeLineAction } from "@dxdns/feflow-core/actions"
 	import HoverFollower from "../hover-follower/index.js"
-	import type { ActionType, OrientationType } from "@feflow/core/types"
+	import type { ActionType, OrientationType } from "@dxdns/feflow-core/types"
 	import {
 		classMapUtil,
 		getPropValueUtil,
 		mergeStyleUtil
-	} from "@feflow/core/utils"
+	} from "@dxdns/feflow-core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		lineStyle?: boolean | { color?: string; height?: string }

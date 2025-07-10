@@ -4,9 +4,9 @@ import {
 	type HTMLAttributeAnchorTarget,
 	type PropsWithChildren
 } from "react"
-import type { ButtonType } from "@feflow/core/types"
-import styles from "@feflow/core/styles/Button.module.css"
-import { classMapUtil } from "@feflow/core/utils"
+import type { ButtonType } from "@dxdns/feflow-core/types"
+import styles from "@dxdns/feflow-core/styles/Button.module.css"
+import { classMapUtil } from "@dxdns/feflow-core/utils"
 import Spinner from "../spinner"
 
 interface Props

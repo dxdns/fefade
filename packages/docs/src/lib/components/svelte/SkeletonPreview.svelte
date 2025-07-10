@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Skeleton } from "@feflow/svelte"
+	import { Skeleton } from "@dxdns/feflow-svelte"
 </script>
 
 <div style="max-width: 200px; margin: 0 auto; ">

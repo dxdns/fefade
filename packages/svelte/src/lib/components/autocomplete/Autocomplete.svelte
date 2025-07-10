@@ -1,8 +1,8 @@
 <script lang="ts" generics="T">
-	import type { ActionType, VariantType } from "@feflow/core/types"
-	import { keyboardNavigationAction } from "@feflow/core/actions"
+	import type { ActionType, VariantType } from "@dxdns/feflow-core/types"
+	import { keyboardNavigationAction } from "@dxdns/feflow-core/actions"
 	import styles from "./Autocomplete.module.css"
-	import { classMapUtil } from "@feflow/core/utils"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { Snippet } from "svelte"
 	import { SearchInput } from "../search-input/index.js"

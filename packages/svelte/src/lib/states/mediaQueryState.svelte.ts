@@ -1,5 +1,5 @@
 import type { BreakpointType } from "../types/index.js"
-import { Constants } from "@feflow/core"
+import { Constants } from "@dxdns/feflow-core"
 
 export default function mediaQueryState(
 	operator: "min-width" | "max-width",

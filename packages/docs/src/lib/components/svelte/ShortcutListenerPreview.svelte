@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Kbd, ShortcutListener } from "@feflow/svelte"
+	import { Kbd, ShortcutListener } from "@dxdns/feflow-svelte"
 
 	let message = $state("waiting...")
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { HorizontalPositionType } from "@feflow/core/types"
-	import { classMapUtil } from "@feflow/core/utils"
+	import type { HorizontalPositionType } from "@dxdns/feflow-core/types"
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		position: Exclude<HorizontalPositionType, "center">

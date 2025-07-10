@@ -1,6 +1,6 @@
 {
-	"name": "feflow-cli",
-	"version": "0.0.0",
+	"name": "@dxdns/feflow-cli",
+	"version": "0.0.6",
 	"description": "manager projects with feflow.",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",

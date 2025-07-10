@@ -5,11 +5,11 @@
 <h1 align="center">feflow</h1>
 
 [![license](https://img.shields.io/github/license/dxdns/feflow)](https://github.com/dxdns/feflow/blob/master/LICENSE)
-[![version](https://img.shields.io/npm/v/%40dxdns%2Ffeflow)](https://www.npmjs.com/package/@feflow/svelte)
-[![npm downloads](https://img.shields.io/npm/dw/%40dxdns%2Ffeflow)](https://www.npmjs.com/package/@feflow/svelte)
-[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-green)](https://www.npmjs.com/package/@feflow/svelte?activeTab=dependencies)
+[![version](https://img.shields.io/npm/v/%40dxdns%2Ffeflow)](https://www.npmjs.com/package/@dxdns/feflow-svelte)
+[![npm downloads](https://img.shields.io/npm/dw/%40dxdns%2Ffeflow)](https://www.npmjs.com/package/@dxdns/feflow-svelte)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-green)](https://www.npmjs.com/package/@dxdns/feflow-svelte?activeTab=dependencies)
 
-**feflow** is a lightweight and dependency-free UI component library built with [Svelte](https://svelte.dev), focused on performance, simplicity and clean code.
+**feflow** is a lightweight and dependency-free UI component library.
 
 > Minimal, accessible, dependency-free — made by a developer who loves clean UI.
 
@@ -17,7 +17,7 @@
 
 - Lightweight by design
 - Isolated styles using CSS Modules — no bleeding styles
-- Simple to read, simple to use — ideal for clean Svelte projects
+- Simple to read, simple to use
 
 ## Features
 
