@@ -12,7 +12,7 @@ export default defineConfig({
 			title: "feflow",
 			components: {
 				PageFrame: "./src/lib/layouts/RootLayout.astro",
-				Hero: "./src/lib/components/Hero.astro"
+				Hero: "./src/lib/components/astro/Hero.astro"
 			},
 			customCss: ["./src/styles/custom.css"],
 			favicon: "/favicon.png",
@@ -43,11 +43,6 @@ export default defineConfig({
 						{
 							label: "Theming",
 							slug: "docs/getting-started/theming"
-						},
-						{
-							label: "CLI",
-							slug: "docs/getting-started/cli",
-							badge: "New"
 						},
 						{
 							label: "Templates",

@@ -3,8 +3,8 @@ title: Theming
 description: How to set theme in your project
 ---
 
-import ThemeColorPreview from "@/components/ThemeColorPreview.svelte"
-import PreviewTabs from "@/components/PreviewTabs.astro"
+import ThemeColorPreview from "@/components/svelte/ThemeColorPreview.svelte"
+import PreviewTabs from "@/components/astro/PreviewTabs.astro"
 
 ### Theme configuration
 
@@ -14,7 +14,7 @@ Import necessary modules and create a custom theme configuration.
 
 ```svelte
 <script lang="ts">
-	import { createTheme, FeflowProvider } from "@dxdns/feflow"
+	import { createTheme, FeflowProvider } from "@feflow/svelte"
 
 	let { children } = $props()
 

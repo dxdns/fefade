@@ -7,13 +7,21 @@
 		"packages/*"
 	],
 	"scripts": {
-		"build:feflow": "npm run build -w @dxdns/feflow",
-		"build:cli": "npm run build -w @dxdns/feflow-cli",
-		"release:feflow": "npm run build:feflow && git push && git push --tags",
-		"release:cli": "npm run build:cli && git push && git push --tags",
-		"release:cli:patch": "npm version patch -w @dxdns/feflow-cli --no-git-tag-version && git add packages/cli/package.json && git commit -m \"chore(release): bump version CLI\" && git tag cli-v$(node -p \"require('./packages/cli/package.json').version\") && npm run release:cli",
-		"release:feflow:patch": "npm version patch -w @dxdns/feflow --no-git-tag-version && git add packages/feflow/package.json && git commit -m \"chore(release): bump version Feflow\" && git tag feflow-v$(node -p \"require('./packages/feflow/package.json').version\") && npm run release:feflow",
-		"prepare": "npm run build:feflow",
+		"build:core": "npm run build -w @feflow/core",
+		"build:svelte": "npm run build -w @feflow/svelte",
+		"build:react": "npm run build -w @feflow/react",
+		"build:cli": "npm run build -w feflow-cli",
+		"build:all": "npm run build:core && npm run build:svelte && npm run build:react && npm run build:cli",
+		"git:push": "git push && git push --tags",
+		"release:svelte": "npm run build:svelte && npm run git:push",
+		"release:react": "npm run build:react && npm run git:push",
+		"release:cli": "npm run build:cli && npm run git:push",
+		"version:bump": "npm version patch --no-git-tag-version",
+		"release:patch": "npm run version:bump -w {package} && git add {package_path}/package.json && git commit -m \"chore(release): bump version {name}\" && git tag {name}-v$(node -p \"require('./{package_path}/package.json').version\") && npm run release:{name}",
+		"release:svelte:patch": "npm run release:patch --package=@feflow/svelte --package_path=packages/feflow --name=svelte",
+		"release:react:patch": "npm run release:patch --package=@feflow/react --package_path=packages/react --name=react",
+		"release:cli:patch": "npm run release:patch --package=feflow-cli --package_path=packages/cli --name=cli",
+		"prepare": "npm run build:all",
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"test": "echo \"Error: no test specified\" && exit 1"
@@ -31,7 +39,7 @@
 	"devDependencies": {
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
-		"typescript": "^5.0.0",
+		"typescript": "~5.8.3",
 		"@types/node": "^22.14.1"
 	}
 }

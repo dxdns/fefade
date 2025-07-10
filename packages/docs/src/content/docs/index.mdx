@@ -1,5 +1,5 @@
 ---
-title: Svelte UI Component Library
+title: UI Component Library
 description: Get started building your docs site.
 template: splash
 hero:
@@ -20,12 +20,12 @@ hero:
 ---
 
 import { CardGrid, LinkCard } from "@astrojs/starlight/components"
-import { Card, Link } from "@dxdns/feflow"
-import TextFieldPreview from "@/components/TextFieldPreview.svelte"
-import CarouselPreview from "@/components/CarouselPreview.svelte"
-import ButtonPreview from "@/components/ButtonPreview.svelte"
-import ProgressCirclePreview from "@/components/ProgressCirclePreview.svelte"
-import About from "@/components/About.astro"
+import { Card, Link } from "@feflow/svelte"
+import TextFieldPreview from "@/components/svelte/TextFieldPreview.svelte"
+import CarouselPreview from "@/components/svelte/CarouselPreview.svelte"
+import ButtonPreview from "@/components/svelte/ButtonPreview.svelte"
+import ProgressCirclePreview from "@/components/svelte/ProgressCirclePreview.svelte"
+import About from "@/components/astro/About.astro"
 
 <CardGrid stagger>
 	<Card
@@ -84,7 +84,9 @@ import About from "@/components/About.astro"
 
 <About>
   feflow is a lightweight UI component library built for simplicity and speed.
-  Design clean, fast, and accessible interfaces with zero dependencies — powered by Svelte and focused on performance.
+  Design clean, fast, and accessible interfaces with zero dependencies.
+
+MIT-licensed and [open source](https://github.com/dxdns/feflow).
 
 [Learn about feflow](/docs)
 

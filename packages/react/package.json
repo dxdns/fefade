@@ -1,0 +1,41 @@
+{
+	"name": "@feflow/react",
+	"version": "0.0.1",
+	"description": "feflow: react components ui",
+	"private": false,
+	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "MIT",
+	"homepage": "https://feflow.dxdns.dev",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dxdns/feflow.git"
+	},
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"dev": "vite",
+		"build:vite": "tsc && vite build",
+		"build": "npm run build:vite -- --mode pkg",
+		"lint": "eslint .",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@feflow/core": "*",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"@vitejs/plugin-react": "^4.6.0",
+		"globals": "^16.3.0",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"vite": "^7.0.3",
+		"vite-plugin-dts": "^4.5.4",
+		"vite-plugin-lib-inject-css": "^2.2.2"
+	}
+}

@@ -3,8 +3,8 @@ title: Toast
 description: A UI component that briefly displays non-intrusive messages to inform users about an action or status, typically appearing at the edge of the screen and disappearing automatically.
 ---
 
-import ToastPreview from "@/components/ToastPreview.svelte"
-import PreviewTabs from "@/components/PreviewTabs.astro"
+import ToastPreview from "@/components/svelte/ToastPreview.svelte"
+import PreviewTabs from "@/components/astro/PreviewTabs.astro"
 
 #### Setup
 
@@ -16,7 +16,7 @@ For installation and setup instructions, see the [Getting Started guide](/docs/g
 
 ```svelte
 <script lang="ts">
-	import { FeflowProvider, Toaster } from "@dxdns/feflow"
+	import { FeflowProvider, Toaster } from "@feflow/svelte"
 </script>
 
 <FeflowProvider>
