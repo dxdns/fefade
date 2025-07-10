@@ -6,7 +6,9 @@ function App() {
 
 	return (
 		<>
-			<Card>card</Card>
+			<Card glowOnHover>
+				<span>card</span>
+			</Card>
 			<br />
 			<Badge className="bg-error text-on-error" size="lg">
 				test

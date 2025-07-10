@@ -1,12 +1,16 @@
 export default function glowOnHoverAction(node: HTMLElement) {
-	let glow: HTMLDivElement | null = null
-	const target = node.firstElementChild as HTMLElement
+	const firstChild = node.firstElementChild as HTMLElement | null
+	let childComputedStyle: CSSStyleDeclaration | null
 
-	function createGlow() {
-		if (!target) return
+	const glow = document.createElement("div")
 
-		const computedStyle = getComputedStyle(target)
-		const computedBg = computedStyle.backgroundColor
+	node.style.position = "relative"
+	node.insertBefore(glow, firstChild)
+
+	function updateChildColorBg() {
+		if (!firstChild) return
+		childComputedStyle = getComputedStyle(firstChild)
+		const computedBg = childComputedStyle.backgroundColor
 		const hasTransparentBg =
 			!computedBg ||
 			computedBg === "rgba(0, 0, 0, 0)" ||
@@ -14,27 +18,23 @@ export default function glowOnHoverAction(node: HTMLElement) {
 			computedBg === "none"
 
 		if (hasTransparentBg) {
-			target.style.backgroundColor = "var(--ff-bg)"
+			firstChild.style.backgroundColor = "var(--ff-bg)"
 		}
+	}
 
-		glow = document.createElement("div")
-		const style = glow.style
-		style.position = "absolute"
-		style.pointerEvents = "none"
-		style.zIndex = "0"
-		style.borderRadius = computedStyle.borderRadius || "0px"
-		style.transition = "background-position 0.1s ease, opacity 0.3s ease"
-		style.opacity = "0"
-		style.filter = "blur(3px)"
-		node.style.position ||= "relative"
-		node.insertBefore(glow, target)
-		updateSizeAndPosition()
+	function updateGlowStyle() {
+		glow.style.position = "absolute"
+		glow.style.pointerEvents = "none"
+		glow.style.zIndex = "0"
+		glow.style.transition = "background-position 0.1s ease, opacity 0.3s ease"
+		glow.style.opacity = "0"
+		glow.style.filter = "blur(3px)"
+		glow.style.borderRadius = childComputedStyle?.borderRadius || "0px"
 	}
 
 	function updateSizeAndPosition() {
-		if (!glow || !target) return
-
-		const rect = target.getBoundingClientRect()
+		if (!firstChild) return
+		const rect = firstChild.getBoundingClientRect()
 		const parentRect = node.getBoundingClientRect()
 		const offsetX = rect.left - parentRect.left
 		const offsetY = rect.top - parentRect.top
@@ -48,9 +48,7 @@ export default function glowOnHoverAction(node: HTMLElement) {
 	}
 
 	function updateGlow(event: MouseEvent) {
-		if (!glow || !target) return
-
-		const rect = target.getBoundingClientRect()
+		const rect = (firstChild || node).getBoundingClientRect()
 		const x = ((event.clientX - rect.left) / rect.width) * 100
 		const y = ((event.clientY - rect.top) / rect.height) * 100
 
@@ -59,10 +57,12 @@ export default function glowOnHoverAction(node: HTMLElement) {
 	}
 
 	function onLeave() {
-		if (glow) glow.style.opacity = "0"
+		glow.style.opacity = "0"
 	}
 
-	createGlow()
+	updateChildColorBg()
+	updateGlowStyle()
+	updateSizeAndPosition()
 
 	window.addEventListener("resize", updateSizeAndPosition)
 	node.addEventListener("mousemove", updateGlow)
@@ -73,7 +73,7 @@ export default function glowOnHoverAction(node: HTMLElement) {
 			window.removeEventListener("resize", updateSizeAndPosition)
 			node.removeEventListener("mousemove", updateGlow)
 			node.removeEventListener("mouseleave", onLeave)
-			if (glow && node.contains(glow)) node.removeChild(glow)
+			if (node.contains(glow)) node.removeChild(glow)
 		}
 	}
 }
