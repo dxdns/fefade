@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import { scrollSectionAction } from "@dxdns/feflow-core/actions"
-	import scrollSectionState from "@lib/states/scrollSectionState.svelte.js"
+	import { scrollSectionState } from "../../states/index.js"
 
 	interface Props extends HTMLAttributes<HTMLElement> {}
 

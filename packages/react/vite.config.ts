@@ -4,22 +4,25 @@ import path from "path"
 import { libInjectCss } from "vite-plugin-lib-inject-css"
 import dts from "vite-plugin-dts"
 import { glob } from "glob"
-import { fileURLToPath } from "node:url"
+import { fileURLToPath } from "url"
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ }) => {
 	const LIB_DIR = "src/lib"
 
 	const defaultConfig = {
 		plugins: [react()],
 		resolve: {
 			alias: {
-				"@lib": path.resolve(__dirname, "./src/lib")
+				"@": path.resolve("./src/lib"),
+				"@dxdns/feflow-core": path.resolve("core")
 			}
 		}
 	}
 
-	if (mode === "pkg") {
+	if (!(process.env.NODE_ENV === "development")) {
 		return {
 			...defaultConfig.resolve,
 			plugins: [

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, PinInput } from "@lib/index.js"
+	import { Button, Modal, PinInput } from "@/index.js"
 </script>
 
 <Modal isOpen={true} handleClose={() => {}}>

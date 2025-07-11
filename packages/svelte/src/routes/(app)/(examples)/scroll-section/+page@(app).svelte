@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getSections, ScrollSection } from "@lib/index.js"
+	import { getSections, ScrollSection } from "@/index.js"
 
 	const sections = $derived(getSections())
 

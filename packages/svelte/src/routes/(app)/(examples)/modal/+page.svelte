@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal } from "@lib/index.js"
+	import { Button, Modal } from "@/index.js"
 
 	let openModal = $state(false)
 

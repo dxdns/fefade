@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, ProgressLoader } from "@lib/index.js"
+	import { Button, ProgressLoader } from "@/index.js"
 
 	let progress = $state(0)
 

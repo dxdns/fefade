@@ -1,4 +1,4 @@
-import { useThemeConfig } from "@lib/components/feflow-provider"
+import { useThemeConfig } from "@/components/feflow-provider"
 import { Accordion, Button, Avatar, Badge, Card } from "./lib"
 
 function App() {

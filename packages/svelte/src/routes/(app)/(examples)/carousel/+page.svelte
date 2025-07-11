@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Card, Carousel } from "@lib/index.js"
+	import { Button, Card, Carousel } from "@/index.js"
 </script>
 
 <Carousel

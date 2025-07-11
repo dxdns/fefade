@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button, Card, themeConfig } from "@lib/index.js"
+	import { Badge, Button, Card, themeConfig } from "@/index.js"
 
 	const theme = $derived(themeConfig())
 </script>

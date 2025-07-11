@@ -1,8 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config"
 import starlight from "@astrojs/starlight"
-import path from "node:path"
 import svelte from "@astrojs/svelte"
+import path from "path"
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +12,7 @@ export default defineConfig({
 			title: "feflow",
 			components: {
 				PageFrame: "./src/lib/layouts/RootLayout.astro",
-				Hero: "./src/lib/components/astro/Hero.astro"
+				Hero: "./src/lib/components/Hero.astro"
 			},
 			customCss: ["./src/styles/custom.css"],
 			favicon: "/favicon.png",
@@ -67,7 +67,6 @@ export default defineConfig({
 		resolve: {
 			alias: {
 				"@": path.resolve("./src/lib"),
-				"@assets": path.resolve("./src/assets")
 			}
 		}
 	}

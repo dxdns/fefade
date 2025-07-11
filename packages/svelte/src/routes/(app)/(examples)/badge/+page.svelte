@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button } from "@lib/index.js"
+	import { Badge, Button } from "@/index.js"
 
 	let count = $state(0)
 

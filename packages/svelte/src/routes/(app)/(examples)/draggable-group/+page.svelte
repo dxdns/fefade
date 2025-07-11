@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DraggableGroup, themeConfig } from "@lib/index.js"
+	import { DraggableGroup, themeConfig } from "@/index.js"
 
 	const theme = $derived(themeConfig())
 

@@ -1,6 +1,6 @@
 {
 	"name": "@dxdns/feflow-react",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"description": "feflow: react components ui",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
@@ -17,17 +17,15 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
-		"dist"
+		"dist",
+		"core"
 	],
 	"scripts": {
-		"dev": "vite",
-		"build:vite": "tsc && vite build",
-		"build": "npm run build:vite -- --mode pkg",
-		"lint": "eslint .",
+		"dev": "vite dev",
+		"build": "tsc && vite build",
 		"preview": "vite preview"
 	},
 	"devDependencies": {
-		"@dxdns/feflow-core": "*",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
 		"@vitejs/plugin-react": "^4.6.0",

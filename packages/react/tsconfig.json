@@ -20,8 +20,9 @@
 		"noFallthroughCasesInSwitch": true,
 
 		"paths": {
-			"@lib/*": ["src/lib/*"]
-		}
+			"@/*": ["src/lib/*"],
+			"@dxdns/feflow-core/*": ["../core/dist/*", "core/*"]
+		},
 	},
 	"include": ["src"]
 }

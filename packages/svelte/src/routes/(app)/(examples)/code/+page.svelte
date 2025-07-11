@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Code, Window } from "@lib/index.js"
+	import { Code, Window } from "@/index.js"
 
 	const data = `
         .card {

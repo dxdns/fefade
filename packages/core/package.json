@@ -2,7 +2,7 @@
 	"name": "@dxdns/feflow-core",
 	"version": "0.0.0",
 	"description": "",
-	"private": false,
+	"private": true,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
 		"access": "public"
@@ -14,7 +14,8 @@
 		"minify:css": "postcss dist/**/*.css --use cssnano -d dist/styles",
 		"types:css": "tcm dist/styles",
 		"postbuild:types:css": "node scripts/fix-css-exports.mjs",
-		"build": "npm run clean && tsc && npm run copy:styles && npm run minify:css && npm run types:css && npm run postbuild:types:css"
+		"build": "npm run clean && tsc && npm run copy:styles && npm run minify:css && npm run types:css && npm run postbuild:types:css",
+		"postinstall": "node ./postinstall.js"
 	},
 	"exports": {
 		".": {
@@ -41,7 +42,8 @@
 	"files": [
 		"dist",
 		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
+		"!dist/**/*.spec.*",
+		"postinstall.js"
 	],
 	"keywords": [],
 	"type": "module",

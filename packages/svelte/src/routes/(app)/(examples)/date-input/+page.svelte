@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DateInput, themeConfig } from "@lib/index.js"
+	import { DateInput, themeConfig } from "@/index.js"
 
 	const theme = $derived(themeConfig())
 </script>

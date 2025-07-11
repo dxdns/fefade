@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Link } from "@lib/index.js"
+	import { Link } from "@/index.js"
 </script>
 
 <div style="width: 500px; margin: 3rem auto; line-height: 3;">

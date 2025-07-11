@@ -16,6 +16,8 @@ pnpm-debug.log*
 .astro
 build
 dist
+packages/svelte/core
+packages/react/core
 
 # OS
 .DS_Store

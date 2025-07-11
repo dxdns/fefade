@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from "@lib/index.js"
+	import { Button } from "@/index.js"
 </script>
 
 <br />

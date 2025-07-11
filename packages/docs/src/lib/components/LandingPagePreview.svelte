@@ -5,7 +5,7 @@
 		LightModeIcon,
 		MailIcon,
 		RedditIcon
-	} from "@/icons/index.js"
+	} from "@/icons"
 	import {
 		Accordion,
 		Badge,

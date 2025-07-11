@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Rating } from "@lib/index.js"
+	import { Rating } from "@/index.js"
 </script>
 
 <h1>default</h1>

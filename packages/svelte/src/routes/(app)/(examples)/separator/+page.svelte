@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Separator } from "@lib/index.js"
+	import { Separator } from "@/index.js"
 </script>
 
 <div

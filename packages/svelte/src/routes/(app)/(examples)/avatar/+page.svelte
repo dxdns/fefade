@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, Status } from "@lib/index.js"
+	import { Avatar, Status } from "@/index.js"
 </script>
 
 <Avatar textFallback="test" />

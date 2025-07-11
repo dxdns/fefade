@@ -19,6 +19,7 @@ import type {
 	ThemeConfigType,
 	ThemeModeType
 } from "@dxdns/feflow-core/types"
+// @ts-ignore
 import rawStyle from "@dxdns/feflow-core/styles/FeflowProvider.css?raw"
 
 type ThemeConfigContextType = {

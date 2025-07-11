@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Textarea } from "@lib/index.js"
+	import { Textarea } from "@/index.js"
 </script>
 
 <Textarea />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Card, HoverReveal } from "@lib/index.js"
+	import { Button, Card, HoverReveal } from "@/index.js"
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">
