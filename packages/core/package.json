@@ -34,6 +34,10 @@
 			"import": "./dist/actions/index.js",
 			"types": "./dist/actions/index.d.ts"
 		},
+		"./icons": {
+			"import": "./dist/icons/index.js",
+			"types": "./dist/icons/index.d.ts"
+		},
 		"./styles/*.css": {
 			"types": "./dist/styles/*.css.d.ts",
 			"default": "./dist/styles/*.css"

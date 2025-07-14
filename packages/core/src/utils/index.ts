@@ -8,8 +8,9 @@ import mergeStyleUtil from "./mergeStyleUtil.js"
 import getPropValueUtil from "./getPropValueUtil.js"
 import normalizeSizeUtil from "./normalizeSizeUtil.js"
 import debounceUtil from "./debounceUtil.js"
-import { customThemeConfig } from "./themeConfigUtil.js"
-import { createTheme } from "./themeConfigUtil.js"
+import { customThemeConfig, createTheme } from "./themeConfigUtil.js"
+import generateSvgElementUtil from "./generateSvgElementUtil.js"
+import toKebabCaseUtil from "./toKebabCaseUtil.js"
 
 export {
 	classMapUtil,
@@ -23,5 +24,7 @@ export {
 	normalizeSizeUtil,
 	debounceUtil,
 	customThemeConfig,
-	createTheme
+	createTheme,
+	generateSvgElementUtil,
+	toKebabCaseUtil
 }
