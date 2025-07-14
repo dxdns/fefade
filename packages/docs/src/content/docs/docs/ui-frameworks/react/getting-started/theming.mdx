@@ -1,9 +1,9 @@
 ---
 title: Theming
-description: How to set theme in your project svelte
+description: How to set theme in your project react
 ---
 
-import ThemeColorPreview from "@/components/ThemeColorPreview.svelte"
+import ThemeColorPreview from "@/components/ThemeColorPreview.tsx"
 import PreviewTabs from "@/components/PreviewTabs.astro"
 
 ### Theme configuration
@@ -12,26 +12,29 @@ This setup allows the user to define **partial** theme colors. That means it's n
 
 Import necessary modules and create a custom theme configuration.
 
-```svelte
-<script lang="ts">
-	import { createTheme, FeflowProvider } from "@dxdns/feflow-svelte"
+```tsx
+import { StrictMode } from "react"
+import { createRoot } from "react-dom/client"
+import App from "./App"
+import { FeflowProvider, createTheme } from "@dxdns/feflow-react"
 
-	let { children } = $props()
+const theme = createTheme({
+	colors: { light: { bg: "orange" } }
+})
 
-	const theme = createTheme({
-		colors: { light: { bg: "orange" } }
-	})
-</script>
-
-<FeflowProvider {theme} defaultThemeMode="dark">
-	{@render children()}
-</FeflowProvider>
+createRoot(document.getElementById("root")!).render(
+	<StrictMode>
+		<FeflowProvider theme={theme}>
+			<App />
+		</FeflowProvider>
+	</StrictMode>
+)
 ```
 
 ### Accessing Theme Colors
 
 You can access and use theme colors throughout your components. For example, you might want to use colors defined in the theme for different parts of your app.
 
-<PreviewTabs component="ThemeColorPreview">
+<PreviewTabs component="ThemeColorPreview" ext="tsx">
 	<ThemeColorPreview client:load />
 </PreviewTabs>

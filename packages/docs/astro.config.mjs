@@ -36,6 +36,14 @@ export default defineConfig({
 					slug: "docs"
 				},
 				{
+					label: "Theming",
+					slug: "docs/theming"
+				},
+				{
+					label: "Components",
+					slug: "docs/components"
+				},
+				{
 					label: "UI Frameworks",
 					collapsed: false,
 					items: [

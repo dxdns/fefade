@@ -1,11 +1,11 @@
-import { useThemeConfig } from "@/components/feflow-provider"
-import { Accordion, Button, Avatar, Badge, Card } from "./lib"
+import { Accordion, Button, Avatar, Badge, Card, themeConfig } from "./lib"
 
 function App() {
-	const { toggle } = useThemeConfig()
+	const { toggle, mode } = themeConfig()
 
 	return (
 		<>
+			<h2>{mode}</h2>
 			<Card glowOnHover>
 				<span>card</span>
 			</Card>

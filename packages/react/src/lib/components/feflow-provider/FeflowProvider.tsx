@@ -1,6 +1,4 @@
 import {
-	createContext,
-	useContext,
 	useState,
 	useMemo,
 	useRef,
@@ -19,14 +17,9 @@ import type {
 	ThemeConfigType,
 	ThemeModeType
 } from "@dxdns/feflow-core/types"
+import { ThemeConfigContext } from "../../contexts"
 // @ts-ignore
 import rawStyle from "@dxdns/feflow-core/styles/FeflowProvider.css?raw"
-
-type ThemeConfigContextType = {
-	mode: ThemeModeType
-	colors: ThemeColorType
-	toggle: () => void
-}
 
 type Props = PropsWithChildren & {
 	/** @deprecated Use `theme` instead */
@@ -39,10 +32,6 @@ type Props = PropsWithChildren & {
 
 	defaultThemeMode?: ThemeModeType
 }
-
-const ThemeConfigContext = createContext<ThemeConfigContextType | undefined>(
-	undefined
-)
 
 export default function ({
 	children,
@@ -161,12 +150,4 @@ export default function ({
 			</ThemeConfigContext.Provider>
 		</>
 	)
-}
-
-export function useThemeConfig() {
-	const context = useContext(ThemeConfigContext)
-	if (!context) {
-		throw new Error("useThemeConfig must be used within a FeflowProvider")
-	}
-	return context
 }
