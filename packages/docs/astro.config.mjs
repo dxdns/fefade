@@ -36,6 +36,10 @@ export default defineConfig({
 					slug: "docs"
 				},
 				{
+					label: "Installation",
+					slug: "docs/installation"
+				},
+				{
 					label: "Theming",
 					slug: "docs/theming"
 				},
