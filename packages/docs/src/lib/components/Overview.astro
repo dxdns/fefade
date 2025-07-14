@@ -1,18 +1,28 @@
 ---
-import { getCollection } from 'astro:content';
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { getCollection } from "astro:content"
+import { CardGrid, LinkCard } from "@astrojs/starlight/components"
 
-const collectionFiltered = await getCollection('docs', ({ id }) => {
-  const after = id.split("docs/components/")[1];
-  const isComponent = after && after !== "index" && !after.includes('/');
-  return isComponent;
-});
+interface Props {
+	slug?: string
+}
 
-const components = collectionFiltered.sort((a, b) => a.data.title.localeCompare(b.data.title))
+const { slug }: Props = Astro.props
+
+const collectionFiltered = await getCollection("docs", ({ id }) => {
+	const after = id.split(slug ?? "docs/components/")[1]
+	const isComponent = after && after !== "index" && !after.includes("/")
+	return isComponent
+})
+
+const components = collectionFiltered.sort((a, b) =>
+	a.data.title.localeCompare(b.data.title)
+)
 ---
 
-<CardGrid stagger>
-  {components.map(({data, id}) => (
-    <LinkCard title={data.title} href={`/${id}`} />
-  ))}
+<CardGrid>
+	{
+		components.map(({ data, id }) => (
+			<LinkCard title={data.title} href={`/${id}`} />
+		))
+	}
 </CardGrid>

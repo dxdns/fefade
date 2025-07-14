@@ -1,0 +1,86 @@
+---
+title: Installation
+description: How to install and set up feflow in your project
+---
+
+import { Button } from "@dxdns/feflow-react"
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+import { Steps } from "@astrojs/starlight/components"
+import { FileTree } from "@astrojs/starlight/components"
+
+<Steps>
+    <ol>
+        <li>
+            ### Install
+            <Tabs>
+                <TabItem label="npm" icon="npm">
+                    ```bash
+                    npm install @dxdns/feflow-react
+                    ```
+                </TabItem>
+                <TabItem label="pnpm" icon="pnpm">
+                    ```bash
+                    pnpm add @dxdns/feflow-react
+                    ```
+                </TabItem>
+            </Tabs>
+        </li>
+
+        <li>
+            ### Setup provider
+            Wrap your application with the `FeflowProvider` to enable all Feflow components.
+            This should be done at the layout level to ensure global access.
+
+            > Recommended: Place this in `src/main.tsx` (React root element)
+
+            <FileTree>
+                - src
+                    - main.tsx
+            </FileTree>
+
+            ```tsx
+            import { StrictMode } from "react"
+            import { createRoot } from "react-dom/client"
+            import App from "./App"
+            import { FeflowProvider } from "@dxdns/feflow-react"
+
+            createRoot(document.getElementById("root")!).render(
+                <StrictMode>
+                    <FeflowProvider>
+                        <App />
+                    </FeflowProvider>
+                </StrictMode>
+            )
+            ```
+        </li>
+
+        <li>
+            ### Enjoy!
+            <Tabs>
+                <TabItem label="Usage">
+                    ```tsx
+                    import { Button } from "@dxdns/feflow-react"
+
+                    function App() {
+                        return (
+                            <>
+                                <Button>
+                                    Click me
+                                </Button>
+                            </>
+                        )
+                    }
+
+                    export default App
+                    ```
+                </TabItem>
+                <TabItem label="Preview">
+                    <Button>
+                        Click me
+                    </Button>
+                </TabItem>
+            </Tabs>
+        </li>
+    </ol>
+
+</Steps>

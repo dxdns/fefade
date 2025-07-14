@@ -4,7 +4,12 @@ import { Code } from "@astrojs/starlight/components"
 import fs from "fs"
 import path from "path"
 
-const { component } = Astro.props
+interface Props {
+	component: string
+	ext?: string
+}
+
+const { component, ext = "svelte" }: Props = Astro.props
 
 let componentCode = ""
 if (component) {
@@ -14,7 +19,7 @@ if (component) {
 			"src",
 			"lib",
 			"components",
-			`${component}.svelte`
+			`${component}.${ext}`
 		)
 		componentCode = fs.readFileSync(componentPath, "utf-8")
 	} catch (error) {
@@ -28,6 +33,6 @@ if (component) {
 		<slot />
 	</TabItem>
 	<TabItem label="Usage">
-		<Code code={componentCode} lang="svelte" />
+		<Code code={componentCode} lang={ext} />
 	</TabItem>
 </Tabs>

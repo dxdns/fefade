@@ -4,6 +4,8 @@ import starlight from "@astrojs/starlight"
 import svelte from "@astrojs/svelte"
 import path from "path"
 
+import react from "@astrojs/react"
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://feflow.dxdns.dev",
@@ -30,43 +32,65 @@ export default defineConfig({
 			],
 			sidebar: [
 				{
-					label: "Getting Started",
+					label: "Introduction",
+					slug: "docs"
+				},
+				{
+					label: "UI Frameworks",
+					collapsed: false,
 					items: [
 						{
-							label: "Introduction",
-							slug: "docs"
+							label: "React",
+							collapsed: true,
+							badge: "beta",
+							items: [
+								{
+									label: "Getting Started",
+									autogenerate: {
+										directory: "docs/ui-frameworks/react/getting-started"
+									}
+								},
+								{
+									label: "Components",
+									autogenerate: {
+										directory: "docs/ui-frameworks/react/components"
+									}
+								}
+							]
 						},
 						{
-							label: "Installation",
-							slug: "docs/getting-started"
-						},
-						{
-							label: "Theming",
-							slug: "docs/getting-started/theming"
-						},
-						{
-							label: "Templates",
-							slug: "docs/getting-started/templates",
-							badge: "New"
+							label: "Svelte",
+							collapsed: true,
+							items: [
+								{
+									label: "Getting Started",
+									autogenerate: {
+										directory: "docs/ui-frameworks/svelte/getting-started"
+									}
+								},
+								{
+									label: "Components",
+									autogenerate: {
+										directory: "docs/ui-frameworks/svelte/components"
+									}
+								},
+								{
+									label: "Utils",
+									autogenerate: { directory: "docs/ui-frameworks/svelte/utils" }
+								}
+							]
 						}
 					]
-				},
-				{
-					label: "Components",
-					autogenerate: { directory: "docs/components" }
-				},
-				{
-					label: "Utils",
-					autogenerate: { directory: "docs/utils" }
 				}
 			]
 		}),
-		svelte()
+		svelte(),
+		react()
 	],
 	vite: {
 		resolve: {
 			alias: {
-				"@": path.resolve("./src/lib"),
+				"@": path.resolve("./src/lib")
 			}
 		}
 	}

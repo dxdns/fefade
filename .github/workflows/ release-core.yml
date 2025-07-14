@@ -1,11 +1,11 @@
-name: Release React
+name: Release Core
 
 on:
   push:
     tags:
-      - "ff-react-v*.*.*"
+      - "ff-core-v*.*.*"
     paths:
-      - "packages/react/**"
+      - "packages/core/**"
 
 permissions:
   contents: write
@@ -24,9 +24,9 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w @dxdns/feflow-react
+      - run: npm run build -w @dxdns/feflow-core
 
-      - run: cp README.md packages/react
+      - run: cp README.md packages/core
 
       - uses: softprops/action-gh-release@v2
         with:
@@ -35,6 +35,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: npm publish -w @dxdns/feflow-react
+      - run: npm publish -w @dxdns/feflow-core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

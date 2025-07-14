@@ -7,18 +7,17 @@
 		"packages/*"
 	],
 	"scripts": {
-		"remove:core": "rm -rf packages/svelte/core && rm -rf packages/react/core",
-		"copy:core": "cp -r packages/core/dist packages/svelte/core && cp -r packages/core/dist packages/react/core",
 		"build:core": "npm run build -w @dxdns/feflow-core",
 		"build:svelte": "npm run build -w @dxdns/feflow-svelte",
 		"build:react": "npm run build -w @dxdns/feflow-react",
 		"build:cli": "npm run build -w @dxdns/feflow-cli",
 		"build:all": "npm run build:core && npm run build:svelte && npm run build:react && npm run build:cli",
 		"git:push": "git push && git push --tags",
-		"release:svelte:patch": "npm run build:svelte && npm version patch -w @dxdns/feflow-svelte --no-git-tag-version && git add packages/feflow && git commit -m \"chore(release): bump version svelte\" && git tag ff-svelte-v$(node -p \"require('./packages/feflow/package.json').version\") && npm run git:push",
+		"release:core:patch": "npm run build:core && npm version patch -w @dxdns/feflow-core --no-git-tag-version && git add packages/core && git commit -m \"chore(release): bump version core\" && git tag ff-core-v$(node -p \"require('./packages/core/package.json').version\") && npm run git:push",
+		"release:svelte:patch": "npm run build:svelte && npm version patch -w @dxdns/feflow-svelte --no-git-tag-version && git add packages/svelte && git commit -m \"chore(release): bump version svelte\" && git tag ff-svelte-v$(node -p \"require('./packages/svelte/package.json').version\") && npm run git:push",
 		"release:react:patch": "npm run build:react && npm version patch -w @dxdns/feflow-react --no-git-tag-version && git add packages/react && git commit -m \"chore(release): bump version react\" && git tag ff-react-v$(node -p \"require('./packages/react/package.json').version\") && npm run git:push",
 		"release:cli:patch": "npm run build:cli && npm version patch -w @dxdns/feflow-cli --no-git-tag-version && git add packages/cli && git commit -m \"chore(release): bump version cli\" && git tag ff-cli-v$(node -p \"require('./packages/cli/package.json').version\") && npm run git:push",
-		"prepare": "npm run remove:core && npm run build -w @dxdns/feflow-core && npm run copy:core && npm run build -w @dxdns/feflow-svelte && npm run build -w @dxdns/feflow-react",
+		"prepare": "npm run build:all",
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"test": "echo \"Error: no test specified\" && exit 1"

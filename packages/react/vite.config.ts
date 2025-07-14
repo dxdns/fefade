@@ -16,8 +16,7 @@ export default defineConfig(({ }) => {
 		plugins: [react()],
 		resolve: {
 			alias: {
-				"@": path.resolve("./src/lib"),
-				"@dxdns/feflow-core": path.resolve("core")
+				"@": path.resolve("./src/lib")
 			}
 		}
 	}

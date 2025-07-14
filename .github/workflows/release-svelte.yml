@@ -1,4 +1,4 @@
-name: Release Feflow Svelte
+name: Release Svelte
 
 on:
   push:

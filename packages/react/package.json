@@ -17,8 +17,7 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
-		"dist",
-		"core"
+		"dist"
 	],
 	"scripts": {
 		"dev": "vite dev",
@@ -34,7 +33,8 @@
 		"react-dom": "^19.1.0",
 		"vite": "^7.0.3",
 		"vite-plugin-dts": "^4.5.4",
-		"vite-plugin-lib-inject-css": "^2.2.2"
+		"vite-plugin-lib-inject-css": "^2.2.2",
+		"@dxdns/feflow-core": "*"
 	},
 	"keywords": [
 		"react",
