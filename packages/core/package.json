@@ -2,7 +2,7 @@
 	"name": "@dxdns/feflow-core",
 	"version": "0.0.1",
 	"description": "",
-	"private": true,
+	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
 		"access": "public"
