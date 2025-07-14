@@ -45,7 +45,14 @@
 		"!dist/**/*.spec.*",
 		"postinstall.js"
 	],
-	"keywords": [],
+	"keywords": [
+		"components",
+		"ui",
+		"ui-kit",
+		"react",
+		"svelte",
+		"next"
+	],
 	"type": "module",
 	"devDependencies": {
 		"typed-css-modules": "^0.9.1",
