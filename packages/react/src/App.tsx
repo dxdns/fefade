@@ -1,10 +1,11 @@
-import { Accordion, Button, Avatar, Badge, Card, themeConfig } from "./lib"
+import { Accordion, Button, Avatar, Badge, Card, themeConfig, TextField } from "./lib"
 
 function App() {
 	const { toggle, mode } = themeConfig()
 
 	return (
 		<>
+			<TextField label="label" />
 			<h2>{mode}</h2>
 			<Card glowOnHover>
 				<span>card</span>
