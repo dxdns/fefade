@@ -7,7 +7,8 @@ import {
 	themeConfig,
 	TextField,
 	Window,
-	ColorPicker
+	ColorPicker,
+	Status
 } from "./lib"
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 
 	return (
 		<>
+			<Status color="red" />
 			<ColorPicker />
 			<Window>test</Window>
 			<TextField label="label" />

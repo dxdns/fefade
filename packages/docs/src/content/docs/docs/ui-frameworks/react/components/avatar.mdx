@@ -1,0 +1,11 @@
+---
+title: Avatar
+description: A versatile component for displaying user profiles through images, icons, or initials, with support for customization and fallbacks.
+---
+
+import AvatarPreview from "@/components/AvatarPreview.tsx"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+<PreviewTabs component="AvatarPreview" ext="tsx">
+	<AvatarPreview client:load />
+</PreviewTabs>
