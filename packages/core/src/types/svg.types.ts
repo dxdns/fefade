@@ -1,7 +1,7 @@
 export interface SvgType {
 	svgPath: string
-	width?: string
-	height?: string
+	width?: number | string
+	height?: number | string
 	fill?: string
 	className?: string
 	style?: Partial<CSSStyleDeclaration> | string

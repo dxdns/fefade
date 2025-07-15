@@ -2,11 +2,12 @@ import { forwardRef, HTMLAttributes, type PropsWithChildren } from "react"
 import type { AccordionType } from "@dxdns/feflow-core/types"
 import { classMapUtil } from "@dxdns/feflow-core/utils"
 import styles from "@dxdns/feflow-core/styles/Accordion.module.css"
+import { KeyboardArrowLeftIcon } from "../../icons"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "id">,
-		PropsWithChildren,
-		AccordionType {}
+	PropsWithChildren,
+	AccordionType { }
 
 export default forwardRef<HTMLDivElement, Props>(
 	({ className, label, variant, children, ...rest }, ref) => {
@@ -33,7 +34,7 @@ export default forwardRef<HTMLDivElement, Props>(
 				<label htmlFor={rest.id} className={styles.header}>
 					<label htmlFor={rest.id}>{label}</label>
 					<div className={styles.icon}>
-						<span>icon</span>
+						<KeyboardArrowLeftIcon />
 					</div>
 				</label>
 				<div className={styles.content}>{children}</div>
