@@ -2,6 +2,7 @@ import type { BreakpointType, ColorThemeConfigType } from "./types/index.js"
 
 export const APP_NAME = "feflow"
 export const APP_NAME_ACRONYM = "ff"
+export const META_NAME = "x-library-name"
 
 export const CSS_VAR_PREFIX = `--${APP_NAME_ACRONYM}`
 export const THEME_STORAGE = `${APP_NAME_ACRONYM}-theme`

@@ -16,10 +16,9 @@ export default function themeConfigUtil() {
 
 	function createStyle(
 		selectors: string,
-		declarations: string,
-		id: string = crypto.randomUUID()
+		declarations: string
 	): string {
-		return `<style id=${id}>${selectors} {\n${declarations}\n}</style>\n`
+		return `<style>${selectors} {\n${declarations}\n}</style>\n`
 	}
 
 	function renderStyleBlock(

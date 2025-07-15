@@ -87,14 +87,15 @@
 </script>
 
 <svelte:head>
-	<meta name="x-library-name" content="feflow" />
+	<meta name={Constants.META_NAME} content={Constants.APP_NAME} />
 
 	{@html `
 	<script>
 		(function () {
-			const theme = localStorage.getItem("${Constants.THEME_STORAGE}") || "${defaultMode ?? defaultThemeMode}";
-			document.documentElement.setAttribute("${Constants.THEME_ATTR}", theme);
-			document.documentElement.style.colorScheme = theme;
+			const fallbackTheme = "${defaultMode ?? defaultThemeMode}";
+			const storedTheme = localStorage.getItem('${Constants.THEME_STORAGE}') || fallbackTheme;
+			document.documentElement.setAttribute('${Constants.THEME_ATTR}', storedTheme);
+			document.documentElement.style.colorScheme = storedTheme;
 		})()
 	</script>
 	`}

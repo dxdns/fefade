@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount, provide } from "vue"
+import { ref, onMounted, onBeforeUnmount, provide, onUnmounted } from "vue"
 import { Constants } from "@dxdns/feflow-core"
 import {
 	mergeObjectUtil,
@@ -64,23 +64,28 @@ const breakpointStyle = breakpointConfigToCssString(mergedBreakpoints)
 
 let observer: MutationObserver | null = null
 
-onMounted(() => {
-	if (!document.getElementById("ff-style")) {
-		const style = document.createElement("style")
-		style.id = "ff-style"
-		style.textContent = rawStyle
-		document.head.appendChild(style)
-	}
+function createStyleElement(css: string) {
+	const style = document.createElement("style")
+	style.textContent = css
+	return style
+}
 
+function createMetaElement(name: string, content: string) {
 	const meta = document.createElement("meta")
-	meta.name = "x-library-name"
-	meta.content = "feflow"
-	document.head.appendChild(meta)
+	meta.name = name
+	meta.content = content
+	return meta
+}
 
-	const storedTheme =
-		localStorage.getItem(Constants.THEME_STORAGE) ||
-		defaultMode ||
-		defaultThemeMode
+onMounted(() => {
+	const styleElement = createStyleElement(rawStyle)
+	document.head.appendChild(styleElement)
+
+	const metaElement = createMetaElement(Constants.META_NAME, Constants.APP_NAME)
+	document.head.appendChild(metaElement)
+
+	const fallbackTheme = defaultMode ?? defaultThemeMode
+	const storedTheme = localStorage.getItem(Constants.THEME_STORAGE) || fallbackTheme
 	document.documentElement.setAttribute(Constants.THEME_ATTR, storedTheme)
 	document.documentElement.style.colorScheme = storedTheme
 	setThemeMode(storedTheme as ThemeModeType)
@@ -100,6 +105,11 @@ onMounted(() => {
 	observer.observe(document.documentElement, {
 		attributes: true,
 		attributeFilter: [Constants.THEME_ATTR]
+	})
+
+	onUnmounted(() => {
+		styleElement.remove()
+		metaElement.remove()
 	})
 })
 

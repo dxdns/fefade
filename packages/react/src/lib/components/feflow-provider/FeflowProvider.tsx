@@ -84,16 +84,23 @@ export default function ({
 		) as Record<BreakpointType, string>
 	)
 
-	useEffect(() => {
-		const theme =
-			localStorage.getItem(Constants.THEME_STORAGE) ||
-			(defaultMode ?? defaultThemeMode)
-		document.documentElement.setAttribute(Constants.THEME_ATTR, theme)
-		document.documentElement.style.colorScheme = theme
-		setThemeMode(theme as ThemeModeType)
-	}, [])
+	function createMetaElement(name: string, content: string) {
+		const meta = document.createElement("meta")
+		meta.name = name
+		meta.content = content
+		return meta
+	}
 
 	useEffect(() => {
+		const meta = createMetaElement(Constants.META_NAME, Constants.APP_NAME)
+		document.head.appendChild(meta)
+
+		const fallbackTheme = defaultMode ?? defaultThemeMode
+		const storedTheme = localStorage.getItem(Constants.THEME_STORAGE) || fallbackTheme
+		document.documentElement.setAttribute(Constants.THEME_ATTR, storedTheme)
+		document.documentElement.style.colorScheme = storedTheme
+		setThemeMode(storedTheme as ThemeModeType)
+
 		observer.current = new MutationObserver((records) => {
 			for (const mutation of records) {
 				if (
@@ -114,12 +121,12 @@ export default function ({
 
 		return () => {
 			observer.current?.disconnect()
+			document.head.removeChild(meta)
 		}
 	}, [])
 
 	return (
 		<>
-			<meta name="x-library-name" content="feflow" />
 			<div
 				dangerouslySetInnerHTML={{
 					__html: themeStyle
