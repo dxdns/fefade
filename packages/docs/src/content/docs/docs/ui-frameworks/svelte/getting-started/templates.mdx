@@ -5,4 +5,19 @@ description: templates showcase.
 
 import TemplateGallery from "@/components/TemplateGallery.astro"
 
-<TemplateGallery />
+<TemplateGallery
+	data={[
+		{
+			title: "Landing Page",
+			href: "/templates/svelte/landing-page"
+		},
+		{
+			title: "Sign In",
+			href: "/templates/svelte/sign-in"
+		},
+		{
+			title: "Portfolio",
+			href: "/templates/svelte/portfolio"
+		}
+	]}
+/>

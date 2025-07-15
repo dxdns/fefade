@@ -1,25 +1,19 @@
 ---
 import { Card, Link } from "@dxdns/feflow-svelte"
 
-const templates = [
-	{
-		title: "Landing Page",
-		href: "/templates/landing-page"
-	},
-	{
-		title: "Sign In",
-		href: "/templates/sign-in"
-	},
-	{
-		title: "Portfolio",
-		href: "/templates/portfolio"
-	}
-]
+interface Props {
+	data: {
+		title: string
+		href: string
+	}[]
+}
+
+const { data }: Props = Astro.props
 ---
 
 <div style="max-width: 500px; margin: 0 auto;">
 	{
-		templates.map(({ title, href }) => (
+		data.map(({ title, href }) => (
 			<Link href={href} target="_blank" key={href}>
 				<Card style="overflow: hidden;">
 					<h4 style="text-align: center;">{title}</h4>
