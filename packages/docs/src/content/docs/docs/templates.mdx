@@ -1,0 +1,16 @@
+---
+title: Templates
+description: all templates.
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components"
+import { capitalizeUtil } from "src/utils"
+
+<CardGrid>
+	{["svelte", "react"].map((framework) => (
+		<LinkCard
+			title={capitalizeUtil(framework)}
+			href={`/docs/ui-frameworks/${framework}/getting-started/templates/`}
+		/>
+	))}
+</CardGrid>

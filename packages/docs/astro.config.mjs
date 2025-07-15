@@ -48,6 +48,10 @@ export default defineConfig({
 					slug: "docs/components"
 				},
 				{
+					label: "Templates",
+					slug: "docs/templates"
+				},
+				{
 					label: "UI Frameworks",
 					collapsed: false,
 					items: [

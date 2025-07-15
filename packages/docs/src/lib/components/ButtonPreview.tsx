@@ -17,14 +17,14 @@ export default function () {
 			<Button isLoading></Button>
 
 			{variants.map((variant) => (
-				<Button variant={variant as any}>{variant}</Button>
+				<Button key={variant} variant={variant as any}>{variant}</Button>
 			))}
 			<Button href="https://dxdns.dev" target="_blank">
 				link
 			</Button>
 
 			{variants.map((variant) => (
-				<Button disabled variant={variant as any}>
+				<Button key={variant} disabled variant={variant as any}>
 					{variant}
 				</Button>
 			))}
@@ -38,7 +38,7 @@ export default function () {
 				}}
 			>
 				{colors.map((color) => (
-					<Button className={`bg-${color} text-on-${color}`}>{color}</Button>
+					<Button key={color} className={`bg-${color} text-on-${color}`}>{color}</Button>
 				))}
 			</div>
 
