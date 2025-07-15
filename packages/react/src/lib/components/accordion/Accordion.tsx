@@ -1,4 +1,4 @@
-import { forwardRef, HTMLAttributes, type PropsWithChildren } from "react"
+import { forwardRef, HTMLAttributes } from "react"
 import type { AccordionType } from "@dxdns/feflow-core/types"
 import { classMapUtil } from "@dxdns/feflow-core/utils"
 import styles from "@dxdns/feflow-core/styles/Accordion.module.css"
@@ -6,7 +6,6 @@ import { KeyboardArrowLeftIcon } from "../../icons"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "id">,
-		PropsWithChildren,
 		AccordionType {}
 
 export default forwardRef<HTMLDivElement, Props>(

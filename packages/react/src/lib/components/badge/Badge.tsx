@@ -1,12 +1,9 @@
-import { forwardRef, HTMLAttributes, type PropsWithChildren } from "react"
+import { forwardRef, HTMLAttributes } from "react"
 import { classMapUtil } from "@dxdns/feflow-core/utils"
 import styles from "@dxdns/feflow-core/styles/Badge.module.css"
 import type { BadgeType } from "@dxdns/feflow-core/types"
 
-interface Props
-	extends HTMLAttributes<HTMLSpanElement>,
-		PropsWithChildren,
-		BadgeType {}
+interface Props extends HTMLAttributes<HTMLSpanElement>, BadgeType {}
 
 export default forwardRef<HTMLDivElement, Props>(
 	(

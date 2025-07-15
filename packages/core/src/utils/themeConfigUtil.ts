@@ -14,10 +14,7 @@ export default function themeConfigUtil() {
 		return `${toCssVar(key)}: ${value};`
 	}
 
-	function createStyle(
-		selectors: string,
-		declarations: string
-	): string {
+	function createStyle(selectors: string, declarations: string): string {
 		return `<style>${selectors} {\n${declarations}\n}</style>\n`
 	}
 

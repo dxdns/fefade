@@ -47,7 +47,7 @@
 	transition: all 0.2s ease;
 }
 
-.checkPath {
+.icon path {
 	stroke-dasharray: 40;
 	stroke-dashoffset: 40;
 	transition: stroke-dashoffset 0.3s ease 0.1s;
@@ -62,7 +62,7 @@
 	transform: scale(1);
 }
 
-.checkbox input:checked + .wrapper .checkPath {
+.checkbox input:checked + .wrapper .icon path {
 	stroke-dashoffset: 0;
 }
 

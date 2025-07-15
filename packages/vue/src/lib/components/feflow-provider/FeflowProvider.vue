@@ -85,7 +85,8 @@ onMounted(() => {
 	document.head.appendChild(metaElement)
 
 	const fallbackTheme = defaultMode ?? defaultThemeMode
-	const storedTheme = localStorage.getItem(Constants.THEME_STORAGE) || fallbackTheme
+	const storedTheme =
+		localStorage.getItem(Constants.THEME_STORAGE) || fallbackTheme
 	document.documentElement.setAttribute(Constants.THEME_ATTR, storedTheme)
 	document.documentElement.style.colorScheme = storedTheme
 	setThemeMode(storedTheme as ThemeModeType)

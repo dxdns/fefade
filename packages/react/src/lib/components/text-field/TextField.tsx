@@ -16,7 +16,6 @@ export default forwardRef<HTMLInputElement, Props>(
 			focused = false,
 			actions,
 			size = "md",
-			children,
 			...rest
 		},
 		ref

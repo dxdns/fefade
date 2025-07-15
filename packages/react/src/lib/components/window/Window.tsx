@@ -1,17 +1,10 @@
-import {
-	forwardRef,
-	HTMLAttributes,
-	ReactNode,
-	type PropsWithChildren
-} from "react"
+import { forwardRef, HTMLAttributes, ReactNode } from "react"
 import { VariantType } from "@dxdns/feflow-core/types"
 import Card from "../card"
 import Badge from "../badge"
 import styles from "@dxdns/feflow-core/styles/Window.module.css"
 
-interface Props
-	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,
-		PropsWithChildren {
+interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
 	label?: string | ReactNode
 	variant?: Exclude<VariantType, "text">
 }

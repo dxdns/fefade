@@ -8,7 +8,8 @@ import {
 	TextField,
 	Window,
 	ColorPicker,
-	Status
+	Status,
+	Checkbox
 } from "./lib"
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 
 	return (
 		<>
+			<Checkbox />
 			<Status color="red" />
 			<ColorPicker />
 			<Window>test</Window>
