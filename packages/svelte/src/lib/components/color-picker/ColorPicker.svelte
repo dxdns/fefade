@@ -1,27 +1,16 @@
 <script lang="ts">
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
+	import styles from "@dxdns/feflow-core/styles/ColorPicker.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "type"> {}
 
-	let { ...rest }: Props = $props()
+	let { class: className = "", ...rest }: Props = $props()
 </script>
 
-<input defaultValue="#ffffff" type="color" {...rest} />
-
-<style>
-	input[type="color" i] {
-		all: unset;
-		appearance: none;
-		width: 40px;
-		height: 40px;
-		border-radius: 0.25rem;
-		border: 1px solid var(--ff-border);
-		background: none;
-		cursor: pointer;
-		padding: 0;
-	}
-
-	input[type="color" i]::-webkit-color-swatch-wrapper {
-		background: var(--ff-surface) !important;
-	}
-</style>
+<input
+	{...rest}
+	class={classMapUtil(className, [className, styles], styles.colorPicker)}
+	defaultValue="#ffffff"
+	type="color"
+/>

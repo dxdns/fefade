@@ -17,7 +17,9 @@ export default function () {
 			<Button isLoading></Button>
 
 			{variants.map((variant) => (
-				<Button key={variant} variant={variant as any}>{variant}</Button>
+				<Button key={variant} variant={variant as any}>
+					{variant}
+				</Button>
 			))}
 			<Button href="https://dxdns.dev" target="_blank">
 				link
@@ -38,7 +40,9 @@ export default function () {
 				}}
 			>
 				{colors.map((color) => (
-					<Button key={color} className={`bg-${color} text-on-${color}`}>{color}</Button>
+					<Button key={color} className={`bg-${color} text-on-${color}`}>
+						{color}
+					</Button>
 				))}
 			</div>
 

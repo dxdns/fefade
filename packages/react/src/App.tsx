@@ -6,7 +6,8 @@ import {
 	Card,
 	themeConfig,
 	TextField,
-	Window
+	Window,
+	ColorPicker
 } from "./lib"
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 
 	return (
 		<>
+			<ColorPicker />
 			<Window>test</Window>
 			<TextField label="label" />
 			<h2>{mode}</h2>
