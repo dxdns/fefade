@@ -45,24 +45,17 @@ export default function ({
 		Constants.themeConfigDefault.light
 	)
 
-	const _setMode = (t: ThemeModeType) => setMode(t)
-	const _setColors = (t: ThemeModeType) =>
-		setColors(Constants.themeConfigDefault[t])
-
 	const setThemeMode = (t: ThemeModeType) => {
-		_setMode(t)
-		_setColors(t)
+		setMode(t)
+		setColors(Constants.themeConfigDefault[t])
 	}
-
-	const getMode = () => mode
-	const getColors = () => Constants.themeConfigDefault[mode]
 
 	const { getThemeModeFromAttr, toggleThemeMode } = themeModeUtil()
 
 	const value = useMemo(
 		() => ({
-			colors: getColors(),
-			mode: getMode(),
+			colors: Constants.themeConfigDefault[mode],
+			mode,
 			toggle: () => {
 				toggleThemeMode((t) => {
 					setThemeMode(t)

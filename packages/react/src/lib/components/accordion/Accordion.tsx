@@ -6,8 +6,8 @@ import { KeyboardArrowLeftIcon } from "../../icons"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "id">,
-	PropsWithChildren,
-	AccordionType { }
+		PropsWithChildren,
+		AccordionType {}
 
 export default forwardRef<HTMLDivElement, Props>(
 	({ className, label, variant, children, ...rest }, ref) => {

@@ -12,11 +12,11 @@ export default function () {
 				>
 					<div style={{ lineHeight: 1.5 }}>
 						<h1>test {i}</h1>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste recusandae
-						a minus accusantium perspiciatis numquam fugiat officiis esse fugit consectetur
-						vero natus accusamus autem quos, voluptate dignissimos deserunt nemo alias!
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
+						recusandae a minus accusantium perspiciatis numquam fugiat officiis
+						esse fugit consectetur vero natus accusamus autem quos, voluptate
+						dignissimos deserunt nemo alias! Lorem ipsum, dolor sit amet
+						consectetur adipisicing elit.
 						<p>
 							Id provident praesentium, incidunt, quisquam ullam numquam aliquid
 							dolorem, quae labore dignissimos minima assumenda. Reprehenderit
@@ -26,6 +26,5 @@ export default function () {
 				</Accordion>
 			))}
 		</div>
-
 	)
 }

@@ -1,7 +1,11 @@
+<script>
+	import { Link } from "@/index.js"
+</script>
+
 <div class="circle">
-	<a href="https://feflow.dxdns.dev" target="_blank">
-		<img src="/favicon.png" alt="feflow" />
-	</a>
+	<Link href="https://feflow.dxdns.dev" target="_blank" style="transform: translate(50%, 100%);">
+		<h1>feflow</h1>
+	</Link>
 </div>
 
 <style>
@@ -13,15 +17,6 @@
 		outline: 30px solid rgba(0, 0, 0, 0.35);
 		outline-offset: -12px;
 		margin: 40vh auto;
-	}
-
-	.circle img {
-		display: block;
-		width: 100%;
-		aspect-ratio: 1;
-		object-fit: cover;
-		object-position: top;
-		border-radius: inherit;
 	}
 
 	.circle::before,

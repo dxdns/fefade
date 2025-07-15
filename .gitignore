@@ -18,6 +18,7 @@ build
 dist
 packages/svelte/core
 packages/react/core
+*.tsbuildinfo
 
 # OS
 .DS_Store

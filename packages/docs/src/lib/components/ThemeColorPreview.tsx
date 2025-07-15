@@ -1,4 +1,10 @@
-import { Badge, Button, Card, FeflowProvider, themeConfig } from "@dxdns/feflow-react"
+import {
+	Badge,
+	Button,
+	Card,
+	FeflowProvider,
+	themeConfig
+} from "@dxdns/feflow-react"
 
 function ThemeColorPreview() {
 	const theme = themeConfig()
@@ -10,20 +16,26 @@ function ThemeColorPreview() {
 					display: "flex",
 					flexWrap: "wrap",
 					gap: "1rem",
-					alignItems: "center",
+					alignItems: "center"
 				}}
 			>
 				<h2>{theme.mode}</h2>
-				<Button variant="outlined" onClick={theme.toggle}>toggle theme</Button>
+				<Button variant="outlined" onClick={theme.toggle}>
+					toggle theme
+				</Button>
 			</div>
-			<Card style={{ background: theme.mode === 'dark' ? 'green' : 'red' }}>
+			<Card style={{ background: theme.mode === "dark" ? "green" : "red" }}>
 				<ul style={{ lineHeight: 2 }}>
 					{Object.keys(theme.colors).map((t) => {
 						const color = theme.colors[t as keyof typeof theme.colors]
 						return (
 							<li>
 								<span style={{ color: "aqua" }}>{t}</span>:
-								<Badge roundedFull style={{ background: color }} size="sm"></Badge>
+								<Badge
+									roundedFull
+									style={{ background: color }}
+									size="sm"
+								></Badge>
 							</li>
 						)
 					})}

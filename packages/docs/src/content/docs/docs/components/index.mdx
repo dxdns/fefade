@@ -2,13 +2,15 @@
 title: Components
 description: all components.
 ---
+
 import { CardGrid, LinkCard } from "@astrojs/starlight/components"
-import { capitalizeUtil } from 'src/utils'
+import { capitalizeUtil } from "src/utils"
 
 <CardGrid>
-	{
-		["svelte", "react"].map((framework) => (
-			<LinkCard title={capitalizeUtil(framework)} href={`/docs/ui-frameworks/${framework}/components/`} />
-		))
-	}
+	{["svelte", "react"].map((framework) => (
+		<LinkCard
+			title={capitalizeUtil(framework)}
+			href={`/docs/ui-frameworks/${framework}/components/`}
+		/>
+	))}
 </CardGrid>

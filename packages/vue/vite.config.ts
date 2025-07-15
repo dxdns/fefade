@@ -1,5 +1,5 @@
 import { defineConfig } from "vite"
-import react from "@vitejs/plugin-react"
+import vue from "@vitejs/plugin-vue"
 import path from "path"
 import { libInjectCss } from "vite-plugin-lib-inject-css"
 import dts from "vite-plugin-dts"
@@ -8,12 +8,12 @@ import { fileURLToPath } from "url"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig(({}) => {
 	const LIB_DIR = "src/lib"
 
 	const defaultConfig = {
-		plugins: [react()],
+		plugins: [vue()],
 		resolve: {
 			alias: {
 				"@": path.resolve("./src/lib")
@@ -21,9 +21,9 @@ export default defineConfig(({}) => {
 		}
 	}
 
-	if (!(process.env.NODE_ENV === "development")) {
+	if (process.env.NODE_ENV !== "development") {
 		return {
-			...defaultConfig.resolve,
+			...defaultConfig,
 			plugins: [
 				...defaultConfig.plugins,
 				libInjectCss(),
@@ -37,10 +37,10 @@ export default defineConfig(({}) => {
 					formats: ["es"]
 				},
 				rollupOptions: {
-					external: ["react", "react/jsx-runtime"],
+					external: ["vue"],
 					input: Object.fromEntries(
 						glob
-							.sync(`${LIB_DIR}/**/*.{ts,tsx}`, {
+							.sync(`${LIB_DIR}/**/*.{ts,vue}`, {
 								ignore: [`${LIB_DIR}/**/*.d.ts`]
 							})
 							.map((file) => [
