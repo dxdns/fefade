@@ -12,7 +12,7 @@
 <Navbar
 	style="display: flex; align-items: center; justify-content: space-between;"
 >
-	<img alt="feflow" src="/logo.png" width="180px" height="50px" />
+	<h1>ff</h1>
 	<Navbar.Item onclick={theme.toggle}>
 		<InfoIcon />
 		Toggle Theme
