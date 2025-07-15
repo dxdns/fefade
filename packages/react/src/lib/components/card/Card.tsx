@@ -36,8 +36,8 @@ export default forwardRef<HTMLDivElement, Props>(
 		return (
 			<div ref={glowOnHover ? actionRef : undefined}>
 				<div
-					ref={ref}
 					{...rest}
+					ref={ref}
 					role="button"
 					className={classMapUtil(
 						className,

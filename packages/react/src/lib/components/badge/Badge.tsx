@@ -22,8 +22,8 @@ export default forwardRef<HTMLDivElement, Props>(
 	) => {
 		return (
 			<span
-				ref={ref}
 				{...rest}
+				ref={ref}
 				className={classMapUtil(
 					className,
 					[className, styles],

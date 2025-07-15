@@ -28,7 +28,7 @@ export default forwardRef<HTMLDivElement, Props>(
 				style={{ width, height }}
 			>
 				{!hasError && rest.src ? (
-					<img onError={handleError} {...rest} />
+					<img {...rest} onError={handleError} />
 				) : (
 					textFallback && (
 						<span className={styles.textFallback}>

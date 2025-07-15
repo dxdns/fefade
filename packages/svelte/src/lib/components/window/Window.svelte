@@ -3,7 +3,8 @@
 	import Card from "../card/index.js"
 	import Badge from "../badge/index.js"
 	import type { Snippet } from "svelte"
-	import type { VariantType } from "../../types/variant.types.js"
+	import type { VariantType } from "@dxdns/feflow-core/types"
+	import styles from "@dxdns/feflow-core/styles/Window.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		label?: string | Snippet<[]>
@@ -14,8 +15,8 @@
 </script>
 
 <Card {...rest} class={className}>
-	<div class="header">
-		<div class="actions">
+	<div class={styles.header}>
+		<div class={styles.actions}>
 			<Badge class="bg-error" roundedFull size="xs"></Badge>
 			<Badge class="bg-warning" roundedFull size="xs"></Badge>
 			<Badge class="bg-success" roundedFull size="xs"></Badge>
@@ -28,20 +29,3 @@
 	</div>
 	{@render children?.()}
 </Card>
-
-<style>
-	.header {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		margin-bottom: 15px;
-		height: 30px;
-		user-select: none;
-	}
-
-	.actions {
-		display: flex;
-		gap: 5px;
-		align-items: center;
-	}
-</style>

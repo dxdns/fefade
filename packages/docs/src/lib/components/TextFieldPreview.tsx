@@ -10,8 +10,11 @@ export default function () {
 				const size = sizes[i + 1] as any
 				return (
 					<div key={i}>
-						<TextField label={`${variant} (${size})`
-						} variant={variant as any} size={size} />
+						<TextField
+							label={`${variant} (${size})`}
+							variant={variant as any}
+							size={size}
+						/>
 						<br />
 						<br />
 					</div>

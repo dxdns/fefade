@@ -48,8 +48,8 @@ export default forwardRef<HTMLButtonElement, Props>((props, ref) => {
 
 	return (
 		<button
-			ref={ref}
 			{...rest}
+			ref={ref}
 			className={classMapUtil(
 				className,
 				[className, styles],

@@ -1,0 +1,11 @@
+---
+title: Window
+description: A component for displaying content in a separate, movable or modal window.
+---
+
+import WindowPreview from "@/components/WindowPreview.tsx"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+<PreviewTabs component="WindowPreview" ext="tsx">
+	<WindowPreview client:load />
+</PreviewTabs>

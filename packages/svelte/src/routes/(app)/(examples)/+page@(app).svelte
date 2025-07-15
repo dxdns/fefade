@@ -3,7 +3,11 @@
 </script>
 
 <div class="circle">
-	<Link href="https://feflow.dxdns.dev" target="_blank" style="transform: translate(50%, 100%);">
+	<Link
+		href="https://feflow.dxdns.dev"
+		target="_blank"
+		style="transform: translate(50%, 100%);"
+	>
 		<h1>feflow</h1>
 	</Link>
 </div>

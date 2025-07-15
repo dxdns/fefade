@@ -29,7 +29,7 @@ function ThemeColorPreview() {
 					{Object.keys(theme.colors).map((t) => {
 						const color = theme.colors[t as keyof typeof theme.colors]
 						return (
-							<li>
+							<li key={t}>
 								<span style={{ color: "aqua" }}>{t}</span>:
 								<Badge
 									roundedFull

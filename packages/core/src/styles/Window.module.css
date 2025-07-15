@@ -1,0 +1,14 @@
+.header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 15px;
+	height: 30px;
+	user-select: none;
+}
+
+.actions {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}

@@ -10,8 +10,8 @@ export default forwardRef<HTMLSpanElement, Props>((props, ref) => {
 
 	return (
 		<span
-			ref={ref}
 			{...rest}
+			ref={ref}
 			className={classMapUtil(
 				className,
 				[className, styles],

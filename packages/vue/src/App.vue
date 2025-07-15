@@ -5,8 +5,8 @@ const { mode, toggle } = themeConfig()
 </script>
 
 <template>
-  <h1>{{ mode }}</h1>
-  <button @click="toggle">toggle</button>
+	<h1>{{ mode }}</h1>
+	<button @click="toggle">toggle</button>
 </template>
 
 <style scoped></style>
