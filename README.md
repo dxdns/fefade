@@ -7,13 +7,8 @@
 [![license](https://img.shields.io/github/license/dxdns/feflow)](https://github.com/dxdns/feflow/blob/master/LICENSE)
 ![Zero Dependencies](https://img.shields.io/badge/dependencies-0-green)
 
-[![-ff-core-version](https://img.shields.io/npm/v/%40dxdns%2Ffeflow-core?label=ff-core&labelColor=%23212121)](https://www.npmjs.com/package/@dxdns/feflow-core)
-
-[![-ff-svelte-version](https://img.shields.io/npm/v/%40dxdns%2Ffeflow-svelte?label=ff-svelte-version&labelColor=orange)](https://www.npmjs.com/package/@dxdns/feflow-svelte)
-[![-ff-svelte-downloads](https://img.shields.io/npm/dw/%40dxdns%2Ffeflow-svelte?label=ff-svelte-downloads&labelColor=orange)](https://www.npmjs.com/package/@dxdns/feflow-svelte)
-
-[![-ff-react-version](https://img.shields.io/npm/v/%40dxdns%2Ffeflow-react?label=ff-react-version&labelColor=aqua)](https://www.npmjs.com/package/@dxdns/feflow-react)
-[![-ff-react-downloads](https://img.shields.io/npm/dw/%40dxdns%2Ffeflow-react?label=ff-react-downloads&labelColor=aqua)](https://www.npmjs.com/package/@dxdns/feflow-react)
+[![-ff-svelte](https://img.shields.io/npm/v/%40dxdns%2Ffeflow-svelte?label=feflow-svelte&labelColor=f96743)](https://www.npmjs.com/package/@dxdns/feflow-svelte)
+[![-ff-react](https://img.shields.io/npm/v/%40dxdns%2Ffeflow-react?label=feflow-react&labelColor=aqua)](https://www.npmjs.com/package/@dxdns/feflow-react)
 
 **feflow** is a lightweight and dependency-free UI component library.
 
