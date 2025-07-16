@@ -8,7 +8,7 @@
 
 <ScrollEndListener callback={onScrollToEnd}>
 	<div style="height: 200px; overflow-y: auto; border: 1px solid #ccc;">
-		{#each Array(100) as _, i}
+		{#each Array(100) as _, i (i)}
 			<p>{i + 1}</p>
 		{/each}
 	</div>

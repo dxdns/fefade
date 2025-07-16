@@ -9,7 +9,7 @@
 </script>
 
 <ScrollSection data={sections}>
-	{#each sectionsData as { reference }, i}
+	{#each sectionsData as { reference }, i (reference)}
 		<ScrollSection.Content
 			id={reference}
 			style="

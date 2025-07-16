@@ -4,7 +4,7 @@
 	import styles from "./DataTable.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		data: Record<string, any>[]
+		data: Record<string, unknown>[]
 	}
 
 	let { class: className = "", data, ...rest }: Props = $props()
@@ -24,16 +24,16 @@
 >
 	<thead>
 		<tr>
-			{#each columnsData as item}
+			{#each columnsData as item (item.name)}
 				<th>{item.label}</th>
 			{/each}
 		</tr>
 	</thead>
 
 	<tbody>
-		{#each data as row, _}
+		{#each data as row (row)}
 			<tr>
-				{#each columnsData as col, _}
+				{#each columnsData as col (col.name)}
 					<td>{row[col.name]}</td>
 				{/each}
 			</tr>

@@ -11,7 +11,7 @@
 		<span>content</span>
 	</Skeleton>
 
-	{#each Array.from(Array(5)) as _}
+	{#each Array.from(Array(5)) as _, i (i)}
 		<Skeleton isLoading variant="pulse" style="width: 200px; height: 16px;">
 			<span>content</span>
 		</Skeleton>

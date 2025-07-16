@@ -12,7 +12,7 @@
 		fullWidth?: boolean
 	}
 
-	let { class: className, fullWidth, ...rest }: Props = $props()
+	let { class: className = "", fullWidth, ...rest }: Props = $props()
 
 	let isHovered = $state(false)
 
@@ -28,7 +28,7 @@
 	] as const satisfies PositionType[]
 </script>
 
-{#each positions as position}
+{#each positions as position (position)}
 	{@const pos = position.split("-")[0]}
 	{@const isPositionTop = pos === "top"}
 	{@const grouped = toast

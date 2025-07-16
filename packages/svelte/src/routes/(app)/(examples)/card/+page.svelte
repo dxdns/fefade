@@ -30,7 +30,7 @@
 </HoverFollower>
 
 <HoverFollower style="gap: 3rem;" orientation="horizontal" bgColor="green">
-	{#each Array.from(Array(5)) as _, i}
+	{#each Array.from(Array(5)) as _, i (i)}
 		<Card variant={i % 2 ? "contained" : "outlined"}>
 			<div>
 				<h4>test {i}</h4>

@@ -1,5 +1,7 @@
+export type VariantStatusType = "none" | "ping" | "bounce" | "pulse"
+
 export type StatusType = {
-	variant?: "none" | "ping" | "bounce" | "pulse"
+	variant?: VariantStatusType
 	color?: string
 	size?: number | string
 }

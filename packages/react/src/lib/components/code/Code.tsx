@@ -5,7 +5,7 @@ import styles from "@dxdns/feflow-core/styles/Code.module.css"
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 
 export default forwardRef<HTMLDivElement, Props>(
-	({ className, children, ...rest }, ref) => {
+	({ className = "", children, ...rest }, ref) => {
 		return (
 			<div
 				{...rest}

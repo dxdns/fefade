@@ -43,7 +43,7 @@
             gap: 0.5rem;
             "
 		>
-			{#each Array.from(Array(4)) as _, i}
+			{#each Array.from(Array(4)) as _, i (i)}
 				<PinInput autoFocus={i === 0} {isLoading} value="" />
 			{/each}
 		</div>

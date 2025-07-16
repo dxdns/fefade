@@ -10,11 +10,10 @@ interface Props
 export default forwardRef<HTMLInputElement, Props>(
 	(
 		{
-			className,
+			className = "",
 			label,
 			variant = "outlined",
 			focused = false,
-			actions,
 			size = "md",
 			...rest
 		},

@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useRef } from "react"
 
-export type Action<T extends HTMLElement = HTMLElement, P = any> = (
+export type Action<T extends HTMLElement = HTMLElement, P = unknown> = (
 	node: T,
 	props?: P
 ) => {
@@ -10,7 +10,7 @@ export type Action<T extends HTMLElement = HTMLElement, P = any> = (
 
 export default function actionUtil<
 	T extends HTMLElement = HTMLElement,
-	P = any
+	P = unknown
 >(action: Action<T, P>, props?: P, externalRef?: RefObject<T>): RefObject<T> {
 	const internalRef = useRef<T>(null!)
 	const ref = externalRef ?? internalRef

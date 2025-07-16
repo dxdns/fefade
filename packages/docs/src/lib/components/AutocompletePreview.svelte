@@ -9,7 +9,7 @@
 	const variants = ["text", "contained", "outlined"]
 </script>
 
-{#each variants as variant}
+{#each variants as variant (variant)}
 	<Autocomplete
 		variant={variant as any}
 		{data}

@@ -5,7 +5,7 @@
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">
-	{#each variants as variant}
+	{#each variants as variant (variant)}
 		<PasswordInput label={variant} variant={variant as any} />
 		<br />
 		<br />

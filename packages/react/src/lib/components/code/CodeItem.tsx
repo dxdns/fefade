@@ -7,7 +7,7 @@ interface Props extends HTMLAttributes<HTMLPreElement> {
 }
 
 export default forwardRef<HTMLPreElement, Props>(
-	({ className, lineNumber, children, ...rest }, ref) => {
+	({ className = "", lineNumber, children, ...rest }, ref) => {
 		return (
 			<pre
 				{...rest}

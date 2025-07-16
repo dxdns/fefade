@@ -15,7 +15,6 @@
 		autoFocus = false,
 		isLoading = false,
 		value = $bindable(""),
-		children,
 		...rest
 	}: Props = $props()
 

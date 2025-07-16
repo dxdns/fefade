@@ -32,7 +32,7 @@ export default ts.config(
 
 	...sveltePlugin.configs["flat/recommended"],
 	{
-		files: ["**/*.svelte"],
+		files: ["**/*.svelte", "**/*.svelte.ts", "**/*.svelte.js"],
 		languageOptions: {
 			parserOptions: {
 				parser: ts.parser,
@@ -80,7 +80,7 @@ export default ts.config(
 	},
 
 	{
-		files: ["**/*.ts", "**/*.tsx", "**/*.svelte.ts", "**/*.svelte.js"],
+		files: ["**/*.ts", "**/*.tsx"],
 		languageOptions: {
 			parserOptions: {
 				projectService: true
@@ -91,7 +91,12 @@ export default ts.config(
 	{
 		rules: {
 			"@typescript-eslint/no-empty-object-type": "off",
-			"@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }]
+			"@typescript-eslint/no-unused-vars": [
+				"warn",
+				{ argsIgnorePattern: "^_" }
+			],
+			"@typescript-eslint/no-explicit-any": "off",
+			"no-control-regex": "off"
 		}
 	},
 	{

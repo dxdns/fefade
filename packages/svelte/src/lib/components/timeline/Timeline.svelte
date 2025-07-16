@@ -4,7 +4,7 @@
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
 
-	let { class: className, children, ...rest }: Props = $props()
+	let { class: className = "", children, ...rest }: Props = $props()
 </script>
 
 <div {...rest} class={classMapUtil(className, "timeline")}>

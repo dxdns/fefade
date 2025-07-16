@@ -10,7 +10,7 @@
 <br />
 <br />
 
-{#each Array.from(Array(5)) as _}
+{#each Array.from(Array(5)) as i (i)}
 	<Skeleton isLoading variant="pulse" style="width: 500px; height: 16px;" />
 	<br />
 {/each}

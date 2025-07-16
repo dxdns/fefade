@@ -5,7 +5,7 @@
 </script>
 
 <div style="max-width: 150px; margin: 0 auto;">
-	{#each ["text", "contained", "outlined"] as variant}
+	{#each ["text", "contained", "outlined"] as variant (variant)}
 		<NumberInput
 			autoFocus
 			variant={variant as any}

@@ -9,12 +9,7 @@
 		visibleInSize?: SizeType
 	}
 
-	let {
-		class: className = "",
-		visibleInSize = "md",
-		children,
-		...rest
-	}: Props = $props()
+	let { class: className = "", visibleInSize = "md", ...rest }: Props = $props()
 </script>
 
 <div

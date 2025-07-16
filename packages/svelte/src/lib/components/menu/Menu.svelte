@@ -40,7 +40,9 @@
 
 <div
 	role="region"
-	class={classMapUtil(className, "menu", { ["openOnHover"]: openOnHover })}
+	class={classMapUtil(className, "menu", {
+		["openOnHover"]: openOnHover
+	})}
 	use:clickOutsideAction={{
 		handler: handleClose
 	}}

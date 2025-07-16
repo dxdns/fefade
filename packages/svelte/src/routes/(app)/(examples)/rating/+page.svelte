@@ -40,21 +40,21 @@
 <br />
 <h1>Start in</h1>
 <br />
-{#each Array.from(Array(5)) as _, i}
+{#each Array.from(Array(5)) as _, i (i)}
 	<Rating startIn={i + 1} color="blue" />
 {/each}
 
 <br />
 <h1>Colors</h1>
 <br />
-{#each ["aqua", "red", "green"] as color, i}
+{#each ["aqua", "red", "green"] as color, i (i)}
 	<Rating startIn={i + 1} {color} />
 {/each}
 
 <br />
 <h1>Sizes</h1>
 <br />
-{#each [13, "2rem", "48px"] as size, i}
+{#each [13, "2rem", "48px"] as size, i (i)}
 	<Rating startIn={i + 1} {size} />
 	<br />
 {/each}

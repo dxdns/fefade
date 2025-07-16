@@ -10,8 +10,6 @@
 		bottom: false
 	})
 
-	let isOpen = $state(false)
-
 	let isOpenFixed = $state(false)
 
 	function handleToggle(position: PositionType) {

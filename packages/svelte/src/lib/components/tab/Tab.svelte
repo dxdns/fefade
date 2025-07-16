@@ -8,7 +8,7 @@
 	}
 
 	let {
-		class: className,
+		class: className = "",
 		orientation = "horizontal",
 		children,
 		...rest

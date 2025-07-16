@@ -6,12 +6,7 @@
 		isOpen: boolean
 	}
 
-	let {
-		class: className = "",
-		isOpen = false,
-		children,
-		...rest
-	}: Props = $props()
+	let { class: className = "", isOpen = false, ...rest }: Props = $props()
 </script>
 
 {#if isOpen}

@@ -10,7 +10,7 @@ interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
 }
 
 export default forwardRef<HTMLDivElement, Props>(
-	({ className, label, children, ...rest }, ref) => {
+	({ className = "", label, children, ...rest }, ref) => {
 		return (
 			<Card {...rest} ref={ref} className={className}>
 				<div className={styles.header}>

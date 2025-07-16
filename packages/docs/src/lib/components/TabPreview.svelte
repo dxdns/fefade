@@ -25,7 +25,7 @@
 			label: `label${id}`,
 			content: `test${id}`,
 			...(i === 0 && {
-				icon: "&#9734;"
+				icon: String.fromCharCode(9734)
 			})
 		}
 	})
@@ -35,7 +35,7 @@
 	}
 </script>
 
-{#snippet content(isActive: boolean, content: any)}
+{#snippet content(isActive: boolean, content: unknown)}
 	<Tab.Panel
 		{isActive}
 		transition={{
@@ -48,7 +48,7 @@
 {/snippet}
 
 {#snippet icon(s: string)}
-	<span style="font-size: 20px;">{@html s}</span>
+	<span style="font-size: 20px;">{s}</span>
 {/snippet}
 
 <div style="max-width:800px; margin: 3rem auto;">
@@ -60,7 +60,7 @@
 					color: theme.colors.error
 				}}
 			>
-				{#each tabs.slice(0, 2) as tab}
+				{#each tabs.slice(0, 2) as tab (tab.id)}
 					<Button
 						id={tab.id}
 						title={tab.label}
@@ -78,7 +78,7 @@
 				{/each}
 			</Tab.List>
 
-			{#each tabs as tab}
+			{#each tabs as tab (tab.id)}
 				{@render content(activeTab.tab1 === tab.id, tab.content)}
 			{/each}
 		</Tab>
@@ -90,7 +90,7 @@
 				bgColor: theme.colors.success
 			}}
 		>
-			{#each tabs as tab}
+			{#each tabs as tab (tab.id)}
 				<Button
 					id={tab.id}
 					title={tab.label}
@@ -108,7 +108,7 @@
 			{/each}
 		</Tab.List>
 
-		{#each tabs as tab}
+		{#each tabs as tab (tab.id)}
 			{@render content(activeTab.tab2 === tab.id, tab.content)}
 		{/each}
 	</Tab>
@@ -121,7 +121,7 @@
 				bgColor: theme.colors.textMuted
 			}}
 		>
-			{#each tabs.slice(0, 5) as tab}
+			{#each tabs.slice(0, 5) as tab (tab.id)}
 				<Button
 					id={tab.id}
 					title={tab.label}
@@ -138,7 +138,7 @@
 			{/each}
 		</Tab.List>
 		<Separator orientation="vertical" height="auto" />
-		{#each tabs.slice(0, 5) as tab}
+		{#each tabs.slice(0, 5) as tab (tab.id)}
 			{@render content(activeTab.tab5 === tab.id, tab.content)}
 		{/each}
 	</Tab>

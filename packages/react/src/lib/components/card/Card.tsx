@@ -14,7 +14,7 @@ interface Props
 export default forwardRef<HTMLDivElement, Props>(
 	(
 		{
-			className,
+			className = "",
 			isTranslucent = false,
 			glowOnHover = false,
 			variant = "outlined",

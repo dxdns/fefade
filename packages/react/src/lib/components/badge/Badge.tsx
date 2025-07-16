@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<HTMLSpanElement>, BadgeType {}
 export default forwardRef<HTMLDivElement, Props>(
 	(
 		{
-			className,
+			className = "",
 			size = "xs",
 			variant = "contained",
 			roundedFull = false,

@@ -16,7 +16,7 @@
 </script>
 
 <div style="display: flex; gap: 0.5rem;">
-	{#each data as { value, color }}
+	{#each data as { value, color }, i (i)}
 		<ProgressCircle {value} {color}>
 			<text
 				x="28px"

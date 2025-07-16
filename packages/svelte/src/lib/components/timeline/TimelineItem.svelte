@@ -7,7 +7,7 @@
 		position: Exclude<HorizontalPositionType, "center">
 	}
 
-	let { class: className, position, children, ...rest }: Props = $props()
+	let { class: className = "", position, children, ...rest }: Props = $props()
 </script>
 
 <div {...rest} class={classMapUtil(className, "timelineItem", position)}>

@@ -24,7 +24,7 @@
 	justify-content: center;
     "
 >
-	{#each data as { value, color }}
+	{#each data as { value, color } (`${value}-${color}`)}
 		<ProgressCircle {value} {color}>
 			<text
 				x="28px"

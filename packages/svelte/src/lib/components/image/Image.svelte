@@ -18,7 +18,6 @@
 		dataSrc,
 		hover = { transition: "none" },
 		fallback,
-		children,
 		...rest
 	}: Props = $props()
 

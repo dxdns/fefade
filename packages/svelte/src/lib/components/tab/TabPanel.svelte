@@ -13,7 +13,7 @@
 	interface Props extends TabContentProps, HTMLAttributes<HTMLDivElement> {}
 
 	let {
-		class: className,
+		class: className = "",
 		isActive = true,
 		transition,
 		children,

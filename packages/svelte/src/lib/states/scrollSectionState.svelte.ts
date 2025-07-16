@@ -1,6 +1,9 @@
-import type { ElementReferenceType } from "../types/index.js"
+import type {
+	ElementReferenceType,
+	SectionType
+} from "@dxdns/feflow-core/types"
 
-let data = $state<{
+const data = $state<{
 	sections: ElementReferenceType[]
 	currentReference: string
 }>({
@@ -38,7 +41,7 @@ export default function scrollSectionState() {
 				this.setCurrentReference(reference)
 			}
 		},
-		getSections() {
+		getSections(): SectionType[] {
 			return data.sections.map(({ node, reference }) => ({
 				node,
 				reference,

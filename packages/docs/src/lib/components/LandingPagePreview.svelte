@@ -213,7 +213,7 @@
 				"
 				bgColor="#ff6b35"
 			>
-				{#each featuresData as feature}
+				{#each featuresData as feature (feature)}
 					<Card style="user-select: none;">
 						<div>{feature.icon}</div>
 						<h5>{feature.title}</h5>

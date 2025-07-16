@@ -21,7 +21,6 @@
 		class: className = "",
 		message,
 		color = "primary",
-		duration = 3000,
 		isClosable = false,
 		handleClose,
 		...rest

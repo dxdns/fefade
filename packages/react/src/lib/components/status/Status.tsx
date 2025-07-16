@@ -4,12 +4,16 @@ import { classMapUtil, normalizeSizeUtil } from "@dxdns/feflow-core/utils"
 import styles from "@dxdns/feflow-core/styles/Status.module.css"
 
 interface Props extends HTMLAttributes<HTMLDivElement>, StatusType {}
-{
-}
 
 export default forwardRef<HTMLDivElement, Props>(
 	(
-		{ className, variant = "none", color = "var(--ff-bg)", size = 30, ...rest },
+		{
+			className = "",
+			variant = "none",
+			color = "var(--ff-bg)",
+			size = 30,
+			...rest
+		},
 		ref
 	) => {
 		return (

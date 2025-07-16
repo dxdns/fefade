@@ -8,7 +8,7 @@ interface Props
 		AvatarType {}
 
 export default forwardRef<HTMLDivElement, Props>(
-	({ className, width, height, textFallback, ...rest }, ref) => {
+	({ className = "", width, height, textFallback, ...rest }, ref) => {
 		const [hasError, setHasError] = useState(false)
 
 		function handleError() {

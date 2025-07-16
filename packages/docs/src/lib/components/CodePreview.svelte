@@ -14,7 +14,7 @@
 </script>
 
 <Code>
-	{#each data.split("\n").filter((l) => l.trim() !== "") as text, i}
+	{#each data.split("\n").filter((l) => l.trim() !== "") as text, i (i)}
 		<Code.Item lineNumber={i}>
 			{text.trim()}
 		</Code.Item>

@@ -46,7 +46,7 @@
 
 <h1>default</h1>
 <Gallery>
-	{#each sizes.slice(0, 4) as size}
+	{#each sizes.slice(0, 4) as size (size)}
 		{@const src = `https://dummyjson.com/image/${size}`}
 		<button
 			style="all: unset; cursor: pointer;"
@@ -68,7 +68,7 @@
 <br />
 <h1>columns</h1>
 <Gallery columns={isMd.value ? 1 : 2}>
-	{#each sizes.slice(0, 6) as size}
+	{#each sizes.slice(0, 6) as size (size)}
 		{@const src = `https://dummyjson.com/image/${size}`}
 		<button
 			style="all: unset; cursor: pointer;"
@@ -94,7 +94,7 @@
 <br />
 <h1>masonry</h1>
 <Gallery variant="masonry" gap="1rem">
-	{#each sizes as size}
+	{#each sizes as size (size)}
 		{@const src = `https://dummyjson.com/image/${size}`}
 		<button
 			style="all: unset; cursor: pointer;"

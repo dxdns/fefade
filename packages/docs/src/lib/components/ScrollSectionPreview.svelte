@@ -25,7 +25,7 @@
 		border-radius: 15px;
         "
 	>
-		{#each sectionsData as { reference }, i}
+		{#each sectionsData as { reference }, i (reference)}
 			<Card>
 				<ScrollSection.Content
 					id={reference}

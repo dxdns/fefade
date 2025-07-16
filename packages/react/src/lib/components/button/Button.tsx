@@ -14,7 +14,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, ButtonType {
 
 export default forwardRef<HTMLButtonElement, Props>((props, ref) => {
 	const {
-		className,
+		className = "",
 		pressedEffect = true,
 		variant = "contained",
 		isLoading = false,

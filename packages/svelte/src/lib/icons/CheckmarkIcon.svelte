@@ -6,7 +6,7 @@
 	interface Props extends SVGAttributes<SVGSVGElement> {}
 
 	let {
-		class: className,
+		class: className = "",
 		fill = "none",
 		viewBox = "0 0 24 24",
 		...rest

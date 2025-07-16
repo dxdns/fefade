@@ -48,7 +48,6 @@
 
 	<div
 		style="
-        background: #2A7B9B;
 		background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
         height: 150px; 
         border-radius: 5px; 

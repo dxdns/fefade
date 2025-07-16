@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { NumberInput } from "@/index.js"
+	import { NumberInput, type VariantType } from "@/index.js"
 
 	let quantity = $state(0)
 </script>
 
 <div style="width:500px; margin: 3rem auto; line-height: 3;">
-	{#each ["text", "contained", "outlined"] as variant}
+	{#each ["text", "contained", "outlined"] as variant (variant)}
 		<h2>{variant}</h2>
 		<NumberInput
 			autoFocus
-			variant={variant as any}
+			variant={variant as VariantType}
 			bind:value={quantity}
 			min={0}
 			max={10}

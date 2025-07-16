@@ -1,4 +1,4 @@
-import { Status } from "@dxdns/feflow-react"
+import { Status, type VariantStatusType } from "@dxdns/feflow-react"
 
 export default function () {
 	const variants = ["pulse", "ping", "bounce"]
@@ -14,7 +14,7 @@ export default function () {
 			{variants.map((variant, i) => (
 				<div key={variant}>
 					<Status
-						variant={variant as any}
+						variant={variant as VariantStatusType}
 						color={i % 2 ? "var(--ff-success)" : "var(--ff-error)"}
 					/>
 					<br />

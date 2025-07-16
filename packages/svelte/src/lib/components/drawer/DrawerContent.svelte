@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
@@ -6,7 +7,7 @@
 	let { class: className = "", children, ...rest }: Props = $props()
 </script>
 
-<div {...rest} class="drawerContent">
+<div {...rest} class={classMapUtil(className, "drawerContent")}>
 	{@render children?.()}
 </div>
 

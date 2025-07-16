@@ -6,7 +6,7 @@ interface Props extends SVGAttributes<SVGSVGElement> {}
 export default forwardRef<SVGSVGElement, Props>(
 	(
 		{
-			className,
+			className = "",
 			width = "24px",
 			height = "24px",
 			fill = "currentColor",

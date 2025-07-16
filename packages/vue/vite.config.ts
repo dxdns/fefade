@@ -1,12 +1,13 @@
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
-import path from "path"
+import { dirname, resolve, relative, extname } from "path"
 import { libInjectCss } from "vite-plugin-lib-inject-css"
 import dts from "vite-plugin-dts"
 import { glob } from "glob"
 import { fileURLToPath } from "url"
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 const LIB_DIR = "src/lib"
 const isDev = process.env.NODE_ENV === "development"
 
@@ -15,7 +16,7 @@ export default defineConfig({
 	plugins: [vue()],
 	resolve: {
 		alias: {
-			"@": path.resolve(__dirname, LIB_DIR)
+			"@": resolve(__dirname, LIB_DIR)
 		}
 	},
 	...(isDev
@@ -34,7 +35,7 @@ export default defineConfig({
 					copyPublicDir: false,
 					cssCodeSplit: true,
 					lib: {
-						entry: path.resolve(__dirname, `${LIB_DIR}/index.ts`),
+						entry: resolve(__dirname, `${LIB_DIR}/index.ts`),
 						formats: ["es"]
 					},
 					rollupOptions: {
@@ -45,9 +46,9 @@ export default defineConfig({
 									ignore: [`${LIB_DIR}/**/*.d.ts`]
 								})
 								.map((file) => [
-									path.relative(
+									relative(
 										LIB_DIR,
-										file.slice(0, file.length - path.extname(file).length)
+										file.slice(0, file.length - extname(file).length)
 									),
 									fileURLToPath(new URL(file, import.meta.url))
 								])

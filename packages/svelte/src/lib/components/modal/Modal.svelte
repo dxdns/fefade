@@ -42,7 +42,9 @@
 			role="alertdialog"
 			tabindex="0"
 			onkeydown={(e) => {
-				e.key === "Escape" || e.key === " " ? handleClose() : null
+				if (e.key === "Escape" || e.key === " ") {
+					handleClose()
+				}
 			}}
 			onclick={(e) => {
 				if (e.target === e.currentTarget) {

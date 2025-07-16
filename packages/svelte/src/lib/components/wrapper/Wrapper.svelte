@@ -7,7 +7,7 @@
 		ref?: HTMLInputElement
 	}
 
-	let { class: className, ref, children, ...rest }: Props = $props()
+	let { class: className = "", ref, children, ...rest }: Props = $props()
 </script>
 
 <input

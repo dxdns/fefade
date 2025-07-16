@@ -1,4 +1,4 @@
-import { TextField } from "@dxdns/feflow-react"
+import { TextField, type SizeType, type VariantType } from "@dxdns/feflow-react"
 
 export default function () {
 	const sizes = ["xs", "sm", "md", "lg", "xl"]
@@ -12,12 +12,12 @@ export default function () {
 			}}
 		>
 			{variants.map((variant, i) => {
-				const size = sizes[i + 1] as any
+				const size = sizes[i + 1] as SizeType
 				return (
 					<div key={i}>
 						<TextField
 							label={`${variant} (${size})`}
-							variant={variant as any}
+							variant={variant as VariantType}
 							size={size}
 						/>
 						<br />

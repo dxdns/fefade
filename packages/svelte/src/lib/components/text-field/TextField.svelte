@@ -14,7 +14,6 @@
 		focused = false,
 		actions,
 		size = "md",
-		children,
 		...rest
 	}: Props = $props()
 

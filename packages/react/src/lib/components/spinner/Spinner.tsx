@@ -6,7 +6,7 @@ import styles from "@dxdns/feflow-core/styles/Spinner.module.css"
 interface Props extends HTMLAttributes<HTMLSpanElement>, SpinnerType {}
 
 export default forwardRef<HTMLSpanElement, Props>((props, ref) => {
-	const { className, size = "sm", ...rest } = props
+	const { className = "", size = "sm", ...rest } = props
 
 	return (
 		<span

@@ -36,6 +36,6 @@
 </FileInput>
 
 <br />
-{#each filesData as file}
+{#each filesData as file (file)}
 	<p>{file.name}</p>
 {/each}

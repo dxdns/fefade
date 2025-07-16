@@ -3,7 +3,7 @@
 
 	interface Props extends SVGAttributes<SVGSVGElement> {}
 
-	let { class: className, ...rest }: Props = $props()
+	let { class: className = "", ...rest }: Props = $props()
 
 	const style = `
 		display: inline-block; 

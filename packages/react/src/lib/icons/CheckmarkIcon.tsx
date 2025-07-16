@@ -4,7 +4,7 @@ import { checkmarkIcon } from "@dxdns/feflow-core/icons"
 interface Props extends SVGAttributes<SVGSVGElement> {}
 
 export default forwardRef<SVGSVGElement, Props>(
-	({ className, fill = "none", viewBox = "0 0 24 24", ...rest }, ref) => {
+	({ className = "", fill = "none", viewBox = "0 0 24 24", ...rest }, ref) => {
 		return (
 			<svg
 				{...rest}

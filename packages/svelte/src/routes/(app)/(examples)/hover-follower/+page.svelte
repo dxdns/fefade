@@ -4,7 +4,7 @@
 
 <h1>vertical</h1>
 <HoverFollower bgColor="green">
-	{#each ["item1", "item2", "item3"] as item, i}
+	{#each ["item1", "item2", "item3"] as item, i (i)}
 		<div role="list" class="card">
 			{item}
 		</div>
@@ -35,7 +35,7 @@
 <br />
 <h1>horizontal</h1>
 <HoverFollower style="display: flex;" orientation="horizontal">
-	{#each ["item1", "item2", "item3"] as item, i}
+	{#each ["item1", "item2", "item3"] as item, i (i)}
 		<div role="list" class="card">
 			{item}
 		</div>

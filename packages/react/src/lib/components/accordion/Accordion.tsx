@@ -9,7 +9,7 @@ interface Props
 		AccordionType {}
 
 export default forwardRef<HTMLDivElement, Props>(
-	({ className, label, variant, children, ...rest }, ref) => {
+	({ className = "", label, variant, children, ...rest }, ref) => {
 		return (
 			<div
 				ref={ref}

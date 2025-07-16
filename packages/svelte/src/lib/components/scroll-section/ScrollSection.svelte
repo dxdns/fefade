@@ -64,7 +64,7 @@
 		data-listeners={["scroll", "resize", "keyboard"]}
 		class={styles.content}
 	>
-		{#each data as { onClick, reference, isActive }}
+		{#each data as { onClick, reference, isActive } (reference)}
 			<Button
 				variant="text"
 				onclick={onClick}

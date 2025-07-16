@@ -10,7 +10,7 @@
 
 <div style="max-width: 500px; margin: 3rem auto;">
 	<DraggableGroup cols={2} gap={4} {onChange}>
-		{#each Array.from(Array(4)) as _, i}
+		{#each Array.from(Array(4)) as _, i (i)}
 			<DraggableGroup.Item
 				id={`item-${i}`}
 				style="

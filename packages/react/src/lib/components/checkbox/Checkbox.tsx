@@ -10,7 +10,7 @@ interface Props
 }
 
 export default forwardRef<HTMLInputElement, Props>(
-	({ className, size = "sm", ...rest }, ref) => {
+	({ className = "", size = "sm", ...rest }, ref) => {
 		return (
 			<label
 				className={classMapUtil(

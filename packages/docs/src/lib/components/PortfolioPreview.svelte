@@ -84,7 +84,7 @@
 				gap: 1rem;
 				"
 			>
-				{#each projectsData as { link, title, description }}
+				{#each projectsData as { link, title, description } (title)}
 					<Link href={link}>
 						<Card>
 							<h5>{title}</h5>
@@ -135,7 +135,7 @@
 			"
 		>
 			<HoverFollower>
-				{#each blogPostsData as { link, title, description }}
+				{#each blogPostsData as { link, title, description } (title)}
 					<Link href={link}>
 						<Card style="padding: 1.5rem;">
 							<h5>{title}</h5>
@@ -194,10 +194,7 @@
 				align-items: center;
 				"
 			>
-				<span class="text-muted">
-					{@html "&copy;"}
-					{new Date().getFullYear()}
-				</span>
+				<span class="text-muted">© 2025</span>
 				<Link href="https://dxdns.dev" target="_blank" hoverUnderline="right">
 					dxdns
 				</Link>

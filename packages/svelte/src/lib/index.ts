@@ -4,6 +4,12 @@
  *  https://feflow.dxdns.dev
  */
 
+export type {
+	SizeType,
+	PositionType,
+	VariantType,
+	VariantStatusType
+} from "@dxdns/feflow-core/types"
 export { customThemeConfig, createTheme } from "@dxdns/feflow-core/utils"
 export { themeConfig } from "./utils/index.js"
 export { toast } from "./states/toastState.svelte.js"

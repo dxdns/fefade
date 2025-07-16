@@ -1,13 +1,16 @@
 type ClassValue =
 	| string
-	| { [key: string]: any }
+	| { [key: string]: unknown }
 	| undefined
 	| null
 	| false
 	| string[]
 
 export default function classMapUtil(
-	...classes: (ClassValue | [string | string[], Record<string, string>])[]
+	...classes: (
+		| ClassValue
+		| [string | string[] | undefined, Record<string, string>]
+	)[]
 ) {
 	return classes
 		.flatMap((cls) => {
@@ -15,14 +18,18 @@ export default function classMapUtil(
 
 			if (
 				Array.isArray(cls) &&
-				(Array.isArray(cls[0]) || typeof cls[0] === "string") &&
+				(Array.isArray(cls[0]) ||
+					typeof cls[0] === "string" ||
+					cls[0] === undefined) &&
 				typeof cls[1] === "object"
 			) {
 				const [classInput, styleMap] = cls
 
 				const classList = Array.isArray(classInput)
 					? classInput
-					: classInput.trim().split(/\s+/)
+					: typeof classInput === "string"
+						? classInput.trim().split(/\s+/)
+						: []
 
 				return classList.map((c) => styleMap[c] || c)
 			}

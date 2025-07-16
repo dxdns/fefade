@@ -41,7 +41,7 @@
 
 <Card>
 	<Carousel id="carousel-2" style="padding: 3rem 0;">
-		{#each Array.from(Array(5)) as _, index}
+		{#each Array.from(Array(5)) as _, index (index)}
 			<Carousel.Item href="https://dxdns.dev" target="_blank">
 				<h1 style="text-align: center;">
 					{index}
@@ -78,7 +78,7 @@
 
 <Card>
 	<Carousel id="carousel-3" style="padding: 3rem 0;">
-		{#each Array.from(Array(5)) as _, index}
+		{#each Array.from(Array(5)) as _, index (index)}
 			<Carousel.Item>
 				<h1 style="text-align: center;">
 					{index}
@@ -116,7 +116,7 @@
 
 <Card>
 	<Carousel id="carousel-4" style="padding: 3rem 0;">
-		{#each Array.from(Array(5)) as _, index}
+		{#each Array.from(Array(5)) as _, index (index)}
 			<Carousel.Item>
 				<h1 style="text-align: center;">
 					{index}
@@ -145,7 +145,7 @@
                 align-items: baseline;
 			"
 			>
-				{#each Array.from(Array(5)) as _, index}
+				{#each Array.from(Array(5)) as _, index (index)}
 					<RadioButton
 						size="xs"
 						checked={currentIndex === index}

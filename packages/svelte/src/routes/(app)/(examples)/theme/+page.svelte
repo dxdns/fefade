@@ -15,7 +15,7 @@
 
 	<Card style="background: {theme.mode === 'dark' ? 'green' : 'red'};">
 		<ul style="line-height: 2;">
-			{#each Object.keys(theme.colors) as t}
+			{#each Object.keys(theme.colors) as t (t)}
 				{@const color = theme.colors[t as keyof typeof theme.colors]}
 				<li>
 					<span style="color:aqua;">{t}</span>:

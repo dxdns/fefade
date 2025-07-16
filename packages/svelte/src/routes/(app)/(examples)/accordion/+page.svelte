@@ -3,7 +3,7 @@
 </script>
 
 <div style="width: 500px; margin: 3rem auto;">
-	{#each Array.from(Array(10)) as _, i}
+	{#each Array.from(Array(10)) as _, i (i)}
 		<Accordion
 			id="sec{i}"
 			variant={i % 2 ? "contained" : i % 3 ? undefined : "outlined"}

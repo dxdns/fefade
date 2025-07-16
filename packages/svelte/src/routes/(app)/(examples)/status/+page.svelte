@@ -22,7 +22,7 @@
 	<br />
 	<h1>sizes</h1>
 	<br />
-	{#each ["5rem", 100, "150px", 200] as size, i}
+	{#each ["5rem", 100, "150px", 200] as size, i (i)}
 		<Status
 			color={i % 2 ? "aqua" : undefined}
 			variant={i % 2 ? "bounce" : "none"}

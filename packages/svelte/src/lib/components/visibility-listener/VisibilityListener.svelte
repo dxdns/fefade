@@ -7,13 +7,7 @@
 		preventDefault?: boolean
 	}
 
-	let {
-		class: className = "",
-		callback,
-		preventDefault = true,
-		children,
-		...rest
-	}: Props = $props()
+	let { class: className = "", callback, children, ...rest }: Props = $props()
 </script>
 
 <div

@@ -13,7 +13,7 @@
 	}
 
 	let {
-		class: className,
+		class: className = "",
 		startIn = 0,
 		length = 5,
 		color = "yellow",
@@ -38,8 +38,8 @@
 	)
 </script>
 
-<div {style}>
-	{#each Array.from(Array(length)) as _, i}
+<div class={className} {style}>
+	{#each Array.from(Array(length)) as _, i (i)}
 		{@const idx = i + 1}
 		<button
 			{...rest}

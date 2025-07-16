@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Switch, themeConfig } from "@dxdns/feflow-svelte"
+	import { Switch, themeConfig, type SizeType } from "@dxdns/feflow-svelte"
 
 	const { colors } = $derived(themeConfig())
 	const sizes = ["xs", "sm", "md", "lg", "xl"]
@@ -55,7 +55,7 @@
 		<span style={`${style} color: ${colors.error};`}>OFF</span>
 	</Switch>
 
-	{#each sizes as size, i}
+	{#each sizes as size, i (i)}
 		<Switch
 			disabled={i === 0}
 			checked={i === 1}
@@ -66,7 +66,7 @@
 			style={i !== 0
 				? `background: ${i % 2 ? colors.error : colors.success}`
 				: undefined}
-			size={size as any}
+			size={size as SizeType}
 			label={size}
 		/>
 	{/each}

@@ -6,7 +6,7 @@
 </script>
 
 <div style="max-width: 300px; margin: 0 auto; line-height: 3;">
-	{#each variants as variant, i}
+	{#each variants as variant, i (variant)}
 		<Status
 			variant={variant as any}
 			color={i % 2 ? colors.success : colors.error}
@@ -14,7 +14,7 @@
 		<br />
 	{/each}
 
-	{#each ["5rem", 100, "150px", 200] as size, i}
+	{#each ["5rem", 100, "150px", 200] as size, i (i)}
 		<Status
 			color={i % 2 ? colors.info : colors.warning}
 			variant={i % 2 ? "bounce" : "none"}

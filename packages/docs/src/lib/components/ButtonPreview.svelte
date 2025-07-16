@@ -16,17 +16,17 @@
 >
 	<Button isLoading></Button>
 
-	{#each variants as variant}
+	{#each variants as variant (variant)}
 		<Button variant={variant as any}>{variant}</Button>
 	{/each}
 	<Button href="https://dxdns.dev" target="_blank">link</Button>
 
-	{#each variants as variant}
+	{#each variants as variant (variant)}
 		<Button disabled variant={variant as any}>{variant} disabled</Button>
 	{/each}
 
 	<div style="display:flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;">
-		{#each colors as color}
+		{#each colors as color (color)}
 			<Button class="bg-{color} text-on-{color}">{color}</Button>
 		{/each}
 	</div>

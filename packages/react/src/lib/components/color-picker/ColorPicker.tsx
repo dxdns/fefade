@@ -5,7 +5,7 @@ import styles from "@dxdns/feflow-core/styles/ColorPicker.module.css"
 interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {}
 
 export default forwardRef<HTMLInputElement, Props>(
-	({ className, ...rest }, ref) => {
+	({ className = "", ...rest }, ref) => {
 		return (
 			<input
 				{...rest}

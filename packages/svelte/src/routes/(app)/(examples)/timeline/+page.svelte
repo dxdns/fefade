@@ -2,7 +2,7 @@
 	import { Card, Timeline } from "@/index.js"
 </script>
 
-{#each Array.from({ length: 4 }) as _, i}
+{#each Array.from({ length: 4 }) as _, i (i)}
 	<Timeline>
 		<Timeline.Item position={i % 2 ? "left" : "right"}>
 			<Card>

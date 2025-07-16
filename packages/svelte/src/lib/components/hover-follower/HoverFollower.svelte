@@ -18,7 +18,7 @@
 	}
 
 	let {
-		class: className,
+		class: className = "",
 		bgColor,
 		orientation = "vertical",
 		actions,

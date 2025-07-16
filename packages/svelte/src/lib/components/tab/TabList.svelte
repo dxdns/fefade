@@ -22,7 +22,7 @@
 	}
 
 	let {
-		class: className,
+		class: className = "",
 		lineStyle,
 		hoverFollower,
 		orientation = "horizontal",

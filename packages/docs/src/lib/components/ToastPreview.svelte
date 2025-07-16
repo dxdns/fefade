@@ -15,12 +15,12 @@
 <Toaster />
 
 <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-	{#each colors as color}
+	{#each colors as color (color)}
 		<Button
 			onclick={() => {
 				toast({
 					message: color,
-					color: color as any
+					color: color as unknown
 				})
 			}}
 		>
@@ -28,12 +28,12 @@
 		</Button>
 	{/each}
 
-	{#each positions as position}
+	{#each positions as position (position)}
 		<Button
 			onclick={() => {
 				toast({
 					message: position,
-					position: position as any
+					position: position as unknown
 				})
 			}}
 		>

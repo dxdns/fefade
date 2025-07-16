@@ -3,7 +3,7 @@
 	import type { HTMLInputAttributes } from "svelte/elements"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "value">, "type"> {
-		value: number
+		value?: number
 	}
 
 	let {
@@ -11,7 +11,6 @@
 		value = $bindable(0),
 		min = 0,
 		max = 100,
-		children,
 		...rest
 	}: Props = $props()
 

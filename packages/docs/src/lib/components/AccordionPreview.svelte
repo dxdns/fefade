@@ -3,7 +3,7 @@
 </script>
 
 <div style="display: flex; flex-direction: column; gap: 1rem;">
-	{#each ["contained", "outlined", "text", undefined] as variant, i}
+	{#each ["contained", "outlined", "text", undefined] as variant, i (variant)}
 		<Accordion
 			id="sec{i}"
 			variant={variant as any}

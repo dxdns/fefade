@@ -8,13 +8,7 @@
 		theme?: ReturnType<typeof themeConfig>
 	}
 
-	let {
-		class: className = "",
-		type = "date",
-		theme,
-		children,
-		...rest
-	}: Props = $props()
+	let { class: className = "", type = "date", theme, ...rest }: Props = $props()
 
 	let el: HTMLInputElement
 

@@ -4,7 +4,7 @@
 	const sizes = ["xs", "sm", "md", "lg", "xl"]
 </script>
 
-{#each sizes as size}
+{#each sizes as size (size)}
 	<div>
 		<Kbd size={size as any}>Ctrl</Kbd>
 		<Kbd size={size as any}>K</Kbd>

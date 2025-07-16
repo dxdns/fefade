@@ -14,14 +14,14 @@
     gap: 1rem;
     "
 >
-	{#each sizes as size, i}
+	{#each sizes as size, i (i)}
 		<Separator
 			size={size as any}
 			variant={i === 0 ? "solid" : i % 2 ? "dashed" : "dotted"}
 		/>
 	{/each}
 
-	{#each variants as variant, i}
+	{#each variants as variant, i (i)}
 		<Separator
 			height="3rem"
 			orientation="vertical"
@@ -30,7 +30,7 @@
 		/>
 	{/each}
 
-	{#each ["start", "end", "center"] as value}
+	{#each ["start", "end", "center"] as value (value)}
 		<div style="display: flex; gap: 0.5rem; align-items: baseline;">
 			{#if value === "end" || value === "center"}
 				<Separator style="flex: 1;" />
