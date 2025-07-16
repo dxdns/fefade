@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { themeConfig } from "./lib"
+import { Spinner, themeConfig } from "./lib"
 
 const { mode, toggle } = themeConfig()
 </script>
 
 <template>
+	<Spinner size="xl" />
 	<h1>{{ mode }}</h1>
 	<button @click="toggle">toggle</button>
 </template>

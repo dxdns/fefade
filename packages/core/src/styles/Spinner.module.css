@@ -12,6 +12,12 @@
 	animation: rotation 1s linear infinite;
 }
 
+.spinner.xs {
+	width: 12px;
+	height: 12px;
+	border-width: 1.5px;
+}
+
 .spinner.sm {
 	width: 16px;
 	height: 16px;
