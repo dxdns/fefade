@@ -1,5 +1,5 @@
-import { SvgType } from "../types"
-import toKebabCaseUtil from "./toKebabCaseUtil"
+import { SvgType } from "../types/index.js"
+import toKebabCaseUtil from "./toKebabCaseUtil.js"
 
 export default function generateSvgElementUtil({
 	svgPath,
