@@ -7,6 +7,10 @@
 		"packages/*"
 	],
 	"scripts": {
+		"dev:svelte": "npm run dev -w @dxdns/feflow-svelte",
+		"dev:react": "npm run dev -w @dxdns/feflow-react",
+		"dev:vue": "npm run dev -w @dxdns/feflow-vue",
+		"dev:docs": "npm run dev -w @dxdns/feflow-docs",
 		"build:core": "npm run build -w @dxdns/feflow-core",
 		"build:svelte": "npm run build -w @dxdns/feflow-svelte",
 		"build:react": "npm run build -w @dxdns/feflow-react",

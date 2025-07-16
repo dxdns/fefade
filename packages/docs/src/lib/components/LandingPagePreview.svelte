@@ -59,10 +59,12 @@
 
 	function handleOpen() {
 		isOpen = !isOpen
+		document.body.style.overflow = isOpen ? "hidden" : "auto"
 	}
 
 	function handleClose() {
 		isOpen = false
+		document.body.style.overflow = "auto"
 	}
 
 	onDestroy(() => {
@@ -175,7 +177,8 @@
 					display: flex; 
 					flex-direction: column; 
 					gap: 1rem; 
-					max-width: {isMd.value ? '100%' : '300px'}
+					max-width: {isMd.value ? '100%' : '300px'};
+					text-align: {isMd.value ? 'center' : 'left'};
 					"
 				>
 					<h2>Transform Your Body with AI-Powered Fitness</h2>
@@ -203,7 +206,7 @@
 				orientation="horizontal"
 				style="
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 				gap: 1rem;
 				"
 				bgColor="#ff6b35"
@@ -355,8 +358,6 @@
 
 <style>
 	:global([data-theme="dark"] > body) {
-		line-height: 1.2;
-		overflow-x: hidden;
 		background-image: radial-gradient(
 			ellipse 80% 50% at 50% -20%,
 			hsl(36deg 100% 50%),

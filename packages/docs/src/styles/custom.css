@@ -5,6 +5,10 @@
 	--sl-color-bg-sidebar: var(--ff-bg);
 }
 
+body {
+	overflow-x: hidden;
+}
+
 .main-pane {
 	isolation: unset;
 }
