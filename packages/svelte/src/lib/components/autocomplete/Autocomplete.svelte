@@ -40,7 +40,11 @@
 		if (e.key === "Enter") {
 			const parent = elItems[index]
 			const child = parent.querySelector("button, a") as HTMLElement
-			child ? child.click() : parent.click()
+			if (child) {
+				child.click()
+			} else {
+				parent.click()
+			}
 		}
 
 		onSelect?.(item)
@@ -91,7 +95,7 @@
 	/>
 
 	<div class={styles.content}>
-		{#each filtered as item, index}
+		{#each filtered as item, index (index)}
 			<div
 				role="button"
 				tabindex="0"
