@@ -1,6 +1,13 @@
+/**
+ *  @license MIT
+ *  feflow
+ *  https://feflow.dxdns.dev
+ */
+
 export { default as FeflowProvider } from "./components/feflow-provider"
 export { useThemeConfig as themeConfig } from "./utils/themeConfigUtils"
 export { createTheme } from "@dxdns/feflow-core/utils"
+
 export { default as Button } from "./components/button"
 export { default as Spinner } from "./components/spinner"
 export { default as Avatar } from "./components/avatar"
@@ -12,3 +19,5 @@ export { default as Window } from "./components/window"
 export { default as ColorPicker } from "./components/color-picker"
 export { default as Status } from "./components/status"
 export { default as Checkbox } from "./components/checkbox"
+
+export { default as Code } from "./components/code"
