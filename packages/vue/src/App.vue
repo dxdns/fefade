@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Spinner, themeConfig } from "./lib"
+import { Button, Spinner, themeConfig } from "./lib"
 
 const { mode, toggle } = themeConfig()
 </script>
@@ -7,7 +7,10 @@ const { mode, toggle } = themeConfig()
 <template>
 	<Spinner size="xl" />
 	<h1>{{ mode }}</h1>
-	<button @click="toggle">toggle</button>
+	<Button @click="toggle" size="lg" variant="outlined">toggle</Button>
+	<br />
+	<br />
+	<Button :is-loading="true" size="lg">test</Button>
 </template>
 
 <style scoped></style>
