@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import styles from "./PasswordInput.module.css"
 	import type {
 		ColorType,
 		SizeType,
@@ -10,6 +9,7 @@
 	import { VisibilityIcon, VisibilityOffIcon } from "../../icons/index.js"
 	import Button from "../button/index.js"
 	import TextField from "../text-field/index.js"
+	import styles from "./PasswordInput.module.css"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "size">, "type"> {
 		label?: string
@@ -32,29 +32,6 @@
 	function togglePasswordVisibility() {
 		passwordVisible = !passwordVisible
 	}
-
-	const iconSize = {
-		xs: {
-			height: "12px",
-			width: "12px"
-		},
-		sm: {
-			height: "16px",
-			width: "16px"
-		},
-		md: {
-			height: "20px",
-			width: "20px"
-		},
-		lg: {
-			height: "24px",
-			width: "24px"
-		},
-		xl: {
-			height: "32px",
-			width: "32px"
-		}
-	}[size]
 </script>
 
 <div
@@ -73,9 +50,9 @@
 		onclick={togglePasswordVisibility}
 	>
 		{#if passwordVisible}
-			<VisibilityIcon {...iconSize} />
+			<VisibilityIcon class={classMapUtil([size, styles], styles.icon)} />
 		{:else}
-			<VisibilityOffIcon {...iconSize} />
+			<VisibilityOffIcon class={classMapUtil([size, styles], styles.icon)} />
 		{/if}
 	</Button>
 	<TextField
