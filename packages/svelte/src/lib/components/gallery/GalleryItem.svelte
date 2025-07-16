@@ -1,5 +1,8 @@
 <script lang="ts">
-	import type { HTMLImgAttributes } from "svelte/elements"
+	import type {
+		HTMLAttributeAnchorTarget,
+		HTMLImgAttributes
+	} from "svelte/elements"
 	import { Image } from "../image/index.js"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./GalleryItem.module.css"
@@ -12,6 +15,8 @@
 			description: string
 		}
 		fallback?: string
+		href?: string
+		target?: HTMLAttributeAnchorTarget
 	}
 
 	let {
@@ -20,9 +25,20 @@
 		dataSrc,
 		caption,
 		fallback,
-		children,
+		href,
+		target = "_self",
 		...rest
 	}: Props = $props()
+
+	function handleClick(
+		event: MouseEvent & { currentTarget: HTMLImageElement }
+	) {
+		if (href) {
+			window.open(href, target)
+		} else {
+			rest.onclick?.(event)
+		}
+	}
 </script>
 
 <figure
@@ -35,6 +51,7 @@
 		{lazy}
 		{dataSrc}
 		{fallback}
+		onclick={handleClick}
 	/>
 	{#if caption}
 		<figcaption class={styles.caption}>
