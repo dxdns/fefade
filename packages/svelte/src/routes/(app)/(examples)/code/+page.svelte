@@ -18,7 +18,7 @@
 		<span>label</span>
 	{/snippet}
 	<Code>
-		{#each data.split("\n").filter((l) => l.trim() !== "") as text, i}
+		{#each data.split("\n").filter((l) => l.trim() !== "") as text, i (text)}
 			<Code.Item lineNumber={i}>
 				{text.trim()}
 			</Code.Item>

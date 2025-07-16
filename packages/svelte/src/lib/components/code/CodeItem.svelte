@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import styles from "./CodeItem.module.css"
+	import styles from "@dxdns/feflow-core/styles/CodeItem.module.css"
 
 	interface Props extends HTMLAttributes<HTMLPreElement> {
 		lineNumber: number

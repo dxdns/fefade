@@ -1,10 +1,8 @@
 .code {
-	background: var(--ff-surface);
 	line-height: 1.5;
 	overflow: auto;
 	height: auto;
 	width: auto;
-	padding: 1rem;
 }
 
 .code::-webkit-scrollbar {
