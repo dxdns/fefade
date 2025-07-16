@@ -17,9 +17,13 @@
 <h4>{message}</h4>
 
 <ShortcutListener keys={["Control", "C"]} callback={handleShortcut}>
-	<p>Press <Kbd>Ctrl</Kbd> + <Kbd>C</Kbd></p>
+	<p>
+		Press <Kbd>Ctrl</Kbd> + <Kbd>C</Kbd>
+	</p>
 </ShortcutListener>
 <p>or</p>
 <ShortcutListener keys={["Control", "V"]} callback={handleShortcut}>
-	<p>Press <Kbd>Ctrl</Kbd> + <Kbd>V</Kbd></p>
+	<p>
+		Press <Kbd>Ctrl</Kbd> + <Kbd>V</Kbd>
+	</p>
 </ShortcutListener>

@@ -5,9 +5,18 @@ export default function banner() {
 	const description = chalk.blue.underline("https://feflow.dxdns.dev")
 
 	const commands = [
-		{ cmd: "init", desc: "create a new project" },
-		{ cmd: "start", desc: `start ${chalk.gray("[project-name]")}` },
-		{ cmd: "add", desc: `add ${chalk.gray("[component-name]")}` }
+		{
+			cmd: "init",
+			desc: "create a new project"
+		},
+		{
+			cmd: "start",
+			desc: `start ${chalk.gray("[project-name]")}`
+		},
+		{
+			cmd: "add",
+			desc: `add ${chalk.gray("[component-name]")}`
+		}
 	]
 
 	const cmdLines = commands.map(

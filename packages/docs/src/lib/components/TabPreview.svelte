@@ -24,7 +24,9 @@
 			id,
 			label: `label${id}`,
 			content: `test${id}`,
-			...(i === 0 && { icon: "&#9734;" })
+			...(i === 0 && {
+				icon: "&#9734;"
+			})
 		}
 	})
 
@@ -52,7 +54,12 @@
 <div style="max-width:800px; margin: 3rem auto;">
 	<Card>
 		<Tab id="tab1">
-			<Tab.List scrollable={false} lineStyle={{ color: theme.colors.error }}>
+			<Tab.List
+				scrollable={false}
+				lineStyle={{
+					color: theme.colors.error
+				}}
+			>
 				{#each tabs.slice(0, 2) as tab}
 					<Button
 						id={tab.id}
@@ -78,7 +85,11 @@
 	</Card>
 
 	<Tab id="tab2" style="background: transparent;">
-		<Tab.List hoverFollower={{ bgColor: theme.colors.success }}>
+		<Tab.List
+			hoverFollower={{
+				bgColor: theme.colors.success
+			}}
+		>
 			{#each tabs as tab}
 				<Button
 					id={tab.id}
@@ -106,7 +117,9 @@
 		<Tab.List
 			class="border-0"
 			orientation="vertical"
-			hoverFollower={{ bgColor: theme.colors.textMuted }}
+			hoverFollower={{
+				bgColor: theme.colors.textMuted
+			}}
 		>
 			{#each tabs.slice(0, 5) as tab}
 				<Button

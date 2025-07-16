@@ -10,7 +10,12 @@
 	} from "@dxdns/feflow-core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		lineStyle?: boolean | { color?: string; height?: string }
+		lineStyle?:
+			| boolean
+			| {
+					color?: string
+					height?: string
+			  }
 		hoverFollower?: boolean | { bgColor?: string }
 		orientation?: OrientationType
 		scrollable?: boolean
@@ -57,7 +62,12 @@
 	)
 </script>
 
-<div {...rest} class={classMapUtil("tabList", { ["scrollable"]: scrollable })}>
+<div
+	{...rest}
+	class={classMapUtil("tabList", {
+		["scrollable"]: scrollable
+	})}
+>
 	{#if hoverFollower}
 		<HoverFollower
 			{...dataSet}
@@ -78,7 +88,14 @@
 			{@render children?.()}
 		</HoverFollower>
 	{:else}
-		<div use:activeLineAction={{ orientation }} {style} {...dataSet} {...rest}>
+		<div
+			use:activeLineAction={{
+				orientation
+			}}
+			{style}
+			{...dataSet}
+			{...rest}
+		>
 			{@render children?.()}
 		</div>
 	{/if}

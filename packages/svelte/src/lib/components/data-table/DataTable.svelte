@@ -11,7 +11,10 @@
 
 	const columnsData =
 		data.length > 0
-			? Object.keys(data[0]).map((name) => ({ name, label: name }))
+			? Object.keys(data[0]).map((name) => ({
+					name,
+					label: name
+				}))
 			: []
 </script>
 

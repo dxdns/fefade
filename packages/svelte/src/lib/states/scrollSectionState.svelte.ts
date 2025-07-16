@@ -32,7 +32,9 @@ export default function scrollSectionState() {
 		scrollTo(reference: string) {
 			const section = this.getByReference(reference)
 			if (section?.node) {
-				section.node.scrollIntoView({ behavior: "smooth" })
+				section.node.scrollIntoView({
+					behavior: "smooth"
+				})
 				this.setCurrentReference(reference)
 			}
 		},

@@ -36,7 +36,9 @@ export default forwardRef<HTMLInputElement, Props>(
 					[variant, styles],
 					[size, styles],
 					styles.textField,
-					{ [styles.labelEmpty]: !Boolean(label) }
+					{
+						[styles.labelEmpty]: !label
+					}
 				)}
 			>
 				<input

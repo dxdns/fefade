@@ -54,7 +54,9 @@
 				role="region"
 				class={styles.wrapper}
 				animate:flip
-				transition:fade={{ duration: 150 }}
+				transition:fade={{
+					duration: 150
+				}}
 				onmouseenter={() => {
 					isHovered = true
 					toast.pauseAll()

@@ -96,5 +96,11 @@
 	>
 		{@render children?.()}
 	</div>
-	{@render actions?.({ prev, next, isFirst, isLast, goTo })}
+	{@render actions?.({
+		prev,
+		next,
+		isFirst,
+		isLast,
+		goTo
+	})}
 </div>

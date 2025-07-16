@@ -10,7 +10,12 @@ export default function () {
 				textFallback="test"
 			/>
 			<br />
-			<div style={{ position: "relative", display: "inline-block" }}>
+			<div
+				style={{
+					position: "relative",
+					display: "inline-block"
+				}}
+			>
 				<Avatar
 					src="https://avatars.githubusercontent.com/u/26321303?v=4"
 					textFallback="test"

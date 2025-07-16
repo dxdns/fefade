@@ -6,7 +6,9 @@
 	interface Props extends Omit<HTMLImgAttributes, "src"> {
 		lazy?: boolean
 		dataSrc: string
-		hover?: { transition?: "none" | "scale" }
+		hover?: {
+			transition?: "none" | "scale"
+		}
 		fallback?: string
 	}
 

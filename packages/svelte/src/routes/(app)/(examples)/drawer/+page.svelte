@@ -144,6 +144,8 @@
 <style>
 	.container {
 		display: grid;
-		grid-template-columns: var(--size) 1fr;
+		grid-template-columns:
+			var(--size)
+			1fr;
 	}
 </style>

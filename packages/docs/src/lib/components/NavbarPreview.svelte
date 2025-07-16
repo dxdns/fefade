@@ -24,7 +24,9 @@
 </script>
 
 {#snippet logo()}
-	<h4 style="margin: 0;">Lo<span style="color: aqua;">Go</span></h4>
+	<h4 style="margin: 0;">
+		Lo<span style="color: aqua;">Go</span>
+	</h4>
 {/snippet}
 
 {#snippet contentMain(s: string)}

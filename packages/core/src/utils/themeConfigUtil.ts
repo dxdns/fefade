@@ -54,7 +54,10 @@ export default function themeConfigUtil() {
 		return createStyle(":root", declarations)
 	}
 
-	return { themeConfigToCssString, breakpointConfigToCssString }
+	return {
+		themeConfigToCssString,
+		breakpointConfigToCssString
+	}
 }
 
 /** @deprecated Use `createTheme` instead */

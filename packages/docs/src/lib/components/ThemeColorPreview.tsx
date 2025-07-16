@@ -24,16 +24,29 @@ function ThemeColorPreview() {
 					toggle theme
 				</Button>
 			</div>
-			<Card style={{ background: theme.mode === "dark" ? "green" : "red" }}>
+			<Card
+				style={{
+					background: theme.mode === "dark" ? "green" : "red"
+				}}
+			>
 				<ul style={{ lineHeight: 2 }}>
 					{Object.keys(theme.colors).map((t) => {
 						const color = theme.colors[t as keyof typeof theme.colors]
 						return (
 							<li key={t}>
-								<span style={{ color: "aqua" }}>{t}</span>:
+								<span
+									style={{
+										color: "aqua"
+									}}
+								>
+									{t}
+								</span>
+								:
 								<Badge
 									roundedFull
-									style={{ background: color }}
+									style={{
+										background: color
+									}}
 									size="sm"
 								></Badge>
 							</li>

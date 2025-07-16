@@ -92,7 +92,9 @@ export default defineConfig({
 								},
 								{
 									label: "Utils",
-									autogenerate: { directory: "docs/ui-frameworks/svelte/utils" }
+									autogenerate: {
+										directory: "docs/ui-frameworks/svelte/utils"
+									}
 								}
 							]
 						}

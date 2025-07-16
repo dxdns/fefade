@@ -93,7 +93,7 @@
 
 <br />
 <h1>masonry</h1>
-<Gallery variant="masonry" gap={"1rem"}>
+<Gallery variant="masonry" gap="1rem">
 	{#each sizes as size}
 		{@const src = `https://dummyjson.com/image/${size}`}
 		<button

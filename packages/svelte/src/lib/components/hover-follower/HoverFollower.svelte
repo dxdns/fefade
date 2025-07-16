@@ -34,7 +34,10 @@
 <div
 	{...rest}
 	class={classMapUtil(className, "hoverFollower")}
-	use:hoverFollowerAction={{ orientation, bgColor }}
+	use:hoverFollowerAction={{
+		orientation,
+		bgColor
+	}}
 	use:actionUtil={actions}
 	{style}
 >

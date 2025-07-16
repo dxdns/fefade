@@ -19,8 +19,8 @@
 	{#each data as { value, color }}
 		<ProgressCircle {value} {color}>
 			<text
-				x={"28px"}
-				y={"52px"}
+				x="28px"
+				y="52px"
 				fill={color}
 				style="font-weight: bold; font-size: 21px;"
 			>

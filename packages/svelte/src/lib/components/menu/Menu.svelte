@@ -41,7 +41,9 @@
 <div
 	role="region"
 	class={classMapUtil(className, "menu", { ["openOnHover"]: openOnHover })}
-	use:clickOutsideAction={{ handler: handleClose }}
+	use:clickOutsideAction={{
+		handler: handleClose
+	}}
 	bind:this={elMenu}
 	onmouseenter={() => {
 		if (openOnHover) handleMenuHover(false)
@@ -62,7 +64,9 @@
 		</span>
 	</label>
 	<div
-		class={classMapUtil("content", { ["isTranslucent"]: isTranslucent })}
+		class={classMapUtil("content", {
+			["isTranslucent"]: isTranslucent
+		})}
 		role="button"
 		tabindex="0"
 		use:autoAlignAction

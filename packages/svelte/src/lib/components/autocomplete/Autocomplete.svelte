@@ -57,7 +57,10 @@
 			reset()
 			return
 		}
-		elItems[index].scrollIntoView({ behavior: "smooth", block: "nearest" })
+		elItems[index].scrollIntoView({
+			behavior: "smooth",
+			block: "nearest"
+		})
 	}
 
 	function handleOnInput(

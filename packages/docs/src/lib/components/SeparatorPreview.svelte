@@ -35,7 +35,9 @@
 			{#if value === "end" || value === "center"}
 				<Separator style="flex: 1;" />
 			{/if}
-			<p style="flex-shrink: 0;">{value}</p>
+			<p style="flex-shrink: 0;">
+				{value}
+			</p>
 			{#if value === "start" || value === "center"}
 				<Separator style="flex: 1;" />
 			{/if}

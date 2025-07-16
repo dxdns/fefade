@@ -11,7 +11,9 @@
 <section
 	{...rest}
 	class={className}
-	use:scrollSectionAction={{ scrollSection: scrollSectionState() }}
+	use:scrollSectionAction={{
+		scrollSection: scrollSectionState()
+	}}
 >
 	{@render children?.()}
 </section>

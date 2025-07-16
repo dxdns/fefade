@@ -73,7 +73,9 @@
 </script>
 
 {#snippet logo()}
-	<h3 style="margin: 0;">Fit<span class="text-on-warning">Flow</span></h3>
+	<h3 style="margin: 0;">
+		Fit<span class="text-on-warning">Flow</span>
+	</h3>
 {/snippet}
 
 {#snippet navItems()}

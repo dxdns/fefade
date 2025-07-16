@@ -3,7 +3,7 @@ type Props = {
 }
 
 export default function scrollNavigatorAction(node: HTMLElement, props: Props) {
-	let { onChange } = props ?? {}
+	const { onChange } = props ?? {}
 
 	function getChilds() {
 		return Array.from(node.children) as HTMLElement[]

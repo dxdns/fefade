@@ -40,7 +40,10 @@
 	<Switch indicatorColor={{ checked: "red" }} style="background: green;" />
 	<br />
 	<Switch
-		indicatorColor={{ unchecked: "blue", checked: "red" }}
+		indicatorColor={{
+			unchecked: "blue",
+			checked: "red"
+		}}
 		style="background: aqua;"
 	/>
 

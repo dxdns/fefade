@@ -16,7 +16,10 @@
 	{#each colors as color}
 		<Button
 			onclick={() => {
-				toast({ message: color, color: color as any })
+				toast({
+					message: color,
+					color: color as any
+				})
 			}}
 		>
 			{color}
@@ -26,7 +29,10 @@
 	{#each positions as position}
 		<Button
 			onclick={() => {
-				toast({ message: position, position: position as any })
+				toast({
+					message: position,
+					position: position as any
+				})
 			}}
 		>
 			{position}
@@ -35,7 +41,10 @@
 
 	<Button
 		onclick={() => {
-			toast({ message: "Duration: 15000", duration: 15000 })
+			toast({
+				message: "Duration: 15000",
+				duration: 15000
+			})
 		}}
 	>
 		Duration: 15000
@@ -43,7 +52,10 @@
 
 	<Button
 		onclick={() => {
-			toast({ message: "closable", isClosable: true })
+			toast({
+				message: "closable",
+				isClosable: true
+			})
 		}}
 	>
 		Closable

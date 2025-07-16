@@ -21,7 +21,10 @@ export default function generateSvgElementUtil({
 			fill
 		}
 
-		const combinedStyles = { ...defaultStyles, ...(style || {}) }
+		const combinedStyles = {
+			...defaultStyles,
+			...(style || {})
+		}
 
 		return Object.entries(combinedStyles)
 			.map(([key, value]) => `${toKebabCaseUtil(key)}:${value}`)

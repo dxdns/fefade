@@ -2,7 +2,13 @@ import { Accordion } from "@dxdns/feflow-react"
 
 export default function () {
 	return (
-		<div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+		<div
+			style={{
+				display: "flex",
+				flexDirection: "column",
+				gap: "1rem"
+			}}
+		>
 			{["contained", "outlined", "text", undefined].map((variant, i) => (
 				<Accordion
 					id={`sec${i}`}

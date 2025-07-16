@@ -5,7 +5,9 @@
 </script>
 
 {#snippet logo()}
-	<h2>Lo<span style="color: aqua;">Go</span></h2>
+	<h2>
+		Lo<span style="color: aqua;">Go</span>
+	</h2>
 {/snippet}
 
 {#snippet contentMain(s: string)}

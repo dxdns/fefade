@@ -43,7 +43,9 @@
 	<Carousel id="carousel-2" style="padding: 3rem 0;">
 		{#each Array.from(Array(5)) as _, index}
 			<Carousel.Item href="https://dxdns.dev" target="_blank">
-				<h1 style="text-align: center;">{index}</h1>
+				<h1 style="text-align: center;">
+					{index}
+				</h1>
 				<br />
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
@@ -78,7 +80,9 @@
 	<Carousel id="carousel-3" style="padding: 3rem 0;">
 		{#each Array.from(Array(5)) as _, index}
 			<Carousel.Item>
-				<h1 style="text-align: center;">{index}</h1>
+				<h1 style="text-align: center;">
+					{index}
+				</h1>
 				<br />
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
@@ -114,7 +118,9 @@
 	<Carousel id="carousel-4" style="padding: 3rem 0;">
 		{#each Array.from(Array(5)) as _, index}
 			<Carousel.Item>
-				<h1 style="text-align: center;">{index}</h1>
+				<h1 style="text-align: center;">
+					{index}
+				</h1>
 				<br />
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident

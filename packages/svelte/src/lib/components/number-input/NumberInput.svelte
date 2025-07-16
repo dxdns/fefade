@@ -42,7 +42,9 @@
 	}
 
 	function handleKeydown(
-		e: KeyboardEvent & { currentTarget: EventTarget & HTMLInputElement }
+		e: KeyboardEvent & {
+			currentTarget: EventTarget & HTMLInputElement
+		}
 	) {
 		if (e.key === "ArrowUp") {
 			e.preventDefault()

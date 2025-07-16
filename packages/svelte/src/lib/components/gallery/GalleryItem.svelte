@@ -31,7 +31,9 @@
 	}: Props = $props()
 
 	function handleClick(
-		event: MouseEvent & { currentTarget: HTMLImageElement }
+		event: MouseEvent & {
+			currentTarget: HTMLImageElement
+		}
 	) {
 		if (href) {
 			window.open(href, target)

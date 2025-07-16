@@ -4,7 +4,13 @@ export default function () {
 	const variants = ["pulse", "ping", "bounce"]
 
 	return (
-		<div style={{ maxWidth: "300px", margin: "0 auto", lineHeight: 3 }}>
+		<div
+			style={{
+				maxWidth: "300px",
+				margin: "0 auto",
+				lineHeight: 3
+			}}
+		>
 			{variants.map((variant, i) => (
 				<div key={variant}>
 					<Status

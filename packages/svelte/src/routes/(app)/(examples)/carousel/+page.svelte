@@ -57,7 +57,9 @@
 	{#each Array.from(Array(5)) as _, index}
 		<Carousel.Item href="https://dxdns.dev" target="_blank">
 			<Card>
-				<h1 style="text-align: center;">{index}</h1>
+				<h1 style="text-align: center;">
+					{index}
+				</h1>
 				<br />
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
@@ -98,7 +100,9 @@
 >
 	{#each Array.from(Array(5)) as _, index}
 		<Carousel.Item>
-			<h1 style="text-align: center;">{index}</h1>
+			<h1 style="text-align: center;">
+				{index}
+			</h1>
 			<br />
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident

@@ -27,7 +27,9 @@ export default forwardRef<HTMLDivElement, Props>(
 					styles.badge,
 					[size, styles],
 					[variant, styles],
-					{ [styles.roundedFull]: roundedFull }
+					{
+						[styles.roundedFull]: roundedFull
+					}
 				)}
 			>
 				{children}

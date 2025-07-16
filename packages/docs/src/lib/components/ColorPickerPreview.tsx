@@ -4,7 +4,13 @@ import { useState, type CSSProperties } from "react"
 export default function () {
 	const [color, setColor] = useState("#fde6b0")
 	return (
-		<div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+		<div
+			style={{
+				display: "flex",
+				alignItems: "center",
+				gap: "1rem"
+			}}
+		>
 			<ColorPicker
 				value={color}
 				onInput={(e) => {

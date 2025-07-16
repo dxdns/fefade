@@ -24,7 +24,9 @@
 		styles.badge,
 		[size, styles],
 		[variant, styles],
-		{ [styles.roundedFull]: roundedFull }
+		{
+			[styles.roundedFull]: roundedFull
+		}
 	)}
 >
 	{@render children?.()}

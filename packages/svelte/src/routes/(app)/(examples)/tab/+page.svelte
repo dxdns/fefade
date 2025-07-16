@@ -18,7 +18,9 @@
 			id,
 			label: `label${id}`,
 			content: `test${id}`,
-			...(i === 0 && { icon: "&#9734;" })
+			...(i === 0 && {
+				icon: "&#9734;"
+			})
 		}
 	})
 
@@ -167,7 +169,9 @@
 		<Tab.List
 			class="border-0"
 			orientation="vertical"
-			hoverFollower={{ bgColor: theme.colors.textMuted }}
+			hoverFollower={{
+				bgColor: theme.colors.textMuted
+			}}
 		>
 			{#each tabs as tab}
 				<Button

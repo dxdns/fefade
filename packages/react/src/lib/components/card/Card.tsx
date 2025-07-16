@@ -42,7 +42,10 @@ export default forwardRef<HTMLDivElement, Props>(
 							[styles.isTranslucent]: isTranslucent
 						}
 					)}
-					style={{ cursor: href ? "pointer" : "default", ...rest.style }}
+					style={{
+						cursor: href ? "pointer" : "default",
+						...rest.style
+					}}
 					onClick={href ? () => window.open(href, target) : rest.onClick}
 				>
 					{children}

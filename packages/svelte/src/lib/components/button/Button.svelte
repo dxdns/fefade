@@ -54,7 +54,10 @@
 		[variant, styles],
 		[size, styles],
 		styles.button,
-		{ [styles.roundedFull]: roundedFull, [styles.pressedEffect]: pressedEffect }
+		{
+			[styles.roundedFull]: roundedFull,
+			[styles.pressedEffect]: pressedEffect
+		}
 	)}
 	type={rest.type ?? "button"}
 	onclick={handleClick}

@@ -22,7 +22,9 @@
 <div
 	{...rest}
 	id="draggableGroup"
-	use:draggableGroupAction={{ onChange }}
+	use:draggableGroupAction={{
+		onChange
+	}}
 	class={classMapUtil(className, "draggableGroup")}
 	style={mergeStyleUtil(
 		`--cols: ${cols};`,

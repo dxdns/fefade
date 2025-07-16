@@ -29,7 +29,10 @@ export default function scrollSectionAction(
 	scrollSection.register(node, node.id)
 
 	function update() {
-		let closest = { reference: "", top: Infinity }
+		let closest = {
+			reference: "",
+			top: Infinity
+		}
 
 		for (const { node: sectionNode, reference } of scrollSection.getAll()) {
 			const top = Math.abs(sectionNode.getBoundingClientRect().top)
@@ -45,7 +48,7 @@ export default function scrollSectionAction(
 
 	update()
 
-	let debouncedScroll = debounceUtil(update, debounceDelay)
+	const debouncedScroll = debounceUtil(update, debounceDelay)
 	document.addEventListener("scroll", debouncedScroll, true)
 
 	return {

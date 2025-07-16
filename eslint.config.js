@@ -1,13 +1,26 @@
 import js from "@eslint/js"
-import svelte from "eslint-plugin-svelte"
+import sveltePlugin from "eslint-plugin-svelte"
+import vuePlugin from "eslint-plugin-vue"
 import globals from "globals"
 import ts from "typescript-eslint"
 import svelteConfig from "./packages/svelte/svelte.config.js"
+import prettier from "eslint-config-prettier"
 
 export default ts.config(
 	js.configs.recommended,
 	...ts.configs.recommended,
-	...svelte.configs.recommended,
+
+	{
+		ignores: [
+			"**/dist/**",
+			"**/build/**",
+			"**/node_modules/**",
+			"**/public/**",
+			"**/.svelte-kit/**",
+			"**/.*"
+		]
+	},
+
 	{
 		languageOptions: {
 			globals: {
@@ -16,34 +29,72 @@ export default ts.config(
 			}
 		}
 	},
+
+	...sveltePlugin.configs["flat/recommended"],
 	{
-		files: ["**/*.svelte", "**/*.svelte.ts", "**/*.svelte.js"],
-		// See more details at: https://typescript-eslint.io/packages/parser/
+		files: ["**/*.svelte"],
 		languageOptions: {
 			parserOptions: {
-				projectService: true,
-				extraFileExtensions: [".svelte"], // Add support for additional file extensions, such as .svelte
 				parser: ts.parser,
-				// Specify a parser for each language, if needed:
-				// parser: {
-				//   ts: ts.parser,
-				//   js: espree,    // Use espree for .js files (add: import espree from 'espree')
-				//   typescript: ts.parser
-				// },
-
-				// We recommend importing and specifying svelte.config.js.
-				// By doing so, some rules in eslint-plugin-svelte will automatically read the configuration and adjust their behavior accordingly.
-				// While certain Svelte settings may be statically loaded from svelte.config.js even if you don’t specify it,
-				// explicitly specifying it ensures better compatibility and functionality.
+				extraFileExtensions: [".svelte"],
 				svelteConfig
+			}
+		},
+		rules: {
+			//"no-at-html-tags": "error",
+		}
+	},
+
+	...vuePlugin.configs["flat/recommended"],
+	{
+		files: ["**/*.vue"],
+		languageOptions: {
+			parserOptions: {
+				parser: ts.parser,
+				extraFileExtensions: [".vue"],
+				ecmaVersion: "latest",
+				sourceType: "module"
+			}
+		},
+		rules: {
+			"vue/html-indent": ["warn", "tab"],
+			"vue/no-v-html": "off",
+			"vue/multi-word-component-names": "off",
+			"vue/singleline-html-element-content-newline": [
+				"warn",
+				{
+					ignoreWhenNoAttributes: false,
+					ignoreWhenEmpty: true,
+					ignores: []
+				}
+			],
+			"vue/multiline-html-element-content-newline": "warn",
+			"vue/max-attributes-per-line": [
+				"warn",
+				{
+					singleline: 1,
+					multiline: 1
+				}
+			]
+		}
+	},
+
+	{
+		files: ["**/*.ts", "**/*.tsx", "**/*.svelte.ts", "**/*.svelte.js"],
+		languageOptions: {
+			parserOptions: {
+				projectService: true
 			}
 		}
 	},
+
 	{
 		rules: {
-			// Override or add rule settings here, such as:
-			// 'svelte/rule-name': 'error'
-			"@typescript-eslint/no-empty-object-type": "off"
+			"@typescript-eslint/no-empty-object-type": "off",
+			"@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }]
 		}
+	},
+	{
+		...prettier
 	}
 )

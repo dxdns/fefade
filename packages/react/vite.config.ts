@@ -27,7 +27,11 @@ export default defineConfig(({}) => {
 			plugins: [
 				...defaultConfig.plugins,
 				libInjectCss(),
-				dts({ include: [LIB_DIR], insertTypesEntry: true, outDir: "dist" })
+				dts({
+					include: [LIB_DIR],
+					insertTypesEntry: true,
+					outDir: "dist"
+				})
 			],
 			build: {
 				copyPublicDir: false,
