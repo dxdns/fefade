@@ -23,7 +23,7 @@
 		}
 	)}
 >
-	<input {...rest} type="checkbox" />
+	<input {...rest} readonly={rest.readonly ?? rest.checked} type="checkbox" />
 	<div class={styles.wrapper}>
 		<div class={styles.bg}></div>
 		<CheckmarkIcon class={styles.icon} />

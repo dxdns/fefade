@@ -23,7 +23,12 @@ export default forwardRef<HTMLInputElement, Props>(
 					}
 				)}
 			>
-				<input {...rest} ref={ref} type="checkbox" />
+				<input
+					{...rest}
+					ref={ref}
+					readOnly={rest.readOnly ?? rest.checked}
+					type="checkbox"
+				/>
 				<div className={styles.wrapper}>
 					<div className={styles.bg}></div>
 					<CheckmarkIcon className={styles.icon} />

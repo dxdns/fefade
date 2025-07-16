@@ -6,7 +6,7 @@ import path from "path"
 
 interface Props {
 	component: string
-	ext?: string
+	ext?: "svelte" | "tsx" | string
 }
 
 const { component, ext = "svelte" }: Props = Astro.props
