@@ -15,8 +15,8 @@
 
 <Code>
 	{#each data.split("\n").filter((l) => l.trim() !== "") as text, i}
-		<pre data-prefix={i}>
-			<code>{text.trim()}</code>
-		</pre>
+		<Code.Item lineNumber={i}>
+			{text.trim()}
+		</Code.Item>
 	{/each}
 </Code>

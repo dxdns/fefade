@@ -1,3 +1,11 @@
-import Code from "./Code.svelte"
+import CodeComponent from "./Code.svelte"
+import CodeItemComponent from "./CodeItem.svelte"
 
-export default Code
+type CodeComponentType = typeof CodeComponent & {
+	Item: typeof CodeItemComponent
+}
+
+const Code = CodeComponent as unknown as CodeComponentType
+Code.Item = CodeItemComponent
+
+export { Code as default }

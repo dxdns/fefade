@@ -15,31 +15,3 @@
 	background: var(--ff-border);
 	border-radius: 4px;
 }
-
-.code pre {
-	display: flex;
-	align-items: stretch;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	border: none;
-}
-
-.code pre::before {
-	content: attr(data-prefix);
-	width: 2em;
-	text-align: left;
-	margin-right: 1em;
-	padding: 0 0.5em;
-	color: var(--ff-text-muted);
-	border-right: 2px solid var(--ff-border);
-	user-select: none;
-	flex-shrink: 0;
-}
-
-.code pre code {
-	white-space: pre-wrap;
-	display: block;
-	flex: 1;
-	padding-right: 1em;
-}
