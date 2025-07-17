@@ -12,7 +12,6 @@ export type ThemeColorType = {
 	bg: string
 	onBg: string
 	surface: string
-	surfaceVariant: string
 	onSurface: string
 	border: string
 	disabled: string

@@ -123,7 +123,7 @@
 	}
 
 	.content.isTranslucent {
-		background: var(--ff-surface-variant);
+		background: color-mix(in srgb, var(--ff-surface) 30%, transparent);
 		backdrop-filter: blur(15px);
 	}
 

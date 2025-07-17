@@ -2,7 +2,7 @@
 	import { Card, HoverFollower } from "@/index.js"
 </script>
 
-<Card>
+<Card variant="contained">
 	<h2>test1</h2>
 </Card>
 
