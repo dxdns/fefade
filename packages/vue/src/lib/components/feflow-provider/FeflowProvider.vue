@@ -1,13 +1,8 @@
 <script lang="ts" setup>
-	import { ref, onMounted, onBeforeUnmount, provide, onUnmounted } from "vue"
+	import { ref, onMounted, provide, onUnmounted } from "vue"
 	import { Constants } from "@dxdns/feflow-core"
-	import {
-		mergeObjectUtil,
-		themeConfigUtil,
-		themeModeUtil
-	} from "@dxdns/feflow-core/utils"
+	import { providerUtil } from "@dxdns/feflow-core/utils"
 	import type {
-		BreakpointType,
 		ThemeColorType,
 		ThemeConfigType,
 		ThemeModeType
@@ -44,88 +39,43 @@
 		colors.value = Constants.themeConfigDefault[t]
 	}
 
-	const { getThemeModeFromAttr, toggleThemeMode } = themeModeUtil()
+	const ffProvider = providerUtil()
+	const styleString = ffProvider.style(theme ?? customTheme, rawStyle)
 
-	const { themeConfigToCssString, breakpointConfigToCssString } =
-		themeConfigUtil()
+	let observer: MutationObserver | undefined = undefined
 
-	const mergedColors = mergeObjectUtil(
-		Constants.themeConfigDefault,
-		customTheme?.colors || theme?.colors || {}
-	) as ThemeConfigType
-
-	const mergedBreakpoints = mergeObjectUtil(
-		Constants.breakpoints,
-		customTheme?.breakpoints || theme?.breakpoints || {}
-	) as Record<BreakpointType, string>
-
-	const themeStyle = themeConfigToCssString(mergedColors)
-	const breakpointStyle = breakpointConfigToCssString(mergedBreakpoints)
-
-	let observer: MutationObserver | null = null
-
-	function createStyleElement(css: string) {
-		const style = document.createElement("style")
-		style.textContent = css
-		return style
-	}
-
-	function createMetaElement(name: string, content: string) {
-		const meta = document.createElement("meta")
-		meta.name = name
-		meta.content = content
-		return meta
+	function ffProviderScript() {
+		const _storedTheme = ffProvider.storedTheme(defaultThemeMode ?? defaultMode)
+		ffProvider.applyThemeMode(_storedTheme)
 	}
 
 	onMounted(() => {
-		const styleElement = createStyleElement(rawStyle)
-		document.head.appendChild(styleElement)
+		const meta = ffProvider.createMetaElement()
+		document.head.appendChild(meta)
 
-		const metaElement = createMetaElement(
-			Constants.META_NAME,
-			Constants.APP_NAME
-		)
-		document.head.appendChild(metaElement)
+		ffProviderScript()
 
-		const fallbackTheme = defaultMode ?? defaultThemeMode
-		const storedTheme =
-			localStorage.getItem(Constants.THEME_STORAGE) || fallbackTheme
-		document.documentElement.setAttribute(Constants.THEME_ATTR, storedTheme)
-		document.documentElement.style.colorScheme = storedTheme
-		setThemeMode(storedTheme as ThemeModeType)
-
-		observer = new MutationObserver((mutations) => {
-			for (const mutation of mutations) {
-				if (
-					mutation.type === "attributes" &&
-					mutation.attributeName === Constants.THEME_ATTR
-				) {
-					const newThemeMode = getThemeModeFromAttr()
-					setThemeMode(newThemeMode)
-				}
-			}
-		})
-
-		observer.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: [Constants.THEME_ATTR]
-		})
+		const el = document.documentElement
+		if (el) {
+			observer = ffProvider.attrObserver(el, () => {
+				const themeMode = ffProvider.storedTheme()
+				setThemeMode(themeMode)
+			})
+		}
 
 		onUnmounted(() => {
-			styleElement.remove()
-			metaElement.remove()
+			document.head.removeChild(meta)
+			if (observer) {
+				observer.disconnect()
+			}
 		})
-	})
-
-	onBeforeUnmount(() => {
-		observer?.disconnect()
 	})
 
 	provide(ThemeConfigSymbol, {
 		mode,
 		colors,
 		toggle: () => {
-			toggleThemeMode((t) => {
+			ffProvider.toggleThemeMode((t) => {
 				setThemeMode(t)
 			})
 		}
@@ -133,7 +83,6 @@
 </script>
 
 <template>
-	<div v-html="themeStyle" />
-	<div v-html="breakpointStyle" />
+	<div v-html="styleString" />
 	<slot />
 </template>

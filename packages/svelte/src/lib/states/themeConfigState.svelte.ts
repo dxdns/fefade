@@ -24,8 +24,10 @@ export default function themeConfigState() {
 			return Constants.themeConfigDefault[this.getMode()]
 		},
 		setThemeMode(t: ThemeModeType) {
-			this._setMode(t)
-			this._setColors(t)
+			if (this.getMode() !== t) {
+				this._setMode(t)
+				this._setColors(t)
+			}
 		}
 	}
 }

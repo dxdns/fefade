@@ -1,9 +1,9 @@
 import { themeConfigState } from "../states/index.js"
-import { themeModeUtil } from "@dxdns/feflow-core/utils"
+import { providerUtil } from "@dxdns/feflow-core/utils"
 
 export default function themeConfigUtil() {
 	const themeConfig = themeConfigState()
-	const { toggleThemeMode } = themeModeUtil()
+	const { toggleThemeMode } = providerUtil()
 	return {
 		colors: themeConfig.getColors(),
 		mode: themeConfig.getMode(),

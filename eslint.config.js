@@ -41,7 +41,7 @@ export default ts.config(
 			}
 		},
 		rules: {
-			//"no-at-html-tags": "error",
+			"svelte/no-at-html-tags": "off"
 		}
 	},
 
@@ -96,6 +96,7 @@ export default ts.config(
 				{ argsIgnorePattern: "^_" }
 			],
 			"@typescript-eslint/no-explicit-any": "off",
+			"@typescript-eslint/ban-ts-comment": "off",
 			"no-control-regex": "off"
 		}
 	},

@@ -1,19 +1,10 @@
 <script lang="ts">
 	import { onDestroy, onMount, type Snippet } from "svelte"
 	import { Constants } from "@dxdns/feflow-core"
-	import type {
-		BreakpointType,
-		ThemeConfigType,
-		ThemeModeType
-	} from "@dxdns/feflow-core/types"
-	import {
-		mergeObjectUtil,
-		themeConfigUtil,
-		themeModeUtil
-	} from "@dxdns/feflow-core/utils"
+	import type { ThemeConfigType, ThemeModeType } from "@dxdns/feflow-core/types"
+	import { providerUtil } from "@dxdns/feflow-core/utils"
 	import { themeConfigState } from "../../states/index.js"
 	import rawStyle from "@dxdns/feflow-core/styles/FeflowProvider.css?raw"
-	void rawStyle
 
 	interface Props {
 		/** @deprecated Use `theme` instead */
@@ -36,74 +27,34 @@
 		children
 	}: Props = $props()
 
-	let observer: MutationObserver | undefined = $state()
+	let observer: MutationObserver | undefined = undefined
 
-	const { themeConfigToCssString, breakpointConfigToCssString } =
-		themeConfigUtil()
-
-	const themeStyle = themeConfigToCssString(
-		mergeObjectUtil(
-			Constants.themeConfigDefault,
-			customTheme?.colors || theme?.colors || {}
-		) as ThemeConfigType
-	)
-
-	const breakpointStyle = breakpointConfigToCssString(
-		mergeObjectUtil(
-			Constants.breakpoints,
-			customTheme?.breakpoints || theme?.breakpoints || {}
-		) as Record<BreakpointType, string>
-	)
-
-	const { getThemeModeFromAttr } = themeModeUtil()
+	const ffProvider = providerUtil()
+	const scriptString = ffProvider.script(defaultThemeMode ?? defaultMode)
+	const styleString = ffProvider.style(theme ?? customTheme, rawStyle)
 	const themeConfig = themeConfigState()
 
 	onMount(() => {
-		const themeMode = getThemeModeFromAttr()
-		themeConfig.setThemeMode(themeMode)
-
-		observer = new MutationObserver((records) => {
-			for (const mutation of records) {
-				if (
-					mutation.type === "attributes" &&
-					mutation.attributeName === Constants.THEME_ATTR
-				) {
-					const themeMode = getThemeModeFromAttr()
-					themeConfig.setThemeMode(themeMode)
-				}
-			}
-		})
-
-		const rootElement = document.documentElement
-		observer.observe(rootElement, {
-			attributes: true,
-			attributeFilter: [Constants.THEME_ATTR]
-		})
+		const el = document.documentElement
+		if (el) {
+			observer = ffProvider.attrObserver(el, () => {
+				const themeMode = ffProvider.storedTheme()
+				themeConfig.setThemeMode(themeMode)
+			})
+		}
 	})
 
 	onDestroy(() => {
-		observer?.disconnect()
+		if (observer) {
+			observer.disconnect()
+		}
 	})
 </script>
 
 <svelte:head>
 	<meta name={Constants.META_NAME} content={Constants.APP_NAME} />
-
-	{@html `
-	<script>
-		(function () {
-			const fallbackTheme = "${defaultMode ?? defaultThemeMode}";
-			const storedTheme = localStorage.getItem('${Constants.THEME_STORAGE}') || fallbackTheme;
-			document.documentElement.setAttribute('${Constants.THEME_ATTR}', storedTheme);
-			document.documentElement.style.colorScheme = storedTheme;
-		})()
-	</script>
-	`}
-
-	{@html themeStyle}
-	{@html breakpointStyle}
-
-	{@html `<style>${rawStyle}</style>`}
+	{@html scriptString}
+	{@html styleString}
 </svelte:head>
 
 {@render children?.()}

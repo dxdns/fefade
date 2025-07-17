@@ -6,13 +6,8 @@ import {
 	type PropsWithChildren
 } from "react"
 import { Constants } from "@dxdns/feflow-core"
-import {
-	mergeObjectUtil,
-	themeConfigUtil,
-	themeModeUtil
-} from "@dxdns/feflow-core/utils"
+import { providerUtil } from "@dxdns/feflow-core/utils"
 import type {
-	BreakpointType,
 	ThemeColorType,
 	ThemeConfigType,
 	ThemeModeType
@@ -50,14 +45,17 @@ export default function ({
 		setColors(Constants.themeConfigDefault[t])
 	}
 
-	const { getThemeModeFromAttr, toggleThemeMode } = themeModeUtil()
+	const observer = useRef<MutationObserver | null>(null)
+
+	const ffProvider = providerUtil()
+	const styleString = ffProvider.style(theme ?? customTheme, rawStyle)
 
 	const value = useMemo(
 		() => ({
 			colors: Constants.themeConfigDefault[mode],
 			mode,
 			toggle: () => {
-				toggleThemeMode((t) => {
+				ffProvider.toggleThemeMode((t) => {
 					setThemeMode(t)
 				})
 			}
@@ -65,64 +63,30 @@ export default function ({
 		[mode, colors]
 	)
 
-	const observer = useRef<MutationObserver | null>(null)
-
-	const { themeConfigToCssString, breakpointConfigToCssString } =
-		themeConfigUtil()
-
-	const themeStyle = themeConfigToCssString(
-		mergeObjectUtil(
-			Constants.themeConfigDefault,
-			customTheme?.colors || theme?.colors || {}
-		) as ThemeConfigType
-	)
-
-	const breakpointStyle = breakpointConfigToCssString(
-		mergeObjectUtil(
-			Constants.breakpoints,
-			customTheme?.breakpoints || theme?.breakpoints || {}
-		) as Record<BreakpointType, string>
-	)
-
-	function createMetaElement(name: string, content: string) {
-		const meta = document.createElement("meta")
-		meta.name = name
-		meta.content = content
-		return meta
+	function ffProviderScript() {
+		const _storedTheme = ffProvider.storedTheme(defaultThemeMode ?? defaultMode)
+		ffProvider.applyThemeMode(_storedTheme)
 	}
 
 	useEffect(() => {
-		const meta = createMetaElement(Constants.META_NAME, Constants.APP_NAME)
+		const meta = ffProvider.createMetaElement()
 		document.head.appendChild(meta)
 
-		const fallbackTheme = defaultMode ?? defaultThemeMode
-		const storedTheme =
-			localStorage.getItem(Constants.THEME_STORAGE) || fallbackTheme
-		document.documentElement.setAttribute(Constants.THEME_ATTR, storedTheme)
-		document.documentElement.style.colorScheme = storedTheme
-		setThemeMode(storedTheme as ThemeModeType)
+		ffProviderScript()
 
-		observer.current = new MutationObserver((records) => {
-			for (const mutation of records) {
-				if (
-					mutation.type === "attributes" &&
-					mutation.attributeName === Constants.THEME_ATTR
-				) {
-					const themeMode = getThemeModeFromAttr()
-					setThemeMode(themeMode)
-				}
-			}
-		})
-
-		const rootElement = document.documentElement
-		observer.current.observe(rootElement, {
-			attributes: true,
-			attributeFilter: [Constants.THEME_ATTR]
-		})
+		const el = document.documentElement
+		if (el) {
+			observer.current = ffProvider.attrObserver(el, () => {
+				const themeMode = ffProvider.storedTheme()
+				setThemeMode(themeMode)
+			})
+		}
 
 		return () => {
-			observer.current?.disconnect()
 			document.head.removeChild(meta)
+			if (observer.current) {
+				observer.current.disconnect()
+			}
 		}
 	}, [])
 
@@ -130,21 +94,9 @@ export default function ({
 		<>
 			<div
 				dangerouslySetInnerHTML={{
-					__html: themeStyle
+					__html: styleString
 				}}
 			></div>
-
-			<div
-				dangerouslySetInnerHTML={{
-					__html: breakpointStyle
-				}}
-			></div>
-
-			<style
-				dangerouslySetInnerHTML={{
-					__html: rawStyle
-				}}
-			/>
 
 			<ThemeConfigContext.Provider value={value}>
 				{children}

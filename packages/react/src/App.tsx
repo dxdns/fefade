@@ -41,8 +41,9 @@ function App() {
 						))}
 				</Code>
 			</Window>
-			<Checkbox />
 			<Status color="red" />
+			<br />
+			<Checkbox />
 			<ColorPicker />
 			<Window>test</Window>
 			<TextField label="label" />
