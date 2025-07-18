@@ -1,6 +1,6 @@
 {
 	"name": "@dxdns/feflow-svelte",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "feflow: svelte components ui",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
