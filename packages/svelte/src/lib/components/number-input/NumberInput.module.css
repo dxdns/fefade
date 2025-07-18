@@ -13,7 +13,7 @@
 	user-select: none;
 }
 
-.numberInput > input {
+.numberInput>input {
 	-webkit-appearance: textfield;
 	-moz-appearance: textfield;
 	appearance: textfield;
@@ -21,7 +21,7 @@
 	width: 100%;
 	height: 2.5rem;
 	font-size: 1rem;
-	color: var(--ff-text);
+	color: var(--ff-on-bg);
 	padding: 0 0.75rem;
 	border-radius: var(--border-radius);
 	background: var(--ff-bg);
@@ -33,26 +33,26 @@
 	outline: none;
 }
 
-.numberInput.outlined > input {
+.numberInput.outlined>input {
 	border: 1px solid var(--ff-border);
 }
 
-.numberInput.outlined > input:focus {
+.numberInput.outlined>input:focus {
 	border-color: var(--border-color-on-focus);
 }
 
-.numberInput.contained > input {
+.numberInput.contained>input {
 	background: var(--ff-surface);
 	border: none;
 }
 
-.numberInput.text > input {
+.numberInput.text>input {
 	border: none;
 	background: none;
 }
 
-.numberInput > input::-webkit-inner-spin-button,
-.numberInput > input::-webkit-outer-spin-button {
+.numberInput>input::-webkit-inner-spin-button,
+.numberInput>input::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
@@ -68,7 +68,7 @@
 	align-items: center;
 }
 
-.numberControl > * {
+.numberControl>* {
 	width: 2.5rem;
 	height: 2.5rem;
 	display: flex;
@@ -81,36 +81,36 @@
 		color 0.2s;
 }
 
-.numberControl > *:first-child {
+.numberControl>*:first-child {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-.numberControl > *:last-child {
+.numberControl>*:last-child {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
 
-.numberInput.outlined .numberControl > *:first-child,
-.numberInput.outlined .numberControl > *:last-child {
+.numberInput.outlined .numberControl>*:first-child,
+.numberInput.outlined .numberControl>*:last-child {
 	border-top: 0;
 	border-bottom: 0;
 }
 
-.numberInput.outlined .numberControl > *:first-child:hover,
-.numberInput.outlined .numberControl > *:last-child:hover {
+.numberInput.outlined .numberControl>*:first-child:hover,
+.numberInput.outlined .numberControl>*:last-child:hover {
 	box-shadow: none;
 }
 
-.numberInput.outlined .numberControl > *:first-child {
+.numberInput.outlined .numberControl>*:first-child {
 	border-left: 0;
 }
 
-.numberInput.outlined .numberControl > *:last-child {
+.numberInput.outlined .numberControl>*:last-child {
 	border-right: 0;
 }
 
-.numberInput.outlined:has(> input:focus) .numberControl > *:first-child,
-.numberInput.outlined:has(> input:focus) .numberControl > *:last-child {
+.numberInput.outlined:has(> input:focus) .numberControl>*:first-child,
+.numberInput.outlined:has(> input:focus) .numberControl>*:last-child {
 	border-color: var(--border-color-on-focus);
 }

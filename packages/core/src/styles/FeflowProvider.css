@@ -1,6 +1,6 @@
 body {
 	background: var(--ff-bg);
-	color: var(--ff-text);
+	color: var(--ff-on-bg);
 }
 
 /** text **/
@@ -22,11 +22,12 @@ body {
 }
 
 .text {
-	color: var(--ff-text) !important;
+	color: var(--ff-on-bg) !important;
 }
 
-.text-muted {
-	color: var(--ff-text-muted) !important;
+.text-muted,
+.muted {
+	color: var(--ff-on-bg-muted) !important;
 }
 
 .text-on-bg {

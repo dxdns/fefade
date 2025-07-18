@@ -72,18 +72,18 @@
 	height: 40px;
 }
 
-.radioButton input[type="radio"]:checked + .circle::before {
+.radioButton input[type="radio"]:checked+.circle::before {
 	transform: translate(-50%, -50%) scale(1);
 }
 
-.radioButton:nth-of-type(1) input[type="radio"]:checked + .circle::before {
+.radioButton:nth-of-type(1) input[type="radio"]:checked+.circle::before {
 	background: var(--ff-primary);
 }
 
 .radioButton:hover .circle {
-	border-color: var(--ff-text);
+	border-color: var(--ff-on-bg);
 }
 
-.radioButton:hover input[type="radio"]:checked + .circle::before {
+.radioButton:hover input[type="radio"]:checked+.circle::before {
 	background: var(--ff-secondary);
 }

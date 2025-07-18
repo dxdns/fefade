@@ -29,16 +29,16 @@
 
 	let observer: MutationObserver | undefined = undefined
 
-	const ffProvider = providerUtil()
-	const scriptString = ffProvider.script(defaultThemeMode ?? defaultMode)
-	const styleString = ffProvider.style(theme ?? customTheme, rawStyle)
+	const provider = providerUtil()
+	const scriptString = provider.script(defaultThemeMode ?? defaultMode)
+	const styleString = provider.style(theme ?? customTheme, rawStyle)
 	const themeConfig = themeConfigState()
 
 	onMount(() => {
 		const el = document.documentElement
 		if (el) {
-			observer = ffProvider.attrObserver(el, () => {
-				const themeMode = ffProvider.storedTheme()
+			observer = provider.attrObserver(el, () => {
+				const themeMode = provider.storedTheme()
 				themeConfig.setThemeMode(themeMode)
 			})
 		}

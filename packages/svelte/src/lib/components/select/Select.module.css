@@ -9,7 +9,7 @@
 	overflow: hidden;
 }
 
-.select > select {
+.select>select {
 	appearance: none;
 	border: 0;
 	box-shadow: none;
@@ -22,7 +22,7 @@
 	outline: 0;
 }
 
-.select > select::-ms-expand {
+.select>select::-ms-expand {
 	display: none;
 }
 
@@ -39,6 +39,6 @@
 
 @media (hover: hover) and (pointer: fine) {
 	.select:hover .icon {
-		color: var(--ff-text-muted);
+		color: var(--ff-on-bg-muted);
 	}
 }

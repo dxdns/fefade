@@ -7,8 +7,7 @@ export type ThemeColorType = {
 	onPrimary: string
 	secondary: string
 	onSecondary: string
-	text: string
-	textMuted: string
+	muted: string
 	bg: string
 	onBg: string
 	surface: string
@@ -28,11 +27,6 @@ export type ThemeColorType = {
 	onInfo: string
 	overlay: string
 	shadow: string
-}
-
-export type ColorThemeConfigType = {
-	light: ThemeColorType
-	dark: ThemeColorType
 }
 
 export type ThemeConfigType = {

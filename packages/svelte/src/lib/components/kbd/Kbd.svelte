@@ -21,7 +21,7 @@
 <style>
 	kbd {
 		background: var(--ff-surface, #f9f9f9);
-		color: var(--ff-text, #333);
+		color: var(--ff-on-bg, #333);
 		border: 1px solid var(--ff-border, #b4b4b4);
 		border-radius: 6px;
 		padding: 0.2em 0.5em;

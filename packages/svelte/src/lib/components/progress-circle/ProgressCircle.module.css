@@ -2,37 +2,37 @@
 	position: relative;
 }
 
-.progressCircle > svg {
+.progressCircle>svg {
 	stroke-width: 10;
-	color: var(--ff-text);
+	color: var(--ff-on-bg);
 }
 
-.progressCircle.xs > svg {
+.progressCircle.xs>svg {
 	width: 5rem;
 	height: 5rem;
 }
 
-.progressCircle.sm > svg {
+.progressCircle.sm>svg {
 	width: 6rem;
 	height: 6rem;
 }
 
-.progressCircle.md > svg {
+.progressCircle.md>svg {
 	width: 7rem;
 	height: 7rem;
 }
 
-.progressCircle.lg > svg {
+.progressCircle.lg>svg {
 	width: 8rem;
 	height: 8rem;
 }
 
-.progressCircle.xl > svg {
+.progressCircle.xl>svg {
 	width: 9rem;
 	height: 9rem;
 }
 
-.progressCircle > svg > circle {
+.progressCircle>svg>circle {
 	fill: none;
 	stroke-linecap: round;
 	stroke-dashoffset: 100;

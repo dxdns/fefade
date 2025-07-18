@@ -1,4 +1,8 @@
-import type { BreakpointType, ColorThemeConfigType } from "./types/index.js"
+import type {
+	BreakpointType,
+	ThemeColorType,
+	ThemeModeType
+} from "./types/index.js"
 
 export const APP_NAME = "feflow"
 export const APP_NAME_ACRONYM = "ff"
@@ -13,21 +17,6 @@ export const THEME_ATTR = "data-theme"
 export const themeModeSelectors = {
 	light: `[${THEME_ATTR}='light']`,
 	dark: `[${THEME_ATTR}='dark']`
-}
-
-const gray = {
-	50: "#fcfcfc",
-	100: "#f9f9f9",
-	200: "#f0f0f0",
-	300: "#e5e5e5",
-	400: "#d4d4d4",
-	500: "#a3a3a3",
-	600: "#737373",
-	700: "#525252",
-	800: "#404040",
-	900: "#262626",
-	950: "#171717",
-	1000: "#0a0a0a"
 }
 
 const statusColors = {
@@ -53,43 +42,41 @@ const statusColors = {
 	}
 }
 
-export const themeConfigDefault: ColorThemeConfigType = {
+export const themeColors: Record<ThemeModeType, ThemeColorType> = {
 	light: {
-		primary: gray[1000],
-		onPrimary: gray[50],
-		secondary: gray[800],
-		onSecondary: gray[50],
-		text: gray[900],
-		textMuted: gray[500],
-		bg: gray[50],
-		onBg: gray[900],
-		surface: gray[200],
-		onSurface: gray[900],
-		border: gray[300],
-		disabled: gray[400],
-		onDisabled: gray[600],
-		skeleton: gray[300],
-		onSkeleton: gray[100],
+		primary: "#171717",
+		onPrimary: "#fafafa",
+		secondary: "#f5f5f5",
+		onSecondary: "#171717",
+		muted: "#a3a3a3",
+		bg: "#ffffff",
+		onBg: "#262626",
+		surface: "#f8f8f8",
+		onSurface: "#0a0a0a",
+		border: "#e5e5e5",
+		disabled: "#d4d4d4",
+		onDisabled: "#737373",
+		skeleton: "#e5e5e5",
+		onSkeleton: "#f9f9f9",
 		overlay: "#00000066",
 		shadow: "#0000001A",
 		...statusColors.light
 	},
 	dark: {
-		primary: gray[50],
-		onPrimary: gray[1000],
-		secondary: gray[400],
-		onSecondary: gray[800],
-		text: gray[200],
-		textMuted: gray[500],
-		bg: gray[1000],
-		onBg: gray[200],
-		surface: gray[900],
-		onSurface: gray[200],
-		border: gray[700],
-		disabled: `${gray[200]}33`,
-		onDisabled: `${gray[300]}66`,
-		skeleton: `${gray[700]}cc`,
-		onSkeleton: gray[600],
+		primary: "#e5e5e5",
+		onPrimary: "#171717",
+		secondary: "#262626",
+		onSecondary: "#fafafa",
+		muted: "#a3a3a3",
+		bg: "#0a0a0a",
+		onBg: "#fafafa",
+		surface: "#171717",
+		onSurface: "#fafafa",
+		border: "#ffffff1a",
+		disabled: "#f0f0f033",
+		onDisabled: "#e5e5e566",
+		skeleton: "#525252cc",
+		onSkeleton: "#737373",
 		overlay: "#00000099",
 		shadow: "#00000080",
 		...statusColors.dark

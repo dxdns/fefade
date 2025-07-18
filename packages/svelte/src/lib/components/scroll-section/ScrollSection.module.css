@@ -46,7 +46,7 @@
 .button {
 	text-decoration: none;
 	font-weight: bold;
-	color: var(--ff-text);
+	color: var(--ff-on-bg);
 	cursor: pointer;
 	padding: 0.5rem 0.75rem;
 	transition: color 0.3s;
@@ -58,7 +58,7 @@
 }
 
 .button:hover {
-	color: var(--ff-text-muted) !important;
+	color: var(--ff-on-bg-muted) !important;
 }
 
 .button.active {
@@ -71,12 +71,13 @@
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 	font-size: 1.125rem;
-	color: var(--ff-text);
+	color: var(--ff-on-bg);
 	animation: blink 1.5s infinite;
 	flex-shrink: 0;
 }
 
 @keyframes blink {
+
 	0%,
 	100% {
 		opacity: 1;

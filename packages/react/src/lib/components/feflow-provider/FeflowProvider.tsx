@@ -37,25 +37,25 @@ export default function ({
 }: Props) {
 	const [mode, setMode] = useState<ThemeModeType>("light")
 	const [colors, setColors] = useState<ThemeColorType>(
-		Constants.themeConfigDefault.light
+		Constants.themeColors.light
 	)
 
 	const setThemeMode = (t: ThemeModeType) => {
 		setMode(t)
-		setColors(Constants.themeConfigDefault[t])
+		setColors(Constants.themeColors[t])
 	}
 
 	const observer = useRef<MutationObserver | null>(null)
 
-	const ffProvider = providerUtil()
-	const styleString = ffProvider.style(theme ?? customTheme, rawStyle)
+	const provider = providerUtil()
+	const styleString = provider.style(theme ?? customTheme, rawStyle)
 
 	const value = useMemo(
 		() => ({
-			colors: Constants.themeConfigDefault[mode],
+			colors: Constants.themeColors[mode],
 			mode,
 			toggle: () => {
-				ffProvider.toggleThemeMode((t) => {
+				provider.toggleThemeMode((t) => {
 					setThemeMode(t)
 				})
 			}
@@ -63,21 +63,21 @@ export default function ({
 		[mode, colors]
 	)
 
-	function ffProviderScript() {
-		const _storedTheme = ffProvider.storedTheme(defaultThemeMode ?? defaultMode)
-		ffProvider.applyThemeMode(_storedTheme)
+	function providerScript() {
+		const _storedTheme = provider.storedTheme(defaultThemeMode ?? defaultMode)
+		provider.applyThemeMode(_storedTheme)
 	}
 
 	useEffect(() => {
-		const meta = ffProvider.createMetaElement()
+		const meta = provider.createMetaElement()
 		document.head.appendChild(meta)
 
-		ffProviderScript()
+		providerScript()
 
 		const el = document.documentElement
 		if (el) {
-			observer.current = ffProvider.attrObserver(el, () => {
-				const themeMode = ffProvider.storedTheme()
+			observer.current = provider.attrObserver(el, () => {
+				const themeMode = provider.storedTheme()
 				setThemeMode(themeMode)
 			})
 		}

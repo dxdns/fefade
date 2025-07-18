@@ -6,7 +6,7 @@ const data = $state<{
 	colors: ThemeColorType
 }>({
 	mode: "light",
-	colors: Constants.themeConfigDefault.light
+	colors: Constants.themeColors.light
 })
 
 export default function themeConfigState() {
@@ -15,13 +15,13 @@ export default function themeConfigState() {
 			data.mode = t
 		},
 		_setColors(t: ThemeModeType) {
-			data.colors = Constants.themeConfigDefault[t]
+			data.colors = Constants.themeColors[t]
 		},
 		getMode() {
 			return data.mode
 		},
 		getColors() {
-			return Constants.themeConfigDefault[this.getMode()]
+			return Constants.themeColors[this.getMode()]
 		},
 		setThemeMode(t: ThemeModeType) {
 			if (this.getMode() !== t) {

@@ -107,7 +107,7 @@ export function providerUtil() {
 
 		const themeStyle = themeCssString(
 			mergeObjectUtil(
-				Constants.themeConfigDefault,
+				Constants.themeColors,
 				theme?.colors || {}
 			) as ThemeConfigType
 		)

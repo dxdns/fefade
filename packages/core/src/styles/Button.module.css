@@ -44,12 +44,12 @@
 	background: transparent;
 	border: 1px solid var(--ff-disabled);
 	transition: all 0.2s ease-in-out;
-	color: var(--ff-text);
+	color: var(--ff-on-bg);
 }
 
 .button.text {
 	background: transparent;
-	color: var(--ff-text);
+	color: var(--ff-on-bg);
 }
 
 .button:disabled {

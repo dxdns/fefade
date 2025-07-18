@@ -32,33 +32,33 @@
 	} = props
 
 	const mode = ref<ThemeModeType>("light")
-	const colors = ref<ThemeColorType>(Constants.themeConfigDefault.light)
+	const colors = ref<ThemeColorType>(Constants.themeColors.light)
 
 	const setThemeMode = (t: ThemeModeType) => {
 		mode.value = t
-		colors.value = Constants.themeConfigDefault[t]
+		colors.value = Constants.themeColors[t]
 	}
 
-	const ffProvider = providerUtil()
-	const styleString = ffProvider.style(theme ?? customTheme, rawStyle)
+	const provider = providerUtil()
+	const styleString = provider.style(theme ?? customTheme, rawStyle)
 
 	let observer: MutationObserver | undefined = undefined
 
-	function ffProviderScript() {
-		const _storedTheme = ffProvider.storedTheme(defaultThemeMode ?? defaultMode)
-		ffProvider.applyThemeMode(_storedTheme)
+	function providerScript() {
+		const _storedTheme = provider.storedTheme(defaultThemeMode ?? defaultMode)
+		provider.applyThemeMode(_storedTheme)
 	}
 
 	onMounted(() => {
-		const meta = ffProvider.createMetaElement()
+		const meta = provider.createMetaElement()
 		document.head.appendChild(meta)
 
-		ffProviderScript()
+		providerScript()
 
 		const el = document.documentElement
 		if (el) {
-			observer = ffProvider.attrObserver(el, () => {
-				const themeMode = ffProvider.storedTheme()
+			observer = provider.attrObserver(el, () => {
+				const themeMode = provider.storedTheme()
 				setThemeMode(themeMode)
 			})
 		}
@@ -75,7 +75,7 @@
 		mode,
 		colors,
 		toggle: () => {
-			ffProvider.toggleThemeMode((t) => {
+			provider.toggleThemeMode((t) => {
 				setThemeMode(t)
 			})
 		}

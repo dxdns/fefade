@@ -14,7 +14,7 @@
 	text-align: left;
 	margin-right: 1em;
 	padding: 0 0.5em;
-	color: var(--ff-text-muted);
+	color: var(--ff-on-bg-muted);
 	border-right: 2px solid var(--ff-border);
 	user-select: none;
 	flex-shrink: 0;
