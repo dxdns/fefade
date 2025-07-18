@@ -125,8 +125,8 @@
 			to right,
 			var(--thumb-bg) 0%,
 			var(--thumb-bg) var(--progress, 0%),
-			var(--ff-surface) var(--progress, 0%),
-			var(--ff-surface) 100%
+			color-mix(in srgb, var(--ff-surface) 80%, gray) var(--progress, 0%),
+			color-mix(in srgb, var(--ff-surface) 80%, gray) 100% 100%
 		);
 	}
 
@@ -165,7 +165,7 @@
 	.rangeInput::-moz-range-track {
 		height: var(--track-height);
 		border-radius: var(--rounded-full);
-		background: var(--ff-surface);
+		background: color-mix(in srgb, var(--ff-surface) 80%, gray);
 	}
 
 	.rangeInput::-moz-range-progress {

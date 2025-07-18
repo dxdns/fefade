@@ -4,7 +4,7 @@
 	let { children } = $props()
 
 	const theme = createTheme({
-		colors: { light: { bg: "orange" } },
+		colors: { light: { bg: "white" } },
 		breakpoints: { md: "800px" }
 	})
 </script>
