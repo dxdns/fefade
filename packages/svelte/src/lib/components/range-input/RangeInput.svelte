@@ -1,17 +1,21 @@
 <script lang="ts">
-	import { mergeStyleUtil } from "@dxdns/feflow-core/utils"
+	import type { SizeType } from "@dxdns/feflow-core/types"
+	import { classMapUtil, mergeStyleUtil } from "@dxdns/feflow-core/utils"
 	import { onMount } from "svelte"
 	import type { HTMLInputAttributes } from "svelte/elements"
 
-	interface Props extends Omit<Omit<HTMLInputAttributes, "value">, "type"> {
+	interface Props
+		extends Omit<Omit<Omit<HTMLInputAttributes, "value">, "type">, "size"> {
 		value?: number
 		icon?: string | SVGElement
+		size?: SizeType
 	}
 
 	let {
 		class: className = "",
 		value = $bindable(0),
 		icon,
+		size = "md",
 		min = 0,
 		max = 100,
 		...rest
@@ -60,7 +64,7 @@
 
 <input
 	{...rest}
-	class={className}
+	class={classMapUtil(className, size, "rangeInput")}
 	bind:this={el}
 	{value}
 	{min}
@@ -73,6 +77,7 @@
 	oninput={(e) => {
 		rest.oninput?.(e)
 		updateProgress(e.currentTarget)
+		value = Number(e.currentTarget.value)
 	}}
 />
 
@@ -85,7 +90,7 @@
 		--track-height: 6px;
 	}
 
-	input[type="range"] {
+	.rangeInput {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		appearance: none;
@@ -101,19 +106,19 @@
 		border: 1px solid var(--ff-border);
 	}
 
-	input[type="range"]:hover,
-	input[type="range"]:focus-visible {
+	.rangeInput:hover,
+	.rangeInput:focus-visible {
 		opacity: 1;
 	}
 
-	input[type="range"]:focus-visible {
+	.rangeInput:focus-visible {
 		outline: 2px solid var(--thumb-bg);
 		outline-offset: 2px;
 	}
 
 	/* WebKit */
 
-	input[type="range"]::-webkit-slider-runnable-track {
+	.rangeInput::-webkit-slider-runnable-track {
 		height: var(--track-height);
 		border-radius: var(--rounded-full);
 		background: linear-gradient(
@@ -125,7 +130,7 @@
 		);
 	}
 
-	input[type="range"]::-webkit-slider-thumb {
+	.rangeInput::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		appearance: none;
 		width: var(--thumb-size);
@@ -145,7 +150,7 @@
 		background-repeat: no-repeat;
 	}
 
-	input[type="range"]:active::-webkit-slider-thumb {
+	.rangeInput:active::-webkit-slider-thumb {
 		border-color: var(--thumb-bg);
 	}
 
@@ -157,19 +162,19 @@
 
 	/* Firefox */
 
-	input[type="range"]::-moz-range-track {
+	.rangeInput::-moz-range-track {
 		height: var(--track-height);
 		border-radius: var(--rounded-full);
 		background: var(--ff-surface);
 	}
 
-	input[type="range"]::-moz-range-progress {
+	.rangeInput::-moz-range-progress {
 		height: var(--track-height);
 		border-radius: var(--rounded-full);
 		background: var(--thumb-bg);
 	}
 
-	input[type="range"]::-moz-range-thumb {
+	.rangeInput::-moz-range-thumb {
 		width: var(--thumb-size);
 		height: var(--thumb-size);
 		border-radius: 50%;
@@ -185,7 +190,39 @@
 		background-repeat: no-repeat;
 	}
 
-	input[type="range"]:active::-moz-range-thumb {
+	.rangeInput:active::-moz-range-thumb {
 		border-color: var(--thumb-bg);
+	}
+
+	/* sizes */
+
+	.rangeInput.xs {
+		--thumb-size: 12px;
+		--track-height: 3px;
+		--thumb-border: 1.5px solid var(--ff-border);
+	}
+
+	.rangeInput.sm {
+		--thumb-size: 14px;
+		--track-height: 4px;
+		--thumb-border: 1.75px solid var(--ff-border);
+	}
+
+	.rangeInput.md {
+		--thumb-size: 18px;
+		--track-height: 6px;
+		--thumb-border: 2px solid var(--ff-border);
+	}
+
+	.rangeInput.lg {
+		--thumb-size: 24px;
+		--track-height: 8px;
+		--thumb-border: 2.5px solid var(--ff-border);
+	}
+
+	.rangeInput.xl {
+		--thumb-size: 30px;
+		--track-height: 10px;
+		--thumb-border: 3px solid var(--ff-border);
 	}
 </style>
