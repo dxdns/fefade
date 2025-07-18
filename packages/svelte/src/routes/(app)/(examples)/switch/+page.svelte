@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { Switch } from "@/index.js"
+
+	let isChecked = $state(false)
 </script>
 
 <div style="width: 500px; height: 300px; margin: 5rem auto;">
 	<h1>switch</h1>
+	<h2>{isChecked}</h2>
 	<br />
-	<Switch />
+	<Switch bind:checked={isChecked} label="bindable" />
 	<br />
 	<Switch label="disabled" disabled />
 	<br />

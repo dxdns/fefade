@@ -25,6 +25,7 @@
 			unchecked: "var(--ff-on-surface)",
 			checked: "var(--ff-on-primary)"
 		},
+		checked = $bindable(false),
 		children,
 		...rest
 	}: Props = $props()
@@ -51,12 +52,21 @@
 			styles.content
 		)}
 	>
-		<input {...rest} style={undefined} type="checkbox" hidden />
+		<input
+			{...rest}
+			hidden
+			style={undefined}
+			type="checkbox"
+			{checked}
+			oninput={(e) => {
+				checked = e.currentTarget.checked
+			}}
+		/>
 		<span
 			class={styles.slider}
 			style={mergeStyleUtil(
-				`--indicator-color-unchecked: ${uncheckedColor};`,
-				`--indicator-color-checked: ${checkedColor};`,
+				`--bg-unchecked: ${uncheckedColor};`,
+				`--bg-checked: ${checkedColor};`,
 				rest.style
 			)}
 		>
