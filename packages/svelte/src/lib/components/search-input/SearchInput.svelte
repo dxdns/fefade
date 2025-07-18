@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import styles from "./SearchInput.module.css"
 	import type {
 		ActionEntryType,
 		ColorType,
@@ -9,6 +8,7 @@
 	} from "@dxdns/feflow-core/types"
 	import { SearchIcon } from "../../icons/index.js"
 	import TextField from "../text-field/index.js"
+	import styles from "@dxdns/feflow-core/styles/SearchInput.module.css"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "type">, "size"> {
 		variant?: VariantType

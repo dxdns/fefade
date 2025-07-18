@@ -1,3 +1,4 @@
+import { SearchInput } from "@/components/search-input"
 import {
 	Accordion,
 	Button,
@@ -29,6 +30,9 @@ function App() {
 
 	return (
 		<>
+			<SearchInput placeholder="test..." />
+			<br />
+			<br />
 			<Window label="label">
 				<Code>
 					{data
