@@ -42,9 +42,7 @@
 	const provider = providerUtil()
 	const styleString = provider.style(theme ?? customTheme, rawStyle)
 
-	let observer: MutationObserver | undefined = undefined
-
-	function providerScript() {
+	function switchTheme() {
 		const storedTheme = provider.storedTheme(defaultThemeMode ?? defaultMode)
 		provider.applyThemeMode(storedTheme)
 	}
@@ -53,21 +51,10 @@
 		const meta = provider.createMetaElement()
 		document.head.appendChild(meta)
 
-		providerScript()
-
-		const el = document.documentElement
-		if (el) {
-			observer = provider.attrObserver(el, () => {
-				const themeMode = provider.storedTheme()
-				setThemeMode(themeMode)
-			})
-		}
+		switchTheme()
 
 		onUnmounted(() => {
 			document.head.removeChild(meta)
-			if (observer) {
-				observer.disconnect()
-			}
 		})
 	})
 

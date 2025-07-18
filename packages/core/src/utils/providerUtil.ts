@@ -140,29 +140,10 @@ export function providerUtil() {
 		`
 	}
 
-	function attrObserver(node: HTMLElement, onChange: () => void) {
-		const observer = new MutationObserver((records) => {
-			for (const mutation of records) {
-				if (
-					mutation.type === "attributes" &&
-					mutation.attributeName === Constants.THEME_ATTR
-				) {
-					onChange()
-				}
-			}
-		})
-		observer.observe(node, {
-			attributes: true,
-			attributeFilter: [Constants.THEME_ATTR]
-		})
-		return observer
-	}
-
 	return {
 		...themeMode(),
 		script,
 		style,
-		attrObserver,
 		createMetaElement
 	}
 }

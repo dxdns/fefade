@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy, onMount, type Snippet } from "svelte"
+	import { onMount, type Snippet } from "svelte"
 	import { Constants } from "@dxdns/feflow-core"
 	import type { ThemeConfigType, ThemeModeType } from "@dxdns/feflow-core/types"
 	import { providerUtil } from "@dxdns/feflow-core/utils"
@@ -27,8 +27,6 @@
 		children
 	}: Props = $props()
 
-	let observer: MutationObserver | undefined = undefined
-
 	const provider = providerUtil()
 	const scriptString = provider.script(defaultThemeMode ?? defaultMode)
 	const styleString = provider.style(theme ?? customTheme, rawStyle)
@@ -41,19 +39,6 @@
 
 	onMount(() => {
 		switchTheme()
-
-		const el = document.documentElement
-		if (el) {
-			observer = provider.attrObserver(el, () => {
-				switchTheme()
-			})
-		}
-	})
-
-	onDestroy(() => {
-		if (observer) {
-			observer.disconnect()
-		}
 	})
 </script>
 

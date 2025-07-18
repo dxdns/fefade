@@ -1,10 +1,4 @@
-import {
-	useState,
-	useMemo,
-	useRef,
-	useEffect,
-	type PropsWithChildren
-} from "react"
+import { useState, useMemo, useEffect, type PropsWithChildren } from "react"
 import { Constants } from "@dxdns/feflow-core"
 import { providerUtil } from "@dxdns/feflow-core/utils"
 import type {
@@ -45,8 +39,6 @@ export default function ({
 		setColors(Constants.themeColors[t])
 	}
 
-	const observer = useRef<MutationObserver | null>(null)
-
 	const provider = providerUtil()
 	const styleString = provider.style(theme ?? customTheme, rawStyle)
 
@@ -63,7 +55,7 @@ export default function ({
 		[mode, colors]
 	)
 
-	function providerScript() {
+	function switchTheme() {
 		const storedTheme = provider.storedTheme(defaultThemeMode ?? defaultMode)
 		provider.applyThemeMode(storedTheme)
 	}
@@ -72,21 +64,10 @@ export default function ({
 		const meta = provider.createMetaElement()
 		document.head.appendChild(meta)
 
-		providerScript()
-
-		const el = document.documentElement
-		if (el) {
-			observer.current = provider.attrObserver(el, () => {
-				const themeMode = provider.storedTheme()
-				setThemeMode(themeMode)
-			})
-		}
+		switchTheme()
 
 		return () => {
 			document.head.removeChild(meta)
-			if (observer.current) {
-				observer.current.disconnect()
-			}
 		}
 	}, [])
 
