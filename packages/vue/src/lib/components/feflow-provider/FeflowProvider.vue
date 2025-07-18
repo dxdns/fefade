@@ -45,8 +45,8 @@
 	let observer: MutationObserver | undefined = undefined
 
 	function providerScript() {
-		const _storedTheme = provider.storedTheme(defaultThemeMode ?? defaultMode)
-		provider.applyThemeMode(_storedTheme)
+		const storedTheme = provider.storedTheme(defaultThemeMode ?? defaultMode)
+		provider.applyThemeMode(storedTheme)
 	}
 
 	onMounted(() => {

@@ -22,9 +22,18 @@ function themeMode() {
 	}
 
 	function storedTheme(defaultMode?: ThemeModeType) {
-		return (localStorage.getItem(Constants.THEME_STORAGE) ||
-			document.documentElement.getAttribute(Constants.THEME_ATTR) ||
-			defaultMode) as ThemeModeType
+		const stored = localStorage.getItem(Constants.THEME_STORAGE)
+		const attr = document.documentElement.getAttribute(Constants.THEME_ATTR)
+
+		if (stored) return stored as ThemeModeType
+		if (attr) return attr as ThemeModeType
+
+		const prefersDark = window.matchMedia?.(
+			"(prefers-color-scheme: dark)"
+		).matches
+		if (prefersDark) return "dark"
+
+		return defaultMode as ThemeModeType
 	}
 
 	function toggleThemeMode(onChange?: ((mode: ThemeModeType) => void) | Event) {
@@ -94,8 +103,11 @@ export function providerUtil() {
 		<script id="${Constants.APP_NAME}-script">
 			(function () {
 				const fallbackTheme = "${defaultThemeMode}";
-				const storedTheme = localStorage.getItem('${Constants.THEME_STORAGE}') || fallbackTheme;
-				document.documentElement.setAttribute('${Constants.THEME_ATTR}', storedTheme);
+				const storedTheme = localStorage.getItem("${Constants.THEME_STORAGE}");
+				const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+				const theme = storedTheme || (prefersDark ? "dark" : fallbackTheme);
+				
+				document.documentElement.setAttribute("${Constants.THEME_ATTR}", theme);
 				document.documentElement.style.colorScheme = storedTheme;
 			})()
 		</script>

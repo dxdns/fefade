@@ -34,12 +34,18 @@
 	const styleString = provider.style(theme ?? customTheme, rawStyle)
 	const themeConfig = themeConfigState()
 
+	function switchTheme() {
+		const themeMode = provider.storedTheme()
+		themeConfig.setThemeMode(themeMode)
+	}
+
 	onMount(() => {
+		switchTheme()
+
 		const el = document.documentElement
 		if (el) {
 			observer = provider.attrObserver(el, () => {
-				const themeMode = provider.storedTheme()
-				themeConfig.setThemeMode(themeMode)
+				switchTheme()
 			})
 		}
 	})

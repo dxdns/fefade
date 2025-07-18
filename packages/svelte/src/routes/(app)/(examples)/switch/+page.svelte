@@ -1,11 +1,19 @@
 <script lang="ts">
-	import { Switch } from "@/index.js"
+	import { Switch, themeConfig } from "@/index.js"
 
 	let isChecked = $state(false)
+
+	const theme = $derived(themeConfig())
 </script>
 
 <div style="width: 500px; height: 300px; margin: 5rem auto;">
 	<h1>switch</h1>
+	<h1>isdark: {theme.mode === "dark"}</h1>
+	<Switch checked={theme.mode === "dark"} onchange={theme.toggle}>
+		<span>dark</span>
+		<span>light</span>
+	</Switch>
+	<br />
 	<h2>{isChecked}</h2>
 	<br />
 	<Switch bind:checked={isChecked} label="bindable" />
