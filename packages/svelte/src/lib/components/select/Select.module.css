@@ -39,6 +39,6 @@
 
 @media (hover: hover) and (pointer: fine) {
 	.select:hover .icon {
-		color: var(--ff-on-bg-muted);
+		color: var(--ff-muted);
 	}
 }

@@ -58,7 +58,7 @@
 }
 
 .button:hover {
-	color: var(--ff-on-bg-muted) !important;
+	color: var(--ff-muted) !important;
 }
 
 .button.active {

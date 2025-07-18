@@ -15,7 +15,7 @@
 }
 
 .pinInput:focus {
-	border-color: var(--ff-on-bg-muted);
+	border-color: var(--ff-muted);
 }
 
 .pinInput::-webkit-outer-spin-button,

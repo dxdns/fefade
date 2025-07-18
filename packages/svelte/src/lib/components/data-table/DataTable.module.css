@@ -85,7 +85,7 @@
 
 .table .expand-btn:after {
 	content: "\25BC";
-	color: var(--ff-on-bg-muted);
+	color: var(--ff-muted);
 	font-weight: bold;
 	float: right;
 	margin-left: 0.5rem;
