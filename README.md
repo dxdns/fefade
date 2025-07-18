@@ -48,3 +48,5 @@ MIT — free for personal and commercial use.
 Made with ❤️ by [@dxdns](https://linkedin.com/in/dxdns).
 
 Inspired by the work of [MUI](https://mui.com), [shadcn/ui](https://ui.shadcn.com) and [Chakra UI](https://chakra-ui.com).
+
+Icons: [Material Icons](https://fonts.google.com/icons)
