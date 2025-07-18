@@ -10,7 +10,7 @@
 	},
 	"peerDependencies": {
 		"vite": "^6.0.0",
-		"@dxdns/feflow-core": "^0.0.6"
+		"@dxdns/feflow-core": "^0.0.7"
 	},
 	"dependencies": {
 		"vue": "^3.5.17"
