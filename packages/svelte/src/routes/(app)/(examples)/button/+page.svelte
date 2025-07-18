@@ -27,6 +27,12 @@
 <Button href="https://dxdns.dev" target="_blank">link</Button>
 <br />
 <br />
+<Button roundedFull size="xl">a</Button>
+<br />
+<br />
+<Button class="rounded-full" size="xs">b</Button>
+<br />
+<br />
 <h1>disabled</h1>
 <br />
 <Button disabled>Contained Disabled</Button>

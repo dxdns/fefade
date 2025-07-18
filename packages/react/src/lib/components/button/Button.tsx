@@ -53,7 +53,7 @@ export default forwardRef<HTMLButtonElement, Props>((props, ref) => {
 				[size, styles],
 				styles.button,
 				{
-					[styles.roundedFull]: roundedFull,
+					["roundedFull"]: roundedFull,
 					[styles.pressedEffect]: pressedEffect
 				}
 			)}

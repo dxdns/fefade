@@ -30,7 +30,7 @@
 			[size, styles],
 			styles.button,
 			{
-				[styles.roundedFull]: roundedFull,
+				["roundedFull"]: roundedFull,
 				[styles.pressedEffect]: pressedEffect
 			}
 		)
@@ -61,14 +61,8 @@
 		:type="attrs.type ?? 'button'"
 		@click="handleClick"
 	>
-		<Spinner
-			v-if="isLoading"
-			:size="size"
-		/>
-		<div
-			v-else
-			:class="styles.content"
-		>
+		<Spinner v-if="isLoading" :size="size" />
+		<div v-else :class="styles.content">
 			<slot />
 		</div>
 	</button>
