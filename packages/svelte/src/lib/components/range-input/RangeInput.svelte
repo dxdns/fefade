@@ -1,14 +1,17 @@
 <script lang="ts">
+	import { mergeStyleUtil } from "@dxdns/feflow-core/utils"
 	import { onMount } from "svelte"
 	import type { HTMLInputAttributes } from "svelte/elements"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "value">, "type"> {
 		value?: number
+		icon?: string | SVGElement
 	}
 
 	let {
 		class: className = "",
 		value = $bindable(0),
+		icon,
 		min = 0,
 		max = 100,
 		...rest
@@ -36,6 +39,20 @@
 		}
 	}
 
+	function dataIconUrl(icon: string | SVGElement): string {
+		const prefix = "data:image/svg+xml;utf8,"
+
+		if (typeof icon === "string") {
+			return `${prefix}${encodeURIComponent(icon)}`
+		}
+
+		const serializer = new XMLSerializer()
+		const encoded = encodeURIComponent(serializer.serializeToString(icon))
+			.replace(/'/g, "%27")
+			.replace(/"/g, "%22")
+		return `${prefix}${encoded}`
+	}
+
 	onMount(() => {
 		updateProgress(el)
 	})
@@ -49,7 +66,10 @@
 	{min}
 	{max}
 	type="range"
-	style="--progress: {progressValue}%"
+	style={mergeStyleUtil(
+		`--progress: ${progressValue}%;`,
+		icon && `--thumb-icon: url(${dataIconUrl(icon)});`
+	)}
 	oninput={(e) => {
 		rest.oninput?.(e)
 		updateProgress(e.currentTarget)
@@ -111,7 +131,6 @@
 		width: var(--thumb-size);
 		height: var(--thumb-size);
 		border-radius: 50%;
-		background: var(--thumb-bg);
 		border: var(--thumb-border);
 		transition:
 			background-color 0.3s ease,
@@ -119,10 +138,14 @@
 		position: relative;
 		margin-top: calc((var(--track-height) - var(--thumb-size)) / 2);
 		cursor: pointer;
+		background: var(--thumb-bg);
+		background-image: var(--thumb-icon);
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
 	}
 
 	input[type="range"]:active::-webkit-slider-thumb {
-		background: var(--thumb-bg);
 		border-color: var(--thumb-bg);
 	}
 
@@ -150,11 +173,19 @@
 		width: var(--thumb-size);
 		height: var(--thumb-size);
 		border-radius: 50%;
-		background: var(--thumb-bg);
 		border: var(--thumb-border);
 		cursor: pointer;
 		transition:
 			background-color 0.3s ease,
 			border-color 0.3s ease;
+		background: var(--thumb-bg);
+		background-image: var(--thumb-icon);
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+
+	input[type="range"]:active::-moz-range-thumb {
+		border-color: var(--thumb-bg);
 	}
 </style>
