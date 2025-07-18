@@ -1,4 +1,3 @@
-import { SearchInput } from "@/components/search-input"
 import {
 	Accordion,
 	Button,
@@ -11,10 +10,14 @@ import {
 	ColorPicker,
 	Status,
 	Checkbox,
-	Code
+	Code,
+	RangeInput,
+	SearchInput
 } from "./lib"
+import { useState } from "react"
 
 function App() {
+	const [inputValue, setInputValue] = useState(0)
 	const { toggle, mode } = themeConfig()
 
 	const data = `
@@ -30,6 +33,14 @@ function App() {
 
 	return (
 		<>
+			<h2>{inputValue}</h2>
+			<RangeInput
+				step={10}
+				value={inputValue}
+				onChange={(value) => {
+					setInputValue(value)
+				}}
+			/>
 			<SearchInput placeholder="test..." />
 			<br />
 			<br />

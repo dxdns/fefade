@@ -26,4 +26,7 @@ export { default as ColorPicker } from "./components/color-picker"
 export { default as Status } from "./components/status"
 export { default as Checkbox } from "./components/checkbox"
 
+export { SearchInput } from "./components/search-input"
+export { RangeInput } from "./components/range-input"
+
 export { default as Code } from "./components/code"
