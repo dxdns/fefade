@@ -9,6 +9,7 @@ import normalizeSizeUtil from "./normalizeSizeUtil.js"
 import debounceUtil from "./debounceUtil.js"
 import generateSvgElementUtil from "./generateSvgElementUtil.js"
 import toKebabCaseUtil from "./toKebabCaseUtil.js"
+import handleClickUtil from "./handleClickUtil.js"
 
 export {
 	classMapUtil,
@@ -23,5 +24,6 @@ export {
 	customThemeConfig,
 	createTheme,
 	generateSvgElementUtil,
-	toKebabCaseUtil
+	toKebabCaseUtil,
+	handleClickUtil
 }

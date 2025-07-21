@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil, handleClickUtil } from "@dxdns/feflow-core/utils"
 	import type {
 		HTMLAttributeAnchorTarget,
 		HTMLButtonAttributes
@@ -12,6 +12,7 @@
 		variant?: VariantType
 		href?: string
 		target?: HTMLAttributeAnchorTarget
+		download?: string
 	}
 
 	let {
@@ -19,6 +20,7 @@
 		variant = "text",
 		href,
 		target = "_self",
+		download,
 		children,
 		...rest
 	}: Props = $props()
@@ -32,7 +34,16 @@
 		variant,
 		styles
 	])}
-	onclick={href ? () => window.open(href, target) : rest.onclick}
+	onclick={(e) => {
+		handleClickUtil({
+			href,
+			download,
+			target,
+			onClick: () => {
+				rest.onclick?.(e)
+			}
+		})
+	}}
 >
 	{@render children?.()}
 </Button>

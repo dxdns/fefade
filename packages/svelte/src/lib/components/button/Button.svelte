@@ -3,7 +3,7 @@
 		HTMLAttributeAnchorTarget,
 		HTMLButtonAttributes
 	} from "svelte/elements"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil, handleClickUtil } from "@dxdns/feflow-core/utils"
 	import type { ButtonType } from "@dxdns/feflow-core/types"
 	import Spinner from "../spinner/index.js"
 	import styles from "@dxdns/feflow-core/styles/Button.module.css"
@@ -25,25 +25,6 @@
 		children,
 		...rest
 	}: Props = $props()
-
-	function handleClick(
-		event: MouseEvent & {
-			currentTarget: EventTarget & HTMLButtonElement
-		}
-	) {
-		if (download && href) {
-			const a = document.createElement("a")
-			a.href = href
-			a.download = download
-			document.body.appendChild(a)
-			a.click()
-			document.body.removeChild(a)
-		} else if (href) {
-			window.open(href, target)
-		} else if (typeof rest?.onclick === "function") {
-			rest.onclick(event)
-		}
-	}
 </script>
 
 <button
@@ -60,7 +41,16 @@
 		}
 	)}
 	type={rest.type ?? "button"}
-	onclick={handleClick}
+	onclick={(e) => {
+		handleClickUtil({
+			href,
+			download,
+			target,
+			onClick: () => {
+				rest.onclick?.(e)
+			}
+		})
+	}}
 >
 	{#if isLoading}
 		<Spinner />

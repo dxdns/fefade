@@ -4,7 +4,7 @@
 		HTMLImgAttributes
 	} from "svelte/elements"
 	import { Image } from "../image/index.js"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil, handleClickUtil } from "@dxdns/feflow-core/utils"
 	import styles from "./GalleryItem.module.css"
 
 	interface Props extends Omit<HTMLImgAttributes, "src"> {
@@ -17,6 +17,7 @@
 		fallback?: string
 		href?: string
 		target?: HTMLAttributeAnchorTarget
+		download?: string
 	}
 
 	let {
@@ -27,20 +28,9 @@
 		fallback,
 		href,
 		target = "_self",
+		download,
 		...rest
 	}: Props = $props()
-
-	function handleClick(
-		event: MouseEvent & {
-			currentTarget: HTMLImageElement
-		}
-	) {
-		if (href) {
-			window.open(href, target)
-		} else {
-			rest.onclick?.(event)
-		}
-	}
 </script>
 
 <figure
@@ -53,7 +43,16 @@
 		{lazy}
 		{dataSrc}
 		{fallback}
-		onclick={handleClick}
+		onclick={(e) => {
+			handleClickUtil({
+				href,
+				download,
+				target,
+				onClick: () => {
+					rest.onclick?.(e)
+				}
+			})
+		}}
 	/>
 	{#if caption}
 		<figcaption class={styles.caption}>
