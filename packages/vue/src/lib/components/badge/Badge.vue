@@ -1,10 +1,5 @@
 <script setup lang="ts">
-	import {
-		defineProps,
-		useAttrs,
-		computed,
-		IntrinsicElementAttributes
-	} from "vue"
+	import { useAttrs, computed, IntrinsicElementAttributes } from "vue"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "@dxdns/feflow-core/styles/Badge.module.css"
 	import type { BadgeType } from "@dxdns/feflow-core/types"

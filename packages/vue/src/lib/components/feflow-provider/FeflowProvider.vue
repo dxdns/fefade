@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 	import { ref, onMounted, provide, onUnmounted } from "vue"
 	import { Constants } from "@dxdns/feflow-core"
 	import { providerUtil } from "@dxdns/feflow-core/utils"

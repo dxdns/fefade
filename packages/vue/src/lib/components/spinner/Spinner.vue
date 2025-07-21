@@ -20,8 +20,5 @@
 </script>
 
 <template>
-	<span
-		v-bind="attrs"
-		:class="computedClass"
-	/>
+	<span v-bind="attrs" :class="computedClass" />
 </template>

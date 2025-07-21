@@ -9,6 +9,7 @@
 
 [![-ff-svelte](https://img.shields.io/npm/v/%40dxdns%2Ffeflow-svelte?label=feflow-svelte&labelColor=f96743)](https://www.npmjs.com/package/@dxdns/feflow-svelte)
 [![-ff-react](https://img.shields.io/npm/v/%40dxdns%2Ffeflow-react?label=feflow-react&labelColor=aqua)](https://www.npmjs.com/package/@dxdns/feflow-react)
+[![-ff-vue](https://img.shields.io/npm/v/%40dxdns%2Ffeflow-vue?label=feflow-vue&labelColor=aqua)](https://www.npmjs.com/package/@dxdns/feflow-vue)
 
 **feflow** is a lightweight and dependency-free UI component library.
 

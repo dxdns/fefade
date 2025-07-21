@@ -1,10 +1,24 @@
 {
 	"name": "@dxdns/feflow-vue",
-	"private": true,
-	"version": "0.0.1",
+	"version": "0.0.2",
+	"description": "feflow: vue components ui",
+	"private": false,
+	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "MIT",
+	"homepage": "https://feflow.dxdns.dev",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dxdns/feflow.git"
+	},
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"dev": "vite",
 		"build": "vue-tsc -b && vite build",
@@ -14,13 +28,21 @@
 		"vite": "^6.0.0",
 		"@dxdns/feflow-core": "^0.0.9"
 	},
-	"dependencies": {
-		"vue": "^3.5.17"
-	},
 	"devDependencies": {
+		"vue": "^3.5.17",
 		"@vitejs/plugin-vue": "^6.0.0",
 		"@vue/tsconfig": "^0.7.0",
 		"typescript": "~5.8.3",
 		"vue-tsc": "^2.2.12"
-	}
+	},
+	"keywords": [
+		"vue",
+		"vue-ui",
+		"ui",
+		"feflow",
+		"components",
+		"ui-components",
+		"vue-pkg",
+		"dxdns"
+	]
 }
