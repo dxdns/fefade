@@ -6,6 +6,8 @@ import path from "path"
 
 import react from "@astrojs/react"
 
+import vue from "@astrojs/vue"
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://feflow.dxdns.dev",
@@ -56,25 +58,6 @@ export default defineConfig({
 					collapsed: false,
 					items: [
 						{
-							label: "React",
-							collapsed: true,
-							badge: "beta",
-							items: [
-								{
-									label: "Getting Started",
-									autogenerate: {
-										directory: "docs/ui-frameworks/react/getting-started"
-									}
-								},
-								{
-									label: "Components",
-									autogenerate: {
-										directory: "docs/ui-frameworks/react/components"
-									}
-								}
-							]
-						},
-						{
 							label: "Svelte",
 							collapsed: true,
 							items: [
@@ -97,13 +80,52 @@ export default defineConfig({
 									}
 								}
 							]
+						},
+						{
+							label: "React",
+							collapsed: true,
+							badge: "beta",
+							items: [
+								{
+									label: "Getting Started",
+									autogenerate: {
+										directory: "docs/ui-frameworks/react/getting-started"
+									}
+								},
+								{
+									label: "Components",
+									autogenerate: {
+										directory: "docs/ui-frameworks/react/components"
+									}
+								}
+							]
+						},
+						{
+							label: "Vue",
+							collapsed: true,
+							badge: "beta",
+							items: [
+								{
+									label: "Getting Started",
+									autogenerate: {
+										directory: "docs/ui-frameworks/vue/getting-started"
+									}
+								},
+								{
+									label: "Components",
+									autogenerate: {
+										directory: "docs/ui-frameworks/vue/components"
+									}
+								}
+							]
 						}
 					]
 				}
 			]
 		}),
 		svelte(),
-		react()
+		react(),
+		vue()
 	],
 	vite: {
 		resolve: {

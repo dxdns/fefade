@@ -58,6 +58,7 @@ export default function ({
 	function switchTheme() {
 		const storedTheme = provider.storedTheme(defaultThemeMode ?? defaultMode)
 		provider.applyThemeMode(storedTheme)
+		setThemeMode(storedTheme)
 	}
 
 	useEffect(() => {

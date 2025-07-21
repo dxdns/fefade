@@ -3,6 +3,8 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"dev": "vite",
 		"build": "vue-tsc -b && vite build",
@@ -19,7 +21,6 @@
 		"@vitejs/plugin-vue": "^6.0.0",
 		"@vue/tsconfig": "^0.7.0",
 		"typescript": "~5.8.3",
-		"vue-tsc": "^2.2.12",
-		"@dxdns/feflow-core": "*"
+		"vue-tsc": "^2.2.12"
 	}
 }

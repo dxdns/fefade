@@ -45,6 +45,7 @@
 	function switchTheme() {
 		const storedTheme = provider.storedTheme(defaultThemeMode ?? defaultMode)
 		provider.applyThemeMode(storedTheme)
+		setThemeMode(storedTheme)
 	}
 
 	onMounted(() => {

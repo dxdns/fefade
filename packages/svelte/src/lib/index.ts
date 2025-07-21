@@ -10,11 +10,15 @@ export type {
 	VariantType,
 	VariantStatusType
 } from "@dxdns/feflow-core/types"
+
+export { default as FeflowProvider } from "./components/feflow-provider/index.js"
+
 export { customThemeConfig, createTheme } from "@dxdns/feflow-core/utils"
 export { themeConfig } from "./utils/index.js"
-export { toast } from "./states/toastState.svelte.js"
+
 export { getSections } from "./states/scrollSectionState.svelte.js"
 export { mediaQueryState as useMediaQuery } from "./states/index.js"
+export { toast } from "./states/toastState.svelte.js"
 
 export { Toast, Toaster } from "./components/toast/index.js"
 
@@ -32,7 +36,6 @@ export { default as Spinner } from "./components/spinner/index.js"
 export { default as Switch } from "./components/switch/index.js"
 export { default as ProgressLoader } from "./components/progress-loader/index.js"
 export { default as HoverFollower } from "./components/hover-follower/index.js"
-export { default as FeflowProvider } from "./components/feflow-provider/index.js"
 export { default as Select } from "./components/select/index.js"
 export { default as Autocomplete } from "./components/autocomplete/index.js"
 export { default as ColorPicker } from "./components/color-picker/index.js"

@@ -10,7 +10,9 @@ export type {
 	VariantType,
 	VariantStatusType
 } from "@dxdns/feflow-core/types"
+
 export { default as FeflowProvider } from "./components/feflow-provider/index.js"
+
 export { useThemeConfig as themeConfig } from "./utils/themeConfigUtils"
 export { createTheme } from "@dxdns/feflow-core/utils"
 

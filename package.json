@@ -15,12 +15,14 @@
 		"build:core": "npm run build -w @dxdns/feflow-core",
 		"build:svelte": "npm run build -w @dxdns/feflow-svelte",
 		"build:react": "npm run build -w @dxdns/feflow-react",
+		"build:vue": "npm run build -w @dxdns/feflow-vue",
 		"build:cli": "npm run build -w @dxdns/feflow-cli",
-		"build:all": "npm run build:core && npm run build:svelte && npm run build:react && npm run build:cli",
+		"build:all": "npm run build:core && npm run build:svelte && npm run build:react && npm run build:vue && npm run build:cli",
 		"git:push": "git push && git push --tags",
 		"release:core:patch": "npm run build:core && npm version patch -w @dxdns/feflow-core --no-git-tag-version && git add packages/core && git commit -m \"chore(release): bump version core\" && git tag ff-core-v$(node -p \"require('./packages/core/package.json').version\") && npm run git:push",
 		"release:svelte:patch": "npm run build:svelte && npm version patch -w @dxdns/feflow-svelte --no-git-tag-version && git add packages/svelte && git commit -m \"chore(release): bump version svelte\" && git tag ff-svelte-v$(node -p \"require('./packages/svelte/package.json').version\") && npm run git:push",
 		"release:react:patch": "npm run build:react && npm version patch -w @dxdns/feflow-react --no-git-tag-version && git add packages/react && git commit -m \"chore(release): bump version react\" && git tag ff-react-v$(node -p \"require('./packages/react/package.json').version\") && npm run git:push",
+		"release:vue:patch": "npm run build:vue && npm version patch -w @dxdns/feflow-vue --no-git-tag-version && git add packages/vue && git commit -m \"chore(release): bump version vue\" && git tag ff-vue-v$(node -p \"require('./packages/vue/package.json').version\") && npm run git:push",
 		"release:cli:patch": "npm run build:cli && npm version patch -w @dxdns/feflow-cli --no-git-tag-version && git add packages/cli && git commit -m \"chore(release): bump version cli\" && git tag ff-cli-v$(node -p \"require('./packages/cli/package.json').version\") && npm run git:push",
 		"prepare": "npm run build:all",
 		"format": "prettier --write .",
@@ -49,6 +51,7 @@
 		"prettier-plugin-svelte": "^3.4.0",
 		"typescript": "~5.8.3",
 		"typescript-eslint": "^8.37.0",
-		"vite": "^6.0.0"
+		"vite": "^6.0.0",
+		"@dxdns/feflow-core": "*"
 	}
 }

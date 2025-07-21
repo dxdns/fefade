@@ -1,0 +1,41 @@
+---
+title: Theming
+description: How to set theme in your project vue
+---
+
+import ThemeColorWithWrapper from "@/components/ThemeColorWithWrapper.vue"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+### Theme configuration
+
+This setup allows the user to define **partial** theme colors. That means it's not required to specify every color — only the ones you wish to customize. Any colors not explicitly defined will automatically fall back to the default values.
+
+Import necessary modules and create a custom theme configuration.
+
+```ts
+import { createApp, h } from "vue"
+import App from "./App.vue"
+import { createTheme, FeflowProvider } from "./lib"
+
+const app = createApp({
+	render() {
+		return h(
+			FeflowProvider,
+			{ theme: createTheme({ colors: { light: { bg: "orange" } } }) },
+			{
+				default: () => h(App)
+			}
+		)
+	}
+})
+
+app.mount("#app")
+```
+
+### Accessing Theme Colors
+
+You can access and use theme colors throughout your components. For example, you might want to use colors defined in the theme for different parts of your app.
+
+<PreviewTabs component="ThemeColorPreview" ext="vue">
+	<ThemeColorWithWrapper client:load />
+</PreviewTabs>

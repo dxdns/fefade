@@ -51,8 +51,7 @@
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"publint": "^0.3.2",
 		"svelte": "^5.0.0",
-		"svelte-check": "^4.0.0",
-		"@dxdns/feflow-core": "*"
+		"svelte-check": "^4.0.0"
 	},
 	"keywords": [
 		"svelte",

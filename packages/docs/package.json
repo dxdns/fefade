@@ -14,14 +14,17 @@
 		"@astrojs/react": "^4.3.0",
 		"@astrojs/starlight": "^0.34.1",
 		"@astrojs/svelte": "^7.0.11",
+		"@astrojs/vue": "^5.1.0",
 		"@dxdns/feflow-react": "*",
 		"@dxdns/feflow-svelte": "*",
+		"@dxdns/feflow-vue": "*",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
 		"astro": "^5.6.1",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"sharp": "^0.32.5",
-		"svelte": "^5.28.2"
+		"svelte": "^5.28.2",
+		"vue": "^3.5.17"
 	}
 }

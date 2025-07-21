@@ -1,12 +1,16 @@
 import { createApp, h } from "vue"
 import App from "./App.vue"
-import { FeflowProvider } from "./lib"
+import { createTheme, FeflowProvider } from "./lib"
 
 const app = createApp({
 	render() {
-		return h(FeflowProvider, null, {
-			default: () => h(App)
-		})
+		return h(
+			FeflowProvider,
+			{ theme: createTheme({ colors: { light: { bg: "orange" } } }) },
+			{
+				default: () => h(App)
+			}
+		)
 	}
 })
 
