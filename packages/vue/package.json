@@ -1,7 +1,7 @@
 {
 	"name": "@dxdns/feflow-vue",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
 	},
 	"peerDependencies": {
 		"vite": "^6.0.0",
-		"@dxdns/feflow-core": "^0.0.8"
+		"@dxdns/feflow-core": "^0.0.9"
 	},
 	"dependencies": {
 		"vue": "^3.5.17"
