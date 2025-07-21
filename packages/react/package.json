@@ -36,7 +36,8 @@
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"vite-plugin-dts": "^4.5.4",
-		"vite-plugin-lib-inject-css": "^2.2.2"
+		"vite-plugin-lib-inject-css": "^2.2.2",
+		"@dxdns/feflow-core": "*"
 	},
 	"keywords": [
 		"react",
