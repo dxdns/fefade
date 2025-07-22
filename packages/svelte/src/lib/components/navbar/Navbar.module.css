@@ -17,7 +17,6 @@
 .navbar.outlined {
 	background: none;
 	border: 1px solid var(--ff-border);
-	border-radius: 15px;
 }
 
 .navbar.text {
