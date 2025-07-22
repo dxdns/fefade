@@ -97,7 +97,8 @@ export default ts.config(
 			],
 			"@typescript-eslint/no-explicit-any": "off",
 			"@typescript-eslint/ban-ts-comment": "off",
-			"no-control-regex": "off"
+			"no-control-regex": "off",
+			"prefer-const": "off"
 		}
 	},
 	{

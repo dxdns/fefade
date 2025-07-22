@@ -1,7 +1,7 @@
 import type { ThemeColorType, ThemeModeType } from "@dxdns/feflow-core/types"
 import { Constants } from "@dxdns/feflow-core"
 
-const data = $state<{
+let data = $state<{
 	mode: ThemeModeType
 	colors: ThemeColorType
 }>({

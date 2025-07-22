@@ -4,17 +4,10 @@
  *  https://feflow.dxdns.dev
  */
 
-export type {
-	SizeType,
-	PositionType,
-	VariantType,
-	VariantStatusType
-} from "@dxdns/feflow-core/types"
-
 export { default as FeflowProvider } from "./components/feflow-provider/index.js"
 
 export { customThemeConfig, createTheme } from "@dxdns/feflow-core/utils"
-export { themeConfig } from "./utils/index.js"
+export { themeConfigUtil as themeConfig } from "./utils/index.js"
 
 export { getSections } from "./states/scrollSectionState.svelte.js"
 export { mediaQueryState as useMediaQuery } from "./states/index.js"

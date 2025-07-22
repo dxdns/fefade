@@ -1,10 +1,10 @@
 import { inject } from "vue"
 import { ThemeConfigSymbol } from "../symbols"
 
-export function useThemeConfig() {
+export default function themeConfigUtil() {
 	const symbol = inject(ThemeConfigSymbol)
 	if (!symbol) {
-		throw new Error("useThemeConfig must be used within a FeflowProvider")
+		throw new Error("themeConfigUtil must be used within a FeflowProvider")
 	}
 	return symbol
 }

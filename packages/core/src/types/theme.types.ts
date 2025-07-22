@@ -36,3 +36,9 @@ export type ThemeConfigType = {
 	}
 	breakpoints?: Partial<BreakpointThemeConfigType>
 }
+
+export type ThemeConfigUtilType = {
+	colors: ThemeColorType
+	mode: ThemeModeType
+	toggle: () => void
+}
