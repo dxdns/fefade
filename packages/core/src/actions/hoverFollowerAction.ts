@@ -3,11 +3,11 @@ import type { OrientationType } from "../types/index.js"
 type Props = {
 	orientation?: OrientationType
 	bgColor?: string
+	startIn?: number
 }
 
 export default function hoverFollowerAction(node: HTMLElement, props?: Props) {
-	const { orientation, bgColor } = props ?? {}
-	const startIn = 0
+	const { orientation, bgColor, startIn = 0 } = props ?? {}
 
 	const childs = Array.from(node.children)
 	const overlay = document.createElement("div")

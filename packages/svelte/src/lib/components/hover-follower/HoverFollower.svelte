@@ -15,6 +15,7 @@
 		orientation?: OrientationType
 		bgColor?: string
 		actions?: ActionEntryType<HTMLElement>[]
+		startIn?: number
 	}
 
 	let {
@@ -22,6 +23,7 @@
 		bgColor,
 		orientation = "vertical",
 		actions,
+		startIn = 0,
 		children,
 		...rest
 	}: Props = $props()
@@ -36,7 +38,8 @@
 	class={classMapUtil(className, "hoverFollower")}
 	use:hoverFollowerAction={{
 		orientation,
-		bgColor
+		bgColor,
+		startIn
 	}}
 	use:actionUtil={actions}
 	{style}

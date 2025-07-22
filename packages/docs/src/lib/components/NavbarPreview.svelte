@@ -45,6 +45,7 @@
 	<HoverFollower
 		bgColor={theme.colors.success}
 		style="flex-direction: {isMd.value ? 'column' : 'row'} !important;"
+		orientation="horizontal"
 	>
 		<Navbar.Item aria-current="page">active</Navbar.Item>
 		<Navbar.Item>test1</Navbar.Item>
