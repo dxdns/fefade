@@ -62,5 +62,7 @@
 			</svg>
 			heart
 		</Button>
+
+		<Button :pressed-effect="false">no pressed effect</Button>
 	</div>
 </template>

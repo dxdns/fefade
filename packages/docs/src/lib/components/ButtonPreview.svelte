@@ -45,4 +45,6 @@
 		</svg>
 		heart
 	</Button>
+
+	<Button pressedEffect={false}>no pressed effect</Button>
 </div>
