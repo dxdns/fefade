@@ -6,7 +6,10 @@
 	import type { HTMLAttributes } from "svelte/elements"
 	import KeyboardArrowLeftIcon from "../../icons/KeyboardArrowLeftIcon.svelte"
 	import KeyboardArrowRightIcon from "../../icons/KeyboardArrowRightIcon.svelte"
-	import { scrollNavigatorAction } from "@dxdns/feflow-core/actions"
+	import {
+		checkVisibilityAction,
+		scrollNavigatorAction
+	} from "@dxdns/feflow-core/actions"
 
 	interface Props extends HTMLAttributes<HTMLElement> {
 		data: SectionType[]
@@ -27,34 +30,51 @@
 
 	let isFirst = $state(true)
 	let isLast = $state(false)
-	let isScrollable = $state(false)
 
-	function setupNavigator(node: HTMLDivElement) {
-		_scrollNavigatorAction = scrollNavigatorAction(node, {
-			onChange(a, b, c) {
-				isFirst = a
-				isLast = b
-				isScrollable = c
+	let el: HTMLDivElement
+
+	function handleChange() {
+		checkVisibilityAction(el.firstElementChild as HTMLElement, {
+			callback: (isVisible) => {
+				isFirst = isVisible
 			}
 		})
+
+		checkVisibilityAction(el.lastElementChild as HTMLElement, {
+			callback: (isVisible) => {
+				isLast = isVisible
+			}
+		})
+	}
+
+	function setupNavigator(node: HTMLDivElement) {
+		_scrollNavigatorAction = scrollNavigatorAction(node)
 		return _scrollNavigatorAction
 	}
 
-	function next() {
-		if (_scrollNavigatorAction?.controls) {
-			_scrollNavigatorAction.controls.next()
-		}
+	function prev() {
+		if (!_scrollNavigatorAction?.controls) return
+
+		_scrollNavigatorAction.controls.prev()
+
+		handleChange()
 	}
 
-	function prev() {
-		if (_scrollNavigatorAction?.controls) {
-			_scrollNavigatorAction.controls.prev()
+	function next() {
+		if (!_scrollNavigatorAction?.controls) return
+
+		if (isLast) {
+			_scrollNavigatorAction.controls.goTo(0)
+		} else {
+			_scrollNavigatorAction.controls.next()
 		}
+
+		handleChange()
 	}
 </script>
 
 <nav {...rest} class={classMapUtil(className, styles.scrollSection)}>
-	{#if isScrollable && (!isFirst || isLast) && scrollButtons}
+	{#if (!isFirst || isLast) && scrollButtons}
 		<Button class={styles.arrowIndicator} variant="text" onclick={prev}>
 			<KeyboardArrowLeftIcon height="16px" width="16px" />
 		</Button>
@@ -63,6 +83,7 @@
 		use:setupNavigator
 		data-listeners={["scroll", "resize", "keyboard"]}
 		class={styles.content}
+		bind:this={el}
 	>
 		{#each data as { onClick, reference, isActive } (reference)}
 			<Button
@@ -77,7 +98,7 @@
 			</Button>
 		{/each}
 	</div>
-	{#if isScrollable && !isLast && scrollButtons}
+	{#if !isLast && scrollButtons}
 		<Button variant="text" class={styles.arrowIndicator} onclick={next}>
 			<KeyboardArrowRightIcon height="16px" width="16px" />
 		</Button>

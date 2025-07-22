@@ -1,9 +1,6 @@
-import { HTMLAttrAnchorTarget } from "../types/html.types.js"
+import { HTMLAttrAnchor } from "../types/html.types.js"
 
-type Props = {
-	href?: string
-	download?: string
-	target?: HTMLAttrAnchorTarget
+interface Props extends HTMLAttrAnchor {
 	onClick?: () => void
 }
 

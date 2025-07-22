@@ -7,6 +7,4 @@ export type ButtonType = {
 	isLoading?: boolean
 	roundedFull?: boolean
 	size?: SizeType
-	href?: string
-	download?: string
 }

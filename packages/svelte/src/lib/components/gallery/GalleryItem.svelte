@@ -1,13 +1,11 @@
 <script lang="ts">
-	import type {
-		HTMLAttributeAnchorTarget,
-		HTMLImgAttributes
-	} from "svelte/elements"
+	import type { HTMLImgAttributes } from "svelte/elements"
 	import { Image } from "../image/index.js"
 	import { classMapUtil, handleClickUtil } from "@dxdns/feflow-core/utils"
+	import type { HTMLAttrAnchor } from "@dxdns/feflow-core/types"
 	import styles from "./GalleryItem.module.css"
 
-	interface Props extends Omit<HTMLImgAttributes, "src"> {
+	interface Props extends Omit<HTMLImgAttributes, "src">, HTMLAttrAnchor {
 		lazy?: boolean
 		dataSrc: string
 		caption?: {
@@ -15,9 +13,6 @@
 			description: string
 		}
 		fallback?: string
-		href?: string
-		target?: HTMLAttributeAnchorTarget
-		download?: string
 	}
 
 	let {

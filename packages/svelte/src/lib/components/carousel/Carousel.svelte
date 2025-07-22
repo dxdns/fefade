@@ -13,9 +13,9 @@
 				{
 					prev: () => void
 					next: () => void
-					isFirst: boolean
-					isLast: boolean
 					goTo: (n: number) => void
+					index: number
+					length: number
 				}
 			]
 		>
@@ -30,22 +30,19 @@
 		...rest
 	}: Props = $props()
 
-	let isFirst = $state(false)
-	let isLast = $state(false)
+	let index = $state(0)
+	let childs: HTMLElement[] = $state([])
 
+	let el: HTMLDivElement
 	let interval: ReturnType<typeof setInterval>
-
 	let _scrollNavigatorAction:
 		| ReturnType<typeof scrollNavigatorAction>
 		| undefined
 
+	const isLast = $derived(index === childs.length - 1)
+
 	function setupNavigator(node: HTMLDivElement) {
-		_scrollNavigatorAction = scrollNavigatorAction(node, {
-			onChange(a: boolean, b: boolean) {
-				isFirst = a
-				isLast = b
-			}
-		})
+		_scrollNavigatorAction = scrollNavigatorAction(node)
 		return _scrollNavigatorAction
 	}
 
@@ -53,21 +50,25 @@
 		if (!_scrollNavigatorAction?.controls) return
 
 		_scrollNavigatorAction.controls.prev()
+		index -= 1
 	}
 
 	function next() {
 		if (!_scrollNavigatorAction?.controls) return
 
-		if (auto && isLast) {
+		if (isLast) {
 			_scrollNavigatorAction.controls.goTo(0)
+			index = 0
 		} else {
 			_scrollNavigatorAction.controls.next()
+			index += 1
 		}
 	}
 
 	function goTo(n: number) {
 		if (!_scrollNavigatorAction?.controls) return
 		_scrollNavigatorAction.controls.goTo(n)
+		index = n
 	}
 
 	onMount(() => {
@@ -76,6 +77,7 @@
 				next()
 			}, delay)
 		}
+		childs = Array.from(el.children) as HTMLElement[]
 	})
 
 	onDestroy(() => {
@@ -93,14 +95,15 @@
 		use:setupNavigator
 		data-listeners={["keyboard"]}
 		class={styles.content}
+		bind:this={el}
 	>
 		{@render children?.()}
 	</div>
 	{@render actions?.({
 		prev,
 		next,
-		isFirst,
-		isLast,
-		goTo
+		goTo,
+		index,
+		length: childs.length - 1
 	})}
 </div>

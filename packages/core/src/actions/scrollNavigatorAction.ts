@@ -1,10 +1,4 @@
-type Props = {
-	onChange?: (isFirst: boolean, isLast: boolean, isScrollable: boolean) => void
-}
-
-export default function scrollNavigatorAction(node: HTMLElement, props: Props) {
-	const { onChange } = props ?? {}
-
+export default function scrollNavigatorAction(node: HTMLElement) {
 	function getChilds() {
 		return Array.from(node.children) as HTMLElement[]
 	}
@@ -54,31 +48,20 @@ export default function scrollNavigatorAction(node: HTMLElement, props: Props) {
 		})
 	}
 
-	function handleChange(el: HTMLElement) {
-		const firstChild = node.firstElementChild === el
-		const lastChild = node.lastElementChild === el
-		const isScrollable = node.scrollWidth > el.clientWidth
-
-		onChange?.(firstChild, lastChild, isScrollable)
-	}
-
 	const controls = {
 		prev: () => {
 			const el = getPrevElement()
 			scrollToElement(el)
-			handleChange(el)
 		},
 		next: () => {
 			const el = getNextElement()
 			scrollToElement(el)
-			handleChange(el)
 		},
 		goTo: (index: number) => {
 			const childs = getChilds()
 			const clampedIndex = Math.max(0, Math.min(index, childs.length - 1))
 			const el = childs[clampedIndex]
 			scrollToElement(el)
-			handleChange(el)
 		}
 	}
 
@@ -94,46 +77,11 @@ export default function scrollNavigatorAction(node: HTMLElement, props: Props) {
 		}
 	}
 
-	function update() {
-		onChange?.(
-			node.scrollLeft === 0,
-			node.scrollLeft + node.clientWidth >= node.scrollWidth - 2,
-			node.scrollWidth > node.clientWidth
-		)
-	}
-
-	const allListeners = {
-		scroll: [node, "scroll", update],
-		resize: [window, "resize", update],
-		keyboard: [window, "keydown", handleKeyDown as EventListener]
-	} as const
-
-	const attachedListeners: [
-		EventTarget,
-		string,
-		EventListenerOrEventListenerObject
-	][] = []
-
-	const keys = Object.keys(allListeners)
-	const listeners = node.dataset.listeners
-	const listenersFiltered = listeners
-		?.split(",")
-		.filter((s) => keys.includes(s))
-
-	for (const key of listenersFiltered ?? ["keyboard"]) {
-		const [target, event, handler] =
-			allListeners[key as keyof typeof allListeners]
-		target.addEventListener(event, handler)
-		attachedListeners.push([target, event, handler])
-	}
-
-	requestAnimationFrame(update)
+	node.addEventListener("keydown", handleKeyDown)
 
 	return {
 		destroy() {
-			for (const [target, event, handler] of attachedListeners) {
-				target.removeEventListener(event, handler)
-			}
+			node.removeEventListener("keydown", handleKeyDown)
 		},
 		controls
 	}

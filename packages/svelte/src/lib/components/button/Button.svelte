@@ -1,16 +1,11 @@
 <script lang="ts">
-	import type {
-		HTMLAttributeAnchorTarget,
-		HTMLButtonAttributes
-	} from "svelte/elements"
+	import type { HTMLButtonAttributes } from "svelte/elements"
 	import { classMapUtil, handleClickUtil } from "@dxdns/feflow-core/utils"
-	import type { ButtonType } from "@dxdns/feflow-core/types"
+	import type { ButtonType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
 	import Spinner from "../spinner/index.js"
 	import styles from "@dxdns/feflow-core/styles/Button.module.css"
 
-	interface Props extends HTMLButtonAttributes, ButtonType {
-		target?: HTMLAttributeAnchorTarget
-	}
+	interface Props extends HTMLButtonAttributes, ButtonType, HTMLAttrAnchor {}
 
 	let {
 		class: className = "",

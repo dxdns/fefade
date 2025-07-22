@@ -3,7 +3,7 @@
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		callback: () => void
+		callback: (isVisible: boolean) => void
 		preventDefault?: boolean
 	}
 

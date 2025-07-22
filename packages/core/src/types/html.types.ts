@@ -4,3 +4,9 @@ export type HTMLAttrAnchorTarget =
 	| "_parent"
 	| "_top"
 	| (string & {})
+
+export type HTMLAttrAnchor = {
+	target?: HTMLAttrAnchorTarget
+	href?: string
+	download?: string
+}

@@ -1,13 +1,11 @@
 <script setup lang="ts">
 	import { computed, useAttrs, IntrinsicElementAttributes } from "vue"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import type { ButtonType } from "@dxdns/feflow-core/types"
+	import type { ButtonType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
 	import styles from "@dxdns/feflow-core/styles/Button.module.css"
 	import { Spinner } from "../spinner"
 
-	interface Props extends ButtonType {
-		target?: "_self" | "_blank" | "_parent" | "_top" | (string & {})
-	}
+	interface Props extends ButtonType, HTMLAttrAnchor {}
 
 	const {
 		pressedEffect = true,

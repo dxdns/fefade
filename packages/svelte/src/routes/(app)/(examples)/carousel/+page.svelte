@@ -27,7 +27,7 @@
 		/>
 	</Carousel.Item>
 
-	{#snippet actions({ prev, next, isFirst, isLast })}
+	{#snippet actions({ prev, next, index, length })}
 		<div
 			style="
 			display: flex;
@@ -39,8 +39,10 @@
 			transform: translate(0, -50%);
 			"
 		>
-			<Button disabled={isFirst} roundedFull onclick={prev}>prev</Button>
-			<Button disabled={isLast} roundedFull onclick={next}>next</Button>
+			<Button disabled={index === 0} roundedFull onclick={prev}>prev</Button>
+			<Button disabled={index === length} roundedFull onclick={next}>
+				next
+			</Button>
 		</div>
 	{/snippet}
 </Carousel>
@@ -71,7 +73,7 @@
 		</Carousel.Item>
 	{/each}
 
-	{#snippet actions({ prev, next })}
+	{#snippet actions({ prev, next, index, length })}
 		<div
 			style="
 				display: flex;
@@ -84,7 +86,7 @@
 			"
 		>
 			<Button onclick={prev}>prev</Button>
-			<Button onclick={next}>next</Button>
+			<Button onclick={next}>{index} / {length} next</Button>
 		</div>
 	{/snippet}
 </Carousel>
