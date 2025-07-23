@@ -5,12 +5,20 @@ description: all templates.
 
 import { CardGrid, LinkCard } from "@astrojs/starlight/components"
 import { capitalizeUtil } from "src/utils"
+import { Button } from "@dxdns/feflow-svelte"
 
 <CardGrid>
-	{["svelte", "react"].map((framework) => (
+	{["svelte"].map((framework) => (
 		<LinkCard
 			title={capitalizeUtil(framework)}
 			href={`/docs/ui-frameworks/${framework}/getting-started/templates/`}
+		/>
+	))}
+	{["react", "vue"].map((framework) => (
+		<LinkCard
+			title={`${capitalizeUtil(framework)} (?)`}
+			href={"/docs/templates/"}
+			style={{ pointerEvents: "none" }}
 		/>
 	))}
 </CardGrid>
