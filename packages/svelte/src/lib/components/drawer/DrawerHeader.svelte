@@ -3,6 +3,7 @@
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import { CloseIcon } from "../../icons/index.js"
 	import Button from "../button/index.js"
+	import styles from "@dxdns/feflow-core/styles/DrawerHeader.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		handleClose?: () => void
@@ -18,37 +19,14 @@
 
 <div
 	{...rest}
-	class={classMapUtil(className, "drawerHeader", {
-		["isClosable"]: Boolean(handleClose)
+	class={classMapUtil(className, [className, styles], styles.drawerHeader, {
+		[styles.isClosable]: Boolean(handleClose)
 	})}
 >
 	{@render children?.()}
 	{#if handleClose}
-		<Button variant="text" class="buttonClose" onclick={handleClose}>
+		<Button variant="text" class={styles.buttonClose} onclick={handleClose}>
 			<CloseIcon />
 		</Button>
 	{/if}
 </div>
-
-<style>
-	.drawerHeader {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.5rem;
-		padding: 1rem clamp(1rem, 2vw, 2rem);
-		min-height: fit-content;
-	}
-
-	.drawerHeader.isClosable {
-		justify-content: space-between;
-	}
-
-	.drawerHeader.borded {
-		border-bottom: 1px solid var(--ff-border);
-	}
-
-	.buttonClose {
-		display: inline-block;
-	}
-</style>
