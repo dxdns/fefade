@@ -26,12 +26,12 @@
 }
 
 .select.outlined>select {
-	background: none;
+	background: inherit;
 	border: 1px solid var(--ff-border);
 }
 
 .select.text>select {
-	background: none;
+	background: inherit;
 	border: none;
 }
 
