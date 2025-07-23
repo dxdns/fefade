@@ -13,7 +13,6 @@ export default function () {
 		bottom: false
 	})
 
-	const [isOpen, setIsOpen] = useState(false)
 	const [isOpenFixed, setIsOpenFixed] = useState(false)
 
 	function handleToggle(position: PositionType) {
@@ -59,7 +58,7 @@ export default function () {
 			</Button>
 			<br />
 			<br />
-			<Window style={{ height: "500px", width: "500px", position: "relative" }}>
+			<Window style={{ minHeight: "500px", position: "relative" }}>
 				{(["top", "left", "right", "bottom"] as PositionType[]).map((pos) => (
 					<div key={pos}>
 						<Drawer.Overlay
@@ -85,40 +84,6 @@ export default function () {
 					</Button>
 					<Button onClick={() => handleToggle("right")}>Right</Button>
 					<Button onClick={() => handleToggle("bottom")}>Bottom</Button>
-				</div>
-			</Window>
-
-			<Window style={{ height: "500px", width: "500px" }}>
-				<div
-					style={{
-						["--size" as any]: isOpen ? "auto" : "0",
-						overflow: "hidden",
-						display: "grid",
-						gridTemplateColumns: "var(--size) 1fr"
-					}}
-				>
-					<Drawer isOpen={isOpen} variant="permanent">
-						<Drawer.Header handleClose={() => setIsOpen(false)}>
-							<span>header</span>
-						</Drawer.Header>
-						<Drawer.Content>
-							<span>test</span>
-						</Drawer.Content>
-					</Drawer>
-
-					<div
-						style={{
-							background: "var(--ff-surface)",
-							height: "40px",
-							padding: "1rem",
-							display: "flex",
-							alignItems: "center",
-							gap: "1rem"
-						}}
-					>
-						{!isOpen && <Button onClick={() => setIsOpen(true)}>Left</Button>}
-						<span>Menu</span>
-					</div>
 				</div>
 			</Window>
 		</>
