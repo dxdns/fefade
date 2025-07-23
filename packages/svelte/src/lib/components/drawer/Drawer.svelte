@@ -1,14 +1,10 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { PositionNoCenterType } from "@dxdns/feflow-core/types"
+	import type { DrawerType } from "@dxdns/feflow-core/types"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import styles from "@dxdns/feflow-core/styles/Drawer.module.css"
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
-		isOpen: boolean
-		variant?: "permanent" | "temporary"
-		position?: PositionNoCenterType
-	}
+	interface Props extends HTMLAttributes<HTMLDivElement>, DrawerType {}
 
 	let {
 		class: className = "",

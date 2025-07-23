@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from "svelte/elements"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import styles from "@dxdns/feflow-core/styles/Overlay.module.css"
 
 	interface Props extends HTMLButtonAttributes {
 		isOpen: boolean
@@ -12,27 +13,10 @@
 {#if isOpen}
 	<button
 		{...rest}
-		class={classMapUtil(className, "overlay")}
+		class={classMapUtil(className, [className, styles], styles.overlay)}
 		type="button"
 		aria-labelledby="overlay"
 		aria-label="Close overlay"
 	>
 	</button>
 {/if}
-
-<style>
-	.overlay {
-		all: unset;
-		position: fixed;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		top: 0;
-		z-index: 998;
-		background: rgba(0, 0, 0, 0.5);
-		width: 100%;
-		height: 100%;
-		backdrop-filter: blur(1px);
-		pointer-events: all;
-	}
-</style>

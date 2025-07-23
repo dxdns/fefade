@@ -25,3 +25,4 @@ export { SearchInput } from "./components/search-input"
 export { RangeInput } from "./components/range-input"
 
 export { default as Code } from "./components/code"
+export { default as Drawer } from "./components/drawer/index.js"
