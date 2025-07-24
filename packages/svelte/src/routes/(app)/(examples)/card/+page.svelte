@@ -5,15 +5,15 @@
 <Card variant="contained">
 	<h2>test1</h2>
 </Card>
-
+<br />
 <Card href="https://dxdns.dev" target="_blank">
 	<h2>link</h2>
 </Card>
-
+<br />
 <Card glowOnHover>
 	<h2>glow on hover</h2>
 </Card>
-
+<br />
 <HoverFollower>
 	<Card>
 		<div>
@@ -28,7 +28,7 @@
 		</div>
 	</Card>
 </HoverFollower>
-
+<br />
 <HoverFollower style="gap: 3rem;" orientation="horizontal" bgColor="green">
 	{#each Array.from(Array(5)) as _, i (i)}
 		<Card variant={i % 2 ? "contained" : "outlined"}>
@@ -39,3 +39,7 @@
 		</Card>
 	{/each}
 </HoverFollower>
+<br />
+<Card animatedBorder>
+	<h1>animated border</h1>
+</Card>

@@ -18,6 +18,7 @@
 		class: className = "",
 		isTranslucent = false,
 		glowOnHover = false,
+		animatedBorder = false,
 		variant = "outlined",
 		href,
 		target = "_self",
@@ -36,7 +37,8 @@
 			[variant, styles],
 			styles.card,
 			{
-				[styles.isTranslucent]: isTranslucent
+				[styles.isTranslucent]: isTranslucent,
+				[styles.animatedBorder]: animatedBorder
 			}
 		)}
 		style={mergeStyleUtil(href ? "cursor: pointer;" : "", rest.style)}

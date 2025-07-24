@@ -1,3 +1,7 @@
+:root {
+	--border-width: 1px
+}
+
 .card {
 	padding: 1rem;
 	overflow: hidden;
@@ -5,7 +9,7 @@
 	border-radius: 0.5rem;
 	transition: all 300ms ease;
 	text-align: left;
-	border: 1px solid var(--ff-border);
+	border: var(--border-width) solid var(--ff-border);
 }
 
 .card.contained {
@@ -23,4 +27,58 @@
 	backdrop-filter: blur(3px);
 	-webkit-backdrop-filter: blur(3px);
 	border: 1px solid var(--ff-border);
+}
+
+.card.animatedBorder {
+	border: var(--border-width) solid transparent;
+	overflow: inherit;
+}
+
+.card.animatedBorder::before {
+	content: " ";
+	position: absolute;
+	inset: calc(var(--border-width) * -1);
+	z-index: -1;
+	border: inherit;
+	border-radius: inherit;
+	background-image: conic-gradient(from var(--angle),
+			var(--ff-border) 80%,
+			var(--ff-on-surface) 88%,
+			var(--ff-on-surface) 92%,
+			var(--ff-border) 100%);
+	background-origin: border-box;
+	-webkit-mask:
+		linear-gradient(black, black) content-box,
+		linear-gradient(black, black);
+	mask: linear-gradient(black, black), linear-gradient(black, black);
+	-webkit-mask-clip: content-box, border-box;
+	mask-clip: content-box, border-box;
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	animation: spin 3s linear infinite;
+}
+
+@supports not (background: paint(something)) {
+	.card.animatedBorder::before {
+		background-image: conic-gradient(var(--ff-border) 80%,
+				var(--ff-on-surface) 88%,
+				var(--ff-on-surface) 92%,
+				var(--ff-border) 100%);
+	}
+}
+
+.card.animatedBorder:hover::before {
+	animation-play-state: paused;
+}
+
+@property --angle {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0turn;
+}
+
+@keyframes spin {
+	to {
+		--angle: 1turn;
+	}
 }

@@ -13,3 +13,7 @@
 <Card glowOnHover>
 	<h2>glow on hover</h2>
 </Card>
+
+<Card animatedBorder>
+	<h1>animated border</h1>
+</Card>

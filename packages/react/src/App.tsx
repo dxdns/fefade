@@ -34,6 +34,10 @@ function App() {
 
 	return (
 		<>
+			<Card animatedBorder>
+				<h1>animated border</h1>
+			</Card>
+			<br />
 			<DrawerDemo />
 			<h2>{inputValue}</h2>
 			<RangeInput

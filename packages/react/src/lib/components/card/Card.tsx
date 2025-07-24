@@ -17,6 +17,7 @@ export default forwardRef<HTMLDivElement, Props>(
 			className = "",
 			isTranslucent = false,
 			glowOnHover = false,
+			animatedBorder = false,
 			variant = "outlined",
 			href,
 			target = "_self",
@@ -39,7 +40,8 @@ export default forwardRef<HTMLDivElement, Props>(
 						[variant, styles],
 						styles.card,
 						{
-							[styles.isTranslucent]: isTranslucent
+							[styles.isTranslucent]: isTranslucent,
+							[styles.animatedBorder]: animatedBorder
 						}
 					)}
 					style={{
