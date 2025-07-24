@@ -31,7 +31,7 @@
 
 .card.animatedBorder {
 	border: var(--border-width) solid transparent;
-	overflow: inherit;
+	overflow: unset;
 }
 
 .card.animatedBorder::before {
@@ -67,10 +67,6 @@
 	}
 }
 
-.card.animatedBorder:hover::before {
-	animation-play-state: paused;
-}
-
 @property --angle {
 	syntax: "<angle>";
 	inherits: true;
@@ -80,5 +76,11 @@
 @keyframes spin {
 	to {
 		--angle: 1turn;
+	}
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.card.animatedBorder:hover::before {
+		animation-play-state: paused;
 	}
 }
