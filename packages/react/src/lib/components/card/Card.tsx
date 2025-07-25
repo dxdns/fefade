@@ -31,6 +31,11 @@ export default forwardRef<HTMLDivElement, Props>(
 	) => {
 		const actionRef = useAction<HTMLDivElement>(glowOnHoverAction)
 
+		const stopOnHover = getPropValueUtil<
+			{ stopOnHover?: boolean },
+			"stopOnHover"
+		>(animatedBorder, "stopOnHover", false)
+
 		const width = getPropValueUtil<{ width?: string }, "width">(
 			animatedBorder,
 			"width",
@@ -60,7 +65,8 @@ export default forwardRef<HTMLDivElement, Props>(
 						styles.card,
 						{
 							[styles.isTranslucent]: isTranslucent,
-							[styles.animatedBorder]: animatedBorder
+							[styles.animatedBorder]: Boolean(animatedBorder),
+							[styles.stopOnHover]: Boolean(stopOnHover)
 						}
 					)}
 					style={

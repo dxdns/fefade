@@ -151,7 +151,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-	.card.animatedBorder:hover::before {
+	.card.animatedBorder.stopOnHover:hover::before {
 		animation-play-state: paused;
 	}
 }

@@ -15,7 +15,7 @@
 </Card>
 
 <Card animatedBorder>
-	<h1>animated border</h1>
+	<h2>animated border</h2>
 </Card>
 
 <Card
@@ -25,5 +25,16 @@
 		secondaryColor: "#8000FF"
 	}}
 >
-	<h1>animated border - custom colors</h1>
+	<h2>animated border - custom colors</h2>
+</Card>
+
+<Card
+	animatedBorder={{
+		stopOnHover: true,
+		width: "2px",
+		primaryColor: "#39FF14",
+		secondaryColor: "#00FFFF"
+	}}
+>
+	<h2>animated border - stop on hover</h2>
 </Card>

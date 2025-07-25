@@ -6,6 +6,7 @@ export type CardType = {
 	animatedBorder?:
 		| boolean
 		| {
+				stopOnHover?: boolean
 				width?: number | string
 				primaryColor?: string
 				secondaryColor?: string

@@ -29,6 +29,11 @@
 		...rest
 	}: Props = $props()
 
+	const stopOnHover = getPropValueUtil<
+		{ stopOnHover?: boolean },
+		"stopOnHover"
+	>(animatedBorder, "stopOnHover", false)
+
 	const width = getPropValueUtil<{ width?: string }, "width">(
 		animatedBorder,
 		"width",
@@ -57,7 +62,8 @@
 			styles.card,
 			{
 				[styles.isTranslucent]: isTranslucent,
-				[styles.animatedBorder]: Boolean(animatedBorder)
+				[styles.animatedBorder]: Boolean(animatedBorder),
+				[styles.stopOnHover]: Boolean(stopOnHover)
 			}
 		)}
 		style={mergeStyleUtil(
