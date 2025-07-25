@@ -1,3 +1,1 @@
-import Accordion from "./Accordion"
-
-export default Accordion
+export { default as Accordion } from "./Accordion.js"

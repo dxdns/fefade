@@ -2,7 +2,7 @@ import { forwardRef, type ButtonHTMLAttributes } from "react"
 import type { ButtonType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
 import styles from "@dxdns/feflow-core/styles/Button.module.css"
 import { classMapUtil } from "@dxdns/feflow-core/utils"
-import Spinner from "../spinner"
+import { Spinner } from "../spinner"
 
 interface Props
 	extends ButtonHTMLAttributes<HTMLButtonElement>,

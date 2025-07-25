@@ -1,7 +1,7 @@
 import type { TextFieldType } from "@dxdns/feflow-core/types"
 import { classMapUtil } from "@dxdns/feflow-core/utils"
 import { forwardRef, InputHTMLAttributes } from "react"
-import TextField from "../text-field"
+import { TextField } from "../text-field"
 import { SearchIcon } from "../../icons/index.js"
 import styles from "@dxdns/feflow-core/styles/SearchInput.module.css"
 

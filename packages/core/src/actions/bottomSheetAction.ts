@@ -4,10 +4,9 @@ type Props = {
 	handleClose: () => void
 }
 
-export default function bottomSheetAction(
-	node: HTMLElement,
-	{ handleClose }: Props
-) {
+export default function bottomSheetAction(node: HTMLElement, props?: Props) {
+	const { handleClose } = props ?? {}
+
 	let isDragging = false
 	let startY = 0
 	let startHeight = 50

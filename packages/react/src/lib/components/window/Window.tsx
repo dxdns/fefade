@@ -1,7 +1,7 @@
 import { forwardRef, HTMLAttributes, ReactNode } from "react"
 import { CardType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
-import Card from "../card"
-import Badge from "../badge"
+import { Card } from "../card"
+import { Badge } from "../badge"
 import styles from "@dxdns/feflow-core/styles/Window.module.css"
 
 interface Props

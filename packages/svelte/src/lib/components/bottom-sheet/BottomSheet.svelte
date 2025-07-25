@@ -3,12 +3,12 @@
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import { tick } from "svelte"
 	import type { HTMLAttributes } from "svelte/elements"
+	import type { BottomSheetType } from "@dxdns/feflow-core/types"
 	import styles from "@dxdns/feflow-core/styles/BottomSheet.module.css"
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
-		isOpen: boolean
-		handleClose: () => void
-	}
+	interface Props
+		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,
+			BottomSheetType {}
 
 	let {
 		class: className = "",

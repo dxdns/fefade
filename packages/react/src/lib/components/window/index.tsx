@@ -1,3 +1,1 @@
-import Window from "./Window"
-
-export default Window
+export { default as Window } from "./Window.js"
