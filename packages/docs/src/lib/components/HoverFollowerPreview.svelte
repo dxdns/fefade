@@ -18,7 +18,7 @@
 </HoverFollower>
 
 <HoverFollower
-	style="gap: 1rem; flex-wrap: wrap;"
+	style="gap: 1rem; flex-wrap: wrap; align-items: baseline;"
 	orientation="horizontal"
 	bgColor="green"
 >
