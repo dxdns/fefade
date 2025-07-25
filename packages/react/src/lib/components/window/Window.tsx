@@ -1,12 +1,14 @@
 import { forwardRef, HTMLAttributes, ReactNode } from "react"
-import { VariantType } from "@dxdns/feflow-core/types"
+import { CardType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
 import Card from "../card"
 import Badge from "../badge"
 import styles from "@dxdns/feflow-core/styles/Window.module.css"
 
-interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+interface Props
+	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,
+		CardType,
+		HTMLAttrAnchor {
 	label?: string | ReactNode
-	variant?: Exclude<VariantType, "text">
 }
 
 export default forwardRef<HTMLDivElement, Props>(

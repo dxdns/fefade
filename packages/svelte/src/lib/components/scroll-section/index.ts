@@ -6,7 +6,7 @@ type ScrollSectionComponentType = typeof ScrollSectionComponent & {
 }
 
 const ScrollSection =
-	ScrollSectionComponent as unknown as ScrollSectionComponentType
+	ScrollSectionComponent as any as ScrollSectionComponentType
 ScrollSection.Content = ScrollSectionContentComponent
 
 export { ScrollSection as default }

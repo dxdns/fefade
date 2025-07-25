@@ -61,7 +61,7 @@ export default function toastState() {
 			toast.start = Date.now()
 			toast.timer = setTimeout(() => {
 				this.remove(toast.id)
-			}, toast.remaining) as unknown as number
+			}, toast.remaining) as any as number
 		},
 		pause(id: string) {
 			const toast = this._getById(id)

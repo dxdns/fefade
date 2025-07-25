@@ -7,7 +7,7 @@ type NavbarComponentType = typeof NavbarComponent & {
 	Toggler: typeof NavbarTogglerComponent
 }
 
-const Navbar = NavbarComponent as unknown as NavbarComponentType
+const Navbar = NavbarComponent as any as NavbarComponentType
 Navbar.Item = NavbarItemComponent
 Navbar.Toggler = NavbarTogglerComponent
 

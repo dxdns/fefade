@@ -3,12 +3,14 @@
 	import Card from "../card/index.js"
 	import Badge from "../badge/index.js"
 	import type { Snippet } from "svelte"
-	import type { VariantType } from "@dxdns/feflow-core/types"
+	import type { CardType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
 	import styles from "@dxdns/feflow-core/styles/Window.module.css"
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
+	interface Props
+		extends HTMLAttributes<HTMLDivElement>,
+			CardType,
+			HTMLAttrAnchor {
 		label?: string | Snippet<[]>
-		variant?: Exclude<VariantType, "text">
 	}
 
 	let { class: className = "", label, children, ...rest }: Props = $props()

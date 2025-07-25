@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, type VariantType } from "@dxdns/feflow-svelte"
+	import { Badge } from "@dxdns/feflow-svelte"
 
 	const variants = ["outlined", "text", "contained"]
 	const colors = ["error", "success", "warning", "info", "primary"]
@@ -20,7 +20,7 @@
 		</Badge>
 	{/each}
 	{#each variants as variant (variant)}
-		<Badge variant={variant as VariantType} size="md">
+		<Badge variant={variant as any} size="md">
 			{variant}
 		</Badge>
 	{/each}

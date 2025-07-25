@@ -60,7 +60,7 @@ function App() {
 			<SearchInput placeholder="test..." />
 			<br />
 			<br />
-			<Window label="label">
+			<Window label="label" animatedBorder>
 				<Code>
 					{data
 						.split("\n")

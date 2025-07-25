@@ -5,7 +5,7 @@ type TimelineComponentType = typeof TimelineComponent & {
 	Item: typeof TimelineItemComponent
 }
 
-const Timeline = TimelineComponent as unknown as TimelineComponentType
+const Timeline = TimelineComponent as any as TimelineComponentType
 Timeline.Item = TimelineItemComponent
 
 export { Timeline as default }

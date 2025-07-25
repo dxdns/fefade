@@ -9,7 +9,7 @@ type DrawerComponentType = typeof DrawerComponent & {
 	Overlay: typeof DrawerOverlayComponent
 }
 
-const Drawer = DrawerComponent as unknown as DrawerComponentType
+const Drawer = DrawerComponent as any as DrawerComponentType
 Drawer.Header = DrawerHeaderComponent
 Drawer.Content = DrawerContentComponent
 Drawer.Overlay = DrawerOverlayComponent

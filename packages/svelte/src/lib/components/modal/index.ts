@@ -9,7 +9,7 @@ type ModalComponentType = typeof ModalComponent & {
 	Actions: typeof ModalActionsComponent
 }
 
-const Modal = ModalComponent as unknown as ModalComponentType
+const Modal = ModalComponent as any as ModalComponentType
 Modal.Header = ModalHeaderComponent
 Modal.Content = ModalContentComponent
 Modal.Actions = ModalActionsComponent

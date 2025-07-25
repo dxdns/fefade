@@ -5,7 +5,7 @@ type CarouselComponentType = typeof CarouselComponent & {
 	Item: typeof CarouselItemComponent
 }
 
-const Carousel = CarouselComponent as unknown as CarouselComponentType
+const Carousel = CarouselComponent as any as CarouselComponentType
 Carousel.Item = CarouselItemComponent
 
 export { Carousel as default }

@@ -6,7 +6,7 @@ type DraggableGroupComponentType = typeof DraggableGroupComponent & {
 }
 
 const DraggableGroup =
-	DraggableGroupComponent as unknown as DraggableGroupComponentType
+	DraggableGroupComponent as any as DraggableGroupComponentType
 DraggableGroup.Item = DraggableGroupItemComponent
 
 export { DraggableGroup as default }

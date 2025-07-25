@@ -7,7 +7,7 @@ type TabComponentType = typeof TabComponent & {
 	Panel: typeof TabPanelComponent
 }
 
-const Tab = TabComponent as unknown as TabComponentType
+const Tab = TabComponent as any as TabComponentType
 Tab.List = TabListComponent
 Tab.Panel = TabPanelComponent
 

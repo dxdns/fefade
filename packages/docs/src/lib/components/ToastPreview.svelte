@@ -20,7 +20,7 @@
 			onclick={() => {
 				toast({
 					message: color,
-					color: color as unknown
+					color: color as any
 				})
 			}}
 		>
@@ -33,7 +33,7 @@
 			onclick={() => {
 				toast({
 					message: position,
-					position: position as unknown
+					position: position as any
 				})
 			}}
 		>

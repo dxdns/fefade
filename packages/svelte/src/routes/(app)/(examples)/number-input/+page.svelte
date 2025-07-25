@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { NumberInput, type VariantType } from "@/index.js"
+	import { NumberInput } from "@/index.js"
 
 	let quantity = $state(0)
 </script>
@@ -9,7 +9,7 @@
 		<h2>{variant}</h2>
 		<NumberInput
 			autoFocus
-			variant={variant as VariantType}
+			variant={variant as any}
 			bind:value={quantity}
 			min={0}
 			max={10}
