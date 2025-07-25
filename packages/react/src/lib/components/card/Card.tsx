@@ -2,6 +2,7 @@ import type { CardType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
 import {
 	classMapUtil,
 	getPropValueUtil,
+	handleClickUtil,
 	normalizeSizeUtil
 } from "@dxdns/feflow-core/utils"
 import { CSSProperties, forwardRef, HTMLAttributes } from "react"
@@ -24,6 +25,7 @@ export default forwardRef<HTMLDivElement, Props>(
 			variant = "outlined",
 			href,
 			target = "_self",
+			download,
 			children,
 			...rest
 		},
@@ -77,7 +79,16 @@ export default forwardRef<HTMLDivElement, Props>(
 							...rest.style
 						} as CSSProperties
 					}
-					onClick={href ? () => window.open(href, target) : rest.onClick}
+					onClick={(e) => {
+						handleClickUtil({
+							href,
+							download,
+							target,
+							onClick: () => {
+								rest.onClick?.(e)
+							}
+						})
+					}}
 				>
 					{children}
 				</div>
