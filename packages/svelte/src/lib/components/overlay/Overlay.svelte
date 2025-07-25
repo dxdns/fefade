@@ -17,6 +17,10 @@
 		type="button"
 		aria-labelledby="overlay"
 		aria-label="Close overlay"
+		onclick={(e) => {
+			document.body.style.overflowY = "auto"
+			rest.onclick?.(e)
+		}}
 	>
 	</button>
 {/if}
