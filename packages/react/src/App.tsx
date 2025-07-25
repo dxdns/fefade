@@ -38,6 +38,16 @@ function App() {
 				<h1>animated border</h1>
 			</Card>
 			<br />
+			<Card
+				animatedBorder={{
+					width: "2px",
+					primaryColor: "green",
+					secondaryColor: "red"
+				}}
+			>
+				<h1>animated border - custom colors</h1>
+			</Card>
+			<br />
 			<DrawerDemo />
 			<h2>{inputValue}</h2>
 			<RangeInput

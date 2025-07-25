@@ -17,3 +17,13 @@
 <Card animatedBorder>
 	<h1>animated border</h1>
 </Card>
+
+<Card
+	animatedBorder={{
+		width: "2px",
+		primaryColor: "#FF007F",
+		secondaryColor: "#8000FF"
+	}}
+>
+	<h1>animated border - custom colors</h1>
+</Card>

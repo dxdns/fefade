@@ -30,52 +30,123 @@
 }
 
 .card.animatedBorder {
-	border: var(--border-width) solid transparent;
+	--primary: var(--ff-on-surface);
+	--secondary: var(--ff-border);
+	--width: var(--border-width);
+	border: var(--width) solid transparent;
 	overflow: unset;
 }
 
 .card.animatedBorder::before {
 	content: " ";
 	position: absolute;
-	inset: calc(var(--border-width) * -1);
+	inset: calc(var(--width) * -1);
 	z-index: -1;
 	border: inherit;
 	border-radius: inherit;
 	background-image: conic-gradient(from var(--angle),
-			var(--ff-border) 80%,
-			var(--ff-on-surface) 88%,
-			var(--ff-on-surface) 92%,
-			var(--ff-border) 100%);
+			var(--secondary) 80%,
+			var(--primary) 88%,
+			var(--primary) 92%,
+			var(--secondary) 100%);
 	background-origin: border-box;
 	-webkit-mask:
 		linear-gradient(black, black) content-box,
 		linear-gradient(black, black);
-	mask: linear-gradient(black, black), linear-gradient(black, black);
+	mask: linear-gradient(black, black) content-box,
+		linear-gradient(black, black);
 	-webkit-mask-clip: content-box, border-box;
 	mask-clip: content-box, border-box;
 	-webkit-mask-composite: xor;
 	mask-composite: exclude;
-	animation: spin 3s linear infinite;
+	animation: spin-fallback 3s linear infinite;
 }
 
-@supports not (background: paint(something)) {
+@supports (background: conic-gradient(from 0deg, red, blue)) and (color: color(display-p3 1 0 0)) {
+	@property --angle {
+		syntax: "<angle>";
+		inherits: true;
+		initial-value: 0turn;
+	}
+
 	.card.animatedBorder::before {
-		background-image: conic-gradient(var(--ff-border) 80%,
-				var(--ff-on-surface) 88%,
-				var(--ff-on-surface) 92%,
-				var(--ff-border) 100%);
+		animation: spin-modern 3s linear infinite;
+	}
+
+	@keyframes spin-modern {
+		to {
+			--angle: 1turn;
+		}
 	}
 }
 
-@property --angle {
-	syntax: "<angle>";
-	inherits: true;
-	initial-value: 0turn;
+@keyframes spin-fallback {
+	0% {
+		background-image: conic-gradient(from 0deg,
+				var(--secondary) 80%,
+				var(--primary) 88%,
+				var(--primary) 92%,
+				var(--secondary) 100%);
+	}
+
+	25% {
+		background-image: conic-gradient(from 90deg,
+				var(--secondary) 80%,
+				var(--primary) 88%,
+				var(--primary) 92%,
+				var(--secondary) 100%);
+	}
+
+	50% {
+		background-image: conic-gradient(from 180deg,
+				var(--secondary) 80%,
+				var(--primary) 88%,
+				var(--primary) 92%,
+				var(--secondary) 100%);
+	}
+
+	75% {
+		background-image: conic-gradient(from 270deg,
+				var(--secondary) 80%,
+				var(--primary) 88%,
+				var(--primary) 92%,
+				var(--secondary) 100%);
+	}
+
+	100% {
+		background-image: conic-gradient(from 360deg,
+				var(--secondary) 80%,
+				var(--primary) 88%,
+				var(--primary) 92%,
+				var(--secondary) 100%);
+	}
 }
 
-@keyframes spin {
-	to {
-		--angle: 1turn;
+@supports not (background: conic-gradient(red, blue)) {
+	.card.animatedBorder::before {
+		background: linear-gradient(45deg,
+				var(--secondary),
+				var(--primary),
+				var(--secondary));
+		animation: rotate-fallback 3s linear infinite;
+	}
+
+	@keyframes rotate-fallback {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+@supports not (mask-composite: exclude) {
+	.card.animatedBorder::before {
+		-webkit-mask-composite: xor;
+
+		mask-composite: subtract;
 	}
 }
 
