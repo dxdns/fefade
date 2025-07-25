@@ -19,9 +19,9 @@
 	let bottomSheet: HTMLDivElement
 	let sheetContent: HTMLDivElement
 
-	let isDragging = false
-	let startY = 0
-	let startHeight = 50
+	let isDragging = $state(false)
+	let startY = $state(0)
+	let startHeight = $state(50)
 	let currentHeight = $state(50)
 
 	const updateSheetHeight = (height: number) => {
@@ -100,6 +100,11 @@
 	class={classMapUtil(className, "bottomSheet", {
 		show: isOpen
 	})}
+	onclick={(e) => {
+		if (!sheetContent.contains(e.target as Node)) {
+			hideBottomSheet()
+		}
+	}}
 >
 	<div bind:this={sheetContent} class="content">
 		<div class="header">
@@ -131,20 +136,19 @@
 <style>
 	.bottomSheet {
 		position: fixed;
-		bottom: 0;
 		width: 100%;
 		display: flex;
-		opacity: 0;
-		pointer-events: none;
 		align-items: center;
 		flex-direction: column;
 		justify-content: flex-end;
 		transition: 0.1s linear;
 		z-index: 999;
-		left: 0;
 		margin: 0;
+		left: 0;
 		right: 0;
+		bottom: 0;
 		box-sizing: initial;
+		pointer-events: none;
 	}
 
 	.bottomSheet.show {
@@ -182,7 +186,6 @@
 	}
 
 	.bottomSheet.fullscreen .content {
-		border-radius: 0;
 		overflow-y: hidden;
 	}
 
