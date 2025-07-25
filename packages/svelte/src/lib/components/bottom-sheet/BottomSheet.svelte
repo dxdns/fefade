@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { bottomSheetAction } from "@dxdns/feflow-core/actions"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import { onMount, tick } from "svelte"
+	import { tick } from "svelte"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -16,61 +17,9 @@
 		...rest
 	}: Props = $props()
 
-	let bottomSheet: HTMLDivElement
-	let sheetContent: HTMLDivElement
-
-	let isDragging = $state(false)
-	let startY = $state(0)
-	let startHeight = $state(50)
-	let currentHeight = $state(50)
-
-	const updateSheetHeight = (height: number) => {
-		currentHeight = Math.max(0, Math.min(height, 100))
-		if (sheetContent) {
-			sheetContent.style.height = `${currentHeight}vh`
-		}
-		bottomSheet?.classList.toggle("fullscreen", currentHeight === 100)
-	}
-
-	const hideBottomSheet = () => {
-		document.body.style.overflowY = "auto"
-		handleClose?.()
-		currentHeight = 50
-	}
-
-	const dragStart = (e: MouseEvent | TouchEvent) => {
-		isDragging = true
-		startY = (e instanceof MouseEvent ? e.pageY : e.touches?.[0].pageY) ?? 0
-		startHeight = parseInt(sheetContent.style.height) || 50
-		bottomSheet.classList.add("dragging")
-	}
-
-	const dragging = (e: MouseEvent | TouchEvent) => {
-		if (!isDragging) return
-		const currentY =
-			(e instanceof MouseEvent ? e.pageY : e.touches?.[0].pageY) ?? 0
-		const delta = startY - currentY
-		const newHeight = startHeight + (delta / window.innerHeight) * 100
-		updateSheetHeight(newHeight)
-	}
-
-	const dragStop = () => {
-		if (!isDragging) return
-		isDragging = false
-		bottomSheet.classList.remove("dragging")
-		if (currentHeight < 25) {
-			hideBottomSheet()
-		} else if (currentHeight > 75) {
-			updateSheetHeight(100)
-		} else {
-			updateSheetHeight(50)
-		}
-	}
-
 	async function handleOpen() {
 		if (isOpen) {
 			await tick()
-			updateSheetHeight(50)
 			document.body.style.overflowY = "hidden"
 		}
 	}
@@ -78,51 +27,18 @@
 	$effect(() => {
 		handleOpen()
 	})
-
-	onMount(() => {
-		document.addEventListener("mousemove", dragging)
-		document.addEventListener("mouseup", dragStop)
-		document.addEventListener("touchmove", dragging)
-		document.addEventListener("touchend", dragStop)
-
-		return () => {
-			document.removeEventListener("mousemove", dragging)
-			document.removeEventListener("mouseup", dragStop)
-			document.removeEventListener("touchmove", dragging)
-			document.removeEventListener("touchend", dragStop)
-		}
-	})
 </script>
 
 <div
 	{...rest}
-	bind:this={bottomSheet}
+	use:bottomSheetAction={{ handleClose }}
 	class={classMapUtil(className, "bottomSheet", {
 		show: isOpen
 	})}
-	onclick={(e) => {
-		if (!sheetContent.contains(e.target as Node)) {
-			hideBottomSheet()
-		}
-	}}
 >
-	<div bind:this={sheetContent} class="content">
+	<div class="content">
 		<div class="header">
-			<div
-				class="dragIcon"
-				tabindex="0"
-				role="slider"
-				aria-label="Resize bottom sheet"
-				aria-valuemin="25"
-				aria-valuemax="100"
-				aria-valuenow={currentHeight}
-				onmousedown={dragStart}
-				ontouchstart={dragStart}
-				onkeydown={(e) => {
-					if (e.key === "ArrowUp") updateSheetHeight(currentHeight + 10)
-					if (e.key === "ArrowDown") updateSheetHeight(currentHeight - 10)
-				}}
-			>
+			<div class="dragIcon">
 				<span></span>
 			</div>
 		</div>
