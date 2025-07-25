@@ -11,10 +11,10 @@ interface Props
 
 export default forwardRef<HTMLDivElement, Props>(
 	({ className = "", isOpen, handleClose, children, ...rest }, _ref) => {
-		const actionRef = useAction<HTMLDivElement, { handleClose: () => void }>(
-			bottomSheetAction,
-			{ handleClose }
-		)
+		const actionRef = useAction<
+			HTMLDivElement,
+			Parameters<typeof bottomSheetAction>[1]
+		>(bottomSheetAction, { handleClose, styles })
 
 		return (
 			<div

@@ -1,11 +1,13 @@
-import styles from "../styles/BottomSheet.module.css"
-
 type Props = {
 	handleClose: () => void
+	styles: Record<string, string>
 }
 
-export default function bottomSheetAction(node: HTMLElement, props?: Props) {
-	const { handleClose } = props ?? {}
+export default function bottomSheetAction(
+	node: HTMLElement,
+	props = {} as Props
+) {
+	const { handleClose, styles } = props
 
 	let isDragging = false
 	let startY = 0

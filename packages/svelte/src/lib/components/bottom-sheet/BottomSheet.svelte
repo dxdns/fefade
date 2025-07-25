@@ -32,7 +32,7 @@
 
 <div
 	{...rest}
-	use:bottomSheetAction={{ handleClose }}
+	use:bottomSheetAction={{ handleClose, styles }}
 	class={classMapUtil(className, [className, styles], styles.bottomSheet, {
 		[styles.show]: isOpen
 	})}
