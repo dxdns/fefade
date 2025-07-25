@@ -1,3 +1,5 @@
+import styles from "../styles/BottomSheet.module.css"
+
 type Props = {
 	handleClose: () => void
 }
@@ -33,7 +35,7 @@ export default function bottomSheetAction(
 	function update(h: number) {
 		setCurrentHeight(h)
 		setContentHeightStyle(currentHeight)
-		node.classList.toggle("fullscreen", currentHeight === 100)
+		node.classList.toggle(styles.fullscreen, currentHeight === 100)
 	}
 
 	function hide() {
@@ -41,7 +43,7 @@ export default function bottomSheetAction(
 		handleClose?.()
 		setCurrentHeight(50)
 		setContentHeightStyle(currentHeight)
-		node.classList.remove("fullscreen")
+		node.classList.remove(styles.fullscreen)
 	}
 
 	function dragStart(e: MouseEvent | TouchEvent) {
@@ -49,7 +51,7 @@ export default function bottomSheetAction(
 		dragIcon.focus()
 		startY = (e instanceof MouseEvent ? e.pageY : e.touches?.[0].pageY) ?? 0
 		startHeight = parseInt(sheetContent.style.height) || 50
-		node.classList.add("dragging")
+		node.classList.add(styles.dragging)
 	}
 
 	function dragMove(e: MouseEvent | TouchEvent) {
@@ -66,7 +68,7 @@ export default function bottomSheetAction(
 	function dragStop() {
 		if (!isDragging) return
 		isDragging = false
-		node.classList.remove("dragging")
+		node.classList.remove(styles.dragging)
 
 		if (currentHeight < 25) {
 			hide()
