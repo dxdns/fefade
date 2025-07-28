@@ -8,7 +8,10 @@ interface Props
 		AvatarType {}
 
 export default forwardRef<HTMLDivElement, Props>(
-	({ className = "", width, height, textFallback, ...rest }, ref) => {
+	(
+		{ className = "", width, height, textFallback, size = "md", ...rest },
+		ref
+	) => {
 		const [hasError, setHasError] = useState(false)
 
 		function handleError() {
@@ -18,7 +21,12 @@ export default forwardRef<HTMLDivElement, Props>(
 		return (
 			<div
 				ref={ref}
-				className={classMapUtil(className, [className, styles], styles.avatar)}
+				className={classMapUtil(
+					className,
+					[className, styles],
+					[size, styles],
+					styles.avatar
+				)}
 				style={{ width, height }}
 			>
 				{!hasError && rest.src ? (

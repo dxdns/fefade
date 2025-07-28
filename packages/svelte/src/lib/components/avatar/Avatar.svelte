@@ -13,6 +13,7 @@
 		width,
 		height,
 		textFallback,
+		size = "md",
 		...rest
 	}: Props = $props()
 
@@ -24,11 +25,19 @@
 </script>
 
 <div
-	class={classMapUtil(className, [className, styles], styles.avatar)}
-	style="width: {width}; height: {height};"
+	class={classMapUtil(
+		className,
+		[className, styles],
+		[size, styles],
+		styles.avatar
+	)}
+	style="
+	width: {width};
+	height: {height};
+	"
 >
 	{#if !hasError && rest.src}
-		<img onerror={handleError} {...rest} />
+		<img {...rest} onerror={handleError} />
 	{:else if textFallback}
 		<span class={styles.textFallback}>
 			{textFallback.charAt(0).toUpperCase()}

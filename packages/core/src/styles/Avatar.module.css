@@ -1,10 +1,9 @@
 .avatar {
-	width: clamp(3rem, 4vw, 4rem);
-	height: clamp(3rem, 4vw, 4rem);
 	border-radius: 50%;
 	overflow: hidden;
 	background: var(--ff-primary);
 	position: relative;
+	flex-shrink: 0;
 }
 
 .avatar img {
@@ -23,4 +22,31 @@
 	line-height: 1;
 	white-space: nowrap;
 	text-align: center;
+}
+
+/* sizes */
+
+.avatar.xs {
+	width: 2rem;
+	height: 2rem;
+}
+
+.avatar.sm {
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.avatar.md {
+	width: 3rem;
+	height: 3rem;
+}
+
+.avatar.lg {
+	width: 4rem;
+	height: 4rem;
+}
+
+.avatar.xl {
+	width: 5rem;
+	height: 5rem;
 }
