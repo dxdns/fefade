@@ -18,7 +18,6 @@ export default forwardRef<HTMLDivElement, Props>(
 
 		return (
 			<div
-				{...rest}
 				ref={actionRef}
 				className={classMapUtil(
 					className,
@@ -29,7 +28,7 @@ export default forwardRef<HTMLDivElement, Props>(
 					}
 				)}
 			>
-				<div className={styles.content}>
+				<div {...rest} className={styles.content}>
 					<div className={styles.header}>
 						<div className={styles.dragIcon}>
 							<span></span>

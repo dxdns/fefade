@@ -31,13 +31,12 @@
 </script>
 
 <div
-	{...rest}
 	use:bottomSheetAction={{ handleClose, styles }}
 	class={classMapUtil(className, [className, styles], styles.bottomSheet, {
 		[styles.show]: isOpen
 	})}
 >
-	<div class={styles.content}>
+	<div {...rest} class={styles.content}>
 		<div class={styles.header}>
 			<div class={styles.dragIcon}>
 				<span></span>
