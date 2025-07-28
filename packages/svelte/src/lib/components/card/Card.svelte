@@ -34,21 +34,29 @@
 		"stopOnHover"
 	>(animatedBorder, "stopOnHover", false)
 
-	const width = getPropValueUtil<{ width?: string }, "width">(
-		animatedBorder,
-		"width",
-		"1px"
+	const width = $derived(
+		getPropValueUtil<{ width?: string }, "width">(
+			animatedBorder,
+			"width",
+			"1px"
+		)
 	)
 
-	const primaryColor = getPropValueUtil<
-		{ primaryColor?: string },
-		"primaryColor"
-	>(animatedBorder, "primaryColor", "var(--ff-on-surface)")
+	const primaryColor = $derived(
+		getPropValueUtil<{ primaryColor?: string }, "primaryColor">(
+			animatedBorder,
+			"primaryColor",
+			"var(--ff-on-surface)"
+		)
+	)
 
-	const secondaryColor = getPropValueUtil<
-		{ secondaryColor?: string },
-		"secondaryColor"
-	>(animatedBorder, "secondaryColor", "var(--ff-border)")
+	const secondaryColor = $derived(
+		getPropValueUtil<{ secondaryColor?: string }, "secondaryColor">(
+			animatedBorder,
+			"secondaryColor",
+			"var(--ff-border)"
+		)
+	)
 </script>
 
 {#snippet component()}

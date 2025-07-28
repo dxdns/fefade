@@ -19,6 +19,8 @@ import { useState } from "react"
 
 function App() {
 	const [inputValue, setInputValue] = useState(0)
+	const [width, setWidth] = useState(2)
+
 	const { toggle, mode } = themeConfig()
 
 	const data = `
@@ -40,12 +42,19 @@ function App() {
 			<br />
 			<Card
 				animatedBorder={{
-					width: "2px",
+					width,
 					primaryColor: "green",
 					secondaryColor: "red"
 				}}
 			>
 				<h1>animated border - custom colors</h1>
+				<Button
+					onClick={() => {
+						setWidth((old) => (old += 5))
+					}}
+				>
+					+ width
+				</Button>
 			</Card>
 			<br />
 			<DrawerDemo />

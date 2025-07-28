@@ -1,5 +1,8 @@
 <script lang="ts">
+	import Button from "@/components/button/Button.svelte"
 	import { Card, HoverFollower } from "@/index.js"
+
+	let width = $state(2)
 </script>
 
 <Card variant="contained">
@@ -46,10 +49,17 @@
 <br />
 <Card
 	animatedBorder={{
-		width: "2px",
+		width,
 		primaryColor: "green",
 		secondaryColor: "red"
 	}}
 >
 	<h1>animated border - custom colors</h1>
+	<Button
+		onclick={() => {
+			width += 5
+		}}
+	>
+		+ width
+	</Button>
 </Card>
