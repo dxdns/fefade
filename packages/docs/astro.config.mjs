@@ -84,7 +84,6 @@ export default defineConfig({
 						{
 							label: "React",
 							collapsed: true,
-							badge: "beta",
 							items: [
 								{
 									label: "Getting Started",
@@ -103,7 +102,6 @@ export default defineConfig({
 						{
 							label: "Vue",
 							collapsed: true,
-							badge: "beta",
 							items: [
 								{
 									label: "Getting Started",
