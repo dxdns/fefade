@@ -16,7 +16,7 @@
 <BottomSheet
 	{isOpen}
 	{handleClose}
-	style="min-height: 30vh; height: 30vh; max-height: 70vh;"
+	style="min-height: 0; height: 30vh; max-height: 70vh;"
 >
 	<div style="padding: 1rem;">
 		<h1>test</h1>

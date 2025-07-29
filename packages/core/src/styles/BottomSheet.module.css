@@ -25,6 +25,7 @@
     position: relative;
     background: var(--ff-surface);
     color: var(--ff-on-surface);
+    min-height: 0;
     max-height: 100vh;
     height: 50vh;
     max-width: 1150px;

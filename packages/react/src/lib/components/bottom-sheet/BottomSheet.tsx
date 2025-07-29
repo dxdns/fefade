@@ -14,7 +14,7 @@ export default forwardRef<HTMLDivElement, Props>(
 		const actionRef = useAction<
 			HTMLDivElement,
 			Parameters<typeof bottomSheetAction>[1]
-		>(bottomSheetAction, { handleClose, styles })
+		>(bottomSheetAction, { handleClose })
 
 		return (
 			<div

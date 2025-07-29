@@ -19,7 +19,7 @@
 </script>
 
 <div
-	use:bottomSheetAction={{ handleClose, styles }}
+	use:bottomSheetAction={{ handleClose }}
 	class={classMapUtil(className, [className, styles], styles.bottomSheet, {
 		[styles.show]: isOpen
 	})}
