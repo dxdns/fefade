@@ -32,6 +32,9 @@
 	</div>
 	<br />
 	<br />
+	<RangeInput bind:value={rangeInputValue} step="10" />
+	<br />
+	<br />
 	<RangeInput step="50" />
 	<br />
 	<br />

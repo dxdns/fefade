@@ -78,6 +78,11 @@ function App() {
 					setInputValue(value)
 				}}
 			/>
+			<br />
+			<br />
+			<RangeInput step={10} value={inputValue} />
+			<br />
+			<br />
 			<SearchInput placeholder="test..." />
 			<br />
 			<br />
