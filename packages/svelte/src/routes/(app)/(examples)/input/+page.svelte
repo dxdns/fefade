@@ -7,8 +7,7 @@
 		PasswordInput,
 		RangeInput,
 		SearchInput,
-		TextField,
-		type SizeType
+		TextField
 	} from "@/index.js"
 
 	let filesData: File[] = $state([])
@@ -99,7 +98,7 @@
 		<TextField
 			label={size}
 			variant={i % 2 ? "contained" : "text"}
-			size={size as SizeType}
+			size={size as any}
 		/>
 		<br />
 		<br />

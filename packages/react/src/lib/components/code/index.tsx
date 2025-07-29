@@ -1,5 +1,5 @@
-import CodeComponent from "./Code"
-import CodeItemComponent from "./CodeItem"
+import CodeComponent from "./Code.js"
+import CodeItemComponent from "./CodeItem.js"
 
 type CodeComponentType = typeof CodeComponent & {
 	Item: typeof CodeItemComponent

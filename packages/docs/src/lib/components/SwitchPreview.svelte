@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Switch, themeConfig, type SizeType } from "@dxdns/feflow-svelte"
+	import { Switch, themeConfig } from "@dxdns/feflow-svelte"
 
 	const { colors } = $derived(themeConfig())
 	const sizes = ["xs", "sm", "md", "lg", "xl"]
@@ -66,7 +66,7 @@
 			style={i !== 0
 				? `background: ${i % 2 ? colors.error : colors.success}`
 				: undefined}
-			size={size as SizeType}
+			size={size as any}
 			label={size}
 		/>
 	{/each}

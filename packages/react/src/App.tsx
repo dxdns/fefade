@@ -13,13 +13,15 @@ import {
 	Checkbox,
 	Code,
 	RangeInput,
-	SearchInput
+	SearchInput,
+	Switch
 } from "./lib"
 import { useState } from "react"
 
 function App() {
 	const [inputValue, setInputValue] = useState(0)
 	const [width, setWidth] = useState(2)
+	const [checked, setChecked] = useState(false)
 
 	const { toggle, mode } = themeConfig()
 
@@ -36,6 +38,16 @@ function App() {
 
 	return (
 		<>
+			<Switch
+				id="test1"
+				label={`test (${checked})`}
+				checked={checked}
+				onChange={(e) => {
+					setChecked(e.currentTarget.checked)
+				}}
+				size="xl"
+			/>
+			<br />
 			<Card animatedBorder>
 				<h1>animated border</h1>
 			</Card>
