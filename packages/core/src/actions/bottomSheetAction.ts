@@ -53,6 +53,7 @@ export default function bottomSheetAction(
 		startY = (e instanceof MouseEvent ? e.pageY : e.touches?.[0].pageY) ?? 0
 		startHeight = parseInt(sheetContent.style.height) || 50
 		node.classList.add(styles.dragging)
+		dragIcon.style.cursor = "grabbing"
 	}
 
 	function dragMove(e: MouseEvent | TouchEvent) {
@@ -70,6 +71,7 @@ export default function bottomSheetAction(
 		if (!isDragging) return
 		isDragging = false
 		node.classList.remove(styles.dragging)
+		dragIcon.style.cursor = "grab"
 
 		if (currentHeight < 25) {
 			hide()

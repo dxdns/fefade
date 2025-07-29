@@ -42,7 +42,7 @@
 	"peerDependencies": {
 		"@dxdns/feflow-core": "^0.0.16",
 		"svelte": "^5.0.0",
-		"vite": "^6.0.0"
+		"vite": "^6.2.3"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.8",

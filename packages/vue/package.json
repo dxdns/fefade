@@ -25,7 +25,7 @@
 		"preview": "vite preview"
 	},
 	"peerDependencies": {
-		"vite": "^6.0.0",
+		"vite": "^6.2.3",
 		"@dxdns/feflow-core": "^0.0.11"
 	},
 	"devDependencies": {
