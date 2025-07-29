@@ -8,6 +8,11 @@
 		"access": "public"
 	},
 	"license": "MIT",
+	"homepage": "https://feflow.dxdns.dev",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dxdns/feflow.git"
+	},
 	"scripts": {
 		"clean": "rm -rf dist",
 		"copy:styles": "cp -r src/styles dist/styles",
