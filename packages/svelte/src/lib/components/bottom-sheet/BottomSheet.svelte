@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { bottomSheetAction } from "@dxdns/feflow-core/actions"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import { tick } from "svelte"
 	import type { HTMLAttributes } from "svelte/elements"
 	import type { BottomSheetType } from "@dxdns/feflow-core/types"
 	import styles from "@dxdns/feflow-core/styles/BottomSheet.module.css"
@@ -17,17 +16,6 @@
 		children,
 		...rest
 	}: Props = $props()
-
-	async function handleOpen() {
-		if (isOpen) {
-			await tick()
-			document.body.style.overflowY = "hidden"
-		}
-	}
-
-	$effect(() => {
-		handleOpen()
-	})
 </script>
 
 <div

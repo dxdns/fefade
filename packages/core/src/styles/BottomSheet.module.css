@@ -30,27 +30,13 @@
     max-width: 1150px;
     padding: 1.5rem 2rem;
     transform: translateY(100%);
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-    transition: 0.3s ease;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
 .bottomSheet.show .content {
     transform: translateY(0%);
-}
-
-.bottomSheet.dragging .content {
-    transition: none;
-}
-
-.bottomSheet.fullscreen {
-    top: 0;
-}
-
-.bottomSheet.fullscreen .content {
-    overflow-y: hidden;
 }
 
 .bottomSheet .header {
