@@ -9,7 +9,7 @@ export default function bottomSheetAction(
 	const { handleClose } = props
 
 	const sheetContent = node.firstElementChild as HTMLElement
-	setContentTransitionStyle()
+	sheetContent.style.transition = "0.3s ease"
 
 	const header = sheetContent.firstElementChild as HTMLElement
 	const dragIcon = header.firstElementChild as HTMLElement
@@ -45,10 +45,6 @@ export default function bottomSheetAction(
 
 	function setCurrentHeight(h: number) {
 		currentHeight = Math.max(0, Math.min(h, sheetContentMaxHeight))
-	}
-
-	function setContentTransitionStyle() {
-		sheetContent.style.transition = "0.3s ease"
 	}
 
 	function resetStyle() {
@@ -102,7 +98,8 @@ export default function bottomSheetAction(
 	function dragStop() {
 		if (!isDragging) return
 		isDragging = false
-		setContentTransitionStyle()
+		document.body.style.overflowY = "auto"
+		sheetContent.style.transition = "0.3s ease"
 
 		if (currentHeight > sheetContentHeight) {
 			update(sheetContentMaxHeight)
