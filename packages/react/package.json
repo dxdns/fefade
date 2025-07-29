@@ -1,6 +1,6 @@
 {
 	"name": "@dxdns/feflow-react",
-	"version": "0.0.16",
+	"version": "0.0.17",
 	"description": "feflow: react components ui",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
@@ -25,7 +25,7 @@
 		"preview": "vite preview"
 	},
 	"peerDependencies": {
-		"@dxdns/feflow-core": "^0.0.17",
+		"@dxdns/feflow-core": "^0.0.18",
 		"vite": "^6.2.3"
 	},
 	"devDependencies": {
