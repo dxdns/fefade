@@ -1,20 +1,15 @@
 <script lang="ts">
-	import type { SizeType } from "@dxdns/feflow-core/types"
-	import styles from "./Switch.module.css"
+	import type { SwitchType } from "@dxdns/feflow-core/types"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import type { Snippet } from "svelte"
 	import { mergeStyleUtil, getPropValueUtil } from "@dxdns/feflow-core/utils"
+	import styles from "@dxdns/feflow-core/styles/Switch.module.css"
 
-	interface Props extends Omit<Omit<HTMLInputAttributes, "size">, "type"> {
-		size?: SizeType
+	interface Props
+		extends Omit<Omit<HTMLInputAttributes, "size">, "type">,
+			SwitchType {
 		label?: string | Snippet<[]>
-		indicatorColor?:
-			| boolean
-			| {
-					unchecked?: string
-					checked?: string
-			  }
 	}
 
 	let {
@@ -30,21 +25,26 @@
 		...rest
 	}: Props = $props()
 
-	const uncheckedColor = getPropValueUtil<{ unchecked?: string }, "unchecked">(
-		indicatorColor,
-		"unchecked",
-		"var(--ff-on-surface)"
+	const uncheckedColor = $derived(
+		getPropValueUtil<{ unchecked?: string }, "unchecked">(
+			indicatorColor,
+			"unchecked",
+			"var(--ff-on-surface)"
+		)
 	)
 
-	const checkedColor = getPropValueUtil<{ checked?: string }, "checked">(
-		indicatorColor,
-		"checked",
-		"var(--ff-on-primary)"
+	const checkedColor = $derived(
+		getPropValueUtil<{ checked?: string }, "checked">(
+			indicatorColor,
+			"checked",
+			"var(--ff-on-primary)"
+		)
 	)
 </script>
 
 <div class={styles.switch}>
 	<label
+		for={rest.id ?? rest.name}
 		class={classMapUtil(
 			className,
 			[className, styles],
