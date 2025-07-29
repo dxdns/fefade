@@ -22,6 +22,8 @@
 		</Badge>
 	</div>
 
+	<RangeInput bind:value={inputValue} />
+
 	{#each ["xs", "sm", "md", "lg", "xl"] as size (size)}
 		<RangeInput size={size as any} />
 		<br />
