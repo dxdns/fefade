@@ -31,7 +31,7 @@ export default function () {
 			<RangeInput value={inputValue} />
 
 			{["xs", "sm", "md", "lg", "xl"].map((size) => (
-				<RangeInput size={size as any} />
+				<RangeInput key={size} size={size as any} />
 			))}
 		</div>
 	)

@@ -1,16 +1,22 @@
 import { BottomSheet, Button } from "@dxdns/feflow-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function () {
 	const [isOpen, setIsOpen] = useState(false)
+	const [variant, setVariant] = useState("")
 
-	function handleOpen() {
+	function handleOpen(s: string) {
+		setVariant(s)
 		setIsOpen((old) => !old)
 	}
 
 	function handleClose() {
 		setIsOpen(false)
 	}
+
+	useEffect(() => {
+		handleOpen("text")
+	}, [])
 
 	return (
 		<>
@@ -19,11 +25,26 @@ export default function () {
 				onClick={handleClose}
 				style={{ zIndex: 998 }}
 			/>
-			<BottomSheet isOpen={isOpen} handleClose={handleClose}>
+			<BottomSheet
+				isOpen={isOpen}
+				handleClose={handleClose}
+				variant={variant as any}
+			>
 				<h1>test</h1>
 			</BottomSheet>
 
-			<Button onClick={handleOpen}>Open</Button>
+			<div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+				{["text", "contained", "outlined"].map((variant, i) => (
+					<Button
+						key={`${variant}-${i}`}
+						onClick={() => {
+							handleOpen(variant)
+						}}
+					>
+						{variant}
+					</Button>
+				))}
+			</div>
 		</>
 	)
 }
