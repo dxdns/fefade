@@ -13,7 +13,6 @@
 		class: className = "",
 		isOpen,
 		handleClose,
-		variant = "text",
 		children,
 		...rest
 	}: Props = $props()
@@ -21,23 +20,11 @@
 
 <div
 	use:bottomSheetAction={{ handleClose }}
-	class={classMapUtil(
-		className,
-		[className, styles],
-		[variant, styles],
-		styles.bottomSheet,
-		{
-			[styles.show]: isOpen
-		}
-	)}
+	class={classMapUtil(className, [className, styles], styles.bottomSheet, {
+		[styles.show]: isOpen
+	})}
 >
-	<div {...rest} class={styles.content}>
-		<div class={styles.dragIcon}>
-			<span></span>
-		</div>
-
-		<div class={styles.wrapper}>
-			{@render children?.()}
-		</div>
+	<div {...rest} class={styles.wrapper}>
+		{@render children?.()}
 	</div>
 </div>

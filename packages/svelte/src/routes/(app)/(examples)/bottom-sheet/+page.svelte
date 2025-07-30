@@ -18,9 +18,10 @@
 	{handleClose}
 	style="min-height: 0; height: 30vh; max-height: 70vh;"
 >
-	<div style="padding: 1rem;">
+	<BottomSheet.DragButton>drag button</BottomSheet.DragButton>
+	<BottomSheet.Content>
 		<h1>test</h1>
-	</div>
+	</BottomSheet.Content>
 </BottomSheet>
 
 <Button onclick={handleOpen}>Open BottomSheet</Button>

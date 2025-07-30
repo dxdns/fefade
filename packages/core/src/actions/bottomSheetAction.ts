@@ -8,48 +8,48 @@ export default function bottomSheetAction(
 ) {
 	const { handleClose } = props
 
-	const sheetContent = node.firstElementChild as HTMLElement
-	sheetContent.style.transition = "0.3s ease"
+	const wrapper = node.firstElementChild as HTMLElement
+	wrapper.style.transition = "0.3s ease"
 
-	const dragIcon = sheetContent.firstElementChild as HTMLElement
+	const dragButton = wrapper.firstElementChild as HTMLElement
 
-	dragIcon.tabIndex = 0
-	dragIcon.role = "slider"
-	dragIcon.ariaLabel = "Resize bottom sheet"
+	dragButton.tabIndex = 0
+	dragButton.role = "slider"
+	dragButton.ariaLabel = "Resize bottom sheet"
 
-	const computedStyles = getComputedStyle(sheetContent)
+	const computedStyles = getComputedStyle(wrapper)
 
-	const sheetContentHeight = parseInt(sheetContent.style.height) || 50
+	const wrapperHeight = parseInt(wrapper.style.height) || 50
 
-	const sheetContentMinHeight = parseInt(sheetContent.style.minHeight)
+	const wrapperMinHeight = parseInt(wrapper.style.minHeight)
 		? parseInt(computedStyles.minHeight)
 		: 0
 
-	const sheetContentMaxHeight = parseInt(sheetContent.style.maxHeight) || 100
+	const wrapperMaxHeight = parseInt(wrapper.style.maxHeight) || 100
 
 	let isDragging = false
 	let startY = 0
-	let startHeight = sheetContentHeight
-	let currentHeight = sheetContentHeight
+	let startHeight = wrapperHeight
+	let currentHeight = wrapperHeight
 
 	function updateAria() {
-		dragIcon.ariaValueMin = String(sheetContentMinHeight)
-		dragIcon.ariaValueMax = String(sheetContentMaxHeight)
-		dragIcon.ariaValueNow = String(currentHeight)
+		dragButton.ariaValueMin = String(wrapperMinHeight)
+		dragButton.ariaValueMax = String(wrapperMaxHeight)
+		dragButton.ariaValueNow = String(currentHeight)
 	}
 
-	function setContentHeightStyle(h: number) {
-		sheetContent.style.height = `${h}vh`
+	function setWrapperHeightStyle(h: number) {
+		wrapper.style.height = `${h}vh`
 	}
 
 	function setCurrentHeight(h: number) {
-		currentHeight = Math.max(0, Math.min(h, sheetContentMaxHeight))
+		currentHeight = Math.max(0, Math.min(h, wrapperMaxHeight))
 	}
 
 	function resetStyle() {
 		document.body.style.overflowY = "auto"
-		setCurrentHeight(sheetContentHeight)
-		setContentHeightStyle(sheetContentHeight)
+		setCurrentHeight(wrapperHeight)
+		setWrapperHeightStyle(wrapperHeight)
 		node.style.top = "unset"
 	}
 
@@ -61,7 +61,7 @@ export default function bottomSheetAction(
 
 	function update(h: number) {
 		setCurrentHeight(h)
-		setContentHeightStyle(h)
+		setWrapperHeightStyle(h)
 		setFullScreenStyle(h)
 		updateAria()
 	}
@@ -80,8 +80,8 @@ export default function bottomSheetAction(
 		startY = pageY(e)
 		startHeight = currentHeight
 		document.body.style.overflowY = "hidden"
-		sheetContent.style.transition = "none"
-		dragIcon.focus()
+		wrapper.style.transition = "none"
+		dragButton.focus()
 	}
 
 	function dragMove(e: MouseEvent | TouchEvent) {
@@ -98,19 +98,19 @@ export default function bottomSheetAction(
 		if (!isDragging) return
 		isDragging = false
 		document.body.style.overflowY = "auto"
-		sheetContent.style.transition = "0.3s ease"
+		wrapper.style.transition = "0.3s ease"
 
-		if (currentHeight > sheetContentHeight) {
-			update(sheetContentMaxHeight)
+		if (currentHeight > wrapperHeight) {
+			update(wrapperMaxHeight)
 			return
 		}
 
-		if (Math.abs(currentHeight - sheetContentMinHeight) < 25) {
+		if (currentHeight <= wrapperMinHeight + 10) {
 			hide()
 			return
 		}
 
-		update(sheetContentHeight)
+		update(wrapperHeight)
 	}
 
 	function handleKeyDown(e: KeyboardEvent) {
@@ -119,7 +119,7 @@ export default function bottomSheetAction(
 	}
 
 	function handleClick(this: HTMLElement, ev: MouseEvent) {
-		if (!sheetContent.contains(ev.target as HTMLElement)) {
+		if (!wrapper.contains(ev.target as HTMLElement)) {
 			hide()
 		}
 	}
@@ -133,9 +133,9 @@ export default function bottomSheetAction(
 	document.addEventListener("mouseup", dragStop)
 	document.addEventListener("touchend", dragStop)
 
-	dragIcon.addEventListener("mousedown", dragStart)
-	dragIcon.addEventListener("touchstart", dragStart)
-	dragIcon.addEventListener("keydown", handleKeyDown)
+	dragButton.addEventListener("mousedown", dragStart)
+	dragButton.addEventListener("touchstart", dragStart)
+	dragButton.addEventListener("keydown", handleKeyDown)
 
 	return {
 		destroy() {
@@ -146,9 +146,9 @@ export default function bottomSheetAction(
 			document.removeEventListener("mouseup", dragStop)
 			document.removeEventListener("touchend", dragStop)
 
-			dragIcon.removeEventListener("mousedown", dragStart)
-			dragIcon.removeEventListener("touchstart", dragStart)
-			dragIcon.removeEventListener("keydown", handleKeyDown)
+			dragButton.removeEventListener("mousedown", dragStart)
+			dragButton.removeEventListener("touchstart", dragStart)
+			dragButton.removeEventListener("keydown", handleKeyDown)
 		}
 	}
 }

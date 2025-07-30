@@ -20,8 +20,11 @@
 </script>
 
 <BottomSheet.Overlay {isOpen} onclick={handleClose} style="z-index: 998;" />
-<BottomSheet {isOpen} {handleClose} variant={variant as any}>
-	<h1>test</h1>
+<BottomSheet {isOpen} {handleClose}>
+	<BottomSheet.DragButton variant={variant as any} />
+	<BottomSheet.Content>
+		<h1>test</h1>
+	</BottomSheet.Content>
 </BottomSheet>
 
 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
