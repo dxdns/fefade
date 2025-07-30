@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import styles from "./FileInput.module.css"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { inputDropAction } from "@dxdns/feflow-core/actions"
+	import styles from "@dxdns/feflow-core/styles/FileInput.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "type"> {
 		onDropEvent?: (files: File[]) => void
@@ -22,6 +22,20 @@
 		files = newFiles
 		onDropEvent?.(newFiles)
 	}
+
+	function handleChange(
+		e: Event & {
+			currentTarget: EventTarget & HTMLInputElement
+		}
+	) {
+		if (files.length > 0 && !rest.multiple) return
+		const input = e.target as HTMLInputElement
+		const selectedFiles = Array.from(input.files || [])
+		handleDrop(selectedFiles)
+
+		files = []
+		input.value = ""
+	}
 </script>
 
 <div
@@ -35,19 +49,8 @@
 		}
 	}}
 	role="region"
+	style={rest.style}
 >
 	{@render children?.()}
-	<input
-		{...rest}
-		type="file"
-		onchange={(e) => {
-			if (files.length > 0 && !rest.multiple) return
-			const input = e.target as HTMLInputElement
-			const selectedFiles = Array.from(input.files || [])
-			handleDrop(selectedFiles)
-			files = []
-			input.value = ""
-		}}
-		style={undefined}
-	/>
+	<input {...rest} type="file" onchange={handleChange} style={undefined} />
 </div>

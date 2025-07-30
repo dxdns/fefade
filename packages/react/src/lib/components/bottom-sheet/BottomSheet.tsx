@@ -10,7 +10,17 @@ interface Props
 		BottomSheetType {}
 
 export default forwardRef<HTMLDivElement, Props>(
-	({ className = "", isOpen, handleClose, children, ...rest }, _ref) => {
+	(
+		{
+			className = "",
+			isOpen,
+			handleClose,
+			variant = "text",
+			children,
+			...rest
+		},
+		_ref
+	) => {
 		const actionRef = useAction<
 			HTMLDivElement,
 			Parameters<typeof bottomSheetAction>[1]
@@ -22,6 +32,7 @@ export default forwardRef<HTMLDivElement, Props>(
 				className={classMapUtil(
 					className,
 					[className, styles],
+					[variant, styles],
 					styles.bottomSheet,
 					{
 						[styles.show]: isOpen
@@ -29,10 +40,8 @@ export default forwardRef<HTMLDivElement, Props>(
 				)}
 			>
 				<div {...rest} className={styles.content}>
-					<div className={styles.header}>
-						<div className={styles.dragIcon}>
-							<span></span>
-						</div>
+					<div className={styles.dragIcon}>
+						<span></span>
 					</div>
 
 					<div className={styles.wrapper}>{children}</div>

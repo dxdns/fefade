@@ -26,7 +26,7 @@
 		"release:cli:patch": "npm run build:cli && npm version patch -w @dxdns/feflow-cli --no-git-tag-version && git add packages/cli && git commit -m \"chore(release): bump version cli\" && git tag ff-cli-v$(node -p \"require('./packages/cli/package.json').version\") && npm run git:push",
 		"prepare": "npm run build:all",
 		"format": "prettier --write .",
-		"lint": "prettier --check .",
+		"lint": "prettier --check . && eslint .",
 		"lint:eslint": "eslint . --ext .ts,.js,.tsx,.jsx,.svelte,.vue",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

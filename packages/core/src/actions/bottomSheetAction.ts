@@ -11,8 +11,7 @@ export default function bottomSheetAction(
 	const sheetContent = node.firstElementChild as HTMLElement
 	sheetContent.style.transition = "0.3s ease"
 
-	const header = sheetContent.firstElementChild as HTMLElement
-	const dragIcon = header.firstElementChild as HTMLElement
+	const dragIcon = sheetContent.firstElementChild as HTMLElement
 
 	dragIcon.tabIndex = 0
 	dragIcon.role = "slider"

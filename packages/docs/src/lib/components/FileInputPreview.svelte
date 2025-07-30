@@ -30,7 +30,6 @@
 		</svg>
 		<p>Drag and Drop</p>
 		<p>or</p>
-		<br />
 		<Button variant="outlined">Browse file</Button>
 	</div>
 </FileInput>
