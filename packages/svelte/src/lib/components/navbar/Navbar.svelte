@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import styles from "./Navbar.module.css"
 	import { fadeOnScrollAction } from "@dxdns/feflow-core/actions"
 	import type { VariantType } from "@dxdns/feflow-core/types"
+	import styles from "@dxdns/feflow-core/styles/Navbar.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		isTranslucent?: boolean
@@ -19,8 +19,6 @@
 		children,
 		...rest
 	}: Props = $props()
-
-	let isOpen = $state(false)
 </script>
 
 <div
@@ -32,8 +30,7 @@
 		[variant, styles],
 		styles.navbar,
 		{
-			[styles.isTranslucent]: isTranslucent,
-			[styles.show]: isOpen
+			[styles.isTranslucent]: isTranslucent
 		}
 	)}
 	use:fadeOnScrollAction

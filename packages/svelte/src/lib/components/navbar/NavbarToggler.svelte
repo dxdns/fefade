@@ -2,8 +2,8 @@
 	import { CloseIcon, MenuIcon } from "../../icons/index.js"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import styles from "./NavbarToggler.module.css"
 	import type { SizeType } from "@dxdns/feflow-core/types"
+	import styles from "@dxdns/feflow-core/styles/NavbarToggler.module.css"
 
 	interface Props extends HTMLInputAttributes {
 		visibleInSize?: SizeType
