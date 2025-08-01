@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import styles from "./Gallery.module.css"
 	import {
 		classMapUtil,
 		mergeStyleUtil,
 		normalizeSizeUtil
 	} from "@dxdns/feflow-core/utils"
+	import styles from "@dxdns/feflow-core/styles/Gallery.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		variant?: "default" | "masonry"

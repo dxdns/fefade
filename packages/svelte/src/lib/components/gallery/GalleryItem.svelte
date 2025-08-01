@@ -3,7 +3,7 @@
 	import { Image } from "../image/index.js"
 	import { classMapUtil, handleClickUtil } from "@dxdns/feflow-core/utils"
 	import type { HTMLAttrAnchor } from "@dxdns/feflow-core/types"
-	import styles from "./GalleryItem.module.css"
+	import styles from "@dxdns/feflow-core/styles/GalleryItem.module.css"
 
 	interface Props extends Omit<HTMLImgAttributes, "src">, HTMLAttrAnchor {
 		lazy?: boolean
