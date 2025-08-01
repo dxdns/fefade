@@ -1,18 +1,10 @@
 <script lang="ts">
 	import type { HTMLAnchorAttributes } from "svelte/elements"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import styles from "./Link.module.css"
+	import type { LinkType } from "@dxdns/feflow-core/types"
+	import styles from "@dxdns/feflow-core/styles/Link.module.css"
 
-	interface Props extends HTMLAnchorAttributes {
-		class?: string | (({ isActive }: { isActive: boolean }) => string)
-		pathname?: string
-
-		/**
-		 * @deprecated Use `hover` instead.
-		 */
-		hoverUnderline?: "left" | "center" | "right"
-		hover?: "left" | "center" | "right" | "underlineNone"
-	}
+	interface Props extends Omit<HTMLAnchorAttributes, "class">, LinkType {}
 
 	let {
 		class: className = "",

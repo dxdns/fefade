@@ -23,6 +23,7 @@ export { Checkbox } from "./components/checkbox/index.js"
 export { SearchInput } from "./components/search-input/index.js"
 export { RangeInput } from "./components/range-input/index.js"
 export { Switch } from "./components/switch/index.js"
+export { Link } from "./components/link/index.js"
 
 export { default as BottomSheet } from "./components/bottom-sheet/index.js"
 export { default as Code } from "./components/code/index.js"

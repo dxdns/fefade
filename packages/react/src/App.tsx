@@ -14,7 +14,8 @@ import {
 	Code,
 	RangeInput,
 	SearchInput,
-	Switch
+	Switch,
+	Link
 } from "./lib"
 import { useState } from "react"
 
@@ -38,6 +39,9 @@ function App() {
 
 	return (
 		<>
+			<Link href="/" hover="underlineNone">
+				test
+			</Link>
 			<Switch
 				id="test1"
 				label={`test (${checked})`}
