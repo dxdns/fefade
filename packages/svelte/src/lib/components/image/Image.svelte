@@ -2,15 +2,9 @@
 	import { lazyLoadAction } from "@dxdns/feflow-core/actions"
 	import type { HTMLImgAttributes } from "svelte/elements"
 	import { mergeStyleUtil, classMapUtil } from "@dxdns/feflow-core/utils"
+	import type { ImageType } from "@dxdns/feflow-core/types"
 
-	interface Props extends Omit<HTMLImgAttributes, "src"> {
-		lazy?: boolean
-		dataSrc: string
-		hover?: {
-			transition?: "none" | "scale"
-		}
-		fallback?: string
-	}
+	interface Props extends Omit<HTMLImgAttributes, "src">, ImageType {}
 
 	let {
 		class: className = "",

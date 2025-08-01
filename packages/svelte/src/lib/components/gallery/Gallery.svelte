@@ -5,15 +5,10 @@
 		mergeStyleUtil,
 		normalizeSizeUtil
 	} from "@dxdns/feflow-core/utils"
+	import type { GalleryType } from "@dxdns/feflow-core/types"
 	import styles from "@dxdns/feflow-core/styles/Gallery.module.css"
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
-		variant?: "default" | "masonry"
-		columns?: number | string
-		gap?: number | string
-		minWidth?: number | string
-		maxWidth?: number | string
-	}
+	interface Props extends HTMLAttributes<HTMLDivElement>, GalleryType {}
 
 	let {
 		class: className = "",

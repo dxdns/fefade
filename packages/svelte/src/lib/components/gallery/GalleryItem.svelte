@@ -2,18 +2,16 @@
 	import type { HTMLImgAttributes } from "svelte/elements"
 	import { Image } from "../image/index.js"
 	import { classMapUtil, handleClickUtil } from "@dxdns/feflow-core/utils"
-	import type { HTMLAttrAnchor } from "@dxdns/feflow-core/types"
+	import type {
+		HTMLAttrAnchor,
+		GalleryItemType
+	} from "@dxdns/feflow-core/types"
 	import styles from "@dxdns/feflow-core/styles/GalleryItem.module.css"
 
-	interface Props extends Omit<HTMLImgAttributes, "src">, HTMLAttrAnchor {
-		lazy?: boolean
-		dataSrc: string
-		caption?: {
-			title: string
-			description: string
-		}
-		fallback?: string
-	}
+	interface Props
+		extends Omit<HTMLImgAttributes, "src">,
+			HTMLAttrAnchor,
+			GalleryItemType {}
 
 	let {
 		class: className = "",
