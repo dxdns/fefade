@@ -1,19 +1,21 @@
 type Props = {
 	callback: (isVisible: boolean) => void
-	threshold?: number
+	options?: IntersectionObserverInit
 }
 
 export default function checkVisibilityAction(
 	node: HTMLElement,
-	{ callback, threshold = 0 }: Props
+	{ callback, options }: Props
 ) {
 	const handleIntersect: IntersectionObserverCallback = ([entry]) => {
 		callback(entry.isIntersecting)
 	}
 
 	const observer = new IntersectionObserver(handleIntersect, {
+		...options,
 		root: null,
-		threshold
+		threshold: 0,
+		rootMargin: "0px"
 	})
 
 	observer.observe(node)

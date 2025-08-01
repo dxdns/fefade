@@ -15,7 +15,8 @@ import {
 	RangeInput,
 	SearchInput,
 	Switch,
-	Link
+	Link,
+	Image
 } from "./lib"
 import { useState } from "react"
 
@@ -39,6 +40,12 @@ function App() {
 
 	return (
 		<>
+			<Image
+				dataSrc="https://img.odcdn.com.br/cdn-cgi/image/width=1200,height=1200,fit=cover/wp-content/uploads/2023/01/Avatar-Loak.jpg"
+				fallback="https://avatars.githubusercontent.com/u/26321303?v=4"
+				width={250}
+				height={250}
+			/>
 			<Link href="/" hover="underlineNone">
 				test
 			</Link>
