@@ -58,7 +58,10 @@ export default forwardRef<HTMLInputElement, Props>(
 				style={
 					{
 						["--progress"]: `${progressValue}%`,
-						["--thumb-icon"]: icon ? `url(${dataIconUrlUtil(icon)})` : undefined
+						["--thumb-icon"]: icon
+							? `url(${dataIconUrlUtil(icon)})`
+							: undefined,
+						...rest.style
 					} as CSSProperties
 				}
 				onInput={(e) => {

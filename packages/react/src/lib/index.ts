@@ -12,6 +12,7 @@ export { createTheme } from "@dxdns/feflow-core/utils"
 export { default as BottomSheet } from "./components/bottom-sheet/index.js"
 export { default as Code } from "./components/code/index.js"
 export { default as Drawer } from "./components/drawer/index.js"
+export { default as Gallery } from "./components/gallery/index.js"
 
 export * from "./components/button/index.js"
 export * from "./components/spinner/index.js"

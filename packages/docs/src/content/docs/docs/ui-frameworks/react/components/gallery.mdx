@@ -1,0 +1,11 @@
+---
+title: Gallery
+description: A flexible container component used to group and display a collection of content, such as images, videos, or other media, in an organized layout.
+---
+
+import GalleryPreview from "@/components/GalleryPreview.tsx"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+<PreviewTabs component="GalleryPreview" ext="tsx">
+	<GalleryPreview client:load />
+</PreviewTabs>

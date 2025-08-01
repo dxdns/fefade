@@ -57,7 +57,8 @@ export default forwardRef<HTMLInputElement, Props>(
 						style={
 							{
 								["--bg-unchecked"]: uncheckedColor,
-								["--bg-checked"]: checkedColor
+								["--bg-checked"]: checkedColor,
+								...rest.style
 							} as CSSProperties
 						}
 					>
