@@ -32,7 +32,6 @@
 	<Image
 		{...rest}
 		class={styles.image}
-		hover={{ transition: "scale" }}
 		{lazy}
 		{dataSrc}
 		{fallback}
