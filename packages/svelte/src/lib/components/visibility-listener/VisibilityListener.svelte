@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { checkVisibilityAction } from "@dxdns/feflow-core/actions"
 	import type { HTMLAttributes } from "svelte/elements"
+	import type { VisibilityListenerType } from "@dxdns/feflow-core/types"
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
-		callback: (isVisible: boolean) => void
-		preventDefault?: boolean
-	}
+	interface Props
+		extends HTMLAttributes<HTMLDivElement>,
+			VisibilityListenerType {}
 
 	let { class: className = "", callback, children, ...rest }: Props = $props()
 </script>

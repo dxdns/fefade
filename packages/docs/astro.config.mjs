@@ -96,6 +96,12 @@ export default defineConfig({
 									autogenerate: {
 										directory: "docs/ui-frameworks/react/components"
 									}
+								},
+								{
+									label: "Utils",
+									autogenerate: {
+										directory: "docs/ui-frameworks/react/utils"
+									}
 								}
 							]
 						},
