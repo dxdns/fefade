@@ -1,17 +1,23 @@
 <script lang="ts">
 	import type { HTMLImgAttributes } from "svelte/elements"
 	import { Image } from "../image/index.js"
-	import { classMapUtil, handleClickUtil } from "@dxdns/feflow-core/utils"
+	import {
+		classMapUtil,
+		handleClickUtil,
+		hasKeysUtil
+	} from "@dxdns/feflow-core/utils"
 	import type {
 		HTMLAttrAnchor,
-		GalleryItemType
+		GalleryItemType,
+		GalleryCaptionType
 	} from "@dxdns/feflow-core/types"
+	import type { Snippet } from "svelte"
 	import styles from "@dxdns/feflow-core/styles/GalleryItem.module.css"
 
 	interface Props
 		extends Omit<HTMLImgAttributes, "src">,
 			HTMLAttrAnchor,
-			GalleryItemType {}
+			GalleryItemType<Snippet<[]> | GalleryCaptionType | undefined> {}
 
 	let {
 		class: className = "",
@@ -22,6 +28,7 @@
 		href,
 		target = "_self",
 		download,
+		children,
 		...rest
 	}: Props = $props()
 </script>
@@ -46,10 +53,14 @@
 			})
 		}}
 	/>
-	{#if caption}
+	{#if children}
+		{@render children?.()}
+	{:else if caption && hasKeysUtil<GalleryCaptionType>(caption)}
 		<figcaption class={styles.caption}>
 			<h3>{caption.title}</h3>
 			<p>{caption.description}</p>
 		</figcaption>
+	{:else if caption && typeof caption === "function"}
+		{@render caption?.()}
 	{/if}
 </figure>

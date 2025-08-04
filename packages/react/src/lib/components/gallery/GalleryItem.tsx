@@ -1,12 +1,20 @@
-import type { GalleryItemType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
-import { classMapUtil, handleClickUtil } from "@dxdns/feflow-core/utils"
-import { forwardRef, ImgHTMLAttributes } from "react"
+import type {
+	GalleryCaptionType,
+	GalleryItemType,
+	HTMLAttrAnchor
+} from "@dxdns/feflow-core/types"
+import {
+	classMapUtil,
+	handleClickUtil,
+	hasKeysUtil
+} from "@dxdns/feflow-core/utils"
+import { forwardRef, ImgHTMLAttributes, isValidElement, ReactNode } from "react"
 import { Image } from "../image"
 import styles from "@dxdns/feflow-core/styles/GalleryItem.module.css"
 
 interface Props
 	extends Omit<ImgHTMLAttributes<HTMLImageElement>, "src">,
-		GalleryItemType,
+		GalleryItemType<ReactNode | GalleryCaptionType | undefined>,
 		HTMLAttrAnchor {}
 
 export default forwardRef<HTMLImageElement, Props>(
@@ -20,6 +28,7 @@ export default forwardRef<HTMLImageElement, Props>(
 			href,
 			target = "_self",
 			download,
+			children,
 			...rest
 		},
 		ref
@@ -50,11 +59,17 @@ export default forwardRef<HTMLImageElement, Props>(
 						})
 					}}
 				/>
-				{caption && (
+				{children ? (
+					children
+				) : caption && hasKeysUtil<GalleryCaptionType>(caption) ? (
 					<figcaption className={styles.caption}>
-						<h3>{caption.title}</h3>
-						<p>{caption.description}</p>
+						<div>
+							<h3>{caption.title}</h3>
+							<p>{caption.description}</p>
+						</div>
 					</figcaption>
+				) : (
+					isValidElement(caption) && caption
 				)}
 			</figure>
 		)

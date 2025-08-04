@@ -6,12 +6,14 @@ export type GalleryType = {
 	maxWidth?: number | string
 }
 
-export type GalleryItemType = {
+export interface GalleryCaptionType {
+	title: string
+	description: string
+}
+
+export type GalleryItemType<T = GalleryCaptionType> = {
 	lazy?: boolean
 	dataSrc: string
-	caption?: {
-		title: string
-		description: string
-	}
+	caption?: T
 	fallback?: string
 }
