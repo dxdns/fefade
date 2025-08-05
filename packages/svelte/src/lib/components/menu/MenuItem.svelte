@@ -3,8 +3,8 @@
 		HTMLAttributeAnchorTarget,
 		HTMLAttributes
 	} from "svelte/elements"
-	import styles from "./MenuItem.module.css"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import styles from "@dxdns/feflow-core/styles/MenuItem.module.css"
 
 	interface Props extends HTMLAttributes<HTMLSpanElement> {
 		href?: string

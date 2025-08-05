@@ -1,4 +1,3 @@
-import DrawerDemo from "./DrawerDemo"
 import {
 	Accordion,
 	Button,
@@ -80,7 +79,6 @@ function App() {
 				</Button>
 			</Card>
 			<br />
-			<DrawerDemo />
 			<h2>{inputValue}</h2>
 			<RangeInput
 				step={10}

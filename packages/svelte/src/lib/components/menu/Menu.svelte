@@ -6,8 +6,10 @@
 		clickOutsideAction
 	} from "@dxdns/feflow-core/actions"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import styles from "@dxdns/feflow-core/styles/Menu.module.css"
 
-	interface Props extends HTMLInputAttributes {
+	interface Props extends Omit<HTMLInputAttributes, "id"> {
+		id: string
 		isTranslucent?: boolean
 		openOnHover?: boolean
 		anchor: Snippet<[]>
@@ -16,6 +18,7 @@
 
 	let {
 		class: className = "",
+		id,
 		isTranslucent = false,
 		openOnHover = false,
 		anchor,
@@ -24,24 +27,24 @@
 	}: Props = $props()
 
 	let elMenu: HTMLElement | undefined
-	let el: HTMLInputElement | undefined
+	let elInput: HTMLInputElement | undefined
 
 	function handleMenuHover(disable: boolean) {
 		if (!elMenu) return
-		elMenu.classList.toggle("disableHover", disable)
+		elMenu.classList.toggle(styles.disableHover, disable)
 	}
 
 	function handleClose() {
-		if (!el) return
-		el.checked = false
+		if (!elInput) return
+		elInput.checked = false
 		if (openOnHover) handleMenuHover(true)
 	}
 </script>
 
 <div
 	role="region"
-	class={classMapUtil(className, "menu", {
-		["openOnHover"]: openOnHover
+	class={classMapUtil(className, [className, styles], styles.menu, {
+		[styles.openOnHover]: openOnHover
 	})}
 	use:clickOutsideAction={{
 		handler: handleClose
@@ -53,21 +56,21 @@
 >
 	<input
 		{...rest}
-		class="controller"
-		bind:this={el}
+		class={styles.controller}
+		bind:this={elInput}
 		type="checkbox"
-		id={rest.id ?? "checkbox"}
+		{id}
 		hidden
 		style={undefined}
 	/>
-	<label class="container" for={rest.id ?? "checkbox"}>
-		<span class="anchor">
+	<label class={styles.container} for={id}>
+		<span class={styles.anchor}>
 			{@render anchor?.()}
 		</span>
 	</label>
 	<div
-		class={classMapUtil("content", {
-			["isTranslucent"]: isTranslucent
+		class={classMapUtil(styles.content, {
+			[styles.isTranslucent]: isTranslucent
 		})}
 		role="button"
 		tabindex="0"
@@ -78,59 +81,3 @@
 		{@render items?.()}
 	</div>
 </div>
-
-<style>
-	.menu {
-		position: relative;
-		user-select: none;
-	}
-
-	.controller {
-		display: none;
-	}
-
-	.container {
-		display: inline-block;
-		cursor: pointer;
-	}
-
-	.anchor {
-		display: inline-block;
-	}
-
-	.anchor:active {
-		pointer-events: none;
-	}
-
-	.content {
-		position: absolute;
-		top: 100%;
-		overflow: hidden;
-		width: max-content;
-		max-width: 100vw;
-		background: var(--ff-surface);
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		border-radius: 0.25rem;
-		padding: 0;
-		z-index: 2;
-		margin: 0;
-		opacity: 0;
-		transform: translateY(-5px);
-		pointer-events: none;
-		transition:
-			opacity 150ms ease-in-out,
-			transform 150ms ease-in-out;
-	}
-
-	.content.isTranslucent {
-		background: color-mix(in srgb, var(--ff-surface) 30%, transparent);
-		backdrop-filter: blur(15px);
-	}
-
-	.controller:checked ~ .content,
-	.menu:not(.disableHover).openOnHover:hover .content {
-		opacity: 1;
-		transform: translateY(0);
-		pointer-events: auto;
-	}
-</style>
