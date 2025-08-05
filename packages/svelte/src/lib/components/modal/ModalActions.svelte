@@ -2,6 +2,7 @@
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "@dxdns/feflow-core/utils"
 	import type { AlignType } from "@dxdns/feflow-core/types"
+	import styles from "@dxdns/feflow-core/styles/ModalActions.module.css"
 
 	export interface ModalActionsProps {
 		align?: AlignType
@@ -19,24 +20,8 @@
 
 <div
 	{...rest}
-	class={classMapUtil(className, "actions")}
+	class={classMapUtil(className, [className, styles], styles.actions)}
 	style={mergeStyleUtil(`--align: ${align};`, rest.style)}
 >
 	{@render children?.()}
 </div>
-
-<style>
-	.actions {
-		display: flex;
-		justify-content: var(--align, flex-end);
-		gap: 0.5rem;
-		padding: 0.75rem 1rem;
-		border-top: 1px solid var(--ff-border);
-		flex-wrap: wrap;
-		margin-top: 0;
-	}
-
-	.actions.border-0 {
-		border-top: none;
-	}
-</style>

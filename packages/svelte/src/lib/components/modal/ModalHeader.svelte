@@ -4,6 +4,7 @@
 	import Button from "../button/index.js"
 	import { CloseIcon } from "../../icons/index.js"
 	import type { AlignType } from "@dxdns/feflow-core/types"
+	import styles from "@dxdns/feflow-core/styles/ModalHeader.module.css"
 
 	export interface ModalHeaderProps {
 		align?: AlignType
@@ -21,8 +22,11 @@
 	}: Props = $props()
 </script>
 
-<div {...rest} class={classMapUtil(className, "header")}>
-	<div class="content" style="justify-content: {align};">
+<div
+	{...rest}
+	class={classMapUtil(className, [className, styles], styles.header)}
+>
+	<div class={styles.content} style="justify-content: {align};">
 		{@render children?.()}
 	</div>
 	{#if handleClose}
@@ -31,28 +35,3 @@
 		</Button>
 	{/if}
 </div>
-
-<style>
-	.header {
-		padding: 0 3px 0 3px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 1rem;
-		height: 70px;
-		border-bottom: 1px solid var(--ff-border);
-		margin-bottom: 1rem;
-	}
-
-	.content {
-		overflow: hidden;
-		text-overflow: ellipsis;
-		-webkit-box-orient: vertical;
-		display: -webkit-box;
-		-webkit-line-clamp: 2;
-		line-clamp: 2;
-		flex: 1;
-		display: flex;
-		padding: 1rem;
-	}
-</style>

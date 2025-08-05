@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import styles from "./Modal.module.css"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
 	import { fade, scale } from "svelte/transition"
 	import Card from "../card/index.js"
 	import type { VariantType } from "@dxdns/feflow-core/types"
+	import styles from "@dxdns/feflow-core/styles/Modal.module.css"
 
 	export interface ModalProps {
 		isOpen: boolean
