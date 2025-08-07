@@ -52,7 +52,7 @@
 					handleClick(src, size)
 				}}
 			>
-				<Gallery.Item
+				<Gallery.Image
 					lazy
 					dataSrc={src}
 					alt={`Image ${size}px`}
@@ -74,7 +74,7 @@
 					handleClick(src, size)
 				}}
 			>
-				<Gallery.Item
+				<Gallery.Image
 					lazy
 					caption={{
 						title: `title ${size}`,
@@ -100,7 +100,7 @@
 					if (i !== 0) handleClick(src, size)
 				}}
 			>
-				<Gallery.Item
+				<Gallery.Image
 					lazy
 					caption={{
 						title: `title ${size}`,

@@ -61,6 +61,7 @@ export default forwardRef<HTMLImageElement, Props>(
 						})
 					}}
 				/>
+
 				{children ? (
 					children
 				) : caption && hasKeysUtil<GalleryCaptionType>(caption) ? (
