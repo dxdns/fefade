@@ -116,4 +116,16 @@
 			</button>
 		{/each}
 	</Gallery>
+	<br />
+
+	<Gallery>
+		<Gallery.Video
+			autoplay
+			loop
+			muted
+			dataSrc="https://res.cloudinary.com/dkufrbqih/video/upload/v1754577218/4_-_J5bdBP9_tifpyb.mp4"
+			height="200px"
+			width="200px"
+		/>
+	</Gallery>
 </div>

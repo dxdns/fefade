@@ -2,7 +2,10 @@ type Props = {
 	onChange?: (el: HTMLElement, index: number) => void
 }
 
-export function draggableGroupAction(node: HTMLElement, props: Props = {}) {
+export default function draggableGroupAction(
+	node: HTMLElement,
+	props: Props = {}
+) {
 	let dragEl: HTMLElement | null = null
 	let nextEl: ChildNode | null = null
 

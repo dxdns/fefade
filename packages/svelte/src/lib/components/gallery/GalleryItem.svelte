@@ -9,7 +9,8 @@
 	import type {
 		HTMLAttrAnchor,
 		GalleryItemType,
-		GalleryCaptionType
+		GalleryCaptionType,
+		ImageType
 	} from "@dxdns/feflow-core/types"
 	import type { Snippet } from "svelte"
 	import styles from "@dxdns/feflow-core/styles/GalleryItem.module.css"
@@ -17,7 +18,8 @@
 	interface Props
 		extends Omit<HTMLImgAttributes, "src">,
 			HTMLAttrAnchor,
-			GalleryItemType<Snippet<[]> | GalleryCaptionType | undefined> {}
+			GalleryItemType<Snippet<[]> | GalleryCaptionType | undefined>,
+			ImageType {}
 
 	let {
 		class: className = "",
@@ -38,7 +40,7 @@
 >
 	<Image
 		{...rest}
-		class={styles.image}
+		class={styles.thumbnail}
 		{lazy}
 		{dataSrc}
 		{fallback}

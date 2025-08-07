@@ -10,13 +10,17 @@
 	padding: 0;
 }
 
-.image {
+.thumbnail {
 	inline-size: 100%;
 	block-size: 100%;
 	max-inline-size: 100%;
 	object-fit: cover;
 	grid-area: 1 / 1 / -1 / -1;
 	transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+	scale: 1.125;
 }
 
 .caption {
@@ -40,8 +44,4 @@
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-}
-
-.image:hover {
-	scale: 1.125;
 }

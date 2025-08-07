@@ -1,7 +1,8 @@
 import type {
 	GalleryCaptionType,
 	GalleryItemType,
-	HTMLAttrAnchor
+	HTMLAttrAnchor,
+	ImageType
 } from "@dxdns/feflow-core/types"
 import {
 	classMapUtil,
@@ -15,7 +16,8 @@ import styles from "@dxdns/feflow-core/styles/GalleryItem.module.css"
 interface Props
 	extends Omit<ImgHTMLAttributes<HTMLImageElement>, "src">,
 		GalleryItemType<ReactNode | GalleryCaptionType | undefined>,
-		HTMLAttrAnchor {}
+		HTMLAttrAnchor,
+		ImageType {}
 
 export default forwardRef<HTMLImageElement, Props>(
 	(
@@ -44,7 +46,7 @@ export default forwardRef<HTMLImageElement, Props>(
 				<Image
 					{...rest}
 					ref={ref}
-					className={styles.image}
+					className={styles.thumbnail}
 					lazy={lazy}
 					dataSrc={dataSrc}
 					fallback={fallback}

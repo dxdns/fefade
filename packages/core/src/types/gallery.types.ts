@@ -12,8 +12,5 @@ export interface GalleryCaptionType {
 }
 
 export type GalleryItemType<T = GalleryCaptionType> = {
-	lazy?: boolean
-	dataSrc: string
 	caption?: T
-	fallback?: string
 }
