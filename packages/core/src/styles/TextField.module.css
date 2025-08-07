@@ -2,7 +2,6 @@
 	position: relative;
 	display: inline-block;
 	width: 100%;
-	line-height: 1;
 	margin: 0;
 }
 
@@ -92,6 +91,7 @@
 	white-space: nowrap;
 	color: var(--ff-primary);
 	transform: translateY(4px);
+	line-height: 0;
 }
 
 .textField fieldset legend span {
