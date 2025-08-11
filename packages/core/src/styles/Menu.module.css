@@ -1,53 +1,53 @@
 .menu {
-    position: relative;
-    user-select: none;
+	position: relative;
+	user-select: none;
 }
 
 .controller {
-    display: none;
+	display: none;
 }
 
 .container {
-    display: inline-block;
-    cursor: pointer;
+	display: inline-block;
+	cursor: pointer;
 }
 
 .anchor {
-    display: inline-block;
+	display: inline-block;
 }
 
 .anchor:active {
-    pointer-events: none;
+	pointer-events: none;
 }
 
 .content {
-    position: absolute;
-    top: 100%;
-    overflow: hidden;
-    width: max-content;
-    max-width: 100vw;
-    background: var(--ff-surface);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0.25rem;
-    padding: 0;
-    z-index: 2;
-    margin: 0;
-    opacity: 0;
-    transform: translateY(-5px);
-    pointer-events: none;
-    transition:
-        opacity 150ms ease-in-out,
-        transform 150ms ease-in-out;
+	position: absolute;
+	top: 100%;
+	overflow: hidden;
+	width: max-content;
+	max-width: 100vw;
+	background: var(--ff-surface);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 0.25rem;
+	padding: 0;
+	z-index: 2;
+	margin: 0;
+	opacity: 0;
+	transform: translateY(-5px);
+	pointer-events: none;
+	transition:
+		opacity 150ms ease-in-out,
+		transform 150ms ease-in-out;
 }
 
 .content.isTranslucent {
-    background: color-mix(in srgb, var(--ff-surface) 30%, transparent);
-    backdrop-filter: blur(15px);
+	background: color-mix(in srgb, var(--ff-surface) 30%, transparent);
+	backdrop-filter: blur(15px);
 }
 
-.controller:checked~.content,
+.controller:checked ~ .content,
 .menu:not(.disableHover).openOnHover:hover .content {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
 }

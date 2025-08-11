@@ -63,7 +63,7 @@
 	overflow: hidden;
 }
 
-.slider>*:first-child {
+.slider > *:first-child {
 	visibility: hidden;
 }
 
@@ -116,52 +116,52 @@
 	bottom: 0.45em;
 }
 
-.content.xs input:checked+.slider::before {
+.content.xs input:checked + .slider::before {
 	transform: translateX(0.9em);
 }
 
-.content.sm input:checked+.slider::before {
+.content.sm input:checked + .slider::before {
 	transform: translateX(1.1em);
 }
 
-.content.md input:checked+.slider::before {
+.content.md input:checked + .slider::before {
 	transform: translateX(1.4em);
 }
 
-.content.lg input:checked+.slider::before {
+.content.lg input:checked + .slider::before {
 	transform: translateX(1.8em);
 }
 
-.content.xl input:checked+.slider::before {
+.content.xl input:checked + .slider::before {
 	transform: translateX(2.4em);
 }
 
-input:disabled+.slider::before {
+input:disabled + .slider::before {
 	opacity: 0.7;
 }
 
-input:disabled+.slider {
+input:disabled + .slider {
 	cursor: not-allowed;
 	background: var(--ff-disabled);
 }
 
-input:checked+.slider::before {
+input:checked + .slider::before {
 	background: var(--bg-checked);
 }
 
-input:checked+.slider {
+input:checked + .slider {
 	background: var(--ff-on-surface);
 	color: var(--ff-on-primary);
 }
 
-input:checked+.slider svg path {
+input:checked + .slider svg path {
 	fill: var(--ff-on-primary);
 }
 
-input:checked+.slider>*:first-child {
+input:checked + .slider > *:first-child {
 	visibility: visible;
 }
 
-input:checked+.slider>*:last-child {
+input:checked + .slider > *:last-child {
 	visibility: hidden;
 }

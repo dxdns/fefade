@@ -59,16 +59,16 @@
 	border-top: none;
 }
 
-.controller:checked+.header {
+.controller:checked + .header {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-.controller:checked+.header label {
+.controller:checked + .header label {
 	font-weight: bold;
 }
 
-.controller:checked+.header+.content {
+.controller:checked + .header + .content {
 	height: auto;
 	padding: 15px;
 	opacity: 1;
@@ -82,7 +82,7 @@
 	transform: rotate(-90deg);
 }
 
-.controller:checked+.header .icon {
+.controller:checked + .header .icon {
 	transform: rotate(90deg);
 }
 

@@ -1,4 +1,5 @@
 import { Gallery } from "@dxdns/feflow-react"
+import type { VideoHTMLAttributes } from "react"
 
 export default function () {
 	const sizes = [200, 250, 650, 750, 850, 950, 300, 350, 450, 550]
@@ -10,15 +11,17 @@ export default function () {
 				{sizes.slice(0, 4).map((size) => {
 					const src = `https://dummyjson.com/image/${size}`
 					return (
-						<button key={size} style={{ all: "unset", cursor: "pointer" }}>
-							<Gallery.Item
-								lazy
-								dataSrc={src}
-								alt={`Image ${size}px`}
-								width={size}
-								height={size}
-							/>
-						</button>
+						<Gallery.Item
+							key={size}
+							lazy
+							dataSrc={src}
+							alt={`Image ${size}px`}
+							width={size}
+							height={size}
+							href={src}
+							target="_blank"
+							style={{ cursor: "pointer" }}
+						/>
 					)
 				})}
 			</Gallery>
@@ -29,19 +32,21 @@ export default function () {
 				{sizes.slice(0, 6).map((size) => {
 					const src = `https://dummyjson.com/image/${size}`
 					return (
-						<button key={size} style={{ all: "unset", cursor: "pointer" }}>
-							<Gallery.Item
-								lazy
-								caption={{
-									title: `title ${size}`,
-									description: `description ${size}`
-								}}
-								dataSrc={src}
-								alt={`Image ${size}px`}
-								width={size}
-								height={size}
-							/>
-						</button>
+						<Gallery.Item
+							key={size}
+							lazy
+							caption={{
+								title: `title ${size}`,
+								description: `description ${size}`
+							}}
+							dataSrc={src}
+							alt={`Image ${size}px`}
+							width={size}
+							height={size}
+							href={src}
+							target="_blank"
+							style={{ cursor: "pointer" }}
+						/>
 					)
 				})}
 			</Gallery>
@@ -49,22 +54,32 @@ export default function () {
 			<br />
 			<h1>masonry</h1>
 			<Gallery variant="masonry" gap="1rem">
-				{sizes.map((size) => {
-					const src = `https://dummyjson.com/image/${size}`
+				{sizes.map((size, i) => {
+					const src =
+						i === 0
+							? "https://res.cloudinary.com/dkufrbqih/video/upload/v1754577218/4_-_J5bdBP9_tifpyb.mp4"
+							: `https://dummyjson.com/image/${size}`
 					return (
-						<button key={size} style={{ all: "unset", cursor: "pointer" }}>
-							<Gallery.Item
-								lazy
-								caption={{
-									title: `title ${size}`,
-									description: `description ${size}`
-								}}
-								dataSrc={src}
-								alt={`Image ${size}px`}
-								width={size}
-								height={size}
-							/>
-						</button>
+						<Gallery.Item
+							key={size}
+							{...({
+								autoPlay: true,
+								loop: true,
+								muted: true
+							} as VideoHTMLAttributes<HTMLVideoElement>)}
+							lazy
+							caption={{
+								title: `title ${size}`,
+								description: `description ${size}`
+							}}
+							dataSrc={src}
+							alt={`Image ${size}px`}
+							width={size}
+							height={size}
+							href={src}
+							target="_blank"
+							style={{ cursor: "pointer" }}
+						/>
 					)
 				})}
 			</Gallery>

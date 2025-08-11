@@ -1,5 +1,5 @@
-export default function hasKeysUtil<T>(obj: any, keys?: (keyof T)[]): obj is T {
-	return (
-		obj && typeof obj === "object" && keys && keys.every((key) => key in obj)
-	)
+export default function hasKeysUtil<T>(obj: any): obj is T {
+	if (!obj || typeof obj !== "object") return false
+	const keys = Object.keys(obj) as (keyof T)[]
+	return keys.every((key) => key in obj)
 }

@@ -1,40 +1,40 @@
 .bottomSheetDragButton {
-    cursor: grab;
-    user-select: none;
-    padding: 0.75rem;
-    display: flex;
-    justify-content: center;
-    outline: none;
+	cursor: grab;
+	user-select: none;
+	padding: 0.75rem;
+	display: flex;
+	justify-content: center;
+	outline: none;
 }
 
 .bottomSheetDragButton.text {
-    background: none;
-    border: none;
+	background: none;
+	border: none;
 }
 
 .bottomSheetDragButton.contained,
 .bottomSheetDragButton.outlined {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 .bottomSheetDragButton.contained {
-    background: var(--ff-border);
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
+	background: var(--ff-border);
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
 }
 
 .bottomSheetDragButton.outlined {
-    background: none;
-    border-bottom: 1px solid var(--ff-border);
+	background: none;
+	border-bottom: 1px solid var(--ff-border);
 }
 
 .bottomSheetDragButton span {
-    height: 4px;
-    width: 40px;
-    display: block;
-    background: var(--ff-primary);
-    border-radius: 5px;
+	height: 4px;
+	width: 40px;
+	display: block;
+	background: var(--ff-primary);
+	border-radius: 5px;
 }

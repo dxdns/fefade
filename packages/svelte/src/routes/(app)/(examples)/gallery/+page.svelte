@@ -52,7 +52,7 @@
 					handleClick(src, size)
 				}}
 			>
-				<Gallery.Image
+				<Gallery.Item
 					lazy
 					dataSrc={src}
 					alt={`Image ${size}px`}
@@ -74,7 +74,7 @@
 					handleClick(src, size)
 				}}
 			>
-				<Gallery.Image
+				<Gallery.Item
 					lazy
 					caption={{
 						title: `title ${size}`,
@@ -93,39 +93,31 @@
 	<h1>masonry</h1>
 	<Gallery variant="masonry" gap={4}>
 		{#each [200, 250, 300, 350, 450, 550, 650, 750, 850, 950] as size, i (size)}
-			{@const src = `https://dummyjson.com/image/${size}`}
-			<button
-				style="all: unset; cursor: pointer;"
-				onclick={() => {
-					if (i !== 0) handleClick(src, size)
+			{@const src =
+				i === 0
+					? "https://res.cloudinary.com/dkufrbqih/video/upload/v1754577218/4_-_J5bdBP9_tifpyb.mp4"
+					: `https://dummyjson.com/image/${size}`}
+			<Gallery.Item
+				lazy
+				autoplay
+				loop
+				muted
+				caption={{
+					title: `title ${size}`,
+					description: `description ${size}`
 				}}
-			>
-				<Gallery.Image
-					lazy
-					caption={{
-						title: `title ${size}`,
-						description: `description ${size}`
-					}}
-					dataSrc={src}
-					alt={`Image ${size}px`}
-					width={size}
-					height={size}
-					href={i === 0 ? "https://dxdns.dev" : undefined}
-					target="_blank"
-				/>
-			</button>
+				dataSrc={src}
+				alt={`Image ${size}px`}
+				width={size}
+				height={size}
+				href={i === 0 ? src : undefined}
+				target="_blank"
+				onclick={() => {
+					if (i !== 0) {
+						handleClick(src, size)
+					}
+				}}
+			/>
 		{/each}
-	</Gallery>
-	<br />
-
-	<Gallery>
-		<Gallery.Video
-			autoplay
-			loop
-			muted
-			dataSrc="https://res.cloudinary.com/dkufrbqih/video/upload/v1754577218/4_-_J5bdBP9_tifpyb.mp4"
-			height="200px"
-			width="200px"
-		/>
 	</Gallery>
 </div>

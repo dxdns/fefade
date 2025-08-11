@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { Gallery, Modal, useMediaQuery } from "@dxdns/feflow-svelte"
+	import { Gallery, Modal } from "@dxdns/feflow-svelte"
 	import { onDestroy, tick } from "svelte"
 
 	let isOpen = $state(false)
 	let elImg: HTMLImageElement | undefined
 
-	const isMd = $derived(useMediaQuery("max-width", "md"))
 	const sizes = [200, 250, 650, 750, 850, 950, 300, 350, 450, 550]
 
 	async function handleClick(src: string, size: number) {
@@ -21,7 +20,6 @@
 	}
 
 	onDestroy(() => {
-		isMd.destroy()
 		elImg = undefined
 	})
 </script>
@@ -48,71 +46,72 @@
 <Gallery>
 	{#each sizes.slice(0, 4) as size (size)}
 		{@const src = `https://dummyjson.com/image/${size}`}
-		<button
-			style="all: unset; cursor: pointer;"
+		<Gallery.Item
+			lazy
+			dataSrc={src}
+			alt={`Image ${size}px`}
+			width={size}
+			height={size}
 			onclick={() => {
 				handleClick(src, size)
 			}}
-		>
-			<Gallery.Item
-				lazy
-				dataSrc={src}
-				alt={`Image ${size}px`}
-				width={size}
-				height={size}
-			/>
-		</button>
+			style="cursor: pointer;"
+		/>
 	{/each}
 </Gallery>
 
 <br />
 <h1>columns</h1>
-<Gallery columns={isMd.value ? 1 : 2}>
+<Gallery columns={1}>
 	{#each sizes.slice(0, 6) as size (size)}
 		{@const src = `https://dummyjson.com/image/${size}`}
-		<button
-			style="all: unset; cursor: pointer;"
+		<Gallery.Item
+			lazy
+			caption={{
+				title: `title ${size}`,
+				description: `description ${size}`
+			}}
+			dataSrc={src}
+			alt={`Image ${size}px`}
+			width={size}
+			height={size}
 			onclick={() => {
 				handleClick(src, size)
 			}}
-		>
-			<Gallery.Item
-				lazy
-				caption={{
-					title: `title ${size}`,
-					description: `description ${size}`
-				}}
-				dataSrc={src}
-				alt={`Image ${size}px`}
-				width={size}
-				height={size}
-			/>
-		</button>
+			style="cursor: pointer;"
+		/>
 	{/each}
 </Gallery>
 
 <br />
 <h1>masonry</h1>
 <Gallery variant="masonry" gap="1rem">
-	{#each sizes as size (size)}
-		{@const src = `https://dummyjson.com/image/${size}`}
-		<button
-			style="all: unset; cursor: pointer;"
-			onclick={() => {
-				handleClick(src, size)
+	{#each sizes as size, i (size)}
+		{@const src =
+			i === 0
+				? "https://res.cloudinary.com/dkufrbqih/video/upload/v1754577218/4_-_J5bdBP9_tifpyb.mp4"
+				: `https://dummyjson.com/image/${size}`}
+		<Gallery.Item
+			autoplay
+			loop
+			muted
+			lazy
+			caption={{
+				title: `title ${size}`,
+				description: `description ${size}`
 			}}
-		>
-			<Gallery.Item
-				lazy
-				caption={{
-					title: `title ${size}`,
-					description: `description ${size}`
-				}}
-				dataSrc={src}
-				alt={`Image ${size}px`}
-				width={size}
-				height={size}
-			/>
-		</button>
+			dataSrc={src}
+			alt={`Image ${size}px`}
+			width={size}
+			height={size}
+			onclick={() => {
+				if (i > 0) {
+					handleClick(src, size)
+				}
+			}}
+			href={i === 0 ? src : undefined}
+			target={i === 0 ? "_blank" : undefined}
+			style="cursor: pointer;"
+		/>
 	{/each}
 </Gallery>
