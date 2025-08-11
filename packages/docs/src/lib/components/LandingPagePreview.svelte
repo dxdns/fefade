@@ -198,7 +198,8 @@
 					border-radius: 50%; 
 					overflow: hidden; 
 					object-fit: cover;
-					width: 310px;
+					width: 50%;
+					height: 400px;
 					display: {isMd.value ? 'none' : 'block'};
 					"
 				/>
@@ -274,7 +275,7 @@
 						? '0.5'
 						: '1'});
 					width: 100%;
-					height: {isMd.value ? '100%' : '550px'};
+					height: {isMd.value ? '100%' : '500px'};
 					"
 				/>
 			</div>

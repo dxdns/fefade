@@ -13,7 +13,6 @@
 
 <div class="container">
 	<Card
-		glowOnHover
 		style="
 		display: flex; 
 		flex-direction: column; 
