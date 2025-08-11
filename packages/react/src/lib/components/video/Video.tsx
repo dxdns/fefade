@@ -30,11 +30,9 @@ export default forwardRef<HTMLVideoElement, Props>(
 				onMouseLeave={() => {
 					actionRef.current?.play()
 				}}
+				data-src={dataSrc}
 			>
-				<source
-					type={`video/${getVideoType(dataSrc).replace(".", "")}`}
-					data-src={dataSrc}
-				/>
+				<source type={`video/${getVideoType(dataSrc).replace(".", "")}`} />
 			</video>
 		)
 	}
