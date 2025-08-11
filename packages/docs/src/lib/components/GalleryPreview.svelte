@@ -1,11 +1,15 @@
 <script lang="ts">
 	import { Gallery, Modal } from "@dxdns/feflow-svelte"
 	import { onDestroy, tick } from "svelte"
+	import type { HTMLVideoAttributes } from "svelte/elements"
+	import { videoUtil } from "@dxdns/feflow-core/utils"
 
 	let isOpen = $state(false)
 	let elImg: HTMLImageElement | undefined
 
 	const sizes = [200, 250, 650, 750, 850, 950, 300, 350, 450, 550]
+
+	const { isVideo } = videoUtil()
 
 	async function handleClick(src: string, size: number) {
 		isOpen = true
@@ -92,10 +96,16 @@
 				? "https://res.cloudinary.com/dkufrbqih/video/upload/v1754577218/4_-_J5bdBP9_tifpyb.mp4"
 				: `https://dummyjson.com/image/${size}`}
 		<Gallery.Item
-			autoplay
-			loop
-			muted
 			lazy
+			{...isVideo(src)
+				? ({
+						autoplay: true,
+						muted: true,
+						loop: true,
+						href: src,
+						target: "_blank"
+					} as HTMLVideoAttributes)
+				: {}}
 			caption={{
 				title: `title ${size}`,
 				description: `description ${size}`
@@ -109,8 +119,6 @@
 					handleClick(src, size)
 				}
 			}}
-			href={i === 0 ? src : undefined}
-			target={i === 0 ? "_blank" : undefined}
 			style="cursor: pointer;"
 		/>
 	{/each}

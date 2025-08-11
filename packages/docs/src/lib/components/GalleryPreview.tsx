@@ -1,8 +1,11 @@
 import { Gallery } from "@dxdns/feflow-react"
 import type { VideoHTMLAttributes } from "react"
+import { videoUtil } from "@dxdns/feflow-core/utils"
 
 export default function () {
 	const sizes = [200, 250, 650, 750, 850, 950, 300, 350, 450, 550]
+
+	const { isVideo } = videoUtil()
 
 	return (
 		<>
@@ -62,12 +65,16 @@ export default function () {
 					return (
 						<Gallery.Item
 							key={size}
-							{...({
-								autoPlay: true,
-								loop: true,
-								muted: true
-							} as VideoHTMLAttributes<HTMLVideoElement>)}
 							lazy
+							{...(isVideo(src)
+								? ({
+										autoPlay: true,
+										muted: true,
+										loop: true,
+										href: src,
+										target: "_blank"
+									} as VideoHTMLAttributes<HTMLVideoElement>)
+								: {})}
 							caption={{
 								title: `title ${size}`,
 								description: `description ${size}`
@@ -76,8 +83,6 @@ export default function () {
 							alt={`Image ${size}px`}
 							width={size}
 							height={size}
-							href={src}
-							target="_blank"
 							style={{ cursor: "pointer" }}
 						/>
 					)
