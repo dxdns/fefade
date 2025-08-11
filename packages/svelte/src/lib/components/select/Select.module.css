@@ -8,7 +8,7 @@
 	overflow: hidden;
 }
 
-.select>select {
+.select > select {
 	appearance: none;
 	border: 0;
 	box-shadow: none;
@@ -21,21 +21,21 @@
 	border-radius: 0.25em;
 }
 
-.select.contained>select {
+.select.contained > select {
 	background: var(--ff-surface);
 }
 
-.select.outlined>select {
+.select.outlined > select {
 	background: inherit;
 	border: 1px solid var(--ff-border);
 }
 
-.select.text>select {
+.select.text > select {
 	background: inherit;
 	border: none;
 }
 
-.select>select::-ms-expand {
+.select > select::-ms-expand {
 	display: none;
 }
 

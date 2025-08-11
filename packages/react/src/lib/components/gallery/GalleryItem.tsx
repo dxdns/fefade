@@ -1,32 +1,48 @@
 import type {
 	GalleryCaptionType,
 	GalleryItemType,
+	GalleryMediaType,
 	HTMLAttrAnchor,
 	ImageType
 } from "@dxdns/feflow-core/types"
 import {
 	classMapUtil,
 	handleClickUtil,
-	hasKeysUtil
+	hasKeysUtil,
+	videoUtil
 } from "@dxdns/feflow-core/utils"
-import { forwardRef, ImgHTMLAttributes, isValidElement, ReactNode } from "react"
+import {
+	forwardRef,
+	ImgHTMLAttributes,
+	isValidElement,
+	ReactNode,
+	Ref,
+	VideoHTMLAttributes
+} from "react"
 import { Image } from "../image"
 import styles from "@dxdns/feflow-core/styles/GalleryItem.module.css"
+import { Video } from "../video"
 
-interface Props
-	extends Omit<ImgHTMLAttributes<HTMLImageElement>, "src">,
-		GalleryItemType<ReactNode | GalleryCaptionType | undefined>,
+interface BaseProps
+	extends GalleryItemType<ReactNode | GalleryCaptionType | undefined>,
 		HTMLAttrAnchor,
-		ImageType {}
+		GalleryMediaType {}
 
-export default forwardRef<HTMLImageElement, Props>(
+type HTMLImageAttr = Omit<ImgHTMLAttributes<HTMLImageElement>, "src">
+type ImgProps = HTMLImageAttr & BaseProps & ImageType
+
+type HTMLVideoAttr = Omit<VideoHTMLAttributes<HTMLVideoElement>, "src">
+type VideoProps = HTMLVideoAttr & BaseProps
+
+type Props = ImgProps | VideoProps
+
+export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 	(
 		{
 			className = "",
 			lazy = false,
 			dataSrc,
 			caption,
-			fallback,
 			href,
 			target = "_self",
 			download,
@@ -35,6 +51,19 @@ export default forwardRef<HTMLImageElement, Props>(
 		},
 		ref
 	) => {
+		const { isVideo } = videoUtil()
+
+		function handleClick(e: any) {
+			handleClickUtil({
+				href,
+				download,
+				target,
+				onClick: () => {
+					rest.onClick?.(e)
+				}
+			})
+		}
+
 		return (
 			<figure
 				className={classMapUtil(
@@ -43,24 +72,26 @@ export default forwardRef<HTMLImageElement, Props>(
 					styles.galleryItem
 				)}
 			>
-				<Image
-					{...rest}
-					ref={ref}
-					className={styles.thumbnail}
-					lazy={lazy}
-					dataSrc={dataSrc}
-					fallback={fallback}
-					onClick={(e) => {
-						handleClickUtil({
-							href,
-							download,
-							target,
-							onClick: () => {
-								rest.onClick?.(e as any)
-							}
-						})
-					}}
-				/>
+				{isVideo(dataSrc) ? (
+					<Video
+						{...(rest as HTMLVideoAttr)}
+						ref={ref as Ref<HTMLVideoElement>}
+						className={styles.thumbnail}
+						lazy={lazy}
+						dataSrc={dataSrc}
+						onClick={handleClick}
+					/>
+				) : (
+					<Image
+						{...(rest as HTMLImageAttr)}
+						ref={ref as Ref<HTMLImageElement>}
+						className={styles.thumbnail}
+						lazy={lazy}
+						dataSrc={dataSrc}
+						onClick={handleClick}
+					/>
+				)}
+
 				{children ? (
 					children
 				) : caption && hasKeysUtil<GalleryCaptionType>(caption) ? (

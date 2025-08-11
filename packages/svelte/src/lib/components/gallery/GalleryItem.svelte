@@ -1,60 +1,80 @@
 <script lang="ts">
-	import type { HTMLImgAttributes } from "svelte/elements"
-	import { Image } from "../image/index.js"
 	import {
 		classMapUtil,
 		handleClickUtil,
-		hasKeysUtil
+		hasKeysUtil,
+		videoUtil
 	} from "@dxdns/feflow-core/utils"
 	import type {
-		HTMLAttrAnchor,
 		GalleryItemType,
 		GalleryCaptionType,
-		ImageType
+		HTMLAttrAnchor,
+		ImageType,
+		GalleryMediaType
 	} from "@dxdns/feflow-core/types"
 	import type { Snippet } from "svelte"
 	import styles from "@dxdns/feflow-core/styles/GalleryItem.module.css"
+	import type { HTMLImgAttributes, HTMLVideoAttributes } from "svelte/elements"
+	import { Video } from "../video/index.js"
+	import { Image } from "../image/index.js"
 
-	interface Props
-		extends Omit<HTMLImgAttributes, "src">,
+	interface BaseProps
+		extends GalleryItemType<Snippet<[]> | GalleryCaptionType | undefined>,
 			HTMLAttrAnchor,
-			GalleryItemType<Snippet<[]> | GalleryCaptionType | undefined>,
-			ImageType {}
+			GalleryMediaType {}
+
+	type ImgProps = Omit<HTMLImgAttributes, "src"> & BaseProps & ImageType
+	type VideoProps = Omit<HTMLVideoAttributes, "src"> & BaseProps
+
+	type Props = ImgProps | VideoProps
 
 	let {
 		class: className = "",
 		lazy = false,
 		dataSrc,
 		caption,
-		fallback,
 		href,
 		target = "_self",
 		download,
 		children,
 		...rest
 	}: Props = $props()
+
+	const { isVideo } = videoUtil()
+
+	function handleClick(e: any) {
+		handleClickUtil({
+			href,
+			download,
+			target,
+			onClick: () => {
+				rest.onclick?.(e)
+			}
+		})
+	}
 </script>
 
 <figure
 	class={classMapUtil(className, [styles, className], styles.galleryItem)}
 >
-	<Image
-		{...rest}
-		class={styles.thumbnail}
-		{lazy}
-		{dataSrc}
-		{fallback}
-		onclick={(e) => {
-			handleClickUtil({
-				href,
-				download,
-				target,
-				onClick: () => {
-					rest.onclick?.(e)
-				}
-			})
-		}}
-	/>
+	{#if isVideo(dataSrc)}
+		<Video
+			{...rest as HTMLVideoAttributes}
+			class={styles.thumbnail}
+			{lazy}
+			{dataSrc}
+			onclick={handleClick}
+		/>
+	{:else}
+		<Image
+			{...rest as HTMLImgAttributes}
+			class={styles.thumbnail}
+			{lazy}
+			{dataSrc}
+			onclick={handleClick}
+		/>
+	{/if}
+
 	{#if children}
 		{@render children?.()}
 	{:else if caption && hasKeysUtil<GalleryCaptionType>(caption)}

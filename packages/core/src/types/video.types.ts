@@ -1,7 +1,5 @@
-type VideoExtensionType = "mp4" | "webm" | "ogg" | "mov" | "avi" | "mkv"
+type VideoFormat = "mp4" | "webm" | "ogg" | "mov" | "avi" | "mkv"
 
-export type VideoType = {
-	lazy?: boolean
-	dataSrc: string
-	extension?: VideoExtensionType | string
+export type VideoType<T extends string = never> = {
+	type: `video/${VideoFormat | T}`
 }

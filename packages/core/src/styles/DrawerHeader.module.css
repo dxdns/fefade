@@ -1,20 +1,20 @@
 .drawerHeader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 1rem clamp(1rem, 2vw, 2rem);
-    min-height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 1rem clamp(1rem, 2vw, 2rem);
+	min-height: fit-content;
 }
 
 .drawerHeader.isClosable {
-    justify-content: space-between;
+	justify-content: space-between;
 }
 
 .drawerHeader.borded {
-    border-bottom: 1px solid var(--ff-border);
+	border-bottom: 1px solid var(--ff-border);
 }
 
 .buttonClose {
-    display: inline-block;
+	display: inline-block;
 }

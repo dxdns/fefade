@@ -1,18 +1,31 @@
 <script lang="ts">
+	import { videoAction } from "@dxdns/feflow-core/actions"
+	import type { GalleryMediaType } from "@dxdns/feflow-core/types"
+	import { videoUtil } from "@dxdns/feflow-core/utils"
 	import type { HTMLVideoAttributes } from "svelte/elements"
 
-	interface Props extends Omit<HTMLVideoAttributes, "src"> {
-		lazy?: boolean
-	}
+	interface Props extends Omit<HTMLVideoAttributes, "src">, GalleryMediaType {}
 
-	let {
-		class: className = "",
-		lazy = false,
-		children,
-		...rest
-	}: Props = $props()
+	let { class: className = "", lazy, dataSrc, ...rest }: Props = $props()
+
+	const { getVideoType } = videoUtil()
+
+	let el: HTMLVideoElement
 </script>
 
-<video {...rest} class={className} preload={lazy ? "none" : undefined}>
-	{@render children?.()}
+<video
+	{...rest}
+	use:videoAction={{ lazy }}
+	bind:this={el}
+	class={className}
+	preload={lazy ? "none" : undefined}
+	onmouseenter={() => {
+		el.pause()
+	}}
+	onmouseleave={() => {
+		el.play()
+	}}
+	data-src={dataSrc}
+>
+	<source type="video/{getVideoType(dataSrc).replace('.', '')}" />
 </video>
