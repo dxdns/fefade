@@ -60,8 +60,6 @@
 		@click="handleClick"
 	>
 		<Spinner v-if="isLoading" :size="size" />
-		<div v-else :class="styles.content">
-			<slot />
-		</div>
+		<slot />
 	</button>
 </template>

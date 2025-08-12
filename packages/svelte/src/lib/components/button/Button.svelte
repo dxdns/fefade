@@ -50,8 +50,6 @@
 	{#if isLoading}
 		<Spinner />
 	{:else}
-		<div class={styles.content}>
-			{@render children?.()}
-		</div>
+		{@render children?.()}
 	{/if}
 </button>

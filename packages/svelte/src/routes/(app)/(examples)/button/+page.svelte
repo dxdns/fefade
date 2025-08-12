@@ -15,6 +15,9 @@
 <Button isLoading variant="text"></Button>
 <br />
 <br />
+<Button style="background: red;">Custom</Button>
+<br />
+<br />
 <Button variant="text">Text</Button>
 <br />
 <br />

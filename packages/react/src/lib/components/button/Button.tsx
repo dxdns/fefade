@@ -57,11 +57,7 @@ export default forwardRef<HTMLButtonElement, Props>((props, ref) => {
 			type={rest.type ?? "button"}
 			onClick={handleClick}
 		>
-			{isLoading ? (
-				<Spinner />
-			) : (
-				<div className={styles.content}>{children}</div>
-			)}
+			{isLoading ? <Spinner /> : children}
 		</button>
 	)
 })
