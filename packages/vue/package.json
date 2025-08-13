@@ -32,7 +32,6 @@
 		"vue": "^3.5.17",
 		"@vitejs/plugin-vue": "^6.0.0",
 		"@vue/tsconfig": "^0.7.0",
-		"typescript": "~5.8.3",
 		"vue-tsc": "^2.2.12",
 		"@dxdns/feflow-core": "*"
 	},

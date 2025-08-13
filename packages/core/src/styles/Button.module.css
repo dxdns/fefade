@@ -28,10 +28,9 @@
 
 .button.pressedEffect:not(:disabled) {
 	will-change: transform;
-	/* -webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-	transform-origin: center center; */
-	transition: transform 0.1s ease, filter 0.1s ease;
+	transition:
+		transform 0.1s ease,
+		filter 0.1s ease;
 }
 
 .button.pressedEffect:not(:disabled):active {
