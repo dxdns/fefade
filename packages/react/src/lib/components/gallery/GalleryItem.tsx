@@ -7,6 +7,7 @@ import type {
 } from "@dxdns/feflow-core/types"
 import {
 	classMapUtil,
+	cssToObjectUtil,
 	handleClickUtil,
 	hasKeysUtil,
 	videoUtil
@@ -96,7 +97,10 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 				{children ? (
 					children
 				) : caption && hasKeysUtil<GalleryCaptionType>(caption) ? (
-					<figcaption className={styles.caption}>
+					<figcaption
+						className={styles.caption}
+						style={caption.style ? cssToObjectUtil(caption.style) : undefined}
+					>
 						<div>
 							<h3
 								style={

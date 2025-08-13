@@ -78,7 +78,7 @@
 	{#if children}
 		{@render children?.()}
 	{:else if caption && hasKeysUtil<GalleryCaptionType>(caption)}
-		<figcaption class={styles.caption}>
+		<figcaption class={styles.caption} style={caption.style}>
 			<h3 style="--label-lines: {caption.label.lines ?? 3};">
 				{caption.label.text}
 			</h3>
