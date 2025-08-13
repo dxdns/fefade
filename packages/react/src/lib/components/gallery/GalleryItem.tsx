@@ -12,6 +12,7 @@ import {
 	videoUtil
 } from "@dxdns/feflow-core/utils"
 import {
+	CSSProperties,
 	forwardRef,
 	ImgHTMLAttributes,
 	isValidElement,
@@ -97,8 +98,24 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 				) : caption && hasKeysUtil<GalleryCaptionType>(caption) ? (
 					<figcaption className={styles.caption}>
 						<div>
-							<h3>{caption.title}</h3>
-							<p>{caption.description}</p>
+							<h3
+								style={
+									{
+										["--label-lines"]: caption.label.lines ?? 3
+									} as CSSProperties
+								}
+							>
+								{caption.label.text}
+							</h3>
+							<p
+								style={
+									{
+										["--description-lines"]: caption.description.lines ?? 2
+									} as CSSProperties
+								}
+							>
+								{caption.description.text}
+							</p>
 						</div>
 					</figcaption>
 				) : (

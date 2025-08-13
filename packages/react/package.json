@@ -22,7 +22,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "tsc && vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"build:watch": "tsc --watch & vite build --watch"
 	},
 	"peerDependencies": {
 		"@dxdns/feflow-core": "^0.0.25",

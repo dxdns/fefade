@@ -37,11 +37,24 @@
 }
 
 .caption h3 {
+	--lines: var(--label-lines, 3);
+
 	font-size: 1.0625rem;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--lines);
+	line-clamp: var(--lines);
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .caption p {
+	--lines: var(--description-lines, 2);
+
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--lines);
+	line-clamp: var(--lines);
 	overflow: hidden;
-	white-space: nowrap;
 	text-overflow: ellipsis;
 }

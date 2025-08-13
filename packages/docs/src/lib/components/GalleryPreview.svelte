@@ -72,8 +72,8 @@
 		<Gallery.Item
 			lazy
 			caption={{
-				title: `title ${size}`,
-				description: `description ${size}`
+				label: { text: `title ${size}` },
+				description: { text: `description ${size}` }
 			}}
 			dataSrc={src}
 			alt={`Image ${size}px`}
@@ -107,8 +107,14 @@
 					} as HTMLVideoAttributes)
 				: {}}
 			caption={{
-				title: `title ${size}`,
-				description: `description ${size}`
+				label: {
+					text: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio doloremque magnam sed aliquam assumenda! ${size}`,
+					lines: 1
+				},
+				description: {
+					text: `Praesentium adipisci, illo, atque non optio sit necessitatibus placeat, sunt ut distinctio repellendus ullam repudiandae! Quaerat. ${size}`,
+					lines: 1
+				}
 			}}
 			dataSrc={src}
 			alt={`Image ${size}px`}

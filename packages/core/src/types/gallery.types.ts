@@ -6,9 +6,14 @@ export type GalleryType = {
 	maxWidth?: number | string
 }
 
+type TextWithLinesType = {
+	text: string
+	lines?: number
+}
+
 export type GalleryCaptionType = {
-	title: string
-	description: string
+	label: TextWithLinesType
+	description: TextWithLinesType
 }
 
 export type GalleryMediaType = {

@@ -79,8 +79,12 @@
 		{@render children?.()}
 	{:else if caption && hasKeysUtil<GalleryCaptionType>(caption)}
 		<figcaption class={styles.caption}>
-			<h3>{caption.title}</h3>
-			<p>{caption.description}</p>
+			<h3 style="--label-lines: {caption.label.lines ?? 3};">
+				{caption.label.text}
+			</h3>
+			<p style="--description-lines: {caption.description.lines ?? 2};">
+				{caption.description.text}
+			</p>
 		</figcaption>
 	{:else if caption && typeof caption === "function"}
 		{@render caption?.()}

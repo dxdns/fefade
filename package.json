@@ -40,6 +40,7 @@
 	"devDependencies": {
 		"@types/glob": "^9.0.0",
 		"@types/node": "^22.14.1",
+		"chokidar-cli": "^3.0.0",
 		"concurrently": "^9.2.0",
 		"eslint": "^9.31.0",
 		"eslint-config-prettier": "^10.1.5",

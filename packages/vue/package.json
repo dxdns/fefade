@@ -22,7 +22,8 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vue-tsc -b && vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"build:watch": "vue-tsc -b --watch & vite build --watch"
 	},
 	"peerDependencies": {
 		"vite": "^6.2.3",
