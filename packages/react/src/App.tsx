@@ -1,3 +1,4 @@
+import BottomSheetExample from "./examples/BottomSheetExample"
 import {
 	Accordion,
 	Button,
@@ -39,6 +40,7 @@ function App() {
 
 	return (
 		<>
+			<BottomSheetExample />
 			<Image
 				dataSrc="https://img.odcdn.com.br/cdn-cgi/image/width=1200,height=1200,fit=cover/wp-content/uploads/2023/01/Avatar-Loak.jpg"
 				fallback="https://avatars.githubusercontent.com/u/26321303?v=4"
