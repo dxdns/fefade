@@ -1,6 +1,6 @@
 {
 	"name": "@dxdns/feflow-react",
-	"version": "0.0.24",
+	"version": "0.0.23",
 	"description": "feflow: react components ui",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
