@@ -117,7 +117,7 @@ function App() {
 			<TextField label="label" />
 			<h2>{mode}</h2>
 			<Card glowOnHover>
-				<span>card</span>
+				<span>card glow</span>
 			</Card>
 			<br />
 			<Badge className="bg-error text-on-error" size="lg">
