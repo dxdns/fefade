@@ -1,9 +1,14 @@
 <script lang="ts">
 	import { Gallery, Modal } from "@/index.js"
+	import { videoUtil } from "@dxdns/feflow-core/utils"
 	import { onDestroy, tick } from "svelte"
+	import type { HTMLVideoAttributes } from "svelte/elements"
 
 	let isOpen = $state(false)
 	let elImg: HTMLImageElement | undefined
+
+	const { isVideo } = videoUtil()
+	const sizes = [200, 250, 650, 750, 850, 950, 300, 350, 450, 550]
 
 	async function handleClick(src: string, size: number) {
 		isOpen = true
@@ -44,7 +49,7 @@
 <div style="width: 800px; margin: 3rem auto; line-height: 2;">
 	<h1>default</h1>
 	<Gallery>
-		{#each [200, 250, 300, 350] as size (size)}
+		{#each sizes.slice(0, 4) as size (size)}
 			{@const src = `https://dummyjson.com/image/${size}`}
 			<button
 				style="all: unset; cursor: pointer;"
@@ -66,7 +71,7 @@
 	<br />
 	<h1>columns</h1>
 	<Gallery columns={2}>
-		{#each [200, 250, 300, 350, 450, 550] as size (size)}
+		{#each sizes.slice(0, 6) as size (size)}
 			{@const src = `https://dummyjson.com/image/${size}`}
 			<button
 				style="all: unset; cursor: pointer;"
@@ -92,16 +97,22 @@
 	<br />
 	<h1>masonry</h1>
 	<Gallery variant="masonry" gap={4}>
-		{#each [200, 250, 300, 350, 450, 550, 650, 750, 850, 950] as size, i (size)}
+		{#each sizes as size, i (size)}
 			{@const src =
 				i === 0
 					? "https://res.cloudinary.com/dkufrbqih/video/upload/v1754577218/4_-_J5bdBP9_tifpyb.mp4"
 					: `https://dummyjson.com/image/${size}`}
 			<Gallery.Item
 				lazy
-				autoplay
-				loop
-				muted
+				{...isVideo(src)
+					? ({
+							autoplay: true,
+							muted: true,
+							loop: true,
+							href: src,
+							target: "_blank"
+						} as HTMLVideoAttributes)
+					: {}}
 				caption={{
 					label: {
 						text: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio doloremque magnam sed aliquam assumenda! ${size}`,
@@ -116,13 +127,12 @@
 				alt={`Image ${size}px`}
 				width={size}
 				height={size}
-				href={i === 0 ? src : undefined}
-				target="_blank"
 				onclick={() => {
-					if (i !== 0) {
+					if (i > 0) {
 						handleClick(src, size)
 					}
 				}}
+				style="cursor: pointer;"
 			/>
 		{/each}
 	</Gallery>

@@ -1,11 +1,3 @@
-export type GalleryType = {
-	variant?: "default" | "masonry"
-	columns?: number | string
-	gap?: number | string
-	minWidth?: number | string
-	maxWidth?: number | string
-}
-
 type TextWithLinesType = {
 	text: string
 	lines?: number

@@ -1,37 +1,13 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import {
-		classMapUtil,
-		mergeStyleUtil,
-		normalizeSizeUtil
-	} from "@dxdns/feflow-core/utils"
-	import type { GalleryType } from "@dxdns/feflow-core/types"
-	import styles from "@dxdns/feflow-core/styles/Gallery.module.css"
+	import type { GridType } from "@dxdns/feflow-core/types"
+	import { Grid } from "../grid/index.js"
 
-	interface Props extends HTMLAttributes<HTMLDivElement>, GalleryType {}
+	interface Props extends HTMLAttributes<HTMLDivElement>, GridType {}
 
-	let {
-		class: className = "",
-		variant = "default",
-		columns = "auto-fit",
-		gap = "0.75rem",
-		minWidth = "12.5rem",
-		maxWidth = "1fr",
-		children,
-		...rest
-	}: Props = $props()
+	let { children, ...rest }: Props = $props()
 </script>
 
-<div
-	{...rest}
-	class={classMapUtil(className, styles.gallery, [variant, styles])}
-	style={mergeStyleUtil(
-		`--columns: ${columns}; 
-		--gap: ${normalizeSizeUtil(gap)};
-		--min-width: ${normalizeSizeUtil(minWidth)};
-		--max-width: ${normalizeSizeUtil(maxWidth)};`,
-		rest.style
-	)}
->
+<Grid {...rest}>
 	{@render children?.()}
-</div>
+</Grid>
