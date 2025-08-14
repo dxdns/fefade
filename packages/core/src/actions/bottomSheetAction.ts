@@ -9,7 +9,12 @@ export default function bottomSheetAction(
 	const { handleClose } = props
 
 	const wrapper = node.firstElementChild as HTMLElement
-	wrapper.style.transition = "0.3s ease"
+
+	function initWrapperTransition() {
+		wrapper.style.transition = "0.3s ease"
+	}
+
+	initWrapperTransition()
 
 	const dragButton = wrapper.firstElementChild as HTMLElement
 
@@ -47,7 +52,10 @@ export default function bottomSheetAction(
 	}
 
 	function resetStyle() {
-		document.body.style.overflowY = "auto"
+		document.body.style.overflow = "auto"
+		document.body.style.overscrollBehaviorY = "auto"
+
+		initWrapperTransition()
 		setCurrentHeight(wrapperHeight)
 		setWrapperHeightStyle(wrapperHeight)
 		node.style.top = "unset"
@@ -79,13 +87,17 @@ export default function bottomSheetAction(
 		isDragging = true
 		startY = pageY(e)
 		startHeight = currentHeight
-		document.body.style.overflowY = "hidden"
+
 		wrapper.style.transition = "none"
 		dragButton.focus()
 	}
 
 	function dragMove(e: MouseEvent | TouchEvent) {
 		if (!isDragging) return
+
+		if (e instanceof TouchEvent) {
+			e.preventDefault()
+		}
 
 		const currentY = pageY(e)
 		const diff = startY - currentY
@@ -97,15 +109,13 @@ export default function bottomSheetAction(
 	function dragStop() {
 		if (!isDragging) return
 		isDragging = false
-		document.body.style.overflowY = "auto"
-		wrapper.style.transition = "0.3s ease"
 
 		if (currentHeight > wrapperHeight) {
 			update(wrapperMaxHeight)
 			return
 		}
 
-		if (currentHeight <= wrapperMinHeight + 10) {
+		if (currentHeight <= wrapperMinHeight + 15) {
 			hide()
 			return
 		}

@@ -10,6 +10,7 @@
 	transition: all 300ms ease;
 	text-align: left;
 	border: var(--border-width) solid var(--ff-border);
+	width: 100%;
 }
 
 .card.contained {
@@ -44,13 +45,11 @@
 	z-index: -1;
 	border: inherit;
 	border-radius: inherit;
-	background-image: conic-gradient(
-		from var(--angle),
-		var(--secondary) 80%,
-		var(--primary) 88%,
-		var(--primary) 92%,
-		var(--secondary) 100%
-	);
+	background-image: conic-gradient(from var(--angle),
+			var(--secondary) 80%,
+			var(--primary) 88%,
+			var(--primary) 92%,
+			var(--secondary) 100%);
 	background-origin: border-box;
 	-webkit-mask:
 		linear-gradient(black, black) content-box,
@@ -65,8 +64,7 @@
 	animation: spin-fallback 3s linear infinite;
 }
 
-@supports (background: conic-gradient(from 0deg, red, blue)) and
-	(color: color(display-p3 1 0 0)) {
+@supports (background: conic-gradient(from 0deg, red, blue)) and (color: color(display-p3 1 0 0)) {
 	@property --angle {
 		syntax: "<angle>";
 		inherits: true;
@@ -86,64 +84,52 @@
 
 @keyframes spin-fallback {
 	0% {
-		background-image: conic-gradient(
-			from 0deg,
-			var(--secondary) 80%,
-			var(--primary) 88%,
-			var(--primary) 92%,
-			var(--secondary) 100%
-		);
+		background-image: conic-gradient(from 0deg,
+				var(--secondary) 80%,
+				var(--primary) 88%,
+				var(--primary) 92%,
+				var(--secondary) 100%);
 	}
 
 	25% {
-		background-image: conic-gradient(
-			from 90deg,
-			var(--secondary) 80%,
-			var(--primary) 88%,
-			var(--primary) 92%,
-			var(--secondary) 100%
-		);
+		background-image: conic-gradient(from 90deg,
+				var(--secondary) 80%,
+				var(--primary) 88%,
+				var(--primary) 92%,
+				var(--secondary) 100%);
 	}
 
 	50% {
-		background-image: conic-gradient(
-			from 180deg,
-			var(--secondary) 80%,
-			var(--primary) 88%,
-			var(--primary) 92%,
-			var(--secondary) 100%
-		);
+		background-image: conic-gradient(from 180deg,
+				var(--secondary) 80%,
+				var(--primary) 88%,
+				var(--primary) 92%,
+				var(--secondary) 100%);
 	}
 
 	75% {
-		background-image: conic-gradient(
-			from 270deg,
-			var(--secondary) 80%,
-			var(--primary) 88%,
-			var(--primary) 92%,
-			var(--secondary) 100%
-		);
+		background-image: conic-gradient(from 270deg,
+				var(--secondary) 80%,
+				var(--primary) 88%,
+				var(--primary) 92%,
+				var(--secondary) 100%);
 	}
 
 	100% {
-		background-image: conic-gradient(
-			from 360deg,
-			var(--secondary) 80%,
-			var(--primary) 88%,
-			var(--primary) 92%,
-			var(--secondary) 100%
-		);
+		background-image: conic-gradient(from 360deg,
+				var(--secondary) 80%,
+				var(--primary) 88%,
+				var(--primary) 92%,
+				var(--secondary) 100%);
 	}
 }
 
 @supports not (background: conic-gradient(red, blue)) {
 	.card.animatedBorder::before {
-		background: linear-gradient(
-			45deg,
-			var(--secondary),
-			var(--primary),
-			var(--secondary)
-		);
+		background: linear-gradient(45deg,
+				var(--secondary),
+				var(--primary),
+				var(--secondary));
 		animation: rotate-fallback 3s linear infinite;
 	}
 

@@ -33,10 +33,10 @@
 	max-height: 100vh;
 	height: 50vh;
 	max-width: 1150px;
-	padding: 0.5rem;
 	transform: translateY(100%);
 	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
 	border: 1px solid var(--ff-border);
+	overflow: hidden;
 }

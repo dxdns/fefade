@@ -6,12 +6,10 @@
 
 	const handleOpen = () => {
 		isOpen = !isOpen
-		document.body.style.overflow = "hidden"
 	}
 
 	const handleClose = () => {
 		isOpen = false
-		document.body.style.overflow = "auto"
 	}
 
 	onMount(() => {

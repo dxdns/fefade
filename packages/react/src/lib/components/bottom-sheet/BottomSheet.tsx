@@ -1,5 +1,5 @@
 import { classMapUtil } from "@dxdns/feflow-core/utils"
-import { forwardRef, HTMLAttributes } from "react"
+import { forwardRef, HTMLAttributes, useEffect } from "react"
 import { useAction } from "../../utils"
 import { bottomSheetAction } from "@dxdns/feflow-core/actions"
 import type { BottomSheetType } from "@dxdns/feflow-core/types"
@@ -15,6 +15,13 @@ export default forwardRef<HTMLDivElement, Props>(
 			HTMLDivElement,
 			Parameters<typeof bottomSheetAction>[1]
 		>(bottomSheetAction, { handleClose })
+
+		useEffect(() => {
+			if (isOpen) {
+				document.body.style.overflow = "hidden"
+				document.body.style.overscrollBehaviorY = "contain"
+			}
+		}, [isOpen])
 
 		return (
 			<div

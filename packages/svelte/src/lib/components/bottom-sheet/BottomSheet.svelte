@@ -16,6 +16,13 @@
 		children,
 		...rest
 	}: Props = $props()
+
+	$effect(() => {
+		if (isOpen) {
+			document.body.style.overflow = "hidden"
+			document.body.style.overscrollBehaviorY = "contain"
+		}
+	})
 </script>
 
 <div
