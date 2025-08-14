@@ -22,14 +22,8 @@ export default function bottomSheetAction(
 	dragButton.role = "slider"
 	dragButton.ariaLabel = "Resize bottom sheet"
 
-	const computedStyles = getComputedStyle(wrapper)
-
 	const wrapperHeight = parseInt(wrapper.style.height) || 50
-
-	const wrapperMinHeight = parseInt(wrapper.style.minHeight)
-		? parseInt(computedStyles.minHeight)
-		: 0
-
+	const wrapperMinHeight = parseInt(wrapper.style.minHeight) ? wrapperHeight : 0
 	const wrapperMaxHeight = parseInt(wrapper.style.maxHeight) || 100
 
 	let isDragging = false
@@ -55,7 +49,6 @@ export default function bottomSheetAction(
 		document.body.style.overflow = "auto"
 		document.body.style.overscrollBehaviorY = "auto"
 
-		initWrapperTransition()
 		setCurrentHeight(wrapperHeight)
 		setWrapperHeightStyle(wrapperHeight)
 		node.style.top = "unset"
@@ -109,13 +102,14 @@ export default function bottomSheetAction(
 	function dragStop() {
 		if (!isDragging) return
 		isDragging = false
+		initWrapperTransition()
 
 		if (currentHeight > wrapperHeight) {
 			update(wrapperMaxHeight)
 			return
 		}
 
-		if (currentHeight <= wrapperMinHeight + 15) {
+		if (currentHeight <= wrapperMinHeight + 10) {
 			hide()
 			return
 		}
