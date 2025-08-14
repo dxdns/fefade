@@ -13,6 +13,7 @@
 		class: className = "",
 		isOpen,
 		handleClose,
+		hideIn,
 		children,
 		...rest
 	}: Props = $props()
@@ -26,7 +27,7 @@
 </script>
 
 <div
-	use:bottomSheetAction={{ handleClose }}
+	use:bottomSheetAction={{ handleClose, hideIn }}
 	class={classMapUtil(className, [className, styles], styles.bottomSheet, {
 		[styles.show]: isOpen
 	})}

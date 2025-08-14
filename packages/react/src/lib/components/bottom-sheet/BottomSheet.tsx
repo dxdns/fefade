@@ -10,11 +10,14 @@ interface Props
 		BottomSheetType {}
 
 export default forwardRef<HTMLDivElement, Props>(
-	({ className = "", isOpen, handleClose, children, ...rest }, _ref) => {
+	(
+		{ className = "", isOpen, handleClose, hideIn, children, ...rest },
+		_ref
+	) => {
 		const actionRef = useAction<
 			HTMLDivElement,
 			Parameters<typeof bottomSheetAction>[1]
-		>(bottomSheetAction, { handleClose })
+		>(bottomSheetAction, { handleClose, hideIn })
 
 		useEffect(() => {
 			if (isOpen) {

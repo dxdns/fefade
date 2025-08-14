@@ -1,12 +1,13 @@
 type Props = {
 	handleClose: () => void
+	hideIn?: number
 }
 
 export default function bottomSheetAction(
 	node: HTMLElement,
 	props = {} as Props
 ) {
-	const { handleClose } = props
+	const { hideIn, handleClose } = props
 
 	const wrapper = node.firstElementChild as HTMLElement
 
@@ -109,7 +110,9 @@ export default function bottomSheetAction(
 			return
 		}
 
-		if (currentHeight <= wrapperMinHeight + 10) {
+		const _hideIn = hideIn ? hideIn : wrapperMinHeight + 30
+
+		if (currentHeight <= _hideIn) {
 			hide()
 			return
 		}

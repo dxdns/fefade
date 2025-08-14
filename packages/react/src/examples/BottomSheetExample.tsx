@@ -32,6 +32,7 @@ export default function () {
 				isOpen={isOpen}
 				handleClose={handleClose}
 				style={{ minHeight: "50vh", height: "100vh" }}
+				hideIn={70}
 			>
 				<BottomSheet.DragButton
 					variant={variant as any}
