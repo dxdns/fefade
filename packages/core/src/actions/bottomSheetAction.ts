@@ -10,6 +10,9 @@ export default function bottomSheetAction(
 	const { hideIn, handleClose } = props
 
 	const wrapper = node.firstElementChild as HTMLElement
+	const wrapperLastChild = wrapper.children[
+		wrapper.children.length - 1
+	] as HTMLDivElement | null
 
 	function initWrapperTransition() {
 		wrapper.style.transition = "0.3s ease"
@@ -83,6 +86,12 @@ export default function bottomSheetAction(
 		startHeight = currentHeight
 
 		wrapper.style.transition = "none"
+
+		if (wrapperLastChild) {
+			wrapperLastChild.style.overflow = "hidden"
+			wrapperLastChild.style.pointerEvents = "none"
+		}
+
 		dragButton.focus()
 	}
 
@@ -104,6 +113,11 @@ export default function bottomSheetAction(
 		if (!isDragging) return
 		isDragging = false
 		initWrapperTransition()
+
+		if (wrapperLastChild) {
+			wrapperLastChild.style.overflow = "auto"
+			wrapperLastChild.style.pointerEvents = "auto"
+		}
 
 		if (currentHeight > wrapperHeight) {
 			update(wrapperMaxHeight)
