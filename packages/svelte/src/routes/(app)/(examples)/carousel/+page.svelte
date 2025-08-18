@@ -26,6 +26,26 @@
 			alt="dog"
 		/>
 	</Carousel.Item>
+	<Carousel.Item href="/" target="_blank">
+		<Card
+			style="
+			min-height: 130px; 
+			max-height: 130px;
+			margin: 0;
+			"
+		>
+			<h4
+				style="
+				white-space: nowrap;
+				overflow: hidden;           
+				text-overflow: ellipsis;
+				"
+			>
+				test
+			</h4>
+			<p class="text-muted">description</p>
+		</Card>
+	</Carousel.Item>
 
 	{#snippet actions({ prev, next, index, length })}
 		<div
