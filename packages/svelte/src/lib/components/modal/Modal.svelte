@@ -1,18 +1,12 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import { fade, scale } from "svelte/transition"
 	import Card from "../card/index.js"
-	import type { VariantType } from "@dxdns/feflow-core/types"
+	import type { ModalType } from "@dxdns/feflow-core/types"
 	import styles from "@dxdns/feflow-core/styles/Modal.module.css"
+	import animationStyle from "@dxdns/feflow-core/styles/Animation.module.css"
 
-	export interface ModalProps {
-		isOpen: boolean
-		handleClose: () => void
-		variant?: Exclude<VariantType, "text">
-	}
-
-	interface Props extends ModalProps, HTMLAttributes<HTMLDivElement> {}
+	interface Props extends ModalType, HTMLAttributes<HTMLDivElement> {}
 
 	let {
 		class: className = "",
@@ -23,22 +17,25 @@
 		...rest
 	}: Props = $props()
 
+	let show = $state(false)
 	let el: HTMLDivElement | undefined = $state()
 
 	$effect(() => {
 		if (isOpen) {
 			el?.focus()
+			show = true
 		}
 	})
 </script>
 
-{#if isOpen}
+{#if show}
 	<div class={classMapUtil(className, [className, styles], styles.modal)}>
 		<div
 			bind:this={el}
-			class={styles.overlay}
-			in:fade={{ duration: 300 }}
-			out:fade={{ duration: 300 }}
+			class={classMapUtil(styles.overlay, {
+				[animationStyle.fadeIn]: isOpen,
+				[animationStyle.fadeOut]: !isOpen
+			})}
 			role="alertdialog"
 			tabindex="0"
 			onkeydown={(e) => {
@@ -51,11 +48,17 @@
 					handleClose()
 				}
 			}}
+			onanimationend={() => {
+				if (!isOpen) {
+					show = false
+				}
+			}}
 		>
 			<div
-				class={styles.wrapper}
-				in:scale={{ duration: 300 }}
-				out:scale={{ duration: 300 }}
+				class={classMapUtil(styles.wrapper, {
+					[animationStyle.scaleIn]: isOpen,
+					[animationStyle.scaleOut]: !isOpen
+				})}
 			>
 				<Card {...rest} class={styles.content} {variant}>
 					{@render children?.()}

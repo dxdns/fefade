@@ -13,6 +13,7 @@ export { default as BottomSheet } from "./components/bottom-sheet/index.js"
 export { default as Code } from "./components/code/index.js"
 export { default as Drawer } from "./components/drawer/index.js"
 export { default as Gallery } from "./components/gallery/index.js"
+export { default as Modal } from "./components/modal/index.js"
 
 export * from "./components/button/index.js"
 export * from "./components/spinner/index.js"

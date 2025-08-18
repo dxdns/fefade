@@ -4,11 +4,9 @@
 	import type { AlignType } from "@dxdns/feflow-core/types"
 	import styles from "@dxdns/feflow-core/styles/ModalActions.module.css"
 
-	export interface ModalActionsProps {
+	interface Props extends HTMLAttributes<HTMLDivElement> {
 		align?: AlignType
 	}
-
-	interface Props extends ModalActionsProps, HTMLAttributes<HTMLDivElement> {}
 
 	let {
 		class: className = "",

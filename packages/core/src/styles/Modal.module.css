@@ -20,10 +20,10 @@
 .wrapper {
 	position: relative;
 	display: inline-block;
-	overflow: hidden;
 }
 
 .content {
 	padding: 0 1rem !important;
 	min-width: 250px;
+	width: auto;
 }

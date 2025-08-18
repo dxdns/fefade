@@ -6,12 +6,10 @@
 	import type { AlignType } from "@dxdns/feflow-core/types"
 	import styles from "@dxdns/feflow-core/styles/ModalHeader.module.css"
 
-	export interface ModalHeaderProps {
+	interface Props extends HTMLAttributes<HTMLDivElement> {
 		align?: AlignType
 		handleClose?: () => void
 	}
-
-	interface Props extends ModalHeaderProps, HTMLAttributes<HTMLDivElement> {}
 
 	let {
 		class: className = "",
