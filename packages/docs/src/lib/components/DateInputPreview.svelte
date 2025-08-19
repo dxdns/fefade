@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { DateInput, themeConfig } from "@dxdns/feflow-svelte"
-
-	const theme = $derived(themeConfig())
+	import { DateInput } from "@dxdns/feflow-svelte"
 </script>
 
-<DateInput {theme} />
+<DateInput />
 <br />
 <br />
-<DateInput {theme} type="month" />
+<DateInput type="month" />
