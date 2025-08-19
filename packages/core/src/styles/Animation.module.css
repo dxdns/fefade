@@ -1,4 +1,5 @@
 /* fade */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -28,6 +29,7 @@
 }
 
 /* scale */
+
 @keyframes scaleIn {
     from {
         transform: scale(0);

@@ -196,3 +196,9 @@ body {
 .hover-border-on-info:hover {
 	border-color: var(--ff-on-info) !important;
 }
+
+/* essentials */
+
+.w-full {
+	width: 100% !important;
+}
