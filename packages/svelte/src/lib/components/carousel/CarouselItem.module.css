@@ -4,10 +4,4 @@
 	width: 100%;
 	scroll-snap-align: start;
 	height: auto;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-}
-
-.carouselItem>* {
-	width: auto;
 }
