@@ -33,26 +33,37 @@ export default forwardRef<HTMLDivElement, Props>(
 	) => {
 		const actionRef = useAction<HTMLDivElement>(glowOnHoverAction)
 
-		const stopOnHover = getPropValueUtil<
+		const borderStopOnHover = getPropValueUtil<
 			{ stopOnHover?: boolean },
 			"stopOnHover"
 		>(animatedBorder, "stopOnHover", false)
 
-		const width = getPropValueUtil<{ width?: string }, "width">(
+		const borderWidth = getPropValueUtil<{ width?: string }, "width">(
 			animatedBorder,
 			"width",
 			"1px"
 		)
 
-		const primaryColor = getPropValueUtil<
+		const borderPrimaryColor = getPropValueUtil<
 			{ primaryColor?: string },
 			"primaryColor"
 		>(animatedBorder, "primaryColor", "var(--ff-on-surface)")
 
-		const secondaryColor = getPropValueUtil<
+		const borderSecondaryColor = getPropValueUtil<
 			{ secondaryColor?: string },
 			"secondaryColor"
 		>(animatedBorder, "secondaryColor", "var(--ff-border)")
+
+		function handleClick(e: any) {
+			handleClickUtil({
+				href,
+				download,
+				target,
+				onClick: () => {
+					rest.onClick?.(e)
+				}
+			})
+		}
 
 		return (
 			<div ref={glowOnHover ? actionRef : undefined}>
@@ -68,27 +79,18 @@ export default forwardRef<HTMLDivElement, Props>(
 						{
 							[styles.isTranslucent]: isTranslucent,
 							[styles.animatedBorder]: Boolean(animatedBorder),
-							[styles.stopOnHover]: Boolean(stopOnHover)
+							[styles.stopOnHover]: Boolean(borderStopOnHover)
 						}
 					)}
 					style={
 						{
-							"--width": normalizeSizeUtil(width!),
-							"--primary": primaryColor,
-							"--secondary": secondaryColor,
+							"--border-width": normalizeSizeUtil(borderWidth!),
+							"--primary": borderPrimaryColor,
+							"--secondary": borderSecondaryColor,
 							...rest.style
 						} as CSSProperties
 					}
-					onClick={(e) => {
-						handleClickUtil({
-							href,
-							download,
-							target,
-							onClick: () => {
-								rest.onClick?.(e)
-							}
-						})
-					}}
+					onClick={handleClick}
 				>
 					{children}
 				</div>

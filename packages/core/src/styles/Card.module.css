@@ -10,9 +10,8 @@
 	transition: all 300ms ease;
 	text-align: left;
 	border: var(--border-width) solid var(--ff-border);
-	width: 100%;
-	max-width: 100%;
 	box-sizing: border-box;
+	isolation: isolate;
 }
 
 .card.contained {
@@ -35,15 +34,15 @@
 .card.animatedBorder {
 	--primary: var(--ff-on-surface);
 	--secondary: var(--ff-border);
-	--width: var(--border-width);
-	border: var(--width) solid transparent;
+
+	border: var(--border-width) solid transparent;
 	overflow: unset;
 }
 
 .card.animatedBorder::before {
 	content: " ";
 	position: absolute;
-	inset: calc(var(--width) * -1);
+	inset: calc(var(--border-width) * -1);
 	z-index: -1;
 	border: inherit;
 	border-radius: inherit;

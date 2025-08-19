@@ -29,12 +29,12 @@
 		...rest
 	}: Props = $props()
 
-	const stopOnHover = getPropValueUtil<
+	const borderStopOnHover = getPropValueUtil<
 		{ stopOnHover?: boolean },
 		"stopOnHover"
 	>(animatedBorder, "stopOnHover", false)
 
-	const width = $derived(
+	const borderWidth = $derived(
 		getPropValueUtil<{ width?: string }, "width">(
 			animatedBorder,
 			"width",
@@ -42,7 +42,7 @@
 		)
 	)
 
-	const primaryColor = $derived(
+	const borderPrimaryColor = $derived(
 		getPropValueUtil<{ primaryColor?: string }, "primaryColor">(
 			animatedBorder,
 			"primaryColor",
@@ -50,7 +50,7 @@
 		)
 	)
 
-	const secondaryColor = $derived(
+	const borderSecondaryColor = $derived(
 		getPropValueUtil<{ secondaryColor?: string }, "secondaryColor">(
 			animatedBorder,
 			"secondaryColor",
@@ -71,13 +71,13 @@
 			{
 				[styles.isTranslucent]: isTranslucent,
 				[styles.animatedBorder]: Boolean(animatedBorder),
-				[styles.stopOnHover]: Boolean(stopOnHover)
+				[styles.stopOnHover]: Boolean(borderStopOnHover)
 			}
 		)}
 		style={mergeStyleUtil(
-			`--width: ${normalizeSizeUtil(width!)}`,
-			`--primary: ${primaryColor};`,
-			`--secondary: ${secondaryColor};`,
+			`--border-width: ${normalizeSizeUtil(borderWidth!)}`,
+			`--primary: ${borderPrimaryColor};`,
+			`--secondary: ${borderSecondaryColor};`,
 			rest.style
 		)}
 		onclick={(e) => {
