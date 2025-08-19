@@ -1,15 +1,13 @@
 .carousel {
 	position: relative;
 	perspective: 100px;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-auto-columns: 1fr;
 }
 
 .content {
 	display: flex;
-	flex: 1;
 	overflow: hidden;
-	counter-reset: item;
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
 }
