@@ -1,9 +1,10 @@
 .avatar {
+	position: relative;
 	border-radius: 50%;
 	overflow: hidden;
 	background: var(--ff-primary);
-	position: relative;
 	flex-shrink: 0;
+	margin: 0;
 }
 
 .avatar img {

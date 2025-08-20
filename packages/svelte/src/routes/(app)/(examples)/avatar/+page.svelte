@@ -28,3 +28,9 @@
 	width="150px"
 	height="150px"
 />
+<br />
+<Avatar.Group>
+	{#each ["a", "b", "c", "d"] as value (value)}
+		<Avatar textFallback={value} size="lg" />
+	{/each}
+</Avatar.Group>
