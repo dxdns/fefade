@@ -25,6 +25,12 @@
 	text-align: center;
 }
 
+.avatar.grouped {
+	transition: transform 0.3s ease;
+	user-select: none;
+	border: 3px solid var(--ff-surface);
+}
+
 /* sizes */
 
 .avatar.xs {
@@ -50,4 +56,11 @@
 .avatar.xl {
 	width: 5rem;
 	height: 5rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.avatar.grouped:hover {
+		z-index: 1;
+		transform: translateY(-0.5rem);
+	}
 }

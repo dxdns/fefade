@@ -195,7 +195,11 @@
 				"
 			>
 				<span class="text-muted">© 2025</span>
-				<Link href="https://github.com/dxdns" target="_blank" hoverUnderline="right">
+				<Link
+					href="https://github.com/dxdns"
+					target="_blank"
+					hoverUnderline="right"
+				>
 					dxdns
 				</Link>
 			</div>

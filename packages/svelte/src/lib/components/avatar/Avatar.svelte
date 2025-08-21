@@ -14,6 +14,7 @@
 		height,
 		textFallback,
 		size = "md",
+		grouped = false,
 		children,
 		...rest
 	}: Props = $props()
@@ -30,6 +31,7 @@
 		className,
 		[className, styles],
 		[size, styles],
+		{ [styles.grouped]: grouped },
 		styles.avatar
 	)}
 	style={mergeStyleUtil(
@@ -37,7 +39,6 @@
 		height && `height: ${height}`,
 		rest.style
 	)}
-	data-sMtW2xcC_eya7IzzGKsW_
 >
 	{#if !hasError && rest.src}
 		<img {...rest} onerror={handleError} />
@@ -46,5 +47,7 @@
 			{textFallback.charAt(0).toUpperCase()}
 		</span>
 	{/if}
-	{@render children?.()}
+	<span class={styles.textFallback}>
+		{@render children?.()}
+	</span>
 </div>

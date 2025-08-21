@@ -31,6 +31,12 @@
 <br />
 <Avatar.Group>
 	{#each ["a", "b", "c", "d"] as value (value)}
-		<Avatar textFallback={value} size="lg" />
+		{#if value === "d"}
+			<Avatar grouped size="lg">
+				<span>+99</span>
+			</Avatar>
+		{:else}
+			<Avatar grouped textFallback={value} size="lg" />
+		{/if}
 	{/each}
 </Avatar.Group>

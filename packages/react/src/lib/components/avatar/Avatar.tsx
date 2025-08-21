@@ -9,7 +9,16 @@ interface Props
 
 export default forwardRef<HTMLDivElement, Props>(
 	(
-		{ className = "", width, height, textFallback, size = "md", ...rest },
+		{
+			className = "",
+			width,
+			height,
+			textFallback,
+			size = "md",
+			grouped = false,
+			children,
+			...rest
+		},
 		ref
 	) => {
 		const [hasError, setHasError] = useState(false)
@@ -25,10 +34,10 @@ export default forwardRef<HTMLDivElement, Props>(
 					className,
 					[className, styles],
 					[size, styles],
+					{ [styles.grouped]: grouped },
 					styles.avatar
 				)}
 				style={{ width, height, ...rest.style }}
-				data-sMtW2xcC_eya7IzzGKsW_
 			>
 				{!hasError && rest.src ? (
 					<img {...rest} onError={handleError} />
@@ -39,6 +48,7 @@ export default forwardRef<HTMLDivElement, Props>(
 						</span>
 					)
 				)}
+				<span className={styles.textFallback}>{children}</span>
 			</div>
 		)
 	}

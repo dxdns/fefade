@@ -53,7 +53,7 @@ export default function () {
 
 			<Avatar.Group>
 				{["a", "b", "c", "d"].map((value) => (
-					<Avatar key={value} textFallback={value} size="lg" />
+					<Avatar key={value} grouped textFallback={value} size="lg" />
 				))}
 			</Avatar.Group>
 
@@ -62,11 +62,18 @@ export default function () {
 			<Avatar.Group>
 				{["a", "b", "c", "d"].map((value) => (
 					<Tooltip key={value} label={value}>
-						<Avatar
-							textFallback={value}
-							size="lg"
-							style={{ marginTop: "1.2rem" }}
-						/>
+						{value === "d" ? (
+							<Avatar grouped size="lg" style={{ marginTop: "1.2rem" }}>
+								<span>+99</span>
+							</Avatar>
+						) : (
+							<Avatar
+								grouped
+								textFallback={value}
+								size="lg"
+								style={{ marginTop: "1.2rem" }}
+							/>
+						)}
 					</Tooltip>
 				))}
 			</Avatar.Group>

@@ -38,10 +38,16 @@
 	</Link>
 	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatibus
-		pariatur maiores cumque <Link href="https://github.com/dxdns" hover="center">
+		pariatur maiores cumque <Link
+			href="https://github.com/dxdns"
+			hover="center"
+		>
 			obcaecati
 		</Link>, eum quod porro harum magni quisquam sunt nihil, eos modi officia
-		molestiae. Illum <Link href="https://github.com/dxdns" hover="underlineNone">
+		molestiae. Illum <Link
+			href="https://github.com/dxdns"
+			hover="underlineNone"
+		>
 			minima
 		</Link> ad ducimus.
 	</p>

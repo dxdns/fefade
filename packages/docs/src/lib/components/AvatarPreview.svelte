@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Avatar, Card, Status, themeConfig } from "@feflow-ui/svelte"
+	import { Avatar, Card, Status, themeConfig, Tooltip } from "@feflow-ui/svelte"
 
 	const theme = $derived(themeConfig())
 </script>
@@ -46,9 +46,32 @@
 >
 	{@render avatarOn?.()}
 </Card>
+
 <br />
+
 <Avatar.Group>
 	{#each ["a", "b", "c", "d"] as value (value)}
-		<Avatar textFallback={value} size="lg" />
+		<Avatar grouped textFallback={value} size="lg" />
+	{/each}
+</Avatar.Group>
+
+<br />
+
+<Avatar.Group>
+	{#each ["a", "b", "c", "d"] as value (value)}
+		<Tooltip label={value}>
+			{#if value === "d"}
+				<Avatar grouped size="lg" style="margin-top: 1.2rem;">
+					<span>+99</span>
+				</Avatar>
+			{:else}
+				<Avatar
+					grouped
+					textFallback={value}
+					size="lg"
+					style="margin-top: 1.2rem;"
+				/>
+			{/if}
+		</Tooltip>
 	{/each}
 </Avatar.Group>
