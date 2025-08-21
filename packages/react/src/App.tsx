@@ -1,3 +1,4 @@
+import AvatarExample from "./examples/AvatarExample"
 import ModalExample from "./examples/ModalExample"
 import {
 	Accordion,
@@ -40,6 +41,7 @@ function App() {
 
 	return (
 		<>
+			<AvatarExample />
 			<ModalExample />
 			<Image
 				dataSrc="https://img.odcdn.com.br/cdn-cgi/image/width=1200,height=1200,fit=cover/wp-content/uploads/2023/01/Avatar-Loak.jpg"
