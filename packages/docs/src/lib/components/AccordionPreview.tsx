@@ -1,4 +1,4 @@
-import { Accordion } from "@dxdns/feflow-react"
+import { Accordion } from "@feflow-ui/react"
 
 export default function () {
 	return (

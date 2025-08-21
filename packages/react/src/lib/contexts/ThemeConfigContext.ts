@@ -1,4 +1,4 @@
-import type { ThemeConfigUtilType } from "@dxdns/feflow-core/types"
+import type { ThemeConfigUtilType } from "@feflow-ui/core/types"
 import { createContext } from "react"
 
 export const ThemeConfigContext = createContext<

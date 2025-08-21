@@ -1,8 +1,8 @@
 <script setup lang="ts">
 	import { computed, useAttrs, IntrinsicElementAttributes } from "vue"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import type { ButtonType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
-	import styles from "@dxdns/feflow-core/styles/Button.module.css"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import type { ButtonType, HTMLAttrAnchor } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/Button.module.css"
 	import { Spinner } from "../spinner"
 
 	interface Props extends ButtonType, HTMLAttrAnchor {}

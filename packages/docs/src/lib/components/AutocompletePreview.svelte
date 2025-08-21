@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Autocomplete, Link } from "@dxdns/feflow-svelte"
+	import { Autocomplete, Link } from "@feflow-ui/svelte"
 
 	const data = Array.from(Array(30)).map((_, i) => ({
 		id: i,

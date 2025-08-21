@@ -13,17 +13,16 @@ export default defineConfig({
 	site: "https://feflow.dxdns.dev",
 	integrations: [
 		starlight({
-			title: "feflow",
+			title: "Feflow UI",
 			components: {
 				PageFrame: "./src/lib/layouts/RootLayout.astro",
 				Hero: "./src/lib/components/Hero.astro"
 			},
 			customCss: ["./src/styles/custom.css"],
-			favicon: "/favicon.png",
+			favicon: "./src/assets/favicon.png",
 			logo: {
-				light: "./src/assets/logo_light.png",
-				dark: "./src/assets/logo_dark.png",
-				replacesTitle: true
+				src: "./src/assets/favicon.png",
+				alt: "Feflow UI"
 			},
 			social: [
 				{

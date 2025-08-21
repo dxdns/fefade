@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes } from "react"
-import styles from "@dxdns/feflow-core/styles/DrawerContent.module.css"
-import { classMapUtil } from "@dxdns/feflow-core/utils"
+import styles from "@feflow-ui/core/styles/DrawerContent.module.css"
+import { classMapUtil } from "@feflow-ui/core/utils"
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {}
 

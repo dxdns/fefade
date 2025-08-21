@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { PositionType } from "@dxdns/feflow-core/types"
+	import type { PositionType } from "@feflow-ui/core/types"
 	import { toastState } from "../../states/index.js"
 	import Toast from "./Toast.svelte"
 	import { fade } from "svelte/transition"
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil, mergeStyleUtil } from "@feflow-ui/core/utils"
 	import styles from "./Toaster.module.css"
 	import { flip } from "svelte/animate"
 

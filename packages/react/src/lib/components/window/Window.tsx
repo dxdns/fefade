@@ -1,8 +1,8 @@
 import { forwardRef, HTMLAttributes, ReactNode } from "react"
-import { CardType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
+import { CardType, HTMLAttrAnchor } from "@feflow-ui/core/types"
 import { Card } from "../card"
 import { Badge } from "../badge"
-import styles from "@dxdns/feflow-core/styles/Window.module.css"
+import styles from "@feflow-ui/core/styles/Window.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Window } from "@dxdns/feflow-svelte"
+	import { Window } from "@feflow-ui/svelte"
 
 	const variants = ["contained", "outlined"]
 </script>

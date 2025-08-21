@@ -6,10 +6,10 @@
 		handleClickUtil,
 		mergeStyleUtil,
 		normalizeSizeUtil
-	} from "@dxdns/feflow-core/utils"
-	import { glowOnHoverAction } from "@dxdns/feflow-core/actions"
-	import type { CardType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
-	import styles from "@dxdns/feflow-core/styles/Card.module.css"
+	} from "@feflow-ui/core/utils"
+	import { glowOnHoverAction } from "@feflow-ui/core/actions"
+	import type { CardType, HTMLAttrAnchor } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/Card.module.css"
 
 	interface Props
 		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

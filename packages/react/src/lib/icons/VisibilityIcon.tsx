@@ -1,5 +1,5 @@
 import { forwardRef, SVGAttributes } from "react"
-import { visibilityIcon } from "@dxdns/feflow-core/icons"
+import { visibilityIcon } from "@feflow-ui/core/icons"
 
 interface Props extends SVGAttributes<SVGSVGElement> {}
 

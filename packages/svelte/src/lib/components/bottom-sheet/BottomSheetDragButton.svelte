@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { BottomSheetDragButtonType } from "@dxdns/feflow-core/types"
-	import styles from "@dxdns/feflow-core/styles/BottomSheetDragButton.module.css"
+	import type { BottomSheetDragButtonType } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/BottomSheetDragButton.module.css"
 
 	interface Props
 		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

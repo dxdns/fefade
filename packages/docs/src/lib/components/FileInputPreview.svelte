@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, FileInput } from "@dxdns/feflow-svelte"
+	import { Button, FileInput } from "@feflow-ui/svelte"
 
 	let filesData: File[] = $state([])
 

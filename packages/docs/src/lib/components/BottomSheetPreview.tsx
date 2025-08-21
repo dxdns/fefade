@@ -1,4 +1,4 @@
-import { BottomSheet, Button } from "@dxdns/feflow-react"
+import { BottomSheet, Button } from "@feflow-ui/react"
 import { useEffect, useState } from "react"
 
 export default function () {

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import styles from "./NumberInput.module.css"
 	import Button from "../button/index.js"
-	import type { VariantType } from "@dxdns/feflow-core/types"
+	import type { VariantType } from "@feflow-ui/core/types"
 	import { onMount } from "svelte"
 
 	interface Props

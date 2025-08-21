@@ -1,17 +1,17 @@
 {
-	"name": "@dxdns/feflow-svelte",
-	"version": "0.0.29",
-	"description": "feflow: svelte components ui",
+	"name": "@feflow-ui/svelte",
+	"version": "1.0.0",
+	"description": "feflow-ui: svelte components ui",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"homepage": "https://feflow.dxdns.dev",
+	"homepage": "https://feflow-ui.dxdns.dev",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/feflow.git"
+		"url": "git+https://github.com/dxdns/feflow-ui.git"
 	},
 	"scripts": {
 		"dev": "vite dev",
@@ -41,7 +41,7 @@
 		}
 	},
 	"peerDependencies": {
-		"@dxdns/feflow-core": "^0.0.31",
+		"@feflow-ui/core": "^1.0.0",
 		"svelte": "^5.0.0",
 		"vite": "^6.2.3"
 	},
@@ -53,14 +53,14 @@
 		"publint": "^0.3.2",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
-		"@dxdns/feflow-core": "*"
+		"@feflow-ui/core": "*"
 	},
 	"keywords": [
 		"svelte",
 		"svelte5",
 		"svelte-ui",
 		"ui",
-		"feflow",
+		"feflow-ui",
 		"components",
 		"ui-components",
 		"svelte-pkg",

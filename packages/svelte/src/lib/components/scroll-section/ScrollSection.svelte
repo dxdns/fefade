@@ -1,15 +1,15 @@
 <script lang="ts">
-	import type { SectionType } from "@dxdns/feflow-core/types"
+	import type { SectionType } from "@feflow-ui/core/types"
 	import Button from "../button/index.js"
 	import styles from "./ScrollSection.module.css"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 	import KeyboardArrowLeftIcon from "../../icons/KeyboardArrowLeftIcon.svelte"
 	import KeyboardArrowRightIcon from "../../icons/KeyboardArrowRightIcon.svelte"
 	import {
 		checkVisibilityAction,
 		scrollNavigatorAction
-	} from "@dxdns/feflow-core/actions"
+	} from "@feflow-ui/core/actions"
 
 	interface Props extends HTMLAttributes<HTMLElement> {
 		data: SectionType[]

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLSelectAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import styles from "./Select.module.css"
 	import { KeyboardArrowDownIcon } from "../../icons/index.js"
-	import type { VariantType } from "@dxdns/feflow-core/types"
+	import type { VariantType } from "@feflow-ui/core/types"
 
 	interface Props extends HTMLSelectAttributes {
 		variant?: VariantType

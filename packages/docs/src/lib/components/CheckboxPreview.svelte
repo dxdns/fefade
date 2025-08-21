@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Checkbox } from "@dxdns/feflow-svelte"
+	import { Checkbox } from "@feflow-ui/svelte"
 </script>
 
 <Checkbox checked />

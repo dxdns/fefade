@@ -1,8 +1,8 @@
 import chalk from "chalk"
 
 export default function banner() {
-	const header = chalk.bold.hex("#ff4800c")("@dxdns/feflow")
-	const description = chalk.blue.underline("https://feflow.dxdns.dev")
+	const header = chalk.bold.hex("#ff4800c")("Feflow UI")
+	const description = chalk.blue.underline("https://feflow-ui.dxdns.dev")
 
 	const commands = [
 		// {

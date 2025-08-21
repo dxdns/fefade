@@ -1,6 +1,6 @@
 {
-	"name": "@dxdns/feflow-core",
-	"version": "0.0.31",
+	"name": "@feflow-ui/core",
+	"version": "1.0.0",
 	"description": "",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
@@ -8,10 +8,10 @@
 		"access": "public"
 	},
 	"license": "MIT",
-	"homepage": "https://feflow.dxdns.dev",
+	"homepage": "https://feflow-ui.dxdns.dev",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/feflow.git"
+		"url": "git+https://github.com/dxdns/feflow-ui.git"
 	},
 	"scripts": {
 		"build": "tsc && node esbuild.config.mjs",

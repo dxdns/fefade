@@ -1,4 +1,4 @@
-import { Avatar, Card, Status } from "@dxdns/feflow-react"
+import { Avatar, Card, Status } from "@feflow-ui/react"
 
 export default function () {
 	const avatarOn = () => (

@@ -7,7 +7,7 @@
 		Separator,
 		Switch,
 		themeConfig
-	} from "@dxdns/feflow-svelte"
+	} from "@feflow-ui/svelte"
 	import {
 		DarkModeIcon,
 		GithubIcon,
@@ -157,8 +157,8 @@
 		<h2 style="margin-bottom: 0.5rem;">Connect</h2>
 		<p class="text-muted">
 			Feel free to contact me at
-			<Link href="mailto:hi@dxdns.dev" hoverUnderline="center">
-				hi@dxdns.dev
+			<Link href="mailto:hi@feflow-ui.dev" hoverUnderline="center">
+				hi@feflow-ui.dev
 			</Link>
 		</p>
 		<div style="display: flex; gap: 1rem; margin-top: 1rem;">

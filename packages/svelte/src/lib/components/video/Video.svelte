@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { videoAction } from "@dxdns/feflow-core/actions"
-	import type { GalleryMediaType } from "@dxdns/feflow-core/types"
-	import { videoUtil } from "@dxdns/feflow-core/utils"
+	import { videoAction } from "@feflow-ui/core/actions"
+	import type { GalleryMediaType } from "@feflow-ui/core/types"
+	import { videoUtil } from "@feflow-ui/core/utils"
 	import type { HTMLVideoAttributes } from "svelte/elements"
 
 	interface Props extends Omit<HTMLVideoAttributes, "src">, GalleryMediaType {}

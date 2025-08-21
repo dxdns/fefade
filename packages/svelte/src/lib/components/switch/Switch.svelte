@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { SwitchType } from "@dxdns/feflow-core/types"
+	import type { SwitchType } from "@feflow-ui/core/types"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { Snippet } from "svelte"
-	import { mergeStyleUtil, getPropValueUtil } from "@dxdns/feflow-core/utils"
-	import styles from "@dxdns/feflow-core/styles/Switch.module.css"
+	import { mergeStyleUtil, getPropValueUtil } from "@feflow-ui/core/utils"
+	import styles from "@feflow-ui/core/styles/Switch.module.css"
 
 	interface Props
 		extends Omit<Omit<HTMLInputAttributes, "size">, "type">,

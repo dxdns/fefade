@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal } from "@dxdns/feflow-svelte"
+	import { Button, Modal } from "@feflow-ui/svelte"
 
 	let isOpen = $state(false)
 

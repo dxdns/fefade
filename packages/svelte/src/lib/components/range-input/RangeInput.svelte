@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { SizeType } from "@dxdns/feflow-core/types"
+	import type { SizeType } from "@feflow-ui/core/types"
 	import {
 		classMapUtil,
 		mergeStyleUtil,
 		dataIconUrlUtil
-	} from "@dxdns/feflow-core/utils"
+	} from "@feflow-ui/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import styles from "@dxdns/feflow-core/styles/RangeInput.module.css"
+	import styles from "@feflow-ui/core/styles/RangeInput.module.css"
 
 	interface Props
 		extends Omit<Omit<Omit<HTMLInputAttributes, "value">, "type">, "size"> {

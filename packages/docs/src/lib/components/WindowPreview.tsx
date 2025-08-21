@@ -1,4 +1,4 @@
-import { Window } from "@dxdns/feflow-react"
+import { Window } from "@feflow-ui/react"
 
 export default function () {
 	const variants = ["contained", "outlined"]

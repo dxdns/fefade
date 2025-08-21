@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import styles from "./Carousel.module.css"
-	import { scrollNavigatorAction } from "@dxdns/feflow-core/actions"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import { scrollNavigatorAction } from "@feflow-ui/core/actions"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import { onDestroy, onMount, type Snippet } from "svelte"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

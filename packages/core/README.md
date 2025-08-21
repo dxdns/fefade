@@ -1,3 +1,3 @@
-feflow core components library.
+Feflowcore components library.
 
-[View documentation](https://feflow.dxdns.dev).
+[View documentation](https://feflow-ui.dxdns.dev).

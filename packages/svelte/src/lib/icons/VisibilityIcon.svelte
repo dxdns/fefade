@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements"
-	import { visibilityIcon } from "@dxdns/feflow-core/icons"
-	import { mergeStyleUtil } from "@dxdns/feflow-core/utils"
+	import { visibilityIcon } from "@feflow-ui/core/icons"
+	import { mergeStyleUtil } from "@feflow-ui/core/utils"
 
 	interface Props extends SVGAttributes<SVGSVGElement> {}
 

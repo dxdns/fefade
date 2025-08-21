@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, HoverFollower } from "@dxdns/feflow-svelte"
+	import { Card, HoverFollower } from "@feflow-ui/svelte"
 </script>
 
 <HoverFollower>

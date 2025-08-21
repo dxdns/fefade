@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { HTMLAnchorAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import type { LinkType } from "@dxdns/feflow-core/types"
-	import styles from "@dxdns/feflow-core/styles/Link.module.css"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import type { LinkType } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/Link.module.css"
 
 	interface Props extends Omit<HTMLAnchorAttributes, "class">, LinkType {}
 

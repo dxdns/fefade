@@ -5,8 +5,8 @@
 		InfoIcon,
 		WarningIcon
 	} from "../../icons/index.js"
-	import type { StatusColorType, ToastType } from "@dxdns/feflow-core/types"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import type { StatusColorType, ToastType } from "@feflow-ui/core/types"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 	import Button from "../button/index.js"
 

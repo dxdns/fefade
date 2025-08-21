@@ -1,7 +1,4 @@
-import type {
-	ElementReferenceType,
-	SectionType
-} from "@dxdns/feflow-core/types"
+import type { ElementReferenceType, SectionType } from "@feflow-ui/core/types"
 
 const data = $state<{
 	sections: ElementReferenceType[]

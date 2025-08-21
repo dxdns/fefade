@@ -1,9 +1,9 @@
 ---
 title: Installation
-description: How to install and set up feflow in your project
+description: How to install and set up Feflowin your project
 ---
 
-import { Button } from "@dxdns/feflow-svelte"
+import { Button } from "@feflow-ui/svelte"
 import { Tabs, TabItem } from "@astrojs/starlight/components"
 import { Steps } from "@astrojs/starlight/components"
 import { FileTree } from "@astrojs/starlight/components"
@@ -15,12 +15,12 @@ import { FileTree } from "@astrojs/starlight/components"
             <Tabs>
                 <TabItem label="npm" icon="npm">
                     ```bash
-                    npm install @dxdns/feflow-core @dxdns/feflow-svelte
+                    npm install @feflow-ui/core @feflow-ui/svelte
                     ```
                 </TabItem>
                 <TabItem label="pnpm" icon="pnpm">
                     ```bash
-                    pnpm add @dxdns/feflow-core @dxdns/feflow-svelte
+                    pnpm add @feflow-ui/core @feflow-ui/svelte
                     ```
                 </TabItem>
             </Tabs>
@@ -28,7 +28,7 @@ import { FileTree } from "@astrojs/starlight/components"
 
         <li>
             ### Setup provider
-            Wrap your application with the `FeflowProvider` to enable all Feflow components.
+            Wrap your application with the `FeflowProvider` to enable all Feflowcomponents.
             This should be done at the layout level to ensure global access.
 
             > Recommended: Place this in `src/routes/+layout.svelte` (SvelteKit root layout)
@@ -41,7 +41,7 @@ import { FileTree } from "@astrojs/starlight/components"
 
             ```svelte
             <script lang="ts">
-                import { FeflowProvider } from "@dxdns/feflow-svelte"
+                import { FeflowProvider } from "@feflow-ui/svelte"
             </script>
 
             <FeflowProvider>
@@ -56,7 +56,7 @@ import { FileTree } from "@astrojs/starlight/components"
                 <TabItem label="Usage">
                     ```svelte
                     <script lang="ts">
-                        import { Button } from "@dxdns/feflow-svelte"
+                        import { Button } from "@feflow-ui/svelte"
                     </script>
 
                     <Button>

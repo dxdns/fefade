@@ -1,9 +1,9 @@
-import { classMapUtil } from "@dxdns/feflow-core/utils"
+import { classMapUtil } from "@feflow-ui/core/utils"
 import { forwardRef, HTMLAttributes, useEffect } from "react"
 import { useAction } from "../../utils"
-import { bottomSheetAction } from "@dxdns/feflow-core/actions"
-import type { BottomSheetType } from "@dxdns/feflow-core/types"
-import styles from "@dxdns/feflow-core/styles/BottomSheet.module.css"
+import { bottomSheetAction } from "@feflow-ui/core/actions"
+import type { BottomSheetType } from "@feflow-ui/core/types"
+import styles from "@feflow-ui/core/styles/BottomSheet.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

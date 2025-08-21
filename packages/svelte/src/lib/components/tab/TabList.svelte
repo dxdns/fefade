@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { activeLineAction } from "@dxdns/feflow-core/actions"
+	import { activeLineAction } from "@feflow-ui/core/actions"
 	import HoverFollower from "../hover-follower/index.js"
-	import type { ActionType, OrientationType } from "@dxdns/feflow-core/types"
+	import type { ActionType, OrientationType } from "@feflow-ui/core/types"
 	import {
 		classMapUtil,
 		getPropValueUtil,
 		mergeStyleUtil
-	} from "@dxdns/feflow-core/utils"
+	} from "@feflow-ui/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		lineStyle?:

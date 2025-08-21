@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { classMapUtil, handleClickUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil, handleClickUtil } from "@feflow-ui/core/utils"
 	import type { HTMLButtonAttributes } from "svelte/elements"
 	import Button from "../button/index.js"
-	import type { HTMLAttrAnchor, VariantType } from "@dxdns/feflow-core/types"
-	import styles from "@dxdns/feflow-core/styles/NavbarItem.module.css"
+	import type { HTMLAttrAnchor, VariantType } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/NavbarItem.module.css"
 
 	interface Props extends HTMLButtonAttributes, HTMLAttrAnchor {
 		variant?: VariantType

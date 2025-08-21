@@ -4,7 +4,7 @@
 
 <div class="circle">
 	<Link
-		href="https://feflow.dxdns.dev"
+		href="https://feflow-ui.dxdns.dev"
 		target="_blank"
 		style="transform: translate(50%, 100%);"
 	>

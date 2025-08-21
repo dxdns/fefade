@@ -1,13 +1,13 @@
 /**
  *  @license MIT
  *  feflow
- *  https://feflow.dxdns.dev
+ *  https://feflow-ui.dxdns.dev
  */
 
 export { default as FeflowProvider } from "./components/feflow-provider/index.js"
 
 export { themeConfigUtil as themeConfig } from "./utils/index.js"
-export { createTheme } from "@dxdns/feflow-core/utils"
+export { createTheme } from "@feflow-ui/core/utils"
 
 export { default as BottomSheet } from "./components/bottom-sheet/index.js"
 export { default as Code } from "./components/code/index.js"

@@ -1,4 +1,4 @@
-import { DateInput } from "@dxdns/feflow-react"
+import { DateInput } from "@feflow-ui/react"
 
 export default function () {
 	return (

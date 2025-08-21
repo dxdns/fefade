@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import Button from "../button/index.js"
 	import { CloseIcon } from "../../icons/index.js"
-	import type { AlignType } from "@dxdns/feflow-core/types"
-	import styles from "@dxdns/feflow-core/styles/ModalHeader.module.css"
+	import type { AlignType } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/ModalHeader.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		align?: AlignType

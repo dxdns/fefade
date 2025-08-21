@@ -1,5 +1,5 @@
-import type { LinkType } from "@dxdns/feflow-core/types"
-import { classMapUtil } from "@dxdns/feflow-core/utils"
+import type { LinkType } from "@feflow-ui/core/types"
+import { classMapUtil } from "@feflow-ui/core/utils"
 import {
 	ComponentPropsWithoutRef,
 	ElementType,
@@ -8,7 +8,7 @@ import {
 	PropsWithChildren,
 	Ref
 } from "react"
-import styles from "@dxdns/feflow-core/styles/Link.module.css"
+import styles from "@feflow-ui/core/styles/Link.module.css"
 
 type AsProp<C extends ElementType> = {
 	as?: C

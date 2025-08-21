@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Status, themeConfig } from "@dxdns/feflow-svelte"
+	import { Status, themeConfig } from "@feflow-ui/svelte"
 
 	const { colors } = $derived(themeConfig())
 	const variants = ["pulse", "ping", "bounce"]

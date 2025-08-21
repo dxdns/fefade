@@ -1,9 +1,9 @@
-import type { AlignType } from "@dxdns/feflow-core/types"
-import { classMapUtil } from "@dxdns/feflow-core/utils"
+import type { AlignType } from "@feflow-ui/core/types"
+import { classMapUtil } from "@feflow-ui/core/utils"
 import { forwardRef, HTMLAttributes } from "react"
 import { Button } from "../button"
 import { CloseIcon } from "@/icons"
-import styles from "@dxdns/feflow-core/styles/ModalHeader.module.css"
+import styles from "@feflow-ui/core/styles/ModalHeader.module.css"
 
 interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
 	align?: AlignType

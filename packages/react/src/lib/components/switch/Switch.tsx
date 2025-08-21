@@ -1,12 +1,12 @@
-import type { SwitchType } from "@dxdns/feflow-core/types"
-import { classMapUtil, getPropValueUtil } from "@dxdns/feflow-core/utils"
+import type { SwitchType } from "@feflow-ui/core/types"
+import { classMapUtil, getPropValueUtil } from "@feflow-ui/core/utils"
 import {
 	CSSProperties,
 	forwardRef,
 	InputHTMLAttributes,
 	ReactNode
 } from "react"
-import styles from "@dxdns/feflow-core/styles/Switch.module.css"
+import styles from "@feflow-ui/core/styles/Switch.module.css"
 
 interface Props
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, "size">,

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Drawer, Window } from "@dxdns/feflow-svelte"
+	import { Button, Drawer, Window } from "@feflow-ui/svelte"
 
 	type PositionType = "top" | "left" | "right" | "bottom"
 

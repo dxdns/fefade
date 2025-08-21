@@ -32,5 +32,8 @@
 		"vue"
 	],
 	"editor.formatOnSave": true,
-	"prettier.enable": true
+	"prettier.enable": true,
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode"
+	}
 }

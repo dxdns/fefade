@@ -1,40 +1,45 @@
 ---
-import { Link } from "@dxdns/feflow-svelte"
-import { Icon } from '@astrojs/starlight/components';
+import { Link } from "@feflow-ui/svelte"
+import { Icon } from "@astrojs/starlight/components"
+import favicon from "../../assets/favicon.png"
 ---
 
 <article class="sl-flex" aria-labelledby="about-astro-heading">
 	<small id="about-astro-heading">
-        Maintained by <Link hoverUnderline="right" href="https://dxdns.dev" target="_blank">
-		    @dxdns
-        </Link> and contributors
+		Maintained by <Link
+			hoverUnderline="right"
+			href="https://dxdns.dev"
+			target="_blank"
+		>
+			@dxdns
+		</Link> and contributors
 	</small>
 
-    <Link href="/">
-	    <img src="/favicon.png" height="40px" width="40px" />
-    </Link>
+	<Link href="/">
+		<img src={favicon.src} alt="Feflow UI" height="40px" width="40px" />
+	</Link>
 
 	<slot />
 
-    <ul class="links">
-        <li>
-            <Link href="/docs">Getting Started</Link>
-        </li>
-        <li>
-            <Link href="/docs/components">Components</Link>
-        </li>
-        <li>
-            <Link href="/docs/theming">Theming</Link>
-        </li>
-        <li>
-            <Link href="https://github.com/dxdns/feflow" target="_blank">
-                GitHub
+	<ul class="links">
+		<li>
+			<Link href="/docs">Getting Started</Link>
+		</li>
+		<li>
+			<Link href="/docs/components">Components</Link>
+		</li>
+		<li>
+			<Link href="/docs/theming">Theming</Link>
+		</li>
+		<li>
+			<Link href="https://github.com/dxdns/feflow" target="_blank">
+				GitHub
 				<div style="height: 16px; width: 16px;">
 					<Icon name="external" size="16px" />
 				</div>
-            </Link>
-        </li>
-    </ul>
+			</Link>
+		</li>
+	</ul>
 </article>
 
 <style>

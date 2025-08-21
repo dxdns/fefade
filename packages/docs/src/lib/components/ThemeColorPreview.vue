@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { reactive } from "vue"
-	import { Badge, Button, themeConfig } from "@dxdns/feflow-vue"
+	import { Badge, Button, themeConfig } from "@feflow-ui/vue"
 
 	const theme = reactive(themeConfig())
 </script>

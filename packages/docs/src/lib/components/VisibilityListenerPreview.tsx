@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { VisibilityListener } from "@dxdns/feflow-react"
+import { VisibilityListener } from "@feflow-ui/react"
 
 export default function () {
 	const [isVisible, setIsVisible] = useState(false)

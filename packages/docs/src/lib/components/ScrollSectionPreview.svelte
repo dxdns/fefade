@@ -5,7 +5,7 @@
 		ScrollSection,
 		themeConfig,
 		Window
-	} from "@dxdns/feflow-svelte"
+	} from "@feflow-ui/svelte"
 
 	const { colors } = $derived(themeConfig())
 	const sections = $derived(getSections())

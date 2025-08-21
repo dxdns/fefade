@@ -1,4 +1,4 @@
-import { Button } from "@dxdns/feflow-react"
+import { Button } from "@feflow-ui/react"
 
 export default function () {
 	const variants = ["outlined", "text", "contained"]

@@ -26,8 +26,8 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w @dxdns/feflow-core
+      - run: npm run build -w @feflow-ui/core
 
-      - run: npm publish -w @dxdns/feflow-core
+      - run: npm publish -w @feflow-ui/core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

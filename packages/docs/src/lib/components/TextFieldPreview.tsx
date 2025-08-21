@@ -1,4 +1,4 @@
-import { TextField } from "@dxdns/feflow-react"
+import { TextField } from "@feflow-ui/react"
 
 export default function () {
 	const sizes = ["xs", "sm", "md", "lg", "xl"]

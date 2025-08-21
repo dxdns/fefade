@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { VisibilityListener } from "@dxdns/feflow-svelte"
+	import { VisibilityListener } from "@feflow-ui/svelte"
 
 	let isVisible = $state(false)
 	const n = 50

@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: How to install and set up feflow in your project
+description: How to install and set up Feflowin your project
 ---
 
 import Button from "@/components/Button.vue"
@@ -15,12 +15,12 @@ import { FileTree } from "@astrojs/starlight/components"
             <Tabs>
                 <TabItem label="npm" icon="npm">
                     ```bash
-                    npm install @dxdns/feflow-core @dxdns/feflow-vue
+                    npm install @feflow-ui/core @feflow-ui/vue
                     ```
                 </TabItem>
                 <TabItem label="pnpm" icon="pnpm">
                     ```bash
-                    pnpm add @dxdns/feflow-core @dxdns/feflow-vue
+                    pnpm add @feflow-ui/core @feflow-ui/vue
                     ```
                 </TabItem>
             </Tabs>
@@ -28,7 +28,7 @@ import { FileTree } from "@astrojs/starlight/components"
 
         <li>
             ### Setup provider
-            Wrap your application with the `FeflowProvider` to enable all Feflow components.
+            Wrap your application with the `FeflowProvider` to enable all Feflowcomponents.
             This should be done at the layout level to ensure global access.
 
             > Recommended: Place this in `src/main.ts` (React root element)
@@ -61,7 +61,7 @@ import { FileTree } from "@astrojs/starlight/components"
                 <TabItem label="Usage">
                     ```vue
                     <script setup lang="ts">
-                        import { Button } from "@dxdns/feflow-vue"
+                        import { Button } from "@feflow-ui/vue"
                     </script>
 
                     <template>

@@ -1,0 +1,45 @@
+import { Spinner } from "@feflow-ui/react"
+
+export default function () {
+	const colors = ["primary", "success", "warning", "error", "info"] as const
+	const sizes = ["xs", "sm", "md", "lg", "xl"] as const
+
+	return (
+		<div
+			style={{
+				display: "flex",
+				flexWrap: "wrap",
+				alignItems: "baseline",
+				gap: "1.5rem"
+			}}
+		>
+			{colors.map((color) => (
+				<div
+					key={`color-${color}`}
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center"
+					}}
+				>
+					<Spinner className={`text-on-${color}`} size="md" />
+					<span>{color}</span>
+				</div>
+			))}
+
+			{sizes.map((size) => (
+				<div
+					key={`size-${size}`}
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center"
+					}}
+				>
+					<Spinner size={size} color="primary" />
+					<span>{size}</span>
+				</div>
+			))}
+		</div>
+	)
+}

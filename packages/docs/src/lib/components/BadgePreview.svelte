@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Badge } from "@dxdns/feflow-svelte"
+	import { Badge } from "@feflow-ui/svelte"
 
-	const variants = ["outlined", "text", "contained"]
-	const colors = ["error", "success", "warning", "info", "primary"]
-	const sizes = ["xs", "sm", "md", "lg", "xl"]
+	const variants = ["outlined", "contained"] as const
+	const colors = ["error", "success", "warning", "info", "primary"] as const
+	const sizes = ["xs", "sm", "md", "lg", "xl"] as const
 </script>
 
 <div
@@ -20,12 +20,12 @@
 		</Badge>
 	{/each}
 	{#each variants as variant (variant)}
-		<Badge variant={variant as any} size="md">
+		<Badge {variant} size="md">
 			{variant}
 		</Badge>
 	{/each}
 	{#each sizes as size (size)}
-		<Badge roundedFull size={size as any}>
+		<Badge roundedFull {size}>
 			{size}
 		</Badge>
 	{/each}

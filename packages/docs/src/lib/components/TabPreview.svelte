@@ -1,11 +1,5 @@
 <script lang="ts">
-	import {
-		Button,
-		themeConfig,
-		Separator,
-		Tab,
-		Card
-	} from "@dxdns/feflow-svelte"
+	import { Button, themeConfig, Separator, Tab, Card } from "@feflow-ui/svelte"
 	import { fade, fly } from "svelte/transition"
 
 	const theme = $derived(themeConfig())

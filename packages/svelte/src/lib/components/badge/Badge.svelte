@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { BadgeType } from "@dxdns/feflow-core/types"
-	import { classMapUtil } from "@dxdns/feflow-core/utils"
-	import styles from "@dxdns/feflow-core/styles/Badge.module.css"
+	import type { BadgeType } from "@feflow-ui/core/types"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import styles from "@feflow-ui/core/styles/Badge.module.css"
 
 	interface Props extends HTMLAttributes<HTMLSpanElement>, BadgeType {}
 

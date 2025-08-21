@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card } from "@dxdns/feflow-svelte"
+	import { Card } from "@feflow-ui/svelte"
 
 	const variants = ["contained", "outlined"]
 </script>

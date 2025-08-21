@@ -1,4 +1,4 @@
-import { ColorPicker } from "@dxdns/feflow-react"
+import { ColorPicker } from "@feflow-ui/react"
 import { useState, type CSSProperties } from "react"
 
 export default function () {

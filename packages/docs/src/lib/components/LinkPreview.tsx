@@ -1,4 +1,4 @@
-import { Link } from "@dxdns/feflow-react"
+import { Link } from "@feflow-ui/react"
 
 export default function () {
 	return (

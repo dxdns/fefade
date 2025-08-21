@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Button, Drawer, Window } from "@dxdns/feflow-react"
+import { Button, Drawer, Window } from "@feflow-ui/react"
 
 type PositionType = "top" | "left" | "right" | "bottom"
 

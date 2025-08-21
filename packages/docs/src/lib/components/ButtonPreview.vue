@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { Button } from "@dxdns/feflow-vue"
+	import { Button } from "@feflow-ui/vue"
 
 	const variants = ["outlined", "text", "contained"]
 	const colors = ["error", "success", "warning", "info", "primary"]

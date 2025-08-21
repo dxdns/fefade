@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, RangeInput } from "@dxdns/feflow-svelte"
+	import { Badge, RangeInput } from "@feflow-ui/svelte"
 
 	const homeIcon = `
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="red">

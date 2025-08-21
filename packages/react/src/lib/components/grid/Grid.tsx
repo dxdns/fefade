@@ -1,7 +1,7 @@
 import { CSSProperties, forwardRef, HTMLAttributes } from "react"
-import { classMapUtil, normalizeSizeUtil } from "@dxdns/feflow-core/utils"
-import type { GridType } from "@dxdns/feflow-core/types"
-import styles from "@dxdns/feflow-core/styles/Grid.module.css"
+import { classMapUtil, normalizeSizeUtil } from "@feflow-ui/core/utils"
+import type { GridType } from "@feflow-ui/core/types"
+import styles from "@feflow-ui/core/styles/Grid.module.css"
 
 interface Props extends HTMLAttributes<HTMLDivElement>, GridType {}
 

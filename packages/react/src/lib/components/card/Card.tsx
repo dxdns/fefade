@@ -1,14 +1,14 @@
-import type { CardType, HTMLAttrAnchor } from "@dxdns/feflow-core/types"
+import type { CardType, HTMLAttrAnchor } from "@feflow-ui/core/types"
 import {
 	classMapUtil,
 	getPropValueUtil,
 	handleClickUtil,
 	normalizeSizeUtil
-} from "@dxdns/feflow-core/utils"
+} from "@feflow-ui/core/utils"
 import { CSSProperties, forwardRef, HTMLAttributes } from "react"
 import { useAction } from "../../utils"
-import { glowOnHoverAction } from "@dxdns/feflow-core/actions"
-import styles from "@dxdns/feflow-core/styles/Card.module.css"
+import { glowOnHoverAction } from "@feflow-ui/core/actions"
+import styles from "@feflow-ui/core/styles/Card.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

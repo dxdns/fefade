@@ -1,14 +1,14 @@
 import { useState, useMemo, useEffect, type PropsWithChildren } from "react"
-import { Constants } from "@dxdns/feflow-core"
-import { providerUtil } from "@dxdns/feflow-core/utils"
+import { Constants } from "@feflow-ui/core"
+import { providerUtil } from "@feflow-ui/core/utils"
 import type {
 	ThemeColorType,
 	ThemeConfigType,
 	ThemeModeType
-} from "@dxdns/feflow-core/types"
+} from "@feflow-ui/core/types"
 import { ThemeConfigContext } from "../../contexts"
 // @ts-ignore
-import rawStyle from "@dxdns/feflow-core/styles/FeflowProvider.css?raw"
+import rawStyle from "@feflow-ui/core/styles/FeflowProvider.css?raw"
 
 type Props = PropsWithChildren & {
 	/** @deprecated Use `theme` instead */

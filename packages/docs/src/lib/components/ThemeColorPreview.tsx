@@ -4,7 +4,7 @@ import {
 	Card,
 	FeflowProvider,
 	themeConfig
-} from "@dxdns/feflow-react"
+} from "@feflow-ui/react"
 
 function ThemeColorPreview() {
 	const theme = themeConfig()

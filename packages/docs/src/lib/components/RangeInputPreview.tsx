@@ -1,4 +1,4 @@
-import { Badge, RangeInput } from "@dxdns/feflow-react"
+import { Badge, RangeInput } from "@feflow-ui/react"
 import { useState } from "react"
 
 export default function () {

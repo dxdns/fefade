@@ -1,5 +1,5 @@
-import type { ThemeColorType, ThemeModeType } from "@dxdns/feflow-core/types"
-import { Constants } from "@dxdns/feflow-core"
+import type { ThemeColorType, ThemeModeType } from "@feflow-ui/core/types"
+import { Constants } from "@feflow-ui/core"
 
 let data = $state<{
 	mode: ThemeModeType

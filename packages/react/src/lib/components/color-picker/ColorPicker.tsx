@@ -1,6 +1,6 @@
-import { classMapUtil } from "@dxdns/feflow-core/utils"
+import { classMapUtil } from "@feflow-ui/core/utils"
 import { forwardRef, InputHTMLAttributes } from "react"
-import styles from "@dxdns/feflow-core/styles/ColorPicker.module.css"
+import styles from "@feflow-ui/core/styles/ColorPicker.module.css"
 
 interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {}
 

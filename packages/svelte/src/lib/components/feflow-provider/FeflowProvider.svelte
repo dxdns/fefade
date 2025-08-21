@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount, type Snippet } from "svelte"
-	import { Constants } from "@dxdns/feflow-core"
-	import type { ThemeConfigType, ThemeModeType } from "@dxdns/feflow-core/types"
-	import { providerUtil } from "@dxdns/feflow-core/utils"
+	import { Constants } from "@feflow-ui/core"
+	import type { ThemeConfigType, ThemeModeType } from "@feflow-ui/core/types"
+	import { providerUtil } from "@feflow-ui/core/utils"
 	import { themeConfigState } from "../../states/index.js"
-	import rawStyle from "@dxdns/feflow-core/styles/FeflowProvider.css?raw"
+	import rawStyle from "@feflow-ui/core/styles/FeflowProvider.css?raw"
 
 	interface Props {
 		/** @deprecated Use `theme` instead */

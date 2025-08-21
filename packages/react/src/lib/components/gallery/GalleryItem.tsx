@@ -4,14 +4,14 @@ import type {
 	GalleryMediaType,
 	HTMLAttrAnchor,
 	ImageType
-} from "@dxdns/feflow-core/types"
+} from "@feflow-ui/core/types"
 import {
 	classMapUtil,
 	cssToObjectUtil,
 	handleClickUtil,
 	hasKeysUtil,
 	videoUtil
-} from "@dxdns/feflow-core/utils"
+} from "@feflow-ui/core/utils"
 import {
 	CSSProperties,
 	forwardRef,
@@ -22,7 +22,7 @@ import {
 	VideoHTMLAttributes
 } from "react"
 import { Image } from "../image"
-import styles from "@dxdns/feflow-core/styles/GalleryItem.module.css"
+import styles from "@feflow-ui/core/styles/GalleryItem.module.css"
 import { Video } from "../video"
 
 interface BaseProps

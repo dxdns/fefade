@@ -1,4 +1,4 @@
-import { Status, type VariantStatusType } from "@dxdns/feflow-react"
+import { Status, type VariantStatusType } from "@feflow-ui/react"
 
 export default function () {
 	const variants = ["pulse", "ping", "bounce"]

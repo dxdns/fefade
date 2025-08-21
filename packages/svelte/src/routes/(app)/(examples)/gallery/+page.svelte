@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Gallery, Modal } from "@/index.js"
-	import { videoUtil } from "@dxdns/feflow-core/utils"
+	import { videoUtil } from "@feflow-ui/core/utils"
 	import { onDestroy, tick } from "svelte"
 	import type { HTMLVideoAttributes } from "svelte/elements"
 

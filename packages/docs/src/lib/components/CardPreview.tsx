@@ -1,4 +1,4 @@
-import { Card } from "@dxdns/feflow-react"
+import { Card } from "@feflow-ui/react"
 
 export default function () {
 	const variants = ["contained", "outlined"]

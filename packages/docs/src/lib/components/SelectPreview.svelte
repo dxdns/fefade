@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Select } from "@dxdns/feflow-svelte"
+	import { Badge, Select } from "@feflow-ui/svelte"
 
 	let currentOption = $state("v2")
 </script>

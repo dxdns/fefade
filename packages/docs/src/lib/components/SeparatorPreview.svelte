@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Separator } from "@dxdns/feflow-svelte"
+	import { Separator } from "@feflow-ui/svelte"
 
 	const variants = ["dotted", "dashed", "solid"]
 	const sizes = ["xs", "sm", "md", "lg", "xl"]

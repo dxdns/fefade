@@ -3,12 +3,9 @@
 		actionUtil,
 		classMapUtil,
 		mergeStyleUtil
-	} from "@dxdns/feflow-core/utils"
-	import { hoverFollowerAction } from "@dxdns/feflow-core/actions"
-	import type {
-		ActionEntryType,
-		OrientationType
-	} from "@dxdns/feflow-core/types"
+	} from "@feflow-ui/core/utils"
+	import { hoverFollowerAction } from "@feflow-ui/core/actions"
+	import type { ActionEntryType, OrientationType } from "@feflow-ui/core/types"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {

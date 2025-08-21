@@ -26,10 +26,10 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w @dxdns/feflow-vue
+      - run: npm run build -w @feflow-ui/vue
 
       - run: cp README.md packages/vue
 
-      - run: npm publish -w @dxdns/feflow-vue
+      - run: npm publish -w @feflow-ui/vue
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
