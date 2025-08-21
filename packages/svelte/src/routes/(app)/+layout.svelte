@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Feflow UI + svelte</title>
+	<title>Feflow UI + Svelte</title>
 </svelte:head>
 
 <FeflowProvider {theme} defaultThemeMode="light">

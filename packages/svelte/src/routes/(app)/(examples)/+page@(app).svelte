@@ -8,7 +8,7 @@
 		target="_blank"
 		style="transform: translate(50%, 100%);"
 	>
-		<h1>feflow</h1>
+		<h1>Feflow UI</h1>
 	</Link>
 </div>
 

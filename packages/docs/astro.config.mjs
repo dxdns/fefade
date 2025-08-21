@@ -10,7 +10,7 @@ import vue from "@astrojs/vue"
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://feflow.dxdns.dev",
+	site: "https://feflow-ui.dxdns.dev",
 	integrations: [
 		starlight({
 			title: "Feflow UI",
