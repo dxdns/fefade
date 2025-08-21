@@ -5,7 +5,7 @@
 	margin: 0;
 }
 
-.avatarGroup>* {
+.avatarGroup :global([data-sMtW2xcC_eya7IzzGKsW_]) {
 	transition: transform 0.3s ease;
 	user-select: none;
 	border: 3px solid var(--ff-surface);
@@ -16,7 +16,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-	.avatarGroup>*:hover {
+	.avatarGroup :global([data-sMtW2xcC_eya7IzzGKsW_]):hover {
 		z-index: 1;
 		transform: translateY(-0.5rem);
 	}

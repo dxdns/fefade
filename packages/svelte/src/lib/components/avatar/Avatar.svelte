@@ -37,6 +37,7 @@
 		height && `height: ${height}`,
 		rest.style
 	)}
+	data-sMtW2xcC_eya7IzzGKsW_
 >
 	{#if !hasError && rest.src}
 		<img {...rest} onerror={handleError} />

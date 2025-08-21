@@ -27,7 +27,8 @@ export default forwardRef<HTMLDivElement, Props>(
 					[size, styles],
 					styles.avatar
 				)}
-				style={{ width, height }}
+				style={{ width, height, ...rest.style }}
+				data-sMtW2xcC_eya7IzzGKsW_
 			>
 				{!hasError && rest.src ? (
 					<img {...rest} onError={handleError} />

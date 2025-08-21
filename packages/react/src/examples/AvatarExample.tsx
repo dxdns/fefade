@@ -1,10 +1,16 @@
-import { Avatar } from "@/index"
+import { Avatar, Tooltip } from "@/index"
 
 export default function () {
 	return (
 		<Avatar.Group>
 			{["a", "b", "c", "d"].map((value) => (
-				<Avatar key={value} textFallback={value} size="lg" />
+				<Tooltip key={value} label={value}>
+					<Avatar
+						textFallback={value}
+						size="lg"
+						style={{ marginTop: "1.2rem" }}
+					/>
+				</Tooltip>
 			))}
 		</Avatar.Group>
 	)

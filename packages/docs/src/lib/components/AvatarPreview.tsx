@@ -1,4 +1,4 @@
-import { Avatar, Card, Status } from "@feflow-ui/react"
+import { Avatar, Card, Status, Tooltip } from "@feflow-ui/react"
 
 export default function () {
 	const avatarOn = () => (
@@ -54,6 +54,20 @@ export default function () {
 			<Avatar.Group>
 				{["a", "b", "c", "d"].map((value) => (
 					<Avatar key={value} textFallback={value} size="lg" />
+				))}
+			</Avatar.Group>
+
+			<br />
+
+			<Avatar.Group>
+				{["a", "b", "c", "d"].map((value) => (
+					<Tooltip key={value} label={value}>
+						<Avatar
+							textFallback={value}
+							size="lg"
+							style={{ marginTop: "1.2rem" }}
+						/>
+					</Tooltip>
 				))}
 			</Avatar.Group>
 		</>
