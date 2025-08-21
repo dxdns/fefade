@@ -44,7 +44,7 @@
 <Card>
 	<Carousel id="carousel-2" style="padding: 3rem 0;">
 		{#each Array.from(Array(5)) as _, index (index)}
-			<Carousel.Item href="https://dxdns.dev" target="_blank">
+			<Carousel.Item href="https://github.com/dxdns" target="_blank">
 				<h1 style="text-align: center;">
 					{index}
 				</h1>

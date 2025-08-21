@@ -14,7 +14,7 @@
 <br />
 <h1>with multiple childs</h1>
 <HoverFollower bgColor="red">
-	<Link href="https://dxdns.dev" target="_blank">
+	<Link href="https://github.com/dxdns" target="_blank">
 		<Card>
 			<div>
 				<h4>test</h4>
@@ -22,7 +22,7 @@
 			</div>
 		</Card>
 	</Link>
-	<Link href="https://dxdns.dev" target="_blank">
+	<Link href="https://github.com/dxdns" target="_blank">
 		<Card>
 			<div>
 				<h4>test</h4>

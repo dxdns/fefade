@@ -19,16 +19,16 @@ export default defineConfig({
 				Hero: "./src/lib/components/Hero.astro"
 			},
 			customCss: ["./src/styles/custom.css"],
-			favicon: "./src/assets/favicon.png",
+			favicon: "/favicon.png",
 			logo: {
-				src: "./src/assets/favicon.png",
+				src: "./public/favicon.png",
 				alt: "Feflow UI"
 			},
 			social: [
 				{
 					icon: "github",
 					label: "GitHub",
-					href: "https://github.com/dxdns/feflow"
+					href: "https://github.com/dxdns/feflow-ui"
 				}
 			],
 			sidebar: [

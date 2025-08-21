@@ -27,7 +27,7 @@
 <Button variant="contained">Contained</Button>
 <br />
 <br />
-<Button href="https://dxdns.dev" target="_blank">link</Button>
+<Button href="https://github.com/dxdns" target="_blank">link</Button>
 <br />
 <br />
 <Button roundedFull size="xl">a</Button>

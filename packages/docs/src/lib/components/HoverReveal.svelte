@@ -3,7 +3,7 @@
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">
-	<HoverReveal href="https://dxdns.dev" target="_blank">
+	<HoverReveal href="https://github.com/dxdns" target="_blank">
 		<Card>
 			<h1>test</h1>
 			<p>

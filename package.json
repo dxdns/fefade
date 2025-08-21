@@ -36,7 +36,7 @@
 	"bugs": {
 		"url": "https://github.com/dxdns/feflow-ui/issues"
 	},
-	"homepage": "https://github.com/dxdns/feflow#readme",
+	"homepage": "https://github.com/dxdns/feflow-ui#readme",
 	"devDependencies": {
 		"@types/glob": "^9.0.0",
 		"@types/node": "^22.14.1",

@@ -25,7 +25,7 @@
 			{{ variant }}
 		</Button>
 
-		<Button href="https://dxdns.dev" target="_blank">link</Button>
+		<Button href="https://github.com/dxdns" target="_blank">link</Button>
 
 		<Button
 			v-for="variant in variants"

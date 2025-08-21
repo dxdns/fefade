@@ -21,7 +21,7 @@ export default function () {
 					{variant}
 				</Button>
 			))}
-			<Button href="https://dxdns.dev" target="_blank">
+			<Button href="https://github.com/dxdns" target="_blank">
 				link
 			</Button>
 

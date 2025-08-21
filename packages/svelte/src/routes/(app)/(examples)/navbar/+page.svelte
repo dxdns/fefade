@@ -40,7 +40,7 @@
 			{/snippet}
 
 			{#snippet items()}
-				<Menu.Item href="https://dxdns.dev" target="_blank">test1</Menu.Item>
+				<Menu.Item href="https://github.com/dxdns" target="_blank">test1</Menu.Item>
 				<Separator />
 				<Menu.Item>test2</Menu.Item>
 				<Separator />

@@ -77,7 +77,7 @@
 	"
 >
 	{#each Array.from(Array(5)) as _, index (index)}
-		<Carousel.Item href="https://dxdns.dev" target="_blank">
+		<Carousel.Item href="https://github.com/dxdns" target="_blank">
 			<Card>
 				<h1 style="text-align: center;">
 					{index}

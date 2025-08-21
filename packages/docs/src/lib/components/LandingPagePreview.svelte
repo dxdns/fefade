@@ -345,7 +345,7 @@
 			justify-content: center;
 			"
 		>
-			<Link href="https://github.com/dxdns/feflow" target="_blank">
+			<Link href="https://github.com/dxdns/feflow-ui" target="_blank">
 				<GithubIcon />
 			</Link>
 			<Link href="#">

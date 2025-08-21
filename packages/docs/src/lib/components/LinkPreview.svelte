@@ -2,14 +2,14 @@
 	import { Link } from "@feflow-ui/svelte"
 </script>
 
-<Link href="https://dxdns.dev" target="_blank">
+<Link href="https://github.com/dxdns" target="_blank">
 	<h1>none</h1>
 </Link>
 <br />
-<Link href="https://dxdns.dev" hover="underlineNone">underline</Link>
+<Link href="https://github.com/dxdns" hover="underlineNone">underline</Link>
 <br />
 <br />
-<Link href="https://dxdns.dev">
+<Link href="https://github.com/dxdns">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		height="16px"
@@ -25,7 +25,7 @@
 </Link>
 <br />
 <br />
-<Link href="https://dxdns.dev" hover="left" target="_blank">
+<Link href="https://github.com/dxdns" hover="left" target="_blank">
 	<h1>left</h1>
 </Link>
 <br />
@@ -40,18 +40,18 @@
 <br />
 <p>
 	Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatibus
-	pariatur maiores cumque <Link href="https://dxdns.dev" hover="center">
+	pariatur maiores cumque <Link href="https://github.com/dxdns" hover="center">
 		<strong style="color: red;">obcaecati</strong>
 	</Link>, eum quod porro harum magni quisquam sunt nihil, eos modi officia
-	molestiae. Illum <Link href="https://dxdns.dev" hover="underlineNone">
+	molestiae. Illum <Link href="https://github.com/dxdns" hover="underlineNone">
 		minima
 	</Link> ad ducimus.
 </p>
 <br />
 <Link
 	class={({ isActive }) => (isActive ? "text-on-error" : "text-on-info")}
-	pathname="https://dxdns.dev"
-	href="https://dxdns.dev"
+	pathname="https://github.com/dxdns"
+	href="https://github.com/dxdns"
 	target="_blank"
 >
 	check active

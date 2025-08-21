@@ -1,7 +1,7 @@
 {
 	"name": "@feflow-ui/vue",
 	"version": "1.0.1",
-	"description": "feflow-ui: vue components ui",
+	"description": "Feflow UI Vue components",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {

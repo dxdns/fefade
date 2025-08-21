@@ -19,7 +19,7 @@
 	{#each variants as variant (variant)}
 		<Button variant={variant as any}>{variant}</Button>
 	{/each}
-	<Button href="https://dxdns.dev" target="_blank">link</Button>
+	<Button href="https://github.com/dxdns" target="_blank">link</Button>
 
 	{#each variants as variant (variant)}
 		<Button disabled variant={variant as any}>{variant} disabled</Button>
