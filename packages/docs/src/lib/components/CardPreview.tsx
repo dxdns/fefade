@@ -1,12 +1,18 @@
 import { Card } from "@feflow-ui/react"
+import { useState } from "react"
 
 export default function () {
-	const variants = ["contained", "outlined"]
+	const [borderWidth, setBorderWidth] = useState(1)
+	const variants = ["contained", "outlined"] as const
+
+	function handleClick() {
+		setBorderWidth((old) => (old += 4))
+	}
 
 	return (
 		<>
 			{variants.map((variant) => (
-				<Card key={variant} variant={variant as any}>
+				<Card key={variant} variant={variant}>
 					<h2>{variant}</h2>
 				</Card>
 			))}
@@ -21,10 +27,12 @@ export default function () {
 
 			<Card
 				animatedBorder={{
-					width: "2px",
+					width: `${borderWidth}px`,
 					primaryColor: "#FF007F",
 					secondaryColor: "#8000FF"
 				}}
+				style={{ cursor: "pointer", userSelect: "none" }}
+				onClick={handleClick}
 			>
 				<h2>animated border - custom colors</h2>
 			</Card>

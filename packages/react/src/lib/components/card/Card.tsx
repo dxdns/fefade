@@ -31,7 +31,9 @@ export default forwardRef<HTMLDivElement, Props>(
 		},
 		ref
 	) => {
-		const actionRef = useAction<HTMLDivElement>(glowOnHoverAction)
+		const actionRef = glowOnHover
+			? useAction<HTMLDivElement>(glowOnHoverAction)
+			: undefined
 
 		const borderStopOnHover = getPropValueUtil<
 			{ stopOnHover?: boolean },
@@ -66,7 +68,7 @@ export default forwardRef<HTMLDivElement, Props>(
 		}
 
 		return (
-			<div ref={glowOnHover ? actionRef : undefined}>
+			<div ref={actionRef}>
 				<div
 					{...rest}
 					ref={ref}

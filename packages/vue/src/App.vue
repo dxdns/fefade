@@ -1,10 +1,36 @@
 <script setup lang="ts">
-	import { Badge, Button, Spinner, themeConfig } from "./lib"
+	import { ref } from "vue"
+	import { Badge, Button, Card, Spinner, themeConfig } from "./lib"
 
 	const { mode, toggle } = themeConfig()
+	const borderWidth = ref(1)
+
+	function handleClick() {
+		borderWidth.value += 4
+	}
 </script>
 
 <template>
+	<br />
+	<br />
+	<Card
+		:animated-border="{
+			primaryColor: 'red',
+			secondaryColor: 'green',
+			width: `${borderWidth}px`
+		}"
+		style="cursor: pointer"
+		@click="handleClick"
+	>
+		<h1>test</h1>
+	</Card>
+	<br />
+	<br />
+	<Card :glow-on-hover="true">
+		<h1>glowOnHover</h1>
+	</Card>
+	<br />
+	<br />
 	<Badge>badge</Badge>
 	<br />
 	<br />

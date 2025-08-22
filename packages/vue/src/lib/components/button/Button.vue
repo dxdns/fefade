@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { computed, useAttrs, IntrinsicElementAttributes } from "vue"
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil, handleClickUtil } from "@feflow-ui/core/utils"
 	import type { ButtonType, HTMLAttrAnchor } from "@feflow-ui/core/types"
 	import styles from "@feflow-ui/core/styles/Button.module.css"
 	import { Spinner } from "../spinner"
@@ -36,19 +36,15 @@
 
 	const emit = defineEmits(["click"])
 
-	function handleClick(event: MouseEvent) {
-		if (download && href) {
-			const a = document.createElement("a")
-			a.href = href
-			a.download = download
-			document.body.appendChild(a)
-			a.click()
-			document.body.removeChild(a)
-		} else if (href) {
-			window.open(href, target)
-		} else {
-			emit("click", event)
-		}
+	function handleClick(e: any) {
+		handleClickUtil({
+			href,
+			download,
+			target,
+			onClick: () => {
+				emit("click", e)
+			}
+		})
 	}
 </script>
 

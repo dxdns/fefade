@@ -1,0 +1,110 @@
+<script setup lang="ts">
+	import type { CardType, HTMLAttrAnchor } from "@feflow-ui/core/types"
+	import {
+		classMapUtil,
+		getPropValueUtil,
+		handleClickUtil,
+		normalizeSizeUtil
+	} from "@feflow-ui/core/utils"
+	import {
+		computed,
+		useAttrs,
+		IntrinsicElementAttributes,
+		CSSProperties
+	} from "vue"
+	import { glowOnHoverAction } from "@feflow-ui/core/actions"
+	import styles from "@feflow-ui/core/styles/Card.module.css"
+	import { useAction } from "@/utils"
+
+	interface Props extends CardType, HTMLAttrAnchor {}
+
+	const {
+		isTranslucent = false,
+		glowOnHover = false,
+		animatedBorder = false,
+		variant = "outlined",
+		href,
+		target = "_self",
+		download
+	} = defineProps<Props>()
+
+	const attrs = useAttrs() as IntrinsicElementAttributes["div"]
+	const emit = defineEmits(["click"])
+
+	const borderStopOnHover = getPropValueUtil<
+		{ stopOnHover?: boolean },
+		"stopOnHover"
+	>(animatedBorder, "stopOnHover", false)
+
+	const borderWidth = computed(() =>
+		getPropValueUtil<{ width?: string }, "width">(
+			animatedBorder,
+			"width",
+			"1px"
+		)
+	)
+
+	const borderPrimaryColor = computed(() =>
+		getPropValueUtil<{ primaryColor?: string }, "primaryColor">(
+			animatedBorder,
+			"primaryColor",
+			"var(--ff-on-surface)"
+		)
+	)
+
+	const borderSecondaryColor = computed(() =>
+		getPropValueUtil<{ secondaryColor?: string }, "secondaryColor">(
+			animatedBorder,
+			"secondaryColor",
+			"var(--ff-border)"
+		)
+	)
+
+	const computedClass = computed(() =>
+		classMapUtil(
+			attrs.class,
+			[attrs.class, styles],
+			[variant, styles],
+			styles.card,
+			{
+				[styles.isTranslucent]: isTranslucent,
+				[styles.animatedBorder]: Boolean(animatedBorder),
+				[styles.stopOnHover]: Boolean(borderStopOnHover)
+			}
+		)
+	)
+
+	const cardStyle = computed(() => ({
+		"--border-width": normalizeSizeUtil(borderWidth.value!),
+		"--primary": borderPrimaryColor.value,
+		"--secondary": borderSecondaryColor.value,
+		...(attrs.style as CSSProperties)
+	}))
+
+	function handleClick(e: any) {
+		handleClickUtil({
+			href,
+			download,
+			target,
+			onClick: () => {
+				emit("click", e)
+			}
+		})
+	}
+
+	const actionRef = glowOnHover ? useAction(glowOnHoverAction) : undefined
+</script>
+
+<template>
+	<div ref="actionRef">
+		<div
+			v-bind="attrs"
+			role="button"
+			:class="computedClass"
+			:style="cardStyle"
+			@click="handleClick"
+		>
+			<slot />
+		</div>
+	</div>
+</template>

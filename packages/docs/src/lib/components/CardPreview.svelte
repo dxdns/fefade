@@ -1,11 +1,16 @@
 <script lang="ts">
 	import { Card } from "@feflow-ui/svelte"
 
-	const variants = ["contained", "outlined"]
+	let borderWidth = $state(1)
+	const variants = ["contained", "outlined"] as const
+
+	function handleClick() {
+		borderWidth += 4
+	}
 </script>
 
 {#each variants as variant (variant)}
-	<Card variant={variant as any}>
+	<Card {variant}>
 		<h2>{variant}</h2>
 	</Card>
 {/each}
@@ -20,10 +25,12 @@
 
 <Card
 	animatedBorder={{
-		width: "2px",
+		width: `${borderWidth}px`,
 		primaryColor: "#FF007F",
 		secondaryColor: "#8000FF"
 	}}
+	style="cursor: pointer; user-select: none;"
+	onclick={handleClick}
 >
 	<h2>animated border - custom colors</h2>
 </Card>
