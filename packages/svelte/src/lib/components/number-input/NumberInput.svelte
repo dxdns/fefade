@@ -1,19 +1,18 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { classMapUtil } from "@feflow-ui/core/utils"
-	import styles from "./NumberInput.module.css"
 	import Button from "../button/index.js"
-	import type { VariantType } from "@feflow-ui/core/types"
+	import type { NumberInputType } from "@feflow-ui/core/types"
 	import { onMount } from "svelte"
+	import { fly } from "svelte/transition"
+	import styles from "@feflow-ui/core/styles/NumberInput.module.css"
 
 	interface Props
-		extends Omit<Omit<Omit<HTMLInputAttributes, "step">, "value">, "type"> {
-		variant?: VariantType
-		value: number
-		onChange?: (value: number) => void
-		autoFocus?: boolean
-		step?: number
-	}
+		extends Omit<
+				Omit<Omit<Omit<HTMLInputAttributes, "step">, "value">, "type">,
+				"size"
+			>,
+			NumberInputType {}
 
 	let {
 		class: className = "",
@@ -22,16 +21,19 @@
 		onChange,
 		autoFocus = false,
 		step,
+		size = "md",
 		...rest
 	}: Props = $props()
 
-	let el: HTMLInputElement | undefined
+	let el: HTMLInputElement | undefined = $state()
+	let internalValue = $state(0)
 
 	function increment() {
 		if (rest.disabled || (rest.max !== undefined && value >= Number(rest.max)))
 			return
 		value = step ? value + step : value + 1
 		onChange?.(value)
+		internalValue++
 	}
 
 	function decrement() {
@@ -39,6 +41,7 @@
 			return
 		value = step ? value - step : value - 1
 		onChange?.(value)
+		internalValue++
 	}
 
 	function handleKeydown(
@@ -72,35 +75,43 @@
 		className,
 		[className, styles],
 		[variant, styles],
+		[size, styles],
 		styles.numberInput
 	)}
 	onclick={handleFocus}
 	onkeydown={() => {}}
 >
-	<div class={styles.numberControl}>
-		<Button
-			{variant}
-			disabled={value === rest.min || rest.disabled}
-			onclick={decrement}
-			style="height: 100%;"
-		>
-			-
-		</Button>
-		<Button
-			{variant}
-			disabled={value === rest.max || rest.disabled}
-			onclick={increment}
-			style="height: 100%;"
-		>
-			+
-		</Button>
+	<Button
+		aria-label="Decrement"
+		{variant}
+		{size}
+		disabled={value === rest.min || rest.disabled}
+		onclick={decrement}
+	>
+		-
+	</Button>
+
+	<div class={styles.wrapper}>
+		{#key internalValue}
+			<input
+				{...rest}
+				class={styles.input}
+				bind:this={el}
+				type="number"
+				{value}
+				onkeydown={handleKeydown}
+				in:fly={{ y: 1 * -15, duration: 200 }}
+				out:fly={{ y: 1 * 15, duration: 100 }}
+			/>
+		{/key}
 	</div>
-	<input
-		{...rest}
-		bind:this={el}
-		id={rest.id ?? "numberInput"}
-		type="number"
-		{value}
-		onkeydown={handleKeydown}
-	/>
+	<Button
+		aria-label="Increment"
+		{variant}
+		{size}
+		disabled={value === rest.max || rest.disabled}
+		onclick={increment}
+	>
+		+
+	</Button>
 </div>
