@@ -1,13 +1,12 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Kbd } from "@feflow-ui/svelte"
-
-	const sizes = ["xs", "sm", "md", "lg", "xl"]
 </script>
 
-{#each sizes as size (size)}
+{#each Constants.sizes as size (size)}
 	<div>
-		<Kbd size={size as any}>Ctrl</Kbd>
-		<Kbd size={size as any}>K</Kbd>
+		<Kbd {size}>Ctrl</Kbd>
+		<Kbd {size}>K</Kbd>
 	</div>
 	<br />
 	<br />

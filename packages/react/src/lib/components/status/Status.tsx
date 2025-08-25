@@ -1,3 +1,4 @@
+import { Constants } from "@feflow-ui/core"
 import { CSSProperties, forwardRef, HTMLAttributes } from "react"
 import type { StatusType } from "@feflow-ui/core/types"
 import { classMapUtil, normalizeSizeUtil } from "@feflow-ui/core/utils"
@@ -10,7 +11,7 @@ export default forwardRef<HTMLDivElement, Props>(
 		{
 			className = "",
 			variant = "none",
-			color = "var(--ff-bg)",
+			color = Constants.themeColorVar.bg,
 			size = 30,
 			...rest
 		},

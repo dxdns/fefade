@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Badge, Select } from "@/index.js"
 
 	let currentOption = $state("v2")
@@ -25,8 +26,8 @@
 <br />
 <br />
 
-{#each ["contained", "outlined", "text"] as variant (variant)}
-	<Select variant={variant as any}>
+{#each Constants.variants as variant (variant)}
+	<Select {variant}>
 		<option>{variant}</option>
 	</Select>
 	<br />

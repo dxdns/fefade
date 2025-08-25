@@ -1,9 +1,7 @@
+import { Constants } from "@feflow-ui/core"
 import { Spinner } from "@feflow-ui/react"
 
 export default function () {
-	const colors = ["primary", "success", "warning", "error", "info"] as const
-	const sizes = ["xs", "sm", "md", "lg", "xl"] as const
-
 	return (
 		<div
 			style={{
@@ -13,7 +11,7 @@ export default function () {
 				gap: "1.5rem"
 			}}
 		>
-			{colors.map((color) => (
+			{Constants.statusColors.map((color) => (
 				<div
 					key={`color-${color}`}
 					style={{
@@ -27,7 +25,7 @@ export default function () {
 				</div>
 			))}
 
-			{sizes.map((size) => (
+			{Constants.sizes.map((size) => (
 				<div
 					key={`size-${size}`}
 					style={{

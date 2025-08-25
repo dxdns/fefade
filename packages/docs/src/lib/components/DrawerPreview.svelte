@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { Button, Drawer, Window } from "@feflow-ui/svelte"
 
-	type PositionType = "top" | "left" | "right" | "bottom"
-
 	let drawerStates = $state({
 		top: false,
 		left: false,
@@ -10,13 +8,15 @@
 		bottom: false
 	})
 
+	type DrawerPosition = keyof typeof drawerStates
+
 	let isOpenFixed = $state(false)
 
-	function handleToggle(position: PositionType) {
+	function handleToggle(position: DrawerPosition) {
 		drawerStates[position] = !drawerStates[position]
 	}
 
-	function handleClose(position: PositionType) {
+	function handleClose(position: DrawerPosition) {
 		drawerStates[position] = false
 	}
 </script>

@@ -1,8 +1,6 @@
 <script setup lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Spinner } from "@feflow-ui/vue"
-
-	const colors = ["primary", "success", "warning", "error", "info"] as const
-	const sizes = ["xs", "sm", "md", "lg", "xl"] as const
 </script>
 
 <template>
@@ -10,7 +8,7 @@
 		style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 1.5rem"
 	>
 		<div
-			v-for="color in colors"
+			v-for="color in Constants.statusColors"
 			:key="`color-${color}`"
 			style="display: flex; flex-direction: column; align-items: center"
 		>
@@ -19,7 +17,7 @@
 		</div>
 
 		<div
-			v-for="size in sizes"
+			v-for="size in Constants.sizes"
 			:key="`size-${size}`"
 			style="display: flex; flex-direction: column; align-items: center"
 		>

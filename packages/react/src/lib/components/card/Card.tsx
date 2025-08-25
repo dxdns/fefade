@@ -1,3 +1,4 @@
+import { Constants } from "@feflow-ui/core"
 import type { CardType, HTMLAttrAnchor } from "@feflow-ui/core/types"
 import {
 	classMapUtil,
@@ -49,12 +50,12 @@ export default forwardRef<HTMLDivElement, Props>(
 		const borderPrimaryColor = getPropValueUtil<
 			{ primaryColor?: string },
 			"primaryColor"
-		>(animatedBorder, "primaryColor", "var(--ff-on-surface)")
+		>(animatedBorder, "primaryColor", Constants.themeColorVar.onSurface)
 
 		const borderSecondaryColor = getPropValueUtil<
 			{ secondaryColor?: string },
 			"secondaryColor"
-		>(animatedBorder, "secondaryColor", "var(--ff-border)")
+		>(animatedBorder, "secondaryColor", Constants.themeColorVar.border)
 
 		function handleClick(e: any) {
 			handleClickUtil({

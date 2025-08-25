@@ -1,12 +1,12 @@
 import { Window } from "@feflow-ui/react"
 
 export default function () {
-	const variants = ["contained", "outlined"]
+	const windowVariants = ["contained", "outlined"] as const
 
 	return (
 		<>
-			{variants.map((variant) => (
-				<Window key={variant} variant={variant as any}>
+			{windowVariants.map((variant) => (
+				<Window key={variant} variant={variant}>
 					<h2>{variant}</h2>
 				</Window>
 			))}

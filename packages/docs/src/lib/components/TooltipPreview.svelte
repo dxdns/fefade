@@ -1,7 +1,6 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Tooltip } from "@feflow-ui/svelte"
-
-	const positions = ["top", "left", "right", "bottom"] as const
 </script>
 
 <div
@@ -13,7 +12,7 @@
 	gap: 1rem;
 	"
 >
-	{#each positions as position (position)}
+	{#each Constants.positions as position (position)}
 		<Tooltip label={position} {position}>
 			<p>{position}</p>
 		</Tooltip>

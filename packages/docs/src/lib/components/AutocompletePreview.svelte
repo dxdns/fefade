@@ -1,17 +1,16 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Autocomplete, Link } from "@feflow-ui/svelte"
 
 	const data = Array.from(Array(30)).map((_, i) => ({
 		id: i,
 		label: `test ${i}`
 	}))
-
-	const variants = ["text", "contained", "outlined"]
 </script>
 
-{#each variants as variant (variant)}
+{#each Constants.variants as variant (variant)}
 	<Autocomplete
-		variant={variant as any}
+		{variant}
 		{data}
 		filter={(item) => `${item.label}`}
 		placeholder="test"

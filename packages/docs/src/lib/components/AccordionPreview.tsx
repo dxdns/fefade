@@ -1,3 +1,4 @@
+import { Constants } from "@feflow-ui/core"
 import { Accordion } from "@feflow-ui/react"
 
 export default function () {
@@ -9,11 +10,11 @@ export default function () {
 				gap: "1rem"
 			}}
 		>
-			{["contained", "outlined", "text", undefined].map((variant, i) => (
+			{Constants.variants.map((variant, i) => (
 				<Accordion
 					id={`sec${i}`}
 					key={`sec${i}`}
-					variant={variant as any}
+					variant={variant}
 					label={variant ?? "no variant"}
 				>
 					<div style={{ lineHeight: 1.5 }}>

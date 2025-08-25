@@ -1,14 +1,11 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Accordion } from "@feflow-ui/svelte"
 </script>
 
 <div style="display: flex; flex-direction: column; gap: 1rem;">
-	{#each ["contained", "outlined", "text", undefined] as variant, i (variant)}
-		<Accordion
-			id="sec{i}"
-			variant={variant as any}
-			label={variant ?? "no variant"}
-		>
+	{#each Constants.variants as variant, i (variant)}
+		<Accordion id="sec{i}" {variant} label={variant ?? "no variant"}>
 			<div style="line-height: 1.5;">
 				<h1>test {i}</h1>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste recusandae

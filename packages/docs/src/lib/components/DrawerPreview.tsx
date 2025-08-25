@@ -1,28 +1,26 @@
 import { useState } from "react"
 import { Button, Drawer, Window } from "@feflow-ui/react"
 
-type PositionType = "top" | "left" | "right" | "bottom"
-
 export default function () {
-	const [drawerStates, setDrawerStates] = useState<
-		Record<PositionType, boolean>
-	>({
+	const [drawerStates, setDrawerStates] = useState({
 		top: false,
 		left: false,
 		right: false,
 		bottom: false
 	})
 
+	type DrawerPosition = keyof typeof drawerStates
+
 	const [isOpenFixed, setIsOpenFixed] = useState(false)
 
-	function handleToggle(position: PositionType) {
+	function handleToggle(position: DrawerPosition) {
 		setDrawerStates((prev) => ({
 			...prev,
 			[position]: !prev[position]
 		}))
 	}
 
-	function handleClose(position: PositionType) {
+	function handleClose(position: DrawerPosition) {
 		setDrawerStates((prev) => ({
 			...prev,
 			[position]: false
@@ -59,7 +57,7 @@ export default function () {
 			<br />
 			<br />
 			<Window style={{ minHeight: "500px", position: "relative" }}>
-				{(["top", "left", "right", "bottom"] as PositionType[]).map((pos) => (
+				{(["top", "left", "right", "bottom"] as DrawerPosition[]).map((pos) => (
 					<div key={pos}>
 						<Drawer.Overlay
 							isOpen={drawerStates[pos]}

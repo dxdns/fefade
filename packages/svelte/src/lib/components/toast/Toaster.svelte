@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PositionType } from "@feflow-ui/core/types"
+	import { Constants } from "@feflow-ui/core"
 	import { toastState } from "../../states/index.js"
 	import Toast from "./Toast.svelte"
 	import { fade } from "svelte/transition"
@@ -18,22 +18,14 @@
 
 	const toast = toastState()
 	const maxToasts = fullWidth ? 1 : 3
-	const positions = [
-		"top-left",
-		"top-right",
-		"bottom-left",
-		"bottom-right",
-		"top-center",
-		"bottom-center"
-	] as const satisfies PositionType[]
 </script>
 
-{#each positions as position (position)}
-	{@const pos = position.split("-")[0]}
+{#each Constants.alignments as alignment (alignment)}
+	{@const pos = alignment.split("-")[0]}
 	{@const isPositionTop = pos === "top"}
 	{@const grouped = toast
 		.getAll()
-		.filter((t) => t.position === position)
+		.filter((t) => t.position === alignment)
 		.slice(-maxToasts)
 		.reverse()}
 	<div
@@ -42,7 +34,7 @@
 			className,
 			[styles, className],
 			styles.toaster,
-			[position, styles],
+			[alignment, styles],
 			[pos, styles],
 			{
 				[styles.fullWidth]: fullWidth

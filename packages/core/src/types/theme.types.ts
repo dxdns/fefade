@@ -2,7 +2,18 @@ import type { BreakpointThemeConfigType } from "./breakpoint.types.js"
 
 export type ThemeModeType = "dark" | "light"
 
-export type ThemeColorType = {
+export type ThemeStatusColorType = {
+	success: string
+	onSuccess: string
+	error: string
+	onError: string
+	warning: string
+	onWarning: string
+	info: string
+	onInfo: string
+}
+
+export interface ThemeColorType extends ThemeStatusColorType {
 	primary: string
 	onPrimary: string
 	secondary: string
@@ -17,14 +28,6 @@ export type ThemeColorType = {
 	onDisabled: string
 	skeleton: string
 	onSkeleton: string
-	success: string
-	onSuccess: string
-	error: string
-	onError: string
-	warning: string
-	onWarning: string
-	info: string
-	onInfo: string
 	overlay: string
 	shadow: string
 }

@@ -1,8 +1,6 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Button } from "@feflow-ui/svelte"
-
-	const variants = ["outlined", "text", "contained"]
-	const colors = ["error", "success", "warning", "info", "primary"]
 </script>
 
 <div
@@ -12,21 +10,21 @@
     gap: 1rem;
     align-items: flex-end;
     padding: 1rem;
-"
+	"
 >
 	<Button isLoading></Button>
 
-	{#each variants as variant (variant)}
-		<Button variant={variant as any}>{variant}</Button>
+	{#each Constants.variants as variant (variant)}
+		<Button {variant}>{variant}</Button>
 	{/each}
 	<Button href="https://github.com/dxdns" target="_blank">link</Button>
 
-	{#each variants as variant (variant)}
-		<Button disabled variant={variant as any}>{variant} disabled</Button>
+	{#each Constants.variants as variant (variant)}
+		<Button disabled {variant}>{variant} disabled</Button>
 	{/each}
 
 	<div style="display:flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;">
-		{#each colors as color (color)}
+		{#each Constants.statusColors as color (color)}
 			<Button class="bg-{color} text-on-{color}">{color}</Button>
 		{/each}
 	</div>

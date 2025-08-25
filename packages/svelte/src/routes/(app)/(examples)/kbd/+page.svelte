@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { Kbd } from "@/index.js"
+
+	const sizes = ["xs", "sm", "md", "lg", "xl"] as const
 </script>
 
-{#each ["xs", "sm", "md", "lg", "xl"] as size (size)}
+{#each sizes as size (size)}
 	<div>
-		<Kbd size={size as any}>Ctrl</Kbd>
-		<Kbd size={size as any}>K</Kbd>
+		<Kbd {size}>Ctrl</Kbd>
+		<Kbd {size}>K</Kbd>
 	</div>
 	<br />
 	<br />

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import type { SwitchType } from "@feflow-ui/core/types"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { classMapUtil } from "@feflow-ui/core/utils"
@@ -17,8 +18,8 @@
 		size = "sm",
 		label,
 		indicatorColor = {
-			unchecked: "var(--ff-on-surface)",
-			checked: "var(--ff-on-primary)"
+			unchecked: Constants.themeColorVar.onSurface,
+			checked: Constants.themeColorVar.onPrimary
 		},
 		checked = $bindable(false),
 		children,
@@ -29,7 +30,7 @@
 		getPropValueUtil<{ unchecked?: string }, "unchecked">(
 			indicatorColor,
 			"unchecked",
-			"var(--ff-on-surface)"
+			Constants.themeColorVar.onSurface
 		)
 	)
 
@@ -37,7 +38,7 @@
 		getPropValueUtil<{ checked?: string }, "checked">(
 			indicatorColor,
 			"checked",
-			"var(--ff-on-primary)"
+			Constants.themeColorVar.onPrimary
 		)
 	)
 </script>

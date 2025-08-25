@@ -4,7 +4,7 @@
 
 	const borderWidth = ref(1)
 
-	const variants = ["contained", "outlined"] as const
+	const cardVariants = ["contained", "outlined"] as const
 
 	function handleClick() {
 		borderWidth.value += 4
@@ -12,7 +12,7 @@
 </script>
 
 <template>
-	<Card v-for="variant in variants" :key="variant" :variant="variant">
+	<Card v-for="variant in cardVariants" :key="variant" :variant="variant">
 		<h2>{{ variant }}</h2>
 	</Card>
 

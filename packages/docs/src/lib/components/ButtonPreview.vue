@@ -1,8 +1,8 @@
 <script setup lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Button } from "@feflow-ui/vue"
 
-	const variants = ["outlined", "text", "contained"]
-	const colors = ["error", "success", "warning", "info", "primary"]
+	const colors = ["error", "success", "warning", "info", "primary"] as const
 </script>
 
 <template>
@@ -18,9 +18,9 @@
 		<Button :is-loading="true" />
 
 		<Button
-			v-for="variant in variants"
+			v-for="variant in Constants.variants"
 			:key="variant"
-			:variant="variant as any"
+			:variant="variant"
 		>
 			{{ variant }}
 		</Button>
@@ -28,9 +28,9 @@
 		<Button href="https://github.com/dxdns" target="_blank">link</Button>
 
 		<Button
-			v-for="variant in variants"
+			v-for="variant in Constants.variants"
 			:key="`disabled-${variant}`"
-			:variant="variant as any"
+			:variant="variant"
 			disabled
 		>
 			{{ variant }}

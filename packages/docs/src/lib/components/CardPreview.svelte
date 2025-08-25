@@ -2,14 +2,14 @@
 	import { Card } from "@feflow-ui/svelte"
 
 	let borderWidth = $state(1)
-	const variants = ["contained", "outlined"] as const
+	const cardVariants = ["contained", "outlined"] as const
 
 	function handleClick() {
 		borderWidth += 4
 	}
 </script>
 
-{#each variants as variant (variant)}
+{#each cardVariants as variant (variant)}
 	<Card {variant}>
 		<h2>{variant}</h2>
 	</Card>

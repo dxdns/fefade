@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import type { HTMLAttributes } from "svelte/elements"
 	import { activeLineAction } from "@feflow-ui/core/actions"
 	import HoverFollower from "../hover-follower/index.js"
@@ -34,7 +35,7 @@
 	const lineColor = getPropValueUtil<{ color?: string }, "color">(
 		lineStyle,
 		"color",
-		"var(--ff-on-surface)"
+		Constants.themeColorVar.onSurface
 	)
 	const lineHeight = getPropValueUtil<{ height?: string }, "height">(
 		lineStyle,

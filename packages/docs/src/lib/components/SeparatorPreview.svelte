@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Separator } from "@feflow-ui/svelte"
 
-	const variants = ["dotted", "dashed", "solid"]
-	const sizes = ["xs", "sm", "md", "lg", "xl"]
+	const separatorVariants = ["dotted", "dashed", "solid"] as const
 </script>
 
 <div
@@ -14,18 +14,18 @@
     gap: 1rem;
     "
 >
-	{#each sizes as size, i (i)}
+	{#each Constants.sizes as size, i (i)}
 		<Separator
-			size={size as any}
+			{size}
 			variant={i === 0 ? "solid" : i % 2 ? "dashed" : "dotted"}
 		/>
 	{/each}
 
-	{#each variants as variant, i (i)}
+	{#each separatorVariants as variant, i (i)}
 		<Separator
 			height="3rem"
 			orientation="vertical"
-			variant={variant as any}
+			{variant}
 			size={i === 0 ? "md" : i % 2 ? "lg" : "xl"}
 		/>
 	{/each}

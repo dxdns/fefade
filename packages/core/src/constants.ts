@@ -1,8 +1,12 @@
 import type {
 	BreakpointType,
+	KebabType,
+	AlignmentType,
 	ThemeColorType,
-	ThemeModeType
+	ThemeModeType,
+	ThemeStatusColorType
 } from "./types/index.js"
+import toKebabCaseUtil from "./utils/toKebabCaseUtil.js"
 
 export const APP_NAME = "feflow-ui"
 export const APP_NAME_ACRONYM = "ff"
@@ -19,7 +23,7 @@ export const themeModeSelectors = {
 	dark: `[${THEME_ATTR}='dark']`
 }
 
-const statusColors = {
+const themeStatusColors: Record<ThemeModeType, ThemeStatusColorType> = {
 	light: {
 		success: "#22c55e",
 		onSuccess: "#124a28",
@@ -60,7 +64,7 @@ export const themeColors: Record<ThemeModeType, ThemeColorType> = {
 		onSkeleton: "#f9f9f9",
 		overlay: "#00000066",
 		shadow: "#0000001A",
-		...statusColors.light
+		...themeStatusColors.light
 	},
 	dark: {
 		primary: "#e5e5e5",
@@ -79,8 +83,17 @@ export const themeColors: Record<ThemeModeType, ThemeColorType> = {
 		onSkeleton: "#737373",
 		overlay: "#00000099",
 		shadow: "#00000080",
-		...statusColors.dark
+		...themeStatusColors.dark
 	}
+}
+
+export const themeColorVar = Object.fromEntries(
+	Object.keys(themeColors.light).map((key) => [
+		key,
+		`var(${CSS_VAR_PREFIX}-${toKebabCaseUtil(key)})`
+	])
+) as {
+	[K in keyof ThemeColorType]: `var(${typeof CSS_VAR_PREFIX}-${KebabType<K & string>})`
 }
 
 export const breakpoints: Record<BreakpointType | string, string> = {
@@ -90,3 +103,14 @@ export const breakpoints: Record<BreakpointType | string, string> = {
 	xl: "1440px",
 	"2xl": "2560px"
 }
+
+export const variants = ["contained", "outlined", "text"] as const
+export const sizes = ["xs", "sm", "md", "lg", "xl"] as const
+export const statusColors = ["success", "warning", "error", "info"] as const
+export const statusVariants = ["pulse", "ping", "bounce"] as const
+export const verticalPositions = ["top", "bottom"] as const
+export const horizontalPositions = ["left", "right", "center"] as const
+export const positions = [...verticalPositions, ...horizontalPositions] as const
+export const alignments: AlignmentType[] = verticalPositions.flatMap((v) =>
+	horizontalPositions.map((h) => `${v}-${h}` as AlignmentType)
+)

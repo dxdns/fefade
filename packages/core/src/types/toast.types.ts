@@ -1,10 +1,10 @@
-import type { PositionType, StatusColorType } from "./index.js"
+import type { AlignmentType, StatusColorType } from "./index.js"
 
 export interface ToastType {
 	id: string
 	message: string
 	color?: StatusColorType
 	duration?: number
-	position?: PositionType
+	position?: AlignmentType
 	isClosable?: boolean
 }

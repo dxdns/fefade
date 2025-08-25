@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Badge, RangeInput } from "@feflow-ui/svelte"
 
 	const homeIcon = `
@@ -24,8 +25,8 @@
 
 	<RangeInput bind:value={inputValue} />
 
-	{#each ["xs", "sm", "md", "lg", "xl"] as size (size)}
-		<RangeInput size={size as any} />
+	{#each Constants.sizes as size (size)}
+		<RangeInput {size} />
 		<br />
 	{/each}
 </div>

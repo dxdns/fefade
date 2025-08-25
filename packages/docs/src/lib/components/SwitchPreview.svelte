@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Switch, themeConfig } from "@feflow-ui/svelte"
 
 	const { colors } = $derived(themeConfig())
-	const sizes = ["xs", "sm", "md", "lg", "xl"]
 </script>
 
 <div
@@ -55,7 +55,7 @@
 		<span style={`${style} color: ${colors.error};`}>OFF</span>
 	</Switch>
 
-	{#each sizes as size, i (i)}
+	{#each Constants.sizes as size, i (i)}
 		<Switch
 			disabled={i === 0}
 			checked={i === 1}
@@ -66,7 +66,7 @@
 			style={i !== 0
 				? `background: ${i % 2 ? colors.error : colors.success}`
 				: undefined}
-			size={size as any}
+			{size}
 			label={size}
 		/>
 	{/each}

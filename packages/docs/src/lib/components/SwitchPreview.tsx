@@ -1,7 +1,7 @@
 import { Switch } from "@feflow-ui/react"
 
 export default function () {
-	const sizes = ["xs", "sm", "md", "lg", "xl"]
+	const sizes = ["xs", "sm", "md", "lg", "xl"] as const
 
 	return (
 		<div style={{ maxWidth: "300px", margin: "3rem auto" }}>
@@ -38,7 +38,7 @@ export default function () {
 						key={i}
 						disabled={i === 0}
 						defaultChecked={i === 1}
-						size={size as any}
+						size={size}
 						label={size}
 					/>
 				))}

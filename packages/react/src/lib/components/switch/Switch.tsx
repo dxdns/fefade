@@ -1,3 +1,4 @@
+import { Constants } from "@feflow-ui/core"
 import type { SwitchType } from "@feflow-ui/core/types"
 import { classMapUtil, getPropValueUtil } from "@feflow-ui/core/utils"
 import {
@@ -21,8 +22,8 @@ export default forwardRef<HTMLInputElement, Props>(
 			size = "sm",
 			label,
 			indicatorColor = {
-				unchecked: "var(--ff-on-surface)",
-				checked: "var(--ff-on-primary)"
+				unchecked: Constants.themeColorVar.onSurface,
+				checked: Constants.themeColorVar.onPrimary
 			},
 			children,
 			...rest
@@ -32,12 +33,12 @@ export default forwardRef<HTMLInputElement, Props>(
 		const uncheckedColor = getPropValueUtil<
 			{ unchecked?: string },
 			"unchecked"
-		>(indicatorColor, "unchecked", "var(--ff-on-surface)")
+		>(indicatorColor, "unchecked", Constants.themeColorVar.onSurface)
 
 		const checkedColor = getPropValueUtil<{ checked?: string }, "checked">(
 			indicatorColor,
 			"checked",
-			"var(--ff-on-primary)"
+			Constants.themeColorVar.onPrimary
 		)
 
 		return (

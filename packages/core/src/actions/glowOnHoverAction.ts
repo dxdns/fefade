@@ -1,3 +1,5 @@
+import * as Constants from "../constants.js"
+
 export default function glowOnHoverAction(node: HTMLElement) {
 	const firstChild = node.firstElementChild as HTMLElement | null
 	let childComputedStyle: CSSStyleDeclaration | null
@@ -18,7 +20,7 @@ export default function glowOnHoverAction(node: HTMLElement) {
 			computedBg === "none"
 
 		if (hasTransparentBg) {
-			firstChild.style.backgroundColor = "var(--ff-bg)"
+			firstChild.style.backgroundColor = Constants.themeColorVar.bg
 		}
 	}
 

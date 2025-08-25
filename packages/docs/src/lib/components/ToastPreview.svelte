@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Button, toast, Toaster } from "@feflow-ui/svelte"
 
-	const colors = ["error", "success", "warning"]
 	const positions = [
 		"top-left",
 		"bottom-left",
@@ -9,18 +9,18 @@
 		"bottom-right",
 		"bottom-center",
 		"top-center"
-	]
+	] as const
 </script>
 
 <Toaster />
 
 <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-	{#each colors as color (color)}
+	{#each Constants.statusColors as color (color)}
 		<Button
 			onclick={() => {
 				toast({
 					message: color,
-					color: color as any
+					color
 				})
 			}}
 		>
@@ -33,7 +33,7 @@
 			onclick={() => {
 				toast({
 					message: position,
-					position: position as any
+					position
 				})
 			}}
 		>

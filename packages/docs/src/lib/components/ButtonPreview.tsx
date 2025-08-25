@@ -1,9 +1,7 @@
+import { Constants } from "@feflow-ui/core"
 import { Button } from "@feflow-ui/react"
 
 export default function () {
-	const variants = ["outlined", "text", "contained"]
-	const colors = ["error", "success", "warning", "info", "primary"]
-
 	return (
 		<div
 			style={{
@@ -16,8 +14,8 @@ export default function () {
 		>
 			<Button isLoading></Button>
 
-			{variants.map((variant) => (
-				<Button key={variant} variant={variant as any}>
+			{Constants.variants.map((variant) => (
+				<Button key={variant} variant={variant}>
 					{variant}
 				</Button>
 			))}
@@ -25,8 +23,8 @@ export default function () {
 				link
 			</Button>
 
-			{variants.map((variant) => (
-				<Button key={variant} disabled variant={variant as any}>
+			{Constants.variants.map((variant) => (
+				<Button key={variant} disabled variant={variant}>
 					{variant}
 				</Button>
 			))}
@@ -39,7 +37,7 @@ export default function () {
 					flexWrap: "wrap"
 				}}
 			>
-				{colors.map((color) => (
+				{Constants.statusColors.map((color) => (
 					<Button key={color} className={`bg-${color} text-on-${color}`}>
 						{color}
 					</Button>

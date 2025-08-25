@@ -1,9 +1,8 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Badge } from "@feflow-ui/svelte"
 
-	const variants = ["outlined", "contained"] as const
-	const colors = ["error", "success", "warning", "info", "primary"] as const
-	const sizes = ["xs", "sm", "md", "lg", "xl"] as const
+	const badgeVariants = ["outlined", "contained"] as const
 </script>
 
 <div
@@ -14,17 +13,17 @@
     gap: 1rem;
     "
 >
-	{#each colors as color (color)}
+	{#each Constants.statusColors as color (color)}
 		<Badge class="bg-{color} text-on-{color}" size="md">
 			{color}
 		</Badge>
 	{/each}
-	{#each variants as variant (variant)}
+	{#each badgeVariants as variant (variant)}
 		<Badge {variant} size="md">
 			{variant}
 		</Badge>
 	{/each}
-	{#each sizes as size (size)}
+	{#each Constants.sizes as size (size)}
 		<Badge roundedFull {size}>
 			{size}
 		</Badge>

@@ -1,12 +1,11 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { SearchInput } from "@feflow-ui/svelte"
-
-	const variants = ["contained", "text", "outlined"]
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">
-	{#each variants as variant (variant)}
-		<SearchInput placeholder={variant} variant={variant as any} />
+	{#each Constants.variants as variant (variant)}
+		<SearchInput placeholder={variant} {variant} />
 		<br />
 		<br />
 	{/each}

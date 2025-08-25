@@ -1,3 +1,4 @@
+import { Constants } from "@feflow-ui/core"
 import { Badge, RangeInput } from "@feflow-ui/react"
 import { useState } from "react"
 
@@ -30,8 +31,8 @@ export default function () {
 			</div>
 			<RangeInput value={inputValue} />
 
-			{["xs", "sm", "md", "lg", "xl"].map((size) => (
-				<RangeInput key={size} size={size as any} />
+			{Constants.sizes.map((size) => (
+				<RangeInput key={size} size={size} />
 			))}
 		</div>
 	)

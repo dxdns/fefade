@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import type { SVGAttributes } from "svelte/elements"
 	import styles from "./ProgressCircle.module.css"
 	import { classMapUtil } from "@feflow-ui/core/utils"
@@ -12,7 +13,7 @@
 	let {
 		class: className = "",
 		value,
-		color = "var(--ff-primary)",
+		color = Constants.themeColorVar.primary,
 		size = "sm",
 		children,
 		...rest
@@ -45,7 +46,7 @@
 			cx="46"
 			cy="46"
 			fill="transparent"
-			stroke="var(--ff-border)"
+			stroke={Constants.themeColorVar.border}
 			stroke-dasharray="0"
 		>
 		</circle>

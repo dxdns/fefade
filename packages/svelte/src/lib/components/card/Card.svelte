@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import type { HTMLAttributes } from "svelte/elements"
 	import {
 		classMapUtil,
@@ -46,7 +47,7 @@
 		getPropValueUtil<{ primaryColor?: string }, "primaryColor">(
 			animatedBorder,
 			"primaryColor",
-			"var(--ff-on-surface)"
+			Constants.themeColorVar.onSurface
 		)
 	)
 
@@ -54,7 +55,7 @@
 		getPropValueUtil<{ secondaryColor?: string }, "secondaryColor">(
 			animatedBorder,
 			"secondaryColor",
-			"var(--ff-border)"
+			Constants.themeColorVar.border
 		)
 	)
 </script>

@@ -1,9 +1,8 @@
+import { Constants } from "@feflow-ui/core"
 import { Badge } from "@feflow-ui/react"
 
 export default function () {
-	const variants = ["outlined", "contained"] as const
-	const colors = ["error", "success", "warning", "info", "primary"] as const
-	const sizes = ["xs", "sm", "md", "lg", "xl"] as const
+	const badgeVariants = ["outlined", "contained"] as const
 
 	return (
 		<div
@@ -14,7 +13,7 @@ export default function () {
 				gap: "1rem"
 			}}
 		>
-			{colors.map((color) => (
+			{Constants.statusColors.map((color) => (
 				<Badge
 					key={`color-${color}`}
 					className={`bg-${color} text-on-${color}`}
@@ -24,13 +23,13 @@ export default function () {
 				</Badge>
 			))}
 
-			{variants.map((variant) => (
+			{badgeVariants.map((variant) => (
 				<Badge key={`variant-${variant}`} variant={variant} size="md">
 					{variant}
 				</Badge>
 			))}
 
-			{sizes.map((size) => (
+			{Constants.sizes.map((size) => (
 				<Badge key={`size-${size}`} size={size} roundedFull>
 					{size}
 				</Badge>

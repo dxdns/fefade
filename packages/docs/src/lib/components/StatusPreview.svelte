@@ -1,16 +1,13 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import { Status, themeConfig } from "@feflow-ui/svelte"
 
 	const { colors } = $derived(themeConfig())
-	const variants = ["pulse", "ping", "bounce"]
 </script>
 
 <div style="max-width: 300px; margin: 0 auto; line-height: 3;">
-	{#each variants as variant, i (variant)}
-		<Status
-			variant={variant as any}
-			color={i % 2 ? colors.success : colors.error}
-		/>
+	{#each Constants.statusVariants as variant, i (variant)}
+		<Status {variant} color={i % 2 ? colors.success : colors.error} />
 		<br />
 	{/each}
 

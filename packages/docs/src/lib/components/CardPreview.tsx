@@ -3,7 +3,7 @@ import { useState } from "react"
 
 export default function () {
 	const [borderWidth, setBorderWidth] = useState(1)
-	const variants = ["contained", "outlined"] as const
+	const cardVariants = ["contained", "outlined"] as const
 
 	function handleClick() {
 		setBorderWidth((old) => (old += 4))
@@ -11,7 +11,7 @@ export default function () {
 
 	return (
 		<>
-			{variants.map((variant) => (
+			{cardVariants.map((variant) => (
 				<Card key={variant} variant={variant}>
 					<h2>{variant}</h2>
 				</Card>

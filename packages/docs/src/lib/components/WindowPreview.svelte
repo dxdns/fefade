@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { Window } from "@feflow-ui/svelte"
 
-	const variants = ["contained", "outlined"]
+	const windowVariants = ["contained", "outlined"] as const
 </script>
 
-{#each variants as variant (variant)}
-	<Window variant={variant as any}>
+{#each windowVariants as variant (variant)}
+	<Window {variant}>
 		<h2>{variant}</h2>
 	</Window>
 {/each}

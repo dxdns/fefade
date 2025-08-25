@@ -1,9 +1,7 @@
+import { Constants } from "@feflow-ui/core"
 import { TextField } from "@feflow-ui/react"
 
 export default function () {
-	const sizes = ["xs", "sm", "md", "lg", "xl"]
-	const variants = ["contained", "text", "outlined"]
-
 	return (
 		<div
 			style={{
@@ -11,13 +9,13 @@ export default function () {
 				margin: "0 auto"
 			}}
 		>
-			{variants.map((variant, i) => {
-				const size = sizes[i + 1] as any
+			{Constants.variants.map((variant, i) => {
+				const size = Constants.sizes[i + 1]
 				return (
 					<div key={i}>
 						<TextField
 							label={`${variant} (${size})`}
-							variant={variant as any}
+							variant={variant}
 							size={size}
 						/>
 						<br />

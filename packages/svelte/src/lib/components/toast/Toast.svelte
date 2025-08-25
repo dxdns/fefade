@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import {
 		CloseIcon,
 		ErrorIcon,
@@ -43,7 +44,9 @@
 >
 	{#if Icon}
 		<Icon
-			fill="var(--ff-on-{color})"
+			fill={Constants.themeColorVar[
+				`on${color}` as keyof typeof Constants.themeColorVar
+			]}
 			height="20px"
 			width="20px"
 			style="max-width: max-content;"

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+	import { Constants } from "@feflow-ui/core"
 	import type { CardType, HTMLAttrAnchor } from "@feflow-ui/core/types"
 	import {
 		classMapUtil,
@@ -48,7 +49,7 @@
 		getPropValueUtil<{ primaryColor?: string }, "primaryColor">(
 			animatedBorder,
 			"primaryColor",
-			"var(--ff-on-surface)"
+			Constants.themeColorVar.onSurface
 		)
 	)
 
@@ -56,7 +57,7 @@
 		getPropValueUtil<{ secondaryColor?: string }, "secondaryColor">(
 			animatedBorder,
 			"secondaryColor",
-			"var(--ff-border)"
+			Constants.themeColorVar.border
 		)
 	)
 
