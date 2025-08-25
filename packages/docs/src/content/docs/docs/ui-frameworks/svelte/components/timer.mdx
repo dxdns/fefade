@@ -1,0 +1,11 @@
+---
+title: Timer
+description: The Timer component provides a simple way to display and manage countdowns or elapsed time. It supports both numeric durations and JavaScript timestamps, automatically formatting time into hours, minutes, and seconds.
+---
+
+import TimerPreview from "@/components/TimerPreview.svelte"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+<PreviewTabs component="TimerPreview">
+	<TimerPreview client:load />
+</PreviewTabs>
