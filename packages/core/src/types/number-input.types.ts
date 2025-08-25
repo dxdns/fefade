@@ -3,7 +3,7 @@ import { VariantType } from "./variant.types.js"
 
 export type NumberInputType = {
 	variant?: VariantType
-	value: number
+	value?: number
 	onChange?: (value: number) => void
 	autoFocus?: boolean
 	step?: number

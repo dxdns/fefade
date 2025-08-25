@@ -11,7 +11,6 @@
 	} from "@/index.js"
 
 	let filesData: File[] = $state([])
-	let quantity = $state(0)
 
 	async function handleChange(files: File[]) {
 		filesData = files
@@ -68,13 +67,7 @@
 	<SearchInput variant="outlined" placeholder="test" />
 	<br />
 	<br />
-	<NumberInput
-		readonly
-		variant="outlined"
-		bind:value={quantity}
-		min={0}
-		max={10}
-	/>
+	<NumberInput variant="outlined" min={0} max={10} />
 	<br />
 	<br />
 	<FileInput multiple accept="image/*,.pdf" onDropEvent={handleChange}>

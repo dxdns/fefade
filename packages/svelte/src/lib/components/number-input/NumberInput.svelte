@@ -26,7 +26,6 @@
 	}: Props = $props()
 
 	let el: HTMLInputElement | undefined = $state()
-	let internalValue = $state(0)
 	let delay = $state(1)
 
 	function increment() {
@@ -34,7 +33,6 @@
 			return
 		value = step ? value + step : value + 1
 		onChange?.(value)
-		internalValue++
 		delay = 1
 	}
 
@@ -43,7 +41,6 @@
 			return
 		value = step ? value - step : value - 1
 		onChange?.(value)
-		internalValue++
 		delay = -1
 	}
 
@@ -98,7 +95,7 @@
 	</Button>
 
 	<div class={styles.wrapper}>
-		{#key internalValue}
+		{#key value}
 			<input
 				{...rest}
 				class={styles.input}
