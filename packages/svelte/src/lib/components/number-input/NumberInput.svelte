@@ -67,6 +67,18 @@
 		}
 	}
 
+	function handleWheel(
+		e: WheelEvent & {
+			currentTarget: EventTarget & HTMLInputElement
+		}
+	) {
+		if (e.deltaY > 0) {
+			decrement()
+		} else if (e.deltaY < 0) {
+			increment()
+		}
+	}
+
 	onMount(() => {
 		if (autoFocus) handleFocus()
 		value = rest.min !== undefined ? Number(rest.min) : value
@@ -105,6 +117,7 @@
 				onkeydown={handleKeydown}
 				in:fly={{ y: delay * -15, duration: 200 }}
 				out:fly={{ y: delay * 15, duration: 100 }}
+				onwheel={handleWheel}
 			/>
 		{/key}
 	</div>
