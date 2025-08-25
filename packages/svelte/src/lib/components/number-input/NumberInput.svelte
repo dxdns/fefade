@@ -3,7 +3,7 @@
 	import { classMapUtil } from "@feflow-ui/core/utils"
 	import Button from "../button/index.js"
 	import type { NumberInputType } from "@feflow-ui/core/types"
-	import { onMount } from "svelte"
+	import { onMount, tick } from "svelte"
 	import { fly } from "svelte/transition"
 	import styles from "@feflow-ui/core/styles/NumberInput.module.css"
 
@@ -27,6 +27,7 @@
 
 	let el: HTMLInputElement | undefined = $state()
 	let internalValue = $state(0)
+	let delay = $state(1)
 
 	function increment() {
 		if (rest.disabled || (rest.max !== undefined && value >= Number(rest.max)))
@@ -34,6 +35,7 @@
 		value = step ? value + step : value + 1
 		onChange?.(value)
 		internalValue++
+		delay = 1
 	}
 
 	function decrement() {
@@ -42,9 +44,10 @@
 		value = step ? value - step : value - 1
 		onChange?.(value)
 		internalValue++
+		delay = -1
 	}
 
-	function handleKeydown(
+	async function handleKeydown(
 		e: KeyboardEvent & {
 			currentTarget: EventTarget & HTMLInputElement
 		}
@@ -56,10 +59,15 @@
 			e.preventDefault()
 			decrement()
 		}
+
+		await tick()
+		handleFocus()
 	}
 
 	function handleFocus() {
-		if (el && !rest.readonly) el.focus()
+		if (el && !rest.readonly) {
+			el.focus()
+		}
 	}
 
 	onMount(() => {
@@ -78,8 +86,6 @@
 		[size, styles],
 		styles.numberInput
 	)}
-	onclick={handleFocus}
-	onkeydown={() => {}}
 >
 	<Button
 		aria-label="Decrement"
@@ -100,8 +106,8 @@
 				type="number"
 				{value}
 				onkeydown={handleKeydown}
-				in:fly={{ y: 1 * -15, duration: 200 }}
-				out:fly={{ y: 1 * 15, duration: 100 }}
+				in:fly={{ y: delay * -15, duration: 200 }}
+				out:fly={{ y: delay * 15, duration: 100 }}
 			/>
 		{/key}
 	</div>
