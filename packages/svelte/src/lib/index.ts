@@ -50,6 +50,7 @@ export { default as Navbar } from "./components/navbar/index.js"
 export { default as Gallery } from "./components/gallery/index.js"
 export { default as Timeline } from "./components/timeline/index.js"
 export { default as Code } from "./components/code/index.js"
+export { default as Phone } from "./components/phone/index.js"
 
 export * from "./components/password-input/index.js"
 export * from "./components/search-input/index.js"
