@@ -1,4 +1,4 @@
-import { Checkbox } from "@feflow-ui/react"
+import { Checkbox } from "@navnex-kit/react"
 
 export default function () {
 	return (

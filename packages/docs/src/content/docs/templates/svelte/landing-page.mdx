@@ -1,12 +1,19 @@
 ---
-title: Landing Page
-description: Landing Page template demo example
+title: Landing Page Free Svelte Template
+description: Landing Page Free Svelte Template demo example
 template: splash
 tableOfContents: false
 ---
 
 import LandingPagePreview from "@/components/LandingPagePreview.svelte"
-import DownloadBar from "@/components/DownloadBar.astro"
+import DownloadComponent from "@/components/DownloadComponent.astro"
+import { Card } from "@navnex-kit/svelte"
 
-<DownloadBar component="LandingPagePreview" />
-<LandingPagePreview client:load />
+<Card>
+	<div style="display: flex; justify-content: flex-end;">
+		<DownloadComponent component="LandingPagePreview">
+			Download Free
+		</DownloadComponent>
+	</div>
+	<LandingPagePreview client:load />
+</Card>

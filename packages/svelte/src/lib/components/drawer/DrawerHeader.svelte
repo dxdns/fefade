@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil } from "@navnex-kit/core/utils"
 	import { CloseIcon } from "../../icons/index.js"
 	import Button from "../button/index.js"
-	import styles from "@feflow-ui/core/styles/DrawerHeader.module.css"
+	import styles from "@navnex-kit/core/styles/DrawerHeader.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		handleClose?: () => void

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil } from "@navnex-kit/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
-	import styles from "@feflow-ui/core/styles/DrawerContent.module.css"
+	import styles from "@navnex-kit/core/styles/DrawerContent.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
 

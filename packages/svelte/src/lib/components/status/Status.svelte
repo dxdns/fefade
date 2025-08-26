@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
+	import { Constants } from "@navnex-kit/core"
 	import {
 		classMapUtil,
 		mergeStyleUtil,
 		normalizeSizeUtil
-	} from "@feflow-ui/core/utils"
+	} from "@navnex-kit/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { StatusType } from "@feflow-ui/core/types"
-	import styles from "@feflow-ui/core/styles/Status.module.css"
+	import type { StatusType } from "@navnex-kit/core/types"
+	import styles from "@navnex-kit/core/styles/Status.module.css"
 
 	interface Props
 		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

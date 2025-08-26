@@ -1,10 +1,10 @@
 <script setup lang="ts">
-	import { FeflowProvider } from "@feflow-ui/vue"
+	import { NavnexProvider } from "@navnex-kit/vue"
 	import ThemeColorPreview from "./ThemeColorPreview.vue"
 </script>
 
 <template>
-	<FeflowProvider>
+	<NavnexProvider>
 		<ThemeColorPreview />
-	</FeflowProvider>
+	</NavnexProvider>
 </template>

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil } from "@navnex-kit/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { inputDropAction } from "@feflow-ui/core/actions"
-	import styles from "@feflow-ui/core/styles/FileInput.module.css"
+	import { inputDropAction } from "@navnex-kit/core/actions"
+	import styles from "@navnex-kit/core/styles/FileInput.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "type"> {
 		onDropEvent?: (files: File[]) => void

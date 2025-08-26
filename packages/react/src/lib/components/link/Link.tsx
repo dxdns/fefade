@@ -1,5 +1,5 @@
-import type { LinkType } from "@feflow-ui/core/types"
-import { classMapUtil } from "@feflow-ui/core/utils"
+import type { LinkType } from "@navnex-kit/core/types"
+import { classMapUtil } from "@navnex-kit/core/utils"
 import {
 	ComponentPropsWithoutRef,
 	ElementType,
@@ -8,7 +8,7 @@ import {
 	PropsWithChildren,
 	Ref
 } from "react"
-import styles from "@feflow-ui/core/styles/Link.module.css"
+import styles from "@navnex-kit/core/styles/Link.module.css"
 
 type AsProp<C extends ElementType> = {
 	as?: C

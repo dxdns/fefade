@@ -4,14 +4,14 @@ import type {
 	GalleryMediaType,
 	HTMLAttrAnchor,
 	ImageType
-} from "@feflow-ui/core/types"
+} from "@navnex-kit/core/types"
 import {
 	classMapUtil,
 	cssToObjectUtil,
 	handleClickUtil,
 	hasKeysUtil,
 	videoUtil
-} from "@feflow-ui/core/utils"
+} from "@navnex-kit/core/utils"
 import {
 	CSSProperties,
 	forwardRef,
@@ -22,7 +22,7 @@ import {
 	VideoHTMLAttributes
 } from "react"
 import { Image } from "../image"
-import styles from "@feflow-ui/core/styles/GalleryItem.module.css"
+import styles from "@navnex-kit/core/styles/GalleryItem.module.css"
 import { Video } from "../video"
 
 interface BaseProps

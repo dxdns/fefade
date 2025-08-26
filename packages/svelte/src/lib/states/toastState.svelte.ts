@@ -1,5 +1,5 @@
-import { Constants } from "@feflow-ui/core"
-import type { ToastType } from "@feflow-ui/core/types"
+import { Constants } from "@navnex-kit/core"
+import type { ToastType } from "@navnex-kit/core/types"
 
 type ToastInputType = Omit<Partial<ToastType>, "id">
 

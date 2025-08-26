@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Button } from "@feflow-ui/svelte"
+	import { Constants } from "@navnex-kit/core"
+	import { Button } from "@navnex-kit/svelte"
 </script>
 
 <div

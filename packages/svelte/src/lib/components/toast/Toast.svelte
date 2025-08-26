@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
+	import { Constants } from "@navnex-kit/core"
 	import {
 		CloseIcon,
 		ErrorIcon,
 		InfoIcon,
 		WarningIcon
 	} from "../../icons/index.js"
-	import type { StatusColorType, ToastType } from "@feflow-ui/core/types"
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import type { StatusColorType, ToastType } from "@navnex-kit/core/types"
+	import { classMapUtil } from "@navnex-kit/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 	import Button from "../button/index.js"
 

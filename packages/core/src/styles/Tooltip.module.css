@@ -1,7 +1,7 @@
 .tooltip {
 	--arrow-size: 5px;
-	--arrow-color: var(--ff-surface);
-	--bg-color: var(--ff-surface);
+	--arrow-color: var(--nn-surface);
+	--bg-color: var(--nn-surface);
 	position: relative;
 	z-index: 10;
 	margin: 0;

@@ -3,7 +3,7 @@ name: Release Svelte
 on:
   push:
     tags:
-      - "ff-svelte-v*.*.*"
+      - "svelte-v*.*.*"
     paths:
       - "packages/svelte/**"
 
@@ -26,10 +26,10 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w @feflow-ui/svelte
+      - run: npm run build -w @navnex-kit/svelte
 
       - run: cp README.md packages/svelte
 
-      - run: npm publish -w @feflow-ui/svelte
+      - run: npm publish -w @navnex-kit/svelte
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

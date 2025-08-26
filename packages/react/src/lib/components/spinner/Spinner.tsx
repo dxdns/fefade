@@ -1,7 +1,7 @@
-import type { SpinnerType } from "@feflow-ui/core/types"
+import type { SpinnerType } from "@navnex-kit/core/types"
 import { forwardRef, HTMLAttributes } from "react"
-import { classMapUtil } from "@feflow-ui/core/utils"
-import styles from "@feflow-ui/core/styles/Spinner.module.css"
+import { classMapUtil } from "@navnex-kit/core/utils"
+import styles from "@navnex-kit/core/styles/Spinner.module.css"
 
 interface Props extends HTMLAttributes<HTMLSpanElement>, SpinnerType {}
 

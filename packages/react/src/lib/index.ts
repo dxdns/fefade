@@ -1,13 +1,13 @@
 /**
  *  @license MIT
- *  feflow
- *  https://feflow-ui.dxdns.dev
+ *  navnex
+ *  https://kit.navnex.com
  */
 
-export { default as FeflowProvider } from "./components/feflow-provider/index.js"
+export { default as NavnexProvider } from "./components/navnex-provider/index.js"
 
 export { themeConfigUtil as themeConfig } from "./utils/index.js"
-export { createTheme } from "@feflow-ui/core/utils"
+export { createTheme } from "@navnex-kit/core/utils"
 
 export { default as BottomSheet } from "./components/bottom-sheet/index.js"
 export { default as Code } from "./components/code/index.js"

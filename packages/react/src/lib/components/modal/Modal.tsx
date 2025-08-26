@@ -1,9 +1,9 @@
-import type { ModalType } from "@feflow-ui/core/types"
-import { classMapUtil } from "@feflow-ui/core/utils"
+import type { ModalType } from "@navnex-kit/core/types"
+import { classMapUtil } from "@navnex-kit/core/utils"
 import { forwardRef, HTMLAttributes, useEffect, useRef, useState } from "react"
 import { Card } from "../card"
-import styles from "@feflow-ui/core/styles/Modal.module.css"
-import animationStyle from "@feflow-ui/core/styles/Animation.module.css"
+import styles from "@navnex-kit/core/styles/Modal.module.css"
+import animationStyle from "@navnex-kit/core/styles/Animation.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

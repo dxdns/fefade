@@ -1,11 +1,11 @@
 import { createApp, h } from "vue"
 import App from "./App.vue"
-import { createTheme, FeflowProvider } from "./lib"
+import { createTheme, NavnexProvider } from "./lib"
 
 const app = createApp({
 	render() {
 		return h(
-			FeflowProvider,
+			NavnexProvider,
 			{ theme: createTheme({ colors: { light: { bg: "orange" } } }) },
 			{
 				default: () => h(App)

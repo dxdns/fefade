@@ -1,17 +1,17 @@
 {
-	"name": "@feflow-ui/vue",
-	"version": "1.0.2",
-	"description": "Feflow UI Vue components",
+	"name": "@navnex-kit/vue",
+	"version": "1.0.0",
+	"description": "navnex-kit Vue components",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"homepage": "https://feflow-ui.dxdns.dev",
+	"homepage": "https://kit.navnex.com",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/feflow-ui.git"
+		"url": "git+https://github.com/dxdns/navnex-kit.git"
 	},
 	"type": "module",
 	"main": "dist/index.js",
@@ -27,20 +27,20 @@
 	},
 	"peerDependencies": {
 		"vite": "^6.2.3",
-		"@feflow-ui/core": "^1.0.2"
+		"@navnex-kit/core": "^1.0.0"
 	},
 	"devDependencies": {
 		"vue": "^3.5.17",
 		"@vitejs/plugin-vue": "^6.0.0",
 		"@vue/tsconfig": "^0.7.0",
 		"vue-tsc": "^2.2.12",
-		"@feflow-ui/core": "*"
+		"@navnex-kit/core": "*"
 	},
 	"keywords": [
 		"vue",
 		"vue-ui",
 		"ui",
-		"feflow-ui",
+		"navnex-kit",
 		"components",
 		"ui-components",
 		"vue-pkg",

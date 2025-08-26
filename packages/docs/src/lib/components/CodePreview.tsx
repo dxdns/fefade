@@ -1,4 +1,4 @@
-import { Code, Window } from "@feflow-ui/react"
+import { Code, Window } from "@navnex-kit/react"
 
 export default function () {
 	const data = `

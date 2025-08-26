@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Gallery, Modal } from "@feflow-ui/svelte"
+	import { Gallery, Modal } from "@navnex-kit/svelte"
 	import { onDestroy, tick } from "svelte"
 	import type { HTMLVideoAttributes } from "svelte/elements"
-	import { videoUtil } from "@feflow-ui/core/utils"
+	import { videoUtil } from "@navnex-kit/core/utils"
 
 	let isOpen = $state(false)
 	let elImg: HTMLImageElement | undefined

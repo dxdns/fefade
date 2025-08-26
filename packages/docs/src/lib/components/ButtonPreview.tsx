@@ -1,5 +1,5 @@
-import { Constants } from "@feflow-ui/core"
-import { Button } from "@feflow-ui/react"
+import { Constants } from "@navnex-kit/core"
+import { Button } from "@navnex-kit/react"
 
 export default function () {
 	return (

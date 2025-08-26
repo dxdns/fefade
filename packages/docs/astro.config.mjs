@@ -3,17 +3,15 @@ import { defineConfig } from "astro/config"
 import starlight from "@astrojs/starlight"
 import svelte from "@astrojs/svelte"
 import path from "path"
-
 import react from "@astrojs/react"
-
 import vue from "@astrojs/vue"
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://feflow-ui.dxdns.dev",
+	site: "https://kit.navnex.com",
 	integrations: [
 		starlight({
-			title: "Feflow UI",
+			title: "navnex-kit",
 			components: {
 				PageFrame: "./src/lib/layouts/RootLayout.astro",
 				Hero: "./src/lib/components/Hero.astro",
@@ -23,13 +21,14 @@ export default defineConfig({
 			favicon: "/favicon.png",
 			logo: {
 				src: "./public/favicon.png",
-				alt: "Feflow UI"
+				alt: "navnex-kit",
+				replacesTitle: true
 			},
 			social: [
 				{
 					icon: "github",
 					label: "GitHub",
-					href: "https://github.com/dxdns/feflow-ui"
+					href: "https://github.com/dxdns/navnex-kit"
 				}
 			],
 			sidebar: [

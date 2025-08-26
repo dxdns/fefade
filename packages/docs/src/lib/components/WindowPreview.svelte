@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Window } from "@feflow-ui/svelte"
+	import { Window } from "@navnex-kit/svelte"
 
 	const windowVariants = ["contained", "outlined"] as const
 </script>

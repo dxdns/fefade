@@ -12,11 +12,11 @@ import Default from "@astrojs/starlight/components/Hero.astro"
 
 <style>
 	:global([data-theme="light"]) {
-		--ff-border-translucent: rgba(229, 229, 229, 0.4);
+		--nn-border-translucent: rgba(229, 229, 229, 0.4);
 	}
 
 	:global([data-theme="dark"]) {
-		--ff-border-translucent: rgba(255, 255, 255, 0.03);
+		--nn-border-translucent: rgba(255, 255, 255, 0.03);
 	}
 
 	:global(.content-panel) {
@@ -29,7 +29,7 @@ import Default from "@astrojs/starlight/components/Hero.astro"
 		background-image: linear-gradient(
 			90deg,
 			rgba(255, 72, 0, 0.8),
-			var(--ff-on-surface)
+			var(--nn-on-surface)
 		);
 	}
 
@@ -44,10 +44,10 @@ import Default from "@astrojs/starlight/components/Hero.astro"
 		overflow: hidden;
 		-webkit-mask-image: linear-gradient(
 			to bottom,
-			var(--ff-bg) 80%,
+			var(--nn-bg) 80%,
 			transparent 100%
 		);
-		mask-image: linear-gradient(to bottom, var(--ff-bg) 80%, transparent 100%);
+		mask-image: linear-gradient(to bottom, var(--nn-bg) 80%, transparent 100%);
 	}
 
 	.gradient-sphere {
@@ -120,12 +120,12 @@ import Default from "@astrojs/starlight/components/Hero.astro"
 		background-image:
 			linear-gradient(
 				to right,
-				var(--ff-border-translucent) 1px,
+				var(--nn-border-translucent) 1px,
 				transparent 1px
 			),
 			linear-gradient(
 				to bottom,
-				var(--ff-border-translucent) 1px,
+				var(--nn-border-translucent) 1px,
 				transparent 1px
 			);
 		z-index: 2;

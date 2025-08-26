@@ -2,9 +2,9 @@ import {
 	Badge,
 	Button,
 	Card,
-	FeflowProvider,
+	NavnexProvider,
 	themeConfig
-} from "@feflow-ui/react"
+} from "@navnex-kit/react"
 
 function ThemeColorPreview() {
 	const theme = themeConfig()
@@ -60,8 +60,8 @@ function ThemeColorPreview() {
 
 export default function () {
 	return (
-		<FeflowProvider>
+		<NavnexProvider>
 			<ThemeColorPreview />
-		</FeflowProvider>
+		</NavnexProvider>
 	)
 }

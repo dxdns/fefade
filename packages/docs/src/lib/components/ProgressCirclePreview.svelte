@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ProgressCircle, themeConfig } from "@feflow-ui/svelte"
+	import { ProgressCircle, themeConfig } from "@navnex-kit/svelte"
 
 	const { colors } = $derived(themeConfig())
 

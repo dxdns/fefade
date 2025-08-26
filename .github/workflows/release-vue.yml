@@ -3,7 +3,7 @@ name: Release Vue
 on:
   push:
     tags:
-      - "ff-vue-v*.*.*"
+      - "vue-v*.*.*"
     paths:
       - "packages/vue/**"
 
@@ -26,10 +26,10 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w @feflow-ui/vue
+      - run: npm run build -w @navnex-kit/vue
 
       - run: cp README.md packages/vue
 
-      - run: npm publish -w @feflow-ui/vue
+      - run: npm publish -w @navnex-kit/vue
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

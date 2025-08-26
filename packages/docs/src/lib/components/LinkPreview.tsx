@@ -1,4 +1,4 @@
-import { Link } from "@feflow-ui/react"
+import { Link } from "@navnex-kit/react"
 
 export default function () {
 	return (

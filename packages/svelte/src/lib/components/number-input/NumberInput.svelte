@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil } from "@navnex-kit/core/utils"
 	import Button from "../button/index.js"
-	import type { NumberInputType } from "@feflow-ui/core/types"
+	import type { NumberInputType } from "@navnex-kit/core/types"
 	import { onMount, tick } from "svelte"
 	import { fly } from "svelte/transition"
-	import styles from "@feflow-ui/core/styles/NumberInput.module.css"
+	import styles from "@navnex-kit/core/styles/NumberInput.module.css"
 
 	interface Props
 		extends Omit<

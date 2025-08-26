@@ -3,7 +3,7 @@
 		HTMLAttributeAnchorTarget,
 		HTMLAttributes
 	} from "svelte/elements"
-	import { classMapUtil, normalizeSizeUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil, normalizeSizeUtil } from "@navnex-kit/core/utils"
 	import type { Snippet } from "svelte"
 	import styles from "./HoverReveal.module.css"
 

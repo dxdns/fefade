@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button, Separator } from "@feflow-ui/svelte"
+	import { Badge, Button, Separator } from "@navnex-kit/svelte"
 
 	interface Props {
 		data: {
@@ -23,6 +23,8 @@
 				return "bg-success text-on-success"
 			case "typescript":
 				return "bg-info text-on-info"
+			case "free":
+				return "bg-success text-on-success"
 			default:
 				return undefined
 		}

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Autocomplete, Link } from "@feflow-ui/svelte"
+	import { Constants } from "@navnex-kit/core"
+	import { Autocomplete, Link } from "@navnex-kit/svelte"
 
 	const data = Array.from(Array(30)).map((_, i) => ({
 		id: i,

@@ -1,5 +1,5 @@
-import { Constants } from "@feflow-ui/core"
-import { TextField } from "@feflow-ui/react"
+import { Constants } from "@navnex-kit/core"
+import { TextField } from "@navnex-kit/react"
 
 export default function () {
 	return (

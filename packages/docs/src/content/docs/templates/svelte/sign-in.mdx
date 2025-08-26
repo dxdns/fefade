@@ -1,12 +1,19 @@
 ---
-title: Sign in
-description: Sign in template demo example
+title: Sign In Free Svelte Template
+description: SignIn Free Svelte Template demo example
 template: splash
 tableOfContents: false
 ---
 
 import SignInPreview from "@/components/SignInPreview.svelte"
-import DownloadBar from "@/components/DownloadBar.astro"
+import DownloadComponent from "@/components/DownloadComponent.astro"
+import { Card } from "@navnex-kit/svelte"
 
-<DownloadBar component="SignInPreview" />
-<SignInPreview client:load />
+<Card>
+	<div style="display: flex; justify-content: flex-end;">
+		<DownloadComponent component="SignInPreview">
+			Download Free
+		</DownloadComponent>
+	</div>
+	<SignInPreview client:load />
+</Card>

@@ -1,6 +1,9 @@
 ---
 title: Toast
-description: A UI component that briefly displays non-intrusive messages to inform users about an action or status, typically appearing at the edge of the screen and disappearing automatically.
+description:
+  A UI component that briefly displays non-intrusive messages to inform users
+  about an action or status, typically appearing at the edge of the screen and
+  disappearing automatically.
 ---
 
 import ToastPreview from "@/components/ToastPreview.svelte"
@@ -8,21 +11,23 @@ import PreviewTabs from "@/components/PreviewTabs.astro"
 
 #### Setup
 
-Make sure to include the `<Toaster />` component inside the provider to enable toast notifications.
+Make sure to include the `<Toaster />` component inside the provider to enable
+toast notifications.
 
-For installation and setup instructions, see the [Getting Started guide](/docs/getting-started).
+For installation and setup instructions, see the
+[Getting Started guide](/docs/getting-started).
 
 > Recommended: Place this in `src/routes/+layout.svelte` (SvelteKit root layout)
 
 ```svelte
 <script lang="ts">
-	import { FeflowProvider, Toaster } from "@feflow-ui/svelte"
+	import { NavnexProvider, Toaster } from "@navnex-kit/svelte"
 </script>
 
-<FeflowProvider>
+<NavnexProvider>
 	<Toaster />
 	{@render children()}
-</FeflowProvider>
+</NavnexProvider>
 ```
 
 #### Usage

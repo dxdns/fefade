@@ -23,6 +23,9 @@
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
+	"[mdx]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 	"eslint.validate": [
 		"javascript",
 		"javascriptreact",
@@ -35,5 +38,8 @@
 	"prettier.enable": true,
 	"[astro]": {
 		"editor.defaultFormatter": "astro-build.astro-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
 	}
 }

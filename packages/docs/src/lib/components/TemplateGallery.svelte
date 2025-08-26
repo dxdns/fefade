@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Gallery } from "@feflow-ui/svelte"
+	import { Gallery } from "@navnex-kit/svelte"
 
 	interface Props {
 		data: {

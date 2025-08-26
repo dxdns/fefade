@@ -1,15 +1,15 @@
-import { Constants } from "@feflow-ui/core"
-import type { CardType, HTMLAttrAnchor } from "@feflow-ui/core/types"
+import { Constants } from "@navnex-kit/core"
+import type { CardType, HTMLAttrAnchor } from "@navnex-kit/core/types"
 import {
 	classMapUtil,
 	getPropValueUtil,
 	handleClickUtil,
 	normalizeSizeUtil
-} from "@feflow-ui/core/utils"
+} from "@navnex-kit/core/utils"
 import { CSSProperties, forwardRef, HTMLAttributes } from "react"
 import { useAction } from "../../utils"
-import { glowOnHoverAction } from "@feflow-ui/core/actions"
-import styles from "@feflow-ui/core/styles/Card.module.css"
+import { glowOnHoverAction } from "@navnex-kit/core/actions"
+import styles from "@navnex-kit/core/styles/Card.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

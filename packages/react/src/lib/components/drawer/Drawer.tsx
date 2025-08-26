@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react"
-import { classMapUtil } from "@feflow-ui/core/utils"
-import type { DrawerType } from "@feflow-ui/core/types"
-import styles from "@feflow-ui/core/styles/Drawer.module.css"
+import { classMapUtil } from "@navnex-kit/core/utils"
+import type { DrawerType } from "@navnex-kit/core/types"
+import styles from "@navnex-kit/core/styles/Drawer.module.css"
 
 export interface Props
 	extends React.HTMLAttributes<HTMLDivElement>,

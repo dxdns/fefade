@@ -1,6 +1,6 @@
 .drawer {
-	background: var(--ff-surface);
-	color: var(--ff-on-surface);
+	background: var(--nn-surface);
+	color: var(--nn-on-surface);
 	z-index: 999;
 	padding: 1rem;
 	transition:
@@ -32,7 +32,7 @@
 	bottom: 0;
 	left: 0;
 	transform: translateX(-100%);
-	border-right: 1px solid var(--ff-border);
+	border-right: 1px solid var(--nn-border);
 }
 
 .drawer.left.show {
@@ -46,7 +46,7 @@
 	bottom: 0;
 	right: 0;
 	transform: translateX(100%);
-	border-left: 1px solid var(--ff-border);
+	border-left: 1px solid var(--nn-border);
 }
 
 .drawer.right.show {
@@ -60,7 +60,7 @@
 	right: 0;
 	top: 0;
 	transform: translateY(-100%);
-	border-bottom: 1px solid var(--ff-border);
+	border-bottom: 1px solid var(--nn-border);
 }
 
 .drawer.top.show {
@@ -74,7 +74,7 @@
 	right: 0;
 	bottom: 0;
 	transform: translateY(100%);
-	border-top: 1px solid var(--ff-border);
+	border-top: 1px solid var(--nn-border);
 }
 
 .drawer.bottom.show {

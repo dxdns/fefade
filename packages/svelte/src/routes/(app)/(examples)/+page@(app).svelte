@@ -4,11 +4,11 @@
 
 <div class="circle">
 	<Link
-		href="https://feflow-ui.dxdns.dev"
+		href="https://kit.navnex.com"
 		target="_blank"
 		style="transform: translate(50%, 100%);"
 	>
-		<h1>Feflow UI</h1>
+		<h1>navnex-kit</h1>
 	</Link>
 </div>
 

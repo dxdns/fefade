@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Spinner } from "@feflow-ui/svelte"
+	import { Constants } from "@navnex-kit/core"
+	import { Spinner } from "@navnex-kit/svelte"
 </script>
 
 <div

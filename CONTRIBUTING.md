@@ -1,6 +1,7 @@
 ## Contributing
 
-Contributions are welcome and appreciated! If you'd like to help improve this project, follow the steps below:
+Contributions are welcome and appreciated! If you'd like to help improve this
+project, follow the steps below:
 
 1. **Fork** the repository.
 2. **Create a new branch** for your feature or fix:
@@ -30,4 +31,5 @@ Contributions are welcome and appreciated! If you'd like to help improve this pr
 - Add or update tests when relevant.
 - Keep pull requests focused and atomic.
 
-If you're not sure where to start, feel free to open an issue or ask for guidance.
+If you're not sure where to start, feel free to open an issue or ask for
+guidance.

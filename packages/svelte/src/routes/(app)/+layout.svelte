@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createTheme, FeflowProvider } from "@/index.js"
+	import { createTheme, NavnexProvider } from "@/index.js"
 
 	let { children } = $props()
 
@@ -10,12 +10,12 @@
 </script>
 
 <svelte:head>
-	<title>Feflow UI + Svelte</title>
+	<title>navnex-kit + Svelte</title>
 </svelte:head>
 
-<FeflowProvider {theme} defaultThemeMode="light">
+<NavnexProvider {theme} defaultThemeMode="light">
 	{@render children()}
-</FeflowProvider>
+</NavnexProvider>
 
 <!-- <style>
 	:global(*) {

@@ -1,12 +1,19 @@
 ---
-title: Portfolio
-description: Portfolio template demo example
+title: Portfolio Free Svelte Template
+description: Portfolio Free Svelte Template demo example
 template: splash
 tableOfContents: false
 ---
 
 import PortfolioPreview from "@/components/PortfolioPreview.svelte"
-import DownloadBar from "@/components/DownloadBar.astro"
+import DownloadComponent from "@/components/DownloadComponent.astro"
+import { Card } from "@navnex-kit/svelte"
 
-<DownloadBar component="PortfolioPreview" />
-<PortfolioPreview client:load />
+<Card>
+	<div style="display: flex; justify-content: flex-end;">
+		<DownloadComponent component="PortfolioPreview">
+			Download Free
+		</DownloadComponent>
+	</div>
+	<PortfolioPreview client:load />
+</Card>

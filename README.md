@@ -2,16 +2,16 @@
   <img src="./packages/docs/public/favicon.png" width="150" height="120" />
 </p>
 
-<h1 align="center">Feflow UI</h1>
+<h1 align="center">navnex-kit</h1>
 
-[![license](https://img.shields.io/github/license/dxdns/feflow-ui)](https://github.com/dxdns/feflow-ui/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/dxdns/navnex-kit)](https://github.com/dxdns/navnex-kit/blob/master/LICENSE)
 ![Zero Dependencies](https://img.shields.io/badge/dependencies-0-green)
 
-**Feflow UI** is a lightweight and dependency-free UI component library.
+**navnex-kit** is a lightweight and dependency-free UI component library.
 
 > Minimal, accessible, dependency-free — made by a developer who loves clean UI.
 
-## Why Feflow UI?
+## Why navnex-kit?
 
 - Lightweight by design
 - Isolated styles using CSS Modules — no bleeding styles
@@ -23,27 +23,21 @@
 - **Scoped styles with CSS Modules** (no global conflicts)
 - Optional integration with Tailwind (not required)
 - **Easy theme customization** — built to support theming out-of-the-box
-- **Dark and Light themes included** by default, switchable via simple props or CSS variables
+- **Dark and Light themes included** by default, switchable via simple props or
+  CSS variables
 - Fully typed with TypeScript
 - Component slots and customizable props
 - Built for developer experience (DX)
 
 ## Documentation
 
-Coming soon in the [https://feflow-ui.dxdns.dev/docs](https://feflow-ui.dxdns.dev/docs).
+Coming soon in the [https://kit.navnex.com/docs](https://kit.navnex.com/docs).
 
 ## Contributing
 
-Please see the [Contributing Guide](CONTRIBUTING.md) for information on contributing to Feflow UI.
+Please see the [Contributing Guide](CONTRIBUTING.md) for information on
+contributing to navnex-kit.
 
 ## License
 
 MIT — free for personal and commercial use.
-
-## Credits
-
-Built by [@dxdns](https://linkedin.com/in/dxdns).
-
-Inspired by the work of [MUI](https://mui.com), [shadcn/ui](https://ui.shadcn.com) and [Chakra UI](https://chakra-ui.com).
-
-Icons: [Material Icons](https://fonts.google.com/icons)

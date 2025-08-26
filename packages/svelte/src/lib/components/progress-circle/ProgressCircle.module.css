@@ -4,7 +4,7 @@
 
 .progressCircle > svg {
 	stroke-width: 10;
-	color: var(--ff-on-bg);
+	color: var(--nn-on-bg);
 }
 
 .progressCircle.xs > svg {

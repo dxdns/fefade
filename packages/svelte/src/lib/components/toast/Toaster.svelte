@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
+	import { Constants } from "@navnex-kit/core"
 	import { toastState } from "../../states/index.js"
 	import Toast from "./Toast.svelte"
 	import { fade } from "svelte/transition"
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil, mergeStyleUtil } from "@navnex-kit/core/utils"
 	import styles from "./Toaster.module.css"
 	import { flip } from "svelte/animate"
 

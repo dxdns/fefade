@@ -1,1 +1,1 @@
-export * from "@feflow-ui/core/types"
+export * from "@navnex-kit/core/types"

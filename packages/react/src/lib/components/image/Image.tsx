@@ -2,10 +2,10 @@ import type {
 	GalleryItemType,
 	HTMLAttrAnchor,
 	ImageType
-} from "@feflow-ui/core/types"
+} from "@navnex-kit/core/types"
 import { forwardRef, ImgHTMLAttributes } from "react"
 import { useAction } from "../../utils"
-import { imageAction } from "@feflow-ui/core/actions"
+import { imageAction } from "@navnex-kit/core/actions"
 
 interface Props
 	extends Omit<ImgHTMLAttributes<Omit<HTMLImageElement, "src">>, "color">,

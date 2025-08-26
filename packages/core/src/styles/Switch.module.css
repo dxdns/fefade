@@ -53,7 +53,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: color-mix(in srgb, var(--ff-surface) 90%, gray 10%);
+	background: color-mix(in srgb, var(--nn-surface) 90%, gray 10%);
 	transition: 0.1s;
 	border-radius: 30px;
 
@@ -69,8 +69,8 @@
 
 .slider svg path,
 .slider svg circle {
-	fill: var(--ff-on-surface);
-	color: var(--ff-on-surface);
+	fill: var(--nn-on-surface);
+	color: var(--nn-on-surface);
 }
 
 .slider::before {
@@ -142,7 +142,7 @@ input:disabled + .slider::before {
 
 input:disabled + .slider {
 	cursor: not-allowed;
-	background: var(--ff-disabled);
+	background: var(--nn-disabled);
 }
 
 input:checked + .slider::before {
@@ -150,12 +150,12 @@ input:checked + .slider::before {
 }
 
 input:checked + .slider {
-	background: var(--ff-on-surface);
-	color: var(--ff-on-primary);
+	background: var(--nn-on-surface);
+	color: var(--nn-on-primary);
 }
 
 input:checked + .slider svg path {
-	fill: var(--ff-on-primary);
+	fill: var(--nn-on-primary);
 }
 
 input:checked + .slider > *:first-child {

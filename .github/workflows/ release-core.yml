@@ -3,7 +3,7 @@ name: Release Core
 on:
   push:
     tags:
-      - "ff-core-v*.*.*"
+      - "core-v*.*.*"
     paths:
       - "packages/core/**"
 
@@ -26,8 +26,8 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w @feflow-ui/core
+      - run: npm run build -w @navnex-kit/core
 
-      - run: npm publish -w @feflow-ui/core
+      - run: npm publish -w @navnex-kit/core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

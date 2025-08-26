@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { Button } from "@feflow-ui/vue"
+	import { Button } from "@navnex-kit/vue"
 </script>
 
 <template>

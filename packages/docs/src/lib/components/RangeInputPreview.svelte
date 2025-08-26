@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Badge, RangeInput } from "@feflow-ui/svelte"
+	import { Constants } from "@navnex-kit/core"
+	import { Badge, RangeInput } from "@navnex-kit/svelte"
 
 	const homeIcon = `
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="red">

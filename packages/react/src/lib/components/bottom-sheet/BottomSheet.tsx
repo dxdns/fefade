@@ -1,9 +1,9 @@
-import { classMapUtil } from "@feflow-ui/core/utils"
+import { classMapUtil } from "@navnex-kit/core/utils"
 import { forwardRef, HTMLAttributes, useEffect } from "react"
 import { useAction } from "../../utils"
-import { bottomSheetAction } from "@feflow-ui/core/actions"
-import type { BottomSheetType } from "@feflow-ui/core/types"
-import styles from "@feflow-ui/core/styles/BottomSheet.module.css"
+import { bottomSheetAction } from "@navnex-kit/core/actions"
+import type { BottomSheetType } from "@navnex-kit/core/types"
+import styles from "@navnex-kit/core/styles/BottomSheet.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

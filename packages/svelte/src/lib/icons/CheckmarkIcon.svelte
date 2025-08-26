@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements"
-	import { checkmarkIcon } from "@feflow-ui/core/icons"
-	import { mergeStyleUtil } from "@feflow-ui/core/utils"
+	import { checkmarkIcon } from "@navnex-kit/core/icons"
+	import { mergeStyleUtil } from "@navnex-kit/core/utils"
 
 	interface Props extends SVGAttributes<SVGSVGElement> {}
 

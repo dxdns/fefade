@@ -4,7 +4,7 @@
 	right: 0;
 	left: 0;
 	width: 100%;
-	background: var(--ff-surface);
+	background: var(--nn-surface);
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	z-index: 999;
 	overflow: hidden;
@@ -32,7 +32,7 @@
 	height: 100%;
 	cursor: grab;
 	-webkit-overflow-scrolling: touch;
-	color: var(--ff-on-surface);
+	color: var(--nn-on-surface);
 }
 
 .content:active {
@@ -46,7 +46,7 @@
 .button {
 	text-decoration: none;
 	font-weight: bold;
-	color: var(--ff-on-bg);
+	color: var(--nn-on-bg);
 	cursor: pointer;
 	padding: 0.5rem 0.75rem;
 	transition: color 0.3s;
@@ -58,20 +58,20 @@
 }
 
 .button:hover {
-	color: var(--ff-muted) !important;
+	color: var(--nn-muted) !important;
 }
 
 .button.active {
-	color: var(--ff-primary);
+	color: var(--nn-primary);
 	font-weight: bold;
-	border-bottom: 2px solid var(--ff-primary);
+	border-bottom: 2px solid var(--nn-primary);
 }
 
 .arrowIndicator {
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 	font-size: 1.125rem;
-	color: var(--ff-on-bg);
+	color: var(--nn-on-bg);
 	animation: blink 1.5s infinite;
 	flex-shrink: 0;
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Code } from "@feflow-ui/svelte"
+	import { Code } from "@navnex-kit/svelte"
 
 	const data = `
         .card {

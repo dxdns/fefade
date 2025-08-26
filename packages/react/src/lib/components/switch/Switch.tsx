@@ -1,13 +1,13 @@
-import { Constants } from "@feflow-ui/core"
-import type { SwitchType } from "@feflow-ui/core/types"
-import { classMapUtil, getPropValueUtil } from "@feflow-ui/core/utils"
+import { Constants } from "@navnex-kit/core"
+import type { SwitchType } from "@navnex-kit/core/types"
+import { classMapUtil, getPropValueUtil } from "@navnex-kit/core/utils"
 import {
 	CSSProperties,
 	forwardRef,
 	InputHTMLAttributes,
 	ReactNode
 } from "react"
-import styles from "@feflow-ui/core/styles/Switch.module.css"
+import styles from "@navnex-kit/core/styles/Switch.module.css"
 
 interface Props
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, "size">,

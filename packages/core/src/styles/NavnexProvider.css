@@ -1,0 +1,204 @@
+body {
+	background: var(--nn-bg);
+	color: var(--nn-on-bg);
+}
+
+/** text **/
+
+.text-primary {
+	color: var(--nn-primary) !important;
+}
+
+.text-on-primary {
+	color: var(--nn-on-primary) !important;
+}
+
+.text-secondary {
+	color: var(--nn-secondary) !important;
+}
+
+.text-on-secondary {
+	color: var(--nn-on-secondary) !important;
+}
+
+.text {
+	color: var(--nn-on-bg) !important;
+}
+
+.text-muted,
+.muted {
+	color: var(--nn-muted) !important;
+}
+
+.text-on-bg {
+	color: var(--nn-on-bg) !important;
+}
+
+.text-on-surface {
+	color: var(--nn-on-surface) !important;
+}
+
+.text-on-disabled {
+	color: var(--nn-on-disabled) !important;
+}
+
+/** bg **/
+
+.bg-primary {
+	background: var(--nn-primary) !important;
+}
+
+.bg-secondary {
+	background: var(--nn-secondary) !important;
+}
+
+.bg-page {
+	background: var(--nn-bg) !important;
+}
+
+.bg-surface {
+	background: var(--nn-surface) !important;
+}
+
+.bg-disabled {
+	background: var(--nn-disabled) !important;
+}
+
+.bg-0 {
+	background: none !important;
+}
+
+/** border **/
+
+.border {
+	border-color: var(--nn-border) !important;
+}
+
+.border-0 {
+	border: none !important;
+	border-radius: 0 !important;
+}
+
+/** bg **/
+
+.bg-success {
+	background: var(--nn-success) !important;
+}
+
+.bg-error,
+.bg-danger {
+	background: var(--nn-error) !important;
+}
+
+.bg-warning {
+	background: var(--nn-warning) !important;
+}
+
+.bg-info {
+	background: var(--nn-info) !important;
+}
+
+/** hover bg **/
+.hover-bg-success:hover {
+	background: var(--nn-success) !important;
+}
+
+.hover-bg-error:hover,
+.hover-bg-danger:hover {
+	background: var(--nn-error) !important;
+}
+
+.hover-bg-warning:hover {
+	background: var(--nn-warning) !important;
+}
+
+.hover-bg-info:hover {
+	background: var(--nn-info) !important;
+}
+
+/** text **/
+
+.text-on-success {
+	color: var(--nn-on-success) !important;
+}
+
+.text-on-error,
+.text-on-danger {
+	color: var(--nn-on-error) !important;
+}
+
+.text-on-warning {
+	color: var(--nn-on-warning) !important;
+}
+
+.text-on-info {
+	color: var(--nn-on-info) !important;
+}
+
+/** hover text **/
+
+.hover-text-on-success:hover {
+	color: var(--nn-on-success) !important;
+}
+
+.hover-text-on-error:hover,
+.hover-text-on-danger:hover {
+	color: var(--nn-on-error) !important;
+}
+
+.hover-text-on-warning:hover {
+	color: var(--nn-on-warning) !important;
+}
+
+.hover-text-on-info:hover {
+	color: var(--nn-on-info) !important;
+}
+
+/** border **/
+
+.border-on-success {
+	border-color: var(--nn-on-success) !important;
+}
+
+.border-on-error,
+.border-on-danger {
+	border-color: var(--nn-on-error) !important;
+}
+
+.border-on-warning {
+	border-color: var(--nn-on-warning) !important;
+}
+
+.border-on-info {
+	border-color: var(--nn-on-info) !important;
+}
+
+.roundedFull,
+.rounded-full {
+	border-radius: 9999px !important;
+}
+
+/** hover border **/
+
+.hover-border-on-success:hover {
+	border-color: var(--nn-on-success) !important;
+}
+
+.hover-border-on-error:hover,
+.hover-border-on-danger:hover {
+	border-color: var(--nn-on-error) !important;
+}
+
+.hover-border-on-warning:hover {
+	border-color: var(--nn-on-warning) !important;
+}
+
+.hover-border-on-info:hover {
+	border-color: var(--nn-on-info) !important;
+}
+
+/* essentials */
+
+.w-full {
+	width: 100% !important;
+}

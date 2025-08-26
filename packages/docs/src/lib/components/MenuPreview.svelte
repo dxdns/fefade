@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Menu } from "@feflow-ui/svelte"
+	import { Button, Menu } from "@navnex-kit/svelte"
 </script>
 
 <div

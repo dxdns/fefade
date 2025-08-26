@@ -1,5 +1,5 @@
 import { forwardRef, SVGAttributes } from "react"
-import { menuIcon } from "@feflow-ui/core/icons"
+import { menuIcon } from "@navnex-kit/core/icons"
 
 interface Props extends SVGAttributes<SVGSVGElement> {}
 

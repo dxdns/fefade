@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil } from "@navnex-kit/core/utils"
 	import { onDestroy } from "svelte"
 	import type { HTMLAttributes } from "svelte/elements"
 

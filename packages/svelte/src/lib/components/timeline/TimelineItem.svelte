@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { HorizontalPositionType } from "@feflow-ui/core/types"
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import type { HorizontalPositionType } from "@navnex-kit/core/types"
+	import { classMapUtil } from "@navnex-kit/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		position: Exclude<HorizontalPositionType, "center">
@@ -28,8 +28,8 @@
 		position: absolute;
 		width: 16px;
 		height: 16px;
-		background: var(--ff-surface);
-		border: 4px solid var(--ff-border);
+		background: var(--nn-surface);
+		border: 4px solid var(--nn-border);
 		top: 15px;
 		border-radius: 50%;
 		z-index: 1;

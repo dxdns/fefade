@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes } from "react"
-import { classMapUtil } from "@feflow-ui/core/utils"
-import styles from "@feflow-ui/core/styles/DrawerHeader.module.css"
+import { classMapUtil } from "@navnex-kit/core/utils"
+import styles from "@navnex-kit/core/styles/DrawerHeader.module.css"
 import { Button } from "../button"
 import { CloseIcon } from "../../icons/index.js"
 

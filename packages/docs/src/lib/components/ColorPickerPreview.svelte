@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ColorPicker } from "@feflow-ui/svelte"
+	import { ColorPicker } from "@navnex-kit/svelte"
 
 	let color = $state("#fde6b0")
 </script>
@@ -20,7 +20,7 @@
 	.colorPreview {
 		width: 38px;
 		height: 38px;
-		border: 1px solid var(--ff-border);
+		border: 1px solid var(--nn-border);
 		border-radius: 0.25rem;
 		background: var(--color);
 	}

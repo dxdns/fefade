@@ -16,20 +16,20 @@
 
 .header label {
 	cursor: pointer;
-	color: var(--ff-on-surface);
+	color: var(--nn-on-surface);
 }
 
 .accordion.text .header {
 	border-radius: 0;
-	border-bottom: 1px solid var(--ff-border);
+	border-bottom: 1px solid var(--nn-border);
 }
 
 .accordion.contained .header {
-	background: var(--ff-surface);
+	background: var(--nn-surface);
 }
 
 .accordion.outlined .header {
-	border: 1px solid var(--ff-border);
+	border: 1px solid var(--nn-border);
 }
 
 .controller {
@@ -49,13 +49,13 @@
 }
 
 .accordion.contained .content {
-	background: var(--ff-surface);
+	background: var(--nn-surface);
 }
 
 .accordion.outlined .content {
 	background: none;
 	border-style: solid;
-	border: 1px solid var(--ff-border);
+	border: 1px solid var(--nn-border);
 	border-top: none;
 }
 
@@ -88,6 +88,6 @@
 
 @media (hover: hover) and (pointer: fine) {
 	.accordion:not(.text):not(.contained) .header:hover {
-		background: color-mix(in srgb, var(--ff-surface) 95%, gray 5%);
+		background: color-mix(in srgb, var(--nn-surface) 95%, gray 5%);
 	}
 }

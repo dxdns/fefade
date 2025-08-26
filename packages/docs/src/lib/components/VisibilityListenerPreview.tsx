@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { VisibilityListener } from "@feflow-ui/react"
+import { VisibilityListener } from "@navnex-kit/react"
 
 export default function () {
 	const [isVisible, setIsVisible] = useState(false)

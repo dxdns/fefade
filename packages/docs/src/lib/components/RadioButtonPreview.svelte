@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { RadioButton } from "@feflow-ui/svelte"
+	import { Constants } from "@navnex-kit/core"
+	import { RadioButton } from "@navnex-kit/svelte"
 </script>
 
 {#each Constants.sizes as size, i (size)}

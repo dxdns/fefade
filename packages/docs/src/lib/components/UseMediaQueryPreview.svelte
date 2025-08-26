@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { useMediaQuery } from "@feflow-ui/svelte"
+	import { useMediaQuery } from "@navnex-kit/svelte"
 	import { onDestroy } from "svelte"
 
 	const isSm = $derived(useMediaQuery("max-width", "sm"))

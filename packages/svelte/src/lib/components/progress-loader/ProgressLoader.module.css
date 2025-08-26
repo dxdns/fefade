@@ -1,6 +1,6 @@
 .progressLoader {
 	width: 150px;
-	background: var(--ff-surface);
+	background: var(--nn-surface);
 	height: 5px;
 	border-radius: 7px;
 }
@@ -8,6 +8,6 @@
 .progress {
 	height: 5px;
 	border-radius: 7px;
-	background: var(--ff-primary);
+	background: var(--nn-primary);
 	transition: width 0.5s ease;
 }

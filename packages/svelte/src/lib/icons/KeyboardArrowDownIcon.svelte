@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements"
-	import { keyboardArrowDownIcon } from "@feflow-ui/core/icons"
-	import { mergeStyleUtil } from "@feflow-ui/core/utils"
+	import { keyboardArrowDownIcon } from "@navnex-kit/core/icons"
+	import { mergeStyleUtil } from "@navnex-kit/core/utils"
 
 	interface Props extends SVGAttributes<SVGSVGElement> {}
 

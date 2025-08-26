@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil } from "@navnex-kit/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import styles from "@feflow-ui/core/styles/ColorPicker.module.css"
+	import styles from "@navnex-kit/core/styles/ColorPicker.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "type"> {}
 

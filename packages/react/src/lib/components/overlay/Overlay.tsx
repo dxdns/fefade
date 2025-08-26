@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, forwardRef } from "react"
-import { classMapUtil } from "@feflow-ui/core/utils"
-import styles from "@feflow-ui/core/styles/Overlay.module.css"
+import { classMapUtil } from "@navnex-kit/core/utils"
+import styles from "@navnex-kit/core/styles/Overlay.module.css"
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	isOpen: boolean

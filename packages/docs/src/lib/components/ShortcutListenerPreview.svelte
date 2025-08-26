@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Kbd, ShortcutListener } from "@feflow-ui/svelte"
+	import { Kbd, ShortcutListener } from "@navnex-kit/svelte"
 
 	let message = $state("waiting...")
 

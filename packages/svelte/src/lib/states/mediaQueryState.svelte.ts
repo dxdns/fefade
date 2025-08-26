@@ -1,5 +1,5 @@
 import type { BreakpointType } from "../types/index.js"
-import { Constants } from "@feflow-ui/core"
+import { Constants } from "@navnex-kit/core"
 
 export default function mediaQueryState(
 	operator: "min-width" | "max-width",
