@@ -16,7 +16,8 @@ export default defineConfig({
 			title: "Feflow UI",
 			components: {
 				PageFrame: "./src/lib/layouts/RootLayout.astro",
-				Hero: "./src/lib/components/Hero.astro"
+				Hero: "./src/lib/components/Hero.astro",
+				PageTitle: "./src/lib/components/PageTitle.astro"
 			},
 			customCss: ["./src/styles/custom.css"],
 			favicon: "/favicon.png",
