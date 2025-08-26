@@ -82,9 +82,12 @@
 			<h3 style="--label-lines: {caption.label.lines ?? 3};">
 				{caption.label.text}
 			</h3>
-			<p style="--description-lines: {caption.description.lines ?? 2};">
-				{caption.description.text}
-			</p>
+
+			{#if caption.description}
+				<p style="--description-lines: {caption.description.lines ?? 2};">
+					{caption.description.text}
+				</p>
+			{/if}
 		</figcaption>
 	{:else if caption && typeof caption === "function"}
 		{@render caption?.()}

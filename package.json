@@ -38,7 +38,6 @@
 	},
 	"homepage": "https://github.com/dxdns/feflow-ui#readme",
 	"devDependencies": {
-		"@types/glob": "^9.0.0",
 		"@types/node": "^22.14.1",
 		"chokidar-cli": "^3.0.0",
 		"concurrently": "^9.2.0",

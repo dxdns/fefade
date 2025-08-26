@@ -3,21 +3,25 @@ title: Templates
 description: templates showcase.
 ---
 
-import TemplateGallery from "@/components/TemplateGallery.astro"
+import TemplateGallery from "@/components/TemplateGallery.svelte"
 
 <TemplateGallery
+	client:load
 	data={[
 		{
 			title: "Landing Page",
-			href: "/templates/svelte/landing-page"
+			src: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225613/fit-flow_imgci4.png",
+			href: "/templates/svelte/overview/landing-page"
 		},
 		{
 			title: "Sign In",
-			href: "/templates/svelte/sign-in"
+			src: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225726/sign-in_ew4byw.png",
+			href: "/templates/svelte/overview/sign-in"
 		},
 		{
 			title: "Portfolio",
-			href: "/templates/svelte/portfolio"
+			src: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225789/portfolio_zigxoy.png",
+			href: "/templates/svelte/overview/portfolio"
 		}
 	]}
 />

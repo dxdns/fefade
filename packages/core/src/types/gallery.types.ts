@@ -5,7 +5,7 @@ type TextWithLinesType = {
 
 export type GalleryCaptionType = {
 	label: TextWithLinesType
-	description: TextWithLinesType
+	description?: TextWithLinesType
 	style?: string
 }
 

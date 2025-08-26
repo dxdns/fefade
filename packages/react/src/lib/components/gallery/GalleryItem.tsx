@@ -111,15 +111,17 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 							>
 								{caption.label.text}
 							</h3>
-							<p
-								style={
-									{
-										["--description-lines"]: caption.description.lines ?? 2
-									} as CSSProperties
-								}
-							>
-								{caption.description.text}
-							</p>
+							{caption.description && (
+								<p
+									style={
+										{
+											["--description-lines"]: caption.description.lines ?? 2
+										} as CSSProperties
+									}
+								>
+									{caption.description.text}
+								</p>
+							)}
 						</div>
 					</figcaption>
 				) : (

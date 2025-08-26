@@ -1,0 +1,38 @@
+---
+title: Sign In Template Overview
+description: Sign In template is a modern, user-friendly sign-in template designed to provide a seamless authentication experience. With clean layouts and responsive design, it ensures accessibility and simplicity for users across all devices.
+template: splash
+tableOfContents: false
+---
+
+import TemplateGallery from "@/components/TemplateGallery.svelte"
+import TemplateOverview from "@/components/TemplateOverview.svelte"
+
+<TemplateGallery
+	client:load
+	data={[
+		{
+			title: "Sign In",
+			src: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225726/sign-in_ew4byw.png",
+			href: "/templates/svelte/sign-in"
+		}
+	]}
+/>
+
+<br />
+
+<TemplateOverview 
+    client:load
+    data={{ 
+        title: "Sign In template – Simple",
+        description: `
+        Its minimalist layout emphasizes clarity and ease of use, ensuring users can log in effortlessly from any device.
+
+        Fully responsive and easy to customize, Sign In template adapts seamlessly to different projects — whether you’re building a SaaS platform, mobile-first app, or corporate dashboard. With reusable components and flexible styling, it accelerates development while maintaining a professional look.
+        `,
+        tags: ["Svelte", "TypeScript", "Authentication", "Responsive"],
+        codeUrl: "https://github.com/dxdns/feflow-ui",
+        previewUrl: "/templates/svelte/sign-in"
+    }}
+
+/>
