@@ -5,8 +5,8 @@
 	import { fade } from "svelte/transition"
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "@navnex-kit/core/utils"
-	import styles from "./Toaster.module.css"
 	import { flip } from "svelte/animate"
+	import styles from "@navnex-kit/core/styles/Toaster.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		fullWidth?: boolean
