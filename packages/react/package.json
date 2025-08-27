@@ -1,6 +1,6 @@
 {
 	"name": "@navnex-kit/react",
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"description": "navnex-kit React components",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
