@@ -191,14 +191,14 @@ if (image) {
 	}
 
 	:global([data-theme="light"]) {
-		--nn-border-translucent: rgba(229, 229, 229, 0.4);
+		--border-color: rgba(229, 229, 229, 0.4);
 	}
 
 	:global([data-theme="dark"]) {
-		--nn-border-translucent: rgba(255, 255, 255, 0.03);
+		--border-color: rgba(255, 255, 255, 0.03);
 	}
 
-	:global(.content-panel) {
+	:global(.main-frame) {
 		position: relative;
 	}
 
@@ -228,11 +228,7 @@ if (image) {
 	.sphere-one {
 		width: 25vw;
 		height: 25vw;
-		background: linear-gradient(
-			240deg,
-			rgba(0, 0, 0, 0.8),
-			rgba(255, 255, 255, 0.4)
-		);
+		background: linear-gradient(40deg, var(--nn-bg), rgba(61, 61, 61, 0.171));
 		top: -10%;
 		left: -10%;
 		animation: float-one 15s ease-in-out infinite alternate;
@@ -241,19 +237,15 @@ if (image) {
 	.sphere-two {
 		width: 45vw;
 		height: 45vw;
-		background: linear-gradient(
-			240deg,
-			rgba(0, 0, 0, 0.8),
-			rgba(255, 255, 255, 0.4)
-		);
+		background: linear-gradient(240deg, var(--nn-bg), rgba(255, 255, 255, 0.4));
 		-webkit-mask-image: linear-gradient(
 			to bottom,
-			rgba(0, 0, 0, 0.8),
+			var(--nn-bg),
 			rgba(255, 255, 255, 0.4)
 		);
 		mask-image: linear-gradient(
 			to bottom,
-			rgba(0, 0, 0, 0.8),
+			var(--nn-bg),
 			rgba(255, 255, 255, 0.4)
 		);
 		bottom: 40%;
@@ -287,17 +279,13 @@ if (image) {
 		height: 100%;
 		background-size: 40px 40px;
 		background-image:
-			linear-gradient(
-				to right,
-				var(--nn-border-translucent) 1px,
-				transparent 1px
-			),
-			linear-gradient(
-				to bottom,
-				var(--nn-border-translucent) 1px,
-				transparent 1px
-			);
+			linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+			linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
 		z-index: 2;
+	}
+
+	.tabs {
+		flex: 1;
 	}
 
 	@media screen and (max-width: 768px) {
@@ -310,9 +298,7 @@ if (image) {
 			height: 100vw;
 			right: -10%;
 		}
-	}
 
-	@media screen and (max-width: 425px) {
 		.tabs {
 			display: none;
 		}

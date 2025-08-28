@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Constants } from "@navnex-kit/core"
-	import { Button, toast, Toaster } from "@navnex-kit/svelte"
+	import { Button, toast } from "@navnex-kit/svelte"
 
 	const positions = [
 		"top-left",
@@ -12,8 +12,6 @@
 	] as const
 </script>
 
-<Toaster />
-
 <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
 	{#each Constants.statusColors as color (color)}
 		<Button
@@ -23,6 +21,7 @@
 					color
 				})
 			}}
+			class={`bg-${color} text-on-${color}`}
 		>
 			{color}
 		</Button>
@@ -44,12 +43,12 @@
 	<Button
 		onclick={() => {
 			toast({
-				message: "Duration: 15000",
-				duration: 15000
+				message: "Duration: 50000",
+				duration: 50000
 			})
 		}}
 	>
-		Duration: 15000
+		Duration: 50000
 	</Button>
 
 	<Button

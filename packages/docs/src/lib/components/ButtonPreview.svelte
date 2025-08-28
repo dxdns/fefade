@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Constants } from "@navnex-kit/core"
-	import { Button } from "@navnex-kit/svelte"
+	import { Button, toast } from "@navnex-kit/svelte"
 </script>
 
 <div
@@ -25,7 +25,12 @@
 
 	<div style="display:flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;">
 		{#each Constants.statusColors as color (color)}
-			<Button class="bg-{color} text-on-{color}">{color}</Button>
+			<Button
+				class="bg-{color} text-on-{color}"
+				onclick={() => {
+					toast({ message: color, color })
+				}}>{color}</Button
+			>
 		{/each}
 	</div>
 
