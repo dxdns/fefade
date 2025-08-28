@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { Constants } from "@navnex-kit/core"
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@navnex-kit/core/utils"
+	import {
+		capitalizeUtil,
+		classMapUtil,
+		mergeStyleUtil
+	} from "@navnex-kit/core/utils"
 	import {
 		ErrorIcon,
 		InfoIcon,
@@ -24,7 +28,7 @@
 
 	const statusOnColor =
 		Constants.themeColorVar[
-			`on${color}` as keyof typeof Constants.themeColorVar
+			`on${capitalizeUtil(color)}` as keyof typeof Constants.themeColorVar
 		]
 
 	const statusColor = Constants.themeColorVar[color]

@@ -7,5 +7,10 @@
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-	border-left: 4px solid var(--bg-color);
+	border-left: 4px solid var(--color);
+	margin: 0;
+}
+
+.alert>* {
+	margin: 0;
 }
