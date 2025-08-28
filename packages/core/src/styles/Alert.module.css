@@ -24,7 +24,7 @@
 
 .alert {
 	background: color-mix(in srgb, var(--bg) 30%, transparent);
-	padding: 1rem;
+	padding: 0.5rem 1.25rem;
 	border-radius: 5px;
 	border: 1px solid color-mix(in srgb, var(--border) 10%, transparent);
 	color: var(--color);

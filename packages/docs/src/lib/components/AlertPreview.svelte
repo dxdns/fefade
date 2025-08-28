@@ -9,7 +9,7 @@
 	<Alert {color}>
 		<div style="display: flex; flex-direction: column;">
 			<strong>{color}</strong>
-			<small class="muted">description</small>
+			<small>description</small>
 		</div>
 	</Alert>
 	<br />
