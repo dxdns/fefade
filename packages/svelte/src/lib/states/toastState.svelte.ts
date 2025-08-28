@@ -1,9 +1,9 @@
 import { Constants } from "@navnex-kit/core"
-import type { ToastType } from "@navnex-kit/core/types"
+import type { ToastStateType } from "@navnex-kit/core/types"
 
-type ToastInputType = Omit<Partial<ToastType>, "id">
+type ToastInputType = Omit<Partial<ToastStateType>, "id">
 
-type ToastInternalType = ToastType & {
+type ToastInternalType = ToastStateType & {
 	remaining: number
 	timer?: number
 	start: number

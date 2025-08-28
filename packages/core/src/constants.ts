@@ -31,7 +31,7 @@ const themeStatusColors: Record<ThemeModeType, ThemeStatusColorType> = {
 		onError: "#511111",
 		warning: "#f97316",
 		onWarning: "#6c2710",
-		info: "#58c5fc91",
+		info: "#58c5fcff",
 		onInfo: "#003344"
 	},
 	dark: {
@@ -41,7 +41,7 @@ const themeStatusColors: Record<ThemeModeType, ThemeStatusColorType> = {
 		onError: "#ef4444",
 		warning: "#6c2710",
 		onWarning: "#f97316",
-		info: "#0033449f",
+		info: "#003344ff",
 		onInfo: "#a7dffc"
 	}
 }

@@ -1,0 +1,19 @@
+.toast {
+	user-select: none;
+	position: relative;
+	padding: 0.5rem 1.25rem;
+	box-shadow:
+		0 4px 6px rgba(0, 0, 0, 0.1),
+		0 10px 15px rgba(0, 0, 0, 0.15);
+	backdrop-filter: blur(6px);
+	pointer-events: all;
+	min-width: 100px;
+}
+
+.message {
+	flex: 1;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

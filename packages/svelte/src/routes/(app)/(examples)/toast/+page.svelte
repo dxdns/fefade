@@ -1,12 +1,7 @@
 <script lang="ts">
-	import {
-		Button,
-		toast,
-		type StatusColorType,
-		type PositionType
-	} from "@/index.js"
+	import { Button, toast } from "@/index.js"
 
-	const colors = ["error", "success", "warning"]
+	const colors = ["error", "success", "warning"] as const
 	const positions = [
 		"top-left",
 		"bottom-left",
@@ -14,7 +9,7 @@
 		"bottom-right",
 		"bottom-center",
 		"top-center"
-	]
+	] as const
 </script>
 
 <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
@@ -23,7 +18,7 @@
 			onclick={() => {
 				toast({
 					message: color,
-					color: color as StatusColorType
+					color
 				})
 			}}
 		>
@@ -36,7 +31,7 @@
 			onclick={() => {
 				toast({
 					message: position,
-					position: position as PositionType
+					position
 				})
 			}}
 		>
@@ -47,12 +42,13 @@
 	<Button
 		onclick={() => {
 			toast({
-				message: "Duration: 15000",
-				duration: 15000
+				message: "Duration: 50000",
+				duration: 50000,
+				isClosable: true
 			})
 		}}
 	>
-		Duration: 15000
+		Duration: 50000
 	</Button>
 
 	<Button

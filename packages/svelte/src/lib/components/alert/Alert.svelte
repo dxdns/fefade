@@ -1,12 +1,15 @@
 <script lang="ts">
 	import { Constants } from "@navnex-kit/core"
 	import type { HTMLAttributes } from "svelte/elements"
+	import { classMapUtil, mergeStyleUtil } from "@navnex-kit/core/utils"
 	import {
-		capitalizeUtil,
-		classMapUtil,
-		mergeStyleUtil
-	} from "@navnex-kit/core/utils"
+		ErrorIcon,
+		InfoIcon,
+		WarningIcon,
+		CheckCircleIcon
+	} from "../../icons/index.js"
 	import type { StatusColorType } from "@navnex-kit/core/types"
+	import styles from "@navnex-kit/core/styles/Alert.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		color?: StatusColorType
@@ -19,31 +22,37 @@
 		...rest
 	}: Props = $props()
 
-	const borderColor =
+	const statusOnColor =
 		Constants.themeColorVar[
-			`on${capitalizeUtil(color)}` as `on${Capitalize<StatusColorType>}`
+			`on${color}` as keyof typeof Constants.themeColorVar
 		]
 
 	const statusColor = Constants.themeColorVar[color]
+
+	const Icon = {
+		error: ErrorIcon,
+		info: InfoIcon,
+		warning: WarningIcon,
+		success: CheckCircleIcon,
+		primary: InfoIcon
+	}[color]
 </script>
 
 <div
 	{...rest}
-	class={classMapUtil(className, "alert", `bg-${color}`, `text-on-${color}`)}
+	class={classMapUtil(className, [className, styles], styles.alert)}
 	style={mergeStyleUtil(
-		`--border-color: ${borderColor};`,
+		`--border-color: ${statusOnColor};`,
+		`--color: ${statusOnColor}`,
 		`--bg-color: ${statusColor};`,
 		rest.style
 	)}
 >
+	<Icon
+		fill={statusOnColor}
+		height="20px"
+		width="20px"
+		style="max-width: max-content;"
+	/>
 	{@render children?.()}
 </div>
-
-<style>
-	.alert {
-		/* background: color-mix(in oklab, var(--bg-color) 30%, transparent); */
-		padding: 1rem;
-		border-radius: 5px;
-		border: 1px solid color-mix(in srgb, var(--border-color) 10%, transparent);
-	}
-</style>

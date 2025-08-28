@@ -1,67 +1,27 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import {
-		CloseIcon,
-		ErrorIcon,
-		InfoIcon,
-		WarningIcon
-	} from "../../icons/index.js"
-	import type { StatusColorType, ToastType } from "@navnex-kit/core/types"
+	import { CloseIcon } from "../../icons/index.js"
+	import type { ToastType } from "@navnex-kit/core/types"
 	import { classMapUtil } from "@navnex-kit/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 	import Button from "../button/index.js"
+	import { Alert } from "../alert/index.js"
+	import styles from "@navnex-kit/core/styles/Toast.module.css"
 
 	interface Props
-		extends HTMLAttributes<HTMLDivElement>,
-			Omit<ToastType, "id" | "color"> {
-		color?: StatusColorType | "primary"
-		handleClose?: () => void
-	}
+		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,
+			ToastType {}
 
 	let {
 		class: className = "",
 		message,
-		color = "primary",
 		isClosable = false,
 		handleClose,
 		...rest
 	}: Props = $props()
-
-	const Icon = {
-		error: ErrorIcon,
-		info: InfoIcon,
-		warning: WarningIcon,
-		success: InfoIcon,
-		primary: InfoIcon
-	}[color]
 </script>
 
-<div
-	{...rest}
-	class={classMapUtil(className, "toast", `bg-${color}`, `text-on-${color}`, {
-		["noBorder"]: color === "primary"
-	})}
->
-	{#if Icon}
-		<Icon
-			fill={Constants.themeColorVar[
-				`on${color}` as keyof typeof Constants.themeColorVar
-			]}
-			height="20px"
-			width="20px"
-			style="max-width: max-content;"
-		/>
-	{/if}
-	<div
-		style="
-		flex:1; 
-		padding-inline-end: {isClosable ? '1rem' : 0};
-		margin: 0;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		"
-	>
+<Alert {...rest} class={classMapUtil(className, styles.toast)}>
+	<div class={styles.message}>
 		{message}
 	</div>
 	{#if isClosable}
@@ -78,30 +38,4 @@
 			<CloseIcon height="16px" width="16px" />
 		</Button>
 	{/if}
-</div>
-
-<style>
-	.toast {
-		user-select: none;
-		position: relative;
-		padding: 0.5rem 1.25rem;
-		border-radius: 0.5rem;
-		font-size: 1rem;
-		font-weight: 500;
-		box-shadow:
-			0 4px 6px rgba(0, 0, 0, 0.1),
-			0 10px 15px rgba(0, 0, 0, 0.15);
-		backdrop-filter: blur(6px);
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		justify-content: space-between;
-		border-left: 4px solid currentColor;
-		pointer-events: all;
-		min-width: 100px;
-	}
-
-	.noBorder {
-		border-left: 0;
-	}
-</style>
+</Alert>
