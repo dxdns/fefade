@@ -6,7 +6,7 @@ import type {
 	ThemeModeType,
 	ThemeStatusColorType
 } from "./types/index.js"
-import toKebabCaseUtil from "./utils/toKebabCaseUtil.js"
+import { capitalizeUtil, toKebabCaseUtil } from "./utils/index.js"
 
 export const APP_NAME = "navnex-kit"
 export const APP_NAME_ACRONYM = "nn"
@@ -94,6 +94,12 @@ export const themeColorVar = Object.fromEntries(
 	])
 ) as {
 	[K in keyof ThemeColorType]: `var(${typeof CSS_VAR_PREFIX}-${KebabType<K & string>})`
+}
+
+export const statusOnColor = (color: string) => {
+	return themeColorVar[
+		`on${capitalizeUtil(color)}` as keyof typeof themeColorVar
+	]
 }
 
 export const breakpoints: Record<BreakpointType | string, string> = {

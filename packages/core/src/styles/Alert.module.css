@@ -1,8 +1,32 @@
+.alert.error {
+	--bg: var(--nn-error);
+	--border: var(--nn-on-error);
+	--color: var(--nn-on-error);
+}
+
+.alert.warning {
+	--bg: var(--nn-warning);
+	--border: var(--nn-on-warning);
+	--color: var(--nn-on-warning);
+}
+
+.alert.success {
+	--bg: var(--nn-success);
+	--border: var(--nn-on-success);
+	--color: var(--nn-on-success);
+}
+
+.alert.info {
+	--bg: var(--nn-info);
+	--border: var(--nn-on-info);
+	--color: var(--nn-on-info);
+}
+
 .alert {
-	background: color-mix(in srgb, var(--bg-color) 30%, transparent);
+	background: color-mix(in srgb, var(--bg) 30%, transparent);
 	padding: 1rem;
 	border-radius: 5px;
-	border: 1px solid color-mix(in srgb, var(--border-color) 10%, transparent);
+	border: 1px solid color-mix(in srgb, var(--border) 10%, transparent);
 	color: var(--color);
 	display: flex;
 	align-items: center;
