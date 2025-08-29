@@ -7,6 +7,7 @@ tableOfContents: false
 
 import PortfolioPreview from "@/components/PortfolioPreview.svelte"
 import DownloadComponent from "@/components/DownloadComponent.astro"
+import TemplatePreview from "@/components/TemplatePreview.svelte"
 import { Card } from "@navnex-kit/svelte"
 
 <Card>
@@ -15,5 +16,7 @@ import { Card } from "@navnex-kit/svelte"
 			Download Free
 		</DownloadComponent>
 	</div>
-	<PortfolioPreview client:load />
+	<TemplatePreview client:load component="PortfolioPreview">
+		<PortfolioPreview client:load />
+	</TemplatePreview>
 </Card>

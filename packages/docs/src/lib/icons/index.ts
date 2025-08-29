@@ -5,8 +5,6 @@ import LinkedinIcon from "./LinkedinIcon.svelte"
 import MailIcon from "./MailIcon.svelte"
 import RedditIcon from "./RedditIcon.svelte"
 import OpenInNewIcon from "./OpenInNewIcon.svelte"
-import GoogleIcon from "./GoogleIcon.svelte"
-import FacebookIcon from "./FacebookIcon.svelte"
 
 export {
 	DarkModeIcon,
@@ -15,7 +13,5 @@ export {
 	LinkedinIcon,
 	MailIcon,
 	RedditIcon,
-	OpenInNewIcon,
-	GoogleIcon,
-	FacebookIcon
+	OpenInNewIcon
 }

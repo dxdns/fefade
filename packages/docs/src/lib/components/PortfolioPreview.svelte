@@ -8,14 +8,7 @@
 		Switch,
 		themeConfig
 	} from "@navnex-kit/svelte"
-	import {
-		DarkModeIcon,
-		GithubIcon,
-		LightModeIcon,
-		LinkedinIcon,
-		OpenInNewIcon,
-		RedditIcon
-	} from "@/icons"
+	import { LinkedinIcon, OpenInNewIcon, RedditIcon } from "@/icons"
 
 	const theme = $derived(themeConfig())
 
@@ -52,12 +45,12 @@
 
 <div
 	style="
-		padding: 3rem 1rem;
-		width: clamp(320px, 90vw, 720px);
-		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
+	padding: 3rem 1rem;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	max-width: 800px;
 	"
 >
 	<header style="text-align: center;">
@@ -85,18 +78,26 @@
 				"
 			>
 				{#each projectsData as { link, title, description } (title)}
-					<Link href={link}>
-						<Card>
-							<h5>{title}</h5>
-							<p class="text-muted" style="margin-top: 0.5rem;">
-								{description}
-							</p>
-						</Card>
-					</Link>
+					<Card href={link} target="_blank" style="cursor: pointer; margin: 0;">
+						<h5>{title}</h5>
+						<p class="text-muted" style="margin-top: 0.5rem;">
+							{description}
+						</p>
+					</Card>
 				{/each}
 			</div>
 			<Button href="https://github.com/dxdns?tab=repositories" target="_blank">
-				<GithubIcon />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="24px"
+					width="24px"
+					fill="currentColor"
+					viewBox="0 0 20 20"
+				>
+					<path
+						d="M10 0c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051-.799-.227-1.655-.341-2.505-.345-.85.004-1.705.118-2.503.345-1.911-1.326-2.751-1.051-2.751-1.051-.543 1.412-.2 2.455-.097 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493C2.865 18.127 0 14.283 0 9.753 0 4.09 4.478 0 10 0z"
+					/>
+				</svg>
 				See all projects
 			</Button>
 		</div>
@@ -166,7 +167,17 @@
 				<LinkedinIcon />
 			</Link>
 			<Link href="https://github.com/dxdns" target="_blank">
-				<GithubIcon />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="24px"
+					width="24px"
+					fill="currentColor"
+					viewBox="0 0 20 20"
+				>
+					<path
+						d="M10 0c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051-.799-.227-1.655-.341-2.505-.345-.85.004-1.705.118-2.503.345-1.911-1.326-2.751-1.051-2.751-1.051-.543 1.412-.2 2.455-.097 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493C2.865 18.127 0 14.283 0 9.753 0 4.09 4.478 0 10 0z"
+					/>
+				</svg>
 			</Link>
 			<Link href="https://reddit.com/user/navnex-kit" target="_blank">
 				<RedditIcon />
@@ -204,8 +215,28 @@
 				</Link>
 			</div>
 			<Switch onclick={theme.toggle} checked={theme.mode === "dark"}>
-				<DarkModeIcon height="14px" width="14px" />
-				<LightModeIcon height="14px" width="14px" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 -960 960 960"
+					height="14px"
+					width="14px"
+					fill="currentColor"
+				>
+					<path
+						d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"
+					/>
+				</svg>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 -960 960 960"
+					height="14px"
+					width="14px"
+					fill="currentColor"
+				>
+					<path
+						d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"
+					/>
+				</svg>
 			</Switch>
 		</div>
 	</footer>

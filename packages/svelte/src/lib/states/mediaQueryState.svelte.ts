@@ -1,9 +1,11 @@
+import { sizeToNumberUtil } from "@navnex-kit/core/utils"
 import type { BreakpointType } from "../types/index.js"
 import { Constants } from "@navnex-kit/core"
 
 export default function mediaQueryState(
 	operator: "min-width" | "max-width",
-	size: BreakpointType | string
+	size: BreakpointType | string,
+	node?: HTMLElement
 ) {
 	if (typeof window === "undefined" || typeof document === "undefined") {
 		return {
@@ -17,28 +19,37 @@ export default function mediaQueryState(
 	let data = $state(false)
 
 	const root = document.documentElement
+	const el = node ?? root
 	const sizeValue = getComputedStyle(root)
 		.getPropertyValue(`${Constants.CSS_VAR_PREFIX}-${size}`)
 		.trim()
 	const breakpointValue =
 		sizeValue || Constants.breakpoints[size as BreakpointType] || size
 
-	const mediaQuery = window.matchMedia(`(${operator}: ${breakpointValue})`)
+	const observer = new ResizeObserver((entries) => {
+		for (const entry of entries) {
+			const width = entry.contentRect.width
+			data =
+				operator === "min-width"
+					? width >= sizeToNumberUtil(breakpointValue)
+					: width <= sizeToNumberUtil(breakpointValue)
+		}
+	})
 
-	function update() {
-		data = mediaQuery.matches
-	}
+	$effect(() => {
+		observer.observe(el)
 
-	update()
-
-	mediaQuery.addEventListener("change", update)
+		return () => {
+			observer.disconnect()
+		}
+	})
 
 	return {
 		get value() {
 			return data
 		},
 		destroy() {
-			mediaQuery.removeEventListener("change", update)
+			observer.disconnect()
 		}
 	}
 }

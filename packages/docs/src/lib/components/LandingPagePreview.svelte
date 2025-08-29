@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import {
 		DarkModeIcon,
 		GithubIcon,
@@ -19,11 +19,12 @@
 		useMediaQuery,
 		Drawer
 	} from "@navnex-kit/svelte"
-	import { onDestroy } from "svelte"
 
 	let isOpen = $state(false)
+	let el: HTMLDivElement | undefined = $state()
+
 	const theme = $derived(themeConfig())
-	const isMd = $derived(useMediaQuery("max-width", "md"))
+	const isMd = $derived(useMediaQuery("max-width", "md", el))
 	const featuresData = [
 		{
 			icon: "💪",
@@ -66,10 +67,6 @@
 		isOpen = false
 		document.body.style.overflow = "auto"
 	}
-
-	onDestroy(() => {
-		isMd.destroy()
-	})
 </script>
 
 {#snippet logo()}
@@ -102,7 +99,7 @@
 	</Drawer.Content>
 </Drawer>
 
-<div class="container">
+<div bind:this={el} class="container">
 	<div
 		style="
 	display: flex;

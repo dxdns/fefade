@@ -3,14 +3,14 @@ import { Button } from "@navnex-kit/svelte"
 import fs from "fs"
 import path from "path"
 
-const { component } = Astro.props
+const { component, ext = "svelte" } = Astro.props
 
 const componentPath = path.join(
 	process.cwd(),
 	"src",
 	"lib",
 	"components",
-	`${component}.svelte`
+	`${component}.${ext}`
 )
 
 const componentCode = fs.readFileSync(componentPath, "utf-8")
