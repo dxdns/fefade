@@ -9,6 +9,6 @@ export interface ToastStateType {
 	isClosable?: boolean
 }
 
-export interface ToastType extends Omit<ToastStateType, "id"> {
+export interface ToastType extends ToastStateType {
 	handleClose?: () => void
 }

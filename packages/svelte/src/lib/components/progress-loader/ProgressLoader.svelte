@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
 	import styles from "./ProgressLoader.module.css"
-	import { classMapUtil } from "@navnex-kit/core/utils"
+	import { classMapUtil, mergeStyleUtil } from "@navnex-kit/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		progress: number
@@ -13,6 +13,9 @@
 <div
 	{...rest}
 	class={classMapUtil(className, [className, styles], styles.progressLoader)}
->
-	<div class={styles.progress} style="width: {progress}%;"></div>
-</div>
+	style={mergeStyleUtil(
+		`--width: ${progress}%;`,
+		`--bg-color: var(--nn-on-success);`,
+		rest.style
+	)}
+></div>

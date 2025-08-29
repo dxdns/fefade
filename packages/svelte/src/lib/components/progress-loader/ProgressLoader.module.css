@@ -1,13 +1,19 @@
 .progressLoader {
-	width: 150px;
-	background: var(--nn-surface);
+	position: relative;
+	background-color: rgba(255, 255, 255, 0.2);
 	height: 5px;
-	border-radius: 7px;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 5px;
 }
 
-.progress {
-	height: 5px;
-	border-radius: 7px;
-	background: var(--nn-primary);
+.progressLoader::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: var(--width);
+	background: var(--bg-color);
 	transition: width 0.5s ease;
 }
