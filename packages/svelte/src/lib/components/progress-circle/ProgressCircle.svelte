@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
+	import { Constants } from "@feflow-ui/core"
 	import type { SVGAttributes } from "svelte/elements"
 	import styles from "./ProgressCircle.module.css"
-	import { classMapUtil } from "@navnex-kit/core/utils"
-	import type { SizeType } from "@navnex-kit/core/types"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import type { SizeType } from "@feflow-ui/core/types"
 
 	interface Props extends SVGAttributes<SVGSVGElement> {
 		value: number

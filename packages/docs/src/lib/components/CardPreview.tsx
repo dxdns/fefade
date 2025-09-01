@@ -1,4 +1,4 @@
-import { Card } from "@navnex-kit/react"
+import { Card } from "@feflow-ui/react"
 import { useState } from "react"
 
 export default function () {

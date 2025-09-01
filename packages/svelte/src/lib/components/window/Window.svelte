@@ -3,8 +3,8 @@
 	import Card from "../card/index.js"
 	import Badge from "../badge/index.js"
 	import type { Snippet } from "svelte"
-	import type { CardType, HTMLAttrAnchor } from "@navnex-kit/core/types"
-	import styles from "@navnex-kit/core/styles/Window.module.css"
+	import type { CardType, HTMLAttrAnchor } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/Window.module.css"
 
 	interface Props
 		extends HTMLAttributes<HTMLDivElement>,

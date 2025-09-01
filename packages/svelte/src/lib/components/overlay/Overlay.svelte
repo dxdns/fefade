@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from "svelte/elements"
-	import { classMapUtil } from "@navnex-kit/core/utils"
-	import styles from "@navnex-kit/core/styles/Overlay.module.css"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import styles from "@feflow-ui/core/styles/Overlay.module.css"
 
 	interface Props extends HTMLButtonAttributes {
 		isOpen: boolean

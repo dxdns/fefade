@@ -10,6 +10,6 @@
 }
 
 .code::-webkit-scrollbar-thumb {
-	background: var(--nn-border);
+	background: var(--ff-border);
 	border-radius: 4px;
 }

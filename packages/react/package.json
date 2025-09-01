@@ -1,17 +1,17 @@
 {
-	"name": "@navnex-kit/react",
-	"version": "1.0.1",
-	"description": "navnex-kit React components",
+	"name": "@feflow-ui/react",
+	"version": "1.0.0",
+	"description": "Feflow UI React components",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"homepage": "https://kit.navnex.com",
+	"homepage": "https://feflow-ui.dev",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/navnex-kit.git"
+		"url": "git+https://github.com/dxdns/feflow-ui.git"
 	},
 	"type": "module",
 	"main": "dist/index.js",
@@ -26,7 +26,7 @@
 		"build:watch": "tsc --watch & vite build --watch"
 	},
 	"peerDependencies": {
-		"@navnex-kit/core": "^1.0.1",
+		"@feflow-ui/core": "^1.0.1",
 		"vite": "^6.2.3"
 	},
 	"devDependencies": {
@@ -37,13 +37,13 @@
 		"react-dom": "^19.1.0",
 		"vite-plugin-dts": "^4.5.4",
 		"vite-plugin-lib-inject-css": "^2.2.2",
-		"@navnex-kit/core": "*"
+		"@feflow-ui/core": "*"
 	},
 	"keywords": [
 		"react",
 		"react-ui",
 		"ui",
-		"navnex-kit",
+		"feflow-ui",
 		"components",
 		"ui-components",
 		"react-pkg",

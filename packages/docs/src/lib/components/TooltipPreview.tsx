@@ -1,5 +1,5 @@
-import { Constants } from "@navnex-kit/core"
-import { Tooltip } from "@navnex-kit/react"
+import { Constants } from "@feflow-ui/core"
+import { Tooltip } from "@feflow-ui/react"
 
 export default function () {
 	return (

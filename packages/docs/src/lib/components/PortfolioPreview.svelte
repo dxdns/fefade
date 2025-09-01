@@ -7,7 +7,7 @@
 		Separator,
 		Switch,
 		themeConfig
-	} from "@navnex-kit/svelte"
+	} from "@feflow-ui/svelte"
 	import { LinkedinIcon, OpenInNewIcon, RedditIcon } from "@/icons"
 
 	const theme = $derived(themeConfig())
@@ -158,8 +158,8 @@
 		<h2 style="margin-bottom: 0.5rem;">Connect</h2>
 		<p class="text-muted">
 			Feel free to contact me at
-			<Link href="mailto:hi@navnex-kit.dev" hoverUnderline="center">
-				hi@navnex-kit.dev
+			<Link href="mailto:hi@feflow-ui.dev" hoverUnderline="center">
+				hi@feflow-ui.dev
 			</Link>
 		</p>
 		<div style="display: flex; gap: 1rem; margin-top: 1rem;">
@@ -179,7 +179,7 @@
 					/>
 				</svg>
 			</Link>
-			<Link href="https://reddit.com/user/navnex-kit" target="_blank">
+			<Link href="https://reddit.com/user/feflow-ui" target="_blank">
 				<RedditIcon />
 			</Link>
 		</div>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import { TextField } from "@navnex-kit/svelte"
+	import { Constants } from "@feflow-ui/core"
+	import { TextField } from "@feflow-ui/svelte"
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">

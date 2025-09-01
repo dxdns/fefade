@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "@navnex-kit/core/utils"
-	import type { SizeType } from "@navnex-kit/core/types"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import type { SizeType } from "@feflow-ui/core/types"
 
 	interface Props extends HTMLAttributes<HTMLElement> {
 		size?: SizeType
@@ -20,9 +20,9 @@
 
 <style>
 	kbd {
-		background: var(--nn-surface, #f9f9f9);
-		color: var(--nn-on-bg, #333);
-		border: 1px solid var(--nn-border, #b4b4b4);
+		background: var(--ff-surface, #f9f9f9);
+		color: var(--ff-on-bg, #333);
+		border: 1px solid var(--ff-border, #b4b4b4);
 		border-radius: 6px;
 		padding: 0.2em 0.5em;
 		font-family: inherit;
@@ -34,7 +34,7 @@
 			0 1px 1px rgba(0, 0, 0, 0.2),
 			inset 0 2px 0 rgba(255, 255, 255, 0.7);
 		border-bottom: 4px solid
-			color-mix(in srgb, var(--nn-border, #b4b4b4) 90%, gray);
+			color-mix(in srgb, var(--ff-border, #b4b4b4) 90%, gray);
 	}
 
 	kbd.xs,

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { Snippet } from "svelte"
-	import { autoAlignAction, clickOutsideAction } from "@navnex-kit/core/actions"
-	import { classMapUtil } from "@navnex-kit/core/utils"
-	import styles from "@navnex-kit/core/styles/Menu.module.css"
+	import { autoAlignAction, clickOutsideAction } from "@feflow-ui/core/actions"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import styles from "@feflow-ui/core/styles/Menu.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "id"> {
 		id: string

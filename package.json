@@ -1,5 +1,5 @@
 {
-	"name": "navnex-kit",
+	"name": "feflow-ui",
 	"version": "1.0.0",
 	"description": "UI Component Library",
 	"private": true,
@@ -8,35 +8,35 @@
 		"packages/*"
 	],
 	"scripts": {
-		"dev:core": "npm run dev -w @navnex-kit/core",
-		"dev:svelte": "concurrently --names \"CORE,SVELTE\" --prefix-colors \"gray,yellow\" \"npm run dev:core\" \"npm run dev -w @navnex-kit/svelte\"",
-		"dev:react": "concurrently --names \"CORE,REACT\" --prefix-colors \"gray,magenta\" \"npm run dev:core\" \"npm run dev -w @navnex-kit/react\"",
-		"dev:vue": "concurrently --names \"CORE,VUE\" --prefix-colors \"gray,cyan\" \"npm run dev:core\" \"npm run dev -w @navnex-kit/vue\"",
-		"dev:docs": "concurrently --names \"CORE,DOCS\" --prefix-colors \"gray,white\" \"npm run dev:core\" \"npm run dev -w @navnex-kit/docs\"",
-		"build:core": "npm run build -w @navnex-kit/core",
-		"build:svelte": "npm run build -w @navnex-kit/svelte",
-		"build:react": "npm run build -w @navnex-kit/react",
-		"build:vue": "npm run build -w @navnex-kit/vue",
+		"dev:core": "npm run dev -w @feflow-ui/core",
+		"dev:svelte": "concurrently --names \"CORE,SVELTE\" --prefix-colors \"gray,yellow\" \"npm run dev:core\" \"npm run dev -w @feflow-ui/svelte\"",
+		"dev:react": "concurrently --names \"CORE,REACT\" --prefix-colors \"gray,magenta\" \"npm run dev:core\" \"npm run dev -w @feflow-ui/react\"",
+		"dev:vue": "concurrently --names \"CORE,VUE\" --prefix-colors \"gray,cyan\" \"npm run dev:core\" \"npm run dev -w @feflow-ui/vue\"",
+		"dev:docs": "concurrently --names \"CORE,DOCS\" --prefix-colors \"gray,white\" \"npm run dev:core\" \"npm run dev -w @feflow-ui/docs\"",
+		"build:core": "npm run build -w @feflow-ui/core",
+		"build:svelte": "npm run build -w @feflow-ui/svelte",
+		"build:react": "npm run build -w @feflow-ui/react",
+		"build:vue": "npm run build -w @feflow-ui/vue",
 		"build:all": "npm run build:core && npm run build:svelte && npm run build:react && npm run build:vue",
 		"git:push": "git push && git push --tags",
-		"release:core:patch": "npm run build:core && npm version patch -w @navnex-kit/core --no-git-tag-version && git add packages/core && git commit -m \"chore(release): bump version core\" && git tag core-v$(node -p \"require('./packages/core/package.json').version\") && npm run git:push",
-		"release:svelte:patch": "npm run build:svelte && npm version patch -w @navnex-kit/svelte --no-git-tag-version && git add packages/svelte && git commit -m \"chore(release): bump version svelte\" && git tag svelte-v$(node -p \"require('./packages/svelte/package.json').version\") && npm run git:push",
-		"release:react:patch": "npm run build:react && npm version patch -w @navnex-kit/react --no-git-tag-version && git add packages/react && git commit -m \"chore(release): bump version react\" && git tag react-v$(node -p \"require('./packages/react/package.json').version\") && npm run git:push",
-		"release:vue:patch": "npm run build:vue && npm version patch -w @navnex-kit/vue --no-git-tag-version && git add packages/vue && git commit -m \"chore(release): bump version vue\" && git tag vue-v$(node -p \"require('./packages/vue/package.json').version\") && npm run git:push",
+		"release:core:patch": "npm run build:core && npm version patch -w @feflow-ui/core --no-git-tag-version && git add packages/core && git commit -m \"chore(release): bump version core\" && git tag core-v$(node -p \"require('./packages/core/package.json').version\") && npm run git:push",
+		"release:svelte:patch": "npm run build:svelte && npm version patch -w @feflow-ui/svelte --no-git-tag-version && git add packages/svelte && git commit -m \"chore(release): bump version svelte\" && git tag svelte-v$(node -p \"require('./packages/svelte/package.json').version\") && npm run git:push",
+		"release:react:patch": "npm run build:react && npm version patch -w @feflow-ui/react --no-git-tag-version && git add packages/react && git commit -m \"chore(release): bump version react\" && git tag react-v$(node -p \"require('./packages/react/package.json').version\") && npm run git:push",
+		"release:vue:patch": "npm run build:vue && npm version patch -w @feflow-ui/vue --no-git-tag-version && git add packages/vue && git commit -m \"chore(release): bump version vue\" && git tag vue-v$(node -p \"require('./packages/vue/package.json').version\") && npm run git:push",
 		"prepare": "npm run build:all",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint ."
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/navnex-kit.git"
+		"url": "git+https://github.com/dxdns/feflow-ui.git"
 	},
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/dxdns/navnex-kit/issues"
+		"url": "https://github.com/dxdns/feflow-ui/issues"
 	},
-	"homepage": "https://github.com/dxdns/navnex-kit#readme",
+	"homepage": "https://github.com/dxdns/feflow-ui#readme",
 	"devDependencies": {
 		"@types/node": "^22.14.1",
 		"chokidar-cli": "^3.0.0",

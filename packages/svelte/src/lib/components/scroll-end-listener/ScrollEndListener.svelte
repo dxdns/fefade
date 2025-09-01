@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onScrollEndAction } from "@navnex-kit/core/actions"
+	import { onScrollEndAction } from "@feflow-ui/core/actions"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

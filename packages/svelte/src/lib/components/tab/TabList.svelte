@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
+	import { Constants } from "@feflow-ui/core"
 	import type { HTMLAttributes } from "svelte/elements"
-	import { activeLineAction } from "@navnex-kit/core/actions"
+	import { activeLineAction } from "@feflow-ui/core/actions"
 	import HoverFollower from "../hover-follower/index.js"
-	import type { ActionType, OrientationType } from "@navnex-kit/core/types"
+	import type { ActionType, OrientationType } from "@feflow-ui/core/types"
 	import {
 		classMapUtil,
 		getPropValueUtil,
 		mergeStyleUtil
-	} from "@navnex-kit/core/utils"
+	} from "@feflow-ui/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		lineStyle?:

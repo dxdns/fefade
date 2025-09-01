@@ -1,8 +1,8 @@
 <script setup lang="ts">
 	import { useAttrs, computed, IntrinsicElementAttributes } from "vue"
-	import { classMapUtil } from "@navnex-kit/core/utils"
-	import styles from "@navnex-kit/core/styles/Badge.module.css"
-	import type { BadgeType } from "@navnex-kit/core/types"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import styles from "@feflow-ui/core/styles/Badge.module.css"
+	import type { BadgeType } from "@feflow-ui/core/types"
 
 	interface Props extends BadgeType {}
 

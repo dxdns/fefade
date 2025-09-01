@@ -1,4 +1,4 @@
-import { BottomSheet, Button } from "@navnex-kit/react"
+import { BottomSheet, Button } from "@feflow-ui/react"
 import { useEffect, useState } from "react"
 
 export default function () {

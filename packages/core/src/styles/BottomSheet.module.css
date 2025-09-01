@@ -27,8 +27,8 @@
 .wrapper {
 	width: 100%;
 	position: relative;
-	background: var(--nn-surface);
-	color: var(--nn-on-surface);
+	background: var(--ff-surface);
+	color: var(--ff-on-surface);
 	min-height: 0;
 	max-height: 100vh;
 	height: 50vh;
@@ -37,6 +37,6 @@
 	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
-	border: 1px solid var(--nn-border);
+	border: 1px solid var(--ff-border);
 	overflow: hidden;
 }

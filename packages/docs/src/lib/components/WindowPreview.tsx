@@ -1,4 +1,4 @@
-import { Window } from "@navnex-kit/react"
+import { Window } from "@feflow-ui/react"
 
 export default function () {
 	const windowVariants = ["contained", "outlined"] as const

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@navnex-kit/core/utils"
-	import type { ColorType, SizeType, VariantType } from "@navnex-kit/core/types"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import type { ColorType, SizeType, VariantType } from "@feflow-ui/core/types"
 	import { VisibilityIcon, VisibilityOffIcon } from "../../icons/index.js"
 	import Button from "../button/index.js"
 	import TextField from "../text-field/index.js"

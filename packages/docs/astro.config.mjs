@@ -8,10 +8,10 @@ import vue from "@astrojs/vue"
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://kit.navnex.com",
+	site: "https://feflow-ui.dev",
 	integrations: [
 		starlight({
-			title: "navnex-kit",
+			title: "Feflow UI",
 			components: {
 				PageFrame: "./src/lib/layouts/RootLayout.astro",
 				Hero: "./src/lib/components/Hero.astro",
@@ -21,14 +21,13 @@ export default defineConfig({
 			favicon: "/favicon.png",
 			logo: {
 				src: "./public/favicon.png",
-				alt: "navnex-kit",
-				replacesTitle: true
+				alt: "logo"
 			},
 			social: [
 				{
 					icon: "github",
 					label: "GitHub",
-					href: "https://github.com/dxdns/navnex-kit"
+					href: "https://github.com/dxdns/feflow-ui"
 				}
 			],
 			sidebar: [

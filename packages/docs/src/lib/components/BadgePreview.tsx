@@ -1,5 +1,5 @@
-import { Constants } from "@navnex-kit/core"
-import { Badge } from "@navnex-kit/react"
+import { Constants } from "@feflow-ui/core"
+import { Badge } from "@feflow-ui/react"
 
 export default function () {
 	const badgeVariants = ["outlined", "contained"] as const

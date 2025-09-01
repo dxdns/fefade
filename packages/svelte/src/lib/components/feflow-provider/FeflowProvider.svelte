@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount, type Snippet } from "svelte"
-	import { Constants } from "@navnex-kit/core"
-	import type { ThemeConfigType, ThemeModeType } from "@navnex-kit/core/types"
-	import { providerUtil } from "@navnex-kit/core/utils"
+	import { Constants } from "@feflow-ui/core"
+	import type { ThemeConfigType, ThemeModeType } from "@feflow-ui/core/types"
+	import { providerUtil } from "@feflow-ui/core/utils"
 	import { themeConfigState } from "../../states/index.js"
-	import rawStyle from "@navnex-kit/core/styles/NavnexProvider.css?raw"
+	import rawStyle from "@feflow-ui/core/styles/FeflowProvider.css?raw"
 
 	interface Props {
 		/** @deprecated Use `theme` instead */

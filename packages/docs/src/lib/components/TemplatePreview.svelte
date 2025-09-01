@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from "@navnex-kit/svelte"
+	import { Button } from "@feflow-ui/svelte"
 	import type { Snippet } from "svelte"
 
 	interface Props {

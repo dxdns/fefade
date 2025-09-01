@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { ref } from "vue"
-	import { Card } from "@navnex-kit/vue"
+	import { Card } from "@feflow-ui/vue"
 
 	const borderWidth = ref(1)
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DateInput } from "@navnex-kit/svelte"
+	import { DateInput } from "@feflow-ui/svelte"
 </script>
 
 <DateInput />

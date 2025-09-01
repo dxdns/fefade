@@ -1,4 +1,4 @@
-import { ColorPicker } from "@navnex-kit/react"
+import { ColorPicker } from "@feflow-ui/react"
 import { useState, type CSSProperties } from "react"
 
 export default function () {
@@ -23,7 +23,7 @@ export default function () {
 					{
 						width: "38px",
 						height: "38px",
-						border: "1px solid var(--nn-border)",
+						border: "1px solid var(--ff-border)",
 						borderRadius: "0.25rem",
 						background: "var(--color)",
 						["--color"]: color

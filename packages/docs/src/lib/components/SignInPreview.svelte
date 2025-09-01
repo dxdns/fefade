@@ -7,7 +7,7 @@
 		PasswordInput,
 		Separator,
 		TextField
-	} from "@navnex-kit/svelte"
+	} from "@feflow-ui/svelte"
 </script>
 
 <div class="container">

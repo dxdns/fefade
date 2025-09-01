@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button, Timer } from "@/index.js"
-	import { Constants } from "@navnex-kit/core"
+	import { Constants } from "@feflow-ui/core"
 
 	const themeColor = Constants.themeColorVar
 

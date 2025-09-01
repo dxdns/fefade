@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Alert } from "@navnex-kit/svelte"
-	import { Constants } from "@navnex-kit/core"
+	import { Alert } from "@feflow-ui/svelte"
+	import { Constants } from "@feflow-ui/core"
 </script>
 
 <br />

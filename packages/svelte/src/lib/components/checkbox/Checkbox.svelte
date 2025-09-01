@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { classMapUtil } from "@navnex-kit/core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import type { SizeType } from "@navnex-kit/core/types"
-	import styles from "@navnex-kit/core/styles/Checkbox.module.css"
+	import type { SizeType } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/Checkbox.module.css"
 	import { CheckmarkIcon } from "../../icons/index.js"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "size">, "type"> {

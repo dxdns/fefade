@@ -1,17 +1,17 @@
 {
-	"name": "@navnex-kit/core",
-	"version": "1.0.1",
-	"description": "navnex-kit Core",
+	"name": "@feflow-ui/core",
+	"version": "1.0.0",
+	"description": "Feflow UI Core",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"homepage": "https://kit.navnex.com",
+	"homepage": "https://feflow-ui.dev",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/navnex-kit.git"
+		"url": "git+https://github.com/dxdns/feflow-ui.git"
 	},
 	"scripts": {
 		"build": "tsc && node esbuild.config.mjs",

@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { SizeType } from "@navnex-kit/core/types"
+	import type { SizeType } from "@feflow-ui/core/types"
 	import {
 		classMapUtil,
 		mergeStyleUtil,
 		dataIconUrlUtil
-	} from "@navnex-kit/core/utils"
+	} from "@feflow-ui/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import styles from "@navnex-kit/core/styles/RangeInput.module.css"
+	import styles from "@feflow-ui/core/styles/RangeInput.module.css"
 
 	interface Props
 		extends Omit<Omit<Omit<HTMLInputAttributes, "value">, "type">, "size"> {

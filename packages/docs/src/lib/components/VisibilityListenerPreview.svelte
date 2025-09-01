@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { VisibilityListener } from "@navnex-kit/svelte"
+	import { VisibilityListener } from "@feflow-ui/svelte"
 
 	let isVisible = $state(false)
 	const n = 50

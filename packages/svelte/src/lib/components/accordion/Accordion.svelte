@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import type { AccordionType } from "@navnex-kit/core/types"
+	import type { AccordionType } from "@feflow-ui/core/types"
 	import { KeyboardArrowLeftIcon } from "../../icons/index.js"
-	import { classMapUtil } from "@navnex-kit/core/utils"
-	import styles from "@navnex-kit/core/styles/Accordion.module.css"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import styles from "@feflow-ui/core/styles/Accordion.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "id">, AccordionType {}
 

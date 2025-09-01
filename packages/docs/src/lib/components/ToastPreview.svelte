@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import { Button, toast } from "@navnex-kit/svelte"
+	import { Constants } from "@feflow-ui/core"
+	import { Button, toast } from "@feflow-ui/svelte"
 
 	const positions = [
 		"top-left",

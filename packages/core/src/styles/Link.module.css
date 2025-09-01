@@ -4,7 +4,7 @@
 	align-items: center;
 	gap: 0.5em;
 	transition: color 0.3s ease;
-	color: var(--nn-on-bg, currentColor);
+	color: var(--ff-on-bg, currentColor);
 	line-height: 0.7em;
 	text-decoration: none;
 }
@@ -46,13 +46,13 @@
 	width: 100%;
 	transform-origin: var(--origin);
 	height: 0.125em;
-	background: var(--nn-primary, currentColor);
+	background: var(--ff-primary, currentColor);
 	transition: transform 0.25s ease-out;
 }
 
 @media (hover: hover) and (pointer: fine) {
 	.link:hover {
-		color: color-mix(in srgb, var(--nn-on-bg, currentColor) 75%, gray 15%);
+		color: color-mix(in srgb, var(--ff-on-bg, currentColor) 75%, gray 15%);
 	}
 
 	.link svg {

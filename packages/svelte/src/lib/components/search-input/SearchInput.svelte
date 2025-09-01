@@ -1,14 +1,14 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@navnex-kit/core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type {
 		ActionEntryType,
 		ColorType,
 		VariantType
-	} from "@navnex-kit/core/types"
+	} from "@feflow-ui/core/types"
 	import { SearchIcon } from "../../icons/index.js"
 	import TextField from "../text-field/index.js"
-	import styles from "@navnex-kit/core/styles/SearchInput.module.css"
+	import styles from "@feflow-ui/core/styles/SearchInput.module.css"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "type">, "size"> {
 		variant?: VariantType

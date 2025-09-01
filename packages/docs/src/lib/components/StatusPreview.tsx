@@ -1,5 +1,5 @@
-import { Status } from "@navnex-kit/react"
-import { Constants } from "@navnex-kit/core"
+import { Status } from "@feflow-ui/react"
+import { Constants } from "@feflow-ui/core"
 
 export default function () {
 	return (

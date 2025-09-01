@@ -1,5 +1,5 @@
-import { Constants } from "@navnex-kit/core"
-import { Accordion } from "@navnex-kit/react"
+import { Constants } from "@feflow-ui/core"
+import { Accordion } from "@feflow-ui/react"
 
 export default function () {
 	return (

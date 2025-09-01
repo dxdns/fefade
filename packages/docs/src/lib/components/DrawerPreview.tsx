@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Button, Drawer, Window } from "@navnex-kit/react"
+import { Button, Drawer, Window } from "@feflow-ui/react"
 
 export default function () {
 	const [drawerStates, setDrawerStates] = useState({

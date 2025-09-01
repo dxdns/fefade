@@ -4,16 +4,16 @@
 		handleClickUtil,
 		hasKeysUtil,
 		videoUtil
-	} from "@navnex-kit/core/utils"
+	} from "@feflow-ui/core/utils"
 	import type {
 		GalleryItemType,
 		GalleryCaptionType,
 		HTMLAttrAnchor,
 		ImageType,
 		GalleryMediaType
-	} from "@navnex-kit/core/types"
+	} from "@feflow-ui/core/types"
 	import type { Snippet } from "svelte"
-	import styles from "@navnex-kit/core/styles/GalleryItem.module.css"
+	import styles from "@feflow-ui/core/styles/GalleryItem.module.css"
 	import type { HTMLImgAttributes, HTMLVideoAttributes } from "svelte/elements"
 	import { Video } from "../video/index.js"
 	import { Image } from "../image/index.js"

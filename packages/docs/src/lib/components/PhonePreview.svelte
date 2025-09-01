@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Phone } from "@navnex-kit/svelte"
+	import { Phone } from "@feflow-ui/svelte"
 </script>
 
 <Phone>

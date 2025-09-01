@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
+	import { Constants } from "@feflow-ui/core"
 	import { Badge, Select } from "@/index.js"
 
 	let currentOption = $state("v2")

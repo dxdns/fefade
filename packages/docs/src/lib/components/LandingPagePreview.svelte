@@ -18,7 +18,7 @@
 		themeConfig,
 		useMediaQuery,
 		Drawer
-	} from "@navnex-kit/svelte"
+	} from "@feflow-ui/svelte"
 
 	let isOpen = $state(false)
 	let el: HTMLDivElement | undefined = $state()
@@ -337,7 +337,7 @@
 			justify-content: center;
 			"
 			>
-				<Link href="https://github.com/dxdns/navnex-kit" target="_blank">
+				<Link href="https://github.com/dxdns/feflow-ui" target="_blank">
 					<GithubIcon />
 				</Link>
 				<Link href="#">
