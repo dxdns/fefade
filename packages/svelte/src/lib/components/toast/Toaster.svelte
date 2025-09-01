@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
+	import { Constants } from "@feflow-ui/core"
 	import { toastState } from "../../states/index.js"
 	import Toast from "./Toast.svelte"
 	import { fade } from "svelte/transition"
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@navnex-kit/core/utils"
+	import { classMapUtil, mergeStyleUtil } from "@feflow-ui/core/utils"
 	import { flip } from "svelte/animate"
-	import styles from "@navnex-kit/core/styles/Toaster.module.css"
+	import styles from "@feflow-ui/core/styles/Toaster.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		fullWidth?: boolean
@@ -16,14 +16,14 @@
 
 	let isHovered = $state(false)
 
-	const toast = toastState()
+	const _toastState = toastState()
 	const maxToasts = fullWidth ? 1 : 3
 </script>
 
 {#each Constants.alignments as alignment (alignment)}
 	{@const pos = alignment.split("-")[0]}
 	{@const isPositionTop = pos === "top"}
-	{@const grouped = toast
+	{@const grouped = _toastState
 		.getAll()
 		.filter((t) => t.position === alignment)
 		.slice(-maxToasts)
@@ -33,12 +33,12 @@
 		class={classMapUtil(
 			className,
 			[styles, className],
-			styles.toaster,
 			[alignment, styles],
 			[pos, styles],
 			{
 				[styles.fullWidth]: fullWidth
-			}
+			},
+			styles.toaster
 		)}
 	>
 		{#each grouped as item, i (item.id)}
@@ -51,19 +51,15 @@
 				}}
 				onmouseenter={() => {
 					isHovered = true
-					toast.pauseAll()
 				}}
 				onmouseleave={() => {
 					isHovered = false
-					toast.resumeAll()
 				}}
 				style={mergeStyleUtil(
 					`
-						--toast-padding: 0.75rem 0;
-						--toast-side-offset: 0.5rem;
 						--toast-opacity: ${isHovered ? 1 : 1 - i * 0.08};
 						--toast-z-index: ${isHovered ? 1000 : 1000 - i};
-						--toast-translate: ${isPositionTop ? i * (isHovered ? 48 : 8) : -i * (isHovered ? 48 : 8)}px;
+						--toast-translate: ${isPositionTop ? i * (isHovered ? 52 : 8) : -i * (isHovered ? 52 : 8)}px;
 						--toast-scale: ${isHovered ? 1 : 1 - i * 0.05};
 					`,
 					rest.style
@@ -73,7 +69,7 @@
 					{...item}
 					class={styles.toast}
 					handleClose={() => {
-						toast.remove(item.id)
+						_toastState.remove(item.id)
 					}}
 				/>
 			</div>

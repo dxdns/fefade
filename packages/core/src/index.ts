@@ -1,7 +1,7 @@
 /**
  *  @license MIT
- *  navnex
- *  https://kit.navnex.com
+ *  Feflow UI
+ *  https://feflow-ui.dev
  */
 
 export * as Constants from "./constants.js"

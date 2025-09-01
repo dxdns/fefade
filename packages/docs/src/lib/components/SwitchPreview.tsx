@@ -1,4 +1,4 @@
-import { Switch } from "@navnex-kit/react"
+import { Switch } from "@feflow-ui/react"
 
 export default function () {
 	const sizes = ["xs", "sm", "md", "lg", "xl"] as const

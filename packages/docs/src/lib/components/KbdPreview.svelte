@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import { Kbd } from "@navnex-kit/svelte"
+	import { Constants } from "@feflow-ui/core"
+	import { Kbd } from "@feflow-ui/svelte"
 </script>
 
 {#each Constants.sizes as size (size)}

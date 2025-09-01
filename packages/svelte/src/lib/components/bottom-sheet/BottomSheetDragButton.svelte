@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { classMapUtil } from "@navnex-kit/core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { BottomSheetDragButtonType } from "@navnex-kit/core/types"
-	import styles from "@navnex-kit/core/styles/BottomSheetDragButton.module.css"
+	import type { BottomSheetDragButtonType } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/BottomSheetDragButton.module.css"
 
 	interface Props
 		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

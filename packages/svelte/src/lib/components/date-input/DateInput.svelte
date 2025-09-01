@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@navnex-kit/core/utils"
-	import styles from "@navnex-kit/core/styles/DateInput.module.css"
+	import { classMapUtil } from "@feflow-ui/core/utils"
+	import styles from "@feflow-ui/core/styles/DateInput.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "type"> {
 		type?: "date" | "month"

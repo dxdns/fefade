@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import { NumberInput } from "@navnex-kit/svelte"
+	import { Constants } from "@feflow-ui/core"
+	import { NumberInput } from "@feflow-ui/svelte"
 
 	let quantity = $state(0)
 </script>

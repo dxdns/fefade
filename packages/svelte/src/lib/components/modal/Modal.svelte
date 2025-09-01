@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "@navnex-kit/core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import Card from "../card/index.js"
-	import type { ModalType } from "@navnex-kit/core/types"
-	import styles from "@navnex-kit/core/styles/Modal.module.css"
-	import animationStyle from "@navnex-kit/core/styles/Animation.module.css"
+	import type { ModalType } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/Modal.module.css"
+	import animationStyle from "@feflow-ui/core/styles/Animation.module.css"
 
 	interface Props extends ModalType, HTMLAttributes<HTMLDivElement> {}
 

@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes } from "react"
-import { classMapUtil } from "@navnex-kit/core/utils"
-import styles from "@navnex-kit/core/styles/AvatarGroup.module.css"
+import { classMapUtil } from "@feflow-ui/core/utils"
+import styles from "@feflow-ui/core/styles/AvatarGroup.module.css"
 
 interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {}
 

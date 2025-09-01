@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import { Switch, themeConfig } from "@navnex-kit/svelte"
+	import { Constants } from "@feflow-ui/core"
+	import { Switch, themeConfig } from "@feflow-ui/svelte"
 
 	const { colors } = $derived(themeConfig())
 </script>

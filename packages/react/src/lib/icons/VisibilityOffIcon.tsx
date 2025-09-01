@@ -1,5 +1,5 @@
 import { forwardRef, SVGAttributes } from "react"
-import { visibilityOffIcon } from "@navnex-kit/core/icons"
+import { visibilityOffIcon } from "@feflow-ui/core/icons"
 
 interface Props extends SVGAttributes<SVGSVGElement> {}
 

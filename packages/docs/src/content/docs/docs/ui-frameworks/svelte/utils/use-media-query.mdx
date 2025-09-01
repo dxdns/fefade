@@ -1,6 +1,10 @@
 ---
 title: useMediaQuery
 description: Listens for matches to a CSS media query.
+head:
+  - tag: title
+    content: Svelte useMediaQuery Component Util
+categories: ["svelte"]
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components"
@@ -15,7 +19,7 @@ import UseMediaQueryPreview from "@/components/UseMediaQueryPreview.svelte"
 	<TabItem label="Usage">
 	```svelte
 	<script lang="ts">
-        import { useMediaQuery } from "@navnex-kit/svelte"
+        import { useMediaQuery } from "@feflow-ui/svelte"
         import { onDestroy } from "svelte"
 
         const isSm = $derived(useMediaQuery("max-width", "sm"))

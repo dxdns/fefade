@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, ProgressLoader } from "@navnex-kit/svelte"
+	import { Button, ProgressLoader } from "@feflow-ui/svelte"
 
 	let progress = $state(0)
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import { Button } from "@navnex-kit/vue"
+	import { Constants } from "@feflow-ui/core"
+	import { Button } from "@feflow-ui/vue"
 
 	const colors = ["error", "success", "warning", "info", "primary"] as const
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Drawer, Window } from "@navnex-kit/svelte"
+	import { Button, Drawer, Window } from "@feflow-ui/svelte"
 
 	let drawerStates = $state({
 		top: false,

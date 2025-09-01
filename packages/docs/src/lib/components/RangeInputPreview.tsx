@@ -1,5 +1,5 @@
-import { Constants } from "@navnex-kit/core"
-import { Badge, RangeInput } from "@navnex-kit/react"
+import { Constants } from "@feflow-ui/core"
+import { Badge, RangeInput } from "@feflow-ui/react"
 import { useState } from "react"
 
 export default function () {

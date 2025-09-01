@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card, Timeline } from "@navnex-kit/svelte"
+	import { Card, Timeline } from "@feflow-ui/svelte"
 </script>
 
 {#each Array.from({ length: 6 }) as _, i (i)}

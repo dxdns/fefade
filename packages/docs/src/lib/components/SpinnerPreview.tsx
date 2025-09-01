@@ -1,5 +1,5 @@
-import { Constants } from "@navnex-kit/core"
-import { Spinner } from "@navnex-kit/react"
+import { Constants } from "@feflow-ui/core"
+import { Spinner } from "@feflow-ui/react"
 
 export default function () {
 	return (

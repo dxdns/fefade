@@ -1,3 +1,3 @@
-navnex-kit Core components library.
+Feflow UI Core components library.
 
-[View documentation](https://kit.navnex.com).
+[View documentation](https://feflow-ui.dev).

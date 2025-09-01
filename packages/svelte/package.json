@@ -1,17 +1,17 @@
 {
-	"name": "@navnex-kit/svelte",
-	"version": "1.0.1",
-	"description": "navnex-kit Svelte components",
+	"name": "@feflow-ui/svelte",
+	"version": "1.0.0",
+	"description": "Feflow UI Svelte components",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"homepage": "https://kit.navnex.com",
+	"homepage": "https://feflow-ui.dev",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/navnex-kit.git"
+		"url": "git+https://github.com/dxdns/feflow-ui.git"
 	},
 	"scripts": {
 		"dev": "vite dev",
@@ -41,7 +41,7 @@
 		}
 	},
 	"peerDependencies": {
-		"@navnex-kit/core": "^1.0.1",
+		"@feflow-ui/core": "^1.0.1",
 		"svelte": "^5.0.0",
 		"vite": "^6.2.3"
 	},
@@ -53,14 +53,14 @@
 		"publint": "^0.3.2",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
-		"@navnex-kit/core": "*"
+		"@feflow-ui/core": "*"
 	},
 	"keywords": [
 		"svelte",
 		"svelte5",
 		"svelte-ui",
 		"ui",
-		"navnex-kit",
+		"feflow-ui",
 		"components",
 		"ui-components",
 		"svelte-pkg",

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { checkVisibilityAction } from "@navnex-kit/core/actions"
+	import { checkVisibilityAction } from "@feflow-ui/core/actions"
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { VisibilityListenerType } from "@navnex-kit/core/types"
+	import type { VisibilityListenerType } from "@feflow-ui/core/types"
 
 	interface Props
 		extends HTMLAttributes<HTMLDivElement>,

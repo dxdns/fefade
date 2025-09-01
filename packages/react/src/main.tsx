@@ -1,7 +1,7 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import App from "./App"
-import NavnexProvider from "./lib/components/navnex-provider"
+import FeflowProvider from "./lib/components/feflow-provider"
 import { createTheme } from "./lib"
 
 const theme = createTheme({
@@ -10,8 +10,8 @@ const theme = createTheme({
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<NavnexProvider theme={theme}>
+		<FeflowProvider theme={theme}>
 			<App />
-		</NavnexProvider>
+		</FeflowProvider>
 	</StrictMode>
 )

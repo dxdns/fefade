@@ -1,20 +1,20 @@
 <script setup lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import type { CardType, HTMLAttrAnchor } from "@navnex-kit/core/types"
+	import { Constants } from "@feflow-ui/core"
+	import type { CardType, HTMLAttrAnchor } from "@feflow-ui/core/types"
 	import {
 		classMapUtil,
 		getPropValueUtil,
 		handleClickUtil,
 		normalizeSizeUtil
-	} from "@navnex-kit/core/utils"
+	} from "@feflow-ui/core/utils"
 	import {
 		computed,
 		useAttrs,
 		IntrinsicElementAttributes,
 		CSSProperties
 	} from "vue"
-	import { glowOnHoverAction } from "@navnex-kit/core/actions"
-	import styles from "@navnex-kit/core/styles/Card.module.css"
+	import { glowOnHoverAction } from "@feflow-ui/core/actions"
+	import styles from "@feflow-ui/core/styles/Card.module.css"
 	import { useAction } from "@/utils"
 
 	interface Props extends CardType, HTMLAttrAnchor {}

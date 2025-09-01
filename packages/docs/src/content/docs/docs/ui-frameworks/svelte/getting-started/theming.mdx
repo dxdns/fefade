@@ -1,6 +1,10 @@
 ---
 title: Theming
-description: How to set theme in your project svelte
+description: How to set theme in your project Svelte.
+head:
+  - tag: title
+    content: Theming in Svelte
+categories: ["svelte"]
 ---
 
 import ThemeColorPreview from "@/components/ThemeColorPreview.svelte"
@@ -17,7 +21,7 @@ Import necessary modules and create a custom theme configuration.
 
 ```svelte
 <script lang="ts">
-	import { createTheme, NavnexProvider } from "@navnex-kit/svelte"
+	import { createTheme, FeflowProvider } from "@feflow-ui/svelte"
 
 	let { children } = $props()
 
@@ -26,9 +30,9 @@ Import necessary modules and create a custom theme configuration.
 	})
 </script>
 
-<NavnexProvider {theme} defaultThemeMode="dark">
+<FeflowProvider {theme} defaultThemeMode="dark">
 	{@render children()}
-</NavnexProvider>
+</FeflowProvider>
 ```
 
 ### Accessing Theme Colors

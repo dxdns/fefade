@@ -1,4 +1,4 @@
-import { DateInput } from "@navnex-kit/react"
+import { DateInput } from "@feflow-ui/react"
 
 export default function () {
 	return (

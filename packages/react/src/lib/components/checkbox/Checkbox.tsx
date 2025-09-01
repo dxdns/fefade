@@ -1,8 +1,8 @@
 import { forwardRef, InputHTMLAttributes } from "react"
-import type { SizeType } from "@navnex-kit/core/types"
-import { classMapUtil } from "@navnex-kit/core/utils"
+import type { SizeType } from "@feflow-ui/core/types"
+import { classMapUtil } from "@feflow-ui/core/utils"
 import { CheckmarkIcon } from "../../icons"
-import styles from "@navnex-kit/core/styles/Checkbox.module.css"
+import styles from "@feflow-ui/core/styles/Checkbox.module.css"
 
 interface Props
 	extends Omit<Omit<InputHTMLAttributes<HTMLInputElement>, "size">, "type"> {

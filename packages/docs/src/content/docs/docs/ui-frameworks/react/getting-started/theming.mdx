@@ -1,6 +1,10 @@
 ---
 title: Theming
-description: How to set theme in your project react
+description: How to set theme in your project React.
+head:
+  - tag: title
+    content: Theming in React
+categories: ["react"]
 ---
 
 import ThemeColorPreview from "@/components/ThemeColorPreview.tsx"
@@ -19,7 +23,7 @@ Import necessary modules and create a custom theme configuration.
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import App from "./App"
-import { NavnexProvider, createTheme } from "@navnex-kit/react"
+import { FeflowProvider, createTheme } from "@feflow-ui/react"
 
 const theme = createTheme({
 	colors: { light: { bg: "orange" } }
@@ -27,9 +31,9 @@ const theme = createTheme({
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<NavnexProvider theme={theme}>
+		<FeflowProvider theme={theme}>
 			<App />
-		</NavnexProvider>
+		</FeflowProvider>
 	</StrictMode>
 )
 ```

@@ -1,8 +1,8 @@
 :root {
 	--rounded-full: 9999px;
 	--thumb-size: 18px;
-	--thumb-border: 2px solid var(--nn-border);
-	--thumb-bg: var(--nn-on-surface);
+	--thumb-border: 2px solid var(--ff-border);
+	--thumb-bg: var(--ff-on-surface);
 	--track-height: 6px;
 }
 
@@ -13,13 +13,13 @@
 	width: 100%;
 	height: var(--track-height);
 	border-radius: 5px;
-	background: var(--nn-surface);
+	background: var(--ff-surface);
 	outline: none;
 	opacity: 0.8;
 	cursor: pointer;
 	user-select: none;
 	transition: opacity 0.2s ease;
-	border: 1px solid var(--nn-border);
+	border: 1px solid var(--ff-border);
 }
 
 .rangeInput:hover,
@@ -41,8 +41,8 @@
 		to right,
 		var(--thumb-bg) 0%,
 		var(--thumb-bg) var(--progress, 0%),
-		color-mix(in srgb, var(--nn-surface) 80%, gray) var(--progress, 0%),
-		color-mix(in srgb, var(--nn-surface) 80%, gray) 100% 100%
+		color-mix(in srgb, var(--ff-surface) 80%, gray) var(--progress, 0%),
+		color-mix(in srgb, var(--ff-surface) 80%, gray) 100% 100%
 	);
 }
 
@@ -81,7 +81,7 @@ input::-webkit-outer-spin-button {
 .rangeInput::-moz-range-track {
 	height: var(--track-height);
 	border-radius: var(--rounded-full);
-	background: color-mix(in srgb, var(--nn-surface) 80%, gray);
+	background: color-mix(in srgb, var(--ff-surface) 80%, gray);
 }
 
 .rangeInput::-moz-range-progress {
@@ -115,29 +115,29 @@ input::-webkit-outer-spin-button {
 .rangeInput.xs {
 	--thumb-size: 12px;
 	--track-height: 3px;
-	--thumb-border: 1.5px solid var(--nn-border);
+	--thumb-border: 1.5px solid var(--ff-border);
 }
 
 .rangeInput.sm {
 	--thumb-size: 14px;
 	--track-height: 4px;
-	--thumb-border: 1.75px solid var(--nn-border);
+	--thumb-border: 1.75px solid var(--ff-border);
 }
 
 .rangeInput.md {
 	--thumb-size: 18px;
 	--track-height: 6px;
-	--thumb-border: 2px solid var(--nn-border);
+	--thumb-border: 2px solid var(--ff-border);
 }
 
 .rangeInput.lg {
 	--thumb-size: 24px;
 	--track-height: 8px;
-	--thumb-border: 2.5px solid var(--nn-border);
+	--thumb-border: 2.5px solid var(--ff-border);
 }
 
 .rangeInput.xl {
 	--thumb-size: 30px;
 	--track-height: 10px;
-	--thumb-border: 3px solid var(--nn-border);
+	--thumb-border: 3px solid var(--ff-border);
 }

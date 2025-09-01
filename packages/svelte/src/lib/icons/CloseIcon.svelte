@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { SVGAttributes } from "svelte/elements"
-	import { closeIcon } from "@navnex-kit/core/icons"
-	import { mergeStyleUtil } from "@navnex-kit/core/utils"
+	import { closeIcon } from "@feflow-ui/core/icons"
+	import { mergeStyleUtil } from "@feflow-ui/core/utils"
 
 	interface Props extends SVGAttributes<SVGSVGElement> {}
 

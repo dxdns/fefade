@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { CloseIcon, MenuIcon } from "../../icons/index.js"
-	import { classMapUtil } from "@navnex-kit/core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import type { SizeType } from "@navnex-kit/core/types"
-	import styles from "@navnex-kit/core/styles/NavbarToggler.module.css"
+	import type { SizeType } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/NavbarToggler.module.css"
 
 	interface Props extends HTMLInputAttributes {
 		visibleInSize?: SizeType

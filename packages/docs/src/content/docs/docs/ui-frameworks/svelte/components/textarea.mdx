@@ -1,11 +1,15 @@
 ---
 title: Textarea
 description: A form component for entering and editing multi-line text input.
+head:
+  - tag: title
+    content: Svelte Textarea Component
+categories: ["svelte"]
 ---
 
 import CardPreview from "@/components/CardPreview.svelte"
 import { Tabs, TabItem } from "@astrojs/starlight/components"
-import { Textarea } from "@navnex-kit/svelte"
+import { Textarea } from "@feflow-ui/svelte"
 
 <Tabs>
   <TabItem label="Preview">
@@ -14,7 +18,7 @@ import { Textarea } from "@navnex-kit/svelte"
   <TabItem label="Usage">
     ```svelte
     <script lang="ts">
-        import { Textarea } from "@navnex-kit/svelte"
+        import { Textarea } from "@feflow-ui/svelte"
     </script>
 
     <Textarea />

@@ -1,4 +1,4 @@
-import { Button, Modal } from "@navnex-kit/react"
+import { Button, Modal } from "@feflow-ui/react"
 import { useState } from "react"
 
 export default function () {

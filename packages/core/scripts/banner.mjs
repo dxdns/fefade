@@ -1,23 +1,10 @@
 import chalk from "chalk"
 
 export default function banner() {
-	const header = chalk.bold.hex("#ff4800c")("navnex-kit")
-	const description = chalk.blue.underline("https://kit.navnex.com")
+	const header = chalk.bold.white("Feflow UI")
+	const description = chalk.blue.underline("https://feflow-ui.dev")
 
-	const commands = [
-		// {
-		// 	cmd: "init",
-		// 	desc: "create a new project"
-		// },
-		// {
-		// 	cmd: "start",
-		// 	desc: `start ${chalk.gray("[project-name]")}`
-		// },
-		// {
-		// 	cmd: "add",
-		// 	desc: `add ${chalk.gray("[component-name]")}`
-		// }
-	]
+	const commands = []
 
 	const cmdLines = commands.map(
 		({ cmd, desc }) => `- ${chalk.cyan(cmd.padEnd(7))}  ${desc}`

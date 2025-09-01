@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import { SearchInput } from "@navnex-kit/svelte"
+	import { Constants } from "@feflow-ui/core"
+	import { SearchInput } from "@feflow-ui/svelte"
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">

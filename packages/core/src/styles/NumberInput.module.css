@@ -13,12 +13,12 @@
 }
 
 .numberInput.contained {
-	background: var(--nn-surface);
+	background: var(--ff-surface);
 }
 
 .numberInput.outlined {
-	border-top: 1px solid var(--nn-border);
-	border-bottom: 1px solid var(--nn-border);
+	border-top: 1px solid var(--ff-border);
+	border-bottom: 1px solid var(--ff-border);
 	border-radius: 0.375rem;
 }
 
@@ -40,5 +40,5 @@
 	outline-style: none;
 	text-align: center;
 	background: none;
-	color: var(--nn-on-bg);
+	color: var(--ff-on-bg);
 }

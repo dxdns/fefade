@@ -1,8 +1,8 @@
 <script setup lang="ts">
 	import { computed, useAttrs, IntrinsicElementAttributes } from "vue"
-	import { classMapUtil, handleClickUtil } from "@navnex-kit/core/utils"
-	import type { ButtonType, HTMLAttrAnchor } from "@navnex-kit/core/types"
-	import styles from "@navnex-kit/core/styles/Button.module.css"
+	import { classMapUtil, handleClickUtil } from "@feflow-ui/core/utils"
+	import type { ButtonType, HTMLAttrAnchor } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/Button.module.css"
 	import { Spinner } from "../spinner"
 
 	interface Props extends ButtonType, HTMLAttrAnchor {}

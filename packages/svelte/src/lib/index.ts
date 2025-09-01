@@ -1,12 +1,12 @@
 /**
  *  @license MIT
- *  navnex
- *  https://kit.navnex.com
+ *  Feflow UI
+ *  https://feflow-ui.dev
  */
 
-export { default as NavnexProvider } from "./components/navnex-provider/index.js"
+export { default as FeflowProvider } from "./components/feflow-provider/index.js"
 
-export { customThemeConfig, createTheme } from "@navnex-kit/core/utils"
+export { customThemeConfig, createTheme } from "@feflow-ui/core/utils"
 export { themeConfigUtil as themeConfig } from "./utils/index.js"
 
 export { getSections } from "./states/scrollSectionState.svelte.js"

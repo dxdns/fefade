@@ -1,6 +1,6 @@
-import { sizeToNumberUtil } from "@navnex-kit/core/utils"
+import { sizeToNumberUtil } from "@feflow-ui/core/utils"
 import type { BreakpointType } from "../types/index.js"
-import { Constants } from "@navnex-kit/core"
+import { Constants } from "@feflow-ui/core"
 
 export default function mediaQueryState(
 	operator: "min-width" | "max-width",

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import styles from "./PinInput.module.css"
-	import { classMapUtil } from "@navnex-kit/core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import { onMount } from "svelte"
 
 	interface Props

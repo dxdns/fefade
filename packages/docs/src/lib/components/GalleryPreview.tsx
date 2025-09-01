@@ -1,6 +1,6 @@
-import { Gallery } from "@navnex-kit/react"
+import { Gallery } from "@feflow-ui/react"
 import type { VideoHTMLAttributes } from "react"
-import { videoUtil } from "@navnex-kit/core/utils"
+import { videoUtil } from "@feflow-ui/core/utils"
 
 export default function () {
 	const sizes = [200, 250, 650, 750, 850, 950, 300, 350, 450, 550]

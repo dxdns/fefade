@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card } from "@navnex-kit/svelte"
+	import { Card } from "@feflow-ui/svelte"
 
 	let borderWidth = $state(1)
 	const cardVariants = ["contained", "outlined"] as const

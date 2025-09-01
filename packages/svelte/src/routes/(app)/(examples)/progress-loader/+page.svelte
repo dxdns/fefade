@@ -18,7 +18,7 @@
 	}
 </script>
 
-<ProgressLoader {progress} />
+<ProgressLoader value={progress} />
 <br />
 <Button onclick={startProgress}>Iniciar Progresso</Button>
 <br />

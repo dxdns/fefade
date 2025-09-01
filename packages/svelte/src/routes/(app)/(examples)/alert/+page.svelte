@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Alert } from "@/index.js"
-	import { Constants } from "@navnex-kit/core"
+	import { Constants } from "@feflow-ui/core"
 </script>
 
 <br />

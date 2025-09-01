@@ -1,7 +1,7 @@
 import { CSSProperties, forwardRef, HTMLAttributes } from "react"
-import { classMapUtil, normalizeSizeUtil } from "@navnex-kit/core/utils"
-import type { GridType } from "@navnex-kit/core/types"
-import styles from "@navnex-kit/core/styles/Grid.module.css"
+import { classMapUtil, normalizeSizeUtil } from "@feflow-ui/core/utils"
+import type { GridType } from "@feflow-ui/core/types"
+import styles from "@feflow-ui/core/styles/Grid.module.css"
 
 interface Props extends HTMLAttributes<HTMLDivElement>, GridType {}
 

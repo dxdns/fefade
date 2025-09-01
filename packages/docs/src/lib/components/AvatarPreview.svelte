@@ -5,7 +5,7 @@
 		Status,
 		themeConfig,
 		Tooltip
-	} from "@navnex-kit/svelte"
+	} from "@feflow-ui/svelte"
 
 	const theme = $derived(themeConfig())
 </script>

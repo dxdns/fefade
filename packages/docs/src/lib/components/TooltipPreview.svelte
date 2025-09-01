@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import { Tooltip } from "@navnex-kit/svelte"
+	import { Constants } from "@feflow-ui/core"
+	import { Tooltip } from "@feflow-ui/svelte"
 </script>
 
 <div

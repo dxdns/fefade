@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import { Badge, Select } from "@navnex-kit/svelte"
+	import { Constants } from "@feflow-ui/core"
+	import { Badge, Select } from "@feflow-ui/svelte"
 
 	let currentOption = $state("v2")
 </script>

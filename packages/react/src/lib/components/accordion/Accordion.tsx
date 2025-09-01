@@ -1,7 +1,7 @@
 import { forwardRef, HTMLAttributes } from "react"
-import type { AccordionType } from "@navnex-kit/core/types"
-import { classMapUtil } from "@navnex-kit/core/utils"
-import styles from "@navnex-kit/core/styles/Accordion.module.css"
+import type { AccordionType } from "@feflow-ui/core/types"
+import { classMapUtil } from "@feflow-ui/core/utils"
+import styles from "@feflow-ui/core/styles/Accordion.module.css"
 import { KeyboardArrowLeftIcon } from "../../icons"
 
 interface Props

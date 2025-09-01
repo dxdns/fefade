@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import type { SwitchType } from "@navnex-kit/core/types"
+	import { Constants } from "@feflow-ui/core"
+	import type { SwitchType } from "@feflow-ui/core/types"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@navnex-kit/core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { Snippet } from "svelte"
-	import { mergeStyleUtil, getPropValueUtil } from "@navnex-kit/core/utils"
-	import styles from "@navnex-kit/core/styles/Switch.module.css"
+	import { mergeStyleUtil, getPropValueUtil } from "@feflow-ui/core/utils"
+	import styles from "@feflow-ui/core/styles/Switch.module.css"
 
 	interface Props
 		extends Omit<Omit<HTMLInputAttributes, "size">, "type">,

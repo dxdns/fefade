@@ -1,6 +1,10 @@
 ---
 title: Theming
-description: How to set theme in your project vue
+description: How to set theme in your project Vue.
+head:
+  - tag: title
+    content: Theming in Vue
+categories: ["vue"]
 ---
 
 import ThemeColorWithWrapper from "@/components/ThemeColorWithWrapper.vue"
@@ -18,12 +22,12 @@ Import necessary modules and create a custom theme configuration.
 ```ts
 import { createApp, h } from "vue"
 import App from "./App.vue"
-import { createTheme, NavnexProvider } from "./lib"
+import { createTheme, FeflowProvider } from "./lib"
 
 const app = createApp({
 	render() {
 		return h(
-			NavnexProvider,
+			FeflowProvider,
 			{ theme: createTheme({ colors: { light: { bg: "orange" } } }) },
 			{
 				default: () => h(App)

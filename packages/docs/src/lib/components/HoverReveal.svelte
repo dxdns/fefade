@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Card, HoverReveal } from "@navnex-kit/svelte"
+	import { Button, Card, HoverReveal } from "@feflow-ui/svelte"
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">

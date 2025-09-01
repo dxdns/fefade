@@ -13,7 +13,7 @@
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border: 2px solid var(--nn-border);
+	border: 2px solid var(--ff-border);
 	position: relative;
 	margin-right: 10px;
 }
@@ -24,7 +24,7 @@
 	width: 12px;
 	height: 12px;
 	border-radius: 50%;
-	background: var(--nn-secondary);
+	background: var(--ff-secondary);
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -77,13 +77,13 @@
 }
 
 .radioButton:nth-of-type(1) input[type="radio"]:checked + .circle::before {
-	background: var(--nn-primary);
+	background: var(--ff-primary);
 }
 
 .radioButton:hover .circle {
-	border-color: var(--nn-on-bg);
+	border-color: var(--ff-on-bg);
 }
 
 .radioButton:hover input[type="radio"]:checked + .circle::before {
-	background: var(--nn-secondary);
+	background: var(--ff-secondary);
 }

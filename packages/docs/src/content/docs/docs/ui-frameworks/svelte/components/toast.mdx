@@ -4,6 +4,10 @@ description:
   A UI component that briefly displays non-intrusive messages to inform users
   about an action or status, typically appearing at the edge of the screen and
   disappearing automatically.
+head:
+  - tag: title
+    content: Svelte Toast Component
+categories: ["svelte"]
 ---
 
 import ToastPreview from "@/components/ToastPreview.svelte"
@@ -21,13 +25,13 @@ For installation and setup instructions, see the
 
 ```svelte
 <script lang="ts">
-	import { NavnexProvider, Toaster } from "@navnex-kit/svelte"
+	import { FeflowProvider, Toaster } from "@feflow-ui/svelte"
 </script>
 
-<NavnexProvider>
+<FeflowProvider>
 	<Toaster />
 	{@render children()}
-</NavnexProvider>
+</FeflowProvider>
 ```
 
 #### Usage

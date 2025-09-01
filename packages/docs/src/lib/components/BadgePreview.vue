@@ -1,6 +1,6 @@
 <script setup lang="ts">
-	import { Constants } from "@navnex-kit/core"
-	import { Badge } from "@navnex-kit/vue"
+	import { Constants } from "@feflow-ui/core"
+	import { Badge } from "@feflow-ui/vue"
 
 	const badgeVariants = ["outlined", "contained"] as const
 </script>

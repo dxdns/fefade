@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from "svelte/elements"
-	import { classMapUtil, handleClickUtil } from "@navnex-kit/core/utils"
-	import type { ButtonType, HTMLAttrAnchor } from "@navnex-kit/core/types"
+	import { classMapUtil, handleClickUtil } from "@feflow-ui/core/utils"
+	import type { ButtonType, HTMLAttrAnchor } from "@feflow-ui/core/types"
 	import Spinner from "../spinner/index.js"
-	import styles from "@navnex-kit/core/styles/Button.module.css"
+	import styles from "@feflow-ui/core/styles/Button.module.css"
 
 	interface Props extends HTMLButtonAttributes, ButtonType, HTMLAttrAnchor {}
 

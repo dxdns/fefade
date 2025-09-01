@@ -1,8 +1,8 @@
 <script lang="ts" generics="T">
-	import type { ActionType, VariantType } from "@navnex-kit/core/types"
-	import { keyboardNavigationAction } from "@navnex-kit/core/actions"
+	import type { ActionType, VariantType } from "@feflow-ui/core/types"
+	import { keyboardNavigationAction } from "@feflow-ui/core/actions"
 	import styles from "./Autocomplete.module.css"
-	import { classMapUtil } from "@navnex-kit/core/utils"
+	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { Snippet } from "svelte"
 	import { SearchInput } from "../search-input/index.js"

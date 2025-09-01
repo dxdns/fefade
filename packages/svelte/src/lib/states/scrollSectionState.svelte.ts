@@ -1,4 +1,4 @@
-import type { ElementReferenceType, SectionType } from "@navnex-kit/core/types"
+import type { ElementReferenceType, SectionType } from "@feflow-ui/core/types"
 
 const data = $state<{
 	sections: ElementReferenceType[]

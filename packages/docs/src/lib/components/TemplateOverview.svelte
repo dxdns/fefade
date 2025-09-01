@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button, Separator } from "@navnex-kit/svelte"
+	import { Badge, Button, Separator } from "@feflow-ui/svelte"
 
 	interface Props {
 		data: {

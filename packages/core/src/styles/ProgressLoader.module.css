@@ -1,0 +1,35 @@
+.progressLoader.error {
+	--bg: var(--ff-on-error);
+}
+
+.progressLoader.warning {
+	--bg: var(--ff-on-warning);
+}
+
+.progressLoader.success {
+	--bg: var(--ff-on-success);
+}
+
+.progressLoader.info {
+	--bg: var(--ff-on-info);
+}
+
+.progressLoader {
+	position: relative;
+	background: rgba(255, 255, 255, 0.2);
+	height: 5px;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.progressLoader::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: var(--value);
+	background: var(--bg);
+	transition: width 0.5s ease;
+}

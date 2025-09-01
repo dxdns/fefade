@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Rating } from "@navnex-kit/svelte"
+	import { Rating } from "@feflow-ui/svelte"
 </script>
 
 <h4>default</h4>
