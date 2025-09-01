@@ -61,4 +61,15 @@
 	>
 		Closable
 	</Button>
+
+	<Button
+		onclick={() => {
+			toast({
+				message: "with progress loader",
+				withProgressLoader: true
+			})
+		}}
+	>
+		With Progress Loader
+	</Button>
 </div>

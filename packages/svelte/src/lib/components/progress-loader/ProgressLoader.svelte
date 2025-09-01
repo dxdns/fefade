@@ -1,21 +1,29 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import styles from "./ProgressLoader.module.css"
 	import { classMapUtil, mergeStyleUtil } from "@feflow-ui/core/utils"
+	import type { StatusColorType } from "@feflow-ui/core/types"
+	import styles from "@feflow-ui/core/styles/ProgressLoader.module.css"
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
-		progress: number
+	interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+		value: number
+		color?: StatusColorType
 	}
 
-	let { class: className = "", progress, ...rest }: Props = $props()
+	let {
+		class: className = "",
+		value,
+		color = "info",
+		...rest
+	}: Props = $props()
 </script>
 
 <div
 	{...rest}
-	class={classMapUtil(className, [className, styles], styles.progressLoader)}
-	style={mergeStyleUtil(
-		`--width: ${progress}%;`,
-		`--bg-color: var(--ff-on-success);`,
-		rest.style
+	class={classMapUtil(
+		className,
+		[className, styles],
+		[color, styles],
+		styles.progressLoader
 	)}
+	style={mergeStyleUtil(`--value: ${value}%;`, rest.style)}
 ></div>

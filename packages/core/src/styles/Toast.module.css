@@ -9,6 +9,12 @@
 	min-width: 100px;
 }
 
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
 .message {
 	flex: 1;
 	margin: 0;

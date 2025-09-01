@@ -23,12 +23,13 @@
 		...rest
 	}: Props = $props()
 
-	const toast = toastState()._getById(id)
+	const _toastState = toastState()
+	const toast = _toastState._getById(id)
 	const toastRemaining = toast?.remaining ?? 3000
 	let timerValue = $state(toastRemaining)
 
 	const interval = setInterval(() => {
-		if (timerValue > 0) {
+		if (timerValue > 0 && !toast?.paused) {
 			timerValue = Math.max(timerValue - 100, 0)
 		}
 	}, 100)
@@ -38,32 +39,39 @@
 	})
 </script>
 
-<div style="position: relative; overflow: hidden;">
-	<Alert
-		{...rest}
-		class={classMapUtil(className, styles.toast)}
-		style="padding-bottom: 0.5rem;"
-	>
+<Alert
+	{...rest}
+	class={classMapUtil(className, styles.toast)}
+	onmouseenter={() => {
+		_toastState.pause(id)
+	}}
+	onmouseleave={() => {
+		_toastState.resume(id)
+	}}
+>
+	<div class={styles.wrapper}>
 		<div class={styles.message}>
 			{message}
 		</div>
-		{#if isClosable}
-			<Button
-				roundedFull
-				size="xs"
-				style="
-				padding: 0; 
-				height: 20px;
-				min-width: 20px;
-				"
-				onclick={handleClose}
-			>
-				<CloseIcon height="16px" width="16px" />
-			</Button>
+		{#if rest.withProgressLoader}
+			<ProgressLoader
+				value={(timerValue / toastRemaining) * 100}
+				color={rest.color}
+			/>
 		{/if}
-	</Alert>
-	<ProgressLoader
-		progress={(timerValue / toastRemaining) * 100}
-		style="position: absolute; bottom: 0; left: 3px;"
-	/>
-</div>
+	</div>
+	{#if isClosable}
+		<Button
+			roundedFull
+			size="xs"
+			style="
+			padding: 0; 
+			height: 20px;
+			min-width: 20px;
+			"
+			onclick={handleClose}
+		>
+			<CloseIcon height="16px" width="16px" />
+		</Button>
+	{/if}
+</Alert>

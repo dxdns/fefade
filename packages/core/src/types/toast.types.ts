@@ -7,6 +7,7 @@ export interface ToastStateType {
 	duration?: number
 	position?: AlignmentType
 	isClosable?: boolean
+	withProgressLoader?: boolean
 }
 
 export interface ToastType extends ToastStateType {
