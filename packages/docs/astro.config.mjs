@@ -5,11 +5,13 @@ import svelte from "@astrojs/svelte"
 import path from "path"
 import react from "@astrojs/react"
 import vue from "@astrojs/vue"
+import sitemap from "@astrojs/sitemap"
 
 // https://astro.build/config
 export default defineConfig({
 	site: "https://kit.dxdns.dev",
 	integrations: [
+		sitemap(),
 		starlight({
 			title: "dxdns-kit",
 			components: {

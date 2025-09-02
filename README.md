@@ -4,7 +4,7 @@
 
 <h1 align="center">dxdns-kit</h1>
 
-[![license](https://img.shields.io/github/license/dxdns/dxdns-kit)](https://github.com/dxdns/dxdns-kit/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/dxdns/kit)](https://github.com/dxdns/kit/blob/master/LICENSE)
 ![Zero Dependencies](https://img.shields.io/badge/dependencies-0-green)
 
 **dxdns-kit** is a lightweight and dependency-free UI component library.

@@ -11,7 +11,7 @@
 	"homepage": "https://kit.dxdns.dev",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/dxdns-kit.git"
+		"url": "git+https://github.com/dxdns/kit.git"
 	},
 	"type": "module",
 	"main": "dist/index.js",

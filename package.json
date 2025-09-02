@@ -29,14 +29,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/dxdns-kit.git"
+		"url": "git+https://github.com/dxdns/kit.git"
 	},
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/dxdns/dxdns-kit/issues"
+		"url": "https://github.com/dxdns/kit/issues"
 	},
-	"homepage": "https://github.com/dxdns/dxdns-kit#readme",
+	"homepage": "https://github.com/dxdns/kit#readme",
 	"devDependencies": {
 		"@types/node": "^22.14.1",
 		"chokidar-cli": "^3.0.0",
