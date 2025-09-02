@@ -1,6 +1,6 @@
 {
 	"name": "@feflow-ui/react",
-	"version": "1.0.1",
+	"version": "2.0.1",
 	"description": "Feflow UI React components",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
