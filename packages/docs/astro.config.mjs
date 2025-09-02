@@ -30,7 +30,7 @@ export default defineConfig({
 				{
 					icon: "github",
 					label: "GitHub",
-					href: "https://github.com/dxdns/dxdns-kit"
+					href: "https://github.com/dxdns/kit"
 				}
 			],
 			sidebar: [

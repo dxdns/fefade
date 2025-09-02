@@ -95,6 +95,7 @@
 		[size, styles],
 		styles.numberInput
 	)}
+	style={rest.style}
 >
 	<Button
 		aria-label="Decrement"
@@ -118,6 +119,7 @@
 				in:fly={{ y: delay * -15, duration: 200 }}
 				out:fly={{ y: delay * 15, duration: 100 }}
 				onwheel={handleWheel}
+				style={undefined}
 			/>
 		{/key}
 	</div>
