@@ -37,13 +37,11 @@
 .rangeInput::-webkit-slider-runnable-track {
 	height: var(--track-height);
 	border-radius: var(--rounded-full);
-	background: linear-gradient(
-		to right,
-		var(--thumb-bg) 0%,
-		var(--thumb-bg) var(--progress, 0%),
-		color-mix(in srgb, var(--dx-surface) 80%, gray) var(--progress, 0%),
-		color-mix(in srgb, var(--dx-surface) 80%, gray) 100% 100%
-	);
+	background: linear-gradient(to right,
+			var(--thumb-bg) 0%,
+			var(--thumb-bg) var(--internal-value, 0%),
+			color-mix(in srgb, var(--dx-surface) 80%, gray) var(--internal-value, 0%),
+			color-mix(in srgb, var(--dx-surface) 80%, gray) 100% 100%);
 }
 
 .rangeInput::-webkit-slider-thumb {
@@ -140,4 +138,47 @@ input::-webkit-outer-spin-button {
 	--thumb-size: 30px;
 	--track-height: 10px;
 	--thumb-border: 3px solid var(--dx-border);
+}
+
+/* bubble */
+
+.rangeInput.xs+.bubble {
+	--bubble-top: -23px;
+}
+
+.rangeInput.sm+.bubble {
+	--bubble-top: -25px;
+}
+
+.rangeInput.md+.bubble {
+	--bubble-top: -28px;
+}
+
+.rangeInput.lg+.bubble {
+	--bubble-top: -33px;
+}
+
+.rangeInput.xl+.bubble {
+	--bubble-top: -36px;
+}
+
+.bubble {
+	position: absolute;
+	top: var(--bubble-top);
+	display: none;
+	width: 50px;
+	height: 24px;
+	border: 1px solid var(--dx-border);
+	background: var(--dx-surface);
+	border-radius: 3px;
+	color: var(--dx-on-surface);
+	font-size: .8em;
+	line-height: 24px;
+	text-align: center;
+	user-select: none;
+}
+
+input[type=range]:active+.bubble {
+	display: block;
+	transform: translateX(-50%);
 }
