@@ -35,6 +35,7 @@
 >
 	<svg
 		class={styles.icon}
+		viewBox="0 -960 960 960"
 		style="
 		display: inline-block; 
 		vertical-align: middle;

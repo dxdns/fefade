@@ -77,7 +77,8 @@
 	position: absolute;
 	opacity: var(--toast-opacity, 1);
 	z-index: var(--toast-z-index, 1000);
-	transform: translateY(var(--toast-translate, 0px)) scale(var(--toast-scale, 1));
+	transform: translateY(var(--toast-translate, 0px))
+		scale(var(--toast-scale, 1));
 	transition:
 		opacity 0.3s ease,
 		transform 0.3s ease;

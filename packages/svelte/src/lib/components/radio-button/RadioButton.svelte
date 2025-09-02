@@ -1,18 +1,35 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import styles from "./RadioButton.module.css"
-	import type { SizeType } from "@feflow-ui/core/types"
+	import type { SizeType, StatusColorType } from "@feflow-ui/core/types"
 	import { classMapUtil } from "@feflow-ui/core/utils"
 
 	interface Props extends Omit<HTMLInputAttributes, "size"> {
+		label?: string
 		size?: SizeType
+		color?: StatusColorType | "secondary"
 	}
 
-	let { class: className = "", size = "sm", ...rest }: Props = $props()
+	let {
+		class: className = "",
+		label,
+		size = "sm",
+		color = "secondary",
+		...rest
+	}: Props = $props()
 </script>
 
-<label class={classMapUtil(className, [className, styles], styles.radioButton)}>
-	<input type="radio" {...rest} />
+<label
+	class={classMapUtil(
+		className,
+		[className, styles],
+		[color, styles],
+		styles.radioButton
+	)}
+>
+	<input {...rest} type="radio" />
 	<div class={classMapUtil(styles.circle, [size, styles])}></div>
-	{rest["aria-label"]}
+	{#if label}
+		{label}
+	{/if}
 </label>

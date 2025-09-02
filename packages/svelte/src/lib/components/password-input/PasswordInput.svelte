@@ -53,8 +53,6 @@
 				display: inline-block; 
 				vertical-align: middle;
 				fill: currentColor;
-				width: 24px;
-				height: 24px;
 				"
 			>
 				<path d={visibilityIcon}></path>
@@ -67,8 +65,6 @@
 				display: inline-block; 
 				vertical-align: middle;
 				fill: currentColor;
-				width: 24px;
-				height: 24px;
 				"
 			>
 				<path d={visibilityOffIcon}></path>

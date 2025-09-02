@@ -18,7 +18,7 @@
 </script>
 
 <div style="line-height: 5; padding: 1rem;">
-	<ProgressLoader {progress} />
+	<ProgressLoader value={progress} color="success" />
 	<Button disabled={progress > 0} onclick={startProgress}>
 		start progress
 	</Button>

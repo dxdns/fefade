@@ -1,3 +1,23 @@
+.radioButton.info {
+	--color: var(--ff-on-info);
+}
+
+.radioButton.success {
+	--color: var(--ff-on-success);
+}
+
+.radioButton.warning {
+	--color: var(--ff-on-warning);
+}
+
+.radioButton.error {
+	--color: var(--ff-on-error);
+}
+
+.radioButton.secondary {
+	--color: var(--ff-secondary);
+}
+
 .radioButton {
 	display: flex;
 	align-items: center;
@@ -13,7 +33,7 @@
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border: 2px solid var(--ff-border);
+	border: 2px solid var(--color);
 	position: relative;
 	margin-right: 10px;
 }
@@ -24,7 +44,7 @@
 	width: 12px;
 	height: 12px;
 	border-radius: 50%;
-	background: var(--ff-secondary);
+	background: var(--color);
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -76,14 +96,10 @@
 	transform: translate(-50%, -50%) scale(1);
 }
 
-.radioButton:nth-of-type(1) input[type="radio"]:checked + .circle::before {
-	background: var(--ff-primary);
-}
-
 .radioButton:hover .circle {
-	border-color: var(--ff-on-bg);
+	border-color: color-mix(in srgb, var(--color) 50%, transparent);
 }
 
 .radioButton:hover input[type="radio"]:checked + .circle::before {
-	background: var(--ff-secondary);
+	background: var(--color);
 }
