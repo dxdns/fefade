@@ -1,6 +1,13 @@
 <script lang="ts">
 	import { Checkbox } from "@/index.js"
+	import { Constants } from "@dxdns-kit/core"
+
+	const colors = [...Constants.statusColors, "secondary"] as const
 </script>
 
-<Checkbox checked />
-<Checkbox />
+<Checkbox label="checked" checked />
+<Checkbox label="disabled" disabled />
+<br />
+{#each colors as color (color)}
+	<Checkbox label={color} {color} />
+{/each}

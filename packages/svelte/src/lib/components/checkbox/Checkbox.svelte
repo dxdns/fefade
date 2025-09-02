@@ -1,26 +1,33 @@
 <script lang="ts">
 	import { classMapUtil } from "@dxdns-kit/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import type { SizeType } from "@dxdns-kit/core/types"
+	import type { CheckboxType } from "@dxdns-kit/core/types"
 	import { checkmarkIcon } from "@dxdns-kit/core/icons"
 	import styles from "@dxdns-kit/core/styles/Checkbox.module.css"
 
-	interface Props extends Omit<Omit<HTMLInputAttributes, "size">, "type"> {
-		size?: SizeType
-	}
+	interface Props
+		extends Omit<Omit<Omit<HTMLInputAttributes, "size">, "type">, "color">,
+			CheckboxType {}
 
-	let { class: className = "", size = "sm", ...rest }: Props = $props()
+	let {
+		class: className = "",
+		label,
+		size = "sm",
+		color = "secondary",
+		...rest
+	}: Props = $props()
 </script>
 
 <label
 	class={classMapUtil(
 		className,
 		[className, styles],
-		styles.checkbox,
 		[size, styles],
+		[color, styles],
 		{
-			["text-muted"]: rest.disabled
-		}
+			["muted"]: rest.disabled
+		},
+		styles.checkbox
 	)}
 >
 	<input {...rest} readonly={rest.readonly ?? rest.checked} type="checkbox" />
@@ -32,9 +39,8 @@
 			style="
 			display: inline-block; 
 			vertical-align: middle;
-			width: 24px;
-			height: 24px;
 			"
+			fill="none"
 		>
 			<path
 				stroke-linejoin="round"
@@ -45,5 +51,7 @@
 			></path>
 		</svg>
 	</div>
-	{rest["aria-label"]}
+	{#if label}
+		{label}
+	{/if}
 </label>
