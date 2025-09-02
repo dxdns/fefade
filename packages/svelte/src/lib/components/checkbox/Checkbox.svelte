@@ -2,8 +2,8 @@
 	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { SizeType } from "@feflow-ui/core/types"
+	import { checkmarkIcon } from "@feflow-ui/core/icons"
 	import styles from "@feflow-ui/core/styles/Checkbox.module.css"
-	import { CheckmarkIcon } from "../../icons/index.js"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "size">, "type"> {
 		size?: SizeType
@@ -26,7 +26,24 @@
 	<input {...rest} readonly={rest.readonly ?? rest.checked} type="checkbox" />
 	<div class={styles.wrapper}>
 		<div class={styles.bg}></div>
-		<CheckmarkIcon class={styles.icon} />
+		<svg
+			class={styles.icon}
+			viewBox="0 0 24 24"
+			style="
+			display: inline-block; 
+			vertical-align: middle;
+			width: 24px;
+			height: 24px;
+			"
+		>
+			<path
+				stroke-linejoin="round"
+				stroke-linecap="round"
+				stroke-width="3"
+				stroke="currentColor"
+				d={checkmarkIcon}
+			></path>
+		</svg>
 	</div>
 	{rest["aria-label"]}
 </label>

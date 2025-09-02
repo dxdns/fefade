@@ -1,15 +1,17 @@
 <script lang="ts">
 	import type { SectionType } from "@feflow-ui/core/types"
 	import Button from "../button/index.js"
-	import styles from "./ScrollSection.module.css"
 	import { classMapUtil } from "@feflow-ui/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
-	import KeyboardArrowLeftIcon from "../../icons/KeyboardArrowLeftIcon.svelte"
-	import KeyboardArrowRightIcon from "../../icons/KeyboardArrowRightIcon.svelte"
 	import {
 		checkVisibilityAction,
 		scrollNavigatorAction
 	} from "@feflow-ui/core/actions"
+	import {
+		keyboardArrowLeftIcon,
+		keyboardArrowRightIcon
+	} from "@feflow-ui/core/icons"
+	import styles from "./ScrollSection.module.css"
 
 	interface Props extends HTMLAttributes<HTMLElement> {
 		data: SectionType[]
@@ -76,7 +78,19 @@
 <nav {...rest} class={classMapUtil(className, styles.scrollSection)}>
 	{#if (!isFirst || isLast) && scrollButtons}
 		<Button class={styles.arrowIndicator} variant="text" onclick={prev}>
-			<KeyboardArrowLeftIcon height="16px" width="16px" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 -960 960 960"
+				style="
+				display: inline-block; 
+				vertical-align: middle;
+				fill: currentColor;
+				width: 16px;
+				height: 16px;
+				"
+			>
+				<path d={keyboardArrowLeftIcon}></path>
+			</svg>
 		</Button>
 	{/if}
 	<div
@@ -100,7 +114,19 @@
 	</div>
 	{#if !isLast && scrollButtons}
 		<Button variant="text" class={styles.arrowIndicator} onclick={next}>
-			<KeyboardArrowRightIcon height="16px" width="16px" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 -960 960 960"
+				style="
+				display: inline-block; 
+				vertical-align: middle;
+				fill: currentColor;
+				width: 16px;
+				height: 16px;
+				"
+			>
+				<path d={keyboardArrowRightIcon}></path>
+			</svg>
 		</Button>
 	{/if}
 </nav>

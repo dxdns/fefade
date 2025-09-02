@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLSelectAttributes } from "svelte/elements"
 	import { classMapUtil } from "@feflow-ui/core/utils"
-	import styles from "./Select.module.css"
-	import { KeyboardArrowDownIcon } from "../../icons/index.js"
 	import type { VariantType } from "@feflow-ui/core/types"
+	import { keyboardArrowDownIcon } from "@feflow-ui/core/icons"
+	import styles from "./Select.module.css"
 
 	interface Props extends HTMLSelectAttributes {
 		variant?: VariantType
@@ -29,5 +29,17 @@
 	<select {...rest} style={undefined}>
 		{@render children?.()}
 	</select>
-	<KeyboardArrowDownIcon class={styles.icon} height="24px" width="24px" />
+	<svg
+		class={styles.icon}
+		viewBox="0 -960 960 960"
+		style="
+		display: inline-block; 
+		vertical-align: middle;
+		fill: currentColor;
+		width: 24px;
+		height: 24px;
+		"
+	>
+		<path d={keyboardArrowDownIcon}></path>
+	</svg>
 </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "@feflow-ui/core/utils"
-	import { StarIcon } from "../../icons/index.js"
+	import { starIcon } from "@feflow-ui/core/icons"
 	import styles from "./Rating.module.css"
 
 	interface Props extends HTMLButtonAttributes {
@@ -58,7 +58,19 @@
 				{#if children}
 					{@render children?.()}
 				{:else}
-					<StarIcon height={size} width={size} />
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 -960 960 960"
+						style="
+						display: inline-block; 
+						vertical-align: middle;
+						fill: currentColor;
+						width: {size};
+						height: {size};
+						"
+					>
+						<path d={starIcon} />
+					</svg>
 				{/if}
 			</div>
 		</button>

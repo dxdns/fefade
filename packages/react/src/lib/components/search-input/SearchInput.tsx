@@ -2,7 +2,7 @@ import type { TextFieldType } from "@feflow-ui/core/types"
 import { classMapUtil } from "@feflow-ui/core/utils"
 import { forwardRef, InputHTMLAttributes } from "react"
 import { TextField } from "../text-field"
-import { SearchIcon } from "../../icons/index.js"
+import { searchIcon } from "@feflow-ui/core/icons"
 import styles from "@feflow-ui/core/styles/SearchInput.module.css"
 
 interface Props
@@ -20,7 +20,18 @@ export default forwardRef<HTMLInputElement, Props>(
 					styles.searchInput
 				)}
 			>
-				<SearchIcon className={styles.icon} />
+				<svg
+					className={styles.icon}
+					viewBox="0 -960 960 960"
+					style={{
+						display: "inline-block",
+						verticalAlign: "middle",
+						width: "24px",
+						height: "24px"
+					}}
+				>
+					<path d={searchIcon}></path>
+				</svg>
 				<TextField
 					ref={ref}
 					{...rest}

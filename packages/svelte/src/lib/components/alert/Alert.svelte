@@ -2,13 +2,13 @@
 	import { Constants } from "@feflow-ui/core"
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil } from "@feflow-ui/core/utils"
-	import {
-		ErrorIcon,
-		InfoIcon,
-		WarningIcon,
-		CheckCircleIcon
-	} from "../../icons/index.js"
 	import type { StatusColorType } from "@feflow-ui/core/types"
+	import {
+		checkCircleIcon,
+		errorIcon,
+		infoIcon,
+		warningIcon
+	} from "@feflow-ui/core/icons"
 	import styles from "@feflow-ui/core/styles/Alert.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -25,11 +25,10 @@
 	const statusOnColor = Constants.statusOnColor(color)
 
 	const Icon = {
-		error: ErrorIcon,
-		info: InfoIcon,
-		warning: WarningIcon,
-		success: CheckCircleIcon,
-		primary: InfoIcon
+		error: errorIcon,
+		info: infoIcon,
+		warning: warningIcon,
+		success: checkCircleIcon
 	}[color]
 </script>
 
@@ -42,11 +41,19 @@
 		styles.alert
 	)}
 >
-	<Icon
-		fill={statusOnColor}
-		height="20px"
-		width="20px"
-		style="max-width: max-content;"
-	/>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 -960 960 960"
+		style="
+		display: inline-block; 
+		vertical-align: middle;
+		fill: {statusOnColor};
+		width: 20px;
+		height: 20px;
+		max-width: max-content;
+		"
+	>
+		<path d={Icon} />
+	</svg>
 	{@render children?.()}
 </div>

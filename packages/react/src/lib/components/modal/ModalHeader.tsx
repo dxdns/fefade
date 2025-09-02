@@ -2,7 +2,7 @@ import type { AlignType } from "@feflow-ui/core/types"
 import { classMapUtil } from "@feflow-ui/core/utils"
 import { forwardRef, HTMLAttributes } from "react"
 import { Button } from "../button"
-import { CloseIcon } from "@/icons"
+import { closeIcon } from "@feflow-ui/core/icons"
 import styles from "@feflow-ui/core/styles/ModalHeader.module.css"
 
 interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
@@ -29,7 +29,18 @@ export default forwardRef<HTMLDivElement, Props>(
 				</div>
 				{handleClose && (
 					<Button variant="text" onClick={handleClose}>
-						<CloseIcon />
+						<svg
+							viewBox="0 -960 960 960"
+							style={{
+								display: "inline-block",
+								verticalAlign: "middle",
+								fill: "currentcolor",
+								width: "24px",
+								height: "24px"
+							}}
+						>
+							<path d={closeIcon}></path>
+						</svg>
 					</Button>
 				)}
 			</div>

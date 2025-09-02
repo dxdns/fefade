@@ -1,8 +1,8 @@
 import { forwardRef, HTMLAttributes } from "react"
 import type { AccordionType } from "@feflow-ui/core/types"
 import { classMapUtil } from "@feflow-ui/core/utils"
+import { keyboardArrowLeftIcon } from "@feflow-ui/core/icons"
 import styles from "@feflow-ui/core/styles/Accordion.module.css"
-import { KeyboardArrowLeftIcon } from "../../icons"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "id">,
@@ -33,7 +33,18 @@ export default forwardRef<HTMLDivElement, Props>(
 				<label htmlFor={rest.id} className={styles.header}>
 					<label htmlFor={rest.id}>{label}</label>
 					<div className={styles.icon}>
-						<KeyboardArrowLeftIcon />
+						<svg
+							viewBox="0 -960 960 960"
+							style={{
+								display: "inline-block",
+								verticalAlign: "middle",
+								fill: "currentcolor",
+								width: "24px",
+								height: "24px"
+							}}
+						>
+							<path d={keyboardArrowLeftIcon}></path>
+						</svg>
 					</div>
 				</label>
 				<div className={styles.content}>{children}</div>
