@@ -12,7 +12,7 @@
 }
 
 .drawerHeader.borded {
-	border-bottom: 1px solid var(--ff-border);
+	border-bottom: 1px solid var(--dx-border);
 }
 
 .buttonClose {

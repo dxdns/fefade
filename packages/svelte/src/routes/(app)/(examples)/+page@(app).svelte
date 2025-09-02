@@ -4,11 +4,11 @@
 
 <div class="circle">
 	<Link
-		href="https://feflow-ui.dev"
+		href="https://kit.dxdns.dev"
 		target="_blank"
 		style="transform: translate(50%, 100%);"
 	>
-		<h1>Feflow UI</h1>
+		<h1>dxdns-kit</h1>
 	</Link>
 </div>
 

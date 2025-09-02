@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from "@feflow-ui/svelte"
+	import { Button } from "@dxdns-kit/svelte"
 	import type { Snippet } from "svelte"
 
 	interface Props {

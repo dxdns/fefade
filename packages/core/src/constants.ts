@@ -8,8 +8,8 @@ import type {
 } from "./types/index.js"
 import { capitalizeUtil, toKebabCaseUtil } from "./utils/index.js"
 
-export const APP_NAME = "feflow-ui"
-export const APP_NAME_ACRONYM = "ff"
+export const APP_NAME = "dxdns-kit"
+export const APP_NAME_ACRONYM = "dx"
 export const META_NAME = "x-library-name"
 
 export const CSS_VAR_PREFIX = `--${APP_NAME_ACRONYM}`

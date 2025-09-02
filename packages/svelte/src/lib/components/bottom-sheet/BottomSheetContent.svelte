@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil } from "@dxdns-kit/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
-	import styles from "@feflow-ui/core/styles/BottomSheetContent.module.css"
+	import styles from "@dxdns-kit/core/styles/BottomSheetContent.module.css"
 
 	interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {}
 

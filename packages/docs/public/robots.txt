@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://feflow-ui.dev/sitemap-index.xml
+Sitemap: https://kit.dxdns.dev/sitemap-index.xml

@@ -63,21 +63,21 @@ if (image) {
 				<Tabs>
 					<TabItem label="react" icon="seti:react">
 						<Code
-							code={`npm install @feflow-ui/core @feflow-ui/react`}
+							code={`npm install @dxdns-kit/core @dxdns-kit/react`}
 							lang="bash"
 							title="react"
 						/>
 					</TabItem>
 					<TabItem label="vue" icon="seti:vue">
 						<Code
-							code={`npm install @feflow-ui/core @feflow-ui/vue`}
+							code={`npm install @dxdns-kit/core @dxdns-kit/vue`}
 							lang="bash"
 							title="vue"
 						/>
 					</TabItem>
 					<TabItem label="svelte" icon="seti:svelte">
 						<Code
-							code={`npm install @feflow-ui/core @feflow-ui/svelte`}
+							code={`npm install @dxdns-kit/core @dxdns-kit/svelte`}
 							lang="bash"
 							title="svelte"
 						/>
@@ -213,10 +213,10 @@ if (image) {
 		overflow: hidden;
 		-webkit-mask-image: linear-gradient(
 			to bottom,
-			var(--ff-bg) 80%,
+			var(--dx-bg) 80%,
 			transparent 100%
 		);
-		mask-image: linear-gradient(to bottom, var(--ff-bg) 80%, transparent 100%);
+		mask-image: linear-gradient(to bottom, var(--dx-bg) 80%, transparent 100%);
 	}
 
 	.gradient-sphere {
@@ -228,7 +228,7 @@ if (image) {
 	.sphere-one {
 		width: 25vw;
 		height: 25vw;
-		background: linear-gradient(40deg, var(--ff-bg), rgba(61, 61, 61, 0.171));
+		background: linear-gradient(40deg, var(--dx-bg), rgba(61, 61, 61, 0.171));
 		top: -10%;
 		left: -10%;
 		animation: float-one 15s ease-in-out infinite alternate;
@@ -237,15 +237,15 @@ if (image) {
 	.sphere-two {
 		width: 45vw;
 		height: 45vw;
-		background: linear-gradient(240deg, var(--ff-bg), rgba(255, 255, 255, 0.4));
+		background: linear-gradient(240deg, var(--dx-bg), rgba(255, 255, 255, 0.4));
 		-webkit-mask-image: linear-gradient(
 			to bottom,
-			var(--ff-bg),
+			var(--dx-bg),
 			rgba(255, 255, 255, 0.4)
 		);
 		mask-image: linear-gradient(
 			to bottom,
-			var(--ff-bg),
+			var(--dx-bg),
 			rgba(255, 255, 255, 0.4)
 		);
 		bottom: 40%;

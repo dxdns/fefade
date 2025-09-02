@@ -1,5 +1,5 @@
-import { Constants } from "@feflow-ui/core"
-import { Badge, RangeInput } from "@feflow-ui/react"
+import { Constants } from "@dxdns-kit/core"
+import { Badge, RangeInput } from "@dxdns-kit/react"
 import { useState } from "react"
 
 export default function () {

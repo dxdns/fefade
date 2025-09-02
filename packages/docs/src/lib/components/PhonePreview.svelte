@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Phone } from "@feflow-ui/svelte"
+	import { Phone } from "@dxdns-kit/svelte"
 </script>
 
 <Phone>

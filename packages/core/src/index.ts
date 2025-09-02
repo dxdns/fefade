@@ -1,7 +1,7 @@
 /**
  *  @license MIT
- *  Feflow UI
- *  https://feflow-ui.dev
+ *  dxdns
+ *  https://github.com/dxdns
  */
 
 export * as Constants from "./constants.js"

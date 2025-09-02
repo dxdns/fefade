@@ -1,6 +1,6 @@
 <script setup lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Spinner } from "@feflow-ui/vue"
+	import { Constants } from "@dxdns-kit/core"
+	import { Spinner } from "@dxdns-kit/vue"
 </script>
 
 <template>

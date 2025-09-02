@@ -1,6 +1,6 @@
 {
-	"name": "feflow-ui",
-	"version": "1.0.0",
+	"name": "dxdns-kit",
+	"version": "0.0.0",
 	"description": "UI Component Library",
 	"private": true,
 	"type": "module",
@@ -8,35 +8,35 @@
 		"packages/*"
 	],
 	"scripts": {
-		"dev:core": "npm run dev -w @feflow-ui/core",
-		"dev:svelte": "concurrently --names \"CORE,SVELTE\" --prefix-colors \"gray,yellow\" \"npm run dev:core\" \"npm run dev -w @feflow-ui/svelte\"",
-		"dev:react": "concurrently --names \"CORE,REACT\" --prefix-colors \"gray,magenta\" \"npm run dev:core\" \"npm run dev -w @feflow-ui/react\"",
-		"dev:vue": "concurrently --names \"CORE,VUE\" --prefix-colors \"gray,cyan\" \"npm run dev:core\" \"npm run dev -w @feflow-ui/vue\"",
-		"dev:docs": "concurrently --names \"CORE,DOCS\" --prefix-colors \"gray,white\" \"npm run dev:core\" \"npm run dev -w @feflow-ui/docs\"",
-		"build:core": "npm run build -w @feflow-ui/core",
-		"build:svelte": "npm run build -w @feflow-ui/svelte",
-		"build:react": "npm run build -w @feflow-ui/react",
-		"build:vue": "npm run build -w @feflow-ui/vue",
+		"dev:core": "npm run dev -w @dxdns-kit/core",
+		"dev:svelte": "concurrently --names \"CORE,SVELTE\" --prefix-colors \"gray,yellow\" \"npm run dev:core\" \"npm run dev -w @dxdns-kit/svelte\"",
+		"dev:react": "concurrently --names \"CORE,REACT\" --prefix-colors \"gray,magenta\" \"npm run dev:core\" \"npm run dev -w @dxdns-kit/react\"",
+		"dev:vue": "concurrently --names \"CORE,VUE\" --prefix-colors \"gray,cyan\" \"npm run dev:core\" \"npm run dev -w @dxdns-kit/vue\"",
+		"dev:docs": "concurrently --names \"CORE,DOCS\" --prefix-colors \"gray,white\" \"npm run dev:core\" \"npm run dev -w @dxdns-kit/docs\"",
+		"build:core": "npm run build -w @dxdns-kit/core",
+		"build:svelte": "npm run build -w @dxdns-kit/svelte",
+		"build:react": "npm run build -w @dxdns-kit/react",
+		"build:vue": "npm run build -w @dxdns-kit/vue",
 		"build:all": "npm run build:core && npm run build:svelte && npm run build:react && npm run build:vue",
 		"git:push": "git push && git push --tags",
-		"release:core:patch": "npm run build:core && npm version patch -w @feflow-ui/core --no-git-tag-version && git add packages/core && git commit -m \"chore(release): bump version core\" && git tag core-v$(node -p \"require('./packages/core/package.json').version\") && npm run git:push",
-		"release:svelte:patch": "npm run build:svelte && npm version patch -w @feflow-ui/svelte --no-git-tag-version && git add packages/svelte && git commit -m \"chore(release): bump version svelte\" && git tag svelte-v$(node -p \"require('./packages/svelte/package.json').version\") && npm run git:push",
-		"release:react:patch": "npm run build:react && npm version patch -w @feflow-ui/react --no-git-tag-version && git add packages/react && git commit -m \"chore(release): bump version react\" && git tag react-v$(node -p \"require('./packages/react/package.json').version\") && npm run git:push",
-		"release:vue:patch": "npm run build:vue && npm version patch -w @feflow-ui/vue --no-git-tag-version && git add packages/vue && git commit -m \"chore(release): bump version vue\" && git tag vue-v$(node -p \"require('./packages/vue/package.json').version\") && npm run git:push",
+		"release:core:patch": "npm run build:core && npm version patch -w @dxdns-kit/core --no-git-tag-version && git add packages/core && git commit -m \"chore(release): bump version core\" && git tag core-v$(node -p \"require('./packages/core/package.json').version\") && npm run git:push",
+		"release:svelte:patch": "npm run build:svelte && npm version patch -w @dxdns-kit/svelte --no-git-tag-version && git add packages/svelte && git commit -m \"chore(release): bump version svelte\" && git tag svelte-v$(node -p \"require('./packages/svelte/package.json').version\") && npm run git:push",
+		"release:react:patch": "npm run build:react && npm version patch -w @dxdns-kit/react --no-git-tag-version && git add packages/react && git commit -m \"chore(release): bump version react\" && git tag react-v$(node -p \"require('./packages/react/package.json').version\") && npm run git:push",
+		"release:vue:patch": "npm run build:vue && npm version patch -w @dxdns-kit/vue --no-git-tag-version && git add packages/vue && git commit -m \"chore(release): bump version vue\" && git tag vue-v$(node -p \"require('./packages/vue/package.json').version\") && npm run git:push",
 		"prepare": "npm run build:all",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint ."
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/feflow-ui.git"
+		"url": "git+https://github.com/dxdns/dxdns-kit.git"
 	},
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/dxdns/feflow-ui/issues"
+		"url": "https://github.com/dxdns/dxdns-kit/issues"
 	},
-	"homepage": "https://github.com/dxdns/feflow-ui#readme",
+	"homepage": "https://github.com/dxdns/dxdns-kit#readme",
 	"devDependencies": {
 		"@types/node": "^22.14.1",
 		"chokidar-cli": "^3.0.0",

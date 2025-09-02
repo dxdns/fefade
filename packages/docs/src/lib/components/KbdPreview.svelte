@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Kbd } from "@feflow-ui/svelte"
+	import { Constants } from "@dxdns-kit/core"
+	import { Kbd } from "@dxdns-kit/svelte"
 </script>
 
 {#each Constants.sizes as size (size)}

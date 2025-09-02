@@ -1,3 +1,3 @@
-Feflow UI Core components library.
+dxdns-kit Core components library.
 
-[View documentation](https://feflow-ui.dev).
+[View documentation](https://kit.dxdns.dev).

@@ -1,15 +1,15 @@
 <script setup lang="ts">
 	import { ref, onMounted, provide, onUnmounted } from "vue"
-	import { Constants } from "@feflow-ui/core"
-	import { providerUtil } from "@feflow-ui/core/utils"
+	import { Constants } from "@dxdns-kit/core"
+	import { providerUtil } from "@dxdns-kit/core/utils"
 	import type {
 		ThemeColorType,
 		ThemeConfigType,
 		ThemeModeType
-	} from "@feflow-ui/core/types"
+	} from "@dxdns-kit/core/types"
 	import { ThemeConfigSymbol } from "../../symbols"
 	// @ts-ignore
-	import rawStyle from "@feflow-ui/core/styles/FeflowProvider.css?raw"
+	import rawStyle from "@dxdns-kit/core/styles/Provider.css?raw"
 
 	interface Props {
 		/** @deprecated Use `theme` instead */

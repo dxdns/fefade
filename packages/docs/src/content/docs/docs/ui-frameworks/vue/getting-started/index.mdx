@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: How to install and set up Feflow UI in your project.
+description: How to install and set up dxdns-kit in your project.
 head:
   - tag: title
     content: Installation in Vue
@@ -19,12 +19,12 @@ import { FileTree } from "@astrojs/starlight/components"
             <Tabs>
                 <TabItem label="npm" icon="npm">
                     ```bash
-                    npm install @feflow-ui/core @feflow-ui/vue
+                    npm install @dxdns-kit/core @dxdns-kit/vue
                     ```
                 </TabItem>
                 <TabItem label="pnpm" icon="pnpm">
                     ```bash
-                    pnpm add @feflow-ui/core @feflow-ui/vue
+                    pnpm add @dxdns-kit/core @dxdns-kit/vue
                     ```
                 </TabItem>
             </Tabs>
@@ -32,7 +32,7 @@ import { FileTree } from "@astrojs/starlight/components"
 
         <li>
             ### Setup provider
-            Wrap your application with the `FeflowProvider` to enable all Feflow UI components.
+            Wrap your application with the `Provider` to enable all dxdns-kit components.
             This should be done at the layout level to ensure global access.
 
             > Recommended: Place this in `src/main.ts` (React root element)
@@ -45,11 +45,11 @@ import { FileTree } from "@astrojs/starlight/components"
             ```ts
             import { createApp, h } from "vue"
             import App from "./App.vue"
-            import { FeflowProvider } from "@feflow-ui/vue"
+            import { Provider } from "@dxdns-kit/vue"
 
             const app = createApp({
                 render() {
-                    return h(FeflowProvider, null, {
+                    return h(Provider, null, {
                         default: () => h(App)
                     })
                 }
@@ -65,7 +65,7 @@ import { FileTree } from "@astrojs/starlight/components"
                 <TabItem label="Usage">
                     ```vue
                     <script setup lang="ts">
-                        import { Button } from "@feflow-ui/vue"
+                        import { Button } from "@dxdns-kit/vue"
                     </script>
 
                     <template>

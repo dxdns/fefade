@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Spinner } from "@feflow-ui/svelte"
+	import { Constants } from "@dxdns-kit/core"
+	import { Spinner } from "@dxdns-kit/svelte"
 </script>
 
 <div

@@ -1,17 +1,17 @@
 .progressLoader.error {
-	--bg: var(--ff-on-error);
+	--bg: var(--dx-on-error);
 }
 
 .progressLoader.warning {
-	--bg: var(--ff-on-warning);
+	--bg: var(--dx-on-warning);
 }
 
 .progressLoader.success {
-	--bg: var(--ff-on-success);
+	--bg: var(--dx-on-success);
 }
 
 .progressLoader.info {
-	--bg: var(--ff-on-info);
+	--bg: var(--dx-on-info);
 }
 
 .progressLoader {

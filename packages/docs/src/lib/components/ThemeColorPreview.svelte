@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button, Card, themeConfig } from "@feflow-ui/svelte"
+	import { Badge, Button, Card, themeConfig } from "@dxdns-kit/svelte"
 
 	const theme = $derived(themeConfig())
 </script>

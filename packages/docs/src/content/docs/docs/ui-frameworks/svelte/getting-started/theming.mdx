@@ -21,7 +21,7 @@ Import necessary modules and create a custom theme configuration.
 
 ```svelte
 <script lang="ts">
-	import { createTheme, FeflowProvider } from "@feflow-ui/svelte"
+	import { createTheme, Provider } from "@dxdns-kit/svelte"
 
 	let { children } = $props()
 
@@ -30,9 +30,9 @@ Import necessary modules and create a custom theme configuration.
 	})
 </script>
 
-<FeflowProvider {theme} defaultThemeMode="dark">
+<Provider {theme} defaultThemeMode="dark">
 	{@render children()}
-</FeflowProvider>
+</Provider>
 ```
 
 ### Accessing Theme Colors

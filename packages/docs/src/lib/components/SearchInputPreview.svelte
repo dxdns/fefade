@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { SearchInput } from "@feflow-ui/svelte"
+	import { Constants } from "@dxdns-kit/core"
+	import { SearchInput } from "@dxdns-kit/svelte"
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">

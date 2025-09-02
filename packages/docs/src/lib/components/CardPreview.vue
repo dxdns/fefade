@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import { ref } from "vue"
-	import { Card } from "@feflow-ui/vue"
+	import { Card } from "@dxdns-kit/vue"
 
 	const borderWidth = ref(1)
 

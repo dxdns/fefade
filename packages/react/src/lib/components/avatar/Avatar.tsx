@@ -1,7 +1,7 @@
 import { forwardRef, useState, type ImgHTMLAttributes } from "react"
-import styles from "@feflow-ui/core/styles/Avatar.module.css"
-import { classMapUtil } from "@feflow-ui/core/utils"
-import type { AvatarType } from "@feflow-ui/core/types"
+import styles from "@dxdns-kit/core/styles/Avatar.module.css"
+import { classMapUtil } from "@dxdns-kit/core/utils"
+import type { AvatarType } from "@dxdns-kit/core/types"
 
 interface Props
 	extends Omit<ImgHTMLAttributes<HTMLImageElement>, "width" | "height">,

@@ -16,14 +16,14 @@
 	textarea {
 		padding: 1rem;
 		border-radius: 15px;
-		color: var(--ff-on-surface);
-		background: var(--ff-surface);
-		border: 1px solid var(--ff-border);
+		color: var(--dx-on-surface);
+		background: var(--dx-surface);
+		border: 1px solid var(--dx-border);
 		transition: border-color 0.3s ease;
 	}
 
 	textarea:focus {
 		outline: none;
-		border-color: color-mix(in srgb, var(--ff-border) 70%, gray);
+		border-color: color-mix(in srgb, var(--dx-border) 70%, gray);
 	}
 </style>

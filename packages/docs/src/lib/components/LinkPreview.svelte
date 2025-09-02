@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Link } from "@feflow-ui/svelte"
+	import { Link } from "@dxdns-kit/svelte"
 </script>
 
 <Link href="https://github.com/dxdns" target="_blank">

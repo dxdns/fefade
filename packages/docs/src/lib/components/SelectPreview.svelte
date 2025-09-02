@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Badge, Select } from "@feflow-ui/svelte"
+	import { Constants } from "@dxdns-kit/core"
+	import { Badge, Select } from "@dxdns-kit/svelte"
 
 	let currentOption = $state("v2")
 </script>

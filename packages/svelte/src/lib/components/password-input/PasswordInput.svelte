@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@feflow-ui/core/utils"
-	import type { ColorType, SizeType, VariantType } from "@feflow-ui/core/types"
+	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import type { ColorType, SizeType, VariantType } from "@dxdns-kit/core/types"
 	import Button from "../button/index.js"
 	import TextField from "../text-field/index.js"
-	import { visibilityIcon, visibilityOffIcon } from "@feflow-ui/core/icons"
+	import { visibilityIcon, visibilityOffIcon } from "@dxdns-kit/core/icons"
 	import styles from "./PasswordInput.module.css"
 
 	interface Props extends Omit<Omit<HTMLInputAttributes, "size">, "type"> {

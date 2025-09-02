@@ -7,7 +7,7 @@
 		Separator,
 		Switch,
 		themeConfig
-	} from "@feflow-ui/svelte"
+	} from "@dxdns-kit/svelte"
 
 	const theme = $derived(themeConfig())
 
@@ -171,8 +171,8 @@
 		<h2 style="margin-bottom: 0.5rem;">Connect</h2>
 		<p class="text-muted">
 			Feel free to contact me at
-			<Link href="mailto:hi@feflow-ui.dev" hoverUnderline="center">
-				hi@feflow-ui.dev
+			<Link href="mailto:hi@dxdns-kit.dev" hoverUnderline="center">
+				hi@dxdns-kit.dev
 			</Link>
 		</p>
 		<div style="display: flex; gap: 1rem; margin-top: 1rem;">
@@ -208,7 +208,7 @@
 					/>
 				</svg>
 			</Link>
-			<Link href="https://reddit.com/user/feflow-ui" target="_blank">
+			<Link href="https://reddit.com/user/dxdns-kit" target="_blank">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 48 48"

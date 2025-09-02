@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Badge } from "@feflow-ui/svelte"
+	import { Constants } from "@dxdns-kit/core"
+	import { Badge } from "@dxdns-kit/svelte"
 
 	const badgeVariants = ["outlined", "contained"] as const
 </script>

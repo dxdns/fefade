@@ -1,7 +1,7 @@
-import type { TextFieldType } from "@feflow-ui/core/types"
-import { classMapUtil } from "@feflow-ui/core/utils"
+import type { TextFieldType } from "@dxdns-kit/core/types"
+import { classMapUtil } from "@dxdns-kit/core/utils"
 import { forwardRef, InputHTMLAttributes, useEffect, useRef } from "react"
-import styles from "@feflow-ui/core/styles/TextField.module.css"
+import styles from "@dxdns-kit/core/styles/TextField.module.css"
 
 interface Props
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, "size">,

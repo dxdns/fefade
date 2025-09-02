@@ -1,4 +1,4 @@
-import { Card } from "@feflow-ui/react"
+import { Card } from "@dxdns-kit/react"
 import { useState } from "react"
 
 export default function () {

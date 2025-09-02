@@ -1,5 +1,5 @@
-import { Status } from "@feflow-ui/react"
-import { Constants } from "@feflow-ui/core"
+import { Status } from "@dxdns-kit/react"
+import { Constants } from "@dxdns-kit/core"
 
 export default function () {
 	return (

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Rating } from "@feflow-ui/svelte"
+	import { Rating } from "@dxdns-kit/svelte"
 </script>
 
 <h4>default</h4>

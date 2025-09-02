@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { themeConfig, Navbar, Toaster } from "@/index.js"
-	import { infoIcon } from "@feflow-ui/core/icons"
+	import { infoIcon } from "@dxdns-kit/core/icons"
 
 	let { children } = $props()
 

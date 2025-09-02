@@ -1,6 +1,6 @@
 import { themeConfigState } from "../states/index.js"
-import { providerUtil } from "@feflow-ui/core/utils"
-import type { ThemeConfigUtilType } from "@feflow-ui/core/types"
+import { providerUtil } from "@dxdns-kit/core/utils"
+import type { ThemeConfigUtilType } from "@dxdns-kit/core/types"
 
 export default function themeConfigUtil(): ThemeConfigUtilType {
 	const themeConfig = themeConfigState()

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Button } from "@feflow-ui/vue"
+	import { Constants } from "@dxdns-kit/core"
+	import { Button } from "@dxdns-kit/vue"
 
 	const colors = ["error", "success", "warning", "info", "primary"] as const
 </script>

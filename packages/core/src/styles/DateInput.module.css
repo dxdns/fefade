@@ -3,9 +3,9 @@
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	background: var(--ff-surface);
-	color: var(--ff-on-surface);
-	border: 1px solid var(--ff-border);
+	background: var(--dx-surface);
+	color: var(--dx-on-surface);
+	border: 1px solid var(--dx-border);
 	border-radius: 6px;
 	padding: 8px 12px;
 	font-size: 1rem;
@@ -18,7 +18,7 @@
 
 .dateInput:focus {
 	outline: none;
-	border-color: var(--ff-primary);
+	border-color: var(--dx-primary);
 }
 
 .dateInput::-webkit-calendar-picker-indicator {

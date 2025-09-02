@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Button, Timer } from "@feflow-ui/svelte"
-	import { Constants } from "@feflow-ui/core"
+	import { Button, Timer } from "@dxdns-kit/svelte"
+	import { Constants } from "@dxdns-kit/core"
 
 	const themeColor = Constants.themeColorVar
 

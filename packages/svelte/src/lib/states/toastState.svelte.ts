@@ -1,5 +1,5 @@
-import { Constants } from "@feflow-ui/core"
-import type { ToastStateType } from "@feflow-ui/core/types"
+import { Constants } from "@dxdns-kit/core"
+import type { ToastStateType } from "@dxdns-kit/core/types"
 
 type ToastInputType = Omit<Partial<ToastStateType>, "id">
 

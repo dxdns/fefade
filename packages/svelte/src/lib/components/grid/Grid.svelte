@@ -4,9 +4,9 @@
 		classMapUtil,
 		mergeStyleUtil,
 		normalizeSizeUtil
-	} from "@feflow-ui/core/utils"
-	import type { GridType } from "@feflow-ui/core/types"
-	import styles from "@feflow-ui/core/styles/Grid.module.css"
+	} from "@dxdns-kit/core/utils"
+	import type { GridType } from "@dxdns-kit/core/types"
+	import styles from "@dxdns-kit/core/styles/Grid.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement>, GridType {}
 

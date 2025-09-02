@@ -1,7 +1,7 @@
 import { forwardRef, type ButtonHTMLAttributes } from "react"
-import type { ButtonType, HTMLAttrAnchor } from "@feflow-ui/core/types"
-import styles from "@feflow-ui/core/styles/Button.module.css"
-import { classMapUtil } from "@feflow-ui/core/utils"
+import type { ButtonType, HTMLAttrAnchor } from "@dxdns-kit/core/types"
+import styles from "@dxdns-kit/core/styles/Button.module.css"
+import { classMapUtil } from "@dxdns-kit/core/utils"
 import { Spinner } from "../spinner"
 
 interface Props

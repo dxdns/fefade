@@ -1,8 +1,8 @@
 import { forwardRef, HTMLAttributes } from "react"
-import { classMapUtil } from "@feflow-ui/core/utils"
-import { closeIcon } from "@feflow-ui/core/icons"
+import { classMapUtil } from "@dxdns-kit/core/utils"
+import { closeIcon } from "@dxdns-kit/core/icons"
 import { Button } from "../button"
-import styles from "@feflow-ui/core/styles/DrawerHeader.module.css"
+import styles from "@dxdns-kit/core/styles/DrawerHeader.module.css"
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
 	handleClose?: () => void

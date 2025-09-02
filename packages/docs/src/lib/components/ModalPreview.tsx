@@ -1,4 +1,4 @@
-import { Button, Modal } from "@feflow-ui/react"
+import { Button, Modal } from "@dxdns-kit/react"
 import { useState } from "react"
 
 export default function () {

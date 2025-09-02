@@ -1,1 +1,1 @@
-export * from "@feflow-ui/core/types"
+export * from "@dxdns-kit/core/types"

@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
+	import { Constants } from "@dxdns-kit/core"
 	import { toastState } from "../../states/index.js"
 	import Toast from "./Toast.svelte"
 	import { fade } from "svelte/transition"
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@feflow-ui/core/utils"
+	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
 	import { flip } from "svelte/animate"
-	import styles from "@feflow-ui/core/styles/Toaster.module.css"
+	import styles from "@dxdns-kit/core/styles/Toaster.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		fullWidth?: boolean

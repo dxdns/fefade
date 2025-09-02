@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@feflow-ui/core/utils"
-	import { starIcon } from "@feflow-ui/core/icons"
+	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
+	import { starIcon } from "@dxdns-kit/core/icons"
 	import styles from "./Rating.module.css"
 
 	interface Props extends HTMLButtonAttributes {

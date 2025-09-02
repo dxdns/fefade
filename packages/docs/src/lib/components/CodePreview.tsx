@@ -1,4 +1,4 @@
-import { Code, Window } from "@feflow-ui/react"
+import { Code, Window } from "@dxdns-kit/react"
 
 export default function () {
 	const data = `

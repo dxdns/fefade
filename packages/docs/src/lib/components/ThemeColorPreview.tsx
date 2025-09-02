@@ -2,9 +2,9 @@ import {
 	Badge,
 	Button,
 	Card,
-	FeflowProvider,
+	Provider,
 	themeConfig
-} from "@feflow-ui/react"
+} from "@dxdns-kit/react"
 
 function ThemeColorPreview() {
 	const theme = themeConfig()
@@ -60,8 +60,8 @@ function ThemeColorPreview() {
 
 export default function () {
 	return (
-		<FeflowProvider>
+		<Provider>
 			<ThemeColorPreview />
-		</FeflowProvider>
+		</Provider>
 	)
 }

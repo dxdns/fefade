@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createTheme, FeflowProvider } from "@/index.js"
+	import { createTheme, Provider } from "@/index.js"
 
 	let { children } = $props()
 
@@ -10,12 +10,12 @@
 </script>
 
 <svelte:head>
-	<title>Feflow UI + Svelte</title>
+	<title>dxdns-kit + Svelte</title>
 </svelte:head>
 
-<FeflowProvider {theme} defaultThemeMode="light">
+<Provider {theme} defaultThemeMode="light">
 	{@render children()}
-</FeflowProvider>
+</Provider>
 
 <!-- <style>
 	:global(*) {

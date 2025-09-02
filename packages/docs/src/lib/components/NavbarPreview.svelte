@@ -7,7 +7,7 @@
 		themeConfig,
 		useMediaQuery,
 		Window
-	} from "@feflow-ui/svelte"
+	} from "@dxdns-kit/svelte"
 	import { onDestroy } from "svelte"
 
 	let isOpen = $state({

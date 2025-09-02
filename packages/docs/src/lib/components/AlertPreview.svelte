@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Alert } from "@feflow-ui/svelte"
-	import { Constants } from "@feflow-ui/core"
+	import { Alert } from "@dxdns-kit/svelte"
+	import { Constants } from "@dxdns-kit/core"
 </script>
 
 <br />

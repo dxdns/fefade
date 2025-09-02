@@ -1,7 +1,7 @@
 import { useAction } from "@/utils"
-import { videoAction } from "@feflow-ui/core/actions"
-import type { GalleryMediaType, HTMLAttrAnchor } from "@feflow-ui/core/types"
-import { videoUtil } from "@feflow-ui/core/utils"
+import { videoAction } from "@dxdns-kit/core/actions"
+import type { GalleryMediaType, HTMLAttrAnchor } from "@dxdns-kit/core/types"
+import { videoUtil } from "@dxdns-kit/core/utils"
 import { forwardRef, ImgHTMLAttributes } from "react"
 
 interface Props

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { NumberInput } from "@feflow-ui/svelte"
+	import { Constants } from "@dxdns-kit/core"
+	import { NumberInput } from "@dxdns-kit/svelte"
 
 	let quantity = $state(0)
 </script>

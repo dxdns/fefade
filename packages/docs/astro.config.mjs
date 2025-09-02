@@ -8,10 +8,10 @@ import vue from "@astrojs/vue"
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://feflow-ui.dev",
+	site: "https://kit.dxdns.dev",
 	integrations: [
 		starlight({
-			title: "Feflow UI",
+			title: "dxdns-kit",
 			components: {
 				PageFrame: "./src/lib/layouts/RootLayout.astro",
 				Hero: "./src/lib/components/Hero.astro",
@@ -21,13 +21,14 @@ export default defineConfig({
 			favicon: "/favicon.png",
 			logo: {
 				src: "./public/favicon.png",
-				alt: "logo"
+				alt: "logo",
+				replacesTitle: true
 			},
 			social: [
 				{
 					icon: "github",
 					label: "GitHub",
-					href: "https://github.com/dxdns/feflow-ui"
+					href: "https://github.com/dxdns/dxdns-kit"
 				}
 			],
 			sidebar: [

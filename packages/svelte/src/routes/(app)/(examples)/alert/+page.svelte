@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Alert } from "@/index.js"
-	import { Constants } from "@feflow-ui/core"
+	import { Constants } from "@dxdns-kit/core"
 </script>
 
 <br />

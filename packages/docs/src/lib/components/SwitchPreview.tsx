@@ -1,4 +1,4 @@
-import { Switch } from "@feflow-ui/react"
+import { Switch } from "@dxdns-kit/react"
 
 export default function () {
 	const sizes = ["xs", "sm", "md", "lg", "xl"] as const

@@ -1,4 +1,4 @@
-import { Avatar, Card, Status, Tooltip } from "@feflow-ui/react"
+import { Avatar, Card, Status, Tooltip } from "@dxdns-kit/react"
 
 export default function () {
 	const avatarOn = () => (
@@ -21,7 +21,7 @@ export default function () {
 					position: "absolute",
 					top: "0",
 					right: "5px",
-					border: `2px solid var(--ff-bg)`
+					border: `2px solid var(--dx-bg)`
 				}}
 			/>
 		</div>

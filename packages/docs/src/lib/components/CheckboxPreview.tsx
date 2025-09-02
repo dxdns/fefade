@@ -1,4 +1,4 @@
-import { Checkbox } from "@feflow-ui/react"
+import { Checkbox } from "@dxdns-kit/react"
 
 export default function () {
 	return (

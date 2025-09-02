@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { bottomSheetAction } from "@feflow-ui/core/actions"
-	import { classMapUtil } from "@feflow-ui/core/utils"
+	import { bottomSheetAction } from "@dxdns-kit/core/actions"
+	import { classMapUtil } from "@dxdns-kit/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { BottomSheetType } from "@feflow-ui/core/types"
-	import styles from "@feflow-ui/core/styles/BottomSheet.module.css"
+	import type { BottomSheetType } from "@dxdns-kit/core/types"
+	import styles from "@dxdns-kit/core/styles/BottomSheet.module.css"
 
 	interface Props
 		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

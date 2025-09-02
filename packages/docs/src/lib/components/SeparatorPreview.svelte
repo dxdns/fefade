@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Separator } from "@feflow-ui/svelte"
+	import { Constants } from "@dxdns-kit/core"
+	import { Separator } from "@dxdns-kit/svelte"
 
 	const separatorVariants = ["dotted", "dashed", "solid"] as const
 </script>

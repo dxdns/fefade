@@ -2,16 +2,16 @@
   <img src="./packages/docs/public/favicon.png" width="150" height="120" />
 </p>
 
-<h1 align="center">Feflow UI</h1>
+<h1 align="center">dxdns-kit</h1>
 
-[![license](https://img.shields.io/github/license/dxdns/feflow-ui)](https://github.com/dxdns/feflow-ui/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/dxdns/dxdns-kit)](https://github.com/dxdns/dxdns-kit/blob/master/LICENSE)
 ![Zero Dependencies](https://img.shields.io/badge/dependencies-0-green)
 
-**Feflow UI** is a lightweight and dependency-free UI component library.
+**dxdns-kit** is a lightweight and dependency-free UI component library.
 
 > Minimal, accessible, dependency-free — made by a developer who loves clean UI.
 
-## Why Feflow UI?
+## Why dxdns-kit?
 
 - Lightweight by design
 - Isolated styles using CSS Modules — no bleeding styles
@@ -31,12 +31,12 @@
 
 ## Documentation
 
-Coming soon in the [https://feflow-ui.dev/docs](https://feflow-ui.dev/docs).
+Coming soon in the [https://kit.dxdns.dev/docs](https://kit.dxdns.dev/docs).
 
 ## Contributing
 
 Please see the [Contributing Guide](CONTRIBUTING.md) for information on
-contributing to Feflow UI.
+contributing to dxdns-kit.
 
 ## License
 

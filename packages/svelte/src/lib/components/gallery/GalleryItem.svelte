@@ -4,16 +4,16 @@
 		handleClickUtil,
 		hasKeysUtil,
 		videoUtil
-	} from "@feflow-ui/core/utils"
+	} from "@dxdns-kit/core/utils"
 	import type {
 		GalleryItemType,
 		GalleryCaptionType,
 		HTMLAttrAnchor,
 		ImageType,
 		GalleryMediaType
-	} from "@feflow-ui/core/types"
+	} from "@dxdns-kit/core/types"
 	import type { Snippet } from "svelte"
-	import styles from "@feflow-ui/core/styles/GalleryItem.module.css"
+	import styles from "@dxdns-kit/core/styles/GalleryItem.module.css"
 	import type { HTMLImgAttributes, HTMLVideoAttributes } from "svelte/elements"
 	import { Video } from "../video/index.js"
 	import { Image } from "../image/index.js"

@@ -1,13 +1,13 @@
 ---
 title: Installation
-description: How to install and set up Feflow UI in your project
+description: How to install and set up dxdns-kit in your project
 head:
   - tag: title
     content: Installation in React
 categories: ["react"]
 ---
 
-import { Button } from "@feflow-ui/react"
+import { Button } from "@dxdns-kit/react"
 import { Tabs, TabItem } from "@astrojs/starlight/components"
 import { Steps } from "@astrojs/starlight/components"
 import { FileTree } from "@astrojs/starlight/components"
@@ -19,12 +19,12 @@ import { FileTree } from "@astrojs/starlight/components"
             <Tabs>
                 <TabItem label="npm" icon="npm">
                     ```bash
-                    npm install @feflow-ui/core @feflow-ui/react
+                    npm install @dxdns-kit/core @dxdns-kit/react
                     ```
                 </TabItem>
                 <TabItem label="pnpm" icon="pnpm">
                     ```bash
-                    pnpm add @feflow-ui/core @feflow-ui/react
+                    pnpm add @dxdns-kit/core @dxdns-kit/react
                     ```
                 </TabItem>
             </Tabs>
@@ -32,7 +32,7 @@ import { FileTree } from "@astrojs/starlight/components"
 
         <li>
             ### Setup provider
-            Wrap your application with the `FeflowProvider` to enable all Feflow UI components.
+            Wrap your application with the `Provider` to enable all dxdns-kit components.
             This should be done at the layout level to ensure global access.
 
             > Recommended: Place this in `src/main.tsx` (React root element)
@@ -46,13 +46,13 @@ import { FileTree } from "@astrojs/starlight/components"
             import { StrictMode } from "react"
             import { createRoot } from "react-dom/client"
             import App from "./App"
-            import { FeflowProvider } from "@feflow-ui/react"
+            import { Provider } from "@dxdns-kit/react"
 
             createRoot(document.getElementById("root")!).render(
                 <StrictMode>
-                    <FeflowProvider>
+                    <Provider>
                         <App />
-                    </FeflowProvider>
+                    </Provider>
                 </StrictMode>
             )
             ```
@@ -63,7 +63,7 @@ import { FileTree } from "@astrojs/starlight/components"
             <Tabs>
                 <TabItem label="Usage">
                     ```tsx
-                    import { Button } from "@feflow-ui/react"
+                    import { Button } from "@dxdns-kit/react"
 
                     function App() {
                         return (

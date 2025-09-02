@@ -1,10 +1,10 @@
 <script setup lang="ts">
-	import { FeflowProvider } from "@feflow-ui/vue"
+	import { Provider } from "@dxdns-kit/vue"
 	import ThemeColorPreview from "./ThemeColorPreview.vue"
 </script>
 
 <template>
-	<FeflowProvider>
+	<Provider>
 		<ThemeColorPreview />
-	</FeflowProvider>
+	</Provider>
 </template>

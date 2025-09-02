@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { Accordion } from "@feflow-ui/svelte"
+	import { Constants } from "@dxdns-kit/core"
+	import { Accordion } from "@dxdns-kit/svelte"
 </script>
 
 <div style="display: flex; flex-direction: column; gap: 1rem;">

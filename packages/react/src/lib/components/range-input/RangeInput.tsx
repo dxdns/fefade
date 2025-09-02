@@ -1,7 +1,7 @@
-import type { SizeType } from "@feflow-ui/core/types"
-import { classMapUtil, dataIconUrlUtil } from "@feflow-ui/core/utils"
+import type { SizeType } from "@dxdns-kit/core/types"
+import { classMapUtil, dataIconUrlUtil } from "@dxdns-kit/core/utils"
 import { CSSProperties, forwardRef, InputHTMLAttributes, useMemo } from "react"
-import styles from "@feflow-ui/core/styles/RangeInput.module.css"
+import styles from "@dxdns-kit/core/styles/RangeInput.module.css"
 
 interface Props
 	extends Omit<

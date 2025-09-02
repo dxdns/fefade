@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { imageAction } from "@feflow-ui/core/actions"
+	import { imageAction } from "@dxdns-kit/core/actions"
 	import type { HTMLImgAttributes } from "svelte/elements"
-	import type { GalleryMediaType, ImageType } from "@feflow-ui/core/types"
+	import type { GalleryMediaType, ImageType } from "@dxdns-kit/core/types"
 
 	interface Props
 		extends Omit<HTMLImgAttributes, "src">,

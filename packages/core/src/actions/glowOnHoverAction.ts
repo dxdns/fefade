@@ -54,7 +54,7 @@ export default function glowOnHoverAction(node: HTMLElement) {
 		const x = ((event.clientX - rect.left) / rect.width) * 100
 		const y = ((event.clientY - rect.top) / rect.height) * 100
 
-		glow.style.background = `radial-gradient(circle at ${x}% ${y}%, var(--ff-border) 0%, transparent 30%)`
+		glow.style.background = `radial-gradient(circle at ${x}% ${y}%, var(--dx-border) 0%, transparent 30%)`
 		glow.style.opacity = "1"
 	}
 

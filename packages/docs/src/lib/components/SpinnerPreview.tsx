@@ -1,5 +1,5 @@
-import { Constants } from "@feflow-ui/core"
-import { Spinner } from "@feflow-ui/react"
+import { Constants } from "@dxdns-kit/core"
+import { Spinner } from "@dxdns-kit/react"
 
 export default function () {
 	return (

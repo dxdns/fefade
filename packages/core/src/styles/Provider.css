@@ -1,0 +1,204 @@
+body {
+	background: var(--dx-bg);
+	color: var(--dx-on-bg);
+}
+
+/** text **/
+
+.text-primary {
+	color: var(--dx-primary) !important;
+}
+
+.text-on-primary {
+	color: var(--dx-on-primary) !important;
+}
+
+.text-secondary {
+	color: var(--dx-secondary) !important;
+}
+
+.text-on-secondary {
+	color: var(--dx-on-secondary) !important;
+}
+
+.text {
+	color: var(--dx-on-bg) !important;
+}
+
+.text-muted,
+.muted {
+	color: var(--dx-muted) !important;
+}
+
+.text-on-bg {
+	color: var(--dx-on-bg) !important;
+}
+
+.text-on-surface {
+	color: var(--dx-on-surface) !important;
+}
+
+.text-on-disabled {
+	color: var(--dx-on-disabled) !important;
+}
+
+/** bg **/
+
+.bg-primary {
+	background: var(--dx-primary) !important;
+}
+
+.bg-secondary {
+	background: var(--dx-secondary) !important;
+}
+
+.bg-page {
+	background: var(--dx-bg) !important;
+}
+
+.bg-surface {
+	background: var(--dx-surface) !important;
+}
+
+.bg-disabled {
+	background: var(--dx-disabled) !important;
+}
+
+.bg-0 {
+	background: none !important;
+}
+
+/** border **/
+
+.border {
+	border-color: var(--dx-border) !important;
+}
+
+.border-0 {
+	border: none !important;
+	border-radius: 0 !important;
+}
+
+/** bg **/
+
+.bg-success {
+	background: var(--dx-success) !important;
+}
+
+.bg-error,
+.bg-danger {
+	background: var(--dx-error) !important;
+}
+
+.bg-warning {
+	background: var(--dx-warning) !important;
+}
+
+.bg-info {
+	background: var(--dx-info) !important;
+}
+
+/** hover bg **/
+.hover-bg-success:hover {
+	background: var(--dx-success) !important;
+}
+
+.hover-bg-error:hover,
+.hover-bg-danger:hover {
+	background: var(--dx-error) !important;
+}
+
+.hover-bg-warning:hover {
+	background: var(--dx-warning) !important;
+}
+
+.hover-bg-info:hover {
+	background: var(--dx-info) !important;
+}
+
+/** text **/
+
+.text-on-success {
+	color: var(--dx-on-success) !important;
+}
+
+.text-on-error,
+.text-on-danger {
+	color: var(--dx-on-error) !important;
+}
+
+.text-on-warning {
+	color: var(--dx-on-warning) !important;
+}
+
+.text-on-info {
+	color: var(--dx-on-info) !important;
+}
+
+/** hover text **/
+
+.hover-text-on-success:hover {
+	color: var(--dx-on-success) !important;
+}
+
+.hover-text-on-error:hover,
+.hover-text-on-danger:hover {
+	color: var(--dx-on-error) !important;
+}
+
+.hover-text-on-warning:hover {
+	color: var(--dx-on-warning) !important;
+}
+
+.hover-text-on-info:hover {
+	color: var(--dx-on-info) !important;
+}
+
+/** border **/
+
+.border-on-success {
+	border-color: var(--dx-on-success) !important;
+}
+
+.border-on-error,
+.border-on-danger {
+	border-color: var(--dx-on-error) !important;
+}
+
+.border-on-warning {
+	border-color: var(--dx-on-warning) !important;
+}
+
+.border-on-info {
+	border-color: var(--dx-on-info) !important;
+}
+
+.roundedFull,
+.rounded-full {
+	border-radius: 9999px !important;
+}
+
+/** hover border **/
+
+.hover-border-on-success:hover {
+	border-color: var(--dx-on-success) !important;
+}
+
+.hover-border-on-error:hover,
+.hover-border-on-danger:hover {
+	border-color: var(--dx-on-error) !important;
+}
+
+.hover-border-on-warning:hover {
+	border-color: var(--dx-on-warning) !important;
+}
+
+.hover-border-on-info:hover {
+	border-color: var(--dx-on-info) !important;
+}
+
+/* essentials */
+
+.w-full {
+	width: 100% !important;
+}

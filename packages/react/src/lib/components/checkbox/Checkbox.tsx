@@ -1,8 +1,8 @@
 import { forwardRef, InputHTMLAttributes } from "react"
-import type { SizeType } from "@feflow-ui/core/types"
-import { classMapUtil } from "@feflow-ui/core/utils"
-import { checkmarkIcon } from "@feflow-ui/core/icons"
-import styles from "@feflow-ui/core/styles/Checkbox.module.css"
+import type { SizeType } from "@dxdns-kit/core/types"
+import { classMapUtil } from "@dxdns-kit/core/utils"
+import { checkmarkIcon } from "@dxdns-kit/core/icons"
+import styles from "@dxdns-kit/core/styles/Checkbox.module.css"
 
 interface Props
 	extends Omit<Omit<InputHTMLAttributes<HTMLInputElement>, "size">, "type"> {

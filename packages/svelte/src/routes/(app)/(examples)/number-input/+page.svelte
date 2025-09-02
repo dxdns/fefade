@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
+	import { Constants } from "@dxdns-kit/core"
 	import { NumberInput } from "@/index.js"
 
 	let quantity = $state(0)

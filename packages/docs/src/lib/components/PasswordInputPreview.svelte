@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@feflow-ui/core"
-	import { PasswordInput } from "@feflow-ui/svelte"
+	import { Constants } from "@dxdns-kit/core"
+	import { PasswordInput } from "@dxdns-kit/svelte"
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">

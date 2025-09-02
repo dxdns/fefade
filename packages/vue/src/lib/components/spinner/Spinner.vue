@@ -1,8 +1,8 @@
 <script setup lang="ts">
 	import { computed, useAttrs, IntrinsicElementAttributes } from "vue"
-	import { classMapUtil } from "@feflow-ui/core/utils"
-	import type { SpinnerType } from "@feflow-ui/core/types"
-	import styles from "@feflow-ui/core/styles/Spinner.module.css"
+	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import type { SpinnerType } from "@dxdns-kit/core/types"
+	import styles from "@dxdns-kit/core/styles/Spinner.module.css"
 
 	interface Props extends SpinnerType {}
 
