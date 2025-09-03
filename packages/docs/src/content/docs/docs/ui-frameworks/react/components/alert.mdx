@@ -1,0 +1,17 @@
+---
+title: Alert
+description:
+  An alert component used to display important messages or feedback to users,
+  supporting different variants and dismissible behavior.
+head:
+  - tag: title
+    content: React Alert Component
+categories: ["react"]
+---
+
+import AlertPreview from "@/components/AlertPreview.tsx"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+<PreviewTabs component="AlertPreview" ext="tsx">
+	<AlertPreview client:load />
+</PreviewTabs>

@@ -2,7 +2,7 @@
 	import { Constants } from "@dxdns-kit/core"
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import type { StatusColorType } from "@dxdns-kit/core/types"
+	import type { AlertType } from "@dxdns-kit/core/types"
 	import {
 		checkCircleIcon,
 		errorIcon,
@@ -11,9 +11,7 @@
 	} from "@dxdns-kit/core/icons"
 	import styles from "@dxdns-kit/core/styles/Alert.module.css"
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
-		color?: StatusColorType
-	}
+	interface Props extends HTMLAttributes<HTMLDivElement>, AlertType {}
 
 	let {
 		class: className = "",
