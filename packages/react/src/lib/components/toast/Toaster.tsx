@@ -32,24 +32,6 @@ export default function ({ fullWidth = false, children }: Props) {
 		})
 	}
 
-	function _startTimer(toast: ToastStateType) {
-		const timer = setTimeout(() => {
-			remove(toast.id)
-		}, toast.remaining)
-
-		setData((old) => {
-			return old.map((t) => {
-				if (t.id !== toast.id) return t
-
-				return {
-					...t,
-					start: Date.now(),
-					timer: timer as any as number
-				}
-			})
-		})
-	}
-
 	function add(toast: ToastInputType) {
 		const id = crypto.randomUUID()
 		const duration = toast.duration ?? Constants.TOAST_DEFAULT_DURATION
@@ -73,53 +55,11 @@ export default function ({ fullWidth = false, children }: Props) {
 
 		setData((old) => [...old, newToast])
 
-		_startTimer(newToast)
-
 		return id
 	}
 
-	function pause(id: string) {
-		setData((old) =>
-			old.map((t) => {
-				if (t.id !== id || t.paused) return t
-
-				if (t.timer) clearTimeout(t.timer)
-
-				const elapsed = Date.now() - t.start
-
-				return {
-					...t,
-					remaining: t.remaining - elapsed,
-					paused: true,
-					timer: undefined
-				}
-			})
-		)
-	}
-
-	function resume(id: string) {
-		setData((old) =>
-			old.map((t) => {
-				if (t.id !== id || !t.paused) return t
-
-				const timer = setTimeout(() => {
-					remove(id)
-				}, t.remaining)
-
-				return {
-					...t,
-					start: Date.now(),
-					paused: false,
-					timer: timer as any as number
-				}
-			})
-		)
-	}
-
 	return (
-		<ToastContext.Provider
-			value={{ data, add, getById, remove, pause, resume }}
-		>
+		<ToastContext.Provider value={{ data, add, getById, remove }}>
 			{Constants.alignments.map((alignment) => {
 				const pos = alignment.split("-")[0]
 				const isPositionTop = pos === "top"

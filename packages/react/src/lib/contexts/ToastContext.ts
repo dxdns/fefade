@@ -6,15 +6,11 @@ export const ToastContext = createContext<{
 	add: (toast: ToastInputType) => string
 	getById: (id: string) => ToastStateType | undefined
 	remove: (id: string) => void
-	pause: (id: string) => void
-	resume: (id: string) => void
 }>({
 	data: [],
 	add: () => String(),
 	getById: () => undefined,
-	remove: () => {},
-	pause: () => {},
-	resume: () => {}
+	remove: () => {}
 })
 
 export const useToast = () => useContext(ToastContext)

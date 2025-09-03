@@ -11,6 +11,7 @@ import { classMapUtil } from "@dxdns-kit/core/utils"
 import { Alert } from "../alert"
 import { Button } from "../button"
 import { ToastContext } from "../../contexts/ToastContext"
+import { ProgressLoader } from "../progress-loader"
 import styles from "@dxdns-kit/core/styles/Toast.module.css"
 
 interface Props
@@ -32,44 +33,45 @@ export default forwardRef<HTMLDivElement, Props>(
 	) => {
 		const _toastContext = useContext(ToastContext)
 		const toast = _toastContext.getById(id)
-		const toastRemaining = toast?.remaining ?? 3000
+		const toastRemaining = toast?.duration ?? 3000
 
 		const [timerValue, setTimerValue] = useState(toastRemaining)
-
-		const interval = setInterval(() => {
-			if (timerValue > 0 && !toast?.paused) {
-				setTimerValue(Math.max(timerValue - 100, 0))
-			}
-		}, 100)
+		const [paused, setPaused] = useState(false)
 
 		useEffect(() => {
-			return () => {
-				clearInterval(interval)
-			}
-		})
+			const interval = setInterval(() => {
+				setTimerValue((old) => {
+					if (!paused && old > 0) {
+						return Math.max(old - 100, 0)
+					}
+					return old
+				})
+			}, 100)
+
+			return () => clearInterval(interval)
+		}, [paused])
 
 		return (
 			<Alert
 				{...rest}
 				ref={ref}
 				className={classMapUtil(className, styles.toast)}
+				color={color}
 				onMouseEnter={() => {
-					_toastContext.pause(id)
+					setPaused(true)
 				}}
 				onMouseLeave={() => {
-					_toastContext.resume(id)
+					setPaused(false)
 				}}
-				color={color}
 			>
 				<div className={styles.wrapper}>
 					<div className={styles.message}>{message}</div>
-					{
-						withProgressLoader && <></>
-						// <ProgressLoader
-						// 	value={(timerValue / toastRemaining) * 100}
-						// 	color={color}
-						// />
-					}
+					{withProgressLoader && (
+						<ProgressLoader
+							value={(timerValue / toastRemaining) * 100}
+							color={color}
+						/>
+					)}
 				</div>
 				{isClosable && (
 					<Button
