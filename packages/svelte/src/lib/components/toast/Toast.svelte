@@ -18,8 +18,9 @@
 		class: className = "",
 		id,
 		message,
+		color = "info",
 		isClosable = false,
-		handleClose,
+		withProgressLoader = false,
 		...rest
 	}: Props = $props()
 
@@ -48,16 +49,14 @@
 	onmouseleave={() => {
 		_toastState.resume(id)
 	}}
+	{color}
 >
 	<div class={styles.wrapper}>
 		<div class={styles.message}>
 			{message}
 		</div>
-		{#if rest.withProgressLoader}
-			<ProgressLoader
-				value={(timerValue / toastRemaining) * 100}
-				color={rest.color}
-			/>
+		{#if withProgressLoader}
+			<ProgressLoader value={(timerValue / toastRemaining) * 100} {color} />
 		{/if}
 	</div>
 	{#if isClosable}
@@ -69,7 +68,9 @@
 			height: 20px;
 			min-width: 20px;
 			"
-			onclick={handleClose}
+			onclick={() => {
+				_toastState.remove(id)
+			}}
 		>
 			<svg
 				viewBox="0 -960 960 960"

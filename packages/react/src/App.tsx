@@ -1,6 +1,9 @@
 import AvatarExample from "./examples/AvatarExample"
+import { Button, useToast } from "./lib"
 
 function App() {
+	const toast = useToast()
+
 	return (
 		<div
 			style={{
@@ -13,6 +16,13 @@ function App() {
 			}}
 		>
 			<AvatarExample />
+			<Button
+				onClick={() => {
+					toast.add({ message: "test" })
+				}}
+			>
+				toast
+			</Button>
 		</div>
 	)
 }

@@ -1,3 +1,2 @@
-import { ThemeConfigContext } from "./ThemeConfigContext"
-
-export { ThemeConfigContext }
+export { ThemeConfigContext } from "./ThemeConfigContext.js"
+export { ToastContext } from "./ToastContext.js"

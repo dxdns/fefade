@@ -1,6 +1,6 @@
 import type { AlignmentType, StatusColorType } from "./index.js"
 
-export interface ToastStateType {
+export interface ToastType {
 	id: string
 	message: string
 	color?: StatusColorType
@@ -10,6 +10,11 @@ export interface ToastStateType {
 	withProgressLoader?: boolean
 }
 
-export interface ToastType extends ToastStateType {
-	handleClose?: () => void
+export type ToastStateType = ToastType & {
+	remaining: number
+	timer?: number
+	start: number
+	paused: boolean
 }
+
+export type ToastInputType = Omit<Partial<ToastType>, "id">

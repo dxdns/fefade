@@ -2,17 +2,15 @@
 	import { Constants } from "@dxdns-kit/core"
 	import { toastState } from "../../states/index.js"
 	import Toast from "./Toast.svelte"
-	import { fade } from "svelte/transition"
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
-	import { flip } from "svelte/animate"
 	import styles from "@dxdns-kit/core/styles/Toaster.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		fullWidth?: boolean
 	}
 
-	let { class: className = "", fullWidth, ...rest }: Props = $props()
+	let { class: className = "", fullWidth = false, ...rest }: Props = $props()
 
 	let isHovered = $state(false)
 
@@ -45,10 +43,6 @@
 			<div
 				role="region"
 				class={styles.wrapper}
-				animate:flip
-				transition:fade={{
-					duration: 150
-				}}
 				onmouseenter={() => {
 					isHovered = true
 				}}
@@ -66,11 +60,12 @@
 				)}
 			>
 				<Toast
-					{...item}
+					id={item.id}
+					message={item.message}
+					color={item.color}
+					isClosable={item.isClosable}
+					withProgressLoader={item.withProgressLoader}
 					class={styles.toast}
-					handleClose={() => {
-						_toastState.remove(item.id)
-					}}
 				/>
 			</div>
 		{/each}

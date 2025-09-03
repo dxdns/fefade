@@ -1,23 +1,14 @@
 import { Constants } from "@dxdns-kit/core"
-import type { ToastStateType } from "@dxdns-kit/core/types"
+import type { ToastStateType, ToastInputType } from "@dxdns-kit/core/types"
 
-type ToastInputType = Omit<Partial<ToastStateType>, "id">
-
-type ToastInternalType = ToastStateType & {
-	remaining: number
-	timer?: number
-	start: number
-	paused: boolean
-}
-
-let data = $state<ToastInternalType[]>([])
+let data = $state<ToastStateType[]>([])
 
 export default function toastState() {
 	return {
 		getAll() {
 			return data
 		},
-		set(newData: ToastInternalType[]) {
+		set(newData: ToastStateType[]) {
 			data = newData
 		},
 		add(toast: ToastInputType) {
@@ -29,7 +20,7 @@ export default function toastState() {
 
 			const start = Date.now()
 
-			const newToast: ToastInternalType = {
+			const newToast: ToastStateType = {
 				id,
 				message,
 				duration,
@@ -57,7 +48,7 @@ export default function toastState() {
 				this.set(data.filter((t) => t.id !== id))
 			}
 		},
-		_startTimer(toast: ToastInternalType) {
+		_startTimer(toast: ToastStateType) {
 			toast.start = Date.now()
 			toast.timer = setTimeout(() => {
 				this.remove(toast.id)
