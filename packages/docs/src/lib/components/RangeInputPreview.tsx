@@ -12,27 +12,45 @@ export default function () {
 	`
 
 	return (
-		<div style={{ maxWidth: "300px", margin: "0 auto", lineHeight: 3 }}>
+		<div
+			style={{
+				maxWidth: "300px",
+				margin: "0 auto",
+				display: "flex",
+				flexDirection: "column",
+				gap: "1rem"
+			}}
+		>
 			<RangeInput />
 			<RangeInput icon={homeIcon} />
 
-			<div style={{ display: "flex", alignItems: "center", gap: 1 }}>
+			<div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
 				<span>bindable</span>
 				<RangeInput
 					value={inputValue}
 					step="10"
-					onChange={(value) => {
-						setInputValue(value)
+					onChange={(e) => {
+						setInputValue(Number(e.currentTarget.value))
 					}}
 				/>
 				<Badge roundedFull size="lg">
 					<span>{inputValue}</span>
 				</Badge>
 			</div>
-			<RangeInput value={inputValue} />
+			<RangeInput
+				value={inputValue}
+				step="10"
+				onChange={(e) => {
+					setInputValue(Number(e.currentTarget.value))
+				}}
+			/>
 
 			{Constants.sizes.map((size) => (
 				<RangeInput key={size} size={size} />
+			))}
+
+			{Constants.statusColors.map((color) => (
+				<RangeInput key={color} color={color} />
 			))}
 		</div>
 	)

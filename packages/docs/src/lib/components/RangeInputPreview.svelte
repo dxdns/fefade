@@ -11,7 +11,15 @@
 	let inputValue = $state(0)
 </script>
 
-<div style="max-width: 300px; line-height: 3; margin: 0 auto;">
+<div
+	style="
+	max-width: 300px; 
+	margin: 0 auto; 
+	display: flex; 
+	flex-direction: column; 
+	gap: 1rem;
+	"
+>
 	<RangeInput />
 	<RangeInput icon={homeIcon} />
 
@@ -23,10 +31,13 @@
 		</Badge>
 	</div>
 
-	<RangeInput bind:value={inputValue} />
+	<RangeInput bind:value={inputValue} step="10" />
 
 	{#each Constants.sizes as size (size)}
 		<RangeInput {size} />
-		<br />
+	{/each}
+
+	{#each Constants.statusColors as color (color)}
+		<RangeInput {color} />
 	{/each}
 </div>

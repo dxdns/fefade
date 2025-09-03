@@ -1,33 +1,45 @@
-import type { SizeType } from "@dxdns-kit/core/types"
+import type { RangeInputType } from "@dxdns-kit/core/types"
 import { classMapUtil, dataIconUrlUtil } from "@dxdns-kit/core/utils"
-import { CSSProperties, forwardRef, InputHTMLAttributes, useMemo } from "react"
+import {
+	CSSProperties,
+	forwardRef,
+	InputHTMLAttributes,
+	useMemo,
+	useState
+} from "react"
 import styles from "@dxdns-kit/core/styles/RangeInput.module.css"
 
 interface Props
 	extends Omit<
-		Omit<Omit<InputHTMLAttributes<HTMLInputElement>, "type">, "onChange">,
-		"size"
-	> {
-	icon?: string | SVGElement
-	size?: SizeType
-	onChange?: (value: number) => void
-}
+			Omit<
+				Omit<Omit<InputHTMLAttributes<HTMLInputElement>, "type">, "size">,
+				"value"
+			>,
+			"color"
+		>,
+		RangeInputType {}
 
 export default forwardRef<HTMLInputElement, Props>(
 	(
 		{
 			className = "",
-			value = 0,
+			color = "primary",
 			icon,
 			size = "md",
-			onChange,
+			showValue = true,
 			min = 0,
 			max = 100,
 			...rest
 		},
 		ref
 	) => {
-		const progressValue = useMemo(() => {
+		const [currentValue, setCurrentValue] = useState(rest.defaultValue ?? 0)
+		const [bubbleActive, setBubbleActive] = useState(false)
+
+		const isControlled = rest.value !== undefined
+		const value = isControlled ? Number(rest.value) : currentValue
+
+		const internalValue = useMemo(() => {
 			const minNum = Number(min)
 			const maxNum = Number(max)
 			const valueNum = Number(value)
@@ -45,33 +57,60 @@ export default forwardRef<HTMLInputElement, Props>(
 		}, [min, max, value])
 
 		return (
-			<input
-				{...rest}
-				ref={ref}
-				className={classMapUtil(
-					className,
-					[className, styles],
-					[size, styles],
-					styles.rangeInput
+			<div className={styles.wrapper}>
+				<input
+					{...rest}
+					ref={ref}
+					className={classMapUtil(
+						className,
+						[className, styles],
+						[size, styles],
+						[color, styles],
+						styles.rangeInput
+					)}
+					style={
+						{
+							["--internal-value"]: `${internalValue}%`,
+							["--thumb-icon"]: icon
+								? `url(${dataIconUrlUtil(icon)})`
+								: undefined,
+							...rest.style
+						} as CSSProperties
+					}
+					value={internalValue}
+					onChange={(e) => {
+						if (isControlled) {
+							rest.onChange?.(e)
+						} else {
+							setCurrentValue(Number(e.currentTarget.value))
+						}
+					}}
+					onInput={() => {
+						setBubbleActive(true)
+					}}
+					onTouchEnd={() => {
+						setBubbleActive(false)
+					}}
+					onMouseUp={() => {
+						setBubbleActive(false)
+					}}
+					type="range"
+					min={min}
+					max={max}
+				/>
+				{showValue && (
+					<output
+						className={classMapUtil(styles.bubble, {
+							[styles.active]: bubbleActive
+						})}
+						style={{
+							left: `calc(${internalValue}% + (${8 - internalValue * 0.15}px))`
+						}}
+					>
+						{internalValue.toFixed(0)}
+					</output>
 				)}
-				value={progressValue}
-				style={
-					{
-						["--progress"]: `${progressValue}%`,
-						["--thumb-icon"]: icon
-							? `url(${dataIconUrlUtil(icon)})`
-							: undefined,
-						...rest.style
-					} as CSSProperties
-				}
-				onInput={(e) => {
-					rest.onInput?.(e)
-					onChange?.(Number(e.currentTarget.value))
-				}}
-				type="range"
-				min={min}
-				max={max}
-			/>
+			</div>
 		)
 	}
 )

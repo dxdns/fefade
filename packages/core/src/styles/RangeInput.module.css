@@ -6,6 +6,37 @@
 	--track-height: 6px;
 }
 
+.rangeInput.info {
+	--thumb-bg: var(--dx-on-info);
+	--thumb-border: var(--dx-info);
+}
+
+.rangeInput.success {
+	--thumb-bg: var(--dx-on-success);
+	--thumb-border: var(--dx-success);
+}
+
+.rangeInput.warning {
+	--thumb-bg: var(--dx-on-warning);
+	--thumb-border: var(--dx-warning);
+}
+
+.rangeInput.error {
+	--thumb-bg: var(--dx-on-error);
+	--thumb-border: var(--dx-error);
+}
+
+.rangeInput.primary {
+	--thumb-bg: var(--dx-primary);
+	--thumb-border: var(--dx-on-primary);
+}
+
+.wrapper {
+	position: relative;
+	margin: 0;
+	line-height: 1;
+}
+
 .rangeInput {
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -176,9 +207,10 @@ input::-webkit-outer-spin-button {
 	line-height: 24px;
 	text-align: center;
 	user-select: none;
+	margin: 0;
 }
 
-input[type=range]:active+.bubble {
+.bubble.active {
 	display: block;
 	transform: translateX(-50%);
 }
