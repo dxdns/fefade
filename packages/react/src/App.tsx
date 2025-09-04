@@ -18,7 +18,10 @@ function App() {
 			<AvatarExample />
 			<Button
 				onClick={() => {
-					toast.add({ message: "test", withProgressLoader: true })
+					toast.add({
+						message: "test",
+						withProgressLoader: true
+					})
 				}}
 			>
 				toast

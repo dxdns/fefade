@@ -1,5 +1,5 @@
 import { CSSProperties, useState, type PropsWithChildren } from "react"
-import type { ToastInputType, ToastStateType } from "@dxdns-kit/core/types"
+import type { AlignmentType, ToasterType } from "@dxdns-kit/core/types"
 import { ToastContext } from "../../contexts/ToastContext"
 import { Constants } from "@dxdns-kit/core"
 import { classMapUtil } from "@dxdns-kit/core/utils"
@@ -11,62 +11,46 @@ type Props = PropsWithChildren & {
 }
 
 export default function ({ fullWidth = false, children }: Props) {
-	const [data, setData] = useState<ToastStateType[]>([])
 	const [isHovered, setIsHovered] = useState(false)
+	const [data, setData] = useState<Map<string, ToasterType>>(new Map())
 
-	const maxToasts = fullWidth ? 1 : 3
-
-	function getById(id: string) {
-		return data.find((t) => t.id === id)
-	}
+	const maxToasts = Constants.MAX_TOASTS(fullWidth)
 
 	function remove(id: string) {
-		setData((old) => {
-			old.forEach((t) => {
-				if (t.id === id && t.timer) {
-					clearTimeout(t.timer)
-				}
-			})
-
-			return old.filter((t) => t.id !== id)
+		setData((prev) => {
+			const newMap = new Map(prev)
+			newMap.delete(id)
+			return newMap
 		})
 	}
 
-	function add(toast: ToastInputType) {
+	function add(toast: ToasterType) {
 		const id = crypto.randomUUID()
 		const duration = toast.duration ?? Constants.TOAST_DEFAULT_DURATION
 		const position = toast.position ?? "bottom-right"
-		const message = toast.message ?? ""
-		const color = toast.color ?? "info"
 
-		const start = Date.now()
-
-		const newToast: ToastStateType = {
-			id,
-			message,
-			duration,
-			position,
-			color,
-			remaining: duration,
-			start,
-			paused: false,
-			...toast
-		}
-
-		setData((old) => [...old, newToast])
+		setData((old) => {
+			const newMap = new Map(old)
+			newMap.set(id, { ...toast, duration, position })
+			return newMap
+		})
 
 		return id
 	}
 
+	function groupedData(alignment: AlignmentType) {
+		return Array.from(data)
+			.filter(([_, t]) => t.position === alignment)
+			.slice(-maxToasts)
+			.reverse()
+	}
+
 	return (
-		<ToastContext.Provider value={{ data, add, getById, remove }}>
+		<ToastContext.Provider value={{ data: data, add, remove }}>
 			{Constants.alignments.map((alignment) => {
 				const pos = alignment.split("-")[0]
 				const isPositionTop = pos === "top"
-				const grouped = data
-					.filter((t) => t.position === alignment)
-					.slice(-maxToasts)
-					.reverse()
+				const grouped = groupedData(alignment)
 
 				return (
 					<div
@@ -80,9 +64,9 @@ export default function ({ fullWidth = false, children }: Props) {
 							styles.toaster
 						)}
 					>
-						{grouped.map((item, i) => (
+						{Array.from(grouped).map(([id, item], i) => (
 							<div
-								key={item.id}
+								key={id}
 								role="region"
 								className={styles.wrapper}
 								onMouseEnter={() => {
@@ -100,14 +84,7 @@ export default function ({ fullWidth = false, children }: Props) {
 									} as CSSProperties
 								}
 							>
-								<Toast
-									id={item.id}
-									message={item.message}
-									color={item.color}
-									isClosable={item.isClosable}
-									withProgressLoader={item.withProgressLoader}
-									className={styles.toast}
-								/>
+								<Toast {...item} id={id} className={styles.toast} />
 							</div>
 						))}
 					</div>

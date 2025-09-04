@@ -4,6 +4,7 @@
 	import Toast from "./Toast.svelte"
 	import type { HTMLAttributes } from "svelte/elements"
 	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
+	import type { AlignmentType } from "@dxdns-kit/core/types"
 	import styles from "@dxdns-kit/core/styles/Toaster.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -15,17 +16,21 @@
 	let isHovered = $state(false)
 
 	const _toastState = toastState()
-	const maxToasts = fullWidth ? 1 : 3
+	const maxToasts = Constants.MAX_TOASTS(fullWidth)
+
+	function groupedData(alignment: AlignmentType) {
+		return Array.from(_toastState.data)
+			.filter(([_, t]) => t.position === alignment)
+			.slice(-maxToasts)
+			.reverse()
+	}
 </script>
 
 {#each Constants.alignments as alignment (alignment)}
 	{@const pos = alignment.split("-")[0]}
 	{@const isPositionTop = pos === "top"}
-	{@const grouped = _toastState
-		.getAll()
-		.filter((t) => t.position === alignment)
-		.slice(-maxToasts)
-		.reverse()}
+	{@const grouped = groupedData(alignment)}
+
 	<div
 		{...rest}
 		class={classMapUtil(
@@ -39,7 +44,7 @@
 			styles.toaster
 		)}
 	>
-		{#each grouped as item, i (item.id)}
+		{#each grouped as [id, item], i (id)}
 			<div
 				role="region"
 				class={styles.wrapper}
@@ -59,14 +64,7 @@
 					rest.style
 				)}
 			>
-				<Toast
-					id={item.id}
-					message={item.message}
-					color={item.color}
-					isClosable={item.isClosable}
-					withProgressLoader={item.withProgressLoader}
-					class={styles.toast}
-				/>
+				<Toast {...item} {id} class={styles.toast} />
 			</div>
 		{/each}
 	</div>

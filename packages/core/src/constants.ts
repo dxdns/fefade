@@ -120,3 +120,4 @@ export const positions = [...verticalPositions, ...horizontalPositions] as const
 export const alignments: AlignmentType[] = verticalPositions.flatMap((v) =>
 	horizontalPositions.map((h) => `${v}-${h}` as AlignmentType)
 )
+export const MAX_TOASTS = (fullWidth?: boolean) => (fullWidth ? 1 : 3)

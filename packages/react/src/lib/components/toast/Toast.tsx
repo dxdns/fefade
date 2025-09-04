@@ -32,10 +32,10 @@ export default forwardRef<HTMLDivElement, Props>(
 		ref
 	) => {
 		const _toastContext = useContext(ToastContext)
-		const toast = _toastContext.getById(id)
-		const toastRemaining = toast?.duration ?? 3000
+		const toast = _toastContext.data.get(id)
+		const duration = toast?.duration ?? 3000
 
-		const [timerValue, setTimerValue] = useState(toastRemaining)
+		const [timerValue, setTimerValue] = useState(duration)
 		const [paused, setPaused] = useState(false)
 
 		useEffect(() => {
@@ -48,8 +48,16 @@ export default forwardRef<HTMLDivElement, Props>(
 				})
 			}, 100)
 
-			return () => clearInterval(interval)
+			return () => {
+				clearInterval(interval)
+			}
 		}, [paused])
+
+		useEffect(() => {
+			if (timerValue <= 0) {
+				_toastContext.remove(id)
+			}
+		}, [timerValue])
 
 		return (
 			<Alert
@@ -68,11 +76,12 @@ export default forwardRef<HTMLDivElement, Props>(
 					<div className={styles.message}>{message}</div>
 					{withProgressLoader && (
 						<ProgressLoader
-							value={(timerValue / toastRemaining) * 100}
+							value={(timerValue / duration) * 100}
 							color={color}
 						/>
 					)}
 				</div>
+
 				{isClosable && (
 					<Button
 						roundedFull

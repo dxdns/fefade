@@ -25,15 +25,23 @@
 	}: Props = $props()
 
 	const _toastState = toastState()
-	const toast = _toastState._getById(id)
-	const toastRemaining = toast?.remaining ?? 3000
-	let timerValue = $state(toastRemaining)
+	const toast = _toastState.data.get(id)
+	const duration = toast?.duration ?? 3000
+
+	let timerValue = $state(duration)
+	let paused = $state(false)
 
 	const interval = setInterval(() => {
-		if (timerValue > 0 && !toast?.paused) {
+		if (!paused && timerValue > 0) {
 			timerValue = Math.max(timerValue - 100, 0)
 		}
 	}, 100)
+
+	$effect(() => {
+		if (timerValue <= 0) {
+			_toastState.remove(id)
+		}
+	})
 
 	onDestroy(() => {
 		clearInterval(interval)
@@ -44,10 +52,10 @@
 	{...rest}
 	class={classMapUtil(className, styles.toast)}
 	onmouseenter={() => {
-		_toastState.pause(id)
+		paused = true
 	}}
 	onmouseleave={() => {
-		_toastState.resume(id)
+		paused = false
 	}}
 	{color}
 >
@@ -56,7 +64,7 @@
 			{message}
 		</div>
 		{#if withProgressLoader}
-			<ProgressLoader value={(timerValue / toastRemaining) * 100} {color} />
+			<ProgressLoader value={(timerValue / duration) * 100} {color} />
 		{/if}
 	</div>
 	{#if isClosable}

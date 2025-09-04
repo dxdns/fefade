@@ -30,7 +30,7 @@
 		<Button
 			onclick={() => {
 				toast({
-					message: "position",
+					message: position,
 					position,
 					withProgressLoader: position === "bottom-center"
 				})

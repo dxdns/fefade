@@ -11,7 +11,9 @@
 	} from "@dxdns-kit/core/icons"
 	import styles from "@dxdns-kit/core/styles/Alert.module.css"
 
-	interface Props extends HTMLAttributes<HTMLDivElement>, AlertType {}
+	interface Props
+		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,
+			AlertType {}
 
 	let {
 		class: className = "",

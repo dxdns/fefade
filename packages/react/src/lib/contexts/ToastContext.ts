@@ -1,15 +1,13 @@
 import { createContext, useContext } from "react"
-import type { ToastInputType, ToastStateType } from "@dxdns-kit/core/types"
+import type { ToasterType } from "@dxdns-kit/core/types"
 
 export const ToastContext = createContext<{
-	data: ToastStateType[]
-	add: (toast: ToastInputType) => string
-	getById: (id: string) => ToastStateType | undefined
+	data: Map<string, ToasterType>
+	add: (toast: ToasterType) => string
 	remove: (id: string) => void
 }>({
-	data: [],
+	data: new Map(),
 	add: () => String(),
-	getById: () => undefined,
 	remove: () => {}
 })
 

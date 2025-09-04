@@ -66,7 +66,8 @@
 		onclick={() => {
 			toast({
 				message: "with progress loader",
-				withProgressLoader: true
+				withProgressLoader: true,
+				duration: 15000
 			})
 		}}
 	>

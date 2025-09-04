@@ -1,0 +1,47 @@
+---
+title: Toast
+description:
+  A UI component that briefly displays non-intrusive messages to inform users
+  about an action or status, typically appearing at the edge of the screen and
+  disappearing automatically.
+head:
+  - tag: title
+    content: React Toast Component
+categories: ["react"]
+---
+
+import ToastPreview from "@/components/ToastPreview.tsx"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+#### Setup
+
+Make sure to include the `Toaster` component inside the provider to enable toast
+notifications.
+
+For installation and setup instructions, see the
+[Getting Started guide](/docs/ui-frameworks/react/getting-started).
+
+> Recommended: Place this in `src/main.tsx` (React root element)
+
+```tsx
+import { StrictMode } from "react"
+import { createRoot } from "react-dom/client"
+import App from "./App"
+import { Provider, Toaster } from "@dxdns-kit/react"
+
+createRoot(document.getElementById("root")!).render(
+	<StrictMode>
+		<Provider>
+			<Toaster>
+				<App />
+			</Toaster>
+		</Provider>
+	</StrictMode>
+)
+```
+
+#### Usage
+
+<PreviewTabs component="ToastPreview" ext="tsx">
+	<ToastPreview client:load />
+</PreviewTabs>
