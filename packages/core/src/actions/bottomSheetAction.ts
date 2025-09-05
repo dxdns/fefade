@@ -50,9 +50,6 @@ export default function bottomSheetAction(
 	}
 
 	function resetStyle() {
-		document.body.style.overflow = "auto"
-		document.body.style.overscrollBehaviorY = "auto"
-
 		setCurrentHeight(wrapperHeight)
 		setWrapperHeightStyle(wrapperHeight)
 		node.style.top = "unset"

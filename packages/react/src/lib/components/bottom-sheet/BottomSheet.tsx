@@ -23,6 +23,9 @@ export default forwardRef<HTMLDivElement, Props>(
 			if (isOpen) {
 				document.body.style.overflow = "hidden"
 				document.body.style.overscrollBehaviorY = "contain"
+			} else {
+				document.body.style.overflow = "auto"
+				document.body.style.overscrollBehaviorY = "auto"
 			}
 		}, [isOpen])
 

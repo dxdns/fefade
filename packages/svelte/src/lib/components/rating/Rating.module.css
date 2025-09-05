@@ -5,6 +5,9 @@
 	cursor: pointer;
 	position: relative;
 	user-select: none;
+	max-width: fit-content;
+	flex: none;
+	align-self: auto;
 }
 
 .rating:disabled {
