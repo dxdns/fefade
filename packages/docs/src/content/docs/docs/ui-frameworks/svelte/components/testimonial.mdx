@@ -1,0 +1,18 @@
+---
+title: Testimonial
+description:
+  The Testimonial component displays customer feedback with quote, author, and
+  optional image or role. It’s ideal for building trust and credibility on
+  landing pages, product sections, or case studies.
+head:
+  - tag: title
+    content: Svelte Testimonial Component
+categories: ["svelte"]
+---
+
+import TestimonialPreview from "@/components/TestimonialPreview.svelte"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+<PreviewTabs component="TestimonialPreview">
+	<TestimonialPreview client:load />
+</PreviewTabs>

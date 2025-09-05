@@ -1,24 +1,20 @@
-.icon,
-.icon svg {
-	transition:
-		color 0.3s ease,
-		fill 0.3s ease;
+.rating {
+	all: unset;
+	display: inline-block;
+	font-size: 2rem;
+	cursor: pointer;
+	position: relative;
+	user-select: none;
 }
 
-.icon.active {
-	color: var(--color);
+.rating:disabled {
+	--star-color: var(--dx-disabled) !important;
 }
 
-.icon.active svg {
-	fill: var(--color);
-}
-
-@media (hover: hover) and (pointer: fine) {
-	.icon:hover {
-		color: var(--color);
-	}
-
-	.icon:hover svg {
-		fill: var(--color);
-	}
+.rating::after {
+	content: "★★★★★";
+	background: linear-gradient(90deg, var(--star-color) var(--rating-percent), var(--dx-border) var(--rating-percent));
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
 }
