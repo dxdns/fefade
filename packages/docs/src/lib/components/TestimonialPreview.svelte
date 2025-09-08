@@ -1,13 +1,5 @@
 <script lang="ts">
-	import { Avatar, Card, Rating } from "@dxdns-kit/svelte"
-
-	type ReviewType = {
-		name: string
-		role: string
-		avatarUrl?: string
-		rating: number
-		comment: string
-	}
+	import { AutoScroll, Testimonial } from "@dxdns-kit/svelte"
 
 	const reviews = [
 		{
@@ -51,116 +43,18 @@
 	]
 </script>
 
-{#snippet Component({ name, role, avatarUrl, rating, comment }: ReviewType)}
-	<Card variant="contained" style="margin-top: 1rem;">
-		<div
-			style="
-			display: flex; 
-			gap: 1rem; 
-			align-items: center; 
-			flex-wrap: wrap;
-			justify-content: space-between;
-			"
-		>
-			<div
-				style="
-				display: flex; 
-				gap: 1rem; 
-				align-items: center; 
-				flex-wrap: wrap;
-				"
-			>
-				<Avatar textFallback={name} src={avatarUrl} />
-				<p style="margin: 0;">
-					<strong>{name}</strong>
-					<br />
-					<span class="muted">{role}</span>
-				</p>
-			</div>
-			<Rating startIn={rating} style="font-size: 24px;" disabled />
-		</div>
+<Testimonial variant="contained" {...reviews[0]} />
 
-		<p>
-			<i>{comment}</i>
-		</p>
-	</Card>
-{/snippet}
+<div style="display: flex; gap: 1rem;">
+	<AutoScroll fade direction="top" maxHeight={500}>
+		{#each reviews.slice(0, 2) as review, i (i)}
+			<Testimonial variant="contained" {...review} />
+		{/each}
+	</AutoScroll>
 
-{@render Component?.(reviews[0])}
-
-<div class="fadeMask">
-	<div class="container">
-		<div class="animateScrollToTop">
-			{#each reviews.slice(0, 2) as review, i (i)}
-				{@render Component?.(review)}
-			{/each}
-		</div>
-
-		<div class="animateScrollToBottom">
-			{#each reviews.slice(3, reviews.length) as review, i (i)}
-				{@render Component?.(review)}
-			{/each}
-		</div>
-	</div>
+	<AutoScroll fade direction="bottom" maxHeight={500}>
+		{#each reviews.slice(3, reviews.length) as review, i (i)}
+			<Testimonial {...review} />
+		{/each}
+	</AutoScroll>
 </div>
-
-<style>
-	.fadeMask {
-		overflow: hidden;
-		max-height: 300px;
-
-		-webkit-mask-image: linear-gradient(
-			to bottom,
-			transparent 0%,
-			white 10%,
-			white 90%,
-			transparent 100%
-		);
-		mask-image: linear-gradient(
-			to bottom,
-			transparent 0%,
-			white 10%,
-			white 90%,
-			transparent 100%
-		);
-	}
-
-	.container {
-		display: flex;
-		gap: 1rem;
-		border-radius: 1.5rem;
-	}
-
-	@keyframes scroll-top-to-bottom {
-		0% {
-			transform: translateY(0);
-		}
-
-		100% {
-			transform: translateY(-50%);
-		}
-	}
-
-	@keyframes scroll-bottom-to-top {
-		0% {
-			transform: translateY(-50%);
-		}
-
-		100% {
-			transform: translateY(0);
-		}
-	}
-
-	.animateScrollToTop {
-		animation: scroll-bottom-to-top 60s linear infinite;
-	}
-
-	.animateScrollToBottom {
-		animation: scroll-top-to-bottom 60s linear infinite;
-	}
-
-	.animateScrollToTop:hover,
-	.animateScrollToBottom:hover {
-		animation-play-state: paused;
-	}
-</style>
