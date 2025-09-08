@@ -2,6 +2,7 @@ import {
 	Badge,
 	Button,
 	Card,
+	Grid,
 	Provider,
 	themeConfig
 } from "@dxdns-kit/react"
@@ -16,44 +17,37 @@ function ThemeColorPreview() {
 					display: "flex",
 					flexWrap: "wrap",
 					gap: "1rem",
-					alignItems: "center"
+					alignItems: "center",
+					justifyContent: "flex-end"
 				}}
 			>
-				<h2>{theme.mode}</h2>
+				<Badge variant="outlined">
+					<h4>{theme.mode}</h4>
+				</Badge>
 				<Button variant="outlined" onClick={theme.toggle}>
 					toggle theme
 				</Button>
 			</div>
-			<Card
-				style={{
-					background: theme.mode === "dark" ? "green" : "red"
-				}}
-			>
-				<ul style={{ lineHeight: 2 }}>
-					{Object.keys(theme.colors).map((t) => {
-						const color = theme.colors[t as keyof typeof theme.colors]
-						return (
-							<li key={t}>
-								<span
-									style={{
-										color: "aqua"
-									}}
-								>
-									{t}
-								</span>
-								:
-								<Badge
-									roundedFull
-									style={{
-										background: color
-									}}
-									size="sm"
-								></Badge>
-							</li>
-						)
-					})}
-				</ul>
-			</Card>
+
+			<Grid style={{ gridAutoRows: "60px" }}>
+				{Object.entries(theme.colors).map(([k, v]) => (
+					<Card key={k} style={{ background: v, margin: 0 }}>
+						<Badge
+							style={{
+								position: "absolute",
+								top: 0,
+								right: 0,
+								margin: 0,
+								borderTopRightRadius: 0,
+								borderBottomRightRadius: 0
+							}}
+						>
+							{k}
+						</Badge>
+						<Badge size="lg">{v}</Badge>
+					</Card>
+				))}
+			</Grid>
 		</>
 	)
 }

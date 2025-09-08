@@ -16,7 +16,7 @@ interface Props
 
 export default forwardRef<HTMLDivElement, Props>(
 	({ className = "", color = "info", children, ...rest }, ref) => {
-		const statusOnColor = Constants.statusOnColor(color)
+		const statusForegroundColor = Constants.ForegroundColor(color)
 
 		const Icon = {
 			error: errorIcon,
@@ -42,7 +42,7 @@ export default forwardRef<HTMLDivElement, Props>(
 					style={{
 						display: "inline-block",
 						verticalAlign: "middle",
-						fill: statusOnColor,
+						fill: statusForegroundColor,
 						width: "20px",
 						height: "20px",
 						maxWidth: "max-content"

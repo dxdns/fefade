@@ -29,6 +29,7 @@
 		download
 	} = defineProps<Props>()
 
+	defineOptions({ inheritAttrs: false })
 	const attrs = useAttrs() as IntrinsicElementAttributes["div"]
 	const emit = defineEmits(["click"])
 
@@ -97,7 +98,7 @@
 </script>
 
 <template>
-	<div ref="actionRef">
+	<div ref="actionRef" style="margin: 0">
 		<div
 			v-bind="attrs"
 			role="button"

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button, Card, themeConfig } from "@dxdns-kit/svelte"
+	import { Badge, Button, Card, Grid, themeConfig } from "@dxdns-kit/svelte"
 
 	const theme = $derived(themeConfig())
 </script>
@@ -10,19 +10,36 @@
     flex-wrap: wrap; 
     gap: 1rem; 
     align-items: center;
+	justify-content: flex-end;
     "
 >
-	<h2>{theme.mode}</h2>
+	<Badge variant="outlined">
+		<h4>{theme.mode}</h4>
+	</Badge>
 	<Button variant="outlined" onclick={theme.toggle}>toggle theme</Button>
 </div>
-<Card style="background: {theme.mode === 'dark' ? 'green' : 'red'};">
-	<ul style="line-height: 2;">
-		{#each Object.keys(theme.colors) as t (t)}
-			{@const color = theme.colors[t as keyof typeof theme.colors]}
-			<li>
-				<span style="color:aqua;">{t}</span>:
-				<Badge roundedFull style="background: {color};" size="sm"></Badge>
-			</li>
-		{/each}
-	</ul>
-</Card>
+
+<Grid style="grid-auto-rows: 60px;">
+	{#each Object.entries(theme.colors) as [k, v] (k)}
+		<Card
+			style="
+			background: {v}; 
+			margin: 0;
+			"
+		>
+			<Badge
+				style="
+				position: absolute;
+				top: 0;
+				right: 0;
+				margin: 0;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+				"
+			>
+				{k}
+			</Badge>
+			<Badge size="lg">{v}</Badge>
+		</Card>
+	{/each}
+</Grid>

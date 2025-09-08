@@ -22,7 +22,7 @@
 		...rest
 	}: Props = $props()
 
-	const statusOnColor = Constants.statusOnColor(color)
+	const statusForegroundColor = Constants.ForegroundColor(color)
 
 	const Icon = {
 		error: errorIcon,
@@ -47,7 +47,7 @@
 		style="
 		display: inline-block; 
 		vertical-align: middle;
-		fill: {statusOnColor};
+		fill: {statusForegroundColor};
 		width: 20px;
 		height: 20px;
 		max-width: max-content;

@@ -69,7 +69,7 @@ export default forwardRef<HTMLDivElement, Props>(
 		}
 
 		return (
-			<div ref={actionRef}>
+			<div ref={actionRef} style={{ margin: 0 }}>
 				<div
 					{...rest}
 					ref={ref}

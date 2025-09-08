@@ -96,9 +96,12 @@ export const themeColorVar = Object.fromEntries(
 	[K in keyof ThemeColorType]: `var(${typeof CSS_VAR_PREFIX}-${KebabType<K & string>})`
 }
 
-export const statusOnColor = (color: string) => {
+export const ForegroundColor = (color: string) => {
 	return themeColorVar[
-		`on${capitalizeUtil(color)}` as keyof typeof themeColorVar
+		`on${capitalizeUtil(color)}` as Extract<
+			keyof typeof themeColorVar,
+			`on${string}`
+		>
 	]
 }
 
