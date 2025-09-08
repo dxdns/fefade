@@ -53,16 +53,32 @@
 
 {#snippet Component({ name, role, avatarUrl, rating, comment }: ReviewType)}
 	<Card variant="contained" style="margin-top: 1rem;">
-		<div style="display: flex; gap: 1rem; align-items: center;">
-			<Avatar textFallback={name} src={avatarUrl} />
-			<p style="margin: 0;">
-				<strong>{name}</strong>
-				<br />
-				<span class="muted">{role}</span>
-			</p>
+		<div
+			style="
+			display: flex; 
+			gap: 1rem; 
+			align-items: center; 
+			flex-wrap: wrap;
+			justify-content: space-between;
+			"
+		>
+			<div
+				style="
+				display: flex; 
+				gap: 1rem; 
+				align-items: center; 
+				flex-wrap: wrap;
+				"
+			>
+				<Avatar textFallback={name} src={avatarUrl} />
+				<p style="margin: 0;">
+					<strong>{name}</strong>
+					<br />
+					<span class="muted">{role}</span>
+				</p>
+			</div>
+			<Rating startIn={rating} style="font-size: 24px;" disabled />
 		</div>
-
-		<Rating startIn={rating} style="font-size: 24px;" />
 
 		<p>
 			<i>{comment}</i>
@@ -72,12 +88,7 @@
 
 {@render Component?.(reviews[0])}
 
-<div
-	style="
-	overflow: hidden;
-	max-height: 300px;
-	"
->
+<div class="fadeMask">
 	<div class="container">
 		<div class="animateScrollToTop">
 			{#each reviews.slice(0, 2) as review, i (i)}
@@ -94,31 +105,30 @@
 </div>
 
 <style>
-	.container {
+	.fadeMask {
 		overflow: hidden;
-		height: 40rem;
-		border-radius: 1.5rem;
+		max-height: 300px;
 
 		-webkit-mask-image: linear-gradient(
 			to bottom,
 			transparent 0%,
-			white 20%,
-			white 80%,
+			white 10%,
+			white 90%,
 			transparent 100%
 		);
 		mask-image: linear-gradient(
 			to bottom,
 			transparent 0%,
-			white 20%,
-			white 80%,
+			white 10%,
+			white 90%,
 			transparent 100%
 		);
+	}
 
-		-webkit-mask-composite: source-in;
-		mask-composite: intersect;
-
+	.container {
 		display: flex;
 		gap: 1rem;
+		border-radius: 1.5rem;
 	}
 
 	@keyframes scroll-top-to-bottom {

@@ -11,7 +11,7 @@
 }
 
 .rating:disabled {
-	--star-color: var(--dx-disabled) !important;
+	cursor: default;
 }
 
 .rating::after {
