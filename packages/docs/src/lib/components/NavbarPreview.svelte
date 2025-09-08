@@ -8,19 +8,14 @@
 		useMediaQuery,
 		Window
 	} from "@dxdns-kit/svelte"
-	import { onDestroy } from "svelte"
 
 	let isOpen = $state({
 		1: false,
 		2: false
 	})
 
-	const isMd = $derived(useMediaQuery("max-width", "md"))
+	const isMd = useMediaQuery("max-width", "md")
 	const theme = $derived(themeConfig())
-
-	onDestroy(() => {
-		isMd.destroy()
-	})
 </script>
 
 {#snippet logo()}
@@ -44,8 +39,7 @@
 {#snippet navItems()}
 	<HoverFollower
 		bgColor={theme.colors.success}
-		style="flex-direction: {isMd.value ? 'column' : 'row'} !important;"
-		orientation="horizontal"
+		orientation={isMd.value ? "vertical" : "horizontal"}
 	>
 		<Navbar.Item aria-current="page">active</Navbar.Item>
 		<Navbar.Item>test1</Navbar.Item>

@@ -1,9 +1,5 @@
 <script lang="ts">
-	import {
-		actionUtil,
-		classMapUtil,
-		mergeStyleUtil
-	} from "@dxdns-kit/core/utils"
+	import { actionUtil, classMapUtil } from "@dxdns-kit/core/utils"
 	import { hoverFollowerAction } from "@dxdns-kit/core/actions"
 	import type { ActionEntryType, OrientationType } from "@dxdns-kit/core/types"
 	import type { HTMLAttributes } from "svelte/elements"
@@ -24,22 +20,17 @@
 		children,
 		...rest
 	}: Props = $props()
-
-	const direction = orientation === "horizontal" ? "row" : "column"
-
-	const style = mergeStyleUtil(`--direction: ${direction}`, rest.style)
 </script>
 
 <div
 	{...rest}
-	class={classMapUtil(className, "hoverFollower")}
+	class={classMapUtil(className, "hoverFollower", orientation)}
 	use:hoverFollowerAction={{
 		orientation,
 		bgColor,
 		startIn
 	}}
 	use:actionUtil={actions}
-	{style}
 >
 	{@render children?.()}
 </div>
@@ -49,6 +40,13 @@
 		position: relative;
 		display: flex;
 		gap: 0.5rem;
-		flex-direction: var(--direction, "column");
+	}
+
+	.hoverFollower.horizontal {
+		flex-direction: row;
+	}
+
+	.hoverFollower.vertical {
+		flex-direction: column;
 	}
 </style>

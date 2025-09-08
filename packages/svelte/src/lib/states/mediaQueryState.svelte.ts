@@ -1,12 +1,10 @@
+import type { MediaQueryType, BreakpointType } from "@dxdns-kit/core/types"
 import { sizeToNumberUtil } from "@dxdns-kit/core/utils"
-import type { BreakpointType } from "../types/index.js"
 import { Constants } from "@dxdns-kit/core"
 
-export default function mediaQueryState(
-	operator: "min-width" | "max-width",
-	size: BreakpointType | string,
-	node?: HTMLElement
-) {
+export default function mediaQueryState(...args: MediaQueryType) {
+	const [operator, size, node] = args
+
 	if (typeof window === "undefined" || typeof document === "undefined") {
 		return {
 			get value() {

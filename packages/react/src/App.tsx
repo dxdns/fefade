@@ -1,9 +1,6 @@
-import AvatarExample from "./examples/AvatarExample"
-import { Button, useToast } from "./lib"
+import MediaQueryExample from "./examples/MediaQueryExample"
 
 function App() {
-	const toast = useToast()
-
 	return (
 		<div
 			style={{
@@ -15,17 +12,7 @@ function App() {
 				gap: "1rem"
 			}}
 		>
-			<AvatarExample />
-			<Button
-				onClick={() => {
-					toast.add({
-						message: "test",
-						withProgressLoader: true
-					})
-				}}
-			>
-				toast
-			</Button>
+			<MediaQueryExample />
 		</div>
 	)
 }
