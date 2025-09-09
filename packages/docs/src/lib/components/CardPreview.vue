@@ -12,38 +12,40 @@
 </script>
 
 <template>
-	<Card v-for="variant in cardVariants" :key="variant" :variant="variant">
-		<h2>{{ variant }}</h2>
-	</Card>
+	<div style="display: flex; flex-direction: column; gap: 1rem">
+		<Card v-for="variant in cardVariants" :key="variant" :variant="variant">
+			<h2>{{ variant }}</h2>
+		</Card>
 
-	<Card :glow-on-hover="true">
-		<h2>glow on hover</h2>
-	</Card>
+		<Card :glow-on-hover="true">
+			<h2>glow on hover</h2>
+		</Card>
 
-	<Card :animated-border="true">
-		<h2>animated border</h2>
-	</Card>
+		<Card :animated-border="true">
+			<h2>animated border</h2>
+		</Card>
 
-	<Card
-		:animated-border="{
-			width: `${borderWidth}px`,
-			primaryColor: '#FF007F',
-			secondaryColor: '#8000FF'
-		}"
-		style="cursor: pointer; user-select: none"
-		@click="handleClick"
-	>
-		<h2>animated border - custom colors</h2>
-	</Card>
+		<Card
+			:animated-border="{
+				width: `${borderWidth}px`,
+				primaryColor: '#FF007F',
+				secondaryColor: '#8000FF'
+			}"
+			style="cursor: pointer; user-select: none"
+			@click="handleClick"
+		>
+			<h2>animated border - custom colors</h2>
+		</Card>
 
-	<Card
-		:animated-border="{
-			stopOnHover: true,
-			width: '2px',
-			primaryColor: '#39FF14',
-			secondaryColor: '#00FFFF'
-		}"
-	>
-		<h2>animated border - stop on hover</h2>
-	</Card>
+		<Card
+			:animated-border="{
+				stopOnHover: true,
+				width: '2px',
+				primaryColor: '#39FF14',
+				secondaryColor: '#00FFFF'
+			}"
+		>
+			<h2>animated border - stop on hover</h2>
+		</Card>
+	</div>
 </template>

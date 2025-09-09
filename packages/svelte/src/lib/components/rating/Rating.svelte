@@ -12,7 +12,7 @@
 	let {
 		class: className = "",
 		startIn = 0,
-		color = "yellow",
+		color = "#fde047",
 		onChange,
 		...rest
 	}: Props = $props()

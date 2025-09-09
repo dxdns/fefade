@@ -1,5 +1,5 @@
 import { Button, Modal } from "@dxdns-kit/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function () {
 	const [isOpen, setIsOpen] = useState(false)
@@ -7,6 +7,10 @@ export default function () {
 	function handleClose() {
 		setIsOpen(false)
 	}
+
+	useEffect(() => {
+		setIsOpen(true)
+	}, [])
 
 	return (
 		<>

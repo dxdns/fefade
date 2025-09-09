@@ -47,102 +47,103 @@
 	</HoverFollower>
 {/snippet}
 
-<Window
-	style="
+<div style="display: flex; flex-direction: column; gap: 1rem;">
+	<Window
+		style="
 	max-width: 500px; 
 	overflow: auto; 
 	position: relative;
 	"
->
-	<Drawer.Overlay
-		isOpen={isOpen[1]}
-		style="position: absolute; z-index: 1;"
-		onclick={() => {
-			isOpen[1] = false
-		}}
-	/>
-	<Drawer isOpen={isOpen[1]} style="position: absolute; z-index: 2;">
-		<Drawer.Content style="overflow: hidden; min-height: 100vh;">
-			{@render navItems()}
-		</Drawer.Content>
-	</Drawer>
+	>
+		<Drawer.Overlay
+			isOpen={isOpen[1]}
+			style="position: absolute; z-index: 1;"
+			onclick={() => {
+				isOpen[1] = false
+			}}
+		/>
+		<Drawer isOpen={isOpen[1]} style="position: absolute; z-index: 2;">
+			<Drawer.Content style="overflow: hidden; min-height: 100vh;">
+				{@render navItems()}
+			</Drawer.Content>
+		</Drawer>
 
-	<Navbar
-		id="navFree"
-		style="
+		<Navbar
+			id="navFree"
+			style="
         display: flex; 
         align-items: center; 
         gap: 1rem;
         margin: 0;
         "
-	>
-		{@render logo?.()}
+		>
+			{@render logo?.()}
 
-		<div style="flex:1;"></div>
+			<div style="flex:1;"></div>
 
-		{#if !isMd.value}
-			{@render navItems()}
-		{/if}
+			{#if !isMd.value}
+				{@render navItems()}
+			{/if}
 
-		<Navbar.Toggler
-			id="toggler-1"
-			onchange={() => {
-				isOpen[1] = !isOpen[1]
-			}}
-			checked={isOpen[1]}
-		/>
-	</Navbar>
-	{@render contentMain?.("navFree")}
-</Window>
+			<Navbar.Toggler
+				id="toggler-1"
+				onchange={() => {
+					isOpen[1] = !isOpen[1]
+				}}
+				checked={isOpen[1]}
+			/>
+		</Navbar>
+		{@render contentMain?.("navFree")}
+	</Window>
 
-<Window
-	style="
+	<Window
+		style="
 	max-height: 500px; 
 	max-width: 500px; 
 	overflow: auto; 
 	position: relative;
 	"
->
-	<div style="text-align: center; margin: 5rem 0;">
-		<h2>Scroll Down</h2>
-		<p>Scroll down to see the sticky effect.</p>
-	</div>
+	>
+		<div style="text-align: center; margin: 5rem 0;">
+			<h2>Scroll Down</h2>
+			<p>Scroll down to see the sticky effect.</p>
+		</div>
 
-	<Drawer.Overlay
-		isOpen={isOpen[2]}
-		style="
+		<Drawer.Overlay
+			isOpen={isOpen[2]}
+			style="
 		position: absolute; 
 		min-height: calc(100vh + 550px); 
 		z-index: 2;
 		"
-		onclick={() => {
-			isOpen[2] = false
-		}}
-	/>
-	<Drawer
-		isOpen={isOpen[2]}
-		style="
+			onclick={() => {
+				isOpen[2] = false
+			}}
+		/>
+		<Drawer
+			isOpen={isOpen[2]}
+			style="
 		position: absolute; 
 		min-height: calc(100vh + 550px); 
 		z-index: 3;
 		width: 100%;
 		"
-	>
-		<Drawer.Header
-			handleClose={() => {
-				isOpen[2] = false
-			}}
 		>
-			<h4>header</h4>
-		</Drawer.Header>
-		<Drawer.Content style="overflow: hidden;">
-			{@render navItems()}
-		</Drawer.Content>
-	</Drawer>
+			<Drawer.Header
+				handleClose={() => {
+					isOpen[2] = false
+				}}
+			>
+				<h4>header</h4>
+			</Drawer.Header>
+			<Drawer.Content style="overflow: hidden;">
+				{@render navItems()}
+			</Drawer.Content>
+		</Drawer>
 
-	<Navbar
-		id="navSticky"
-		style="
+		<Navbar
+			id="navSticky"
+			style="
         position: sticky; 
         top: 0; 
         display: flex; 
@@ -151,23 +152,24 @@
         margin: 0;
         z-index: 1;
         "
-		isTranslucent
-	>
-		<Navbar.Toggler
-			id="toggler-2"
-			onchange={() => {
-				isOpen[2] = !isOpen[2]
-			}}
-			checked={isOpen[2]}
-		/>
-		{#if !isMd.value}
-			{@render navItems()}
-		{/if}
-		<div style="flex: 1;"></div>
-		{@render logo?.()}
-	</Navbar>
+			isTranslucent
+		>
+			<Navbar.Toggler
+				id="toggler-2"
+				onchange={() => {
+					isOpen[2] = !isOpen[2]
+				}}
+				checked={isOpen[2]}
+			/>
+			{#if !isMd.value}
+				{@render navItems()}
+			{/if}
+			<div style="flex: 1;"></div>
+			{@render logo?.()}
+		</Navbar>
 
-	<Card style="background: {theme.colors.warning};">
-		{@render contentMain?.("navSticky")}
-	</Card>
-</Window>
+		<Card style="background: {theme.colors.warning};">
+			{@render contentMain?.("navSticky")}
+		</Card>
+	</Window>
+</div>

@@ -10,7 +10,7 @@ export default function () {
 	}
 
 	return (
-		<>
+		<div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
 			{cardVariants.map((variant) => (
 				<Card key={variant} variant={variant}>
 					<h2>{variant}</h2>
@@ -47,6 +47,6 @@ export default function () {
 			>
 				<h2>animated border - stop on hover</h2>
 			</Card>
-		</>
+		</div>
 	)
 }

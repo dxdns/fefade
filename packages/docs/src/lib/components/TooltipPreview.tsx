@@ -1,7 +1,8 @@
-import { Constants } from "@dxdns-kit/core"
 import { Tooltip } from "@dxdns-kit/react"
 
 export default function () {
+	const positions = ["top", "bottom", "left", "right"] as const
+
 	return (
 		<div
 			style={{
@@ -12,7 +13,7 @@ export default function () {
 				gap: "1rem"
 			}}
 		>
-			{Constants.positions.map((position) => (
+			{positions.map((position) => (
 				<Tooltip key={position} label={position} position={position}>
 					<p>{position}</p>
 				</Tooltip>

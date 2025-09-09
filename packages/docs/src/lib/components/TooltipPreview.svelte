@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
 	import { Tooltip } from "@dxdns-kit/svelte"
+
+	const positions = ["top", "bottom", "left", "right"] as const
 </script>
 
 <div
@@ -12,7 +13,7 @@
 	gap: 1rem;
 	"
 >
-	{#each Constants.positions as position (position)}
+	{#each positions as position (position)}
 		<Tooltip label={position} {position}>
 			<p>{position}</p>
 		</Tooltip>

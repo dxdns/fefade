@@ -3,7 +3,6 @@
 	--arrow-color: var(--dx-surface);
 	--bg-color: var(--dx-surface);
 	position: relative;
-	z-index: 10;
 	margin: 0;
 	width: fit-content;
 }
@@ -18,6 +17,7 @@
 	pointer-events: none;
 	transition: 0.2s;
 	will-change: transform;
+	z-index: 1001;
 }
 
 .tooltip::before {

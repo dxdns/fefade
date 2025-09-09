@@ -1,11 +1,16 @@
 <script lang="ts">
 	import { Button, Modal } from "@dxdns-kit/svelte"
+	import { onMount } from "svelte"
 
 	let isOpen = $state(false)
 
 	function handleClose() {
 		isOpen = false
 	}
+
+	onMount(() => {
+		isOpen = true
+	})
 </script>
 
 <Modal {isOpen} {handleClose}>

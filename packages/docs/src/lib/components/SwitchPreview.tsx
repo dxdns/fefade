@@ -1,16 +1,23 @@
+import { Constants } from "@dxdns-kit/core"
 import { Switch } from "@dxdns-kit/react"
 
 export default function () {
-	const sizes = ["xs", "sm", "md", "lg", "xl"] as const
-
 	return (
-		<div style={{ maxWidth: "300px", margin: "3rem auto" }}>
+		<div
+			style={{
+				maxWidth: "300px",
+				margin: "3rem auto",
+				display: "flex",
+				flexDirection: "column",
+				gap: "1rem"
+			}}
+		>
 			<Switch />
-			<br />
+
 			<Switch>
 				<span>label child</span>
 			</Switch>
-			<br />
+
 			<Switch size="md">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +38,9 @@ export default function () {
 					<path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path>
 				</svg>
 			</Switch>
-			<br />
+
 			<div style={{ lineHeight: 4 }}>
-				{sizes.map((size, i) => (
+				{Constants.sizes.map((size, i) => (
 					<Switch
 						key={i}
 						disabled={i === 0}

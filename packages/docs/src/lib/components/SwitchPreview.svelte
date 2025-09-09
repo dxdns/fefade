@@ -8,15 +8,17 @@
 <div
 	style="
     max-width: 300px; 
-    margin: 3rem auto; 
-    line-height: 3;
+    margin: 3rem auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
     "
 >
 	<Switch />
 
 	<Switch>
 		{#snippet label()}
-			<span style="color: {colors.info};">label custom snippet</span>
+			<span style="color: {colors.onInfo};">label custom snippet</span>
 		{/snippet}
 	</Switch>
 
@@ -51,8 +53,8 @@
 
 	<Switch size="xl">
 		{@const style = "font-size: 14px; font-weight: bold;"}
-		<span style={`${style} color: ${colors.success};`}>ON</span>
-		<span style={`${style} color: ${colors.error};`}>OFF</span>
+		<span style={`${style} color: ${colors.onSuccess};`}>ON</span>
+		<span style={`${style} color: ${colors.onError};`}>OFF</span>
 	</Switch>
 
 	{#each Constants.sizes as size, i (i)}
@@ -61,10 +63,10 @@
 			checked={i === 1}
 			indicatorColor={{
 				unchecked: undefined,
-				checked: i % 2 ? colors.info : colors.warning
+				checked: i % 2 ? colors.onDisabled : colors.onWarning
 			}}
 			style={i !== 0
-				? `background: ${i % 2 ? colors.error : colors.success}`
+				? `background: ${i % 2 ? colors.onError : colors.onSuccess}`
 				: undefined}
 			{size}
 			label={size}

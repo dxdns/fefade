@@ -204,7 +204,7 @@
 
 .textField.text:not(.labelEmpty)>input,
 .textField.contained:not(.labelEmpty)>input {
-	padding: 0.9rem 0.5rem 0 0.6rem;
+	padding: 0.8rem 0.5rem 0 0.6rem;
 }
 
 .textField.contained::before,

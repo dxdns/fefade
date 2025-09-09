@@ -19,10 +19,11 @@
 		data={sections}
 		style="
         position: sticky; 
-        margin: 0; 
+        margin-top: 0; 
         top: -16px; 
         z-index: 1;
-		border-radius: 15px;
+		margin-bottom: 1rem;
+		border-radius: 5px;
         "
 	>
 		{#each sectionsData as { reference }, i (reference)}
