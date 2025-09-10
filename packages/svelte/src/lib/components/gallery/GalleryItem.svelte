@@ -10,7 +10,7 @@
 		GalleryCaptionType,
 		HTMLAttrAnchor,
 		ImageType,
-		GalleryMediaType
+		VideoType
 	} from "@dxdns-kit/core/types"
 	import type { Snippet } from "svelte"
 	import styles from "@dxdns-kit/core/styles/GalleryItem.module.css"
@@ -20,16 +20,15 @@
 	import { createPortalAction } from "@dxdns-kit/core/actions"
 	import Modal from "../modal/index.js"
 
+	type HTMLVideoAttr = Omit<Omit<HTMLVideoAttributes, "src">, "type">
+	type HTMLImageAttr = Omit<HTMLImgAttributes, "src">
+
 	interface BaseProps
 		extends GalleryItemType<Snippet<[]> | GalleryCaptionType | undefined>,
-			HTMLAttrAnchor,
-			GalleryMediaType {}
+			HTMLAttrAnchor {}
 
-	type HTMLImageAttr = Omit<HTMLImgAttributes, "src">
 	type ImgProps = HTMLImageAttr & BaseProps & ImageType
-
-	type HTMLVideoAttr = Omit<HTMLVideoAttributes, "src">
-	type VideoProps = HTMLVideoAttr & BaseProps
+	type VideoProps = HTMLVideoAttr & BaseProps & VideoType
 
 	type Props = ImgProps | VideoProps
 
@@ -41,15 +40,24 @@
 		href,
 		target = "_self",
 		download,
-		modal,
+		viewer,
 		children,
 		...rest
 	}: Props = $props()
 
-	let openModal = $state(false)
+	let isOpen = $state(false)
 	let selectedEl: HTMLImageElement | HTMLVideoElement | undefined = $state()
 
 	const { isVideo } = videoUtil()
+
+	function handleOpen() {
+		isOpen = true
+	}
+
+	function handleClose() {
+		isOpen = false
+		selectedEl = undefined
+	}
 
 	function handleClick(e: any) {
 		handleClickUtil({
@@ -65,9 +73,9 @@
 	function handleImageClick(
 		e: MouseEvent & { currentTarget: EventTarget & HTMLImageElement }
 	) {
-		if (modal) {
+		if (viewer) {
 			selectedEl = e.currentTarget
-			openModal = true
+			handleOpen()
 		}
 
 		handleClick(e)
@@ -76,25 +84,18 @@
 	function handleVideoClick(
 		e: MouseEvent & { currentTarget: EventTarget & HTMLVideoElement }
 	) {
-		if (modal) {
+		if (viewer) {
 			selectedEl = e.currentTarget
-			openModal = true
+			handleOpen()
 		}
 
 		handleClick(e)
 	}
 </script>
 
-{#if modal && openModal && selectedEl}
+{#if viewer && isOpen && selectedEl}
 	<div use:createPortalAction>
-		<Modal
-			isOpen={openModal}
-			style="border: none;"
-			handleClose={() => {
-				openModal = false
-				selectedEl = undefined
-			}}
-		>
+		<Modal {isOpen} style="border: none;" {handleClose}>
 			<Modal.Content
 				style="
 				text-align: center; 
@@ -106,8 +107,8 @@
 					<img
 						{...rest as HTMLImageAttr}
 						src={selectedEl.dataset.dataSrc ?? selectedEl.src}
-						height={modal.height}
-						width={modal.width}
+						height={viewer.height}
+						width={viewer.width}
 					/>
 				{:else if selectedEl instanceof HTMLVideoElement}
 					<video
@@ -115,8 +116,8 @@
 						src={selectedEl.src ||
 							selectedEl.querySelector("source")?.src ||
 							""}
-						height={modal.height}
-						width={modal.width}
+						height={viewer.height}
+						width={viewer.width}
 					></video>
 				{/if}
 			</Modal.Content>
@@ -148,7 +149,7 @@
 	{#if children}
 		{@render children?.()}
 	{:else if caption && hasKeysUtil<GalleryCaptionType>(caption)}
-		<figcaption class={styles.caption} style={caption.style}>
+		<figcaption style={caption.style}>
 			<h3 style="--label-lines: {caption.label.lines ?? 3};">
 				{caption.label.text}
 			</h3>

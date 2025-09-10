@@ -1,12 +1,15 @@
 import { useAction } from "@/utils"
 import { videoAction } from "@dxdns-kit/core/actions"
-import type { GalleryMediaType, HTMLAttrAnchor } from "@dxdns-kit/core/types"
+import type { HTMLAttrAnchor, VideoType } from "@dxdns-kit/core/types"
 import { videoUtil } from "@dxdns-kit/core/utils"
 import { forwardRef, ImgHTMLAttributes } from "react"
 
 interface Props
-	extends Omit<ImgHTMLAttributes<Omit<HTMLVideoElement, "src">>, "color">,
-		GalleryMediaType,
+	extends Omit<
+			Omit<ImgHTMLAttributes<Omit<HTMLVideoElement, "src">>, "color">,
+			"type"
+		>,
+		VideoType,
 		HTMLAttrAnchor {}
 
 export default forwardRef<HTMLVideoElement, Props>(

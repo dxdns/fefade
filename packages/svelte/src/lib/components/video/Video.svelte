@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { videoAction } from "@dxdns-kit/core/actions"
-	import type { GalleryMediaType } from "@dxdns-kit/core/types"
+	import type { VideoType } from "@dxdns-kit/core/types"
 	import { videoUtil } from "@dxdns-kit/core/utils"
 	import type { HTMLVideoAttributes } from "svelte/elements"
 
-	interface Props extends Omit<HTMLVideoAttributes, "src">, GalleryMediaType {}
+	interface Props
+		extends Omit<Omit<Omit<HTMLVideoAttributes, "src">, "color">, "type">,
+			VideoType {}
 
 	let { class: className = "", lazy, dataSrc, ...rest }: Props = $props()
 

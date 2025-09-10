@@ -23,7 +23,7 @@
 	scale: 1.125;
 }
 
-.caption {
+figcaption {
 	grid-area: 1 / 1 / -1 / -1;
 	align-self: end;
 	z-index: 1;
@@ -36,7 +36,7 @@
 	pointer-events: none;
 }
 
-.caption h3 {
+figcaption h3 {
 	--lines: var(--label-lines, 3);
 
 	font-size: 1.0625rem;
@@ -48,7 +48,7 @@
 	text-overflow: ellipsis;
 }
 
-.caption p {
+figcaption p {
 	--lines: var(--description-lines, 2);
 
 	display: -webkit-box;

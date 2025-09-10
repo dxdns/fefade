@@ -1,7 +1,6 @@
 import type {
 	GalleryCaptionType,
 	GalleryItemType,
-	GalleryMediaType,
 	HTMLAttrAnchor,
 	ImageType
 } from "@dxdns-kit/core/types"
@@ -29,15 +28,15 @@ import { Video } from "../video"
 import { createPortal } from "react-dom"
 import Modal from "../modal"
 
+type HTMLImageAttr = Omit<ImgHTMLAttributes<HTMLImageElement>, "src">
+type HTMLVideoAttr = Omit<VideoHTMLAttributes<HTMLVideoElement>, "src">
+
 interface BaseProps
 	extends GalleryItemType<ReactNode | GalleryCaptionType | undefined>,
 		HTMLAttrAnchor,
-		GalleryMediaType {}
+		ImageType {}
 
-type HTMLImageAttr = Omit<ImgHTMLAttributes<HTMLImageElement>, "src">
 type ImgProps = HTMLImageAttr & BaseProps & ImageType
-
-type HTMLVideoAttr = Omit<VideoHTMLAttributes<HTMLVideoElement>, "src">
 type VideoProps = HTMLVideoAttr & BaseProps
 
 type Props = ImgProps | VideoProps
@@ -52,16 +51,25 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 			href,
 			target = "_self",
 			download,
-			modal,
+			viewer,
 			children,
 			...rest
 		},
 		ref
 	) => {
-		const [openModal, setOpenModal] = useState(false)
+		const [isOpen, setIsOpen] = useState(false)
 		const [selectedEl, setSelectedEl] = useState<ReactNode>(null)
 
 		const { isVideo } = videoUtil()
+
+		function handleOpen() {
+			setIsOpen(true)
+		}
+
+		function handleClose() {
+			setIsOpen(false)
+			setSelectedEl(null)
+		}
 
 		function handleClick(e: any) {
 			handleClickUtil({
@@ -75,40 +83,40 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 		}
 
 		function handleImageClick(e: MouseEvent<HTMLImageElement>) {
-			if (modal) {
+			if (viewer) {
 				const el = e.currentTarget
 
 				const clonedImage = (
 					<img
 						{...(rest as HTMLImageAttr)}
 						src={el.dataset.dataSrc ?? el.src}
-						height={modal.height}
-						width={modal.width}
+						height={viewer.height}
+						width={viewer.width}
 					/>
 				)
 
 				setSelectedEl(clonedImage)
-				setOpenModal(true)
+				handleOpen()
 			}
 
 			handleClick(e)
 		}
 
 		function handleVideoClick(e: MouseEvent<HTMLVideoElement>) {
-			if (modal) {
+			if (viewer) {
 				const el = e.currentTarget
 
 				const clonedVideo = (
 					<video
 						{...(rest as HTMLVideoAttr)}
 						src={el.src || el.querySelector("source")?.src || ""}
-						height={modal.height}
-						width={modal.width}
+						height={viewer.height}
+						width={viewer.width}
 					/>
 				)
 
 				setSelectedEl(clonedVideo)
-				setOpenModal(true)
+				handleOpen()
 			}
 
 			handleClick(e)
@@ -116,17 +124,14 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 
 		return (
 			<>
-				{modal &&
-					openModal &&
+				{viewer &&
+					isOpen &&
 					selectedEl &&
 					createPortal(
 						<Modal
-							isOpen={openModal}
+							isOpen={isOpen}
 							style={{ border: "none" }}
-							handleClose={() => {
-								setOpenModal(false)
-								setSelectedEl(null)
-							}}
+							handleClose={handleClose}
 						>
 							<Modal.Content
 								style={{
@@ -172,7 +177,6 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 						children
 					) : caption && hasKeysUtil<GalleryCaptionType>(caption) ? (
 						<figcaption
-							className={styles.caption}
 							style={caption.style ? cssToObjectUtil(caption.style) : undefined}
 						>
 							<div>
