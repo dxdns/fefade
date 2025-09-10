@@ -1,0 +1,12 @@
+.draggableGroup {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(var(--cols), 1fr);
+    grid-auto-flow: row dense;
+}

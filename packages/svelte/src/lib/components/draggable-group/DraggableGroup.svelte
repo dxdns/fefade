@@ -1,13 +1,12 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
+	import type { DraggableGroupType } from "@dxdns-kit/core/types"
 	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
 	import { draggableGroupAction } from "@dxdns-kit/core/actions"
+	import styles from "@dxdns-kit/core/styles/DraggableGroup.module.css"
+	import stylesItem from "@dxdns-kit/core/styles/DraggableGroupItem.module.css"
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
-		onChange?: (el: HTMLElement, index: number) => void
-		cols: number
-		gap: number
-	}
+	interface Props extends HTMLAttributes<HTMLDivElement>, DraggableGroupType {}
 
 	let {
 		class: className = "",
@@ -23,9 +22,10 @@
 	{...rest}
 	id="draggableGroup"
 	use:draggableGroupAction={{
-		onChange
+		onChange,
+		styles: stylesItem
 	}}
-	class={classMapUtil(className, "draggableGroup")}
+	class={classMapUtil(className, styles.draggableGroup)}
 	style={mergeStyleUtil(
 		`--cols: ${cols};`,
 		`--gap: ${(gap * 4) / 16}rem;`,
@@ -34,18 +34,3 @@
 >
 	{@render children?.()}
 </div>
-
-<style>
-	.draggableGroup {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		user-select: none;
-		display: grid;
-		gap: var(--gap);
-		grid-template-columns: repeat(var(--cols), 1fr);
-		grid-auto-flow: row dense;
-	}
-</style>

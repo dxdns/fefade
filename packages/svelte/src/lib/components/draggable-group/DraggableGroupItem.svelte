@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import styles from "@dxdns-kit/core/styles/DraggableGroupItem.module.css"
 
 	interface Props extends HTMLAttributes<Omit<HTMLDivElement, "id">> {
 		id: string
@@ -13,24 +14,7 @@
 	{...rest}
 	{id}
 	draggable="true"
-	class={classMapUtil(className, "draggableGroupItem")}
-	style={mergeStyleUtil(rest.style)}
+	class={classMapUtil(className, styles.draggableGroupItem)}
 >
 	{@render children?.()}
 </div>
-
-<style>
-	.draggableGroupItem {
-		cursor: move;
-	}
-
-	.dragging {
-		opacity: 0.5;
-		transform: scale(1.02);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-		z-index: 1000;
-		transition:
-			transform 0.15s ease,
-			opacity 0.15s ease;
-	}
-</style>
