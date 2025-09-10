@@ -1,20 +1,14 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import type {
-		ActionEntryType,
-		ColorType,
-		VariantType
-	} from "@dxdns-kit/core/types"
+	import type { TextFieldType } from "@dxdns-kit/core/types"
 	import TextField from "../text-field/index.js"
 	import { searchIcon } from "@dxdns-kit/core/icons"
 	import styles from "@dxdns-kit/core/styles/SearchInput.module.css"
 
-	interface Props extends Omit<Omit<HTMLInputAttributes, "type">, "size"> {
-		variant?: VariantType
-		color?: ColorType
-		actions?: ActionEntryType<HTMLElement>[]
-	}
+	interface Props
+		extends Omit<Omit<HTMLInputAttributes, "type">, "size">,
+			TextFieldType {}
 
 	let {
 		class: className = "",

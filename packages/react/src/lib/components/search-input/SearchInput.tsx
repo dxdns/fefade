@@ -26,6 +26,7 @@ export default forwardRef<HTMLInputElement, Props>(
 					style={{
 						display: "inline-block",
 						verticalAlign: "middle",
+						fill: "currentColor",
 						width: "24px",
 						height: "24px"
 					}}

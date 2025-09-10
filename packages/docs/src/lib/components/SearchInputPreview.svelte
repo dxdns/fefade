@@ -3,10 +3,8 @@
 	import { SearchInput } from "@dxdns-kit/svelte"
 </script>
 
-<div style="max-width: 300px; margin: 0 auto;">
+<div style="display: flex; flex-direction: column; gap: 1rem;">
 	{#each Constants.variants as variant (variant)}
 		<SearchInput placeholder={variant} {variant} />
-		<br />
-		<br />
 	{/each}
 </div>
