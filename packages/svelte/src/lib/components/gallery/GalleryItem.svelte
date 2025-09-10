@@ -126,7 +126,7 @@
 {/if}
 
 <figure
-	class={classMapUtil(className, [styles, className], styles.galleryItem)}
+	class={classMapUtil(className, [className, styles], styles.galleryItem)}
 >
 	{#if isVideo(dataSrc)}
 		<Video

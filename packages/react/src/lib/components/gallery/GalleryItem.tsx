@@ -149,7 +149,7 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 				<figure
 					className={classMapUtil(
 						className,
-						[styles, className],
+						[className, styles],
 						styles.galleryItem
 					)}
 				>

@@ -85,7 +85,7 @@
 {/if}
 
 <figure
-	class={classMapUtil(className, [styles, className], styles.galleryItem)}
+	class={classMapUtil(className, [className, styles], styles.galleryItem)}
 	style="cursor: {rest.onclick || viewer ? 'pointer' : 'default'};"
 >
 	<Image

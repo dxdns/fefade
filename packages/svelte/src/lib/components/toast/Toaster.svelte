@@ -35,7 +35,7 @@
 		{...rest}
 		class={classMapUtil(
 			className,
-			[styles, className],
+			[className, styles],
 			[alignment, styles],
 			[pos, styles],
 			{
