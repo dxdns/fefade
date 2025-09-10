@@ -17,18 +17,27 @@ import {
 	forwardRef,
 	ImgHTMLAttributes,
 	isValidElement,
+	MouseEvent,
 	ReactNode,
 	Ref,
+	useState,
 	VideoHTMLAttributes
 } from "react"
 import { Image } from "../image"
 import styles from "@dxdns-kit/core/styles/GalleryItem.module.css"
 import { Video } from "../video"
+import { createPortal } from "react-dom"
+import Modal from "../modal"
 
 interface BaseProps
 	extends GalleryItemType<ReactNode | GalleryCaptionType | undefined>,
 		HTMLAttrAnchor,
-		GalleryMediaType {}
+		GalleryMediaType {
+	modal?: {
+		height?: number
+		width?: number
+	}
+}
 
 type HTMLImageAttr = Omit<ImgHTMLAttributes<HTMLImageElement>, "src">
 type ImgProps = HTMLImageAttr & BaseProps & ImageType
@@ -48,12 +57,16 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 			href,
 			target = "_self",
 			download,
+			modal,
 			children,
 			...rest
 		},
 		ref
 	) => {
 		const { isVideo } = videoUtil()
+
+		const [openModal, setOpenModal] = useState(false)
+		const [selectedEl, setSelectedEl] = useState<ReactNode>(null)
 
 		function handleClick(e: any) {
 			handleClickUtil({
@@ -66,68 +79,126 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 			})
 		}
 
-		return (
-			<figure
-				className={classMapUtil(
-					className,
-					[styles, className],
-					styles.galleryItem
-				)}
-			>
-				{isVideo(dataSrc) ? (
-					<Video
-						{...(rest as HTMLVideoAttr)}
-						ref={ref as Ref<HTMLVideoElement>}
-						className={styles.thumbnail}
-						lazy={lazy}
-						dataSrc={dataSrc}
-						onClick={handleClick}
-					/>
-				) : (
-					<Image
-						{...(rest as HTMLImageAttr)}
-						ref={ref as Ref<HTMLImageElement>}
-						className={styles.thumbnail}
-						lazy={lazy}
-						dataSrc={dataSrc}
-						onClick={handleClick}
-					/>
-				)}
+		const handleImageClick = (e: MouseEvent<HTMLImageElement>) => {
+			if (modal) {
+				const el = e.currentTarget
 
-				{children ? (
-					children
-				) : caption && hasKeysUtil<GalleryCaptionType>(caption) ? (
-					<figcaption
-						className={styles.caption}
-						style={caption.style ? cssToObjectUtil(caption.style) : undefined}
-					>
-						<div>
-							<h3
-								style={
-									{
-										["--label-lines"]: caption.label.lines ?? 3
-									} as CSSProperties
-								}
-							>
-								{caption.label.text}
-							</h3>
-							{caption.description && (
-								<p
+				const clonedImage = (
+					<img
+						{...(rest as HTMLImageAttr)}
+						src={el.dataset.dataSrc ?? el.src}
+						height={modal.height}
+						width={modal.width}
+					/>
+				)
+
+				setSelectedEl(clonedImage)
+				setOpenModal(true)
+			}
+
+			handleClick(e)
+		}
+
+		const handleVideoClick = (e: MouseEvent<HTMLVideoElement>) => {
+			if (modal) {
+				const el = e.currentTarget
+
+				const clonedVideo = (
+					<video
+						{...(rest as HTMLVideoAttr)}
+						src={el.src || el.querySelector("source")?.src || ""}
+						height={modal.height}
+						width={modal.width}
+					/>
+				)
+
+				setSelectedEl(clonedVideo)
+				setOpenModal(true)
+			}
+
+			handleClick(e)
+		}
+
+		return (
+			<>
+				{modal &&
+					openModal &&
+					selectedEl &&
+					createPortal(
+						<Modal
+							isOpen={openModal}
+							handleClose={() => {
+								setOpenModal(false)
+								setSelectedEl(null)
+							}}
+						>
+							{selectedEl}
+						</Modal>,
+						document.body
+					)}
+
+				<figure
+					className={classMapUtil(
+						className,
+						[styles, className],
+						styles.galleryItem
+					)}
+				>
+					{isVideo(dataSrc) ? (
+						<Video
+							{...(rest as HTMLVideoAttr)}
+							ref={ref as Ref<HTMLVideoElement>}
+							className={styles.thumbnail}
+							lazy={lazy}
+							dataSrc={dataSrc}
+							onClick={handleVideoClick}
+						/>
+					) : (
+						<Image
+							{...(rest as HTMLImageAttr)}
+							ref={ref as Ref<HTMLImageElement>}
+							className={styles.thumbnail}
+							lazy={lazy}
+							dataSrc={dataSrc}
+							onClick={handleImageClick}
+						/>
+					)}
+
+					{children ? (
+						children
+					) : caption && hasKeysUtil<GalleryCaptionType>(caption) ? (
+						<figcaption
+							className={styles.caption}
+							style={caption.style ? cssToObjectUtil(caption.style) : undefined}
+						>
+							<div>
+								<h3
 									style={
 										{
-											["--description-lines"]: caption.description.lines ?? 2
+											["--label-lines"]: caption.label.lines ?? 3
 										} as CSSProperties
 									}
 								>
-									{caption.description.text}
-								</p>
-							)}
-						</div>
-					</figcaption>
-				) : (
-					isValidElement(caption) && caption
-				)}
-			</figure>
+									{caption.label.text}
+								</h3>
+								{caption.description && (
+									<p
+										style={
+											{
+												["--description-lines"]: caption.description.lines ?? 2
+											} as CSSProperties
+										}
+									>
+										{caption.description.text}
+									</p>
+								)}
+							</div>
+						</figcaption>
+					) : (
+						isValidElement(caption) && caption
+					)}
+				</figure>
+			</>
 		)
 	}
 )
