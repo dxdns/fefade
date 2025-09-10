@@ -17,14 +17,19 @@
 	import type { HTMLImgAttributes, HTMLVideoAttributes } from "svelte/elements"
 	import { Video } from "../video/index.js"
 	import { Image } from "../image/index.js"
+	import { createPortalAction } from "@dxdns-kit/core/actions"
+	import Modal from "../modal/index.js"
 
 	interface BaseProps
 		extends GalleryItemType<Snippet<[]> | GalleryCaptionType | undefined>,
 			HTMLAttrAnchor,
 			GalleryMediaType {}
 
-	type ImgProps = Omit<HTMLImgAttributes, "src"> & BaseProps & ImageType
-	type VideoProps = Omit<HTMLVideoAttributes, "src"> & BaseProps
+	type HTMLImageAttr = Omit<HTMLImgAttributes, "src">
+	type ImgProps = HTMLImageAttr & BaseProps & ImageType
+
+	type HTMLVideoAttr = Omit<HTMLVideoAttributes, "src">
+	type VideoProps = HTMLVideoAttr & BaseProps
 
 	type Props = ImgProps | VideoProps
 
@@ -36,9 +41,13 @@
 		href,
 		target = "_self",
 		download,
+		modal,
 		children,
 		...rest
 	}: Props = $props()
+
+	let openModal = $state(false)
+	let selectedEl: HTMLImageElement | HTMLVideoElement | undefined = $state()
 
 	const { isVideo } = videoUtil()
 
@@ -52,26 +61,87 @@
 			}
 		})
 	}
+
+	function handleImageClick(
+		e: MouseEvent & { currentTarget: EventTarget & HTMLImageElement }
+	) {
+		if (modal) {
+			selectedEl = e.currentTarget
+			openModal = true
+		}
+
+		handleClick(e)
+	}
+
+	function handleVideoClick(
+		e: MouseEvent & { currentTarget: EventTarget & HTMLVideoElement }
+	) {
+		if (modal) {
+			selectedEl = e.currentTarget
+			openModal = true
+		}
+
+		handleClick(e)
+	}
 </script>
+
+{#if modal && openModal && selectedEl}
+	<div use:createPortalAction>
+		<Modal
+			isOpen={openModal}
+			style="border: none;"
+			handleClose={() => {
+				openModal = false
+				selectedEl = undefined
+			}}
+		>
+			<Modal.Content
+				style="
+				text-align: center; 
+				overflow: hidden; 
+				padding: 0;
+				"
+			>
+				{#if selectedEl instanceof HTMLImageElement}
+					<img
+						{...rest as HTMLImageAttr}
+						src={selectedEl.dataset.dataSrc ?? selectedEl.src}
+						height={modal.height}
+						width={modal.width}
+					/>
+				{:else if selectedEl instanceof HTMLVideoElement}
+					<video
+						{...rest as HTMLVideoAttr}
+						src={selectedEl.src ||
+							selectedEl.querySelector("source")?.src ||
+							""}
+						height={modal.height}
+						width={modal.width}
+					></video>
+				{/if}
+			</Modal.Content>
+		</Modal>
+	</div>
+{/if}
 
 <figure
 	class={classMapUtil(className, [styles, className], styles.galleryItem)}
 >
 	{#if isVideo(dataSrc)}
 		<Video
-			{...rest as HTMLVideoAttributes}
+			{...rest as HTMLVideoAttr}
 			class={styles.thumbnail}
 			{lazy}
 			{dataSrc}
-			onclick={handleClick}
+			onclick={handleVideoClick}
 		/>
 	{:else}
 		<Image
-			{...rest as HTMLImgAttributes}
+			{...rest as HTMLImageAttr}
 			class={styles.thumbnail}
 			{lazy}
 			{dataSrc}
-			onclick={handleClick}
+			onclick={handleImageClick}
 		/>
 	{/if}
 

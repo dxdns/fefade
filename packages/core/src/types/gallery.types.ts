@@ -12,6 +12,10 @@ export type GalleryCaptionType = {
 export type GalleryMediaType = {
 	lazy?: boolean
 	dataSrc: string
+	modal?: {
+		height?: number
+		width?: number
+	}
 }
 
 export interface GalleryItemType<T = GalleryCaptionType>

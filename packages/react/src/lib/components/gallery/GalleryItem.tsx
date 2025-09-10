@@ -32,12 +32,7 @@ import Modal from "../modal"
 interface BaseProps
 	extends GalleryItemType<ReactNode | GalleryCaptionType | undefined>,
 		HTMLAttrAnchor,
-		GalleryMediaType {
-	modal?: {
-		height?: number
-		width?: number
-	}
-}
+		GalleryMediaType {}
 
 type HTMLImageAttr = Omit<ImgHTMLAttributes<HTMLImageElement>, "src">
 type ImgProps = HTMLImageAttr & BaseProps & ImageType
@@ -63,10 +58,10 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 		},
 		ref
 	) => {
-		const { isVideo } = videoUtil()
-
 		const [openModal, setOpenModal] = useState(false)
 		const [selectedEl, setSelectedEl] = useState<ReactNode>(null)
+
+		const { isVideo } = videoUtil()
 
 		function handleClick(e: any) {
 			handleClickUtil({
@@ -79,7 +74,7 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 			})
 		}
 
-		const handleImageClick = (e: MouseEvent<HTMLImageElement>) => {
+		function handleImageClick(e: MouseEvent<HTMLImageElement>) {
 			if (modal) {
 				const el = e.currentTarget
 
@@ -99,7 +94,7 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 			handleClick(e)
 		}
 
-		const handleVideoClick = (e: MouseEvent<HTMLVideoElement>) => {
+		function handleVideoClick(e: MouseEvent<HTMLVideoElement>) {
 			if (modal) {
 				const el = e.currentTarget
 
@@ -127,12 +122,21 @@ export default forwardRef<HTMLImageElement | HTMLVideoElement, Props>(
 					createPortal(
 						<Modal
 							isOpen={openModal}
+							style={{ border: "none" }}
 							handleClose={() => {
 								setOpenModal(false)
 								setSelectedEl(null)
 							}}
 						>
-							{selectedEl}
+							<Modal.Content
+								style={{
+									textAlign: "center",
+									overflow: "hidden",
+									padding: 0
+								}}
+							>
+								{selectedEl}
+							</Modal.Content>
 						</Modal>,
 						document.body
 					)}
