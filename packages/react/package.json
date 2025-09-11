@@ -1,6 +1,6 @@
 {
 	"name": "@dxdns-kit/react",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "dxdns-kit React components",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
@@ -26,7 +26,7 @@
 		"build:watch": "tsc --watch & vite build --watch"
 	},
 	"peerDependencies": {
-		"@dxdns-kit/core": "^0.0.3",
+		"@dxdns-kit/core": "^0.0.4",
 		"vite": "^6.2.3"
 	},
 	"devDependencies": {
