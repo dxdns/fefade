@@ -54,9 +54,12 @@
 		"components",
 		"ui",
 		"ui-kit",
+		"dxdns-kit",
 		"react",
 		"svelte",
-		"next"
+		"next",
+		"dxdns",
+		"kit"
 	],
 	"type": "module",
 	"devDependencies": {

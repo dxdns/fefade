@@ -5,6 +5,7 @@ import type {
 } from "@dxdns-kit/core/types"
 import { classMapUtil, handleClickUtil } from "@dxdns-kit/core/utils"
 import {
+	CSSProperties,
 	forwardRef,
 	ImgHTMLAttributes,
 	MouseEvent,
@@ -20,7 +21,7 @@ type HTMLImageAttr = Omit<ImgHTMLAttributes<HTMLImageElement>, "src">
 
 interface Props
 	extends HTMLImageAttr,
-		GalleryItemType<{}, HTMLImageAttr>,
+		GalleryItemType<CSSProperties, HTMLImageAttr>,
 		HTMLAttrAnchor,
 		ImageType {}
 
@@ -34,6 +35,7 @@ export default forwardRef<HTMLImageElement, Props>(
 			target = "_self",
 			download,
 			viewer,
+			captionStyle,
 			children,
 			...rest
 		},
@@ -110,9 +112,11 @@ export default forwardRef<HTMLImageElement, Props>(
 					className={classMapUtil(
 						className,
 						[className, styles],
-						styles.galleryItem
+						styles.galleryItem,
+						{
+							["clickable"]: rest.onClick || viewer
+						}
 					)}
-					style={{ cursor: rest.onClick || viewer ? "pointer" : "default" }}
 				>
 					<Image
 						{...rest}
@@ -122,7 +126,9 @@ export default forwardRef<HTMLImageElement, Props>(
 						dataSrc={dataSrc}
 						onClick={handleImageClick}
 					/>
-					<figcaption>{children}</figcaption>
+					<figcaption className={styles.caption} style={captionStyle}>
+						{children}
+					</figcaption>
 				</figure>
 			</>
 		)

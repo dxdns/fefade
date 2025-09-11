@@ -1,6 +1,11 @@
 <script lang="ts">
-	import { classMapUtil, handleClickUtil } from "@dxdns-kit/core/utils"
+	import {
+		classMapUtil,
+		handleClickUtil,
+		styleToStringUtil
+	} from "@dxdns-kit/core/utils"
 	import type {
+		CSSKebabType,
 		GalleryItemType,
 		HTMLAttrAnchor,
 		ImageType
@@ -15,7 +20,7 @@
 
 	interface Props
 		extends HTMLImageAttr,
-			GalleryItemType<{}, HTMLImageAttr>,
+			GalleryItemType<CSSKebabType, HTMLImageAttr>,
 			HTMLAttrAnchor,
 			ImageType {}
 
@@ -27,6 +32,7 @@
 		target = "_self",
 		download,
 		viewer,
+		captionStyle,
 		children,
 		...rest
 	}: Props = $props()
@@ -85,8 +91,9 @@
 {/if}
 
 <figure
-	class={classMapUtil(className, [className, styles], styles.galleryItem)}
-	style="cursor: {rest.onclick || viewer ? 'pointer' : 'default'};"
+	class={classMapUtil(className, [className, styles], styles.galleryItem, {
+		["clickable"]: rest.onclick || viewer
+	})}
 >
 	<Image
 		{...rest}
@@ -96,7 +103,7 @@
 		onclick={handleImageClick}
 	/>
 
-	<figcaption>
+	<figcaption class={styles.caption} style={styleToStringUtil(captionStyle)}>
 		{@render children?.()}
 	</figcaption>
 </figure>

@@ -1,24 +1,11 @@
 import { OverrideType } from "./override.types.js"
 
-type TextWithLinesType = {
-	text: string
-	lines?: number
-}
-
-/** @deprecated Replaced by `children` */
-export type GalleryCaptionType = {
-	label: TextWithLinesType
-	description?: TextWithLinesType
-	style?: string
-}
-
 export type GalleryItemType<
-	T = GalleryCaptionType,
+	C = string,
 	V = { width?: number; height?: number }
 > = OverrideType<
 	{
-		/** @deprecated Replaced by `children` */
-		caption?: T
+		captionStyle?: C
 		viewer?: { width?: number; height?: number }
 	},
 	{

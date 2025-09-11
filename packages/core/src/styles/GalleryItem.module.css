@@ -23,7 +23,7 @@
 	scale: 1.125;
 }
 
-.galleryItem figcaption {
+.caption {
 	grid-area: 1 / 1 / -1 / -1;
 	align-self: end;
 	z-index: 1;

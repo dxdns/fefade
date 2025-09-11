@@ -5,6 +5,7 @@ import type {
 } from "@dxdns-kit/core/types"
 import { classMapUtil, handleClickUtil } from "@dxdns-kit/core/utils"
 import {
+	CSSProperties,
 	forwardRef,
 	MouseEvent,
 	ReactNode,
@@ -20,7 +21,7 @@ type HTMLVideoAttr = Omit<VideoHTMLAttributes<HTMLVideoElement>, "src">
 
 interface Props
 	extends HTMLVideoAttr,
-		GalleryItemType<{}, HTMLVideoAttr>,
+		GalleryItemType<CSSProperties, HTMLVideoAttr>,
 		HTMLAttrAnchor,
 		VideoType {}
 
@@ -34,6 +35,7 @@ export default forwardRef<HTMLVideoElement, Props>(
 			target = "_self",
 			download,
 			viewer,
+			captionStyle,
 			children,
 			...rest
 		},
@@ -109,9 +111,11 @@ export default forwardRef<HTMLVideoElement, Props>(
 					className={classMapUtil(
 						className,
 						[className, styles],
-						styles.galleryItem
+						styles.galleryItem,
+						{
+							["clickable"]: rest.onClick || viewer
+						}
 					)}
-					style={{ cursor: rest.onClick || viewer ? "pointer" : "default" }}
 				>
 					<Video
 						{...rest}
@@ -122,7 +126,9 @@ export default forwardRef<HTMLVideoElement, Props>(
 						onClick={handleVideoClick}
 					/>
 
-					<figcaption>{children}</figcaption>
+					<figcaption className={styles.caption} style={captionStyle}>
+						{children}
+					</figcaption>
 				</figure>
 			</>
 		)

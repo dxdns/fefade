@@ -1,6 +1,11 @@
 <script lang="ts">
-	import { classMapUtil, handleClickUtil } from "@dxdns-kit/core/utils"
+	import {
+		classMapUtil,
+		handleClickUtil,
+		styleToStringUtil
+	} from "@dxdns-kit/core/utils"
 	import type {
+		CSSKebabType,
 		GalleryItemType,
 		HTMLAttrAnchor,
 		VideoType
@@ -15,7 +20,7 @@
 
 	interface Props
 		extends HTMLVideoAttr,
-			GalleryItemType<{}, HTMLVideoAttr>,
+			GalleryItemType<CSSKebabType, HTMLVideoAttr>,
 			HTMLAttrAnchor,
 			VideoType {}
 
@@ -27,6 +32,7 @@
 		target = "_self",
 		download,
 		viewer,
+		captionStyle,
 		children,
 		...rest
 	}: Props = $props()
@@ -87,8 +93,9 @@
 {/if}
 
 <figure
-	class={classMapUtil(className, [className, styles], styles.galleryItem)}
-	style="cursor: {rest.onclick || viewer ? 'pointer' : 'default'};"
+	class={classMapUtil(className, [className, styles], styles.galleryItem, {
+		["clickable"]: rest.onclick || viewer
+	})}
 >
 	<Video
 		{...rest}
@@ -98,7 +105,7 @@
 		onclick={handleVideoClick}
 	/>
 
-	<figcaption>
+	<figcaption class={styles.caption} style={styleToStringUtil(captionStyle)}>
 		{@render children?.()}
 	</figcaption>
 </figure>

@@ -47,6 +47,7 @@
 		"components",
 		"ui-components",
 		"react-pkg",
-		"dxdns"
+		"dxdns",
+		"kit"
 	]
 }

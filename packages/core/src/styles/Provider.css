@@ -202,3 +202,7 @@ body {
 .w-full {
 	width: 100% !important;
 }
+
+.clickable {
+	cursor: pointer;
+}

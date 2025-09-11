@@ -52,6 +52,7 @@
 					dataSrc={src}
 					alt={`Image ${size}px`}
 					viewer={{ width: 500 }}
+					captionStyle={{ "background-color": "aqua", color: "red" }}
 				>
 					<h3>{`Image ${size}px`}</h3>
 					<p>description</p>
