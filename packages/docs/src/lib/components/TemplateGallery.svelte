@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Gallery } from "@dxdns-kit/svelte"
+	import { Gallery, Text } from "@dxdns-kit/svelte"
 
 	interface Props {
 		data: {
@@ -14,15 +14,9 @@
 
 <Gallery columns={1} minWidth="350px" gap="2rem">
 	{#each data as { title, src, href } (src)}
-		<Gallery.Item
-			lazy
-			dataSrc={src}
-			alt={title}
-			style="cursor: pointer;"
-			caption={{
-				label: { text: title }
-			}}
-			{href}
-		/>
+		<Gallery.Image lazy dataSrc={src} alt={title} {href} />
+		<Text as="h3">
+			{title}
+		</Text>
 	{/each}
 </Gallery>
