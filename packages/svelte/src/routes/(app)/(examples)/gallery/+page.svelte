@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Gallery } from "@/index.js"
+	import { Gallery, Text } from "@/index.js"
 	import { videoUtil } from "@dxdns-kit/core/utils"
 
 	const sizes = [200, 250, 650, 750, 850, 950, 300, 350, 450, 550]
@@ -32,18 +32,19 @@
 						`
 					}}
 				>
-					<h3 style="--label-lines: 1;">
+					<Text as="h4" lines={1}>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
 						cupiditate optio quisquam iusto quod vel esse corporis, beatae alias
 						unde quos nulla possimus vitae natus animi sequi ab. Debitis,
 						facilis?
-					</h3>
-					<p style="--description-lines: 2;">
+					</Text>
+
+					<Text as="p" lines={2}>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
 						omnis totam minus sequi dolorem reprehenderit architecto fugiat!
 						Consequuntur recusandae, sequi ut assumenda pariatur accusamus
 						nihil. Illo eligendi autem quis deserunt!
-					</p>
+					</Text>
 				</Gallery.Video>
 			{:else}
 				<Gallery.Image
