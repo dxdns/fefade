@@ -1,0 +1,17 @@
+---
+title: Text
+description:
+  A flexible Svelte component for rendering text with support for different
+  styles, variants, and line truncation.
+head:
+  - tag: title
+    content: Svelte Text Component
+categories: ["svelte"]
+---
+
+import TextPreview from "@/components/TextPreview.svelte"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+<PreviewTabs component="TextPreview">
+	<TextPreview client:load />
+</PreviewTabs>

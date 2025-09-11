@@ -1,0 +1,17 @@
+---
+title: Text
+description:
+  A flexible React component for rendering text with support for different
+  styles, variants, and line truncation.
+head:
+  - tag: title
+    content: React Text Component
+categories: ["react"]
+---
+
+import TextPreview from "@/components/TextPreview.tsx"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+<PreviewTabs component="TextPreview" ext="tsx">
+	<TextPreview client:load />
+</PreviewTabs>

@@ -21,6 +21,7 @@ export type HTMLTagTextType =
 	| "h5"
 	| "h6"
 	| "div"
+	| "small"
 
 export type HTMLTagMap = {
 	a: HTMLAnchorElement
@@ -33,4 +34,5 @@ export type HTMLTagMap = {
 	h6: HTMLHeadingElement
 	div: HTMLDivElement
 	span: HTMLSpanElement
+	small: HTMLElement
 }
