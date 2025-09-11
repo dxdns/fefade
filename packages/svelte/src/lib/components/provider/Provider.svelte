@@ -7,29 +7,16 @@
 	import rawStyle from "@dxdns-kit/core/styles/Provider.css?raw"
 
 	interface Props {
-		/** @deprecated Use `theme` instead */
-		customTheme?: ThemeConfigType
-
 		theme?: ThemeConfigType
-
-		/** @deprecated Use `defaultThemeMode` instead */
-		defaultMode?: ThemeModeType
-
 		defaultThemeMode?: ThemeModeType
 		children: Snippet<[]>
 	}
 
-	let {
-		customTheme,
-		theme,
-		defaultMode = "light",
-		defaultThemeMode = "light",
-		children
-	}: Props = $props()
+	let { theme, defaultThemeMode = "light", children }: Props = $props()
 
 	const provider = providerUtil()
-	const scriptString = provider.script(defaultThemeMode ?? defaultMode)
-	const styleString = provider.style(theme ?? customTheme, rawStyle)
+	const scriptString = provider.script(defaultThemeMode)
+	const styleString = provider.style(theme, rawStyle)
 	const themeConfig = themeConfigState()
 
 	function switchTheme() {

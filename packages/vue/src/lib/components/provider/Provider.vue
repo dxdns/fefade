@@ -12,22 +12,13 @@
 	import rawStyle from "@dxdns-kit/core/styles/Provider.css?raw"
 
 	interface Props {
-		/** @deprecated Use `theme` instead */
-		customTheme?: ThemeConfigType
-
 		theme?: ThemeConfigType
-
-		/** @deprecated Use `defaultThemeMode` instead */
-		defaultMode?: ThemeModeType
-
 		defaultThemeMode?: ThemeModeType
 	}
 
 	const props = defineProps<Props>()
 	const {
-		customTheme,
 		theme,
-		defaultMode = "light",
 		defaultThemeMode = "light"
 	} = props
 
@@ -40,10 +31,10 @@
 	}
 
 	const provider = providerUtil()
-	const styleString = provider.style(theme ?? customTheme, rawStyle)
+	const styleString = provider.style(theme, rawStyle)
 
 	function switchTheme() {
-		const storedTheme = provider.storedTheme(defaultThemeMode ?? defaultMode)
+		const storedTheme = provider.storedTheme(defaultThemeMode)
 		provider.applyThemeMode(storedTheme)
 		setThemeMode(storedTheme)
 	}

@@ -11,22 +11,13 @@ import { ThemeConfigContext } from "../../contexts"
 import rawStyle from "@dxdns-kit/core/styles/Provider.css?raw"
 
 type Props = PropsWithChildren & {
-	/** @deprecated Use `theme` instead */
-	customTheme?: ThemeConfigType
-
 	theme?: ThemeConfigType
-
-	/** @deprecated Use `defaultThemeMode` instead */
-	defaultMode?: ThemeModeType
-
 	defaultThemeMode?: ThemeModeType
 }
 
 export default function ({
 	children,
-	customTheme,
 	theme,
-	defaultMode = "light",
 	defaultThemeMode = "light"
 }: Props) {
 	const [mode, setMode] = useState<ThemeModeType>("light")
@@ -40,7 +31,7 @@ export default function ({
 	}
 
 	const provider = providerUtil()
-	const styleString = provider.style(theme ?? customTheme, rawStyle)
+	const styleString = provider.style(theme, rawStyle)
 
 	const value = useMemo(
 		() => ({
@@ -56,7 +47,7 @@ export default function ({
 	)
 
 	function switchTheme() {
-		const storedTheme = provider.storedTheme(defaultThemeMode ?? defaultMode)
+		const storedTheme = provider.storedTheme(defaultThemeMode)
 		provider.applyThemeMode(storedTheme)
 		setThemeMode(storedTheme)
 	}
