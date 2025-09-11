@@ -1,12 +1,12 @@
 <script lang="ts" generics="T extends HTMLTagTextType">
 	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
-	import styles from "./Text.module.css"
 	import type {
 		HTMLTagMap,
 		HTMLTagTextType,
 		TextType
 	} from "@dxdns-kit/core/types"
+	import styles from "@dxdns-kit/core/styles/Text.module.css"
 
 	interface Props<T extends HTMLTagTextType>
 		extends HTMLAttributes<HTMLTagMap[T]>,
