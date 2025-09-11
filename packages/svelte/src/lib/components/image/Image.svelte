@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { imageAction } from "@dxdns-kit/core/actions"
 	import type { HTMLImgAttributes } from "svelte/elements"
-	import type { GalleryMediaType, ImageType } from "@dxdns-kit/core/types"
+	import type { ImageType } from "@dxdns-kit/core/types"
 
 	interface Props
-		extends Omit<HTMLImgAttributes, "src">,
-			ImageType,
-			GalleryMediaType {}
+		extends Omit<Omit<HTMLImgAttributes, "src">, "color">,
+			ImageType {}
 
 	let {
 		class: className = "",

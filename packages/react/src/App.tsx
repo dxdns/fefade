@@ -1,4 +1,4 @@
-import MediaQueryExample from "./examples/MediaQueryExample"
+import GalleryExample from "./examples/GalleryExample"
 
 function App() {
 	return (
@@ -12,7 +12,7 @@ function App() {
 				gap: "1rem"
 			}}
 		>
-			<MediaQueryExample />
+			<GalleryExample />
 		</div>
 	)
 }

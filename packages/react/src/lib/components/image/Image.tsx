@@ -1,17 +1,11 @@
-import type {
-	GalleryItemType,
-	HTMLAttrAnchor,
-	ImageType
-} from "@dxdns-kit/core/types"
+import type { ImageType } from "@dxdns-kit/core/types"
 import { forwardRef, ImgHTMLAttributes } from "react"
 import { useAction } from "../../utils"
 import { imageAction } from "@dxdns-kit/core/actions"
 
 interface Props
 	extends Omit<ImgHTMLAttributes<Omit<HTMLImageElement, "src">>, "color">,
-		GalleryItemType,
-		ImageType,
-		HTMLAttrAnchor {}
+		ImageType {}
 
 export default forwardRef<HTMLImageElement, Props>(
 	({ className = "", lazy = false, dataSrc, fallback, ...rest }, _ref) => {
