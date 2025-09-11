@@ -89,7 +89,6 @@ if (image) {
 </div>
 
 <div class="gradient-background">
-	<div class="gradient-sphere sphere-one"></div>
 	<div class="gradient-sphere sphere-two"></div>
 	<div class="grid-overlay"></div>
 </div>
@@ -225,15 +224,6 @@ if (image) {
 		filter: blur(60px);
 	}
 
-	.sphere-one {
-		width: 25vw;
-		height: 25vw;
-		background: linear-gradient(40deg, var(--dx-bg), rgba(61, 61, 61, 0.171));
-		top: -10%;
-		left: -10%;
-		animation: float-one 15s ease-in-out infinite alternate;
-	}
-
 	.sphere-two {
 		width: 45vw;
 		height: 45vw;
@@ -251,15 +241,6 @@ if (image) {
 		bottom: 40%;
 		right: -10%;
 		animation: float-two 18s ease-in-out infinite alternate;
-	}
-
-	@keyframes float-one {
-		0% {
-			transform: translate(0, 0) scale(1);
-		}
-		100% {
-			transform: translate(15%, 15%) scale(1.1);
-		}
 	}
 
 	@keyframes float-two {
@@ -289,10 +270,6 @@ if (image) {
 	}
 
 	@media screen and (max-width: 768px) {
-		.sphere-one {
-			top: 0;
-		}
-
 		.sphere-two {
 			width: 100vw;
 			height: 100vw;
