@@ -170,7 +170,7 @@
 			class="border-0"
 			orientation="vertical"
 			hoverFollower={{
-				bgColor: theme.colors.textMuted
+				bgColor: theme.colors.muted
 			}}
 		>
 			{#each tabs as tab (tab.id)}

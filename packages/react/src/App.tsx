@@ -1,4 +1,4 @@
-import GalleryExample from "./examples/GalleryExample"
+import { SearchInput } from "./lib"
 
 function App() {
 	return (
@@ -12,7 +12,7 @@ function App() {
 				gap: "1rem"
 			}}
 		>
-			<GalleryExample />
+			<SearchInput />
 		</div>
 	)
 }

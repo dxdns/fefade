@@ -17,10 +17,7 @@
 	}
 
 	const props = defineProps<Props>()
-	const {
-		theme,
-		defaultThemeMode = "light"
-	} = props
+	const { theme, defaultThemeMode = "light" } = props
 
 	const mode = ref<ThemeModeType>("light")
 	const colors = ref<ThemeColorType>(Constants.themeColors.light)

@@ -112,7 +112,7 @@
 			class="border-0"
 			orientation="vertical"
 			hoverFollower={{
-				bgColor: theme.colors.textMuted
+				bgColor: theme.colors.muted
 			}}
 		>
 			{#each tabs.slice(0, 5) as tab (tab.id)}

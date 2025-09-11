@@ -4,7 +4,7 @@
 	border-radius: 0.375rem;
 }
 
-.numberInput> :first-child {
+.numberInput > :first-child {
 	border-top-width: 0;
 	border-bottom-width: 0;
 	border-top-right-radius: 0;
@@ -12,7 +12,7 @@
 	padding: 0;
 }
 
-.numberInput> :last-child {
+.numberInput > :last-child {
 	border-top-width: 0;
 	border-bottom-width: 0;
 	border-top-left-radius: 0;

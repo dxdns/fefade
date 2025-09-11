@@ -68,11 +68,13 @@
 .rangeInput::-webkit-slider-runnable-track {
 	height: var(--track-height);
 	border-radius: var(--rounded-full);
-	background: linear-gradient(to right,
-			var(--thumb-bg) 0%,
-			var(--thumb-bg) var(--internal-value, 0%),
-			color-mix(in srgb, var(--dx-surface) 80%, gray) var(--internal-value, 0%),
-			color-mix(in srgb, var(--dx-surface) 80%, gray) 100% 100%);
+	background: linear-gradient(
+		to right,
+		var(--thumb-bg) 0%,
+		var(--thumb-bg) var(--internal-value, 0%),
+		color-mix(in srgb, var(--dx-surface) 80%, gray) var(--internal-value, 0%),
+		color-mix(in srgb, var(--dx-surface) 80%, gray) 100% 100%
+	);
 }
 
 .rangeInput::-webkit-slider-thumb {
@@ -173,23 +175,23 @@ input::-webkit-outer-spin-button {
 
 /* bubble */
 
-.rangeInput.xs+.bubble {
+.rangeInput.xs + .bubble {
 	--bubble-top: -23px;
 }
 
-.rangeInput.sm+.bubble {
+.rangeInput.sm + .bubble {
 	--bubble-top: -25px;
 }
 
-.rangeInput.md+.bubble {
+.rangeInput.md + .bubble {
 	--bubble-top: -28px;
 }
 
-.rangeInput.lg+.bubble {
+.rangeInput.lg + .bubble {
 	--bubble-top: -33px;
 }
 
-.rangeInput.xl+.bubble {
+.rangeInput.xl + .bubble {
 	--bubble-top: -36px;
 }
 
@@ -203,7 +205,7 @@ input::-webkit-outer-spin-button {
 	background: var(--dx-surface);
 	border-radius: 3px;
 	color: var(--dx-on-surface);
-	font-size: .8em;
+	font-size: 0.8em;
 	line-height: 24px;
 	text-align: center;
 	user-select: none;

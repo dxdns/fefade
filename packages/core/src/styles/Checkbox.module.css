@@ -76,19 +76,19 @@
 	transition: stroke-dashoffset 0.3s ease 0.1s;
 }
 
-.checkbox input:checked+.wrapper .bg {
+.checkbox input:checked + .wrapper .bg {
 	background: color-mix(in srgb, var(--bg-color), white 10%);
 }
 
-.checkbox input:checked+.wrapper .icon {
+.checkbox input:checked + .wrapper .icon {
 	transform: scale(1);
 }
 
-.checkbox input:checked+.wrapper .icon path {
+.checkbox input:checked + .wrapper .icon path {
 	stroke-dashoffset: 0;
 }
 
-.checkbox input:disabled+.wrapper .bg {
+.checkbox input:disabled + .wrapper .bg {
 	background: var(--dx-disabled);
 }
 

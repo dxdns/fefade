@@ -13,8 +13,7 @@
 }
 
 .inputGroup > input {
-	padding: 0 !important;
-	padding-inline-start: 3rem !important;
+	padding-left: 3rem;
 }
 
 .searchInput .inputGroup > input::-webkit-input-placeholder {
