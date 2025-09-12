@@ -1,18 +1,9 @@
-import { SearchInput } from "./lib"
+import NumberInputExample from "./examples/NumberInputExample"
 
 function App() {
 	return (
-		<div
-			style={{
-				minHeight: "80vh",
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-				flexDirection: "column",
-				gap: "1rem"
-			}}
-		>
-			<SearchInput />
+		<div>
+			<NumberInputExample />
 		</div>
 	)
 }
