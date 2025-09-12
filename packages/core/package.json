@@ -1,6 +1,6 @@
 {
 	"name": "@dxdns-kit/core",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "dxdns-kit Core",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
