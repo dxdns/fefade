@@ -1,6 +1,6 @@
 {
 	"name": "@dxdns-kit/vue",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "dxdns-kit Vue components",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
@@ -27,7 +27,7 @@
 	},
 	"peerDependencies": {
 		"vite": "^6.2.3",
-		"@dxdns-kit/core": "^0.0.6"
+		"@dxdns-kit/core": "^0.0.7"
 	},
 	"devDependencies": {
 		"vue": "^3.5.17",
