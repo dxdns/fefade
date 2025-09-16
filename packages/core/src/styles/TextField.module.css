@@ -7,7 +7,7 @@
 
 .textField.required > label::after {
 	content: " *";
-	color: var(--dx-danger);
+	color: var(--dx-on-error);
 }
 
 .textField > label {
@@ -35,6 +35,7 @@
 	outline: none;
 	border: none;
 	margin: 0;
+	color: var(--dx-on-bg);
 }
 
 .textField > input:focus {
@@ -46,7 +47,7 @@
 }
 
 .textField > input:not(:placeholder-shown):not(:focus):invalid {
-	border-color: var(--dx-danger);
+	border-color: var(--dx-on-error);
 }
 
 .textField > input:disabled,
@@ -158,6 +159,7 @@
 
 .textField.contained > input {
 	background: color-mix(in srgb, var(--dx-surface) 90%, gray 5%);
+	color: var(--dx-on-surface);
 	border: none;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;

@@ -1,29 +1,12 @@
 <script lang="ts">
+	import { classMapUtil } from "@dxdns-kit/core/utils"
 	import type { HTMLTextareaAttributes } from "svelte/elements"
+	import styles from "@dxdns-kit/core/styles/Textarea.module.css"
 
 	interface Props extends HTMLTextareaAttributes {}
 
-	let {
-		class: className = "",
-		value = $bindable(""),
-		...rest
-	}: Props = $props()
+	let { class: className = "", ...rest }: Props = $props()
 </script>
 
-<textarea {...rest} class={className} {value}></textarea>
-
-<style>
-	textarea {
-		padding: 1rem;
-		border-radius: 15px;
-		color: var(--dx-on-surface);
-		background: var(--dx-surface);
-		border: 1px solid var(--dx-border);
-		transition: border-color 0.3s ease;
-	}
-
-	textarea:focus {
-		outline: none;
-		border-color: color-mix(in srgb, var(--dx-border) 70%, gray);
-	}
-</style>
+<textarea {...rest} class={classMapUtil(className, styles.textarea)}>
+</textarea>
