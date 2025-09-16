@@ -1,3 +1,4 @@
+import { Constants } from "@dxdns-kit/core"
 import { Avatar, Card, Status, Tooltip } from "@dxdns-kit/react"
 
 export default function () {
@@ -5,23 +6,26 @@ export default function () {
 		<div
 			style={{
 				position: "relative",
-				display: "inline-block"
+				display: "inline-block",
+				margin: 0,
+				padding: 0
 			}}
 		>
 			<Avatar
 				src="https://avatars.githubusercontent.com/u/26321303?v=4"
 				textFallback="test"
-				width="150px"
-				height="150px"
+				width="6rem"
+				height="6rem"
 			/>
 			<Status
 				color="green"
-				size="24px"
+				size="20px"
 				style={{
 					position: "absolute",
-					top: "0",
+					top: "4px",
 					right: "5px",
-					border: `2px solid var(--dx-bg)`
+					border: `2px solid ${Constants.themeColorVar.bg}`,
+					margin: 0
 				}}
 			/>
 		</div>
@@ -29,24 +33,35 @@ export default function () {
 	return (
 		<>
 			<Avatar textFallback="test" />
+
 			<br />
 			<Avatar
 				src="https://img.odcdn.com.br/cdn-cgi/image/width=1200,height=1200,fit=cover/wp-content/uploads/2023/01/Avatar-Loak.jpg"
 				textFallback="test"
 			/>
+
 			<br />
 			{avatarOn()}
 
 			<Card
 				className="rounded-full"
-				style={{ width: "158px", height: "158px", padding: 0 }}
+				style={{
+					padding: 0,
+					width: "min-content",
+					height: "min-content"
+				}}
 				animatedBorder={{
 					width: "4px",
 					primaryColor: "#FF007F",
 					secondaryColor: "#8000FF"
 				}}
 			>
-				{avatarOn()}
+				<Avatar
+					src="https://avatars.githubusercontent.com/u/26321303?v=4"
+					textFallback="test"
+					width="6rem"
+					height="6rem"
+				/>
 			</Card>
 
 			<br />

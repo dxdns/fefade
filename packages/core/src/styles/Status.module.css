@@ -13,6 +13,7 @@
 	transition:
 		background 0.3s ease,
 		box-shadow 0.3s ease;
+	margin: 0;
 }
 
 .none {
@@ -47,6 +48,7 @@
 }
 
 @keyframes bounceEffect {
+
 	0%,
 	70%,
 	90%,
