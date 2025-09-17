@@ -89,11 +89,26 @@ if (image) {
 </div>
 
 <div class="gradient-background">
-	<div class="gradient-sphere sphere-two"></div>
 	<div class="grid-overlay"></div>
 </div>
 
 <style>
+	:global([data-theme="light"]) {
+		--border-color: rgba(229, 229, 229, 0.4);
+		--mask-color-start: rgba(0, 0, 0, 0);
+		--mask-color-end: rgba(0, 0, 0, 1);
+	}
+
+	:global([data-theme="dark"]) {
+		--border-color: rgba(255, 255, 255, 0.03);
+		--mask-color-start: rgba(0, 0, 0, 1);
+		--mask-color-end: rgba(0, 0, 0, 0);
+	}
+
+	:global(.main-frame) {
+		position: relative;
+	}
+
 	@layer starlight.core {
 		.hero {
 			display: grid;
@@ -112,8 +127,8 @@ if (image) {
 
 			mask-image: radial-gradient(
 				circle,
-				rgba(0, 0, 0, 1) 0%,
-				rgba(0, 0, 0, 0) 80%
+				var(--mask-color-start) 0%,
+				var(--mask-color-end) 80%
 			);
 			mask-repeat: no-repeat;
 			mask-position: center;
@@ -189,18 +204,6 @@ if (image) {
 		}
 	}
 
-	:global([data-theme="light"]) {
-		--border-color: rgba(229, 229, 229, 0.4);
-	}
-
-	:global([data-theme="dark"]) {
-		--border-color: rgba(255, 255, 255, 0.03);
-	}
-
-	:global(.main-frame) {
-		position: relative;
-	}
-
 	.gradient-background {
 		position: absolute;
 		inset: 0;
@@ -216,40 +219,6 @@ if (image) {
 			transparent 100%
 		);
 		mask-image: linear-gradient(to bottom, var(--ff-bg) 80%, transparent 100%);
-	}
-
-	.gradient-sphere {
-		position: absolute;
-		border-radius: 50%;
-		filter: blur(60px);
-	}
-
-	.sphere-two {
-		width: 45vw;
-		height: 45vw;
-		background: linear-gradient(240deg, var(--ff-bg), rgba(255, 255, 255, 0.4));
-		-webkit-mask-image: linear-gradient(
-			to bottom,
-			var(--ff-bg),
-			rgba(255, 255, 255, 0.4)
-		);
-		mask-image: linear-gradient(
-			to bottom,
-			var(--ff-bg),
-			rgba(255, 255, 255, 0.4)
-		);
-		bottom: 40%;
-		right: -10%;
-		animation: float-two 18s ease-in-out infinite alternate;
-	}
-
-	@keyframes float-two {
-		0% {
-			transform: translate(0, 0) scale(1);
-		}
-		100% {
-			transform: translate(-10%, -5%) scale(1.15);
-		}
 	}
 
 	.grid-overlay {
@@ -270,12 +239,6 @@ if (image) {
 	}
 
 	@media screen and (max-width: 768px) {
-		.sphere-two {
-			width: 100vw;
-			height: 100vw;
-			right: -10%;
-		}
-
 		.tabs {
 			display: none;
 		}
