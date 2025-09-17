@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Gallery, Text } from "@dxdns-kit/svelte"
-	import { videoUtil } from "@dxdns-kit/core/utils"
+	import { Gallery, Text } from "@fefade/svelte"
+	import { videoUtil } from "@fefade/core/utils"
 
 	const sizes = [200, 250, 650, 750, 850, 950, 300, 350, 450, 550]
 

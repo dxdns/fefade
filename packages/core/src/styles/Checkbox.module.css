@@ -1,26 +1,26 @@
 .checkbox.info {
-	--bg-color: var(--dx-info);
-	--icon-color: var(--dx-on-info);
+	--bg-color: var(--ff-info);
+	--icon-color: var(--ff-on-info);
 }
 
 .checkbox.success {
-	--bg-color: var(--dx-success);
-	--icon-color: var(--dx-on-success);
+	--bg-color: var(--ff-success);
+	--icon-color: var(--ff-on-success);
 }
 
 .checkbox.warning {
-	--bg-color: var(--dx-warning);
-	--icon-color: var(--dx-on-warning);
+	--bg-color: var(--ff-warning);
+	--icon-color: var(--ff-on-warning);
 }
 
 .checkbox.error {
-	--bg-color: var(--dx-error);
-	--icon-color: var(--dx-on-error);
+	--bg-color: var(--ff-error);
+	--icon-color: var(--ff-on-error);
 }
 
 .checkbox.secondary {
-	--bg-color: var(--dx-secondary);
-	--icon-color: var(--dx-on-secondary);
+	--bg-color: var(--ff-secondary);
+	--icon-color: var(--ff-on-secondary);
 }
 
 .checkbox {
@@ -89,7 +89,7 @@
 }
 
 .checkbox input:disabled + .wrapper .bg {
-	background: var(--dx-disabled);
+	background: var(--ff-disabled);
 }
 
 .checkbox:has(input:disabled) {

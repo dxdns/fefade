@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import type { TooltipType } from "@dxdns-kit/core/types"
+	import { classMapUtil } from "@fefade/core/utils"
+	import type { TooltipType } from "@fefade/core/types"
 	import type { HTMLAttributes } from "svelte/elements"
-	import styles from "@dxdns-kit/core/styles/Tooltip.module.css"
+	import styles from "@fefade/core/styles/Tooltip.module.css"
 
 	interface Props
 		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

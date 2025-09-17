@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Rating } from "@dxdns-kit/svelte"
+	import { Rating } from "@fefade/svelte"
 </script>
 
 <div

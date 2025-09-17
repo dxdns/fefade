@@ -1,6 +1,6 @@
 <script setup lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import { Badge } from "@dxdns-kit/vue"
+	import { Constants } from "@fefade/core"
+	import { Badge } from "@fefade/vue"
 
 	const badgeVariants = ["outlined", "contained"] as const
 </script>

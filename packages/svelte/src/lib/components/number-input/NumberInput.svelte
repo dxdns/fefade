@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 	import Button from "../button/index.js"
-	import type { NumberInputType } from "@dxdns-kit/core/types"
+	import type { NumberInputType } from "@fefade/core/types"
 	import { onMount, tick } from "svelte"
 	import { fly } from "svelte/transition"
-	import styles from "@dxdns-kit/core/styles/NumberInput.module.css"
+	import styles from "@fefade/core/styles/NumberInput.module.css"
 
 	interface Props
 		extends Omit<

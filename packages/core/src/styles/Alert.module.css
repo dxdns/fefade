@@ -1,25 +1,25 @@
 .alert.error {
-	--bg: var(--dx-error);
-	--border: var(--dx-on-error);
-	--color: var(--dx-on-error);
+	--bg: var(--ff-error);
+	--border: var(--ff-on-error);
+	--color: var(--ff-on-error);
 }
 
 .alert.warning {
-	--bg: var(--dx-warning);
-	--border: var(--dx-on-warning);
-	--color: var(--dx-on-warning);
+	--bg: var(--ff-warning);
+	--border: var(--ff-on-warning);
+	--color: var(--ff-on-warning);
 }
 
 .alert.success {
-	--bg: var(--dx-success);
-	--border: var(--dx-on-success);
-	--color: var(--dx-on-success);
+	--bg: var(--ff-success);
+	--border: var(--ff-on-success);
+	--color: var(--ff-on-success);
 }
 
 .alert.info {
-	--bg: var(--dx-info);
-	--border: var(--dx-on-info);
-	--color: var(--dx-on-info);
+	--bg: var(--ff-info);
+	--border: var(--ff-on-info);
+	--color: var(--ff-on-info);
 }
 
 .alert {

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import type { TextFieldType } from "@dxdns-kit/core/types"
-	import { actionUtil } from "@dxdns-kit/core/utils"
-	import styles from "@dxdns-kit/core/styles/TextField.module.css"
+	import { classMapUtil } from "@fefade/core/utils"
+	import type { TextFieldType } from "@fefade/core/types"
+	import { actionUtil } from "@fefade/core/utils"
+	import styles from "@fefade/core/styles/TextField.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "size">, TextFieldType {}
 

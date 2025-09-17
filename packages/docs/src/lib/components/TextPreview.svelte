@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Text } from "@dxdns-kit/svelte"
+	import { Text } from "@fefade/svelte"
 </script>
 
 <div

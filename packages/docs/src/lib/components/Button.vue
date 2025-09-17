@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { Button } from "@dxdns-kit/vue"
+	import { Button } from "@fefade/vue"
 </script>
 
 <template>

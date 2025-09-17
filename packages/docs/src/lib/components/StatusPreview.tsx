@@ -1,5 +1,5 @@
-import { Status } from "@dxdns-kit/react"
-import { Constants } from "@dxdns-kit/core"
+import { Status } from "@fefade/react"
+import { Constants } from "@fefade/core"
 
 export default function () {
 	return (

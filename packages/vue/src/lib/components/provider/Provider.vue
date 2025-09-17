@@ -1,15 +1,15 @@
 <script setup lang="ts">
 	import { ref, onMounted, provide, onUnmounted } from "vue"
-	import { Constants } from "@dxdns-kit/core"
-	import { providerUtil } from "@dxdns-kit/core/utils"
+	import { Constants } from "@fefade/core"
+	import { providerUtil } from "@fefade/core/utils"
 	import type {
 		ThemeColorType,
 		ThemeConfigType,
 		ThemeModeType
-	} from "@dxdns-kit/core/types"
+	} from "@fefade/core/types"
 	import { ThemeConfigSymbol } from "../../symbols"
 	// @ts-ignore
-	import rawStyle from "@dxdns-kit/core/styles/Provider.css?raw"
+	import rawStyle from "@fefade/core/styles/Provider.css?raw"
 
 	interface Props {
 		theme?: ThemeConfigType

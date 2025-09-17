@@ -1,4 +1,4 @@
-import type { GridType } from "@dxdns-kit/core/types"
+import type { GridType } from "@fefade/core/types"
 import { forwardRef, HTMLAttributes } from "react"
 import { Grid } from "../grid/index.js"
 

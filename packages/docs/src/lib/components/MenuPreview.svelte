@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Menu } from "@dxdns-kit/svelte"
+	import { Button, Menu } from "@fefade/svelte"
 </script>
 
 <div

@@ -1,4 +1,4 @@
-import { Card } from "@dxdns-kit/react"
+import { Card } from "@fefade/react"
 import { useState } from "react"
 
 export default function () {

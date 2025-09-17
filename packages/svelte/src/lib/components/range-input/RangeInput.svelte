@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { RangeInputType } from "@dxdns-kit/core/types"
+	import type { RangeInputType } from "@fefade/core/types"
 	import {
 		classMapUtil,
 		mergeStyleUtil,
 		dataIconUrlUtil
-	} from "@dxdns-kit/core/utils"
+	} from "@fefade/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import styles from "@dxdns-kit/core/styles/RangeInput.module.css"
+	import styles from "@fefade/core/styles/RangeInput.module.css"
 
 	interface Props
 		extends Omit<

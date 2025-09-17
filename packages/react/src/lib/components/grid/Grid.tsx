@@ -1,7 +1,7 @@
 import { CSSProperties, forwardRef, HTMLAttributes } from "react"
-import { classMapUtil, normalizeSizeUtil } from "@dxdns-kit/core/utils"
-import type { GridType } from "@dxdns-kit/core/types"
-import styles from "@dxdns-kit/core/styles/Grid.module.css"
+import { classMapUtil, normalizeSizeUtil } from "@fefade/core/utils"
+import type { GridType } from "@fefade/core/types"
+import styles from "@fefade/core/styles/Grid.module.css"
 
 interface Props extends HTMLAttributes<HTMLDivElement>, GridType {}
 

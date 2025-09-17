@@ -1,13 +1,13 @@
 ---
 title: Installation
-description: How to install and set up dxdns-kit in your project
+description: How to install and set up fefade in your project
 head:
   - tag: title
     content: Installation in React
 categories: ["react"]
 ---
 
-import { Button } from "@dxdns-kit/react"
+import { Button } from "@fefade/react"
 import { Tabs, TabItem } from "@astrojs/starlight/components"
 import { Steps } from "@astrojs/starlight/components"
 import { FileTree } from "@astrojs/starlight/components"
@@ -19,12 +19,12 @@ import { FileTree } from "@astrojs/starlight/components"
             <Tabs>
                 <TabItem label="npm" icon="npm">
                     ```bash
-                    npm install @dxdns-kit/core @dxdns-kit/react
+                    npm install @fefade/core @fefade/react
                     ```
                 </TabItem>
                 <TabItem label="pnpm" icon="pnpm">
                     ```bash
-                    pnpm add @dxdns-kit/core @dxdns-kit/react
+                    pnpm add @fefade/core @fefade/react
                     ```
                 </TabItem>
             </Tabs>
@@ -32,7 +32,7 @@ import { FileTree } from "@astrojs/starlight/components"
 
         <li>
             ### Setup provider
-            Wrap your application with the `Provider` to enable all dxdns-kit components.
+            Wrap your application with the `Provider` to enable all fefade components.
             This should be done at the layout level to ensure global access.
 
             > Recommended: Place this in `src/main.tsx` (React root element)
@@ -46,7 +46,7 @@ import { FileTree } from "@astrojs/starlight/components"
             import { StrictMode } from "react"
             import { createRoot } from "react-dom/client"
             import App from "./App"
-            import { Provider } from "@dxdns-kit/react"
+            import { Provider } from "@fefade/react"
 
             createRoot(document.getElementById("root")!).render(
                 <StrictMode>
@@ -63,7 +63,7 @@ import { FileTree } from "@astrojs/starlight/components"
             <Tabs>
                 <TabItem label="Code">
                     ```tsx
-                    import { Button } from "@dxdns-kit/react"
+                    import { Button } from "@fefade/react"
 
                     function App() {
                         return (

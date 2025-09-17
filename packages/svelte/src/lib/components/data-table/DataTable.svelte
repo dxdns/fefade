@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 	import styles from "./DataTable.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AutoScroll, Testimonial } from "@dxdns-kit/svelte"
+	import { AutoScroll, Testimonial } from "@fefade/svelte"
 
 	const reviews = [
 		{

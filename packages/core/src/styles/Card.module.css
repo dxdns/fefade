@@ -9,15 +9,15 @@
 	border-radius: 0.5rem;
 	transition: all 300ms ease;
 	text-align: left;
-	border: var(--border-width) solid var(--dx-border);
+	border: var(--border-width) solid var(--ff-border);
 	box-sizing: border-box;
 	isolation: isolate;
 	margin: 0;
 }
 
 .card.contained {
-	color: var(--dx-on-surface);
-	background: color-mix(in srgb, var(--dx-surface) 50%, transparent);
+	color: var(--ff-on-surface);
+	background: color-mix(in srgb, var(--ff-surface) 50%, transparent);
 }
 
 .card.outlined {
@@ -26,15 +26,15 @@
 }
 
 .card.isTranslucent {
-	background: color-mix(in srgb, var(--dx-surface) 30%, transparent);
+	background: color-mix(in srgb, var(--ff-surface) 30%, transparent);
 	backdrop-filter: blur(3px);
 	-webkit-backdrop-filter: blur(3px);
-	border: 1px solid var(--dx-border);
+	border: 1px solid var(--ff-border);
 }
 
 .card.animatedBorder {
-	--primary: var(--dx-on-surface);
-	--secondary: var(--dx-border);
+	--primary: var(--ff-on-surface);
+	--secondary: var(--ff-border);
 
 	border: var(--border-width) solid transparent;
 	overflow: unset;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button, Card, Grid, themeConfig } from "@dxdns-kit/svelte"
+	import { Badge, Button, Card, Grid, themeConfig } from "@fefade/svelte"
 
 	const theme = $derived(themeConfig())
 </script>

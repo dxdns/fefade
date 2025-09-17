@@ -1,4 +1,4 @@
-import { Tooltip } from "@dxdns-kit/react"
+import { Tooltip } from "@fefade/react"
 
 export default function () {
 	const positions = ["top", "bottom", "left", "right"] as const

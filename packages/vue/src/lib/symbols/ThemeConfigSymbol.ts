@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import type { ThemeColorType, ThemeModeType } from "@dxdns-kit/core/types"
+import { Constants } from "@fefade/core"
+import type { ThemeColorType, ThemeModeType } from "@fefade/core/types"
 import { type InjectionKey, type Ref } from "vue"
 
 export const ThemeConfigSymbol: InjectionKey<{

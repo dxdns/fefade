@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import { RadioButton } from "@dxdns-kit/svelte"
+	import { Constants } from "@fefade/core"
+	import { RadioButton } from "@fefade/svelte"
 </script>
 
 {#each Constants.sizes as size, i (size)}

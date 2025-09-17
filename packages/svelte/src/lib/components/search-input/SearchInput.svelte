@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import type { TextFieldType } from "@dxdns-kit/core/types"
+	import { classMapUtil } from "@fefade/core/utils"
+	import type { TextFieldType } from "@fefade/core/types"
 	import TextField from "../text-field/index.js"
-	import { searchIcon } from "@dxdns-kit/core/icons"
-	import styles from "@dxdns-kit/core/styles/SearchInput.module.css"
+	import { searchIcon } from "@fefade/core/icons"
+	import styles from "@fefade/core/styles/SearchInput.module.css"
 
 	interface Props
 		extends Omit<Omit<HTMLInputAttributes, "type">, "size">,

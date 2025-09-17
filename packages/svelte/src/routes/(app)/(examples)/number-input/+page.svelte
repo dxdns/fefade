@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
+	import { Constants } from "@fefade/core"
 	import { NumberInput } from "@/index.js"
 
 	let quantity = $state(0)

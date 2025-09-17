@@ -1,8 +1,8 @@
 import { forwardRef, HTMLAttributes } from "react"
-import type { AccordionType } from "@dxdns-kit/core/types"
-import { classMapUtil } from "@dxdns-kit/core/utils"
-import { keyboardArrowLeftIcon } from "@dxdns-kit/core/icons"
-import styles from "@dxdns-kit/core/styles/Accordion.module.css"
+import type { AccordionType } from "@fefade/core/types"
+import { classMapUtil } from "@fefade/core/utils"
+import { keyboardArrowLeftIcon } from "@fefade/core/icons"
+import styles from "@fefade/core/styles/Accordion.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "id">,

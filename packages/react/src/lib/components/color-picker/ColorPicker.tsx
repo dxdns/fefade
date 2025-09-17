@@ -1,6 +1,6 @@
-import { classMapUtil } from "@dxdns-kit/core/utils"
+import { classMapUtil } from "@fefade/core/utils"
 import { forwardRef, InputHTMLAttributes } from "react"
-import styles from "@dxdns-kit/core/styles/ColorPicker.module.css"
+import styles from "@fefade/core/styles/ColorPicker.module.css"
 
 interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {}
 

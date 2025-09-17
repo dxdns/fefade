@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onScrollEndAction } from "@dxdns-kit/core/actions"
+	import { onScrollEndAction } from "@fefade/core/actions"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

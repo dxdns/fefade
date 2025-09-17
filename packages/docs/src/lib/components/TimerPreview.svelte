@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Button, Timer } from "@dxdns-kit/svelte"
-	import { Constants } from "@dxdns-kit/core"
+	import { Button, Timer } from "@fefade/svelte"
+	import { Constants } from "@fefade/core"
 
 	const themeColor = Constants.themeColorVar
 

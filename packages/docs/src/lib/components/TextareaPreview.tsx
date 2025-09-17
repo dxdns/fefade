@@ -1,4 +1,4 @@
-import { Textarea } from "@dxdns-kit/react"
+import { Textarea } from "@fefade/react"
 
 export default function () {
 	return <Textarea />

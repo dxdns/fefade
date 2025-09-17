@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import { Button, toast } from "@dxdns-kit/svelte"
+	import { Constants } from "@fefade/core"
+	import { Button, toast } from "@fefade/svelte"
 </script>
 
 <div

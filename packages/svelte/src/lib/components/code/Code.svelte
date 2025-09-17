@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import styles from "@dxdns-kit/core/styles/Code.module.css"
+	import { classMapUtil } from "@fefade/core/utils"
+	import styles from "@fefade/core/styles/Code.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
 

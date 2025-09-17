@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, PinInput } from "@dxdns-kit/svelte"
+	import { Button, Modal, PinInput } from "@fefade/svelte"
 	import { onMount } from "svelte"
 
 	let isOpen = $state(false)

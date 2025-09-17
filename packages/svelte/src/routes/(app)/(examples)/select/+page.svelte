@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
+	import { Constants } from "@fefade/core"
 	import { Badge, Select } from "@/index.js"
 
 	let currentOption = $state("v2")

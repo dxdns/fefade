@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DataTable } from "@dxdns-kit/svelte"
+	import { DataTable } from "@fefade/svelte"
 
 	const data = Array.from(Array(10)).map((_, index) => ({
 		id: index,

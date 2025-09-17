@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Textarea } from "@dxdns-kit/svelte"
+	import { Textarea } from "@fefade/svelte"
 </script>
 
 <Textarea />

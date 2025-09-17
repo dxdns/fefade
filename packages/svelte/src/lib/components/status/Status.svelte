@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
+	import { Constants } from "@fefade/core"
 	import {
 		classMapUtil,
 		mergeStyleUtil,
 		normalizeSizeUtil
-	} from "@dxdns-kit/core/utils"
+	} from "@fefade/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { StatusType } from "@dxdns-kit/core/types"
-	import styles from "@dxdns-kit/core/styles/Status.module.css"
+	import type { StatusType } from "@fefade/core/types"
+	import styles from "@fefade/core/styles/Status.module.css"
 
 	interface Props
 		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

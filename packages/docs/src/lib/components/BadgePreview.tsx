@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { Badge } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { Badge } from "@fefade/react"
 
 export default function () {
 	const badgeVariants = ["outlined", "contained"] as const

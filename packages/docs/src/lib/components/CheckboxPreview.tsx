@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { Checkbox } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { Checkbox } from "@fefade/react"
 
 export default function () {
 	const colors = [...Constants.statusColors, "secondary"] as const

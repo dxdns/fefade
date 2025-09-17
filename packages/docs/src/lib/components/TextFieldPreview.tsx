@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { TextField } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { TextField } from "@fefade/react"
 
 export default function () {
 	return (

@@ -1,17 +1,17 @@
 {
-	"name": "@dxdns-kit/vue",
-	"version": "0.0.6",
-	"description": "dxdns-kit Vue components",
+	"name": "@fefade/vue",
+	"version": "0.0.0",
+	"description": "Reusable Vue UI components powered by the FEFADE core system.",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"homepage": "https://kit.dxdns.dev",
+	"homepage": "https://fefade.dev",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/kit.git"
+		"url": "git+https://github.com/dxdns/fefade.git"
 	},
 	"type": "module",
 	"main": "dist/index.js",
@@ -26,21 +26,20 @@
 		"build:watch": "vue-tsc -b --watch & vite build --watch"
 	},
 	"peerDependencies": {
-		"vite": "^6.2.3",
-		"@dxdns-kit/core": "^0.0.8"
+		"@fefade/core": "^0.0.1"
 	},
 	"devDependencies": {
 		"vue": "^3.5.17",
 		"@vitejs/plugin-vue": "^6.0.0",
 		"@vue/tsconfig": "^0.7.0",
 		"vue-tsc": "^2.2.12",
-		"@dxdns-kit/core": "*"
+		"@fefade/core": "*"
 	},
 	"keywords": [
 		"vue",
 		"vue-ui",
 		"ui",
-		"dxdns-kit",
+		"fefade",
 		"components",
 		"ui-components",
 		"vue-pkg",

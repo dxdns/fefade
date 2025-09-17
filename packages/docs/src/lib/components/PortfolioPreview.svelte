@@ -7,7 +7,7 @@
 		Separator,
 		Switch,
 		themeConfig
-	} from "@dxdns-kit/svelte"
+	} from "@fefade/svelte"
 
 	const theme = $derived(themeConfig())
 
@@ -171,8 +171,8 @@
 		<h2 style="margin-bottom: 0.5rem;">Connect</h2>
 		<p class="text-muted">
 			Feel free to contact me at
-			<Link href="mailto:hi@dxdns-kit.dev" hoverUnderline="center">
-				hi@dxdns-kit.dev
+			<Link href="mailto:hi@fefade.dev" hoverUnderline="center">
+				hi@fefade.dev
 			</Link>
 		</p>
 		<div style="display: flex; gap: 1rem; margin-top: 1rem;">

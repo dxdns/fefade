@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
+	import { Constants } from "@fefade/core"
 	import type { HTMLAttributes } from "svelte/elements"
 	import {
 		classMapUtil,
@@ -7,10 +7,10 @@
 		handleClickUtil,
 		mergeStyleUtil,
 		normalizeSizeUtil
-	} from "@dxdns-kit/core/utils"
-	import { glowOnHoverAction } from "@dxdns-kit/core/actions"
-	import type { CardType, HTMLAttrAnchor } from "@dxdns-kit/core/types"
-	import styles from "@dxdns-kit/core/styles/Card.module.css"
+	} from "@fefade/core/utils"
+	import { glowOnHoverAction } from "@fefade/core/actions"
+	import type { CardType, HTMLAttrAnchor } from "@fefade/core/types"
+	import styles from "@fefade/core/styles/Card.module.css"
 
 	interface Props
 		extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

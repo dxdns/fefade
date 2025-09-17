@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { HTMLSelectAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import type { VariantType } from "@dxdns-kit/core/types"
-	import { keyboardArrowDownIcon } from "@dxdns-kit/core/icons"
+	import { classMapUtil } from "@fefade/core/utils"
+	import type { VariantType } from "@fefade/core/types"
+	import { keyboardArrowDownIcon } from "@fefade/core/icons"
 	import styles from "./Select.module.css"
 
 	interface Props extends HTMLSelectAttributes {

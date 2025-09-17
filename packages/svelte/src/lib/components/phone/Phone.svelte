@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 	import type { Snippet } from "svelte"
 	import type { HTMLAttributes } from "svelte/elements"
 
@@ -29,7 +29,7 @@
 
 <style>
 	.phone {
-		background: var(--dx-primary);
+		background: var(--ff-primary);
 		position: relative;
 		isolation: isolate;
 		aspect-ratio: 350 / 712;
@@ -40,7 +40,7 @@
 	}
 
 	.side-button {
-		background: var(--dx-on-secondary);
+		background: var(--ff-on-secondary);
 		position: absolute;
 		width: 3px;
 		border-radius: 4px;
@@ -90,7 +90,7 @@
 	}
 
 	.screen {
-		background-color: var(--dx-secondary);
+		background-color: var(--ff-secondary);
 		position: relative;
 		height: 100%;
 		width: 100%;

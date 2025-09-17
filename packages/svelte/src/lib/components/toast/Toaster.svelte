@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
+	import { Constants } from "@fefade/core"
 	import { toastState } from "../../states/index.js"
 	import Toast from "./Toast.svelte"
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
-	import type { AlignmentType } from "@dxdns-kit/core/types"
-	import styles from "@dxdns-kit/core/styles/Toaster.module.css"
+	import { classMapUtil, mergeStyleUtil } from "@fefade/core/utils"
+	import type { AlignmentType } from "@fefade/core/types"
+	import styles from "@fefade/core/styles/Toaster.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		fullWidth?: boolean

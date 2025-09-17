@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { Button } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { Button } from "@fefade/react"
 
 export default function () {
 	return (

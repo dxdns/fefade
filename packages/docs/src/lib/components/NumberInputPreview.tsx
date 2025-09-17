@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { Constants } from "@dxdns-kit/core"
-import { NumberInput } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { NumberInput } from "@fefade/react"
 
 export default function () {
 	const [quantity, setQuantity] = useState(0)

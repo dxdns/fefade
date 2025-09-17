@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 	import Card from "../card/index.js"
-	import type { ModalType } from "@dxdns-kit/core/types"
-	import styles from "@dxdns-kit/core/styles/Modal.module.css"
-	import animationStyle from "@dxdns-kit/core/styles/Animation.module.css"
+	import type { ModalType } from "@fefade/core/types"
+	import styles from "@fefade/core/styles/Modal.module.css"
+	import animationStyle from "@fefade/core/styles/Animation.module.css"
 
 	interface Props extends ModalType, HTMLAttributes<HTMLDivElement> {}
 

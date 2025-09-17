@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Kbd, ShortcutListener } from "@dxdns-kit/svelte"
+	import { Kbd, ShortcutListener } from "@fefade/svelte"
 
 	let message = $state("waiting...")
 

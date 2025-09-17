@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge, Button, Separator } from "@dxdns-kit/svelte"
+	import { Badge, Button, Separator } from "@fefade/svelte"
 
 	interface Props {
 		data: {

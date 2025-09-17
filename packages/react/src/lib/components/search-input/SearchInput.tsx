@@ -1,9 +1,9 @@
-import type { TextFieldType } from "@dxdns-kit/core/types"
-import { classMapUtil } from "@dxdns-kit/core/utils"
+import type { TextFieldType } from "@fefade/core/types"
+import { classMapUtil } from "@fefade/core/utils"
 import { forwardRef, InputHTMLAttributes } from "react"
 import { TextField } from "../text-field"
-import { searchIcon } from "@dxdns-kit/core/icons"
-import styles from "@dxdns-kit/core/styles/SearchInput.module.css"
+import { searchIcon } from "@fefade/core/icons"
+import styles from "@fefade/core/styles/SearchInput.module.css"
 
 interface Props
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, "size">,

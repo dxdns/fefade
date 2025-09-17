@@ -5,7 +5,7 @@
 		ScrollSection,
 		themeConfig,
 		Window
-	} from "@dxdns-kit/svelte"
+	} from "@fefade/svelte"
 
 	const { colors } = $derived(themeConfig())
 	const sections = $derived(getSections())

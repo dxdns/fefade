@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import styles from "./Wrapper.module.css"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 
 	interface Props extends HTMLInputAttributes {
 		ref?: HTMLInputElement

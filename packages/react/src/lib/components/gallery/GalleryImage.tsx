@@ -2,8 +2,8 @@ import type {
 	GalleryItemType,
 	HTMLAttrAnchor,
 	ImageType
-} from "@dxdns-kit/core/types"
-import { classMapUtil, handleClickUtil } from "@dxdns-kit/core/utils"
+} from "@fefade/core/types"
+import { classMapUtil, handleClickUtil } from "@fefade/core/utils"
 import {
 	CSSProperties,
 	forwardRef,
@@ -15,7 +15,7 @@ import {
 import { createPortal } from "react-dom"
 import Modal from "../modal"
 import { Image } from "../image"
-import styles from "@dxdns-kit/core/styles/GalleryItem.module.css"
+import styles from "@fefade/core/styles/GalleryItem.module.css"
 
 type HTMLImageAttr = Omit<ImgHTMLAttributes<HTMLImageElement>, "src">
 

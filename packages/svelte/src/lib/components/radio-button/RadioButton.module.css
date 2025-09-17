@@ -1,21 +1,21 @@
 .radioButton.info {
-	--color: var(--dx-on-info);
+	--color: var(--ff-on-info);
 }
 
 .radioButton.success {
-	--color: var(--dx-on-success);
+	--color: var(--ff-on-success);
 }
 
 .radioButton.warning {
-	--color: var(--dx-on-warning);
+	--color: var(--ff-on-warning);
 }
 
 .radioButton.error {
-	--color: var(--dx-on-error);
+	--color: var(--ff-on-error);
 }
 
 .radioButton.secondary {
-	--color: var(--dx-secondary);
+	--color: var(--ff-secondary);
 }
 
 .radioButton {

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import { TextField } from "@dxdns-kit/svelte"
+	import { Constants } from "@fefade/core"
+	import { TextField } from "@fefade/svelte"
 </script>
 
 <div style="max-width: 300px; margin: 0 auto;">

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from "svelte/elements"
 	import type { Snippet } from "svelte"
-	import { autoAlignAction, clickOutsideAction } from "@dxdns-kit/core/actions"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import styles from "@dxdns-kit/core/styles/Menu.module.css"
+	import { autoAlignAction, clickOutsideAction } from "@fefade/core/actions"
+	import { classMapUtil } from "@fefade/core/utils"
+	import styles from "@fefade/core/styles/Menu.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "id"> {
 		id: string

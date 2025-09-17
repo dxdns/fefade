@@ -1,5 +1,5 @@
-import type { RangeInputType } from "@dxdns-kit/core/types"
-import { classMapUtil, dataIconUrlUtil } from "@dxdns-kit/core/utils"
+import type { RangeInputType } from "@fefade/core/types"
+import { classMapUtil, dataIconUrlUtil } from "@fefade/core/utils"
 import {
 	CSSProperties,
 	forwardRef,
@@ -7,7 +7,7 @@ import {
 	useMemo,
 	useState
 } from "react"
-import styles from "@dxdns-kit/core/styles/RangeInput.module.css"
+import styles from "@fefade/core/styles/RangeInput.module.css"
 
 interface Props
 	extends Omit<

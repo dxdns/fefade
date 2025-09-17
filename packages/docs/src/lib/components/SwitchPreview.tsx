@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { Switch } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { Switch } from "@fefade/react"
 
 export default function () {
 	return (

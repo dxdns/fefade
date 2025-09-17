@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { SearchInput } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { SearchInput } from "@fefade/react"
 
 export default function () {
 	return (

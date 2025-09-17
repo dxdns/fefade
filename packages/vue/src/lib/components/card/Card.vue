@@ -1,20 +1,20 @@
 <script setup lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import type { CardType, HTMLAttrAnchor } from "@dxdns-kit/core/types"
+	import { Constants } from "@fefade/core"
+	import type { CardType, HTMLAttrAnchor } from "@fefade/core/types"
 	import {
 		classMapUtil,
 		getPropValueUtil,
 		handleClickUtil,
 		normalizeSizeUtil
-	} from "@dxdns-kit/core/utils"
+	} from "@fefade/core/utils"
 	import {
 		computed,
 		useAttrs,
 		IntrinsicElementAttributes,
 		CSSProperties
 	} from "vue"
-	import { glowOnHoverAction } from "@dxdns-kit/core/actions"
-	import styles from "@dxdns-kit/core/styles/Card.module.css"
+	import { glowOnHoverAction } from "@fefade/core/actions"
+	import styles from "@fefade/core/styles/Card.module.css"
 	import { useAction } from "@/utils"
 
 	interface Props extends CardType, HTMLAttrAnchor {}

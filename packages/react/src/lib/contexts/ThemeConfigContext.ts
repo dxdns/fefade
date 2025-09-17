@@ -1,5 +1,5 @@
 import { createContext } from "react"
-import type { ThemeConfigUtilType } from "@dxdns-kit/core/types"
+import type { ThemeConfigUtilType } from "@fefade/core/types"
 
 export const ThemeConfigContext = createContext<
 	ThemeConfigUtilType | undefined

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Drawer } from "@dxdns-kit/svelte"
+	import { Button, Drawer } from "@fefade/svelte"
 	import { onMount } from "svelte"
 
 	let isOpen = $state(false)

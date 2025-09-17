@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import type { SizeType } from "@dxdns-kit/core/types"
-	import { closeIcon, menuIcon } from "@dxdns-kit/core/icons"
-	import styles from "@dxdns-kit/core/styles/NavbarToggler.module.css"
+	import type { SizeType } from "@fefade/core/types"
+	import { closeIcon, menuIcon } from "@fefade/core/icons"
+	import styles from "@fefade/core/styles/NavbarToggler.module.css"
 
 	interface Props extends HTMLInputAttributes {
 		visibleInSize?: SizeType

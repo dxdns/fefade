@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Phone } from "@dxdns-kit/svelte"
+	import { Phone } from "@fefade/svelte"
 </script>
 
 <Phone>

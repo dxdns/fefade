@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: How to install and set up dxdns-kit in your project.
+description: How to install and set up fefade in your project.
 head:
   - tag: title
     content: Installation in Vue
@@ -19,12 +19,12 @@ import { FileTree } from "@astrojs/starlight/components"
             <Tabs>
                 <TabItem label="npm" icon="npm">
                     ```bash
-                    npm install @dxdns-kit/core @dxdns-kit/vue
+                    npm install @fefade/core @fefade/vue
                     ```
                 </TabItem>
                 <TabItem label="pnpm" icon="pnpm">
                     ```bash
-                    pnpm add @dxdns-kit/core @dxdns-kit/vue
+                    pnpm add @fefade/core @fefade/vue
                     ```
                 </TabItem>
             </Tabs>
@@ -32,7 +32,7 @@ import { FileTree } from "@astrojs/starlight/components"
 
         <li>
             ### Setup provider
-            Wrap your application with the `Provider` to enable all dxdns-kit components.
+            Wrap your application with the `Provider` to enable all fefade components.
             This should be done at the layout level to ensure global access.
 
             > Recommended: Place this in `src/main.ts` (React root element)
@@ -45,7 +45,7 @@ import { FileTree } from "@astrojs/starlight/components"
             ```ts
             import { createApp, h } from "vue"
             import App from "./App.vue"
-            import { Provider } from "@dxdns-kit/vue"
+            import { Provider } from "@fefade/vue"
 
             const app = createApp({
                 render() {
@@ -65,7 +65,7 @@ import { FileTree } from "@astrojs/starlight/components"
                 <TabItem label="Code">
                     ```vue
                     <script setup lang="ts">
-                        import { Button } from "@dxdns-kit/vue"
+                        import { Button } from "@fefade/vue"
                     </script>
 
                     <template>

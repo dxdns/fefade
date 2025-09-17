@@ -1,4 +1,4 @@
-import { Code, Window } from "@dxdns-kit/react"
+import { Code, Window } from "@fefade/react"
 
 export default function () {
 	const data = `

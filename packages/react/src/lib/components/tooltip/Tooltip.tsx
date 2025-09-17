@@ -1,7 +1,7 @@
 import { forwardRef, HTMLAttributes } from "react"
-import { classMapUtil } from "@dxdns-kit/core/utils"
-import type { TooltipType } from "@dxdns-kit/core/types"
-import styles from "@dxdns-kit/core/styles/Tooltip.module.css"
+import { classMapUtil } from "@fefade/core/utils"
+import type { TooltipType } from "@fefade/core/types"
+import styles from "@fefade/core/styles/Tooltip.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

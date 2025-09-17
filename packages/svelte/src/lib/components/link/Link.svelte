@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { HTMLAnchorAttributes } from "svelte/elements"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import type { LinkType } from "@dxdns-kit/core/types"
-	import styles from "@dxdns-kit/core/styles/Link.module.css"
+	import { classMapUtil } from "@fefade/core/utils"
+	import type { LinkType } from "@fefade/core/types"
+	import styles from "@fefade/core/styles/Link.module.css"
 
 	interface Props extends Omit<HTMLAnchorAttributes, "class">, LinkType {}
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Card } from "@dxdns-kit/svelte"
+	import { Card } from "@fefade/svelte"
 
 	let borderWidth = $state(1)
 	const cardVariants = ["contained", "outlined"] as const

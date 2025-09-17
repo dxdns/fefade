@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { Avatar, Card, Status, Tooltip } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { Avatar, Card, Status, Tooltip } from "@fefade/react"
 
 export default function () {
 	const avatarOn = () => (

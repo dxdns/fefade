@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import { Badge, RangeInput } from "@dxdns-kit/svelte"
+	import { Constants } from "@fefade/core"
+	import { Badge, RangeInput } from "@fefade/svelte"
 
 	const homeIcon = `
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="red">

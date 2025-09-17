@@ -1,7 +1,7 @@
 import { forwardRef, HTMLAttributes } from "react"
-import { classMapUtil } from "@dxdns-kit/core/utils"
-import type { BottomSheetDragButtonType } from "@dxdns-kit/core/types"
-import styles from "@dxdns-kit/core/styles/BottomSheetDragButton.module.css"
+import { classMapUtil } from "@fefade/core/utils"
+import type { BottomSheetDragButtonType } from "@fefade/core/types"
+import styles from "@fefade/core/styles/BottomSheetDragButton.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, forwardRef } from "react"
-import { classMapUtil } from "@dxdns-kit/core/utils"
-import styles from "@dxdns-kit/core/styles/Overlay.module.css"
+import { classMapUtil } from "@fefade/core/utils"
+import styles from "@fefade/core/styles/Overlay.module.css"
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	isOpen: boolean

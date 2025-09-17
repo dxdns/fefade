@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react"
-import type { ToasterType } from "@dxdns-kit/core/types"
+import type { ToasterType } from "@fefade/core/types"
 
 export const ToastContext = createContext<{
 	data: Map<string, ToasterType>

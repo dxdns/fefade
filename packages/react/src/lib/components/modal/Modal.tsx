@@ -1,9 +1,9 @@
-import type { ModalType } from "@dxdns-kit/core/types"
-import { classMapUtil } from "@dxdns-kit/core/utils"
+import type { ModalType } from "@fefade/core/types"
+import { classMapUtil } from "@fefade/core/utils"
 import { forwardRef, HTMLAttributes, useEffect, useRef, useState } from "react"
 import { Card } from "../card"
-import styles from "@dxdns-kit/core/styles/Modal.module.css"
-import animationStyle from "@dxdns-kit/core/styles/Animation.module.css"
+import styles from "@fefade/core/styles/Modal.module.css"
+import animationStyle from "@fefade/core/styles/Animation.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

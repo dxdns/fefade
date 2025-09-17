@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Alert } from "@/index.js"
-	import { Constants } from "@dxdns-kit/core"
+	import { Constants } from "@fefade/core"
 </script>
 
 <br />

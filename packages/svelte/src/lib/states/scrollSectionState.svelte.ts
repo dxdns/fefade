@@ -1,4 +1,4 @@
-import type { ElementReferenceType, SectionType } from "@dxdns-kit/core/types"
+import type { ElementReferenceType, SectionType } from "@fefade/core/types"
 
 const data = $state<{
 	sections: ElementReferenceType[]

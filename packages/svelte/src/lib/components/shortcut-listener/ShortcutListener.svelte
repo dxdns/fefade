@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onShortcutAction } from "@dxdns-kit/core/actions"
+	import { onShortcutAction } from "@fefade/core/actions"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {

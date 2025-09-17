@@ -19,7 +19,7 @@
 	background: linear-gradient(
 		90deg,
 		var(--star-color) var(--rating-percent),
-		var(--dx-border) var(--rating-percent)
+		var(--ff-border) var(--rating-percent)
 	);
 	color: transparent;
 	-webkit-background-clip: text;

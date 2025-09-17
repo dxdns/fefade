@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { Provider } from "@dxdns-kit/vue"
+	import { Provider } from "@fefade/vue"
 	import ThemeColorPreview from "./ThemeColorPreview.vue"
 </script>
 

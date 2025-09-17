@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DateInput } from "@dxdns-kit/svelte"
+	import { DateInput } from "@fefade/svelte"
 </script>
 
 <DateInput />

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Card, Carousel, RadioButton } from "@dxdns-kit/svelte"
+	import { Button, Card, Carousel, RadioButton } from "@fefade/svelte"
 
 	let currentIndex = $state(0)
 </script>

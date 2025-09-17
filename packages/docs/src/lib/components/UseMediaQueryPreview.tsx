@@ -1,4 +1,4 @@
-import { useMediaQuery } from "@dxdns-kit/react"
+import { useMediaQuery } from "@fefade/react"
 
 export default function () {
 	const isSm = useMediaQuery("max-width", "sm")

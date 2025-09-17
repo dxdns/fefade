@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes } from "react"
-import { classMapUtil } from "@dxdns-kit/core/utils"
-import styles from "@dxdns-kit/core/styles/AvatarGroup.module.css"
+import { classMapUtil } from "@fefade/core/utils"
+import styles from "@fefade/core/styles/AvatarGroup.module.css"
 
 interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {}
 

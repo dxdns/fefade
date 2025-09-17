@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { Button, Toaster, useToast } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { Button, Toaster, useToast } from "@fefade/react"
 
 function ToastPreview() {
 	const toast = useToast()

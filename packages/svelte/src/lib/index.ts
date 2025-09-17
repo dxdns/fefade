@@ -6,7 +6,7 @@
 
 export { default as Provider } from "./components/provider/index.js"
 
-export { customThemeConfig, createTheme } from "@dxdns-kit/core/utils"
+export { customThemeConfig, createTheme } from "@fefade/core/utils"
 export { themeConfigUtil as themeConfig } from "./utils/index.js"
 
 export { getSections } from "./states/scrollSectionState.svelte.js"

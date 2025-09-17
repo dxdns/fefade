@@ -14,8 +14,8 @@
 }
 
 .badge.contained {
-	background: var(--dx-surface);
-	color: var(--dx-on-surface);
+	background: var(--ff-surface);
+	color: var(--ff-on-surface);
 	transition: opacity 0.3s ease;
 }
 
@@ -56,7 +56,7 @@
 
 .badge.outlined {
 	background: none;
-	border: 1px solid var(--dx-border);
+	border: 1px solid var(--ff-border);
 }
 
 /* empty */

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Window } from "@dxdns-kit/svelte"
+	import { Window } from "@fefade/svelte"
 
 	const windowVariants = ["contained", "outlined"] as const
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Link } from "@dxdns-kit/svelte"
+	import { Link } from "@fefade/svelte"
 </script>
 
 <Link href="https://github.com/dxdns" target="_blank">

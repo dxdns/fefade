@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import { Kbd } from "@dxdns-kit/svelte"
+	import { Constants } from "@fefade/core"
+	import { Kbd } from "@fefade/svelte"
 </script>
 
 {#each Constants.sizes as size (size)}

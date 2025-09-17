@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, themeConfig, Separator, Tab, Card } from "@dxdns-kit/svelte"
+	import { Button, themeConfig, Separator, Tab, Card } from "@fefade/svelte"
 	import { fade, fly } from "svelte/transition"
 
 	const theme = $derived(themeConfig())

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 	import { useAttrs, computed, IntrinsicElementAttributes } from "vue"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import styles from "@dxdns-kit/core/styles/Badge.module.css"
-	import type { BadgeType } from "@dxdns-kit/core/types"
+	import { classMapUtil } from "@fefade/core/utils"
+	import styles from "@fefade/core/styles/Badge.module.css"
+	import type { BadgeType } from "@fefade/core/types"
 
 	interface Props extends BadgeType {}
 

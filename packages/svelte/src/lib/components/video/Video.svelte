@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { videoAction } from "@dxdns-kit/core/actions"
-	import type { VideoType } from "@dxdns-kit/core/types"
-	import { videoUtil } from "@dxdns-kit/core/utils"
+	import { videoAction } from "@fefade/core/actions"
+	import type { VideoType } from "@fefade/core/types"
+	import { videoUtil } from "@fefade/core/utils"
 	import type { HTMLVideoAttributes } from "svelte/elements"
 
 	interface Props

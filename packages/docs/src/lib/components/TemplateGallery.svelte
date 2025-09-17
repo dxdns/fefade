@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Gallery, Text } from "@dxdns-kit/svelte"
+	import { Gallery, Text } from "@fefade/svelte"
 
 	interface Props {
 		data: {

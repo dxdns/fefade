@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from "@dxdns-kit/svelte"
+	import { Button } from "@fefade/svelte"
 	import type { Snippet } from "svelte"
 
 	interface Props {

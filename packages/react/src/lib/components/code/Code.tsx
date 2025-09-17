@@ -1,6 +1,6 @@
-import { classMapUtil } from "@dxdns-kit/core/utils"
+import { classMapUtil } from "@fefade/core/utils"
 import { forwardRef, HTMLAttributes } from "react"
-import styles from "@dxdns-kit/core/styles/Code.module.css"
+import styles from "@fefade/core/styles/Code.module.css"
 
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 

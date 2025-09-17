@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { classMapUtil, handleClickUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil, handleClickUtil } from "@fefade/core/utils"
 	import type { HTMLButtonAttributes } from "svelte/elements"
 	import Button from "../button/index.js"
-	import type { HTMLAttrAnchor, VariantType } from "@dxdns-kit/core/types"
-	import styles from "@dxdns-kit/core/styles/NavbarItem.module.css"
+	import type { HTMLAttrAnchor, VariantType } from "@fefade/core/types"
+	import styles from "@fefade/core/styles/NavbarItem.module.css"
 
 	interface Props extends HTMLButtonAttributes, HTMLAttrAnchor {
 		variant?: VariantType

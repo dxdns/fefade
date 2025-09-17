@@ -1,4 +1,4 @@
-import { Text } from "@dxdns-kit/react" // ajuste se o import for diferente
+import { Text } from "@fefade/react" // ajuste se o import for diferente
 
 export default function () {
 	return (

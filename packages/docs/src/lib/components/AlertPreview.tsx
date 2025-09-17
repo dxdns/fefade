@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { Alert } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { Alert } from "@fefade/react"
 
 export default function () {
 	return (

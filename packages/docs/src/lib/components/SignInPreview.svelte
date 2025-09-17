@@ -7,7 +7,7 @@
 		PasswordInput,
 		Separator,
 		TextField
-	} from "@dxdns-kit/svelte"
+	} from "@fefade/svelte"
 </script>
 
 <div class="container">

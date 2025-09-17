@@ -1,34 +1,34 @@
 :root {
 	--rounded-full: 9999px;
 	--thumb-size: 18px;
-	--thumb-border: 2px solid var(--dx-border);
-	--thumb-bg: var(--dx-on-surface);
+	--thumb-border: 2px solid var(--ff-border);
+	--thumb-bg: var(--ff-on-surface);
 	--track-height: 6px;
 }
 
 .rangeInput.info {
-	--thumb-bg: var(--dx-on-info);
-	--thumb-border: var(--dx-info);
+	--thumb-bg: var(--ff-on-info);
+	--thumb-border: var(--ff-info);
 }
 
 .rangeInput.success {
-	--thumb-bg: var(--dx-on-success);
-	--thumb-border: var(--dx-success);
+	--thumb-bg: var(--ff-on-success);
+	--thumb-border: var(--ff-success);
 }
 
 .rangeInput.warning {
-	--thumb-bg: var(--dx-on-warning);
-	--thumb-border: var(--dx-warning);
+	--thumb-bg: var(--ff-on-warning);
+	--thumb-border: var(--ff-warning);
 }
 
 .rangeInput.error {
-	--thumb-bg: var(--dx-on-error);
-	--thumb-border: var(--dx-error);
+	--thumb-bg: var(--ff-on-error);
+	--thumb-border: var(--ff-error);
 }
 
 .rangeInput.primary {
-	--thumb-bg: var(--dx-primary);
-	--thumb-border: var(--dx-on-primary);
+	--thumb-bg: var(--ff-primary);
+	--thumb-border: var(--ff-on-primary);
 }
 
 .wrapper {
@@ -44,13 +44,13 @@
 	width: 100%;
 	height: var(--track-height);
 	border-radius: 5px;
-	background: var(--dx-surface);
+	background: var(--ff-surface);
 	outline: none;
 	opacity: 0.8;
 	cursor: pointer;
 	user-select: none;
 	transition: opacity 0.2s ease;
-	border: 1px solid var(--dx-border);
+	border: 1px solid var(--ff-border);
 }
 
 .rangeInput:hover,
@@ -72,8 +72,8 @@
 		to right,
 		var(--thumb-bg) 0%,
 		var(--thumb-bg) var(--internal-value, 0%),
-		color-mix(in srgb, var(--dx-surface) 80%, gray) var(--internal-value, 0%),
-		color-mix(in srgb, var(--dx-surface) 80%, gray) 100% 100%
+		color-mix(in srgb, var(--ff-surface) 80%, gray) var(--internal-value, 0%),
+		color-mix(in srgb, var(--ff-surface) 80%, gray) 100% 100%
 	);
 }
 
@@ -112,7 +112,7 @@ input::-webkit-outer-spin-button {
 .rangeInput::-moz-range-track {
 	height: var(--track-height);
 	border-radius: var(--rounded-full);
-	background: color-mix(in srgb, var(--dx-surface) 80%, gray);
+	background: color-mix(in srgb, var(--ff-surface) 80%, gray);
 }
 
 .rangeInput::-moz-range-progress {
@@ -146,31 +146,31 @@ input::-webkit-outer-spin-button {
 .rangeInput.xs {
 	--thumb-size: 12px;
 	--track-height: 3px;
-	--thumb-border: 1.5px solid var(--dx-border);
+	--thumb-border: 1.5px solid var(--ff-border);
 }
 
 .rangeInput.sm {
 	--thumb-size: 14px;
 	--track-height: 4px;
-	--thumb-border: 1.75px solid var(--dx-border);
+	--thumb-border: 1.75px solid var(--ff-border);
 }
 
 .rangeInput.md {
 	--thumb-size: 18px;
 	--track-height: 6px;
-	--thumb-border: 2px solid var(--dx-border);
+	--thumb-border: 2px solid var(--ff-border);
 }
 
 .rangeInput.lg {
 	--thumb-size: 24px;
 	--track-height: 8px;
-	--thumb-border: 2.5px solid var(--dx-border);
+	--thumb-border: 2.5px solid var(--ff-border);
 }
 
 .rangeInput.xl {
 	--thumb-size: 30px;
 	--track-height: 10px;
-	--thumb-border: 3px solid var(--dx-border);
+	--thumb-border: 3px solid var(--ff-border);
 }
 
 /* bubble */
@@ -201,10 +201,10 @@ input::-webkit-outer-spin-button {
 	display: none;
 	width: 50px;
 	height: 24px;
-	border: 1px solid var(--dx-border);
-	background: var(--dx-surface);
+	border: 1px solid var(--ff-border);
+	background: var(--ff-surface);
 	border-radius: 3px;
-	color: var(--dx-on-surface);
+	color: var(--ff-on-surface);
 	font-size: 0.8em;
 	line-height: 24px;
 	text-align: center;

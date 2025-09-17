@@ -7,9 +7,9 @@ import React, {
 	WheelEvent,
 	InputHTMLAttributes
 } from "react"
-import { classMapUtil } from "@dxdns-kit/core/utils"
-import type { NumberInputType } from "@dxdns-kit/core/types"
-import styles from "@dxdns-kit/core/styles/NumberInput.module.css"
+import { classMapUtil } from "@fefade/core/utils"
+import type { NumberInputType } from "@fefade/core/types"
+import styles from "@fefade/core/styles/NumberInput.module.css"
 import { Button } from "../button"
 
 interface Props

@@ -1,13 +1,13 @@
 ---
 title: Installation
-description: How to install and set up dxdns-kit in your project.
+description: How to install and set up fefade in your project.
 head:
   - tag: title
     content: Installation in Svelte
 categories: ["svelte"]
 ---
 
-import { Button } from "@dxdns-kit/svelte"
+import { Button } from "@fefade/svelte"
 import { Tabs, TabItem } from "@astrojs/starlight/components"
 import { Steps } from "@astrojs/starlight/components"
 import { FileTree } from "@astrojs/starlight/components"
@@ -19,12 +19,12 @@ import { FileTree } from "@astrojs/starlight/components"
             <Tabs>
                 <TabItem label="npm" icon="npm">
                     ```bash
-                    npm install @dxdns-kit/core @dxdns-kit/svelte
+                    npm install @fefade/core @fefade/svelte
                     ```
                 </TabItem>
                 <TabItem label="pnpm" icon="pnpm">
                     ```bash
-                    pnpm add @dxdns-kit/core @dxdns-kit/svelte
+                    pnpm add @fefade/core @fefade/svelte
                     ```
                 </TabItem>
             </Tabs>
@@ -32,7 +32,7 @@ import { FileTree } from "@astrojs/starlight/components"
 
         <li>
             ### Setup provider
-            Wrap your application with the `Provider` to enable all dxdns-kit components.
+            Wrap your application with the `Provider` to enable all fefade components.
             This should be done at the layout level to ensure global access.
 
             > Recommended: Place this in `src/routes/+layout.svelte` (SvelteKit root layout)
@@ -45,7 +45,7 @@ import { FileTree } from "@astrojs/starlight/components"
 
             ```svelte
             <script lang="ts">
-                import { Provider } from "@dxdns-kit/svelte"
+                import { Provider } from "@fefade/svelte"
             </script>
 
             <Provider>
@@ -60,7 +60,7 @@ import { FileTree } from "@astrojs/starlight/components"
                 <TabItem label="Code">
                     ```svelte
                     <script lang="ts">
-                        import { Button } from "@dxdns-kit/svelte"
+                        import { Button } from "@fefade/svelte"
                     </script>
 
                     <Button>

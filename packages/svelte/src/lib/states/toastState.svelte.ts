@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import type { ToasterType } from "@dxdns-kit/core/types"
+import { Constants } from "@fefade/core"
+import type { ToasterType } from "@fefade/core/types"
 import { SvelteMap } from "svelte/reactivity"
 
 let data: SvelteMap<string, ToasterType> = new SvelteMap()

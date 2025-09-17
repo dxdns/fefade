@@ -1,3 +1,3 @@
-dxdns-kit Core components library.
+fefade Core components library.
 
-[View documentation](https://kit.dxdns.dev).
+[View documentation](https://fefade.dev).

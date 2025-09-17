@@ -7,7 +7,7 @@
 		themeConfig,
 		useMediaQuery,
 		Window
-	} from "@dxdns-kit/svelte"
+	} from "@fefade/svelte"
 
 	let isOpen = $state({
 		1: false,

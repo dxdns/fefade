@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes } from "react"
-import { classMapUtil } from "@dxdns-kit/core/utils"
-import styles from "@dxdns-kit/core/styles/Textarea.module.css"
+import { classMapUtil } from "@fefade/core/utils"
+import styles from "@fefade/core/styles/Textarea.module.css"
 
 interface Props extends HTMLAttributes<HTMLTextAreaElement> {}
 

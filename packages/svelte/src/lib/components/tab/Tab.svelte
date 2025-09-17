@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { OrientationType } from "@dxdns-kit/core/types"
-	import { mergeStyleUtil } from "@dxdns-kit/core/utils"
+	import type { OrientationType } from "@fefade/core/types"
+	import { mergeStyleUtil } from "@fefade/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		orientation?: OrientationType

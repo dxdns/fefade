@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {}

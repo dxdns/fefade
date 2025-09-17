@@ -1,9 +1,9 @@
-import { classMapUtil } from "@dxdns-kit/core/utils"
+import { classMapUtil } from "@fefade/core/utils"
 import { forwardRef, HTMLAttributes, useEffect } from "react"
 import { useAction } from "../../utils"
-import { bottomSheetAction } from "@dxdns-kit/core/actions"
-import type { BottomSheetType } from "@dxdns-kit/core/types"
-import styles from "@dxdns-kit/core/styles/BottomSheet.module.css"
+import { bottomSheetAction } from "@fefade/core/actions"
+import type { BottomSheetType } from "@fefade/core/types"
+import styles from "@fefade/core/styles/BottomSheet.module.css"
 
 interface Props
 	extends Omit<HTMLAttributes<HTMLDivElement>, "color">,

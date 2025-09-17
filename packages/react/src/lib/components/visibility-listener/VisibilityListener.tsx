@@ -1,7 +1,7 @@
 import { forwardRef, HTMLAttributes } from "react"
 import { useAction } from "@/utils"
-import { checkVisibilityAction } from "@dxdns-kit/core/actions"
-import type { VisibilityListenerType } from "@dxdns-kit/core/types"
+import { checkVisibilityAction } from "@fefade/core/actions"
+import type { VisibilityListenerType } from "@fefade/core/types"
 
 interface Props
 	extends HTMLAttributes<HTMLDivElement>,

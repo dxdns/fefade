@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { DrawerType } from "@dxdns-kit/core/types"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import styles from "@dxdns-kit/core/styles/Drawer.module.css"
+	import type { DrawerType } from "@fefade/core/types"
+	import { classMapUtil } from "@fefade/core/utils"
+	import styles from "@fefade/core/styles/Drawer.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement>, DrawerType {}
 

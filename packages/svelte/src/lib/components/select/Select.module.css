@@ -14,7 +14,7 @@
 	box-shadow: none;
 	flex: 1;
 	padding: 0.5em 2.5em 0.5em 1em;
-	color: var(--dx-on-surface);
+	color: var(--ff-on-surface);
 	background-image: none;
 	cursor: pointer;
 	outline: 0;
@@ -22,12 +22,12 @@
 }
 
 .select.contained > select {
-	background: var(--dx-surface);
+	background: var(--ff-surface);
 }
 
 .select.outlined > select {
 	background: inherit;
-	border: 1px solid var(--dx-border);
+	border: 1px solid var(--ff-border);
 }
 
 .select.text > select {
@@ -45,13 +45,13 @@
 	top: 50%;
 	transform: translateY(-50%);
 	pointer-events: none;
-	color: var(--dx-on-surface);
+	color: var(--ff-on-surface);
 	transition: color 0.3s ease;
 	margin: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
 	.select:hover .icon {
-		color: var(--dx-muted);
+		color: var(--ff-muted);
 	}
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -24,12 +24,12 @@
 
 <style>
 	.skeleton {
-		background: var(--dx-skeleton);
+		background: var(--ff-skeleton);
 		background-image: linear-gradient(
 			90deg,
-			var(--dx-skeleton),
-			var(--dx-on-skeleton),
-			var(--dx-skeleton)
+			var(--ff-skeleton),
+			var(--ff-on-skeleton),
+			var(--ff-skeleton)
 		);
 		border-radius: 5px;
 		display: inline-block;

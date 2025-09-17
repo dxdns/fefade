@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil, mergeStyleUtil } from "@fefade/core/utils"
 	import styles from "./Rating.module.css"
 
 	interface Props extends HTMLButtonAttributes {

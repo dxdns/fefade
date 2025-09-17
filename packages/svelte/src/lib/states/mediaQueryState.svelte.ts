@@ -1,6 +1,6 @@
-import type { MediaQueryType, BreakpointType } from "@dxdns-kit/core/types"
-import { sizeToNumberUtil } from "@dxdns-kit/core/utils"
-import { Constants } from "@dxdns-kit/core"
+import type { MediaQueryType, BreakpointType } from "@fefade/core/types"
+import { sizeToNumberUtil } from "@fefade/core/utils"
+import { Constants } from "@fefade/core"
 
 export default function mediaQueryState(...args: MediaQueryType) {
 	const [operator, size, node] = args

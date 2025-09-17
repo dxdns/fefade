@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Gallery, Text } from "@/index.js"
-	import { videoUtil } from "@dxdns-kit/core/utils"
+	import { videoUtil } from "@fefade/core/utils"
 
 	const sizes = [200, 250, 650, 750, 850, 950, 300, 350, 450, 550]
 

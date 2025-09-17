@@ -1,10 +1,10 @@
 .button {
 	margin: 0;
-	background: var(--dx-primary);
+	background: var(--ff-primary);
 	font-weight: 600;
 	cursor: pointer;
 	border-radius: 0.375rem;
-	color: var(--dx-on-primary);
+	color: var(--ff-on-primary);
 	transition: all 200ms ease-in-out;
 	height: 2.5rem;
 	width: auto;
@@ -40,27 +40,27 @@
 
 .button.outlined {
 	background: transparent;
-	border: 1px solid var(--dx-disabled);
+	border: 1px solid var(--ff-disabled);
 	transition: all 0.2s ease-in-out;
-	color: var(--dx-on-bg);
+	color: var(--ff-on-bg);
 }
 
 .button.text {
 	background: transparent;
-	color: var(--dx-on-bg);
+	color: var(--ff-on-bg);
 }
 
 .button:disabled {
 	cursor: not-allowed;
-	color: var(--dx-on-disabled);
+	color: var(--ff-on-disabled);
 }
 
 .button.outlined:disabled {
-	border-color: var(--dx-disabled);
+	border-color: var(--ff-disabled);
 }
 
 .button:not(.text):not(.outlined):disabled {
-	background: var(--dx-disabled);
+	background: var(--ff-disabled);
 }
 
 /* sizes */
@@ -97,11 +97,11 @@
 
 @media (hover: hover) and (pointer: fine) {
 	.button.contained:not(:disabled):hover {
-		background: color-mix(in srgb, var(--dx-primary) 75%, gray 15%);
+		background: color-mix(in srgb, var(--ff-primary) 75%, gray 15%);
 	}
 
 	.button.outlined:not(:disabled):hover {
-		box-shadow: 0 0 0 1px var(--dx-border);
+		box-shadow: 0 0 0 1px var(--ff-border);
 	}
 
 	.button.text:not(:disabled):hover {

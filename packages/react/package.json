@@ -1,17 +1,17 @@
 {
-	"name": "@dxdns-kit/react",
-	"version": "0.0.8",
-	"description": "dxdns-kit React components",
+	"name": "@fefade/react",
+	"version": "0.0.0",
+	"description": "Reusable React UI components powered by the FEFADE core system.",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"homepage": "https://kit.dxdns.dev",
+	"homepage": "https://fefade.dev",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/kit.git"
+		"url": "git+https://github.com/dxdns/fefade.git"
 	},
 	"type": "module",
 	"main": "dist/index.js",
@@ -26,8 +26,7 @@
 		"build:watch": "tsc --watch & vite build --watch"
 	},
 	"peerDependencies": {
-		"@dxdns-kit/core": "^0.0.8",
-		"vite": "^6.2.3"
+		"@fefade/core": "^0.0.1"
 	},
 	"devDependencies": {
 		"@types/react": "^19.1.8",
@@ -37,13 +36,13 @@
 		"react-dom": "^19.1.0",
 		"vite-plugin-dts": "^4.5.4",
 		"vite-plugin-lib-inject-css": "^2.2.2",
-		"@dxdns-kit/core": "*"
+		"@fefade/core": "*"
 	},
 	"keywords": [
 		"react",
 		"react-ui",
 		"ui",
-		"dxdns-kit",
+		"fefade",
 		"components",
 		"ui-components",
 		"react-pkg",

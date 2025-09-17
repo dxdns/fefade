@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { themeConfig, Navbar, Toaster } from "@/index.js"
-	import { infoIcon } from "@dxdns-kit/core/icons"
+	import { infoIcon } from "@fefade/core/icons"
 
 	let { children } = $props()
 

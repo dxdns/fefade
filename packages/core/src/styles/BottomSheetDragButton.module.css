@@ -14,20 +14,20 @@
 }
 
 .bottomSheetDragButton.contained {
-	background: var(--dx-border);
+	background: var(--ff-border);
 	border-top-right-radius: 15px;
 	border-top-left-radius: 15px;
 }
 
 .bottomSheetDragButton.outlined {
 	background: none;
-	border-bottom: 1px solid var(--dx-border);
+	border-bottom: 1px solid var(--ff-border);
 }
 
 .bottomSheetDragButton span {
 	height: 4px;
 	width: 40px;
 	display: block;
-	background: var(--dx-primary);
+	background: var(--ff-primary);
 	border-radius: 5px;
 }

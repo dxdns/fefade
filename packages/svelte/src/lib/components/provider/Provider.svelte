@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount, type Snippet } from "svelte"
-	import { Constants } from "@dxdns-kit/core"
-	import type { ThemeConfigType, ThemeModeType } from "@dxdns-kit/core/types"
-	import { providerUtil } from "@dxdns-kit/core/utils"
+	import { Constants } from "@fefade/core"
+	import type { ThemeConfigType, ThemeModeType } from "@fefade/core/types"
+	import { providerUtil } from "@fefade/core/utils"
 	import { themeConfigState } from "../../states/index.js"
-	import rawStyle from "@dxdns-kit/core/styles/Provider.css?raw"
+	import rawStyle from "@fefade/core/styles/Provider.css?raw"
 
 	interface Props {
 		theme?: ThemeConfigType

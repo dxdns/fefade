@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Checkbox } from "@/index.js"
-	import { Constants } from "@dxdns-kit/core"
+	import { Constants } from "@fefade/core"
 
 	const colors = [...Constants.statusColors, "secondary"] as const
 </script>

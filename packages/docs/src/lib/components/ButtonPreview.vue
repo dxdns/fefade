@@ -1,6 +1,6 @@
 <script setup lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import { Button } from "@dxdns-kit/vue"
+	import { Constants } from "@fefade/core"
+	import { Button } from "@fefade/vue"
 
 	const colors = ["error", "success", "warning", "info", "primary"] as const
 </script>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Checkbox } from "@dxdns-kit/svelte"
-	import { Constants } from "@dxdns-kit/core"
+	import { Checkbox } from "@fefade/svelte"
+	import { Constants } from "@fefade/core"
 
 	const colors = [...Constants.statusColors, "secondary"] as const
 </script>

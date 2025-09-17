@@ -1,4 +1,4 @@
-import { DateInput } from "@dxdns-kit/react"
+import { DateInput } from "@fefade/react"
 
 export default function () {
 	return (

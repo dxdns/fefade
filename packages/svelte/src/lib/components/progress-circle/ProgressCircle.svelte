@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
+	import { Constants } from "@fefade/core"
 	import type { SVGAttributes } from "svelte/elements"
 	import styles from "./ProgressCircle.module.css"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
-	import type { SizeType } from "@dxdns-kit/core/types"
+	import { classMapUtil } from "@fefade/core/utils"
+	import type { SizeType } from "@fefade/core/types"
 
 	interface Props extends SVGAttributes<SVGSVGElement> {
 		value: number

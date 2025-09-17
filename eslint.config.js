@@ -41,7 +41,8 @@ export default ts.config(
 			}
 		},
 		rules: {
-			"svelte/no-at-html-tags": "off"
+			"svelte/no-at-html-tags": "off",
+			"svelte/no-navigation-without-resolve": "off"
 		}
 	},
 

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { DraggableGroupType } from "@dxdns-kit/core/types"
-	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
-	import { draggableGroupAction } from "@dxdns-kit/core/actions"
-	import styles from "@dxdns-kit/core/styles/DraggableGroup.module.css"
-	import stylesItem from "@dxdns-kit/core/styles/DraggableGroupItem.module.css"
+	import type { DraggableGroupType } from "@fefade/core/types"
+	import { classMapUtil, mergeStyleUtil } from "@fefade/core/utils"
+	import { draggableGroupAction } from "@fefade/core/actions"
+	import styles from "@fefade/core/styles/DraggableGroup.module.css"
+	import stylesItem from "@fefade/core/styles/DraggableGroupItem.module.css"
 
 	interface Props extends HTMLAttributes<HTMLDivElement>, DraggableGroupType {}
 

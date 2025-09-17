@@ -1,4 +1,4 @@
-import { Window } from "@dxdns-kit/react"
+import { Window } from "@fefade/react"
 
 export default function () {
 	const windowVariants = ["contained", "outlined"] as const

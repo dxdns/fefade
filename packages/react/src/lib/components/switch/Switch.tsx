@@ -1,13 +1,13 @@
-import { Constants } from "@dxdns-kit/core"
-import type { SwitchType } from "@dxdns-kit/core/types"
-import { classMapUtil, getPropValueUtil } from "@dxdns-kit/core/utils"
+import { Constants } from "@fefade/core"
+import type { SwitchType } from "@fefade/core/types"
+import { classMapUtil, getPropValueUtil } from "@fefade/core/utils"
 import {
 	CSSProperties,
 	forwardRef,
 	InputHTMLAttributes,
 	ReactNode
 } from "react"
-import styles from "@dxdns-kit/core/styles/Switch.module.css"
+import styles from "@fefade/core/styles/Switch.module.css"
 
 interface Props
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, "size">,

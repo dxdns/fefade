@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Button, Drawer, Window } from "@dxdns-kit/react"
+import { Button, Drawer, Window } from "@fefade/react"
 
 export default function () {
 	const [drawerStates, setDrawerStates] = useState({

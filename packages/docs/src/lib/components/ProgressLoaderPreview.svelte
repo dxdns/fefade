@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, ProgressLoader } from "@dxdns-kit/svelte"
+	import { Button, ProgressLoader } from "@fefade/svelte"
 
 	let progress = $state(0)
 

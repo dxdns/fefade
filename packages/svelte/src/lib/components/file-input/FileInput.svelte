@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import { inputDropAction } from "@dxdns-kit/core/actions"
-	import styles from "@dxdns-kit/core/styles/FileInput.module.css"
+	import { inputDropAction } from "@fefade/core/actions"
+	import styles from "@fefade/core/styles/FileInput.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "type"> {
 		onDropEvent?: (files: File[]) => void

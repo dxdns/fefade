@@ -1,1 +1,1 @@
-export * from "@dxdns-kit/core/types"
+export * from "@fefade/core/types"

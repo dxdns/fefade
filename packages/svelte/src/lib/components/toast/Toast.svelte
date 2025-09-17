@@ -1,14 +1,14 @@
 <script lang="ts">
-	import type { ToastType } from "@dxdns-kit/core/types"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import type { ToastType } from "@fefade/core/types"
+	import { classMapUtil } from "@fefade/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 	import Button from "../button/index.js"
 	import { Alert } from "../alert/index.js"
 	import { toastState } from "../../states/index.js"
 	import { onDestroy } from "svelte"
 	import ProgressLoader from "../progress-loader/index.js"
-	import { closeIcon } from "@dxdns-kit/core/icons"
-	import styles from "@dxdns-kit/core/styles/Toast.module.css"
+	import { closeIcon } from "@fefade/core/icons"
+	import styles from "@fefade/core/styles/Toast.module.css"
 
 	interface Props
 		extends Omit<Omit<HTMLAttributes<HTMLDivElement>, "color">, "id">,

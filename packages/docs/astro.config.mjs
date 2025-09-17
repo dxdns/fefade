@@ -9,11 +9,11 @@ import sitemap from "@astrojs/sitemap"
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://kit.dxdns.dev",
+	site: "https://fefade.dev",
 	integrations: [
 		sitemap(),
 		starlight({
-			title: "dxdns-kit",
+			title: "fefade",
 			components: {
 				PageFrame: "./src/lib/layouts/RootLayout.astro",
 				Hero: "./src/lib/components/Hero.astro",
@@ -24,13 +24,13 @@ export default defineConfig({
 			logo: {
 				src: "./public/favicon.png",
 				alt: "logo",
-				replacesTitle: true
+				replacesTitle: false
 			},
 			social: [
 				{
 					icon: "github",
 					label: "GitHub",
-					href: "https://github.com/dxdns/kit"
+					href: "https://github.com/dxdns/fefade"
 				}
 			],
 			sidebar: [

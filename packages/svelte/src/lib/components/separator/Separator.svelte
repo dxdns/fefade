@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
-	import type { OrientationType, SizeType } from "@dxdns-kit/core/types"
+	import { classMapUtil, mergeStyleUtil } from "@fefade/core/utils"
+	import type { OrientationType, SizeType } from "@fefade/core/types"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -38,7 +38,7 @@
 
 <style>
 	.separator {
-		border-color: var(--dx-border);
+		border-color: var(--ff-border);
 		border-right-width: 0;
 		border-bottom-width: 0;
 		border-left-width: 0;

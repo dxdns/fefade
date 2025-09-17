@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import { Separator } from "@dxdns-kit/svelte"
+	import { Constants } from "@fefade/core"
+	import { Separator } from "@fefade/svelte"
 
 	const separatorVariants = ["dotted", "dashed", "solid"] as const
 </script>

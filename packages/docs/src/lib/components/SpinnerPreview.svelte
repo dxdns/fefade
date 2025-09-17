@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import { Spinner } from "@dxdns-kit/svelte"
+	import { Constants } from "@fefade/core"
+	import { Spinner } from "@fefade/svelte"
 </script>
 
 <div

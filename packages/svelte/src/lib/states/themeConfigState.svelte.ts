@@ -1,5 +1,5 @@
-import type { ThemeColorType, ThemeModeType } from "@dxdns-kit/core/types"
-import { Constants } from "@dxdns-kit/core"
+import type { ThemeColorType, ThemeModeType } from "@fefade/core/types"
+import { Constants } from "@fefade/core"
 
 let data = $state<{
 	mode: ThemeModeType

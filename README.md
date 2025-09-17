@@ -2,16 +2,16 @@
   <img src="./packages/docs/public/favicon.png" width="150" height="120" />
 </p>
 
-<h1 align="center">dxdns-kit</h1>
+<h1 align="center">fefade</h1>
 
-[![license](https://img.shields.io/github/license/dxdns/kit)](https://github.com/dxdns/kit/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/dxdns/fefade)](https://github.com/dxdns/fefade/blob/master/LICENSE)
 ![Zero Dependencies](https://img.shields.io/badge/dependencies-0-green)
 
-**dxdns-kit** is a lightweight and dependency-free UI component library.
+**fefade** is a lightweight and dependency-free UI component library.
 
 > Minimal, accessible, dependency-free — made by a developer who loves clean UI.
 
-## Why dxdns-kit?
+## Why fefade?
 
 - Lightweight by design
 - Isolated styles using CSS Modules — no bleeding styles
@@ -31,12 +31,12 @@
 
 ## Documentation
 
-Coming soon in the [https://kit.dxdns.dev/docs](https://kit.dxdns.dev/docs).
+Coming soon in the [https://fefade.dev/docs](https://fefade.dev/docs).
 
 ## Contributing
 
 Please see the [Contributing Guide](CONTRIBUTING.md) for information on
-contributing to dxdns-kit.
+contributing to fefade.
 
 ## License
 

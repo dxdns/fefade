@@ -1,8 +1,8 @@
 :root {
-	--sl-color-bg-sidebar: var(--dx-surface);
-	--sl-color-bg-nav: var(--dx-bg);
-	--sl-color-text-accent: var(--dx-primary);
-	--sl-color-bg-sidebar: var(--dx-bg);
+	--sl-color-bg-sidebar: var(--ff-surface);
+	--sl-color-bg-nav: var(--ff-bg);
+	--sl-color-text-accent: var(--ff-primary);
+	--sl-color-bg-sidebar: var(--ff-bg);
 }
 
 body {

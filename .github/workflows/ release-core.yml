@@ -26,8 +26,8 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w @dxdns-kit/core
+      - run: npm run build -w @fefade/core
 
-      - run: npm publish -w @dxdns-kit/core
+      - run: npm publish -w @fefade/core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

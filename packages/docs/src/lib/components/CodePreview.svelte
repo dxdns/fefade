@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Code } from "@dxdns-kit/svelte"
+	import { Code } from "@fefade/svelte"
 
 	const data = `
         .card {

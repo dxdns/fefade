@@ -1,4 +1,4 @@
-import { Link } from "@dxdns-kit/react"
+import { Link } from "@fefade/react"
 
 export default function () {
 	return (

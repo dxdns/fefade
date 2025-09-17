@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
+	import { Constants } from "@fefade/core"
 	import type { HTMLAttributes } from "svelte/elements"
-	import { activeLineAction } from "@dxdns-kit/core/actions"
+	import { activeLineAction } from "@fefade/core/actions"
 	import HoverFollower from "../hover-follower/index.js"
-	import type { ActionType, OrientationType } from "@dxdns-kit/core/types"
+	import type { ActionType, OrientationType } from "@fefade/core/types"
 	import {
 		classMapUtil,
 		getPropValueUtil,
 		mergeStyleUtil
-	} from "@dxdns-kit/core/utils"
+	} from "@fefade/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		lineStyle?:

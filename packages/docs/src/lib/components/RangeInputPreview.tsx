@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { Badge, RangeInput } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { Badge, RangeInput } from "@fefade/react"
 import { useState } from "react"
 
 export default function () {

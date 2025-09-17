@@ -1,5 +1,5 @@
-import { Constants } from "@dxdns-kit/core"
-import { Accordion } from "@dxdns-kit/react"
+import { Constants } from "@fefade/core"
+import { Accordion } from "@fefade/react"
 
 export default function () {
 	return (

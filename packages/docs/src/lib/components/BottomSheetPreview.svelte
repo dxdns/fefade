@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BottomSheet, Button } from "@dxdns-kit/svelte"
+	import { BottomSheet, Button } from "@fefade/svelte"
 	import { onMount } from "svelte"
 
 	let isOpen = $state(false)

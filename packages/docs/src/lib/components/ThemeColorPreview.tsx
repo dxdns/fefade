@@ -1,11 +1,4 @@
-import {
-	Badge,
-	Button,
-	Card,
-	Grid,
-	Provider,
-	themeConfig
-} from "@dxdns-kit/react"
+import { Badge, Button, Card, Grid, Provider, themeConfig } from "@fefade/react"
 
 function ThemeColorPreview() {
 	const theme = themeConfig()

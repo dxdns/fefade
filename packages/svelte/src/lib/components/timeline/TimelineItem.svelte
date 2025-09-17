@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements"
-	import type { HorizontalPositionType } from "@dxdns-kit/core/types"
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import type { HorizontalPositionType } from "@fefade/core/types"
+	import { classMapUtil } from "@fefade/core/utils"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		position: Exclude<HorizontalPositionType, "center">
@@ -28,8 +28,8 @@
 		position: absolute;
 		width: 16px;
 		height: 16px;
-		background: var(--dx-surface);
-		border: 4px solid var(--dx-border);
+		background: var(--ff-surface);
+		border: 4px solid var(--ff-border);
 		top: 15px;
 		border-radius: 50%;
 		z-index: 1;

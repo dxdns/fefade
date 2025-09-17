@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Constants } from "@dxdns-kit/core"
-	import { Status, themeConfig } from "@dxdns-kit/svelte"
+	import { Constants } from "@fefade/core"
+	import { Status, themeConfig } from "@fefade/svelte"
 
 	const { colors } = $derived(themeConfig())
 </script>

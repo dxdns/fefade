@@ -14,8 +14,8 @@
 	text-align: left;
 	margin-right: 1em;
 	padding: 0 0.5em;
-	color: var(--dx-muted);
-	border-right: 2px solid var(--dx-border);
+	color: var(--ff-muted);
+	border-right: 2px solid var(--ff-border);
 	user-select: none;
 	flex-shrink: 0;
 }

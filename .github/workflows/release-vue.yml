@@ -26,10 +26,10 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build -w @dxdns-kit/vue
+      - run: npm run build -w @fefade/vue
 
       - run: cp README.md packages/vue
 
-      - run: npm publish -w @dxdns-kit/vue
+      - run: npm publish -w @fefade/vue
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

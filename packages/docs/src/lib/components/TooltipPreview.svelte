@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tooltip } from "@dxdns-kit/svelte"
+	import { Tooltip } from "@fefade/svelte"
 
 	const positions = ["top", "bottom", "left", "right"] as const
 </script>

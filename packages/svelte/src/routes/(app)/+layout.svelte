@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>dxdns-kit + Svelte</title>
+	<title>fefade + Svelte</title>
 </svelte:head>
 
 <Provider {theme} defaultThemeMode="light">

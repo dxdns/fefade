@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
-	import styles from "@dxdns-kit/core/styles/ColorPicker.module.css"
+	import styles from "@fefade/core/styles/ColorPicker.module.css"
 
 	interface Props extends Omit<HTMLInputAttributes, "type"> {}
 

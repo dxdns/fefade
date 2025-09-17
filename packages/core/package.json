@@ -1,17 +1,17 @@
 {
-	"name": "@dxdns-kit/core",
-	"version": "0.0.8",
-	"description": "dxdns-kit Core",
+	"name": "@fefade/core",
+	"version": "0.0.0",
+	"description": "Shared logic and foundational utilities for FEFADE UI libraries.",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
 		"access": "public"
 	},
 	"license": "MIT",
-	"homepage": "https://kit.dxdns.dev",
+	"homepage": "https://fefade.dev",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dxdns/kit.git"
+		"url": "git+https://github.com/dxdns/fefade.git"
 	},
 	"scripts": {
 		"build": "tsc && node esbuild.config.mjs",
@@ -54,7 +54,7 @@
 		"components",
 		"ui",
 		"ui-kit",
-		"dxdns-kit",
+		"fefade",
 		"react",
 		"svelte",
 		"next",

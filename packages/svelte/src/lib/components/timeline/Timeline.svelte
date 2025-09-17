@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classMapUtil } from "@dxdns-kit/core/utils"
+	import { classMapUtil } from "@fefade/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
@@ -23,7 +23,7 @@
 		content: "";
 		position: absolute;
 		width: 6px;
-		background: var(--dx-surface);
+		background: var(--ff-surface);
 		top: 0;
 		bottom: 0;
 		left: 50%;

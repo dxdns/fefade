@@ -1,5 +1,5 @@
 import { Gallery, Text } from "@/index.js"
-import { videoUtil } from "@dxdns-kit/core/utils"
+import { videoUtil } from "@fefade/core/utils"
 
 export default function () {
 	const sizes = [200, 250, 650, 750, 850, 950, 300, 350, 450, 550]

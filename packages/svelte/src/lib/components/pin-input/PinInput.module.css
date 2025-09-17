@@ -1,13 +1,13 @@
 .pinInput {
 	box-sizing: border-box;
-	border: 1.2px solid var(--dx-border);
+	border: 1.2px solid var(--ff-border);
 	text-align: center;
 	width: 48px;
 	height: 48px;
 	font-size: 36px;
-	background: var(--dx-surface);
+	background: var(--ff-surface);
 	margin-right: 5px;
-	color: var(--dx-on-bg);
+	color: var(--ff-on-bg);
 	border-radius: 0.25rem;
 	outline: none;
 	-webkit-transition: 0.5s;
@@ -15,7 +15,7 @@
 }
 
 .pinInput:focus {
-	border-color: var(--dx-muted);
+	border-color: var(--ff-muted);
 }
 
 .pinInput::-webkit-outer-spin-button,

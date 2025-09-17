@@ -7,7 +7,7 @@
 
 .textField.required > label::after {
 	content: " *";
-	color: var(--dx-on-error);
+	color: var(--ff-on-error);
 }
 
 .textField > label {
@@ -35,11 +35,11 @@
 	outline: none;
 	border: none;
 	margin: 0;
-	color: var(--dx-on-bg);
+	color: var(--ff-on-bg);
 }
 
 .textField > input:focus {
-	border-color: var(--dx-primary);
+	border-color: var(--ff-primary);
 }
 
 .textField > input::-webkit-input-placeholder {
@@ -47,14 +47,14 @@
 }
 
 .textField > input:not(:placeholder-shown):not(:focus):invalid {
-	border-color: var(--dx-on-error);
+	border-color: var(--ff-on-error);
 }
 
 .textField > input:disabled,
 .textField > input:disabled ~ label {
-	color: var(--dx-on-disabled);
+	color: var(--ff-on-disabled);
 	cursor: not-allowed;
-	border-color: var(--dx-border);
+	border-color: var(--ff-border);
 }
 
 .textField fieldset {
@@ -89,7 +89,7 @@
 		max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms,
 		transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 	white-space: nowrap;
-	color: var(--dx-primary);
+	color: var(--ff-primary);
 	transform: translateY(4px);
 	line-height: 0;
 }
@@ -138,28 +138,28 @@
 }
 
 .textField.outlined > input:focus {
-	border-color: var(--dx-primary);
+	border-color: var(--ff-primary);
 }
 
 .textField.outlined fieldset {
 	border-radius: inherit;
 	border-style: solid;
 	border-width: 1px;
-	border-color: var(--dx-border);
+	border-color: var(--ff-border);
 	border-radius: 5px;
 }
 
 .textField.outlined > input:focus ~ fieldset,
 .textField.outlined > input:not(:placeholder-shown) ~ fieldset {
-	border-color: var(--dx-primary);
+	border-color: var(--ff-primary);
 	border-width: 2px;
 }
 
 /* contained */
 
 .textField.contained > input {
-	background: color-mix(in srgb, var(--dx-surface) 90%, gray 5%);
-	color: var(--dx-on-surface);
+	background: color-mix(in srgb, var(--ff-surface) 90%, gray 5%);
+	color: var(--ff-on-surface);
 	border: none;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
@@ -209,7 +209,7 @@
 
 .textField.contained::before,
 .textField.text::before {
-	border-bottom: 1px solid var(--dx-border);
+	border-bottom: 1px solid var(--ff-border);
 	left: 0px;
 	bottom: 0px;
 	content: " ";
@@ -221,7 +221,7 @@
 
 .textField.contained::after,
 .textField.text::after {
-	border-bottom: 2px solid var(--dx-primary);
+	border-bottom: 2px solid var(--ff-primary);
 	left: 0px;
 	bottom: 0px;
 	content: "";
@@ -279,6 +279,6 @@
 
 @media (hover: hover) and (pointer: fine) {
 	.textField > input:hover {
-		border-color: var(--dx-primary);
+		border-color: var(--ff-primary);
 	}
 }

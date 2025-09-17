@@ -1,6 +1,6 @@
 import { themeConfigState } from "../states/index.js"
-import { providerUtil } from "@dxdns-kit/core/utils"
-import type { ThemeConfigUtilType } from "@dxdns-kit/core/types"
+import { providerUtil } from "@fefade/core/utils"
+import type { ThemeConfigUtilType } from "@fefade/core/types"
 
 export default function themeConfigUtil(): ThemeConfigUtilType {
 	const themeConfig = themeConfigState()

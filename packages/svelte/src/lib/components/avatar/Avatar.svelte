@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { HTMLImgAttributes } from "svelte/elements"
-	import { classMapUtil, mergeStyleUtil } from "@dxdns-kit/core/utils"
-	import styles from "@dxdns-kit/core/styles/Avatar.module.css"
-	import type { AvatarType } from "@dxdns-kit/core/types"
+	import { classMapUtil, mergeStyleUtil } from "@fefade/core/utils"
+	import styles from "@fefade/core/styles/Avatar.module.css"
+	import type { AvatarType } from "@fefade/core/types"
 
 	interface Props
 		extends Omit<HTMLImgAttributes, "width" | "height">,

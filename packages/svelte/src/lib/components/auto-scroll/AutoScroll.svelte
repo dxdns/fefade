@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { PositionNoCenterType } from "@dxdns-kit/core/types"
+	import type { PositionNoCenterType } from "@fefade/core/types"
 	import {
 		classMapUtil,
 		mergeStyleUtil,
 		normalizeSizeUtil
-	} from "@dxdns-kit/core/utils"
+	} from "@fefade/core/utils"
 	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {

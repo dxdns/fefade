@@ -1,7 +1,7 @@
-import type { MediaQueryType, BreakpointType } from "@dxdns-kit/core/types"
+import type { MediaQueryType, BreakpointType } from "@fefade/core/types"
 import { useEffect, useState } from "react"
-import { sizeToNumberUtil } from "@dxdns-kit/core/utils"
-import { Constants } from "@dxdns-kit/core"
+import { sizeToNumberUtil } from "@fefade/core/utils"
+import { Constants } from "@fefade/core"
 
 export function mediaQueryHook(...args: MediaQueryType) {
 	const [operator, size, node] = args

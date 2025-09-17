@@ -1,11 +1,7 @@
 import { CSSProperties, forwardRef, HTMLAttributes, Ref } from "react"
-import type {
-	HTMLTagMap,
-	HTMLTagTextType,
-	TextType
-} from "@dxdns-kit/core/types"
-import { classMapUtil } from "@dxdns-kit/core/utils"
-import styles from "@dxdns-kit/core/styles/Text.module.css"
+import type { HTMLTagMap, HTMLTagTextType, TextType } from "@fefade/core/types"
+import { classMapUtil } from "@fefade/core/utils"
+import styles from "@fefade/core/styles/Text.module.css"
 
 interface Props<T extends HTMLTagTextType>
 	extends HTMLAttributes<HTMLTagMap[T]>,
