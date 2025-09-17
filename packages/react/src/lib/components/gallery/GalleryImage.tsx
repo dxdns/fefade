@@ -114,7 +114,7 @@ export default forwardRef<HTMLImageElement, Props>(
 						[className, styles],
 						styles.galleryItem,
 						{
-							["clickable"]: rest.onClick || viewer
+							["clickable"]: rest.onClick || viewer || href
 						}
 					)}
 				>

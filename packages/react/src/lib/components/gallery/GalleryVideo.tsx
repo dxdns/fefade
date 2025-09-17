@@ -113,7 +113,7 @@ export default forwardRef<HTMLVideoElement, Props>(
 						[className, styles],
 						styles.galleryItem,
 						{
-							["clickable"]: rest.onClick || viewer
+							["clickable"]: rest.onClick || viewer || href
 						}
 					)}
 				>

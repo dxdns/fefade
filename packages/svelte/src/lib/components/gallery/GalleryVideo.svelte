@@ -94,7 +94,7 @@
 
 <figure
 	class={classMapUtil(className, [className, styles], styles.galleryItem, {
-		["clickable"]: rest.onclick || viewer
+		["clickable"]: rest.onclick || viewer || href
 	})}
 >
 	<Video
