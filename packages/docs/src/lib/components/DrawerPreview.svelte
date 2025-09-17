@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Drawer, Window } from "@dxdns-kit/svelte"
+	import { Button, Drawer, Window } from "@fefade/svelte"
 
 	let drawerStates = $state({
 		top: false,
