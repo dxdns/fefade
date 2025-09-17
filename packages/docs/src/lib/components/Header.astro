@@ -1,11 +1,11 @@
 ---
 import config from "virtual:starlight/user-config"
-import { Link } from "@fefade/svelte"
 import LanguageSelect from "@astrojs/starlight/components/LanguageSelect.astro"
 import Search from "@astrojs/starlight/components/Search.astro"
 import SiteTitle from "@astrojs/starlight/components/SiteTitle.astro"
 import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro"
 import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro"
+import { LinkButton } from "@astrojs/starlight/components"
 
 /**
  * Render the `Search` component if Pagefind is enabled or the default search component has been overridden.
@@ -13,6 +13,30 @@ import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro"
 const shouldRenderSearch =
 	config.pagefind ||
 	config.components.Search !== "@astrojs/starlight/components/Search.astro"
+
+const currentPath =
+	typeof window !== "undefined"
+		? window.location.pathname
+		: new URL(Astro.request.url).pathname
+
+const menuData = [
+	{
+		label: "Docs",
+		path: "/docs"
+	},
+	{
+		label: "Components",
+		path: "/docs/components"
+	},
+	{
+		label: "Templates",
+		path: "/docs/templates"
+	},
+	{
+		label: "Theming",
+		path: "/docs/theming"
+	}
+]
 ---
 
 <div class="header">
@@ -22,12 +46,25 @@ const shouldRenderSearch =
 	<div class="sl-flex print:hidden">
 		{shouldRenderSearch && <Search />}
 	</div>
-	<div class="sl-hidden md:sl-flex print:hidden right-group">
-		<Link href="/templates" style="font-weight: bold;">templates</Link>
-		<div></div>
+	<div class="sl-hidden md:sl-flex print:hidden right-group" style="gap: 2rem;">
+		<nav>
+			{
+				menuData.map((item) => (
+					<LinkButton
+						href={item.path}
+						variant={currentPath === item.path ? "primary" : "minimal"}
+						style="padding: 0.3rem 1rem;"
+					>
+						{item.label}
+					</LinkButton>
+				))
+			}
+		</nav>
+
 		<div class="sl-flex social-icons">
 			<SocialIcons />
 		</div>
+
 		<ThemeSelect />
 		<LanguageSelect />
 	</div>
