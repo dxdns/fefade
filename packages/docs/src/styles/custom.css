@@ -27,3 +27,8 @@ input[type="number"] {
 	appearance: text-field;
 	-moz-appearance: textfield;
 }
+
+.site-title {
+	font-family: Montserrat;
+	font-weight: 500;
+}

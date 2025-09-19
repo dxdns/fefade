@@ -19,7 +19,7 @@ export default defineConfig({
 				Hero: "./src/lib/components/Hero.astro",
 				PageTitle: "./src/lib/components/PageTitle.astro"
 			},
-			customCss: ["./src/styles/custom.css"],
+			customCss: ["./src/styles/custom.css", "./src/fonts/font-face.css"],
 			favicon: "/favicon.png",
 			logo: {
 				src: "./public/favicon.png",
