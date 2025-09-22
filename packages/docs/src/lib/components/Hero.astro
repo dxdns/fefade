@@ -2,6 +2,7 @@
 import { LinkButton, TabItem, Tabs } from "@astrojs/starlight/components"
 import { Image } from "astro:assets"
 import { Code } from "@astrojs/starlight/components"
+import type { StarlightIcon } from "@astrojs/starlight/types"
 
 const { data } = Astro.locals.starlightRoute.entry
 const { title = data.title, tagline, image } = data.hero || {}
@@ -26,6 +27,12 @@ if (image) {
 	} else {
 		rawHtml = image.html
 	}
+}
+
+const frameworksData: Record<string, StarlightIcon> = {
+	React: "seti:react",
+	Vue: "seti:vue",
+	Svelte: "seti:svelte"
 }
 ---
 
@@ -61,27 +68,17 @@ if (image) {
 
 			<div class="tabs">
 				<Tabs>
-					<TabItem label="react" icon="seti:react">
-						<Code
-							code={`npm install @fefade/core @fefade/react`}
-							lang="bash"
-							title="react"
-						/>
-					</TabItem>
-					<TabItem label="vue" icon="seti:vue">
-						<Code
-							code={`npm install @fefade/core @fefade/vue`}
-							lang="bash"
-							title="vue"
-						/>
-					</TabItem>
-					<TabItem label="svelte" icon="seti:svelte">
-						<Code
-							code={`npm install @fefade/core @fefade/svelte`}
-							lang="bash"
-							title="svelte"
-						/>
-					</TabItem>
+					{
+						Object.keys(frameworksData).map((item) => (
+							<TabItem label={item} icon={frameworksData[item]}>
+								<Code
+									code={`npm install @fefade/core @fefade/${item.toLowerCase()}`}
+									lang="bash"
+									title={item}
+								/>
+							</TabItem>
+						))
+					}
 				</Tabs>
 			</div>
 		</div>
