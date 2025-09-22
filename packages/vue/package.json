@@ -1,6 +1,6 @@
 {
 	"name": "@fefade/vue",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Reusable Vue UI components powered by the FEFADE core system.",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
@@ -26,7 +26,7 @@
 		"build:watch": "vue-tsc -b --watch & vite build --watch"
 	},
 	"peerDependencies": {
-		"@fefade/core": "^0.0.1"
+		"@fefade/core": "^0.0.2"
 	},
 	"devDependencies": {
 		"vue": "^3.5.17",
