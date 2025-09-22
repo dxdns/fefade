@@ -4,6 +4,7 @@
 	import { classMapUtil } from "@fefade/core/utils"
 	import { keyboardArrowLeftIcon } from "@fefade/core/icons"
 	import styles from "@fefade/core/styles/Accordion.module.css"
+	import { onMount } from "svelte"
 
 	interface Props extends Omit<HTMLInputAttributes, "id">, AccordionType {}
 
@@ -11,9 +12,18 @@
 		class: className = "",
 		label,
 		variant,
+		autofocus = false,
 		children,
 		...rest
 	}: Props = $props()
+
+	let el: HTMLInputElement
+
+	onMount(() => {
+		if (autofocus) {
+			el.checked = true
+		}
+	})
 </script>
 
 <div
@@ -27,12 +37,13 @@
 >
 	<input
 		{...rest}
+		bind:this={el}
+		id={rest.id}
 		class={styles.controller}
 		type="radio"
-		id={rest.id}
 		name="accordion"
-		hidden
 		style={undefined}
+		hidden
 	/>
 	<label for={rest.id} class={styles.header}>
 		<label for={rest.id}>{label}</label>

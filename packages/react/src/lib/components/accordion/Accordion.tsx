@@ -1,4 +1,4 @@
-import { forwardRef, HTMLAttributes } from "react"
+import { forwardRef, HTMLAttributes, useEffect, useRef } from "react"
 import type { AccordionType } from "@fefade/core/types"
 import { classMapUtil } from "@fefade/core/utils"
 import { keyboardArrowLeftIcon } from "@fefade/core/icons"
@@ -9,10 +9,18 @@ interface Props
 		AccordionType {}
 
 export default forwardRef<HTMLDivElement, Props>(
-	({ className = "", label, variant, children, ...rest }, ref) => {
+	({ className = "", label, variant, autoFocus, children, ...rest }, ref) => {
+		const internalRef = useRef<HTMLInputElement | null>(null)
+		const inputRef = (ref as React.RefObject<HTMLInputElement>) || internalRef
+
+		useEffect(() => {
+			if (autoFocus) {
+				inputRef.current.checked = true
+			}
+		}, [autoFocus])
+
 		return (
 			<div
-				ref={ref}
 				className={classMapUtil(
 					className,
 					[className, styles],
@@ -23,6 +31,7 @@ export default forwardRef<HTMLDivElement, Props>(
 			>
 				<input
 					{...rest}
+					ref={inputRef}
 					className={styles.controller}
 					type="radio"
 					id={rest.id}

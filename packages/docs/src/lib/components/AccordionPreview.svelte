@@ -5,7 +5,12 @@
 
 <div style="display: flex; flex-direction: column; gap: 1rem;">
 	{#each Constants.variants as variant, i (variant)}
-		<Accordion id="sec{i}" {variant} label={variant ?? "no variant"}>
+		<Accordion
+			id="sec{i}"
+			{variant}
+			label={variant ?? "no variant"}
+			autofocus={i === 0}
+		>
 			<div style="line-height: 1.5;">
 				<h1>test {i}</h1>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste recusandae

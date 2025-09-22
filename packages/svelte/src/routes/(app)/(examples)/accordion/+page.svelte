@@ -8,6 +8,7 @@
 			id="sec{i}"
 			variant={i % 2 ? "contained" : i % 3 ? undefined : "outlined"}
 			label="test {i}"
+			autofocus={i === 0}
 		>
 			<div style="line-height: 1.5;">
 				<h1>test {i}</h1>

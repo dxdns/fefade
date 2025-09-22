@@ -16,6 +16,7 @@ export default function () {
 					key={`sec${i}`}
 					variant={variant}
 					label={variant ?? "no variant"}
+					autoFocus={i === 0}
 				>
 					<div style={{ lineHeight: 1.5 }}>
 						<h1>test {i}</h1>
