@@ -2,19 +2,16 @@
 	import { classMapUtil } from "@fefade/core/utils"
 	import type { HTMLAnchorAttributes } from "svelte/elements"
 	import Link from "../link/index.js"
+	import type { LinkType, VariantType } from "@fefade/core/types"
 	import styles from "@fefade/core/styles/NavbarItem.module.css"
-	import type { VariantType } from "@fefade/core/types"
 
-	interface Props extends HTMLAnchorAttributes {
+	interface Props extends Omit<HTMLAnchorAttributes, "class">, LinkType {
 		variant?: VariantType
 	}
 
-	let { class: className = "", children, ...rest }: Props = $props()
+	let { children, ...rest }: Props = $props()
 </script>
 
-<Link
-	{...rest}
-	class={classMapUtil(className, [className, styles], styles.navbarItem)}
->
+<Link {...rest} class={classMapUtil(rest.className, styles.navbarItem)}>
 	{@render children?.()}
 </Link>
