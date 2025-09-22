@@ -1,7 +1,8 @@
-import type { LinkType, VariantType } from "@fefade/core/types"
+import type { LinkType } from "@fefade/core/types"
 import { classMapUtil } from "@fefade/core/utils"
 import {
 	ComponentPropsWithoutRef,
+	CSSProperties,
 	ElementType,
 	forwardRef,
 	JSX,
@@ -13,10 +14,9 @@ import buttonStyles from "@fefade/core/styles/Button.module.css"
 
 type AsProp<C extends ElementType> = {
 	as?: C
-	variant?: VariantType
 }
 
-type PropsToOmit<C extends ElementType, P> = keyof (AsProp<C> & P)
+type PropsToOmit<C extends ElementType, P> = keyof (AsProp<C> & P) | "style"
 
 type PolymorphicComponentProps<
 	C extends ElementType,
@@ -24,7 +24,10 @@ type PolymorphicComponentProps<
 > = PropsWithChildren<Props & AsProp<C>> &
 	Omit<ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>
 
-type Props<C extends ElementType> = PolymorphicComponentProps<C, LinkType>
+type Props<C extends ElementType> = PolymorphicComponentProps<
+	C,
+	LinkType<CSSProperties>
+>
 
 function LinkComponent<C extends ElementType = "a">(
 	{
@@ -33,6 +36,7 @@ function LinkComponent<C extends ElementType = "a">(
 		hover,
 		variant = "text",
 		as,
+		style,
 		children,
 		...rest
 	}: Props<C>,
@@ -61,6 +65,7 @@ function LinkComponent<C extends ElementType = "a">(
 				}
 			)}
 			aria-current={isActive ? "page" : undefined}
+			style={typeof style === "function" ? style({ isActive }) : style}
 		>
 			{children}
 		</Component>

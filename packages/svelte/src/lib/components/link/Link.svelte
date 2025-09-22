@@ -1,19 +1,20 @@
 <script lang="ts">
 	import type { HTMLAnchorAttributes } from "svelte/elements"
-	import { classMapUtil } from "@fefade/core/utils"
-	import type { LinkType, VariantType } from "@fefade/core/types"
+	import { classMapUtil, styleToStringUtil } from "@fefade/core/utils"
+	import type { CSSKebabType, LinkType } from "@fefade/core/types"
 	import styles from "@fefade/core/styles/Link.module.css"
 	import buttonStyles from "@fefade/core/styles/Button.module.css"
 
-	interface Props extends Omit<HTMLAnchorAttributes, "class">, LinkType {
-		variant?: VariantType
-	}
+	interface Props
+		extends Omit<Omit<HTMLAnchorAttributes, "class">, "style">,
+			LinkType<CSSKebabType> {}
 
 	let {
 		class: className = "",
 		pathname,
 		hover,
 		variant = "text",
+		style,
 		children,
 		...rest
 	}: Props = $props()
@@ -38,6 +39,9 @@
 		}
 	)}
 	aria-current={isActive ? "page" : undefined}
+	style={typeof style === "function"
+		? styleToStringUtil(style({ isActive }))
+		: styleToStringUtil(style)}
 >
 	{@render children?.()}
 </a>

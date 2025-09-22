@@ -6,4 +6,5 @@
 
 .navbarItem[aria-current="page"] {
 	background: color-mix(in srgb, var(--ff-surface) 85%, gray 15%);
+	font-weight: bold;
 }

@@ -2,16 +2,15 @@ import { Link } from "@fefade/react"
 
 export default function () {
 	return (
-		<>
+		<div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
 			<Link href="https://github.com/dxdns" target="_blank">
 				<h1>none</h1>
 			</Link>
-			<br />
+
 			<Link href="https://github.com/dxdns" hover="underlineNone">
 				underline
 			</Link>
-			<br />
-			<br />
+
 			<Link href="https://github.com/dxdns">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -24,21 +23,19 @@ export default function () {
 				</svg>
 				heart
 			</Link>
-			<br />
-			<br />
+
 			<Link href="https://github.com/dxdns" hover="left" target="_blank">
 				<h1>left</h1>
 			</Link>
-			<br />
+
 			<Link pathname="/" hover="center">
 				<h1>center</h1>
 			</Link>
-			<br />
+
 			<Link pathname="/" hover="right">
 				<h1>right</h1>
 			</Link>
-			<br />
-			<br />
+
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
 				voluptatibus pariatur maiores cumque{" "}
@@ -52,7 +49,7 @@ export default function () {
 				</Link>{" "}
 				ad ducimus.
 			</p>
-			<br />
+
 			<Link
 				className={({ isActive }) =>
 					isActive ? "text-on-error" : "text-on-info"
@@ -61,8 +58,16 @@ export default function () {
 				href="https://github.com/dxdns"
 				target="_blank"
 			>
-				check active
+				check active 1
 			</Link>
-		</>
+
+			<Link
+				style={({ isActive }) => ({
+					color: isActive ? "red" : "aqua"
+				})}
+			>
+				check active 2
+			</Link>
+		</div>
 	)
 }

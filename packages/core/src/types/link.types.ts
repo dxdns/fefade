@@ -1,10 +1,14 @@
-type ClassType =
-	| string
-	| (({ isActive }: { isActive: boolean }) => string | undefined)
+import { VariantType } from "./variant.types.js"
 
-export type LinkType = {
-	class?: ClassType
-	className?: ClassType
+type ActiveStyleType<T = string> =
+	| T
+	| (({ isActive }: { isActive: boolean }) => T | undefined)
+
+export type LinkType<S> = {
+	class?: ActiveStyleType
+	className?: ActiveStyleType
 	pathname?: string
 	hover?: "left" | "center" | "right" | "underlineNone"
+	style?: ActiveStyleType<S>
+	variant?: VariantType
 }
