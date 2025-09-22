@@ -7,7 +7,7 @@
 
 	interface Props
 		extends Omit<Omit<HTMLAnchorAttributes, "class">, "style">,
-			LinkType<CSSKebabType> {}
+			LinkType<CSSKebabType | string> {}
 
 	let {
 		class: className = "",
@@ -39,9 +39,11 @@
 		}
 	)}
 	aria-current={isActive ? "page" : undefined}
-	style={typeof style === "function"
-		? styleToStringUtil(style({ isActive }))
-		: styleToStringUtil(style)}
+	style={style
+		? typeof style === "function"
+			? styleToStringUtil(style({ isActive }))
+			: styleToStringUtil(style)
+		: style}
 >
 	{@render children?.()}
 </a>

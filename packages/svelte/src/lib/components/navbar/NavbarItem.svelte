@@ -7,7 +7,7 @@
 
 	interface Props
 		extends Omit<Omit<HTMLAnchorAttributes, "class">, "style">,
-			LinkType<CSSKebabType> {}
+			LinkType<CSSKebabType | string> {}
 
 	let { children, ...rest }: Props = $props()
 </script>
