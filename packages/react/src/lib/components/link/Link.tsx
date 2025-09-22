@@ -25,15 +25,7 @@ type PolymorphicComponentProps<
 type Props<C extends ElementType> = PolymorphicComponentProps<C, LinkType>
 
 function LinkComponent<C extends ElementType = "a">(
-	{
-		className = "",
-		pathname,
-		hoverUnderline,
-		hover,
-		as,
-		children,
-		...rest
-	}: Props<C>,
+	{ className = "", pathname, hover, as, children, ...rest }: Props<C>,
 	ref: Ref<any>
 ) {
 	const Component = as || "a"
@@ -49,8 +41,7 @@ function LinkComponent<C extends ElementType = "a">(
 				typeof className === "function" ? className({ isActive }) : className,
 				styles.link,
 				{
-					[styles.hasHover]: hover || hoverUnderline,
-					[styles[hoverUnderline!]]: Boolean(hoverUnderline),
+					[styles.hasHover]: hover,
 					[styles[hover!]]: Boolean(hover)
 				}
 			)}

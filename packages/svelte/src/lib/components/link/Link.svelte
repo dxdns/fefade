@@ -9,7 +9,6 @@
 	let {
 		class: className = "",
 		pathname,
-		hoverUnderline,
 		hover,
 		children,
 		...rest
@@ -24,8 +23,7 @@
 		typeof className === "function" ? className({ isActive }) : className,
 		styles.link,
 		{
-			[styles.hasHover]: Boolean(hover) || Boolean(hoverUnderline),
-			[styles[hoverUnderline!]]: Boolean(hoverUnderline),
+			[styles.hasHover]: Boolean(hover),
 			[styles[hover!]]: Boolean(hover)
 		}
 	)}

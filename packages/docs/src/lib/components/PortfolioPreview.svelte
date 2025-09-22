@@ -171,8 +171,8 @@
 		<h2 style="margin-bottom: 0.5rem;">Connect</h2>
 		<p class="text-muted">
 			Feel free to contact me at
-			<Link href="mailto:hi@fefade.dev" hoverUnderline="center">
-				hi@fefade.dev
+			<Link href="mailto:support@dxdns.dev" hover="center">
+				support@dxdns.dev
 			</Link>
 		</p>
 		<div style="display: flex; gap: 1rem; margin-top: 1rem;">
@@ -271,11 +271,7 @@
 				"
 			>
 				<span class="text-muted">© 2025</span>
-				<Link
-					href="https://github.com/dxdns"
-					target="_blank"
-					hoverUnderline="right"
-				>
+				<Link href="https://github.com/dxdns" target="_blank" hover="right">
 					dxdns
 				</Link>
 			</div>

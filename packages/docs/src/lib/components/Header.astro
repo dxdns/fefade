@@ -47,7 +47,7 @@ const menuData = [
 		{shouldRenderSearch && <Search />}
 	</div>
 	<div class="sl-hidden md:sl-flex print:hidden right-group" style="gap: 2rem;">
-		<nav>
+		<nav class="md:sl-hidden lg:sl-flex">
 			{
 				menuData.map((item) => (
 					<LinkButton
