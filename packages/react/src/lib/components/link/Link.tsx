@@ -1,4 +1,4 @@
-import type { LinkType } from "@fefade/core/types"
+import type { LinkType, VariantType } from "@fefade/core/types"
 import { classMapUtil } from "@fefade/core/utils"
 import {
 	ComponentPropsWithoutRef,
@@ -9,9 +9,11 @@ import {
 	Ref
 } from "react"
 import styles from "@fefade/core/styles/Link.module.css"
+import buttonStyles from "@fefade/core/styles/Button.module.css"
 
 type AsProp<C extends ElementType> = {
 	as?: C
+	variant?: VariantType
 }
 
 type PropsToOmit<C extends ElementType, P> = keyof (AsProp<C> & P)
@@ -25,13 +27,24 @@ type PolymorphicComponentProps<
 type Props<C extends ElementType> = PolymorphicComponentProps<C, LinkType>
 
 function LinkComponent<C extends ElementType = "a">(
-	{ className = "", pathname, hover, as, children, ...rest }: Props<C>,
+	{
+		className = "",
+		pathname,
+		hover,
+		variant = "text",
+		as,
+		children,
+		...rest
+	}: Props<C>,
 	ref: Ref<any>
 ) {
 	const Component = as || "a"
 
 	const target = (rest as any).href || (rest as any).to
-	const isActive = pathname === target
+	const isActive =
+		target && pathname
+			? pathname === target
+			: (rest as Record<string, any>)["aria-current"] === "page"
 
 	return (
 		<Component
@@ -39,12 +52,15 @@ function LinkComponent<C extends ElementType = "a">(
 			ref={ref}
 			className={classMapUtil(
 				typeof className === "function" ? className({ isActive }) : className,
+				[variant, buttonStyles],
+				buttonStyles.button,
 				styles.link,
 				{
-					[styles.hasHover]: hover,
+					[styles.hasHover]: Boolean(hover),
 					[styles[hover!]]: Boolean(hover)
 				}
 			)}
+			aria-current={isActive ? "page" : undefined}
 		>
 			{children}
 		</Component>

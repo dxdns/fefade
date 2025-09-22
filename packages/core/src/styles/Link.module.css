@@ -1,12 +1,10 @@
 .link {
+	height: fit-content;
 	margin: 0;
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5em;
-	transition: color 0.3s ease;
-	color: var(--ff-on-bg, currentColor);
+	padding: 0;
 	line-height: 0.7em;
 	text-decoration: none;
+	font-weight: 400;
 }
 
 .hasHover {
@@ -51,10 +49,6 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-	.link:hover {
-		color: color-mix(in srgb, var(--ff-on-bg, currentColor) 75%, gray 15%);
-	}
-
 	.link svg {
 		transition: opacity 0.3s ease;
 	}
