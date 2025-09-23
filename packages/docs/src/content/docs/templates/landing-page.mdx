@@ -1,5 +1,5 @@
 ---
-title: Landing Page Svelte Template Overview
+title: Landing Page Template Overview
 description:
   FitFlow is a sleek, fully responsive landing page template designed for
   startups, apps, and modern web projects. With clean layouts, modular sections,
@@ -9,25 +9,12 @@ template: splash
 tableOfContents: false
 ---
 
-import TemplateGallery from "@/components/TemplateGallery.svelte"
 import TemplateOverview from "@/components/TemplateOverview.svelte"
-
-<TemplateGallery
-	client:load
-	data={[
-		{
-			title: "Landing Page",
-			src: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225613/fit-flow_imgci4.png",
-			href: "/templates/svelte/landing-page"
-		}
-	]}
-/>
-
-<br />
 
 <TemplateOverview 
     client:load
     data={{ 
+        name: "landing-page",
         title: "FitFlow – Modern & Responsive Landing Page Template",
         description: `
         FitFlow is a sleek, fully responsive landing page template designed for startups, apps, and modern web projects. With clean layouts, modular sections, and ready-to-use components, FitFlow helps you launch your website quickly and efficiently.
@@ -36,7 +23,7 @@ import TemplateOverview from "@/components/TemplateOverview.svelte"
         `,
         tags: ["Svelte", "TypeScript", "Responsive", "Free"],
         codeUrl: "https://github.com/dxdns/fefade",
-        previewUrl: "/templates/svelte/landing-page"
+        image: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225613/fit-flow_imgci4.png"
     }}
 
 />

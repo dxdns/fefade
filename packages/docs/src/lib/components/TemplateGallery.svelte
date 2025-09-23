@@ -5,7 +5,7 @@
 		data: {
 			title: string
 			src: string
-			href: string
+			href?: string
 		}[]
 	}
 

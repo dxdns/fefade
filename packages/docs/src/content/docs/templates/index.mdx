@@ -1,24 +1,31 @@
 ---
 title: Templates
-description: all templates.
+description:
+  Discover a curated collection of modern, responsive templates. Explore
+  ready-made layouts and reusable components to speed up your development.
+template: splash
+categories: ["react", "vue", "svelte"]
 ---
 
-import { CardGrid, LinkCard } from "@astrojs/starlight/components"
-import { capitalizeUtil } from "@fefade/core/utils"
-import { Button } from "@fefade/svelte"
+import TemplateGallery from "@/components/TemplateGallery.svelte"
 
-<CardGrid>
-	{["svelte"].map((framework) => (
-		<LinkCard
-			title={capitalizeUtil(framework)}
-			href={`/templates/${framework}`}
-		/>
-	))}
-	{["react", "vue"].map((framework) => (
-		<LinkCard
-			title={`${capitalizeUtil(framework)} (?)`}
-			href={"/templates/"}
-			style={{ pointerEvents: "none" }}
-		/>
-	))}
-</CardGrid>
+<TemplateGallery
+	client:load
+	data={[
+		{
+			title: "Landing Page",
+			src: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225613/fit-flow_imgci4.png",
+			href: "/templates/landing-page"
+		},
+		{
+			title: "Sign In",
+			src: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225726/sign-in_ew4byw.png",
+			href: "/templates/sign-in"
+		},
+		{
+			title: "Portfolio",
+			src: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225789/portfolio_zigxoy.png",
+			href: "/templates/portfolio"
+		}
+	]}
+/>

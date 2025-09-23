@@ -1,5 +1,5 @@
 ---
-title: Portfolio Svelte Template Overview
+title: Portfolio Template Overview
 description:
   Portfolio template is a sleek and customizable template designed to showcase
   personal or professional projects. With a clean layout and responsive design,
@@ -8,25 +8,12 @@ template: splash
 tableOfContents: false
 ---
 
-import TemplateGallery from "@/components/TemplateGallery.svelte"
 import TemplateOverview from "@/components/TemplateOverview.svelte"
-
-<TemplateGallery
-	client:load
-	data={[
-		{
-			title: "Portfolio",
-			src: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225789/portfolio_zigxoy.png",
-			href: "/templates/svelte/portfolio"
-		}
-	]}
-/>
-
-<br />
 
 <TemplateOverview 
     client:load
     data={{ 
+        name: "portfolio",
         title: "Portfolio Template – Modern & Responsive",
         description: `
         Designed with simplicity and flexibility in mind, the Portfolio template is perfect for developers, designers, and creatives who want to showcase their work professionally. Its modular structure makes it easy to adapt and extend to fit your personal brand.
@@ -35,7 +22,7 @@ import TemplateOverview from "@/components/TemplateOverview.svelte"
         `,
         tags: ["Svelte", "TypeScript", "Portfolio", "Responsive", "Free"],
         codeUrl: "https://github.com/dxdns/fefade",
-        previewUrl: "/templates/svelte/portfolio"
+        image: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225789/portfolio_zigxoy.png"
     }}
 
 />

@@ -1,5 +1,12 @@
 <script lang="ts">
-	import { Badge, Button, Separator } from "@fefade/svelte"
+	import {
+		Badge,
+		Button,
+		Gallery,
+		Select,
+		Separator,
+		Text
+	} from "@fefade/svelte"
 
 	interface Props {
 		data: {
@@ -7,11 +14,16 @@
 			description: string
 			tags: string[]
 			codeUrl: string
-			previewUrl: string
+			name: string
+			image: string
 		}
 	}
 
 	let { data }: Props = $props()
+
+	let frameworkSelected = $state("svelte")
+
+	const href = $derived(`/templates/${frameworkSelected}/${data.name}`)
 
 	function getClassNames(s: string) {
 		switch (s.toLowerCase()) {
@@ -31,9 +43,14 @@
 	}
 </script>
 
+<Gallery.Image lazy dataSrc={data.image} alt={data.title} {href}>
+	<Text as="h3">
+		{data.title}
+	</Text>
+</Gallery.Image>
+
 <div style="display:flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
 	<div style="flex: 1; min-width: 300px;">
-		<h2>{data.title}</h2>
 		<p>{data.description}</p>
 	</div>
 	<div style="display: flex; gap: 1rem;">
@@ -48,10 +65,22 @@
 					</Badge>
 				{/each}
 			</div>
+			<Select
+				style="width: auto;"
+				onchange={(e) => {
+					const { value } = e.currentTarget
+					frameworkSelected = value
+				}}
+				value={frameworkSelected}
+			>
+				<option value="react" disabled>React</option>
+				<option value="vue" disabled>Vue</option>
+				<option value="svelte">Svelte</option>
+			</Select>
 			<Button variant="outlined" href={data.codeUrl} target="_blank">
 				Check out the code
 			</Button>
-			<Button href={data.previewUrl} target="_blank">Preview</Button>
+			<Button {href} target="_blank">Preview</Button>
 		</div>
 	</div>
 </div>

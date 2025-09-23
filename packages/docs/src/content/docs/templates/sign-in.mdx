@@ -1,5 +1,5 @@
 ---
-title: Sign In Svelte Template Overview
+title: Sign In Template Overview
 description:
   Sign In template is a modern, user-friendly sign-in template designed to
   provide a seamless authentication experience. With clean layouts and
@@ -9,25 +9,12 @@ template: splash
 tableOfContents: false
 ---
 
-import TemplateGallery from "@/components/TemplateGallery.svelte"
 import TemplateOverview from "@/components/TemplateOverview.svelte"
-
-<TemplateGallery
-	client:load
-	data={[
-		{
-			title: "Sign In",
-			src: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225726/sign-in_ew4byw.png",
-			href: "/templates/svelte/sign-in"
-		}
-	]}
-/>
-
-<br />
 
 <TemplateOverview 
     client:load
     data={{ 
+        name: "sign-in",
         title: "Sign In template – Simple",
         description: `
         Its minimalist layout emphasizes clarity and ease of use, ensuring users can log in effortlessly from any device.
@@ -36,7 +23,7 @@ import TemplateOverview from "@/components/TemplateOverview.svelte"
         `,
         tags: ["Svelte", "TypeScript", "Authentication", "Responsive", "Free"],
         codeUrl: "https://github.com/dxdns/fefade",
-        previewUrl: "/templates/svelte/sign-in"
+        image: "https://res.cloudinary.com/dkufrbqih/image/upload/v1756225726/sign-in_ew4byw.png"
     }}
 
 />
