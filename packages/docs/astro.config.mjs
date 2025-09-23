@@ -31,9 +31,9 @@ export default defineConfig({
 				PageTitle: "./src/lib/components/PageTitle.astro"
 			},
 			customCss: ["./src/styles/custom.css", "./src/fonts/font-face.css"],
-			favicon: "/favicon.png",
+			favicon: "/favicon.ico",
 			logo: {
-				src: "./public/favicon.png",
+				src: "./public/logo.png",
 				alt: "logo",
 				replacesTitle: false
 			},
