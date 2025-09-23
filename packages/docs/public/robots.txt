@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fefade.dev/sitemap-index.xml
+Sitemap: https://fefade.dev/sitemap-0.xml

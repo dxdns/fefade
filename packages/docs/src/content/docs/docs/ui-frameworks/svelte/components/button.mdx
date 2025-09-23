@@ -7,9 +7,77 @@ head:
 categories: ["svelte"]
 ---
 
-import ButtonPreview from "@/components/ButtonPreview.svelte"
+import ButtonVariantPreview from "@/components/ButtonVariantPreview.svelte"
+import ButtonColorPreview from "@/components/ButtonColorPreview.svelte"
+import ButtonSizePreview from "@/components/ButtonSizePreview.svelte"
+import ButtonLoadingPreview from "@/components/ButtonLoadingPreview.svelte"
+import ButtonIconPreview from "@/components/ButtonIconPreview.svelte"
+import ButtonLinkPreview from "@/components/ButtonLinkPreview.svelte"
+import ButtonDisabledPreview from "@/components/ButtonDisabledPreview.svelte"
+import ButtonPressedEffectPreview from "@/components/ButtonPressedEffectPreview.svelte"
 import PreviewTabs from "@/components/PreviewTabs.astro"
 
-<PreviewTabs component="ButtonPreview">
-	<ButtonPreview client:load />
+## Variant
+
+Use the `variant` prop to change the visual style of the Button.
+
+<PreviewTabs component="ButtonVariantPreview">
+	<ButtonVariantPreview />
+</PreviewTabs>
+
+## Color
+
+Use the `class` or `style` prop to change the color of the button.
+
+<PreviewTabs component="ButtonColorPreview">
+	<ButtonColorPreview client:load />
+</PreviewTabs>
+
+## Size
+
+Use the `size` prop to change the size of the button.
+
+<PreviewTabs component="ButtonSizePreview">
+	<ButtonSizePreview />
+</PreviewTabs>
+
+## Loading
+
+Pass the `isLoading` props to the Button component to show a loading spinner.
+
+<PreviewTabs component="ButtonLoadingPreview">
+	<ButtonLoadingPreview />
+</PreviewTabs>
+
+## Icon
+
+Use icons within a button.
+
+<PreviewTabs component="ButtonIconPreview">
+	<ButtonIconPreview />
+</PreviewTabs>
+
+## Link
+
+Use the `href` and `target` optional prop to render a button as a link.
+
+<PreviewTabs component="ButtonLinkPreview">
+	<ButtonLinkPreview client:load />
+</PreviewTabs>
+
+## Disabled
+
+Use the `disabled` prop to disable the button.
+
+<PreviewTabs component="ButtonDisabledPreview">
+	<ButtonDisabledPreview />
+</PreviewTabs>
+
+## Pressed effect
+
+Press effect is enabled by default. Use the `pressedEffect` prop to disable
+pressed effect the button.
+
+<PreviewTabs component="ButtonPressedEffectPreview">
+	<ButtonPressedEffectPreview />
 </PreviewTabs>
