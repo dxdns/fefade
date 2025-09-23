@@ -14,11 +14,6 @@ const shouldRenderSearch =
 	config.pagefind ||
 	config.components.Search !== "@astrojs/starlight/components/Search.astro"
 
-const currentPath =
-	typeof window !== "undefined"
-		? window.location.pathname
-		: new URL(Astro.request.url).pathname
-
 const menuData = [
 	{
 		label: "Docs",
@@ -37,6 +32,8 @@ const menuData = [
 		path: "/docs/theming"
 	}
 ]
+
+const { entry } = Astro.locals.starlightRoute
 ---
 
 <div class="header">
@@ -52,7 +49,7 @@ const menuData = [
 				menuData.map((item) => (
 					<LinkButton
 						href={item.path}
-						variant={currentPath === item.path ? "primary" : "minimal"}
+						variant={`/${entry.slug}` === item.path ? "primary" : "minimal"}
 						style="padding: 0.3rem 1rem;"
 					>
 						{item.label}
