@@ -3,15 +3,27 @@ import ptBR from "./pt-br.json"
 
 const translations = {
 	en,
-	"pt-BR": ptBR
+	"pt-br": ptBR
 }
 
 type Locale = keyof typeof translations
 
-export function getTranslations(locale?: string) {
+const rootLocale = "en"
+
+function getLocale(currentLocale?: string) {
+	return currentLocale?.toLowerCase() || rootLocale
+}
+
+export function getTranslations(currentLocale?: string) {
+	const locale = getLocale(currentLocale)
 	const availableLocales = Object.keys(translations) as Locale[]
 	const lang = availableLocales.includes(locale as Locale)
 		? (locale as Locale)
 		: "en"
 	return translations[lang]
+}
+
+export function getBasePath(currentLocale?: string, prefix = "docs") {
+	const locale = getLocale(currentLocale)
+	return locale === rootLocale ? `/${prefix}` : `/${locale}/${prefix}`
 }

@@ -6,6 +6,7 @@ import SiteTitle from "@astrojs/starlight/components/SiteTitle.astro"
 import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro"
 import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro"
 import { LinkButton } from "@astrojs/starlight/components"
+import { getBasePath } from "@/i18n"
 
 /**
  * Render the `Search` component if Pagefind is enabled or the default search component has been overridden.
@@ -14,26 +15,27 @@ const shouldRenderSearch =
 	config.pagefind ||
 	config.components.Search !== "@astrojs/starlight/components/Search.astro"
 
-const menuData = [
-	{
-		label: "Docs",
-		path: "/docs"
-	},
-	{
-		label: "Components",
-		path: "/docs/components"
-	},
-	{
-		label: "Templates",
-		path: "/docs/templates"
-	},
-	{
-		label: "Theming",
-		path: "/docs/theming"
-	}
-]
+const { sidebar } = Astro.locals.starlightRoute
+const basePath = getBasePath(Astro.currentLocale)
 
-const { entry } = Astro.locals.starlightRoute
+const isDocsLink = (href: string) => {
+	const subpaths = ["components", "templates", "theming"]
+	return (
+		href === `${basePath}/` ||
+		subpaths.some((sub) => href === `${basePath}/${sub}/`)
+	)
+}
+
+const resolvedMenu = sidebar
+	.filter((item) => item.type === "link")
+	.filter((v) => isDocsLink(v.href))
+	.map((link) => ({
+		...link,
+		label:
+			{
+				[`${basePath}/`]: "Docs"
+			}[link.href] ?? link.label
+	}))
 ---
 
 <div class="header">
@@ -46,10 +48,10 @@ const { entry } = Astro.locals.starlightRoute
 	<div class="sl-hidden md:sl-flex print:hidden right-group" style="gap: 2rem;">
 		<nav class="md:sl-hidden lg:sl-flex">
 			{
-				menuData.map((item) => (
+				resolvedMenu.map((item) => (
 					<LinkButton
-						href={item.path}
-						variant={`/${entry.slug}` === item.path ? "primary" : "minimal"}
+						href={item.href}
+						variant={item.isCurrent ? "primary" : "minimal"}
 						style="padding: 0.3rem 1rem;"
 					>
 						{item.label}

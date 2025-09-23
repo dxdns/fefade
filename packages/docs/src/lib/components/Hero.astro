@@ -4,8 +4,10 @@ import { Image } from "astro:assets"
 import { Code } from "@astrojs/starlight/components"
 import type { StarlightIcon } from "@astrojs/starlight/types"
 import { getTranslations } from "@/i18n"
+import { getBasePath } from "@/i18n"
 
 const { buttons } = getTranslations(Astro.currentLocale)
+const basePath = getBasePath(Astro.currentLocale)
 const { data } = Astro.locals.starlightRoute.entry
 const { title = data.title, tagline, image } = data.hero || {}
 
@@ -62,7 +64,7 @@ const frameworksData: Record<string, StarlightIcon> = {
 
 		<div class="sl-flex actions">
 			<LinkButton
-				href="/docs"
+				href={basePath}
 				style="max-width: fit-content; height: fit-content; margin: auto;"
 			>
 				{buttons.startBuilding}
