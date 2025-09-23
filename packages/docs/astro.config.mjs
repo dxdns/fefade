@@ -14,6 +14,17 @@ export default defineConfig({
 		sitemap(),
 		starlight({
 			title: "fefade",
+			defaultLocale: "root",
+			locales: {
+				root: {
+					label: "English",
+					lang: "en"
+				},
+				"pt-br": {
+					label: "Português do Brasil",
+					lang: "pt-BR"
+				}
+			},
 			components: {
 				PageFrame: "./src/lib/layouts/RootLayout.astro",
 				Hero: "./src/lib/components/Hero.astro",
@@ -36,7 +47,10 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: "Introduction",
-					slug: "docs"
+					slug: "docs",
+					translations: {
+						"pt-BR": "Introdução"
+					}
 				},
 				{
 					label: "Installation",

@@ -3,7 +3,9 @@ import { LinkButton, TabItem, Tabs } from "@astrojs/starlight/components"
 import { Image } from "astro:assets"
 import { Code } from "@astrojs/starlight/components"
 import type { StarlightIcon } from "@astrojs/starlight/types"
+import { getTranslations } from "@/i18n"
 
+const { buttons } = getTranslations(Astro.currentLocale)
 const { data } = Astro.locals.starlightRoute.entry
 const { title = data.title, tagline, image } = data.hero || {}
 
@@ -63,7 +65,7 @@ const frameworksData: Record<string, StarlightIcon> = {
 				href="/docs"
 				style="max-width: fit-content; height: fit-content; margin: auto;"
 			>
-				Start Building
+				{buttons.startBuilding}
 			</LinkButton>
 
 			<div class="tabs">

@@ -21,35 +21,36 @@ import About from "@/components/About.astro"
 
 <CardGrid stagger>
 	<Card
-    isTranslucent
-    style="
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    "
+      isTranslucent
+      style="
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      "
     >
     <Link href="/docs/components">
       <h3>Progress Circle</h3>
     </Link>
     <ProgressCirclePreview client:load />
 	</Card>
-	<Card
-    isTranslucent
-    style="
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    "
+
+    <Card
+      isTranslucent
+      style="
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      "
     >
       <Link href="/docs/components">
         <h3>Button</h3>
       </Link>
       <ButtonPreview client:load />
-	</Card>
+    </Card>
 
 <Card
 	isTranslucent
@@ -75,11 +76,10 @@ import About from "@/components/About.astro"
 </CardGrid>
 
 <About>
-  fefade is a lightweight UI component library built for simplicity and speed.
-  Design clean, fast, and accessible interfaces with zero dependencies.
+    fefade is a lightweight UI component library built for simplicity and speed.
+    Design clean, fast, and accessible interfaces with zero dependencies.
 
-MIT-licensed and [open source](https://github.com/dxdns/fefade).
-
-[Learn about fefade](/docs)
+    MIT-licensed and [open source](https://github.com/dxdns/fefade).
+    [Learn about fefade](/docs)
 
 </About>

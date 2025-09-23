@@ -1,0 +1,86 @@
+---
+title: Biblioteca de componentes UI - React, Vue e Svelte
+description:
+  Biblioteca de componentes fefade - Compatível com os frameworks React, Vue e
+  Svelte.
+template: splash
+hero:
+  title: Biblioteca de componentes UI
+  tagline: Mínimo, acessível, sem dependências.
+  image:
+    alt: logo
+    file: ../../../../public/favicon.png
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components"
+import { Card, Link } from "@fefade/svelte"
+import TextFieldPreview from "@/components/TextFieldPreview.svelte"
+import CarouselPreview from "@/components/CarouselPreview.svelte"
+import ButtonPreview from "@/components/ButtonPreview.svelte"
+import ProgressCirclePreview from "@/components/ProgressCirclePreview.svelte"
+import About from "@/components/About.astro"
+
+<CardGrid stagger>
+	<Card
+        isTranslucent
+        style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        "
+    >
+    <Link href="/docs/components">
+      <h3>Progress Circle</h3>
+    </Link>
+    <ProgressCirclePreview client:load />
+	</Card>
+
+    <Card
+        isTranslucent
+        style="
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        "
+    >
+      <Link href="/docs/components">
+        <h3>Button</h3>
+      </Link>
+      <ButtonPreview client:load />
+    </Card>
+
+<Card
+	isTranslucent
+	style="
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        "
+>
+	<Link href="/docs/components">
+		<h3>Text Field</h3>
+	</Link>
+	<TextFieldPreview />
+</Card>
+
+  <div>
+    <LinkCard title="Todos os componentes" href="/docs/components" />
+    <LinkCard title="Explorar templates" href="/docs/templates"  />
+  </div>
+</CardGrid>
+
+<About>
+    O fefade é uma biblioteca leve de componentes de interface de usuário (UI) desenvolvida para simplicidade e velocidade.
+    Projete interfaces limpas, rápidas e acessíveis, sem dependências.
+
+    Licenciado pelo MIT e [código aberto](https://github.com/dxdns/fefade).
+    [Saiba mais sobre o fefade](/docs)
+
+</About>
