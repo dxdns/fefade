@@ -2,12 +2,11 @@
 import { LinkButton, TabItem, Tabs } from "@astrojs/starlight/components"
 import { Image } from "astro:assets"
 import { Code } from "@astrojs/starlight/components"
-import type { StarlightIcon } from "@astrojs/starlight/types"
 import { getTranslations } from "@/i18n"
-import { getBasePath } from "@/i18n"
+import { getPath } from "@/i18n"
+import { iconsData } from "@/data"
 
 const { buttons } = getTranslations(Astro.currentLocale)
-const basePath = getBasePath(Astro.currentLocale)
 const { data } = Astro.locals.starlightRoute.entry
 const { title = data.title, tagline, image } = data.hero || {}
 
@@ -31,12 +30,6 @@ if (image) {
 	} else {
 		rawHtml = image.html
 	}
-}
-
-const frameworksData: Record<string, StarlightIcon> = {
-	React: "seti:react",
-	Vue: "seti:vue",
-	Svelte: "seti:svelte"
 }
 ---
 
@@ -64,7 +57,7 @@ const frameworksData: Record<string, StarlightIcon> = {
 
 		<div class="sl-flex actions">
 			<LinkButton
-				href={basePath}
+				href={getPath("/installation", Astro.currentLocale)}
 				style="max-width: fit-content; height: fit-content; margin: auto;"
 			>
 				{buttons.startBuilding}
@@ -73,8 +66,8 @@ const frameworksData: Record<string, StarlightIcon> = {
 			<div class="tabs">
 				<Tabs>
 					{
-						Object.keys(frameworksData).map((item) => (
-							<TabItem label={item} icon={frameworksData[item]}>
+						Object.keys(iconsData).map((item) => (
+							<TabItem label={item} icon={iconsData[item]}>
 								<Code
 									code={`npm install @fefade/core @fefade/${item.toLowerCase()}`}
 									lang="bash"

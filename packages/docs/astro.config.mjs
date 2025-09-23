@@ -47,32 +47,32 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: "Introduction",
-					slug: "docs",
+					slug: "introduction",
 					translations: {
 						"pt-BR": "Introdução"
 					}
 				},
 				{
 					label: "Installation",
-					slug: "docs/installation"
+					slug: "installation"
 				},
 				{
 					label: "Theming",
-					slug: "docs/theming"
+					slug: "theming"
 				},
 				{
 					label: "Components",
-					slug: "docs/components",
+					slug: "components",
 					translations: {
 						"pt-BR": "Componentes"
 					}
 				},
 				{
 					label: "Templates",
-					slug: "docs/templates"
+					slug: "templates"
 				},
 				{
-					label: "UI Frameworks",
+					label: "Frameworks",
 					collapsed: false,
 					items: [
 						{
@@ -82,19 +82,19 @@ export default defineConfig({
 								{
 									label: "Getting Started",
 									autogenerate: {
-										directory: "docs/ui-frameworks/svelte/getting-started"
+										directory: "frameworks/svelte/getting-started"
 									}
 								},
 								{
 									label: "Components",
 									autogenerate: {
-										directory: "docs/ui-frameworks/svelte/components"
+										directory: "frameworks/svelte/components"
 									}
 								},
 								{
 									label: "Utils",
 									autogenerate: {
-										directory: "docs/ui-frameworks/svelte/utils"
+										directory: "frameworks/svelte/utils"
 									}
 								}
 							]
@@ -106,19 +106,19 @@ export default defineConfig({
 								{
 									label: "Getting Started",
 									autogenerate: {
-										directory: "docs/ui-frameworks/react/getting-started"
+										directory: "frameworks/react/getting-started"
 									}
 								},
 								{
 									label: "Components",
 									autogenerate: {
-										directory: "docs/ui-frameworks/react/components"
+										directory: "frameworks/react/components"
 									}
 								},
 								{
 									label: "Utils",
 									autogenerate: {
-										directory: "docs/ui-frameworks/react/utils"
+										directory: "frameworks/react/utils"
 									}
 								}
 							]
@@ -130,13 +130,13 @@ export default defineConfig({
 								{
 									label: "Getting Started",
 									autogenerate: {
-										directory: "docs/ui-frameworks/vue/getting-started"
+										directory: "frameworks/vue/getting-started"
 									}
 								},
 								{
 									label: "Components",
 									autogenerate: {
-										directory: "docs/ui-frameworks/vue/components"
+										directory: "frameworks/vue/components"
 									}
 								}
 							]

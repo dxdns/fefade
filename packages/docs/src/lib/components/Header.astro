@@ -6,7 +6,7 @@ import SiteTitle from "@astrojs/starlight/components/SiteTitle.astro"
 import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro"
 import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro"
 import { LinkButton } from "@astrojs/starlight/components"
-import { getBasePath } from "@/i18n"
+import { getPath } from "@/i18n"
 
 /**
  * Render the `Search` component if Pagefind is enabled or the default search component has been overridden.
@@ -16,13 +16,12 @@ const shouldRenderSearch =
 	config.components.Search !== "@astrojs/starlight/components/Search.astro"
 
 const { sidebar } = Astro.locals.starlightRoute
-const basePath = getBasePath(Astro.currentLocale)
 
 const isDocsLink = (href: string) => {
-	const subpaths = ["components", "templates", "theming"]
+	const subpaths = ["installation", "components", "templates", "theming"]
 	return (
-		href === `${basePath}/` ||
-		subpaths.some((sub) => href === `${basePath}/${sub}/`)
+		href === getPath("/", Astro.currentLocale) ||
+		subpaths.some((sub) => href === getPath(`/${sub}/`, Astro.currentLocale))
 	)
 }
 
@@ -33,9 +32,10 @@ const resolvedMenu = sidebar
 		...link,
 		label:
 			{
-				[`${basePath}/`]: "Docs"
+				[getPath("/installation/", Astro.currentLocale)]: "Docs"
 			}[link.href] ?? link.label
 	}))
+console.log(getPath("/installation/", Astro.currentLocale))
 ---
 
 <div class="header">

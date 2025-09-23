@@ -1,6 +1,6 @@
 ---
-title: Overview
-description: all frameworks available
+title: Theming
+description: theme config.
 ---
 
 import { CardGrid, LinkCard } from "@astrojs/starlight/components"
@@ -10,7 +10,7 @@ import { capitalizeUtil } from "@fefade/core/utils"
 	{["svelte", "react", "vue"].map((framework) => (
 		<LinkCard
 			title={capitalizeUtil(framework)}
-			href={`/docs/ui-frameworks/${framework}/getting-started/`}
+			href={`/frameworks/${framework}/getting-started/theming/`}
 		/>
 	))}
 </CardGrid>

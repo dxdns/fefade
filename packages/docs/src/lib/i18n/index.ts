@@ -23,7 +23,7 @@ export function getTranslations(currentLocale?: string) {
 	return translations[lang]
 }
 
-export function getBasePath(currentLocale?: string, prefix = "docs") {
+export function getPath(path: string, currentLocale?: string) {
 	const locale = getLocale(currentLocale)
-	return locale === rootLocale ? `/${prefix}` : `/${locale}/${prefix}`
+	return locale === rootLocale ? path : `/${locale}/${path.replace(/^\/+/, "")}`
 }

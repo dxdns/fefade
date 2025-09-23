@@ -11,13 +11,13 @@ import { Button } from "@fefade/svelte"
 	{["svelte"].map((framework) => (
 		<LinkCard
 			title={capitalizeUtil(framework)}
-			href={`/docs/ui-frameworks/${framework}/getting-started/templates/`}
+			href={`/frameworks/${framework}/getting-started/templates/`}
 		/>
 	))}
 	{["react", "vue"].map((framework) => (
 		<LinkCard
 			title={`${capitalizeUtil(framework)} (?)`}
-			href={"/docs/templates/"}
+			href={"/templates/"}
 			style={{ pointerEvents: "none" }}
 		/>
 	))}

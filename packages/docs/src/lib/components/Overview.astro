@@ -9,7 +9,7 @@ interface Props {
 const { slug }: Props = Astro.props
 
 const collectionFiltered = await getCollection("docs", ({ id }) => {
-	const after = id.split(slug ?? "docs/components/")[1]
+	const after = id.split(slug ?? "components/")[1]
 	const isComponent = after && after !== "index" && !after.includes("/")
 	return isComponent
 })
