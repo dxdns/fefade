@@ -4,7 +4,7 @@
 	interface Props {
 		data: {
 			title: string
-			src: string
+			image: string
 			href?: string
 		}[]
 	}
@@ -12,9 +12,9 @@
 	let { data }: Props = $props()
 </script>
 
-<Gallery columns={1} minWidth="350px" gap="2rem">
-	{#each data as { title, src, href } (src)}
-		<Gallery.Image lazy dataSrc={src} alt={title} {href}>
+<Gallery gap="2rem" style="grid-auto-rows: 350px;">
+	{#each data as { title, image, href } (image)}
+		<Gallery.Image lazy dataSrc={image} alt={title} {href}>
 			<Text as="h3">
 				{title}
 			</Text>

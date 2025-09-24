@@ -43,7 +43,14 @@
 	}
 </script>
 
-<Gallery.Image lazy dataSrc={data.image} alt={data.title} {href}>
+<Gallery.Image
+	lazy
+	dataSrc={data.image}
+	alt={data.title}
+	{href}
+	style="max-height: 300px;"
+	target="_blank"
+>
 	<Text as="h3">
 		{data.title}
 	</Text>

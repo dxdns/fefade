@@ -32,3 +32,11 @@ input[type="number"] {
 	font-family: Montserrat;
 	font-weight: 500;
 }
+
+
+@media screen and (max-width: 768px) {
+	main {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
