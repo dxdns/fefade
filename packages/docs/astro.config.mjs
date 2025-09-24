@@ -62,10 +62,7 @@ export default defineConfig({
 				},
 				{
 					label: "Components",
-					slug: "components",
-					translations: {
-						"pt-BR": "Componentes"
-					}
+					slug: "components"
 				},
 				{
 					label: "Templates",

@@ -54,11 +54,23 @@
 	function handleOpen() {
 		isOpen = !isOpen
 		document.body.style.overflow = isOpen ? "hidden" : "auto"
+
+		const header = document.getElementById("header")
+		const parent = header?.parentElement
+		if (header && parent) {
+			parent.style.display = "none"
+		}
 	}
 
 	function handleClose() {
 		isOpen = false
 		document.body.style.overflow = "auto"
+
+		const header = document.getElementById("header")
+		const parent = header?.parentElement
+		if (header && parent) {
+			parent.style.display = "block"
+		}
 	}
 </script>
 
@@ -214,8 +226,9 @@
 					orientation="horizontal"
 					style="
 					display: grid;
-					grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+					grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 					gap: 1rem;
+					justify-content: center;
 					"
 					bgColor="#ff6b35"
 				>
@@ -249,7 +262,7 @@
 						max-width: 300px;
 						text-align: {isMd.value ? 'center' : 'left'};
 						align-items: center;
-						padding: 1rem;
+						padding: 3rem;
 						"
 					>
 						<Badge size="lg" style="width: 80%;">✨ AI-Powered</Badge>
@@ -286,50 +299,71 @@
 				</div>
 			</section>
 
-			<section id="three">
+			<section
+				id="three"
+				style="display: flex; flex-direction: column; gap: 1rem;"
+			>
 				<h2>Frequently Asked Questions</h2>
-				<br />
-				<Card>
-					<Accordion id="faq1" label="How does the AI personal trainer work?">
-						<p>
-							Our AI analyzes your workout history, preferences, and goals to
-							create personalized training plans. It continuously adapts based
-							on your progress and feedback to ensure optimal results.
-						</p>
-					</Accordion>
+				<Accordion
+					id="faq1"
+					label="How does the AI personal trainer work?"
+					autofocus
+					variant="text"
+				>
+					<p>
+						Our AI analyzes your workout history, preferences, and goals to
+						create personalized training plans. It continuously adapts based on
+						your progress and feedback to ensure optimal results.
+					</p>
+				</Accordion>
 
-					<Accordion id="faq2" label="Can I cancel my subscription anytime?">
-						<p>
-							Yes! You can cancel your subscription at any time. There are no
-							cancellation fees, and you'll continue to have access to Pro
-							features until your current billing period ends.
-						</p>
-					</Accordion>
+				<Accordion
+					id="faq2"
+					label="Can I cancel my subscription anytime?"
+					variant="text"
+				>
+					<p>
+						Yes! You can cancel your subscription at any time. There are no
+						cancellation fees, and you'll continue to have access to Pro
+						features until your current billing period ends.
+					</p>
+				</Accordion>
 
-					<Accordion id="faq3" label="Do I need equipment to use FitFlow?">
-						<p>
-							Not at all! FitFlow includes bodyweight workouts that require no
-							equipment. We also have equipment-based workouts if you have
-							access to a gym or home equipment.
-						</p>
-					</Accordion>
+				<Accordion
+					id="faq3"
+					label="Do I need equipment to use FitFlow?"
+					variant="text"
+				>
+					<p>
+						Not at all! FitFlow includes bodyweight workouts that require no
+						equipment. We also have equipment-based workouts if you have access
+						to a gym or home equipment.
+					</p>
+				</Accordion>
 
-					<Accordion id="faq4" label="Is there a nutrition tracking feature?">
-						<p>
-							Yes! Pro and Elite plans include comprehensive nutrition tracking
-							with macro counting, meal planning, and integration with popular
-							food databases.
-						</p>
-					</Accordion>
+				<Accordion
+					id="faq4"
+					label="Is there a nutrition tracking feature?"
+					variant="text"
+				>
+					<p>
+						Yes! Pro and Elite plans include comprehensive nutrition tracking
+						with macro counting, meal planning, and integration with popular
+						food databases.
+					</p>
+				</Accordion>
 
-					<Accordion id="faq5" label="How accurate is the calorie tracking?">
-						<p>
-							Our calorie tracking uses advanced algorithms and integrates with
-							fitness trackers for maximum accuracy. We provide estimates based
-							on your personal metrics and activity intensity.
-						</p>
-					</Accordion>
-				</Card>
+				<Accordion
+					id="faq5"
+					label="How accurate is the calorie tracking?"
+					variant="text"
+				>
+					<p>
+						Our calorie tracking uses advanced algorithms and integrates with
+						fitness trackers for maximum accuracy. We provide estimates based on
+						your personal metrics and activity intensity.
+					</p>
+				</Accordion>
 			</section>
 		</main>
 

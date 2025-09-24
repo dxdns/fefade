@@ -10,8 +10,13 @@ type Locale = keyof typeof translations
 
 const rootLocale = "en"
 
-function getLocale(currentLocale?: string) {
-	return currentLocale?.toLowerCase() || rootLocale
+export function getLocale(currentLocale?: string) {
+	return (currentLocale?.toLowerCase() || rootLocale) as Locale
+}
+
+export function isRootLocale(currentLocale?: string) {
+	const locale = getLocale(currentLocale)
+	return locale === "en"
 }
 
 export function getTranslations(currentLocale?: string) {

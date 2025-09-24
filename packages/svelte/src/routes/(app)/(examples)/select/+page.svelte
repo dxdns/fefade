@@ -20,7 +20,7 @@
 >
 	<option value="v1">v1 test</option>
 	<option value="v2">v2 test</option>
-	<option value="v3">v3 test</option>
+	<option value="v3" disabled>v3 test</option>
 </Select>
 
 <br />

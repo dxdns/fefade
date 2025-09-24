@@ -8,8 +8,6 @@
     display: flex; 
     flex-wrap: wrap;
     gap: 1rem;
-    align-items: flex-end;
-    padding: 1rem;
 	"
 >
 	{#each Constants.variants as variant (variant)}

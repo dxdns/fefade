@@ -35,10 +35,9 @@ const resolvedMenu = sidebar
 				[getPath("/installation/", Astro.currentLocale)]: "Docs"
 			}[link.href] ?? link.label
 	}))
-console.log(getPath("/installation/", Astro.currentLocale))
 ---
 
-<div class="header">
+<div id="header" class="header">
 	<div class="title-wrapper sl-flex">
 		<SiteTitle />
 	</div>

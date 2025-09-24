@@ -3,7 +3,7 @@ import { Alert } from "@fefade/react"
 
 export default function () {
 	return (
-		<>
+		<div>
 			{Constants.statusColors.map((color) => (
 				<div key={color}>
 					<Alert color={color}>
@@ -14,6 +14,6 @@ export default function () {
 					</Alert>
 				</div>
 			))}
-		</>
+		</div>
 	)
 }

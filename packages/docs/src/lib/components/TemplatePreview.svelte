@@ -47,15 +47,15 @@
 			gap: 1rem;
 			"
 	>
-		{#each Object.keys(resolutions) as device (device)}
-			{@const width = resolutions[device as DeviceType]}
+		{#each Object.keys(resolutions) as DeviceType[] as device (device)}
+			{@const width = resolutions[device]}
 			<Button
 				disabled={widthSelected === width}
 				onclick={() => {
 					widthSelected = width
 				}}
 			>
-				{@html iconsData[device as DeviceType]}
+				{@html iconsData[device]}
 			</Button>
 		{/each}
 	</div>

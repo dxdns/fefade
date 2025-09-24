@@ -82,7 +82,8 @@ export default forwardRef<HTMLDivElement, Props>(
 						{
 							[styles.isTranslucent]: isTranslucent,
 							[styles.animatedBorder]: Boolean(animatedBorder),
-							[styles.stopOnHover]: Boolean(borderStopOnHover)
+							[styles.stopOnHover]: Boolean(borderStopOnHover),
+							["clickable"]: rest.onClick || href
 						}
 					)}
 					style={

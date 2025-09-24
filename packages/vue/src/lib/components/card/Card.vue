@@ -71,7 +71,8 @@
 			{
 				[styles.isTranslucent]: isTranslucent,
 				[styles.animatedBorder]: Boolean(animatedBorder),
-				[styles.stopOnHover]: Boolean(borderStopOnHover)
+				[styles.stopOnHover]: Boolean(borderStopOnHover),
+				["clickable"]: attrs.onClick || href
 			}
 		)
 	)

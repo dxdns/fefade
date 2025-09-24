@@ -136,14 +136,12 @@
 		>
 			<HoverFollower>
 				{#each blogPostsData as { link, title, description } (title)}
-					<Link href={link}>
-						<Card style="padding: 1.5rem;">
-							<h5>{title}</h5>
-							<p class="text-muted" style="margin-top: 0.5rem;">
-								{description}
-							</p>
-						</Card>
-					</Link>
+					<Card style="padding: 1.5rem;" href={link} target="_blank">
+						<h5>{title}</h5>
+						<p class="text-muted" style="margin-top: 0.5rem;">
+							{description}
+						</p>
+					</Card>
 				{/each}
 			</HoverFollower>
 			<Button style="max-width: fit-content;">

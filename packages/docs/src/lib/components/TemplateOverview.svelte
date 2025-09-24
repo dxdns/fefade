@@ -48,10 +48,11 @@
 	dataSrc={data.image}
 	alt={data.title}
 	{href}
-	style="max-height: 300px;"
+	style="max-height: 300px; filter: blur(1px);"
 	target="_blank"
+	captionStyle={{ background: "linear-gradient(#0000009e 0%, #000000)" }}
 >
-	<Text as="h3">
+	<Text as="h3" style="color: white;">
 		{data.title}
 	</Text>
 </Gallery.Image>

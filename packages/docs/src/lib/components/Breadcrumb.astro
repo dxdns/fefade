@@ -1,9 +1,16 @@
 ---
+import { isRootLocale } from "@/i18n"
 import { Breadcrumbs } from "astro-breadcrumbs"
 import "astro-breadcrumbs/breadcrumbs.css"
 ---
 
-<Breadcrumbs>
+<Breadcrumbs
+	excludeCurrentPage={true}
+	linkTextFormat="capitalized"
+	customizeListElements={[
+		{ index: 1, remove: !isRootLocale(Astro.currentLocale) }
+	]}
+>
 	<svg
 		slot="separator"
 		xmlns="http://www.w3.org/2000/svg"
