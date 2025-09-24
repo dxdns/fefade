@@ -95,9 +95,10 @@
 		]}
 		oninput={handleOnInput}
 		value={inputValue}
+		style={undefined}
 	/>
 
-	<div class={styles.content}>
+	<div class={styles.content} style={rest.style}>
 		{#each filtered as item, index (index)}
 			<div
 				role="button"
