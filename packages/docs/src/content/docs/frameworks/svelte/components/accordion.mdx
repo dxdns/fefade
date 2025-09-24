@@ -9,9 +9,33 @@ head:
 categories: ["svelte"]
 ---
 
-import AccordionPreview from "@/components/AccordionPreview.svelte"
+import AccordionAutoFocusPreview from "@/components/AccordionAutoFocusPreview.svelte"
+import AccordionVariantPreview from "@/components/AccordionVariantPreview.svelte"
+import AccordionDisabledPreview from "@/components/AccordionDisabledPreview.svelte"
 import PreviewTabs from "@/components/PreviewTabs.astro"
 
-<PreviewTabs component="AccordionPreview">
-	<AccordionPreview client:load />
+## Variant
+
+Use the `variant` prop to change the visual style of the accordion.
+
+<PreviewTabs component="AccordionVariantPreview">
+	<AccordionVariantPreview client:load />
+</PreviewTabs>
+
+## Auto Focus
+
+Use the `autofocus` prop to automatically expand a specific accordion item on
+load.
+
+<PreviewTabs component="AccordionAutoFocusPreview">
+	<AccordionAutoFocusPreview client:load />
+</PreviewTabs>
+
+## Disabled
+
+Use the `disabled` prop to prevent user interaction with specific accordion
+items.
+
+<PreviewTabs component="AccordionDisabledPreview">
+	<AccordionDisabledPreview client:load />
 </PreviewTabs>
