@@ -1,6 +1,6 @@
 {
 	"name": "@fefade/svelte",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Reusable Svelte UI components powered by the FEFADE core system.",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
@@ -41,7 +41,7 @@
 		}
 	},
 	"peerDependencies": {
-		"@fefade/core": "^0.0.2",
+		"@fefade/core": "^0.0.3",
 		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
