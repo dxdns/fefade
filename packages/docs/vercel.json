@@ -1,5 +1,10 @@
 {
-  "source": "/docs/:path*",
-  "destination": "/:path*",
-  "permanent": true
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/docs/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ]
 }
