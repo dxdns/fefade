@@ -17,11 +17,11 @@
 	width: 100%;
 }
 
-.content>div.focused {
+.content > div.focused {
 	background: color-mix(in srgb, var(--ff-surface) 75%, gray 15%);
 }
 
-.content>div:last-child {
+.content > div:last-child {
 	border: none;
 }
 
@@ -45,7 +45,7 @@
 	margin: 0;
 }
 
-.item>* {
+.item > * {
 	width: 100% !important;
 	padding: 0.7rem 1rem !important;
 	/* display: list-item; */
@@ -58,6 +58,6 @@
 	border-radius: 0 !important;
 }
 
-.item>*:hover {
+.item > *:hover {
 	background: color-mix(in srgb, var(--ff-surface) 95%, gray 5%) !important;
 }

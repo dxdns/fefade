@@ -1,6 +1,7 @@
 import { defineCollection, z } from "astro:content"
 import { docsLoader } from "@astrojs/starlight/loaders"
 import { docsSchema } from "@astrojs/starlight/schema"
+import { frameworksData } from "@/data"
 
 export const collections = {
 	docs: defineCollection({
@@ -8,7 +9,7 @@ export const collections = {
 		schema: docsSchema({
 			extend: z.object({
 				categories: z
-					.enum(["tutorial", "guide", "reference", "react", "vue", "svelte"])
+					.enum(["tutorial", "guide", "reference", ...frameworksData])
 					.array()
 					.optional()
 			})

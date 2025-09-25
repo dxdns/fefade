@@ -5,9 +5,10 @@ description: Check out our comprehensive installation guides.
 
 import { CardGrid, LinkCard } from "@astrojs/starlight/components"
 import { capitalizeUtil } from "@fefade/core/utils"
+import { frameworksData } from "@/data"
 
 <CardGrid>
-	{["svelte", "react", "vue"].map((framework) => (
+	{frameworksData.map((framework) => (
 		<LinkCard
 			title={capitalizeUtil(framework)}
 			href={`/frameworks/${framework}/getting-started/`}
