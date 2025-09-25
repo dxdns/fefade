@@ -1,0 +1,5 @@
+{
+  "source": "/docs/:path*",
+  "destination": "/:path*",
+  "permanent": true
+}
