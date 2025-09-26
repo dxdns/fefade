@@ -1,0 +1,15 @@
+---
+title: Clipboard
+description: Used to copy text to the clipboard.
+head:
+  - tag: title
+    content: Svelte Clipboard Component Util
+categories: ["svelte"]
+---
+
+import ClipboardPreview from "@/components/ClipboardPreview.svelte"
+import PreviewTabs from "@/components/PreviewTabs.astro"
+
+<PreviewTabs component="ClipboardPreview">
+	<ClipboardPreview client:load />
+</PreviewTabs>
