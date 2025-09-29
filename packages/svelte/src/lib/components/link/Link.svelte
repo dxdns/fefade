@@ -24,6 +24,14 @@
 			? pathname === rest.href
 			: rest["aria-current"] === "page"
 	)
+
+	function getStyle() {
+		return typeof style === "string"
+			? style
+			: typeof style === "function"
+				? styleToStringUtil(style({ isActive }))
+				: styleToStringUtil(style)
+	}
 </script>
 
 <a
@@ -39,11 +47,7 @@
 		}
 	)}
 	aria-current={isActive ? "page" : undefined}
-	style={style
-		? typeof style === "function"
-			? styleToStringUtil(style({ isActive }))
-			: styleToStringUtil(style)
-		: style}
+	style={getStyle()}
 >
 	{@render children?.()}
 </a>

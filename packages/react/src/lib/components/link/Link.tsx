@@ -50,6 +50,10 @@ function LinkComponent<C extends ElementType = "a">(
 			? pathname === target
 			: (rest as Record<string, any>)["aria-current"] === "page"
 
+	function getStyle() {
+		return typeof style === "function" ? style({ isActive }) : style
+	}
+
 	return (
 		<Component
 			{...rest}
@@ -65,7 +69,7 @@ function LinkComponent<C extends ElementType = "a">(
 				}
 			)}
 			aria-current={isActive ? "page" : undefined}
-			style={typeof style === "function" ? style({ isActive }) : style}
+			style={getStyle()}
 		>
 			{children}
 		</Component>
