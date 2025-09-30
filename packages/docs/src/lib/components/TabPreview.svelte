@@ -45,13 +45,13 @@
 	<span style="font-size: 20px;">{s}</span>
 {/snippet}
 
-<div style="max-width:800px; margin: 3rem auto;">
+<div style="max-width: 800px; margin: 3rem auto;">
 	<Card>
 		<Tab id="tab1">
 			<Tab.List
 				scrollable={false}
 				lineStyle={{
-					color: theme.colors.error
+					color: theme.colors.onError
 				}}
 			>
 				{#each tabs.slice(0, 2) as tab (tab.id)}

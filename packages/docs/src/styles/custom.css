@@ -3,6 +3,32 @@
 	--sl-color-bg-nav: var(--ff-bg);
 	--sl-color-text-accent: var(--ff-primary);
 	--sl-color-bg-sidebar: var(--ff-bg);
+	--sl-nav-gap: 1rem;
+
+	--surface-translucent: color-mix(in srgb, var(--ff-surface) 30%, transparent);
+	--radius-w: 5px;
+}
+
+[data-theme="dark"] {
+	--border-color: rgba(255, 255, 255, 0.03);
+	--mask-color-start: rgba(0, 0, 0, 1);
+	--mask-color-end: rgba(0, 0, 0, 0);
+
+	.expressive-code figure {
+		--ec-frm-trmTtbBg: var(--surface-translucent);
+		--code-background: var(--surface-translucent);
+		--header-border-radius: var(--radius-w);
+		--ec-brdRad: var(--radius-w);
+	}
+}
+
+starlight-file-tree {
+	border-radius: var(--radius-w);
+	background: var(--surface-translucent);
+}
+
+starlight-file-tree .tree-icon {
+	margin-right: 0.3rem;
 }
 
 body {
