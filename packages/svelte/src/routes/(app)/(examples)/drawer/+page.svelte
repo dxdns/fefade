@@ -101,8 +101,8 @@
 		})}
 		{@render content()}
 	</Drawer>
-	<Button onclick={() => handleToggle("top")}>Top With Overlay</Button>
-	<Button onclick={() => handleToggle("left")}>Left With Overlay</Button>
+	<Button onclick={() => handleToggle("top")}>Top</Button>
+	<Button onclick={() => handleToggle("left")}>Left</Button>
 	<Button onclick={() => handleToggle("right")}>Right</Button>
 	<Button onclick={() => handleToggle("bottom")}>Bottom</Button>
 </Window>

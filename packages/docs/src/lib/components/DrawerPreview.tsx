@@ -76,9 +76,9 @@ export default function () {
 				))}
 
 				<div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-					<Button onClick={() => handleToggle("top")}>Top With Overlay</Button>
+					<Button onClick={() => handleToggle("top")}>Top</Button>
 					<Button onClick={() => handleToggle("left")}>
-						Left With Overlay
+						Left
 					</Button>
 					<Button onClick={() => handleToggle("right")}>Right</Button>
 					<Button onClick={() => handleToggle("bottom")}>Bottom</Button>
