@@ -31,9 +31,10 @@
 		styles.status
 	)}
 	style={mergeStyleUtil(
-		`--color: ${color};
-        --bg: whitesmoke;
-        --size: ${normalizeSizeUtil(size)};`,
+		`--color: ${color};`,
+		"--bg: whitesmoke;",
+		`--size: ${normalizeSizeUtil(size)};`,
+		"--bounce-distance: 15%;",
 		rest.style
 	)}
 ></div>

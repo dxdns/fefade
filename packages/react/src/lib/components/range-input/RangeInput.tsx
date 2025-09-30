@@ -7,6 +7,7 @@ import {
 	useMemo,
 	useState
 } from "react"
+import { Constants } from "@fefade/core"
 import styles from "@fefade/core/styles/RangeInput.module.css"
 
 interface Props
@@ -71,9 +72,12 @@ export default forwardRef<HTMLInputElement, Props>(
 					style={
 						{
 							["--internal-value"]: `${internalValue}%`,
-							["--thumb-icon"]: icon
-								? `url(${dataIconUrlUtil(icon)})`
-								: undefined,
+							["--thumb-icon"]: icon && `url(${dataIconUrlUtil(icon)})`,
+							["--rounded-full"]: "9999px",
+							["--thumb-size"]: "18px",
+							["--thumb-border"]: `2px solid ${Constants.themeColorVar.border}`,
+							["--thumb-bg"]: `${Constants.themeColorVar.onSurface}`,
+							["--track-height"]: "6px",
 							...rest.style
 						} as CSSProperties
 					}

@@ -1,11 +1,3 @@
-:root {
-	--rounded-full: 9999px;
-	--thumb-size: 18px;
-	--thumb-border: 2px solid var(--ff-border);
-	--thumb-bg: var(--ff-on-surface);
-	--track-height: 6px;
-}
-
 .rangeInput.info {
 	--thumb-bg: var(--ff-on-info);
 	--thumb-border: var(--ff-info);

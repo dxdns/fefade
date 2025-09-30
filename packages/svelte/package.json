@@ -1,7 +1,7 @@
 {
 	"name": "@fefade/svelte",
 	"version": "0.0.4",
-	"description": "Reusable Svelte UI components powered by the FEFADE core system.",
+	"description": "Reusable Svelte UI components powered by the fefade core system.",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
 	"publishConfig": {
@@ -20,8 +20,7 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"prepack": "svelte-kit sync && svelte-package && publint",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"build:watch": "chokidar 'src/**/*.{ts,svelte}' -c 'npm run prepack'"
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"files": [
 		"dist",

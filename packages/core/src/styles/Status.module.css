@@ -1,7 +1,3 @@
-:root {
-	--bounce-distance: 15%;
-}
-
 .status {
 	position: relative;
 	display: inline-block;

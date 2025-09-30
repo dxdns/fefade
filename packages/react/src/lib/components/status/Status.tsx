@@ -32,6 +32,7 @@ export default forwardRef<HTMLDivElement, Props>(
 						["--color"]: color,
 						["--bg"]: "whitesmoke",
 						["--size"]: normalizeSizeUtil(size),
+						["--bounce-distance"]: "15%",
 						...rest.style
 					} as CSSProperties
 				}

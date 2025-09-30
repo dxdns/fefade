@@ -44,6 +44,8 @@
 			`--delay: ${delay}s;`,
 			`--scrollDistanceX: ${scrollDistanceX}%;`,
 			`--scrollDistanceY: ${scrollDistanceY}%;`,
+			"--delay: 60s;",
+			"--fade-size: 10%;",
 			rest.style
 		)}
 	>
@@ -52,11 +54,6 @@
 </div>
 
 <style>
-	:root {
-		--delay: 60s;
-		--fade-size: 10%;
-	}
-
 	.autoScroll {
 		overflow: hidden;
 		max-width: 100%;

@@ -6,6 +6,7 @@
 		dataIconUrlUtil
 	} from "@fefade/core/utils"
 	import type { HTMLInputAttributes } from "svelte/elements"
+	import { Constants } from "@fefade/core"
 	import styles from "@fefade/core/styles/RangeInput.module.css"
 
 	interface Props
@@ -70,7 +71,13 @@
 		)}
 		style={mergeStyleUtil(
 			`--internal-value: ${internalValue}%;`,
-			icon && `--thumb-icon: url(${dataIconUrlUtil(icon)});`
+			icon && `--thumb-icon: url(${dataIconUrlUtil(icon)});`,
+			"--rounded-full: 9999px;",
+			"--thumb-size: 18px;",
+			`--thumb-border: 2px solid ${Constants.themeColorVar.border};`,
+			`--thumb-bg: ${Constants.themeColorVar.onSurface};`,
+			"--track-height: 6px;",
+			rest.style
 		)}
 		oninput={(e) => {
 			rest.oninput?.(e)

@@ -1,7 +1,3 @@
-:root {
-	--border-width: 1px;
-}
-
 .card {
 	padding: 1rem;
 	overflow: hidden;
