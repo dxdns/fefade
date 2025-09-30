@@ -26,7 +26,7 @@
 		"build:watch": "vue-tsc -b --watch & vite build --watch"
 	},
 	"peerDependencies": {
-		"@fefade/core": "^0.0.3"
+		"@fefade/core": "^0.0.4"
 	},
 	"devDependencies": {
 		"@fefade/core": "*",
