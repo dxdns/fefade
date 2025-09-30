@@ -1,6 +1,6 @@
 {
 	"name": "@fefade/core",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Shared logic and foundational utilities for fefade UI libraries.",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
